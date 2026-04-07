@@ -1,0 +1,84 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/scraper/job_parser.py",
+          "node_type": "code_construct"
+        },
+        "edges": [
+          {
+            "target_id": "dir:data/raw/jobs",
+            "relation_type": "reads_from",
+            "metadata": {}
+          },
+          {
+            "target_id": "dir:data/persistent/jobs",
+            "relation_type": "writes_to",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki/concepts/job_posting.md",
+            "relation_type": "transcludes",
+            "metadata": {}
+          }
+        ],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [
+          {
+            "medium": "disk",
+            "schema_ref": null,
+            "path_template": "data/raw/jobs/{site_id}/*.html"
+          },
+          {
+            "medium": "memory",
+            "schema_ref": "JobPosting",
+            "path_template": null
+          }
+        ],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null
+      },
+      "id": "file:src/scraper/job_parser.py"
+    },
+    {
+      "id": "dir:data/raw/jobs"
+    },
+    {
+      "id": "dir:data/persistent/jobs"
+    },
+    {
+      "id": "file:src/wiki/concepts/job_posting.md"
+    }
+  ],
+  "links": [
+    {
+      "relation": "reads_from",
+      "metadata": {},
+      "source": "file:src/scraper/job_parser.py",
+      "target": "dir:data/raw/jobs"
+    },
+    {
+      "relation": "writes_to",
+      "metadata": {},
+      "source": "file:src/scraper/job_parser.py",
+      "target": "dir:data/persistent/jobs"
+    },
+    {
+      "relation": "transcludes",
+      "metadata": {},
+      "source": "file:src/scraper/job_parser.py",
+      "target": "file:src/wiki/concepts/job_posting.md"
+    }
+  ]
+}
