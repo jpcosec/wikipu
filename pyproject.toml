@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "llm-wiki-compiler"
+name = "wikipu"
 version = "1.0.0"
-description = "A Knowledge Graph compiler for LLM-driven development"
+description = "Knowledge Graph compiler for LLM-driven development. Enforces structural integrity and builds deterministic NetworkX graphs."
 authors = [{name = "JP", email = "jp@example.com"}]
 readme = "README.md"
 requires-python = ">=3.10"

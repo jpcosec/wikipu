@@ -1,4 +1,4 @@
-# 🧠 LLM Wiki Compiler (NetworkX Edition)
+# 🧠 wikipu (NetworkX Edition)
 
 A Knowledge Graph compiler designed for LLM-driven development. It implements the **Hausordnung (House Rules)** laws to ensure architectural integrity and builds a deterministic **NetworkX-based** graph for agent reasoning.
 
