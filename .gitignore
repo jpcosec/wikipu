@@ -31,6 +31,7 @@ ENV/
 .vscode/
 .idea/
 .obsidian/
+logs/
 
 # wikipu artifacts
 knowledge_graph.json
