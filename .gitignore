@@ -31,6 +31,9 @@ ENV/
 .vscode/
 .idea/
 .obsidian/
+.pytest_cache/
+.ruff_cache/
+.trash/
 logs/
 
 # wikipu artifacts
