@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "4f63188c0f085815",
+    "type": "split",
+    "children": [
+      {
+        "id": "72e4e46b236068af",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b78dcf5c318e3529",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "plan_docs/issues/Index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a43e128bd6d35721",
+    "type": "split",
+    "children": [
+      {
+        "id": "d37afa6c251e8471",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c1435a888c204c12",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "7fbc44ff6cf49c4b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "4255844c43fd6290",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7e6adb6e27c91335",
+    "type": "split",
+    "children": [
+      {
+        "id": "41339cd354d9717b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e91481d1cb13825",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "agents/librarian/intro.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de intro"
+            }
+          },
+          {
+            "id": "9bbf7cec337beda3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "agents/librarian/intro.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de intro"
+            }
+          },
+          {
+            "id": "6e714061da53f6f0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "4015242387b87cb4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "2d0ebd509686ecd2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "agents/librarian/intro.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de intro"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "b78dcf5c318e3529",
+  "lastOpenFiles": [
+    "raw/sourcetalk_artifacts/00_hausordnung_draft.md",
+    "plan_docs/issues/Index.md",
+    "wiki/concepts/wiki_construction_principles.md",
+    "wiki/adrs/002_documentation_consolidation.md",
+    "tests/__pycache__/test_wiki_construction.cpython-313-pytest-8.3.4.pyc",
+    "src/wiki_compiler/__pycache__/node_templates.cpython-313.pyc",
+    "tests/test_wiki_construction.py",
+    "src/wiki_compiler/node_templates.py",
+    "src/wiki_compiler/__pycache__/facet_validator.cpython-313.pyc",
+    "tests/__pycache__/test_facet_proposal.cpython-313-pytest-8.3.4.pyc",
+    "tests/test_facet_proposal.py",
+    "src/wiki_compiler/facet_validator.py",
+    "src/wiki_compiler/__pycache__/auditor.cpython-313.pyc",
+    "tests/__pycache__/test_auditor.cpython-313-pytest-8.3.4.pyc",
+    "plan_docs/issues/unimplemented/self-documentation-enforcement.md",
+    "plan_docs/issues/unimplemented/raw-ingestion-pipeline.md",
+    "plan_docs/issues/unimplemented/query-server-runtime.md",
+    "plan_docs/issues/unimplemented/audit-and-proposal-gates.md",
+    "plan_docs/issues/unimplemented/facet-system-foundation.md",
+    "plan_docs/issues/gaps/legacy-standards-verdict.md",
+    "plan_docs/issues/gaps/duplicate-docs-cleanup.md",
+    "raw/claw_session.md",
+    "raw/session.md",
+    "raw/cleansing_protocol.md",
+    "raw/wiki_construction_principles.md",
+    "raw/facet_orthogonalization.md",
+    "raw/facets_as_questions.md",
+    "plan_docs/2026-04-08-three-phase-graph.md",
+    "raw/graph_construction_process.md",
+    "wiki/knowledge_node_facets.md",
+    "raw/system_concept.md",
+    "plan_docs/issues.md",
+    "wiki/adrs/001_feature_methodology_superseded.md",
+    "wiki/standards/00_house_rules.md",
+    "README.md",
+    "changelog.md"
+  ]
+}

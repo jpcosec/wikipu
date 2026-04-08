@@ -1,0 +1,2 @@
+[console_scripts]
+wiki-compiler = wiki_compiler.main:main
