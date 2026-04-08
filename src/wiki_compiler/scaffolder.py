@@ -1,3 +1,7 @@
+"""
+Creates immutable scaffolding for new modules.
+Initializes code structure, contracts, and tests based on House Rules.
+"""
 import os
 from pathlib import Path
 import textwrap

@@ -10,6 +10,7 @@ from pydantic import BaseModel
 
 @dataclass
 class NodeTemplate:
+    """Defines the required structure and sections for a specific node type."""
     node_type: str
     question: str
     required_sections: list[str]
@@ -36,6 +37,7 @@ class TemplateRegistry:
 
 
 def build_default_template_registry() -> TemplateRegistry:
+    """Builds and returns the default registry of standard wiki node templates."""
     registry = TemplateRegistry()
     registry.register(NodeTemplate(
         "concept",

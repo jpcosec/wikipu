@@ -30,10 +30,12 @@ IO_LINE_RE = re.compile(
 
 @dataclass(frozen=True)
 class IgnoreRule:
+    """Represents a rule for ignoring files during scanning, based on a glob pattern."""
     pattern: str
     reason: str | None
 
     def matches(self, path: str) -> bool:
+        """Determines if the given path matches the ignore pattern."""
         return fnmatch.fnmatch(path, self.pattern) or fnmatch.fnmatch(
             path, f"{self.pattern}/**"
         )
@@ -44,6 +46,7 @@ def scan_python_sources(
     source_roots: list[Path] | None = None,
     wikiignore_path: Path | None = None,
 ) -> list[KnowledgeNode]:
+    """Recursively scans Python source directories for knowledge nodes, respecting ignore rules."""
     roots = source_roots or [project_root / "src"]
     ignore_rules = load_wikiignore_rules(
         wikiignore_path or project_root / ".wikiignore"
@@ -63,6 +66,7 @@ def scan_python_sources(
 
 
 def load_wikiignore_rules(wikiignore_path: Path) -> list[IgnoreRule]:
+    """Reads and parses the .wikiignore file into a list of IgnoreRule objects."""
     if not wikiignore_path.exists():
         return []
     rules: list[IgnoreRule] = []
@@ -78,6 +82,7 @@ def load_wikiignore_rules(wikiignore_path: Path) -> list[IgnoreRule]:
 
 
 def match_ignore_reason(path: str, rules: list[IgnoreRule]) -> str | None:
+    """Returns the reason a path is ignored if it matches any of the provided rules."""
     reason: str | None = None
     for rule in rules:
         if rule.matches(path):
@@ -86,6 +91,7 @@ def match_ignore_reason(path: str, rules: list[IgnoreRule]) -> str | None:
 
 
 def build_ignored_file_node(rel_path: str, reason: str) -> KnowledgeNode:
+    """Creates a KnowledgeNode representing a file that has been explicitly ignored."""
     return KnowledgeNode(
         identity=SystemIdentity(node_id=f"file:{rel_path}", node_type="file"),
         semantics=SemanticFacet(
@@ -101,6 +107,7 @@ def build_ignored_file_node(rel_path: str, reason: str) -> KnowledgeNode:
 
 
 def scan_python_file(project_root: Path, file_path: Path) -> list[KnowledgeNode]:
+    """Analyzes a single Python file and returns nodes for the module and its constructs."""
     rel_path = file_path.relative_to(project_root).as_posix()
     source = inspect.cleandoc(file_path.read_text(encoding="utf-8")) + "\n"
     module_ast = ast.parse(source, filename=rel_path)
@@ -144,6 +151,7 @@ def scan_python_file(project_root: Path, file_path: Path) -> list[KnowledgeNode]
 def build_function_node(
     rel_path: str, statement: ast.FunctionDef | ast.AsyncFunctionDef
 ) -> KnowledgeNode:
+    """Constructs a KnowledgeNode for a Python function or async function."""
     docstring = ast.get_docstring(statement)
     compliance = detect_exemption(statement)
     return KnowledgeNode(
@@ -165,6 +173,7 @@ def build_function_node(
 
 
 def build_class_node(rel_path: str, statement: ast.ClassDef) -> KnowledgeNode:
+    """Constructs a KnowledgeNode for a Python class, including its methods in the signature."""
     docstring = ast.get_docstring(statement)
     signatures = [f"class {statement.name}"]
     signatures.extend(
@@ -192,6 +201,7 @@ def build_class_node(rel_path: str, statement: ast.ClassDef) -> KnowledgeNode:
 
 
 def build_semantic_facet(docstring: str | None, fallback: str) -> SemanticFacet:
+    """Creates a SemanticFacet by extracting the intent from a docstring or using a fallback."""
     intent = fallback
     if docstring:
         intent = next(
@@ -201,6 +211,7 @@ def build_semantic_facet(docstring: str | None, fallback: str) -> SemanticFacet:
 
 
 def collect_import_lines(module_ast: ast.Module) -> list[str]:
+    """Extracts all import and from-import statements from a module's AST."""
     imports: list[str] = []
     for statement in module_ast.body:
         if isinstance(statement, ast.Import):
@@ -214,10 +225,12 @@ def collect_import_lines(module_ast: ast.Module) -> list[str]:
 
 
 def decorator_names(decorators: list[ast.expr]) -> list[str]:
+    """Returns a list of names for all decorators applied to a construct."""
     return [base_name(decorator) for decorator in decorators]
 
 
 def base_name(node: ast.expr) -> str:
+    """Resolves the string name of an AST expression, such as a variable or attribute."""
     if isinstance(node, ast.Name):
         return node.id
     if isinstance(node, ast.Attribute):
@@ -228,6 +241,7 @@ def base_name(node: ast.expr) -> str:
 
 
 def format_function_signature(statement: ast.FunctionDef | ast.AsyncFunctionDef) -> str:
+    """Generates a string representation of a function's signature from its AST node."""
     args = [arg.arg for arg in statement.args.posonlyargs + statement.args.args]
     defaults_start = len(args) - len(statement.args.defaults)
     rendered_args: list[str] = []
@@ -264,6 +278,7 @@ def format_function_signature(statement: ast.FunctionDef | ast.AsyncFunctionDef)
 def detect_exemption(
     statement: ast.FunctionDef | ast.AsyncFunctionDef | ast.ClassDef,
 ) -> ComplianceFacet | None:
+    """Identifies if a construct is marked with @wiki_exempt and returns its compliance facet."""
     for decorator in statement.decorator_list:
         if base_name(decorator).endswith("wiki_exempt"):
             reason = extract_exemption_reason(decorator)
@@ -274,6 +289,7 @@ def detect_exemption(
 
 
 def extract_exemption_reason(decorator: ast.expr) -> str:
+    """Extracts the 'reason' argument from a @wiki_exempt decorator call."""
     if isinstance(decorator, ast.Call):
         for keyword in decorator.keywords:
             if (
@@ -292,6 +308,7 @@ def extract_exemption_reason(decorator: ast.expr) -> str:
 
 
 def parse_docstring_io(docstring: str | None) -> list[IOFacet]:
+    """Parses I/O port declarations from a docstring using regular expressions."""
     if not docstring:
         return []
     ports: list[IOFacet] = []
@@ -310,6 +327,7 @@ def parse_docstring_io(docstring: str | None) -> list[IOFacet]:
 
 
 def infer_io_from_ast(tree: ast.AST) -> list[IOFacet]:
+    """Statically infers I/O ports by searching for common file I/O patterns in the AST."""
     ports: list[IOFacet] = []
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call):
@@ -321,6 +339,7 @@ def infer_io_from_ast(tree: ast.AST) -> list[IOFacet]:
 
 
 def infer_open_call(node: ast.Call) -> IOFacet | None:
+    """Infers an I/O port from a call to the built-in 'open' function."""
     if not isinstance(node.func, ast.Name) or node.func.id != "open" or not node.args:
         return None
     path = extract_string(node.args[0])
@@ -334,6 +353,7 @@ def infer_open_call(node: ast.Call) -> IOFacet | None:
 
 
 def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
+    """Infers an I/O port from calls to Path methods like read_text or write_text."""
     if not isinstance(node.func, ast.Attribute):
         return None
     if node.func.attr not in {"read_text", "write_text", "read_bytes", "write_bytes"}:
@@ -350,6 +370,7 @@ def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
 
 
 def extract_string(node: ast.AST) -> str | None:
+    """Extracts a literal string value from an AST node if possible."""
     if isinstance(node, ast.Constant) and isinstance(node.value, str):
         return node.value
     return None

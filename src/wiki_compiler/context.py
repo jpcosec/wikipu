@@ -1,3 +1,7 @@
+"""
+Context rendering for the Knowledge Graph.
+Extracts and formats neighborhoods around specific nodes for LLM context generation.
+"""
 from __future__ import annotations
 
 import json
@@ -16,6 +20,9 @@ def render_context(
     output_format: str = "markdown",
     include_planned: bool = False,
 ) -> str:
+    """
+    Renders a subset of the Knowledge Graph into a human-readable or machine-parsable context.
+    """
     graph = load_graph(graph_path)
     selected = node_ids or match_nodes_from_task(graph_path, task_hint)
     subgraph_nodes = collect_neighborhood(graph, selected, depth)
@@ -44,6 +51,9 @@ def render_context(
 
 
 def match_nodes_from_task(graph_path: Path, task_hint: str | None) -> list[str]:
+    """
+    Identifies relevant Knowledge Graph nodes based on a natural language task description.
+    """
     if not task_hint:
         raise ValueError("Provide node_ids or a task_hint")
     graph = load_graph(graph_path)
@@ -69,6 +79,9 @@ def match_nodes_from_task(graph_path: Path, task_hint: str | None) -> list[str]:
 
 
 def collect_neighborhood(graph, starting_nodes: list[str], depth: int) -> set[str]:
+    """
+    Expands a set of starting nodes by traversing the graph up to a specified depth.
+    """
     visited = set(starting_nodes)
     queue = deque((node_id, 0) for node_id in starting_nodes)
     while queue:
@@ -85,6 +98,9 @@ def collect_neighborhood(graph, starting_nodes: list[str], depth: int) -> set[st
 
 
 def render_markdown(payload: list[dict[str, object]]) -> str:
+    """
+    Formats a list of node payloads into a structured Markdown representation.
+    """
     blocks: list[str] = []
     for item in payload:
         node = item["node"]

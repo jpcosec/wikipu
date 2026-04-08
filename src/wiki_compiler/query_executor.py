@@ -1,3 +1,7 @@
+"""
+Executes structured queries against the Knowledge Graph.
+Filters and scopes nodes based on facet values and graph topology.
+"""
 from __future__ import annotations
 from typing import Any
 import networkx as nx
@@ -17,7 +21,8 @@ def execute_query(graph: nx.DiGraph, query: StructuredQuery) -> list[KnowledgeNo
     return results
 
 
-def _apply_scope(graph: nx.DiGraph, scope) -> list[str]:
+def _apply_scope(graph: nx.DiGraph, scope: GraphScope | None) -> list[str]:
+    """Filters the graph nodes based on the provided GraphScope. Returns a list of node IDs."""
     if scope is None:
         return list(graph.nodes)
     if scope.descendant_of:
@@ -34,11 +39,13 @@ def _apply_scope(graph: nx.DiGraph, scope) -> list[str]:
 
 
 def _facet_matches(node: KnowledgeNode, facet_filter: FacetFilter) -> bool:
+    """Checks if a KnowledgeNode matches the criteria defined in a FacetFilter."""
     facet_value = _get_facet(node, facet_filter.facet)
     return all(_condition_matches(facet_value, cond) for cond in facet_filter.conditions)
 
 
 def _get_facet(node: KnowledgeNode, facet_name: str) -> object:
+    """Retrieves the value of a specific facet from a KnowledgeNode."""
     mapping = {
         "semantics": node.semantics,
         "ast": node.ast,
@@ -51,6 +58,7 @@ def _get_facet(node: KnowledgeNode, facet_name: str) -> object:
 
 
 def _condition_matches(facet_value: object, cond: FieldCondition) -> bool:
+    """Evaluates whether a facet's field value satisfies a FieldCondition."""
     if cond.op == "is_null":
         return _resolve_field(facet_value, cond.field) is None
     if cond.op == "is_not_null":
@@ -70,6 +78,7 @@ def _condition_matches(facet_value: object, cond: FieldCondition) -> bool:
 
 
 def _resolve_field(facet_value: object, field: str) -> Any:
+    """Extracts the value of a specific field from a facet object."""
     if facet_value is None:
         return None
     if isinstance(facet_value, list):

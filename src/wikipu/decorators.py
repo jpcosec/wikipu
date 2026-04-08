@@ -1,3 +1,7 @@
+"""
+Decorators for exempting code from Wiki compliance checks.
+Marks functions or classes to bypass strict House Rules validation.
+"""
 from functools import wraps
 from typing import Any, Callable
 

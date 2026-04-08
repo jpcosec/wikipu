@@ -1,0 +1,129 @@
+---
+identity:
+  node_id: "doc:wiki/drafts/01_ui_ui_redesign_branch_terran_command_design_system.md"
+  node_type: "concept"
+edges:
+  - {target_id: "raw:raw/docs_postulador_ui/plan/index_checklist.md", relation_type: "documents"}
+---
+
+### Fase 0 — Foundation (Router + Layouts + Portfolio) ✅
+
+## Details
+
+### Fase 0 — Foundation (Router + Layouts + Portfolio) ✅
+- [x] `utils/cn.ts` — clsx + tailwind-merge helper
+- [x] `main.tsx` — QueryClientProvider wrapper
+- [x] `AppShell.tsx` — LeftNav + `<Outlet />`
+- [x] `JobWorkspaceShell.tsx` — Pipeline TopBar + nested `<Outlet />`
+- [x] `Badge.tsx` atom — forwardRef, cn(), variant prop
+- [x] `types/api.types.ts` — PortfolioSummary, ViewPayload, GraphNode, GraphEdge, etc.
+- [x] `types/ui.types.ts` — MatchNodeData, ExtractEditorState, DocumentDraft, ExplorerTreeNode, GateDecisionState
+- [x] Mock fixtures y client
+
+### Fase 0 — A1 Portfolio Dashboard ✅
+- [x] `usePortfolioSummary.ts`
+- [x] `PortfolioTable.tsx`
+- [x] `DeadlineSidebar.tsx`, `RecentArtifacts.tsx`, `SystemStatus.tsx`
+- [x] `PortfolioDashboard.tsx`
+
+### Fase 1 — B0 Job Flow Inspector ✅
+- [x] `useJobTimeline.ts`
+- [x] `JobFlowInspector.tsx` — timeline visual con pipeline stages
+- [x] `HitlCtaBanner.tsx`, `JobMetaPanel.tsx`, `PipelineTimeline.tsx`, `StageRow.tsx`
+
+### Atoms pre-Fase 2 ✅
+- [x] `Button.tsx` — variant: primary|ghost|danger, size: sm|md, loading?: boolean
+- [x] `Icon.tsx` — Lucide wrapper, name prop, size: xs|sm|md
+- [x] `Spinner.tsx` — CSS spinner, size: xs|sm|md, color primario
+- [x] `SplitPane.tsx` (molecule) — wrapper de react-resizable-panels
+
+### Fase 2 — A2 Data Explorer ✅
+- [x] `useExplorerBrowse.ts`
+- [x] `ExplorerTree.tsx`, `BreadcrumbNav.tsx`, `FilePreview.tsx`, `JsonPreview.tsx`, `MarkdownPreview.tsx`, `ImagePreview.tsx`
+- [x] `DataExplorer.tsx`
+
+### Fase 3 — B1 Scrape Diagnostics ✅
+- [x] `useArtifacts.ts`
+- [x] `ScrapeMetaCard.tsx`, `SourceTextPreview.tsx`, `ErrorScreenshot.tsx`, `ScrapeControlPanel.tsx`
+- [x] `ScrapeDiagnostics.tsx`
+
+### Atoms pre-Fase 4 ✅
+- [x] `Tag.tsx` — inline span, category: skill|req|risk, border-l-2 color-coded
+
+### Fase 4 — B2 Extract & Understand ✅
+- [x] `useViewExtract.ts`
+- [x] `SourceTextPane.tsx`, `RequirementList.tsx`, `RequirementItem.tsx`, `ExtractControlPanel.tsx`
+- [x] `ExtractUnderstand.tsx`
+
+### Fase 5 — B3 Match ✅
+- [x] `useViewMatch.ts`, `useEvidenceBank.ts`, `useGateDecide.ts`, `useEditorState.ts`
+- [x] `MatchGraphCanvas.tsx`, `RequirementNode.tsx`, `ProfileNode.tsx`, `EdgeScoreBadge.tsx`
+- [x] `EvidenceBankPanel.tsx`, `MatchControlPanel.tsx`, `MatchDecisionModal.tsx`
+- [x] `Match.tsx`
+
+### Atoms pre-Fase 6 ✅
+- [x] `Kbd.tsx` — keyboard shortcut display, keys: string[], estilo mono
+
+### Fase 6 — B4 Generate Documents ✅
+- [x] `useViewDocuments.ts`, `useDocumentSave.ts`, `useGateDecide.ts`
+- [x] `DocumentTabs.tsx`, `DocumentEditor.tsx`, `ContextPanel.tsx`
+- [x] `DocApproveBar.tsx`, `RegenModal.tsx`
+- [x] `GenerateDocuments.tsx`
+
+### Fase 7 — B5 Package & Deployment ✅
+- [x] `usePackageFiles.ts`
+- [x] `MissionSummaryCard.tsx`, `PipelineChecklist.tsx`, `PackageFileList.tsx`, `DeploymentCta.tsx`
+- [x] `PackageDeployment.tsx`
+
+### Fase 8 — B4b Default Document Gates ⚠️ BLOCKED — requiere backend
+- [ ] `useDocumentGate.ts`, `useGateDecision.ts`
+- [ ] Prop `mode="default_gate"` en `GenerateDocuments.tsx`
+
+### Fase 9 — A3 Base CV Editor ✅
+- [x] `useCvProfileGraph.ts`, `useSaveCvGraph.ts`
+- [x] `CvGraphCanvas.tsx`, `EntryNode.tsx`, `SkillNode.tsx`, `NodeInspector.tsx`, `ProfileStats.tsx`
+- [x] `BaseCvEditor.tsx`
+- [x] **E2E tests** — all TestSprite tests passing (TC001–TC049 suite, 100%)
+
+### Fase 11 — Component Map Compliance ✅
+- [x] `IntelligentEditor` — fixed decorations (StateField), added `onSpanSelect` prop
+- [x] `SourceTextPane` → uses IntelligentEditor (tag-hover mode)
+- [x] `DocumentEditor` → uses IntelligentEditor (fold mode)
+- [x] `ScrapeControlPanel` → uses ControlPanel molecule
+- [x] `ExtractControlPanel` → uses ControlPanel molecule
+- [x] `MatchControlPanel` → uses ControlPanel molecule (with children for detail pane)
+- [x] `GraphCanvas` → added `onConnect` prop
+- [x] `MatchGraphCanvas` → uses GraphCanvas organism
+- [x] `ExplorerTree` → delegates to FileTree organism
+- [x] `JsonPreview` → uses IntelligentEditor (fold/json)
+- [x] `MarkdownPreview` → uses IntelligentEditor (fold/markdown)
+- [x] `CvGraphCanvas` — kept as-is (uses parentId/extent, incompatible with generic GraphCanvas)
+- [x] **E2E tests** — Full suite on production build: 86.67% pass (26/30); 4 remaining are test limitations (TC008 mock error, TC013 test bug, TC015 mock limitation, TC046 bogus assertion)
+
+### CSS Migration — legacy ne-* → Tailwind Terran ✅
+- [x] Audit all ne-* usages (Haiku agent — LEGACY_CSS_AUDIT.md)
+- [x] Migrate all 64 ne-* classes in `KnowledgeGraph.tsx` to Tailwind Terran utilities
+- [x] Replace 2 inline `var()` references with Terran hex values
+- [x] Remove legacy CSS block from `styles.css` + delete `legacy.css`
+- [x] Remove `:root` variable bridge from `styles.css`
+- [x] Verify no legacy conventions remain in any `.tsx`/`.ts` files
+
+### C1 — Graph Editor Redesign ✅
+- [x] `styles.css` — fix 5 hardcoded light `.ne-*` values + `.react-flow__node` transparent override
+- [x] `KnowledgeGraph.tsx` — Terran dark CATEGORY_COLORS, GroupNode, SubFlowEdge, Document template, initialNodes/initialEdges/onSave/onChange props
+- [x] `features/base-cv/lib/cvToGraph.ts` — adapter with meta passthrough (cvProfileToGraph / graphToCvProfile)
+- [x] `pages/global/BaseCvEditor.tsx` — thin KnowledgeGraph wrapper (37 lines)
+- [x] `types/api.types.ts` — add `category?: string` to `GraphNode`
+- [x] `mock/fixtures/view_match_*.json` — add `category` to all nodes
+- [x] `features/job-pipeline/lib/matchToGraph.ts` — adapter + MatchEdits type
+- [x] `features/job-pipeline/components/UnmappedSkillsPanel.tsx` — collapsible right rail
+- [x] `pages/job/Match.tsx` — KnowledgeGraph 2-column layout + UnmappedSkillsPanel + MatchDecisionModal
+
+### Fase 10 — B3b Application Context Gate ⚠️ BLOCKED — requiere backend
+- [ ] `useApplicationContext.ts`, `useContextDecision.ts`
+- [ ] `ContextBrief.tsx`, `MatchReferencePanel.tsx`, `ContextDecisionBar.tsx`
+- [ ] `ApplicationContext.tsx`
+
+---
+
+Generated from `raw/docs_postulador_ui/plan/index_checklist.md`.

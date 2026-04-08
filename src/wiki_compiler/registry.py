@@ -9,6 +9,7 @@ from pathlib import Path
 
 @dataclass
 class FieldSpec:
+    """Defines the metadata for a single field within a facet."""
     name: str
     type: str        # e.g. "str", "float|None", "list[str]"
     nullable: bool
@@ -16,6 +17,7 @@ class FieldSpec:
 
 @dataclass
 class FacetSpec:
+    """Describes a facet dimension, including its intent and associated fields."""
     facet_name: str
     question: str    # The one question this facet answers
     applies_to: set[str]  # node_type values this facet is relevant for
@@ -24,6 +26,7 @@ class FacetSpec:
 
 @dataclass
 class InjectionContext:
+    """Provides environmental context for facet injection plugins."""
     project_root: Path
     adr_dir: Path | None = None
     tests_dir: Path | None = None
@@ -33,18 +36,22 @@ class FacetRegistry:
     """Central registry mapping facet names to their specs and plugins."""
 
     def __init__(self) -> None:
+        """Initializes an empty FacetRegistry."""
         self._specs: dict[str, FacetSpec] = {}
 
     def register_spec(self, spec: FacetSpec) -> None:
+        """Adds a FacetSpec to the registry."""
         self._specs[spec.facet_name] = spec
 
     def get_spec(self, facet_name: str) -> FacetSpec:
+        """Retrieves a FacetSpec from the registry by its name."""
         if facet_name not in self._specs:
             raise KeyError(f"No facet registered under '{facet_name}'")
         return self._specs[facet_name]
 
     @property
     def facet_names(self) -> list[str]:
+        """Returns a list of all registered facet names."""
         return list(self._specs)
 
 

@@ -1,0 +1,17 @@
+---
+identity:
+  node_id: "doc:wiki/drafts/data_extraction_using_llm_diagrams_workflows.md"
+  node_type: "concept"
+edges:
+  - {target_id: "raw:raw/docs_postulador_refactor/future_docs/crawl4ai_custom_context (1).md", relation_type: "documents"}
+---
+
+Component ID: extraction-llm
+
+## Details
+
+Component ID: extraction-llm
+Context Type: reasoning
+Estimated tokens: 3,543
+
+Generated from `raw/docs_postulador_refactor/future_docs/crawl4ai_custom_context (1).md`.

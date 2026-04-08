@@ -2,7 +2,7 @@
 
 **Explanation:** The "Librarian Agent" needs a way to query the knowledge graph and submit proposals through a functional runtime. Currently, the `query_server.py` and tools like `submit_topology_proposal` have no functional backend. This blocks the AI-human collaboration cycle.
 
-**Reference:** `agents/librarian/intro.md`, `src/wiki_compiler/query_server.py`, `plan_docs/issues.md` (Librarian perspective)
+**Reference:** `agents/librarian/intro.md`, `src/wiki_compiler/query_server.py`
 
 **What to fix:** 
 1. Build out the query server in `src/wiki_compiler/query_server.py`.

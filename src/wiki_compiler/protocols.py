@@ -1,3 +1,7 @@
+"""
+Protocols and interfaces for the plugin system.
+Defines contracts for FacetInjectors and AuditChecks.
+"""
 from __future__ import annotations
 from typing import Protocol, runtime_checkable
 import networkx as nx
@@ -23,4 +27,5 @@ class AuditCheck(Protocol):
     related_facet: str  # facet_name this check validates
 
     def run(self, graph: nx.DiGraph) -> list[AuditFinding]:
+        """Executes the audit check against the provided graph and returns a list of findings."""
         ...

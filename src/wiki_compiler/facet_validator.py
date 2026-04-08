@@ -1,3 +1,6 @@
+"""
+Provides logic for validating the orthogonality and uniqueness of proposed Knowledge Graph facets.
+"""
 from __future__ import annotations
 
 import json
@@ -26,6 +29,9 @@ def validate_facet_proposal(
     graph: nx.DiGraph,
     state_path: Path,
 ) -> FacetOrthogonalityReport:
+    """
+    Evaluates a facet proposal for collisions with existing facets and redundant information.
+    """
     colliding_facets = _find_question_collisions(proposal.question, registry)
     field_collisions = _find_field_collisions(proposal.proposed_fields, registry)
     query_already_answered = _check_attempted_query(proposal.attempted_query, graph)
@@ -45,11 +51,17 @@ def validate_facet_proposal(
 
 
 def _tokenise(question: str) -> set[str]:
+    """
+    Converts a question string into a set of meaningful tokens by filtering stop words.
+    """
     tokens = re.findall(r"[a-z0-9]+", question.lower())
     return {t for t in tokens if t not in _STOP_WORDS and len(t) >= 2}
 
 
 def _jaccard(a: set[str], b: set[str]) -> float:
+    """
+    Calculates the Jaccard similarity index between two sets of tokens.
+    """
     if not a and not b:
         return 1.0  # Both questions only have stopwords -> highly similar
     return len(a & b) / len(a | b)
@@ -58,6 +70,9 @@ def _jaccard(a: set[str], b: set[str]) -> float:
 def _find_question_collisions(
     question: str, registry: FacetRegistry, threshold: float = 0.3
 ) -> list[FacetSpec]:
+    """
+    Identifies existing facets whose underlying questions are semantically similar to the proposal.
+    """
     proposed_tokens = _tokenise(question)
     collisions = []
     for name in registry.facet_names:
@@ -70,6 +85,9 @@ def _find_question_collisions(
 def _find_field_collisions(
     proposed_fields: list[dict[str, str]], registry: FacetRegistry
 ) -> list[str]:
+    """
+    Checks if any proposed field names already exist in the global facet registry.
+    """
     existing: dict[str, str] = {}
     for name in registry.facet_names:
         for field in registry.get_spec(name).fields:
@@ -82,6 +100,9 @@ def _find_field_collisions(
 
 
 def _check_attempted_query(attempted_query: dict | None, graph: nx.DiGraph) -> bool:
+    """
+    Determines if the information targeted by the proposal can already be retrieved via query.
+    """
     if not attempted_query:
         return False
     try:
@@ -93,6 +114,9 @@ def _check_attempted_query(attempted_query: dict | None, graph: nx.DiGraph) -> b
 
 
 def _update_attempts(state_path: Path, facet_name: str, is_orthogonal: bool) -> int:
+    """
+    Tracks and decrements the number of allowed validation attempts for a specific facet.
+    """
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state = json.loads(state_path.read_text(encoding="utf-8")) if state_path.exists() else {}
     if is_orthogonal:
@@ -108,6 +132,9 @@ def _build_suggestion(
     field_collisions: list[str],
     query_already_answered: bool,
 ) -> str | None:
+    """
+    Constructs a human-readable guidance message based on validation failures.
+    """
     parts: list[str] = []
     if colliding_facets:
         names = ", ".join(f.facet_name for f in colliding_facets)

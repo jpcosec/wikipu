@@ -22,6 +22,7 @@ def validate_topology_proposal(
     glossary_path: Path,
     state_path: Path,
 ) -> CollisionReport:
+    """Validates a new module proposal against the graph and glossary, reporting any collisions."""
     proposal = TopologyProposal.model_validate(proposal_data)
     graph = load_graph(graph_path)
     nodes = iter_knowledge_nodes(graph)
@@ -56,6 +57,7 @@ def validate_topology_proposal(
 def find_io_collisions(
     nodes: list[KnowledgeNode], proposed_ports: list[IOFacet]
 ) -> list[KnowledgeNode]:
+    """Identifies existing nodes whose I/O ports overlap with the proposed ports."""
     matches: list[KnowledgeNode] = []
     for node in nodes:
         if not node.io_ports:
@@ -71,6 +73,7 @@ def find_io_collisions(
 
 
 def io_overlaps(existing_port: IOFacet, proposed_port: IOFacet) -> bool:
+    """Determines if two I/O ports are considered to be overlapping based on medium and path."""
     if existing_port.medium != proposed_port.medium:
         return False
     if (
@@ -89,6 +92,7 @@ def io_overlaps(existing_port: IOFacet, proposed_port: IOFacet) -> bool:
 
 
 def load_glossary_terms(glossary_path: Path) -> set[str]:
+    """Loads and returns a set of all canonical terms and synonyms from the domain glossary."""
     if not glossary_path.exists():
         return set()
     data = yaml.safe_load(glossary_path.read_text(encoding="utf-8")) or {}
@@ -101,6 +105,7 @@ def load_glossary_terms(glossary_path: Path) -> set[str]:
 
 
 def update_attempts(state_path: Path, module_name: str, is_orthogonal: bool) -> int:
+    """Updates the remaining validation attempts for a module in the state file."""
     state_path.parent.mkdir(parents=True, exist_ok=True)
     state = (
         json.loads(state_path.read_text(encoding="utf-8"))
@@ -120,6 +125,7 @@ def build_resolution(
     unknown_terms: list[str],
     raw_write_violation: bool,
 ) -> str | None:
+    """Constructs a human-readable suggestion for resolving validation failures."""
     parts: list[str] = []
     if colliding_nodes:
         identifiers = ", ".join(node.identity.node_id for node in colliding_nodes)

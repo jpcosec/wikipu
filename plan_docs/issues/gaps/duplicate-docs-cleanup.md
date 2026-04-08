@@ -1,18 +1,15 @@
-# Duplicate Documentation Cleanup
+# Missing Canonical House Rules Document
 
-**Explanation:** There are duplicated house rule and agent intro documents across `wiki/`, `agents/`, and `raw/`. This leads to context drift where an agent or human might follow an outdated version of a rule. `raw/` should contain "seed" artifacts, but they should not be the primary reference for active development if they are already "refined" in `wiki/`.
+**Explanation:** ADR 002 declared `wiki/standards/00_house_rules.md` as the sole authority for ecosystem laws and directed that content from the Spanish draft (`raw/sourcetalk_artifacts/00_hausordnung_draft.md`) be incorporated into it. Neither the target file nor the source draft exist. The `agents/librarian/intro.md` also references `wiki/standards/00_house_rules.md` directly. Any agent following the librarian protocol will try to read a file that doesn't exist.
 
-**Reference:** 
-- `wiki/standards/00_house_rules.md` vs `raw/sourcetalk_artifacts/00_hausordnung_draft.md`
-- `agents/librarian/intro.md` vs `raw/sourcetalk_artifacts/librarian_agent_draft.md`
+**Reference:** `wiki/adrs/002_documentation_consolidation.md`, `agents/librarian/intro.md`
 
-**What to fix:** Consolidate to a single source of truth for each. Ensure the versions in `wiki/` and `agents/` are the canonical ones and the versions in `raw/` are clearly marked as immutable source ore or historical drafts.
+**What to fix:** Create `wiki/standards/00_house_rules.md` as the canonical ecosystem law document, incorporating relevant rules from `raw/cleansing_protocol.md`, `wiki/concepts/wiki_construction_principles.md`, and the librarian protocol in `agents/librarian/intro.md`.
 
-**How to do it:** 
-1. Compare `wiki/standards/00_house_rules.md` and `raw/sourcetalk_artifacts/00_hausordnung_draft.md`. If the wiki version is a complete refinement, keep it as truth.
-2. Compare `agents/librarian/intro.md` and `raw/sourcetalk_artifacts/librarian_agent_draft.md`.
-3. If they are identical, we can leave the `raw/` version (as it is immutable) but the documentation should point to the `wiki/` or `agents/` version.
-4. If there are contradictions, the `wiki/` version must win.
-5. Consider adding a note to `raw/sourcetalk_artifacts/` indicating they are superseded by the `wiki/` versions (though `raw/` is supposedly immutable, so we might just need to adjust our reading priority).
+**How to do it:**
+1. Read `agents/librarian/intro.md` to extract the rules it references.
+2. Read `wiki/concepts/wiki_construction_principles.md` and `raw/cleansing_protocol.md` for additional laws.
+3. Write `wiki/standards/00_house_rules.md` as a consolidated, numbered law list.
+4. Update `agents/librarian/intro.md` to point to the new file (it already does by convention).
 
 **Depends on:** none

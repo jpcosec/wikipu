@@ -1,3 +1,7 @@
+"""
+Serves graph queries for the Librarian Agent protocol.
+Supports path traversal and I/O searching via the CLI runtime.
+"""
 from __future__ import annotations
 
 import json
@@ -17,6 +21,7 @@ def query_graph(
     schema_ref: str | None = None,
     path_template: str | None = None,
 ) -> dict[str, object]:
+    """Executes a query against the knowledge graph and returns the result as a dictionary."""
     graph = load_graph(graph_path)
     if query_type == "get_node":
         ensure_node(node_id)
@@ -60,6 +65,7 @@ def query_graph(
 def filter_graph_by_relation(
     graph: nx.DiGraph, relation_filter: str | None
 ) -> nx.DiGraph:
+    """Returns a subgraph containing only the edges that match the specified relation type."""
     if not relation_filter:
         return graph
     filtered = nx.DiGraph()
@@ -73,6 +79,7 @@ def filter_graph_by_relation(
 def matches_io(
     port: object, medium: str | None, schema_ref: str | None, path_template: str | None
 ) -> bool:
+    """Checks if an I/O port matches the specified medium, schema, or path template criteria."""
     values = port.model_dump() if hasattr(port, "model_dump") else dict(port)
     return (
         (medium is None or values.get("medium") == medium)
@@ -82,6 +89,7 @@ def matches_io(
 
 
 def ensure_node(node_id: str | None) -> str:
+    """Validates that a node ID is provided, raising an error if it is missing."""
     if not node_id:
         raise ValueError("node_id is required for this query type")
     return node_id
@@ -96,6 +104,7 @@ def query_main(
     schema_ref: str | None = None,
     path_template: str | None = None,
 ) -> None:
+    """Main entry point for querying the graph and printing the results in JSON format."""
     result = query_graph(
         graph_path=graph_path,
         query_type=query_type,
@@ -110,6 +119,7 @@ def query_main(
 
 
 def serialize_model(value: object) -> object:
+    """Serializes a model object to a JSON-compatible dictionary using model_dump."""
     if hasattr(value, "model_dump"):
         return value.model_dump()
     raise TypeError(f"Object of type {type(value)!r} is not JSON serializable")

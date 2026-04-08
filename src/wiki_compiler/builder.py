@@ -174,6 +174,9 @@ def parse_markdown_node(filepath: Path) -> tuple[KnowledgeNode | None, str]:
 
 
 def extract_heading(markdown: str) -> str:
+    """
+    Extracts the first top-level heading from a markdown string.
+    """
     for line in markdown.splitlines():
         stripped = line.strip()
         if stripped.startswith("#"):
@@ -182,6 +185,9 @@ def extract_heading(markdown: str) -> str:
 
 
 def extract_transclusions(markdown: str, files_index: dict[str, Path]) -> list[str]:
+    """
+    Identifies and resolves wiki-style transclusions in markdown content.
+    """
     targets: list[str] = []
     for match in TRANSCLUSION_REGEX.finditer(markdown):
         target_name = match.group(1)
@@ -193,6 +199,9 @@ def extract_transclusions(markdown: str, files_index: dict[str, Path]) -> list[s
 
 
 def calculate_compliance_score(graph: nx.DiGraph) -> float:
+    """
+    Computes the percentage of nodes that meet implementation or testing standards.
+    """
     statuses = [
         data.get("status")
         for _, data in graph.nodes(data=True)
@@ -210,6 +219,9 @@ def update_compliance_baseline(
     *,
     update_baseline: bool,
 ) -> tuple[bool, bool]:
+    """
+    Updates or checks the current compliance score against a persistent baseline.
+    """
     baseline_path.parent.mkdir(parents=True, exist_ok=True)
     if not baseline_path.exists() or update_baseline:
         write_baseline(baseline_path, score)
@@ -220,5 +232,8 @@ def update_compliance_baseline(
 
 
 def write_baseline(baseline_path: Path, score: float) -> None:
+    """
+    Writes the compliance score to a JSON baseline file.
+    """
     payload = {"score": score}
     baseline_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")

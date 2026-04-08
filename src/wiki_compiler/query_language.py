@@ -1,9 +1,14 @@
+"""
+Pydantic schemas defining the StructuredQuery language.
+Provides the types used to filter the graph by facets, fields, and scope.
+"""
 from __future__ import annotations
 from typing import Any, Literal
 from pydantic import BaseModel, Field
 
 
 class FieldCondition(BaseModel):
+    """Represents a single comparison condition on a facet field."""
     field: str
     op: Literal["eq", "ne", "is_null", "is_not_null", "contains", "gt", "lt"]
     value: Any = None

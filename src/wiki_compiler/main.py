@@ -1,3 +1,6 @@
+"""
+Entry point for the Wiki Compiler CLI, coordinating build, audit, and query operations.
+"""
 from __future__ import annotations
 
 import argparse
@@ -20,6 +23,9 @@ from .validator import validate_topology_proposal
 
 
 def main() -> None:
+    """
+    Parses command-line arguments and dispatches to the appropriate sub-command handler.
+    """
     parser = build_parser()
     args = parser.parse_args()
     try:
@@ -172,6 +178,9 @@ def main() -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """
+    Constructs the argument parser with all supported sub-commands and options.
+    """
     parser = argparse.ArgumentParser(description="LLM Wiki Compiler")
     subparsers = parser.add_subparsers(dest="command", required=True)
 

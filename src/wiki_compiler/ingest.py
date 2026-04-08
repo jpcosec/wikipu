@@ -1,3 +1,6 @@
+"""
+Handles the ingestion of raw source files and their transformation into Knowledge Graph draft nodes.
+"""
 from __future__ import annotations
 
 import re
@@ -12,10 +15,13 @@ def ingest_raw_sources(
     project_root: Path | None = None,
     overwrite: bool = False,
 ) -> list[Path]:
+    """
+    Scans a directory for raw source files and generates draft markdown nodes for each valid file.
+    """
     root = project_root or source_dir.parent
     ignore_rules = load_wikiignore_rules(root / ".wikiignore")
     written: list[Path] = []
-    for source_path in sorted(path for path in source_dir.rglob("*") if path.is_file()):
+    for source_path in sorted(path for path in source_dir.rglob("*.md") if path.is_file()):
         if any(
             part.startswith(".") for part in source_path.relative_to(source_dir).parts
         ):
@@ -43,7 +49,9 @@ def ingest_raw_sources(
 
 
 def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
-    """Splits a source file into atomic nodes based on headings."""
+    """
+    Splits a single source file into multiple atomic nodes based on its internal heading structure.
+    """
     try:
         text = source_path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
@@ -62,12 +70,10 @@ def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
         if lines[0].startswith("## "):
             title = lines[0].lstrip("# ").strip()
             content = "\n".join(lines[1:]).strip()
-            # Heuristic for node_type
+            # Heuristic for node_type (must be a valid KnowledgeNode type)
             node_type = "concept"
-            if "how to" in title.lower() or "steps" in content.lower():
-                node_type = "how_to"
-            elif "rule" in title.lower() or "standard" in title.lower():
-                node_type = "standard"
+            if "rule" in title.lower() or "standard" in title.lower():
+                node_type = "doc_standard"
         else:
             # First section might be the main title
             if lines[0].startswith("# "):
@@ -92,6 +98,9 @@ def render_draft(
     content: str,
     node_type: str = "concept",
 ) -> str:
+    """
+    Generates the markdown content for a draft node, including required frontmatter.
+    """
     rel_dest = draft_node_path(dest_dir, draft_slug)
     # Extract first paragraph as abstract
     lines = [line.strip() for line in content.splitlines() if line.strip()]
@@ -105,8 +114,6 @@ def render_draft(
             f'  node_type: "{node_type}"',
             "edges:",
             f'  - {{target_id: "raw:{rel_source}", relation_type: "documents"}}',
-            "compliance:",
-            '  status: "planned"',
             "---",
             "",
             abstract,
@@ -121,6 +128,9 @@ def render_draft(
 
 
 def summarize_source(source_path: Path) -> tuple[str, str]:
+    """
+    Extracts a concise title and summary from a source file for preliminary indexing.
+    """
     try:
         text = source_path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
@@ -136,10 +146,18 @@ def summarize_source(source_path: Path) -> tuple[str, str]:
 
 
 def draft_node_path(dest_dir: Path, stem: str) -> str:
+    """
+    Computes the canonical node path for a draft markdown file.
+    """
     base = dest_dir.parent.name + "/" + dest_dir.name
     return f"{base}/{slugify(stem)}.md"
 
 
+_MAX_SLUG_LENGTH = 80
+
 def slugify(value: str) -> str:
+    """
+    Converts a string into a URL-friendly slug using underscores, capped at 80 chars.
+    """
     slug = re.sub(r"[^a-zA-Z0-9]+", "_", value).strip("_").lower()
-    return slug or "draft_node"
+    return (slug or "draft_node")[:_MAX_SLUG_LENGTH].rstrip("_")

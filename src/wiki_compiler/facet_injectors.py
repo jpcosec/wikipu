@@ -1,3 +1,6 @@
+"""
+Enriches Knowledge Graph nodes with additional facets by scanning architectural decisions and test files.
+"""
 from __future__ import annotations
 import ast
 import re
@@ -24,6 +27,9 @@ class ADRInjector:
     )
 
     def inject(self, node: KnowledgeNode, context: InjectionContext) -> KnowledgeNode:
+        """
+        Integrates ADR metadata into a KnowledgeNode if a matching ADR file is found.
+        """
         if node.identity.node_type not in self.spec.applies_to:
             return node
         adr_dir = context.adr_dir
@@ -56,6 +62,9 @@ class TestMapInjector:
     )
 
     def inject(self, node: KnowledgeNode, context: InjectionContext) -> KnowledgeNode:
+        """
+        Maps unit tests to KnowledgeNodes by analyzing test file imports.
+        """
         if node.identity.node_type not in self.spec.applies_to:
             return node
         tests_dir = context.tests_dir
@@ -69,6 +78,9 @@ class TestMapInjector:
         return node
 
     def _test_imports_node(self, test_file: Path, node_id: str, project_root: Path) -> bool:
+        """
+        Determines if a test file imports a specific module node.
+        """
         try:
             tree = ast.parse(test_file.read_text(encoding="utf-8"))
         except SyntaxError:
@@ -83,6 +95,9 @@ class TestMapInjector:
 
 
 def _module_to_node_id(module: str, project_root: Path) -> str | None:
+    """
+    Translates a Python module path into a file-based node ID.
+    """
     relative = module.replace(".", "/") + ".py"
     # Try different source layouts
     for prefix in ("src", ""):
