@@ -11,6 +11,7 @@ edges:
   - {target_id: "doc:wiki/reference/cli/ingest.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/query.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/scaffold.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/validate_wiki.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/autopoiesis_coordinator.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/gate_loop.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/llm_agent.md", relation_type: "contains"}
@@ -30,5 +31,5 @@ This index gathers lookup-oriented pages: command references, schema references,
 |---|---|
 | `faq.md` | Quick answers to recurring onboarding questions |
 | `knowledge_node_facets.md` | Node, edge, and facet vocabulary |
-| `cli/` | Command-level reference for `wiki-compiler` |
+| `cli/` | Command-level reference for `wiki-compiler`, including validation surfaces |
 | `protocols/` | Audience-specific operating protocols |

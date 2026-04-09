@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from .auditor import run_audit
+from .artifact_validation import validate_wiki_artifact
 from .builder import build_wiki
 from .context import render_context
 from .curate import promote_draft
@@ -139,6 +140,12 @@ def main() -> None:
             )
             print(json.dumps(report.model_dump(), indent=2))
             if not report.is_orthogonal:
+                sys.exit(1)
+            return
+        if args.command == "validate-wiki":
+            report = validate_wiki_artifact(Path(args.path))
+            print(json.dumps(report.model_dump(), indent=2))
+            if not report.is_valid:
                 sys.exit(1)
             return
         if args.command == "context":
@@ -337,6 +344,13 @@ def build_parser() -> argparse.ArgumentParser:
         "--state-file",
         default=".validation_session.json",
         help="Validation attempt state file",
+    )
+
+    validate_wiki_parser = subparsers.add_parser(
+        "validate-wiki", help="Validate one authored wiki artifact"
+    )
+    validate_wiki_parser.add_argument(
+        "--path", required=True, help="Path to the wiki artifact markdown file"
     )
 
     context_parser = subparsers.add_parser(

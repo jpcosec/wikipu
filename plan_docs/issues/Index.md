@@ -23,12 +23,15 @@ Foundation, interface, and generation layers are functional. The immediate goals
   10. plan_docs/issues/unimplemented/cleansing-protocol.md
       • Implement cleanser.py with anomaly detectors and CleansingProposal.
       • Depends on: none.
-  12. plan_docs/issues/unimplemented/artifact-schema-validation.md
-      • Pydantic models and wiki-compiler validate command for all artifact schemas (markdown/YAML only).
-      • Depends on: query-server-runtime.
-  13. plan_docs/issues/unimplemented/scanner-plugin-interface.md
-     • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
-     • Depends on: artifact-schema-validation.
+  12. plan_docs/issues/unimplemented/operational-artifact-validation.md
+      • Add validators for issue, board, backlog, and gate artifacts using the new wiki artifact validation foundation.
+      • Depends on: none.
+  13. plan_docs/issues/unimplemented/artifact-validation-rollup.md
+      • Add repo-wide artifact validation traversal and workflow integration.
+      • Depends on: operational-artifact-validation.
+  14. plan_docs/issues/unimplemented/scanner-plugin-interface.md
+      • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
+      • Depends on: artifact-validation-rollup.
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
@@ -48,11 +51,12 @@ Foundation, interface, and generation layers are functional. The immediate goals
 ┄┄ Dependency summary
 
 Phase 3[10] → Phase 4[17]      (coordinator depends on cleanser alongside resolved curation/query foundations)
-Phase 3[12] → Phase 3[13]      (scanner plugin targets stable KnowledgeNode schema)
-Phase 3[12] → Phase 4[18]      (context routing still depends on the query runtime foundation carried by artifact validation)
+Phase 3[12] → Phase 3[13]      (rollup builds on operational artifact validators)
+Phase 3[13] → Phase 3[14]      (scanner plugin targets the stabilized validation surface)
+Phase 3[13] → Phase 4[18]      (context routing still depends on the broader validation/runtime foundation)
 Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for memory)
 
 ┄┄ Parallelization map
 
-Phase 3  [10] then [12] then [13]         — 10 first, then 12, then 13
-Phase 4  [15] then [17] then [16]; [18] after [12]
+Phase 3  [10][12] then [13] then [14]     — 10 and 12 parallel, then 13, then 14
+Phase 4  [15] then [17] then [16]; [18] after [13]

@@ -109,6 +109,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/artifact_validation.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/auditor.py",
             "relation_type": "contains",
             "metadata": {}
@@ -368,6 +373,11 @@
         },
         "edges": [
           {
+            "target_id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/__pycache__/auditor.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
@@ -475,6 +485,67 @@
         "test_map": null
       },
       "id": "dir:src/wiki_compiler/__pycache__"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/artifact_validation.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Validation helpers for authored wiki artifacts.",
+          "raw_docstring": "Validation helpers for authored wiki artifacts."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/artifact_validation.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "from pathlib import Path",
+            "from .builder import parse_markdown_node",
+            "from .contracts import ArtifactValidationFinding",
+            "from .contracts import ArtifactValidationReport"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": {
+          "test_type": "unit",
+          "coverage_percent": null
+        }
+      },
+      "id": "file:src/wiki_compiler/artifact_validation.py"
     },
     {
       "type": "file",
@@ -838,6 +909,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/contracts.py:CollisionReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -1281,6 +1362,7 @@
             "import sys",
             "from pathlib import Path",
             "from .auditor import run_audit",
+            "from .artifact_validation import validate_wiki_artifact",
             "from .builder import build_wiki",
             "from .context import render_context",
             "from .curate import promote_draft",
@@ -2045,6 +2127,24 @@
       "status": "unknown",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null
+      },
+      "id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/__pycache__/auditor.cpython-313.pyc",
           "node_type": "concept"
         },
@@ -2701,6 +2801,11 @@
           },
           {
             "target_id": "doc:wiki/reference/cli/scaffold.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/validate_wiki.md",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -3518,6 +3623,47 @@
         "test_map": null
       },
       "id": "doc:wiki/reference/cli/scaffold.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/validate_wiki.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/artifact_validation.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Validates one authored wiki artifact against the implemented frontmatter, abstract, template, and ADR-local rules. This command is the foundation layer for turning the artifact standards into executable checks.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/validate_wiki.md"
     },
     {
       "type": "doc_standard",
@@ -4638,6 +4784,37 @@
       "id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
     },
     {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate one wiki markdown artifact against implemented local rules.",
+          "raw_docstring": "Validate one wiki markdown artifact against implemented local rules."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "validate_wiki_artifact(path: Path) -> ArtifactValidationReport"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact"
+    },
+    {
       "type": "doc_standard",
       "status": "implemented",
       "schema": {
@@ -4893,6 +5070,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/contracts.py:CollisionReport",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -6694,6 +6881,99 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_validate_identity_path` in `src/wiki_compiler/artifact_validation.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_validate_identity_path(path: Path, node_id: str) -> list[ArtifactValidationFinding]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convert a filesystem path to the repo-style path used by node_id values.",
+          "raw_docstring": "Convert a filesystem path to the repo-style path used by node_id values."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_repo_style_path(path: Path) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_validate_adr` in `src/wiki_compiler/artifact_validation.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_validate_adr(path: Path, node: object) -> list[ArtifactValidationFinding]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/builder.py:compile_markdown_node",
           "node_type": "code_construct"
         },
@@ -6905,6 +7185,72 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/builder.py:add_documents_edges"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A single validation failure for an authored artifact file.",
+          "raw_docstring": "A single validation failure for an authored artifact file."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ArtifactValidationFinding"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validation result for one authored artifact file.",
+          "raw_docstring": "Validation result for one authored artifact file."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ArtifactValidationReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
     },
     {
       "type": "code_construct",
@@ -9320,6 +9666,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "file:src/wiki_compiler/artifact_validation.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/auditor.py"
     },
     {
@@ -9446,6 +9798,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
+      "target": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/auditor.cpython-313.pyc"
     },
     {
@@ -9555,6 +9913,30 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/artifact_validation.py",
+      "target": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/artifact_validation.py",
+      "target": "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/artifact_validation.py",
+      "target": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/artifact_validation.py",
+      "target": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
     },
     {
       "relation": "contains",
@@ -9819,6 +10201,18 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/contracts.py",
       "target": "code:src/wiki_compiler/contracts.py:CollisionReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
     },
     {
       "relation": "contains",
@@ -10604,6 +10998,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/validate_wiki.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
     },
     {
@@ -10881,6 +11281,24 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/scaffold.md",
       "target": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/validate_wiki.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/validate_wiki.md",
+      "target": "file:src/wiki_compiler/artifact_validation.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/validate_wiki.md",
+      "target": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact"
     },
     {
       "relation": "documents",
@@ -11193,6 +11611,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/contracts.md",
       "target": "code:src/wiki_compiler/contracts.py:CollisionReport"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/contracts.md",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/contracts.md",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
     },
     {
       "relation": "documents",
