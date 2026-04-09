@@ -2496,6 +2496,66 @@
             "target_id": "doc:wiki/reference/knowledge_node_facets.md",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/build.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/cleanse.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/curate.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/ingest.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/query.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/scaffold.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/gate_loop.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/human_contributor.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/llm_agent.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/socratic.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/trail_collect.md",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -2620,6 +2680,11 @@
             "metadata": {}
           },
           {
+            "target_id": "doc:wiki/reference/cli/cleanse.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "doc:wiki/reference/cli/curate.md",
             "relation_type": "contains",
             "metadata": {}
@@ -2630,12 +2695,42 @@
             "metadata": {}
           },
           {
+            "target_id": "doc:wiki/reference/cli/query.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/scaffold.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/gate_loop.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "doc:wiki/reference/protocols/llm_agent.md",
             "relation_type": "contains",
             "metadata": {}
           },
           {
             "target_id": "doc:wiki/reference/protocols/human_contributor.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/socratic.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/trail_collect.md",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -3131,6 +3226,11 @@
             "target_id": "file:src/wiki_compiler/builder.py",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/builder.py:build_wiki",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -3151,6 +3251,37 @@
     },
     {
       "type": "reference",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/cleanse.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This planned command will detect graph anomalies and propose structural corrections before any destructive or topology-changing cleanup is applied. It exists as a protocol placeholder so the graph can model the cleansing step before the runtime is fully implemented.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/cleanse.md"
+    },
+    {
+      "type": "reference",
       "status": "implemented",
       "schema": {
         "identity": {
@@ -3165,6 +3296,16 @@
           },
           {
             "target_id": "file:src/wiki_compiler/curate.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:score_drafts",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:promote_draft",
             "relation_type": "documents",
             "metadata": {}
           },
@@ -3190,16 +3331,6 @@
           },
           {
             "target_id": "code:src/wiki_compiler/curate.py:_sentence_count",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:promote_draft",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:score_drafts",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -3240,6 +3371,11 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
             "relation_type": "documents",
             "metadata": {}
@@ -3266,11 +3402,6 @@
           },
           {
             "target_id": "code:src/wiki_compiler/ingest.py:draft_node_path",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
             "relation_type": "documents",
             "metadata": {}
           },
@@ -3305,6 +3436,144 @@
         "test_map": null
       },
       "id": "doc:wiki/reference/cli/ingest.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/query.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/query_server.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/query_server.py:query_main",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Queries the compiled knowledge graph for nodes, graph neighborhoods, and I/O matches. This command is the direct runtime surface agents and humans use for graph-first navigation.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/query.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/scaffold.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/scaffolder.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Creates a new module scaffold that matches Wikipu's expected repository shape. Use it after a design has passed the topology proposal flow and you are ready to create files in `src/`.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/scaffold.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/how_to/use_autopoiesis.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This protocol placeholder reserves a graph node for the autopoiesis coordinator that will eventually orchestrate the system's self-maintenance cycle. It links the conceptual cycle to a future operational coordinator surface.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/gate_loop.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "This protocol placeholder reserves a graph node for the gate monitoring loop that tracks open human-approval requirements. It exists so the graph can represent that control point before the desk runtime is fully encoded.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/gate_loop.md"
     },
     {
       "type": "doc_standard",
@@ -3367,6 +3636,62 @@
         "test_map": null
       },
       "id": "doc:wiki/reference/protocols/human_contributor.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/socratic.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/how_to/use_socratic_methodology.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This protocol placeholder marks the Socratic interrogation step as a first-class graph node. Its operational details are currently carried by the how-to guide and will be promoted into a fuller protocol surface as the desk and subagent flow mature.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/socratic.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/trail_collect.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "This protocol placeholder reserves a graph node for the trail collect process that summarizes and commits a completed session. It exists so the graph can represent the lifecycle step even before a fuller protocol document or runtime is implemented.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/trail_collect.md"
     },
     {
       "type": "doc_standard",
@@ -4156,6 +4481,161 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/builder.py:write_baseline"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:score_drafts",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",",
+          "raw_docstring": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",\nrun quality checks, return ranked list (highest quality first).\n\nQuality signals:\n  +1  non-empty abstract (not the fallback \"No abstract provided.\")\n  +1  abstract length > 1 sentence\n  +1  node_type is not the fallback default (\"file\")\n  +1  source file still exists on disk\n\nEach result: {\"node_id\": str, \"score\": int, \"issues\": list[str]}"
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:score_drafts"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:promote_draft",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Move draft node file from wiki/drafts/ to dest path in wiki/,",
+          "raw_docstring": "Move draft node file from wiki/drafts/ to dest path in wiki/,\nrewrite node_id in frontmatter to match new path.\nTrigger is external \u2014 caller runs wiki-compiler build after."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "promote_draft(node_id: str, dest: str, drafts_dir: Path, wiki_dir: Path) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:promote_draft"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.",
+          "raw_docstring": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.\nDraft nodes land in dest_dir/<source_subdir>/ mirroring the first path component under source_dir.\nAfter ingestion, generates an INDEX.md per subdirectory."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "ingest_raw_sources(source_dir: Path, dest_dir: Path, project_root: Path | None = None, overwrite: bool = False) -> list[Path]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/query_server.py:query_main",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Main entry point for querying the graph and printing the results in JSON format.",
+          "raw_docstring": "Main entry point for querying the graph and printing the results in JSON format."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/query_server.py:query_main"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Creates the immutable structure of a new module.",
+          "raw_docstring": "Creates the immutable structure of a new module."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "generate_scaffolding(module_path: Path, intent: str)"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
     },
     {
       "type": "doc_standard",
@@ -5653,37 +6133,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.",
-          "raw_docstring": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.\nDraft nodes land in dest_dir/<source_subdir>/ mirroring the first path component under source_dir.\nAfter ingestion, generates an INDEX.md per subdirectory."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "ingest_raw_sources(source_dir: Path, dest_dir: Path, project_root: Path | None = None, overwrite: bool = False) -> list[Path]"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "code:src/wiki_compiler/ingest.py:decompose_source",
           "node_type": "code_construct"
         },
@@ -6462,37 +6911,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "code:src/wiki_compiler/curate.py:score_drafts",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",",
-          "raw_docstring": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",\nrun quality checks, return ranked list (highest quality first).\n\nQuality signals:\n  +1  non-empty abstract (not the fallback \"No abstract provided.\")\n  +1  abstract length > 1 sentence\n  +1  node_type is not the fallback default (\"file\")\n  +1  source file still exists on disk\n\nEach result: {\"node_id\": str, \"score\": int, \"issues\": list[str]}"
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "code:src/wiki_compiler/curate.py:score_drafts"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
           "node_type": "code_construct"
         },
@@ -6611,37 +7029,6 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/curate.py:_node_id_to_file"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "code:src/wiki_compiler/curate.py:promote_draft",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Move draft node file from wiki/drafts/ to dest path in wiki/,",
-          "raw_docstring": "Move draft node file from wiki/drafts/ to dest path in wiki/,\nrewrite node_id in frontmatter to match new path.\nTrigger is external \u2014 caller runs wiki-compiler build after."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "promote_draft(node_id: str, dest: str, drafts_dir: Path, wiki_dir: Path) -> None"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "code:src/wiki_compiler/curate.py:promote_draft"
     },
     {
       "type": "code_construct",
@@ -7596,37 +7983,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "code:src/wiki_compiler/query_server.py:query_main",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Main entry point for querying the graph and printing the results in JSON format.",
-          "raw_docstring": "Main entry point for querying the graph and printing the results in JSON format."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None) -> None"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "code:src/wiki_compiler/query_server.py:query_main"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "code:src/wiki_compiler/query_server.py:serialize_model",
           "node_type": "code_construct"
         },
@@ -7811,37 +8167,6 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/registry.py:build_default_registry"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Creates the immutable structure of a new module.",
-          "raw_docstring": "Creates the immutable structure of a new module."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "generate_scaffolding(module_path: Path, intent: str)"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
     },
     {
       "type": "code_construct",
@@ -10150,6 +10475,78 @@
       "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
     {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/build.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/cleanse.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/curate.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/ingest.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/query.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/cli/scaffold.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/gate_loop.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/human_contributor.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/llm_agent.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/socratic.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/standards/00_house_rules.md",
+      "target": "doc:wiki/reference/protocols/trail_collect.md"
+    },
+    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/languages/Index.md",
@@ -10177,6 +10574,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/cleanse.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/cli/curate.md"
     },
     {
@@ -10189,6 +10592,30 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/query.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/scaffold.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/gate_loop.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/protocols/llm_agent.md"
     },
     {
@@ -10196,6 +10623,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/protocols/human_contributor.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/socratic.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/trail_collect.md"
     },
     {
       "relation": "contains",
@@ -10272,6 +10711,18 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/reference/cli/build.md",
+      "target": "code:src/wiki_compiler/builder.py:build_wiki"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/cleanse.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/reference/cli/curate.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -10280,6 +10731,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/curate.md",
       "target": "file:src/wiki_compiler/curate.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:score_drafts"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:promote_draft"
     },
     {
       "relation": "documents",
@@ -10314,18 +10777,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:promote_draft"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:score_drafts"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/reference/cli/ingest.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -10334,6 +10785,12 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/ingest.md",
       "target": "file:src/wiki_compiler/ingest.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
     },
     {
       "relation": "documents",
@@ -10375,12 +10832,6 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
       "target": "code:src/wiki_compiler/ingest.py:render_draft"
     },
     {
@@ -10396,6 +10847,48 @@
       "target": "code:src/wiki_compiler/ingest.py:summarize_source"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "file:src/wiki_compiler/query_server.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "code:src/wiki_compiler/query_server.py:query_main"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "file:src/wiki_compiler/scaffolder.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+      "target": "doc:wiki/how_to/use_autopoiesis.md"
+    },
+    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/reference/protocols/llm_agent.md",
@@ -10406,6 +10899,12 @@
       "metadata": {},
       "source": "doc:wiki/reference/protocols/human_contributor.md",
       "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/protocols/socratic.md",
+      "target": "doc:wiki/how_to/use_socratic_methodology.md"
     },
     {
       "relation": "documents",

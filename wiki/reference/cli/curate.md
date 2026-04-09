@@ -5,6 +5,8 @@ identity:
 edges:
   - {target_id: "file:src/wiki_compiler/main.py", relation_type: "documents"}
   - {target_id: "file:src/wiki_compiler/curate.py", relation_type: "documents"}
+  - {target_id: "code:src/wiki_compiler/curate.py:score_drafts", relation_type: "documents"}
+  - {target_id: "code:src/wiki_compiler/curate.py:promote_draft", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []

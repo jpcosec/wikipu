@@ -5,6 +5,18 @@ identity:
 edges:
   - {target_id: "doc:wiki/concepts/wiki_construction_principles.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/build.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/cleanse.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/curate.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/ingest.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/query.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/scaffold.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/autopoiesis_coordinator.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/gate_loop.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/human_contributor.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/llm_agent.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/socratic.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/protocols/trail_collect.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []

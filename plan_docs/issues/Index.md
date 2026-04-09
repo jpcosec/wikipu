@@ -32,9 +32,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
-14. plan_docs/issues/unimplemented/self-inclusion.md
-    • Add CLI commands and agent protocols as nodes in the graph they govern.
-    • Depends on: none.
 15. plan_docs/issues/unimplemented/perception-layer.md
     • Implement GitFacet and wiki-compiler status command for drift detection.
     • Depends on: none.
@@ -58,4 +55,4 @@ Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for me
 ┄┄ Parallelization map
 
 Phase 3  [10] then [12] then [13]         — 10 first, then 12, then 13
-Phase 4  [14][15] then [17] then [16]; [18] after [12]
+Phase 4  [15] then [17] then [16]; [18] after [12]

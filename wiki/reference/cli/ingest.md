@@ -5,6 +5,7 @@ identity:
 edges:
   - {target_id: "file:src/wiki_compiler/main.py", relation_type: "documents"}
   - {target_id: "file:src/wiki_compiler/ingest.py", relation_type: "documents"}
+  - {target_id: "code:src/wiki_compiler/ingest.py:ingest_raw_sources", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []

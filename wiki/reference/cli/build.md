@@ -5,6 +5,7 @@ identity:
 edges:
   - {target_id: "file:src/wiki_compiler/main.py", relation_type: "documents"}
   - {target_id: "file:src/wiki_compiler/builder.py", relation_type: "documents"}
+  - {target_id: "code:src/wiki_compiler/builder.py:build_wiki", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []
