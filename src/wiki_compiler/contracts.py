@@ -157,6 +157,27 @@ class ComplianceFacet(BaseModel):
     )
 
 
+class GitFacet(BaseModel):
+    """Dimension: Git-tracked state for a file-backed node."""
+
+    blob_sha: str = Field(description="Current blob hash for the file at build time.")
+    created_at_commit: str | None = Field(
+        default=None,
+        description="First commit that introduced the file, if available.",
+    )
+    last_modified_commit: str | None = Field(
+        default=None,
+        description="Most recent commit touching the file, if available.",
+    )
+    last_modified_author: str | None = Field(
+        default=None,
+        description="Email of the last modifying author, if available.",
+    )
+    status: Literal["tracked", "untracked", "modified_since_build"] = Field(
+        description="Git tracking status known at build or status-check time."
+    )
+
+
 # --- 3. The Unified Node ---
 
 
@@ -196,6 +217,9 @@ class KnowledgeNode(BaseModel):
     )
     test_map: TestMapFacet | None = Field(
         default=None, description="Testing strategy and coverage for this node."
+    )
+    git: GitFacet | None = Field(
+        default=None, description="Git metadata for file-backed or doc-backed nodes."
     )
 
 

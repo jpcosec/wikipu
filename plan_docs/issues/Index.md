@@ -35,15 +35,15 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
-15. plan_docs/issues/unimplemented/perception-layer.md
-    • Implement GitFacet and wiki-compiler status command for drift detection.
+15. plan_docs/issues/unimplemented/perception-gates-and-classification.md
+    • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
     • Depends on: none.
 16. plan_docs/issues/unimplemented/cross-session-memory.md
     • SessionLog + TrailArtifact models, session log writes, wiki-compiler history.
     • Depends on: unimplemented/autopoiesis-loop-coordinator.md.
 17. plan_docs/issues/unimplemented/autopoiesis-loop-coordinator.md
     • wiki-compiler run: the full cycle orchestrator with minimal energy enforcement.
-    • Depends on: perception-layer, cleansing-protocol, query-server-runtime.
+    • Depends on: perception-gates-and-classification, cleansing-apply-and-advanced-detectors.
 18. plan_docs/issues/unimplemented/context-routing.md
     • Add wiki-compiler context command: graph-driven context bundle for any task in one CLI call.
     • Depends on: query-server-runtime, how-to-wiki-section, verification-checklists.

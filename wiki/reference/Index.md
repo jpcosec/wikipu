@@ -11,6 +11,7 @@ edges:
   - {target_id: "doc:wiki/reference/cli/ingest.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/query.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/scaffold.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/status.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/validate_wiki.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/autopoiesis_coordinator.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/gate_loop.md", relation_type: "contains"}

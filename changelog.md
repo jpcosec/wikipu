@@ -2,6 +2,7 @@
 
 ## 2026-04-09
 
+- resolved the perception foundation: added `GitFacet`, build-time git metadata injection, `wiki-compiler status`, and spun perturbation classification plus gate-aware reporting into a follow-up issue
 - resolved the cleansing detection foundation: added `cleanse --detect`, cleansing proposal/report models, first-pass anomaly detectors, and spun the apply/advanced detector work into a follow-up issue
 - resolved the artifact validation foundation: added `wiki-compiler validate-wiki`, typed artifact validation reports, wiki/ADR checks, and split the remaining operational and rollup work into follow-up issues
 - resolved the self-inclusion issue by adding graph nodes for the remaining CLI surfaces, creating planned protocol placeholders, and linking the house rules to the system surfaces they govern

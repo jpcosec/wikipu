@@ -44,6 +44,7 @@ This reference defines the node and facet vocabulary used throughout the Wikipu 
 | `ComplianceFacet` | How complete and rule-compliant is this node? | `status`, `failing_standards`, `exemption_reason` |
 | `TestMapFacet` | How is this node tested? | `test_type`, `coverage_percent` |
 | `ADRFacet` | What decision shaped this node? | `decision_id`, `status`, `context_summary` |
+| `GitFacet` | What git-backed state is known about this file? | `blob_sha`, `created_at_commit`, `last_modified_commit`, `last_modified_author`, `status` |
 
 ### Compliance status values
 

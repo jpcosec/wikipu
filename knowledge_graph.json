@@ -37,7 +37,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "dir:src"
     },
@@ -90,7 +91,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "dir:src/llm_wiki_compiler.egg-info"
     },
@@ -174,6 +176,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/perception.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/protocols.py",
             "relation_type": "contains",
             "metadata": {}
@@ -228,7 +235,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "dir:src/wiki_compiler"
     },
@@ -256,7 +264,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "dir:src/wikipu"
     },
@@ -274,7 +283,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "954f0a10a5fc6db439d272ee89799ea0873a1682",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/PKG-INFO"
     },
@@ -292,7 +308,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "db1181508c4bacb4b5a07b6a4d5b63754b3db24e",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/SOURCES.txt"
     },
@@ -310,7 +333,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/dependency_links.txt"
     },
@@ -328,7 +358,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6231bddf0aef9e36477385f41def688ea6cd07a4",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/entry_points.txt"
     },
@@ -346,7 +383,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "34e1ea6dbedcfa180a8733036c563e06c3f2f8dc",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/requires.txt"
     },
@@ -364,7 +408,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "d2700a04f44660ff78cb51053acf5075a3a46205",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/llm_wiki_compiler.egg-info/top_level.txt"
     },
@@ -443,6 +494,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/__pycache__/perception.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/__pycache__/query_executor.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
@@ -492,7 +548,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "dir:src/wiki_compiler/__pycache__"
     },
@@ -553,6 +610,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "63ff4b3717a8d7e901b1f49dd9a04812170d7968",
+          "created_at_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/artifact_validation.py"
@@ -641,6 +705,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "3824b3b4e78dfcda1d33e3d2a042f79d121582cf",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/auditor.py"
@@ -763,6 +834,7 @@
             "from .facet_injectors import ADRInjector, TestMapInjector",
             "from .graph_utils import add_knowledge_node, load_knowledge_node, save_graph",
             "from .node_templates import build_default_template_registry, extract_abstract, validate_template_sections",
+            "from .perception import attach_git_facets",
             "from .registry import InjectionContext",
             "from .scanner import scan_python_sources"
           ]
@@ -777,6 +849,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "c6537439e8127222005d686e0457fac391ae60b0",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/builder.py"
@@ -865,6 +944,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "efe2eca93156ec75a814eac531446f5dade358cf",
+          "created_at_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/cleanser.py"
@@ -927,6 +1013,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "f8e7f9925e4927e37a41ae244cf3f7642945a1c1",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/context.py"
@@ -977,6 +1070,11 @@
           },
           {
             "target_id": "code:src/wiki_compiler/contracts.py:ComplianceFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:GitFacet",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -1055,6 +1153,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "fb0e4d272ed8c8407a6698ebdb2813ff44d641d9",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/contracts.py"
@@ -1130,6 +1235,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "512178600514592adaa7b0bbbdbbdc07c8731a47",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/curate.py"
@@ -1188,6 +1300,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "16f6006dfd388b62871d577f94fca1b19f18b307",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/facet_injectors.py"
@@ -1273,6 +1392,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "b6502e29c44635730106dfbcfd22323502231f6e",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/facet_validator.py"
@@ -1340,6 +1466,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "ccc8d88c32afc211d9aeb22738f93506142d92c8",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/graph_utils.py"
@@ -1430,6 +1563,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "75a7cd5209b4da9eb243bb3f7498204c52401da1",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/ingest.py"
@@ -1481,6 +1621,7 @@
             "from .ingest import ingest_raw_sources",
             "from .query_executor import execute_query",
             "from .query_language import StructuredQuery",
+            "from .perception import build_status_report",
             "from .query_server import query_main",
             "from .registry import build_default_registry",
             "from .scaffolder import generate_scaffolding, init_repository",
@@ -1497,7 +1638,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "4b38e5a6d69161d55f8ba7cecfa56fb2b0d556e9",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/main.py"
     },
@@ -1562,9 +1710,110 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "a4bbf7a815e4cb2264ca2113d44cedb6ede4bf78",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/node_templates.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/perception.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:attach_git_facets",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:build_status_report",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:build_git_facet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:node_id_to_path",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:git_hash_object",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:git_last_commit",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:git_first_commit",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:is_git_tracked",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:git_untracked_files",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Git-backed perception helpers for build and status reporting.",
+          "raw_docstring": "Git-backed perception helpers for build and status reporting."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/perception.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import subprocess",
+            "from pathlib import Path",
+            "from .contracts import GitFacet",
+            "from .graph_utils import iter_knowledge_nodes",
+            "from .graph_utils import load_graph"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": {
+          "test_type": "unit",
+          "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "6805ab27ec8b32e590fee4117b0e34631e255da8",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
+      },
+      "id": "file:src/wiki_compiler/perception.py"
     },
     {
       "type": "file",
@@ -1610,7 +1859,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "b4b81b03c56ad60c1542b6e091d980c5171c45ad",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/protocols.py"
     },
@@ -1682,6 +1938,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "868a9f3f000615bcf555a20f7f4030fae46fcf9b",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/query_executor.py"
@@ -1741,6 +2004,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "b27cd772b59558b594136d7314994735e57eb6c9",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/query_language.py"
@@ -1826,6 +2096,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "96245cbbe039378aabd8fa49b53890c5dcf8cd2e",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/query_server.py"
@@ -1890,6 +2167,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "bc573d023179338d8ad513a60bba08ad222de389",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/registry.py"
@@ -1936,7 +2220,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6728638e6e20e4a344c1c9e5fb805e267d67d91d",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/scaffolder.py"
     },
@@ -2080,6 +2371,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "cc219dbd45a9455500c9f775b8be2a853893eb66",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/scanner.py"
@@ -2157,6 +2455,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "e7c689795e763e924bf4fa520ba65a6d9984acb8",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/validator.py"
@@ -2227,6 +2532,13 @@
         "test_map": {
           "test_type": "unit",
           "coverage_percent": null
+        },
+        "git": {
+          "blob_sha": "1c9072e6ea069c3b3ed7f42a6187df7c8699744a",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/workflow_guard.py"
@@ -2245,7 +2557,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "7bbc71f1394d3fb2589277f8c5c57fc8b5688429",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc"
     },
@@ -2263,7 +2582,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "bc1a567b1a362e5de66649ebc8b8ffe308b5bb14",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/auditor.cpython-313.pyc"
     },
@@ -2281,7 +2607,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "37813f5003455c2fcd43f90b8e55633eefbbd3e3",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/builder.cpython-313.pyc"
     },
@@ -2299,7 +2632,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "7613bf09d36b5139c0af46751797b76bb4196e5a",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/cleanser.cpython-313.pyc"
     },
@@ -2317,7 +2657,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "fc6ee9efa4c93591d36371f89f76e4ddacfd7b2d",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/context.cpython-313.pyc"
     },
@@ -2335,7 +2682,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "17dcce35b60a345553401becc40873687b12ba67",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/contracts.cpython-313.pyc"
     },
@@ -2353,7 +2707,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "59ee83a2e3a5ef7ad409a86740c5b66ef202ffca",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/curate.cpython-313.pyc"
     },
@@ -2371,7 +2732,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6e0ad38362ef2af74fd7a16f67e77220108f9361",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/facet_injectors.cpython-313.pyc"
     },
@@ -2389,7 +2757,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "1f0031d3ada93a1d1931872896e8773a53f9fa07",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/facet_validator.cpython-313.pyc"
     },
@@ -2407,7 +2782,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "3cacd7f3af2d90272217accb71c3f8a817b5a180",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/graph_utils.cpython-313.pyc"
     },
@@ -2425,7 +2807,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "72c18f6920306a3231042d13d513aaa80a5f852f",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/ingest.cpython-313.pyc"
     },
@@ -2443,7 +2832,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "2ad7bdc276bf3136112c50da39e537dccc5b53c8",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/main.cpython-313.pyc"
     },
@@ -2461,9 +2857,41 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "7aaaacfa9c8f4cacfd94ff484f9814f5061f3b69",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/node_templates.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/__pycache__/perception.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "df16e57361d044114c166d443682f244aa7d4e78",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
+      },
+      "id": "file:src/wiki_compiler/__pycache__/perception.cpython-313.pyc"
     },
     {
       "type": "concept",
@@ -2479,7 +2907,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "de308cbc9e0352d4220b1a3c49dde4dc2d78a82d",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_executor.cpython-313.pyc"
     },
@@ -2497,7 +2932,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "4cfda2ea28632cafbfe8f07d50f16752bd050cd7",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_language.cpython-313.pyc"
     },
@@ -2515,7 +2957,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e3eb865cf561c7a78ceb16aa2b479f629921a01b",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_server.cpython-313.pyc"
     },
@@ -2533,7 +2982,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8a9b15acaef1efe435424d27d03c7c1214d979a8",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/registry.cpython-313.pyc"
     },
@@ -2551,7 +3007,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "532d077eaa362589fe4bda850519818dbaff0526",
+          "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/scaffolder.cpython-313.pyc"
     },
@@ -2569,7 +3032,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "71ec7df1411fd23c8527ed1177bd335b8cb6b78c",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/scanner.cpython-313.pyc"
     },
@@ -2587,7 +3057,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e4bfeafc51eea7009faddb984309c41052261dfb",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/validator.cpython-313.pyc"
     },
@@ -2605,7 +3082,14 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "572256439a38f388728d9b6577f7a7e21ee7e699",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
       },
       "id": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc"
     },
@@ -2645,7 +3129,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6a6eb64f6e222b84caeb26ff83ca40fe7715dc34",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "file:src/wikipu/decorators.py"
     },
@@ -2701,7 +3192,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "84ee2c2b6e85de406319f6e8dcd28b7c6f88eebd",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/Index.md"
     },
@@ -2797,7 +3295,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "801f01f0f786d31560f3812534673b93d4c2beb2",
+          "created_at_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/00_house_rules.md"
     },
@@ -2822,7 +3327,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "184fb467e1722bfa22b300576082f67164c2a77f",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/Index.md"
     },
@@ -2847,7 +3359,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8565e0b2e78b2ccce6b91eff891c25b2ec2b3630",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/Index.md"
     },
@@ -2878,7 +3397,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "387a97b596aee39a6065fc5b02e8c11f6c26c300",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/languages/Index.md"
     },
@@ -2932,6 +3458,11 @@
             "metadata": {}
           },
           {
+            "target_id": "doc:wiki/reference/cli/status.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "doc:wiki/reference/cli/validate_wiki.md",
             "relation_type": "contains",
             "metadata": {}
@@ -2979,7 +3510,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "1c82c97fed5540028509046dc13d295ab3d34cef",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/Index.md"
     },
@@ -3015,7 +3553,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "1f04e73584ff03e9714ae1f136b42ecf0fbf7b0b",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/concepts/Index.md"
     },
@@ -3050,7 +3595,14 @@
           "status": "accepted",
           "context_summary": "Legacy methodology documents copied from another project created ambiguity, so they were retired and replaced by repo-specific standards and protocols."
         },
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "81c75e6fe94aad254994b577998e8e4db9735b35",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/adrs/001_feature_methodology_superseded.md"
     },
@@ -3085,7 +3637,14 @@
           "status": "accepted",
           "context_summary": "Duplicate documentation drafts in raw/ were causing context drift. We decided to treat wiki/ as the single source of truth and raw/ as historical ore."
         },
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "7b3ccb470e60558ccb1475b4766e29c9eb5bedc4",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
@@ -3121,7 +3680,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "23ac04666159008352a2ad9699a5fcc8f3f1d780",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/concepts/how_wikipu_works.md"
     },
@@ -3157,7 +3723,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8781c73a09bb0d6fe5d47e20abd0d0389be3d4a2",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/concepts/wiki_construction_principles.md"
     },
@@ -3193,7 +3766,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "3939882b2c3d4e83accf9de78cc69a87e0b3cd80",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/knowledge_node_facets.md"
     },
@@ -3211,7 +3791,8 @@
         "io_ports": [],
         "compliance": null,
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "raw:raw/wiki_construction_principles.md"
     },
@@ -3236,7 +3817,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "1443150ed2251b1b2559988d177fe44fa0551ae6",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/design.md"
     },
@@ -3261,7 +3849,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "faec483062c34663106418e2aa999b4a7debc147",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/document.md"
     },
@@ -3286,7 +3881,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "264e09d7d424d3e1c3176f34c87c6178562d4eb2",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/plan.md"
     },
@@ -3311,7 +3913,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "1e1f59dd311d9cf4c15d20bd9feeba98e603558c",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/research.md"
     },
@@ -3336,7 +3945,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "76c092c4d4809f926acbf22a9d9b565f9d1f3e95",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/use_autopoiesis.md"
     },
@@ -3361,7 +3977,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "852212d4fbc8bd3df40cb98d33e36bb1d16bf2b7",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/use_socratic_methodology.md"
     },
@@ -3386,7 +4009,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "5446a3417de644d317b4fffdb68d17d86c7dc396",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/use_the_cli.md"
     },
@@ -3411,7 +4041,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "a541b7bb447036e0e687596053895c6fe4f77917",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/how_to/use_the_graph.md"
     },
@@ -3436,7 +4073,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "232ba57c6c66cbb013b41b7d52d17286e3efdfaa",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "3c182f021726db861ca6ede4366bc267d94e5822",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/faq.md"
     },
@@ -3477,7 +4121,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e69c3652bc3c22883cefd4cbeea75e9d62441883",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/build.md"
     },
@@ -3518,7 +4169,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "9e652f4d9c134a3e73fe28f7fab735291f508b98",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/cleanse.md"
     },
@@ -3589,7 +4247,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "f7e6a88ae7053434b8daa43f6706d7fb91f3cd45",
+          "created_at_commit": "57a7bea332dd48e29cad978ed7de2469baa232ef",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/curate.md"
     },
@@ -3675,7 +4340,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "2c0942e69c34f468cb8db93a79e84c9b5b649ada",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/ingest.md"
     },
@@ -3716,7 +4388,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "7dbafc900b27ad5337be0a027e48a3f9aa761ed2",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/query.md"
     },
@@ -3757,9 +4436,64 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "2124e2d730e74e0d40c21d64c238493a518de487",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/scaffold.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/status.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/perception.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:build_status_report",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Reports git-backed drift for graph-tracked files and lists untracked files under `raw/`. This is the first perception-layer runtime surface for detecting when the repository has diverged from the last build.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "023f73f589373686c6ba1b56100c386f6f50dd60",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
+      },
+      "id": "doc:wiki/reference/cli/status.md"
     },
     {
       "type": "reference",
@@ -3798,7 +4532,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "62fc0ea7bd0d56bad2f57687ddbad37a4e87897e",
+          "created_at_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/cli/validate_wiki.md"
     },
@@ -3829,7 +4570,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "a6f605420e6669a277dabaa58edb65c02cd56655",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
     },
@@ -3854,7 +4602,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e2d8a62fabdeabdaa6d193140b7acf6d00b2d3e1",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/gate_loop.md"
     },
@@ -3885,7 +4640,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "68832d32f220b0e3f3001e1fcc5d0e473689ddeb",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/llm_agent.md"
     },
@@ -3916,7 +4678,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "03f3e9842c3715b243212f2c13e8a2629cdb0d3f",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/human_contributor.md"
     },
@@ -3947,7 +4716,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e8837016ea16ee55d8e7adc74a0f4709776ac0e3",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/socratic.md"
     },
@@ -3972,7 +4748,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "701c9c067063b7430f2614ea3449266eacd26e8e",
+          "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/protocols/trail_collect.md"
     },
@@ -4048,7 +4831,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "53aa22d026dcfe386bac44394373445f3ca6ebef",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/auditor.md"
     },
@@ -4080,7 +4870,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:AuditReport"
     },
@@ -4112,7 +4903,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:UndocumentedCodeCheck"
     },
@@ -4144,7 +4936,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:MissingDocstringsCheck"
     },
@@ -4176,7 +4969,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:UntypedIOCheck"
     },
@@ -4208,7 +5002,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:ComplianceViolationsCheck"
     },
@@ -4240,7 +5035,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:StaleEdgesCheck"
     },
@@ -4272,7 +5068,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:OrphanedPlansCheck"
     },
@@ -4304,7 +5101,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:MissingAbstractCheck"
     },
@@ -4335,7 +5133,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/auditor.py:run_audit"
     },
@@ -4451,7 +5250,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "ac1ac0570946bed6706c8607c227b47e397b4c40",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/builder.md"
     },
@@ -4482,7 +5288,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:BuildResult"
     },
@@ -4513,7 +5320,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:build_wiki"
     },
@@ -4544,7 +5352,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:build_directory_skeleton"
     },
@@ -4575,7 +5384,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:index_markdown_files"
     },
@@ -4606,7 +5416,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:parse_markdown_node"
     },
@@ -4637,7 +5448,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:extract_heading"
     },
@@ -4668,7 +5480,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:extract_transclusions"
     },
@@ -4699,7 +5512,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:calculate_compliance_score"
     },
@@ -4730,7 +5544,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:update_compliance_baseline"
     },
@@ -4761,7 +5576,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:write_baseline"
     },
@@ -4792,7 +5608,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
     },
@@ -4823,7 +5640,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:score_drafts"
     },
@@ -4854,7 +5672,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:promote_draft"
     },
@@ -4885,7 +5704,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
     },
@@ -4916,7 +5736,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:query_main"
     },
@@ -4947,9 +5768,42 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:build_status_report",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Compare stored GitFacet data against the current worktree.",
+          "raw_docstring": "Compare stored GitFacet data against the current worktree."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "build_status_report(graph_path: Path, project_root: Path) -> dict[str, object]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:build_status_report"
     },
     {
       "type": "code_construct",
@@ -4978,7 +5832,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact"
     },
@@ -5029,7 +5884,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8b690b2623d6c9e10d587f41098ed8fba57a7936",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/context.md"
     },
@@ -5060,7 +5922,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/context.py:render_context"
     },
@@ -5091,7 +5954,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/context.py:match_nodes_from_task"
     },
@@ -5122,7 +5986,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/context.py:collect_neighborhood"
     },
@@ -5153,7 +6018,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/context.py:render_markdown"
     },
@@ -5260,6 +6126,11 @@
             "target_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:GitFacet",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -5274,7 +6145,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "845046934e2f41b7d95fa3a3dee1f11b0a106d8c",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/contracts.md"
     },
@@ -5307,7 +6185,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:Edge"
     },
@@ -5340,7 +6219,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:SystemIdentity"
     },
@@ -5373,7 +6253,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:IOFacet"
     },
@@ -5406,7 +6287,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ASTFacet"
     },
@@ -5439,7 +6321,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:SemanticFacet"
     },
@@ -5472,7 +6355,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ADRFacet"
     },
@@ -5505,7 +6389,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:TestMapFacet"
     },
@@ -5538,7 +6423,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ComplianceFacet"
     },
@@ -5571,7 +6457,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:KnowledgeNode"
     },
@@ -5604,7 +6491,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:AuditFinding"
     },
@@ -5637,7 +6525,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:FacetProposal"
     },
@@ -5670,7 +6559,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport"
     },
@@ -5703,7 +6593,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:TopologyProposal"
     },
@@ -5736,7 +6627,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:CollisionReport"
     },
@@ -5782,7 +6674,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "fde7174fa7ba87f56a065d3dfb4f5d45ab3b6bf0",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/facet_injectors.md"
     },
@@ -5814,7 +6713,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_injectors.py:ADRInjector"
     },
@@ -5847,7 +6747,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_injectors.py:TestMapInjector"
     },
@@ -5878,7 +6779,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_injectors.py:_module_to_node_id"
     },
@@ -5949,7 +6851,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "d148d7f84f758d22e514afb184c249aa89f42513",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/facet_validator.md"
     },
@@ -5980,7 +6889,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:validate_facet_proposal"
     },
@@ -6011,7 +6921,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_tokenise"
     },
@@ -6042,7 +6953,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_jaccard"
     },
@@ -6073,7 +6985,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_find_question_collisions"
     },
@@ -6104,7 +7017,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_find_field_collisions"
     },
@@ -6135,7 +7049,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_check_attempted_query"
     },
@@ -6166,7 +7081,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_update_attempts"
     },
@@ -6197,7 +7113,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/facet_validator.py:_build_suggestion"
     },
@@ -6253,7 +7170,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "d97338c8d3f14e276d3330e1c211d93de2d63c6b",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/graph_utils.md"
     },
@@ -6284,7 +7208,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/graph_utils.py:add_knowledge_node"
     },
@@ -6315,7 +7240,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/graph_utils.py:load_graph"
     },
@@ -6346,7 +7272,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/graph_utils.py:save_graph"
     },
@@ -6377,7 +7304,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/graph_utils.py:load_knowledge_node"
     },
@@ -6408,7 +7336,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/graph_utils.py:iter_knowledge_nodes"
     },
@@ -6489,7 +7418,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "3db8a91253a0264f03c8b504c72b75873647b0ce",
+          "created_at_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/reference/ingest.md"
     },
@@ -6520,7 +7456,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:decompose_source"
     },
@@ -6551,7 +7488,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:render_draft"
     },
@@ -6582,7 +7520,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:summarize_source"
     },
@@ -6613,7 +7552,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:draft_node_path"
     },
@@ -6644,7 +7584,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:slugify"
     },
@@ -6675,7 +7616,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6c428a432efe680672480c86867e4d9a258343f6",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/adr.md"
     },
@@ -6711,7 +7659,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "445ff841e93c8ba7fc97b141f34897286035120e",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/wiki_node.md"
     },
@@ -6736,7 +7691,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "f1d2ff076ac04f14c461cf19e9ce16389932cabc",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/backlog_item.md"
     },
@@ -6767,7 +7729,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "e4e029130edabd5550d1d5bebce130162feac3da",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/board.md"
     },
@@ -6798,7 +7767,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "6098aa0344203f3dda52af1f3a7000d5f392d77a",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/gate.md"
     },
@@ -6829,7 +7805,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "a47e4b954a3716e9c67c79007ebc6ad35a21dcf4",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/issue.md"
     },
@@ -6854,7 +7837,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "8266d86ce9b947ed77f122817ef899c0ea2c69a0",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/artifacts/proposal.md"
     },
@@ -6885,7 +7875,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "13932de931712a137e71b24a416efacc25f6b2c6",
+          "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
+          "last_modified_commit": "e9c62488b3f911bcc027fecbad29512b023a64d6",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/checklists.md"
     },
@@ -6916,7 +7913,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "daba52306cee6894af3bc6cdfdb3173fb70dc4a1",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/document_topology.md"
     },
@@ -6947,7 +7951,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "aaa683b578853f84c5efbe697b9d590611e2edf9",
+          "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/issues_index_seed.md"
     },
@@ -6988,7 +7999,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "fbc19ff77249a38db2028601350feebec9e24afa",
+          "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/issues_lifecycle.md"
     },
@@ -7019,7 +8037,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "52ef48a687a051f9e5225e77b01e01e37a78c2e0",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/languages/python.md"
     },
@@ -7050,7 +8075,14 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": {
+          "blob_sha": "861cb8aa29f5f299431fd292ee2acb5e78486740",
+          "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        }
       },
       "id": "doc:wiki/standards/languages/typescript.md"
     },
@@ -7081,7 +8113,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path"
     },
@@ -7112,7 +8145,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
     },
@@ -7143,7 +8177,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
     },
@@ -7174,7 +8209,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:compile_markdown_node"
     },
@@ -7205,7 +8241,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:render_compiled_markdown"
     },
@@ -7236,7 +8273,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:infer_reference_documents_edges"
     },
@@ -7267,7 +8305,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:build_reference_file_candidates"
     },
@@ -7298,7 +8337,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:match_reference_file"
     },
@@ -7329,7 +8369,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:code_nodes_for_file"
     },
@@ -7360,7 +8401,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/builder.py:add_documents_edges"
     },
@@ -7391,7 +8433,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_stale_edge_proposals"
     },
@@ -7422,7 +8465,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_orphaned_plan_proposals"
     },
@@ -7453,7 +8497,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_compound_abstract_proposals"
     },
@@ -7484,7 +8529,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_duplicate_abstract_proposals"
     },
@@ -7515,7 +8561,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_sentence_count"
     },
@@ -7546,7 +8593,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_has_dual_purpose_language"
     },
@@ -7577,7 +8625,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_normalize_text"
     },
@@ -7608,9 +8657,44 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_dedupe"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:GitFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Git-tracked state for a file-backed node.",
+          "raw_docstring": "Dimension: Git-tracked state for a file-backed node."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class GitFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:GitFacet"
     },
     {
       "type": "code_construct",
@@ -7641,7 +8725,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
     },
@@ -7674,7 +8759,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
     },
@@ -7707,7 +8793,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:CleansingProposal"
     },
@@ -7740,7 +8827,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/contracts.py:CleansingReport"
     },
@@ -7771,7 +8859,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:_evaluate_node"
     },
@@ -7802,7 +8891,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:_get_abstract"
     },
@@ -7833,7 +8923,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:_sentence_count"
     },
@@ -7864,7 +8955,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:_node_id_to_file"
     },
@@ -7895,7 +8987,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/curate.py:_rewrite_node_id"
     },
@@ -7926,7 +9019,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:_source_subdir"
     },
@@ -7957,7 +9051,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:_compute_node_id"
     },
@@ -7988,7 +9083,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:_extract_abstract"
     },
@@ -8019,7 +9115,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/ingest.py:_render_index"
     },
@@ -8050,7 +9147,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/main.py:main"
     },
@@ -8081,7 +9179,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/main.py:build_parser"
     },
@@ -8112,7 +9211,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:NodeTemplate"
     },
@@ -8147,7 +9247,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:TemplateRegistry"
     },
@@ -8178,7 +9279,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:build_default_template_registry"
     },
@@ -8209,7 +9311,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:extract_abstract"
     },
@@ -8240,9 +9343,266 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:validate_template_sections"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:attach_git_facets",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Attach GitFacet metadata to doc/file nodes backed by real files.",
+          "raw_docstring": "Attach GitFacet metadata to doc/file nodes backed by real files."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "attach_git_facets(graph: object, project_root: Path) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:attach_git_facets"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:build_git_facet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Build GitFacet metadata for one file path.",
+          "raw_docstring": "Build GitFacet metadata for one file path."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "build_git_facet(project_root: Path, file_path: Path) -> GitFacet"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:build_git_facet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:node_id_to_path",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Map a graph node id to a filesystem path when it represents a file.",
+          "raw_docstring": "Map a graph node id to a filesystem path when it represents a file."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "node_id_to_path(project_root: Path, node_id: str) -> Path | None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:node_id_to_path"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:git_hash_object",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return the git blob hash for a file.",
+          "raw_docstring": "Return the git blob hash for a file."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "git_hash_object(project_root: Path, file_path: Path) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:git_hash_object"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:git_last_commit",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return the last commit SHA and author email for a file.",
+          "raw_docstring": "Return the last commit SHA and author email for a file."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "git_last_commit(project_root: Path, file_path: Path) -> tuple[str | None, str | None]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:git_last_commit"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:git_first_commit",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return the first commit SHA that introduced a file, if available.",
+          "raw_docstring": "Return the first commit SHA that introduced a file, if available."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "git_first_commit(project_root: Path, file_path: Path) -> str | None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:git_first_commit"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:is_git_tracked",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return True when a file is tracked by git.",
+          "raw_docstring": "Return True when a file is tracked by git."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "is_git_tracked(project_root: Path, file_path: Path) -> bool"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:is_git_tracked"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:git_untracked_files",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return untracked files under a relative subtree.",
+          "raw_docstring": "Return untracked files under a relative subtree."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "git_untracked_files(project_root: Path, relative_root: Path) -> list[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:git_untracked_files"
     },
     {
       "type": "code_construct",
@@ -8274,7 +9634,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/protocols.py:FacetInjector"
     },
@@ -8308,7 +9669,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/protocols.py:AuditCheck"
     },
@@ -8339,7 +9701,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:execute_query"
     },
@@ -8370,7 +9733,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:_apply_scope"
     },
@@ -8401,7 +9765,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:_facet_matches"
     },
@@ -8432,7 +9797,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:_get_facet"
     },
@@ -8463,7 +9829,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:_condition_matches"
     },
@@ -8494,7 +9861,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_executor.py:_resolve_field"
     },
@@ -8527,7 +9895,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_language.py:FieldCondition"
     },
@@ -8560,7 +9929,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_language.py:FacetFilter"
     },
@@ -8593,7 +9963,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_language.py:GraphScope"
     },
@@ -8626,7 +9997,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_language.py:StructuredQuery"
     },
@@ -8657,7 +10029,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:serve_structured_queries"
     },
@@ -8688,7 +10061,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:_handle_structured_query_line"
     },
@@ -8719,7 +10093,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:query_graph"
     },
@@ -8750,7 +10125,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:filter_graph_by_relation"
     },
@@ -8781,7 +10157,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:matches_io"
     },
@@ -8812,7 +10189,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:ensure_node"
     },
@@ -8843,7 +10221,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/query_server.py:serialize_model"
     },
@@ -8874,7 +10253,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/registry.py:FieldSpec"
     },
@@ -8905,7 +10285,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/registry.py:FacetSpec"
     },
@@ -8936,7 +10317,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/registry.py:InjectionContext"
     },
@@ -8971,7 +10353,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/registry.py:FacetRegistry"
     },
@@ -9002,7 +10385,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/registry.py:build_default_registry"
     },
@@ -9033,7 +10417,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scaffolder.py:init_repository"
     },
@@ -9065,7 +10450,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:IgnoreRule"
     },
@@ -9096,7 +10482,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:scan_python_sources"
     },
@@ -9127,7 +10514,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:load_wikiignore_rules"
     },
@@ -9158,7 +10546,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:match_ignore_reason"
     },
@@ -9189,7 +10578,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:build_ignored_file_node"
     },
@@ -9220,7 +10610,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:scan_python_file"
     },
@@ -9251,7 +10642,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:build_function_node"
     },
@@ -9282,7 +10674,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:build_class_node"
     },
@@ -9313,7 +10706,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:build_semantic_facet"
     },
@@ -9344,7 +10738,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:collect_import_lines"
     },
@@ -9375,7 +10770,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:decorator_names"
     },
@@ -9406,7 +10802,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:base_name"
     },
@@ -9437,7 +10834,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:format_function_signature"
     },
@@ -9468,7 +10866,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:detect_exemption"
     },
@@ -9499,7 +10898,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:extract_exemption_reason"
     },
@@ -9530,7 +10930,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:parse_docstring_io"
     },
@@ -9561,7 +10962,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:infer_io_from_ast"
     },
@@ -9592,7 +10994,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:infer_open_call"
     },
@@ -9623,7 +11026,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:infer_pathlib_call"
     },
@@ -9654,7 +11058,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/scanner.py:extract_string"
     },
@@ -9685,7 +11090,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:submit_topology_proposal"
     },
@@ -9716,7 +11122,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:validate_topology_proposal"
     },
@@ -9747,7 +11154,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:find_io_collisions"
     },
@@ -9778,7 +11186,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:io_overlaps"
     },
@@ -9809,7 +11218,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:load_glossary_terms"
     },
@@ -9840,7 +11250,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:update_attempts"
     },
@@ -9871,7 +11282,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/validator.py:build_resolution"
     },
@@ -9902,7 +11314,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:FileChange"
     },
@@ -9933,7 +11346,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:WorkflowGuardReport"
     },
@@ -9964,7 +11378,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:read_git_changes"
     },
@@ -9995,7 +11410,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:read_current_branch"
     },
@@ -10026,7 +11442,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:guard_workflow"
     },
@@ -10057,7 +11474,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change"
     },
@@ -10088,7 +11506,8 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": null,
+        "git": null
       },
       "id": "code:src/wikipu/decorators.py:wiki_exempt"
     }
@@ -10236,6 +11655,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "file:src/wiki_compiler/perception.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/protocols.py"
     },
     {
@@ -10369,6 +11794,12 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/node_templates.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/__pycache__",
+      "target": "file:src/wiki_compiler/__pycache__/perception.cpython-313.pyc"
     },
     {
       "relation": "contains",
@@ -10728,6 +12159,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:GitFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
       "target": "code:src/wiki_compiler/contracts.py:KnowledgeNode"
     },
     {
@@ -11023,6 +12460,60 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/node_templates.py",
       "target": "code:src/wiki_compiler/node_templates.py:validate_template_sections"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:attach_git_facets"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:build_status_report"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:build_git_facet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:node_id_to_path"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:git_hash_object"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:git_last_commit"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:git_first_commit"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:is_git_tracked"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:git_untracked_files"
     },
     {
       "relation": "contains",
@@ -11568,6 +13059,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/status.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/cli/validate_wiki.md"
     },
     {
@@ -11863,6 +13360,24 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/scaffold.md",
       "target": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/status.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/status.md",
+      "target": "file:src/wiki_compiler/perception.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/status.md",
+      "target": "code:src/wiki_compiler/perception.py:build_status_report"
     },
     {
       "relation": "documents",
@@ -12217,6 +13732,12 @@
       "metadata": {},
       "source": "doc:wiki/reference/contracts.md",
       "target": "code:src/wiki_compiler/contracts.py:CleansingReport"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/contracts.md",
+      "target": "code:src/wiki_compiler/contracts.py:GitFacet"
     },
     {
       "relation": "documents",

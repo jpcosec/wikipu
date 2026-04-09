@@ -21,6 +21,7 @@ from .graph_utils import load_graph
 from .ingest import ingest_raw_sources
 from .query_executor import execute_query
 from .query_language import StructuredQuery
+from .perception import build_status_report
 from .query_server import query_main
 from .registry import build_default_registry
 from .scaffolder import generate_scaffolding, init_repository
@@ -248,6 +249,13 @@ def main() -> None:
                 sys.exit(1)
             print("[OK] Workflow discipline checks passed.")
             return
+        if args.command == "status":
+            report = build_status_report(
+                graph_path=Path(args.graph),
+                project_root=Path(args.project_root),
+            )
+            print(json.dumps(report, indent=2))
+            return
     except Exception as exc:
         print(f"[ERROR] {exc}")
         sys.exit(1)
@@ -463,6 +471,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--allow-structural",
         action="store_true",
         help="Allow docs-only structural work without an issue link",
+    )
+
+    status_parser = subparsers.add_parser(
+        "status", help="Report git-backed drift and untracked raw files"
+    )
+    status_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
+    )
+    status_parser.add_argument(
+        "--project-root", default=".", help="Git repository root to inspect"
     )
 
     subparsers.add_parser("init", help="Initialize the base wikipu structure")

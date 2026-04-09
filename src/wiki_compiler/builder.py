@@ -29,6 +29,7 @@ from .node_templates import (
     extract_abstract,
     validate_template_sections,
 )
+from .perception import attach_git_facets
 from .registry import InjectionContext
 from .scanner import scan_python_sources
 
@@ -108,6 +109,8 @@ def build_wiki(
             node = load_knowledge_node(graph, node_id)
             enriched = injector.inject(node, ctx)
             add_knowledge_node(graph, enriched)
+
+    attach_git_facets(graph, root)
 
     save_graph(graph, graph_path)
     score = calculate_compliance_score(graph)
