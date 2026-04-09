@@ -50,9 +50,9 @@ def build_default_template_registry() -> TemplateRegistry:
         ["abstract", "prerequisites", "steps", "outcome"]
     ))
     registry.register(NodeTemplate(
-        "standard",
+        "doc_standard",
         "What is the rule for X?",
-        ["abstract", "rule", "rationale", "violation_examples"]
+        ["abstract", "rule_schema", "fields", "usage_examples"]
     ))
     registry.register(NodeTemplate(
         "reference",

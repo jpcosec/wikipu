@@ -16,6 +16,10 @@
 - revised OP-5 (Git Commit Cadence): one commit per atomic issue resolved; introduced branching model — issue/phase branches for in-progress work, main = stable milestone
 - created wiki/standards/artifacts/ with schema definitions for all artifact types: wiki_node, adr, proposal, board, issue, gate, backlog_item
 - updated WK-4 in hausordnung to reference artifacts/ instead of inline list
+- created wiki/standards/checklists.md with binary pass/fail verification checklists for core operations (issue-resolution, new-wiki-node, new-module, structural-change, session-close)
+- expanded KnowledgeNode schema in contracts.py to include 'index' as a valid node_type and 'extends' and 'implements' as valid relation_types
+- updated node_templates.py registry to use 'doc_standard' instead of 'standard' and aligned required sections with current wiki nodes
+- updated issues index: marked verification-checklists [6] as resolved
 - added issues: artifact-schema-validation [12], scanner-plugin-interface [13]
 - clarified validation architecture: artifact validation (markdown/YAML) is always wiki-compiler/Python; code node extraction uses per-language scanner plugins outputting KnowledgeNode
 - closed issue `gaps/duplicate-docs-cleanup`: hausordnung now exists and is `status: implemented`; removed the issue file and updated `plan_docs/issues/Index.md` (renumbered items, collapsed Phase 3, cleared resolved dependencies)

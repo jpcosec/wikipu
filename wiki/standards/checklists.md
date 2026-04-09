@@ -9,11 +9,11 @@ compliance:
   failing_standards: []
 ---
 
-# ✅ Verification Checklists
-
 Verification checklists provide a machine-readable set of binary (pass/fail) checks for core operations in the Wikipu ecosystem. These checklists ensure that "Done" is objective and that all required protocols (OP-4, OP-5, MA-5) are strictly followed before an operation is considered complete.
 
-## Rule/Schema
+# ✅ Verification Checklists
+
+## Rule Schema
 
 Each checklist consists of a set of items, where each item includes a description, the `rule_id` it enforces from the `[[00_house_rules]]`, and the verification method (command or query).
 

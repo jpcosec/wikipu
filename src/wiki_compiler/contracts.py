@@ -16,7 +16,9 @@ class Edge(BaseModel):
         "reads_from",     # Data Flow (I/O)
         "writes_to",      # Data Flow (I/O)
         "documents",      # Documentation relation (e.g., 'design_doc.md' -> 'src/module_a')
-        "transcludes"     # Atomic embedding (DRY Wiki)
+        "transcludes",    # Atomic embedding (DRY Wiki)
+        "extends",        # Inheritance/Specialization (e.g., 'adr.md' -> 'wiki_node.md')
+        "implements"      # Realization of a standard or requirement
     ] = Field(description="The type of relationship this edge represents.")
     metadata: dict[str, Any] = Field(
         default_factory=dict, 
@@ -26,7 +28,7 @@ class Edge(BaseModel):
 class SystemIdentity(BaseModel):
     """The immutable base identity of any node in your universe."""
     node_id: str = Field(description="A unique absolute identifier for the node (e.g., 'dir:src/data_processor' or 'file:wiki/concepts/core_concept.md').")
-    node_type: Literal["directory", "file", "code_construct", "doc_standard", "concept"] = Field(
+    node_type: Literal["directory", "file", "code_construct", "doc_standard", "concept", "index"] = Field(
         description="The type of entity this node represents."
     )
 

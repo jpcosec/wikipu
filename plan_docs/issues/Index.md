@@ -25,9 +25,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
  5. plan_docs/issues/unimplemented/how-to-wiki-section.md
     • Create wiki/how_to/ section with 8 how-to nodes covering core operations.
     • Depends on: none.
- 6. plan_docs/issues/unimplemented/verification-checklists.md
-    • Create wiki/standards/checklists.md with binary pass/fail checklists per operation class.
-    • Depends on: none.
  7. plan_docs/issues/unimplemented/faq.md
     • Create wiki/faq.md with answers to the most common agent/human questions.
     • Depends on: how-to-wiki-section.md.
@@ -75,7 +72,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 ┄┄ Dependency summary
 
 Phase 2[5] → Phase 2[7]      (FAQ links to how-to nodes)
-Phase 2[5,6] → Phase 4[18]   (context routing needs how-tos and checklists)
+Phase 2[5] → Phase 4[18]     (context routing needs how-tos and checklists)
 Phase 3[9] → Phase 3[12]     (artifact validation needs query server)
 Phase 3[12] → Phase 3[13]    (scanner plugin targets stable KnowledgeNode schema)
 Phase 3[9,10,11] → Phase 4[17] (coordinator depends on query server, cleanser, curation pipeline)
@@ -84,6 +81,6 @@ Phase 4[17] → Phase 4[16]    (coordinator triggers session open/close for memo
 
 ┄┄ Parallelization map
 
-Phase 2  [4][5][6][8] then [7]         — 4, 5, 6, 8 parallel; 7 after 5
+Phase 2  [4][5][8] then [7]            — 4, 5, 8 parallel; 7 after 5
 Phase 3  [9][10][11] then [12] then [13]  — 9/10/11 parallel, then 12, then 13
-Phase 4  [14][15] then [17] then [16]; [18] after [9][5][6]
+Phase 4  [14][15] then [17] then [16]; [18] after [9][5]
