@@ -51,3 +51,9 @@ Your module's `README.md` is its `KnowledgeNode`. Keep it updated with:
 *   Human-readable explanations in the Markdown body.
 
 Remember, the goal is to create a self-documenting, auditable, and intelligent codebase that can be understood and evolved efficiently by everyone, human or AI.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples

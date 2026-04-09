@@ -140,3 +140,9 @@ Links a node to an Architectural Decision Record in `wiki/adrs/`.
 | `concept` | `semantics`, `adr` |
 
 All facets are optional. The scanner injects what it can detect; the rest can be declared manually via YAML frontmatter in wiki nodes.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples

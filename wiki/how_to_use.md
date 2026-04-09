@@ -61,3 +61,9 @@ wiki-compiler build --source wiki --graph knowledge_graph.json
 
 **Purpose:** To keep the AI agents provided with a comprehensive, machine-readable graph of the repository's architecture and knowledge. This command is typically run in CI/CD pipelines.
 **Output:** A `knowledge_graph.json` file and a `.compliance_baseline.json` file.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples

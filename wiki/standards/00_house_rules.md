@@ -11,11 +11,23 @@ compliance:
   failing_standards: []
 ---
 
+# 🏠 House Rules
+
 The canonical identity rules for the Wikipu ecosystem. This document defines what this system *is* — the invariant network of constraints that must hold regardless of what content the system contains. Rules are organized by layer. Each rule carries a `rule_id` for machine reference, a description, and the enforcement mechanism that checks it.
 
-This document evolves through autopoietic cycles. Each cycle may refine, promote, or retire rules. The version is tracked by git tag. A rule that causes consistent friction should be rewritten before the session that discovered the friction closes.
+## Layer 1 — Identity Rules
 
----
+The system is composed of five inseparable elements, each with a distinct and non-overlapping role:
+
+| Element | Role | Question answered |
+|---|---|---|
+| **Autopoiesis** | the how | How does the system maintain and reproduce itself? |
+| **Wiki** | the what | What does the system currently know to be true? |
+| **Knowledge Graph** | the why | Why is each piece of knowledge structured the way it is — typed relationships that give nodes meaning through connection, not through content alone. |
+| **Git** | the when | When did every state transition happen, and what was the prior state? |
+| **CLI** | the do | How are all operations invoked deterministically by humans and agents? |
+
+These five are the load-bearing structure. Every rule in this document exists to keep one or more of them coherent.
 
 ## Layer 1 — Identity Rules
 *The invariants that define the system. Violating these means the system is no longer itself.*
@@ -41,9 +53,10 @@ The four information zones are inviolable:
 No zone may reference or write into a zone above it in the chain: `desk/` may reference `wiki/`; `wiki/` may not reference `desk/`.
 `Enforced by:` build_wiki() checks frontmatter edges for cross-zone violations; CI scan on commit.
 
-**ID-5 — Human Gate for Structural Changes**
-The system may detect, propose, and prepare — it may not unilaterally restructure, delete, or rename elements. Any proposal with `requires_human_approval: true` requires explicit per-proposal sign-off before `--apply`. No implicit batch approvals.
-`Enforced by:` cleanse --apply rejects unapproved proposals; autopoiesis coordinator pauses at desk/Gates.md.
+**ID-5 — Human Gate at the Topology Boundary**
+Human approval is required only for operations that affect entities outside the system's own topology — external codebases, external services, published artifacts, or shared infrastructure. Inside the topology, any operation that respects the core rules is permitted without a gate, provided it is reversible. Reversibility is guaranteed by git: every in-topology change can be undone. A proposal with `requires_human_approval: true` is one whose effects cannot be fully reversed by a git revert, or whose effects propagate outside the topology boundary. No implicit batch approvals for gated proposals.
+`Enforced by:` cleanse --apply checks topology boundary before requiring approval; autopoiesis coordinator pauses at desk/Gates.md only for boundary-crossing proposals.
+`Status:` boundary-checking logic in cleanse --apply is not yet implemented — pending `unimplemented/cleansing-protocol.md` (issue 6). Until then, all cleansing proposals require human approval as a conservative fallback.
 
 **ID-6 — Traceable Causality**
 Every element's existence must trace to a perturbation that created it. No orphan nodes, no files without a known origin. New modules require a TopologyProposal. New wiki nodes require a source (raw/, code scan, or explicit authorship). Changelog records every significant change.
@@ -102,8 +115,14 @@ Current truth, planned state, deferred state, and historical state are expressed
 **NAV-3 — Read the Graph First, Markdown Second**
 Agents do not read dozens of Markdown files sequentially. They query the graph for structure and relationships, then read individual Markdown files only when human-readable prose or ADR history is needed. `raw/` is never written to by agents.
 
-**NAV-4 — MOCs as Deterministic Entry Points**
-Every domain has a `00_INDEX_MOC.md` or `Board.md` as its canonical entry point. Agents start there, not from a directory listing. Humans use the same entry points.
+**NAV-4 — Canonical Entry Points**
+Every domain has exactly one canonical entry point file. Two types exist, distinguished by zone:
+
+- **`Index.md`** — used in `wiki/` domains. A navigational artifact: lists the nodes in the domain, their relationships, and links to sub-domains. Read-only operational state — it reflects what is true, not what is being worked on. Replaces the deprecated `00_INDEX_MOC.md` name (MOC was an Obsidian-specific term with no meaning outside that tool).
+- **`Board.md`** — used in `desk/` domains. An operational artifact: tracks active work items, their phases, dependencies, and parallelization. Mutable — it is updated as work progresses and items are resolved.
+
+Agents start at the entry point for the relevant zone, not from a directory listing. Humans use the same entry points. Neither file may reference the other zone (`Index.md` never links to `desk/`; `Board.md` never links to `wiki/` nodes directly — only through the graph).
+`Enforced by:` build audit checks that every wiki/ domain has an Index.md; OP-2 enforces Board.md structure.
 
 ---
 
@@ -128,7 +147,39 @@ When an issue is resolved:
 5. Delete the issue file AND remove it from `Board.md`.
 6. Commit with a message that names what was fixed.
 
-**OP-5 — The Autopoietic Cycle**
+**OP-5 — Atomization**
+Every unit of work — issue, proposal, or task — must be independently completable by a single agent in a single session and independently verifiable without knowledge of sibling units.
+
+The test: can this unit be handed to a subagent as a self-contained deliverable? If completing it requires knowing about or modifying the same files as another unit, or if its "done" state can only be verified in combination with another unit, it is not atomic.
+
+Split when: a unit has more than 3–4 steps that could fail independently. Extract the shared concern into a parent or sibling unit with an explicit `depends_on` link. Never split for organizational neatness — only when failure modes are genuinely independent.
+
+This rule applies to wiki nodes via WK-1 (Single Responsibility) and to code modules via CS-9. The same principle governs all levels of the system.
+`Enforced by:` issue atomization check in Stage 2.2 of `wiki/issues_guide.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
+
+**OP-7 — Git Commit Cadence and Branching**
+Git encodes state transitions at two levels of granularity: commits (atomic units) and branches (in-progress work streams). Together they make every stable state of the system recoverable and every change attributable.
+
+**Commit = one atomic issue resolved, or one coherent structural change.**
+- One commit closes exactly one issue (per OP-4 step 6). The commit message names the issue.
+- Structural wiki changes (new node, deleted node, edge modification) that are not tied to an issue get their own commit.
+- Session-end trail collect gets a commit even if no issue was resolved.
+- Do not commit on every file save. A commit is a claim that the system is valid and self-consistent at the granularity of one logical unit. A half-written node or an incomplete refactor is not a commit boundary.
+
+**Branch = one issue or one coherent phase of work.**
+- Every issue or closely related group of issues gets its own branch: `issue/<name>` or `phase/<n>`.
+- Work happens on branches. `main` is never the active development surface.
+- Branch from `main`. Merge back to `main` only when the work set is complete, tests pass, and changelog is updated.
+
+**Main = stable state milestone.**
+- `main` is a claim that the entire system is coherent: all current-phase issues resolved, all tests pass, no open structural debt in the work set.
+- Merging to `main` marks a stable checkpoint — the equivalent of a version boundary, even without a tag.
+- Never commit directly to `main` during active development.
+
+Commit message format: imperative verb + what changed + why if non-obvious.
+`Enforced by:` branch protection on main; pre-push hook verifies tests pass before merge; session log records last commit SHA and active branch.
+
+**OP-8 — The Autopoietic Cycle**
 Periodically (at minimum after each significant development phase):
 1. `git tag v<n>` — snapshot the current state.
 2. Clear processed ore from `raw/` (external project docs, obsolete seeds).
@@ -142,20 +193,29 @@ Periodically (at minimum after each significant development phase):
 ---
 
 ## Layer 5 — Code Style
-*The assumed conventions made explicit. These apply to all Python source in `src/`.*
+*Language-agnostic conventions. Apply to all source code in this project regardless of where it lives or what language it is written in. Language-specific enforcement tools and adaptations are listed per rule where they differ; see `wiki/standards/languages/` for per-language style guides.*
 
-**CS-1** — `from __future__ import annotations` at the top of every module.
-**CS-2** — Every module has a one-paragraph docstring: executive summary of the module's role.
-**CS-3** — Every public class, method, and function has a structured docstring.
-**CS-4** — `contracts.py` / Pydantic models are the only legitimate way to pass data between modules.
-**CS-5** — `Field(description=...)` on every Pydantic field. Descriptions must be semantic and accurate — they are read by LLMs.
-**CS-6** — Domain-specific exceptions defined at the top of the relevant file. Never bare `Exception` for flow control.
-**CS-7** — Never swallow errors silently. Log with context, re-raise with `from e`.
-**CS-8** — Comments only for non-obvious invariants or workflow decisions. No narrative comments restating what the code does.
-**CS-9** — `changelog.md` updated on every significant change.
-**CS-10** — Functions that use too many local variables are probably classes. Code should be self-explanatory. Avoid long functions — use helpers to simplify reading.
+**CS-1** — Every module/file has a one-paragraph docstring or header comment: executive summary of the module's role.
+**CS-2** — Every public class, method, and function has a structured docstring or doc comment.
+**CS-3** — Typed contracts at every module boundary. No untyped dicts, no raw strings as data carriers, no implicit schemas. The contract IS the documentation.
+**CS-4** — Contract field descriptions must be semantic and accurate — they are read by LLMs. Omitting a description is a documentation error.
+**CS-5** — Domain-specific exceptions or error types defined at the top of the relevant file. Never bare/generic exception types for flow control.
+**CS-6** — Never swallow errors silently. Log with context, re-raise or propagate with cause preserved.
+**CS-7** — Comments only for non-obvious invariants or workflow decisions. No narrative comments restating what the code does.
+**CS-8** — `changelog.md` updated on every significant change.
+**CS-9** — Functions that use too many local variables are probably classes. Code should be self-explanatory. Avoid long functions — use helpers to simplify reading.
 
-`Enforced by:` docstring-coverage audit; ruff linting; ASTFacet scanning.
+**Python-specific:**
+- `from __future__ import annotations` at the top of every module.
+- `contracts.py` / Pydantic models are the only legitimate way to pass data between modules.
+- `Field(description=...)` on every Pydantic field.
+- Re-raise with `from e` to preserve exception chains.
+- `Enforced by:` docstring-coverage audit; ruff linting; ASTFacet scanning.
+
+**TypeScript/JavaScript-specific:**
+- All cross-module data uses typed interfaces or Zod schemas, never plain objects.
+- JSDoc on every exported symbol.
+- `Enforced by:` tsc --strict; ESLint.
 
 ---
 
@@ -172,10 +232,13 @@ Every node starts with a 1–3 sentence paragraph that states the node's intent.
 Use `![[node_name]]` transclusion to embed shared concepts. Never copy content from another node into a new one. If the same fact must appear in two places, it belongs in a third node that both transclude.
 
 **WK-4 — Node Templates by Type**
-Each `node_type` has a required section structure:
+Each artifact type has a canonical schema defining its frontmatter fields and required body sections. See `wiki/standards/artifacts/` for the full definition of each. Summary of `node_type` body structures:
 - `concept`: Abstract → Definition → Examples → Related Concepts
-- `doc_standard`: Abstract → Rule/Schema → Fields → Usage Examples
+- `doc_standard`: Abstract → Schema → Fields → Usage Examples
 - `how_to`: Abstract → Prerequisites → Steps → Verification
+- `adr`: Abstract → Context → Decision → Rationale → Consequences
+- `reference`: Abstract → Overview → Commands / API → Examples
+- `faq`: Abstract → Q&A pairs
 
 **WK-5 — Current Truth Separation**
 `wiki/` contains only current state. It never references `desk/` (active work) or `backlog/` (deferred). If a node describes something planned but not yet implemented, its `compliance.status` must reflect that (`planned` or `scaffolding`). A node with `status: "implemented"` is a claim that the code and docs match reality.

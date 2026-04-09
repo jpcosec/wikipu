@@ -34,3 +34,10 @@ Use this index to navigate through the core aspects of the project:
 
 *   **[[LLM Instructions]]**: Guidelines and protocols for AI agents interacting with `wikipu`.
 *   **[[Human Instructions]]**: Best practices and rules for human developers contributing to the project.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples
+

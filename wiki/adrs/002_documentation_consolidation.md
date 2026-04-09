@@ -27,3 +27,9 @@ Following the "Sanctuary" law, `raw/` remains immutable, but our operational pro
 ## Consequences
 - Agents must ignore `raw/sourcetalk_artifacts/` when looking for active rules.
 - The `wiki/standards/00_house_rules.md` is now the sole authority for ecosystem laws.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples

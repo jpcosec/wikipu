@@ -56,3 +56,9 @@ The `00_house_rules.md` document (`[[00_house_rules]]`) is the foundational stan
 The `wiki_compiler` processes source Markdown files (located in `wiki/`) that can contain `![[transclusion]]` syntax or standard Markdown links. The `wiki/` directory acts as the single source of truth for both humans and machines. YAML frontmatter is used to declare node characteristics cleanly, maintaining the DRY principle for documentation.
 
 By combining these elements, `wikipu` provides a dynamic, auditable, and intelligent framework for managing complex software projects.
+
+## Definition
+
+## Examples
+
+## Related Concepts

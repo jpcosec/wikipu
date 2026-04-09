@@ -52,3 +52,9 @@ To propose a new module, use the compiler validation interface built around `Top
 ## 📜 Adhering to House Rules
 
 Always operate within the boundaries defined by the `[[00_house_rules]]`. These rules are not suggestions; they are the fundamental laws of the ecosystem, designed to maintain architectural integrity and knowledge consistency.
+
+## Rule/Schema
+
+## Fields
+
+## Usage Examples
