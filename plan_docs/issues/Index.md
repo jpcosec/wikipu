@@ -18,6 +18,33 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Priority roadmap
 
+┄┄┄ Gap issues (no dependencies — fix before starting phase work)
+
+  G1. plan_docs/issues/gaps/perception-gates-phase-mislabel.md
+      • Move perception-gates-and-classification from Phase 4 heading to Phase 3 in this index.
+      • Depends on: none.
+  G2. plan_docs/issues/gaps/desk-directory-bootstrap.md
+      • Create desk/ directory with Gates.md stub and autopoiesis/ subtree before runtime writes to it.
+      • Depends on: none.
+  G3. plan_docs/issues/gaps/dangling-issue-references.md
+      • Replace dead references to cross-session-memory.md and autopoiesis-loop-coordinator.md in 7 issue files.
+      • Depends on: none.
+  G4. plan_docs/issues/gaps/find-by-io-scanner-coverage.md
+      • Extend scanner to detect pathlib/json I/O patterns so find_by_io returns non-empty results.
+      • Depends on: none.
+  G5. plan_docs/issues/gaps/find-by-io-cli-documentation.md
+      • Document find_by_io scanner-coverage dependency in wiki/reference/cli/query.md.
+      • Depends on: none.
+  G6. plan_docs/issues/gaps/find-by-io-not-found-guard.md
+      • validate-wiki wraps FileNotFoundError as a frontmatter finding; add a dedicated not_found guard.
+      • Depends on: none.
+  G7. plan_docs/issues/gaps/missing-adrs-index-node.md
+      • Create wiki/adrs/Index.md — the ADR domain entry point is graph-referenced but does not exist on disk.
+      • Depends on: none.
+  G8. plan_docs/issues/gaps/cleanser-index-false-positives.md
+      • cleanse --detect proposes splitting every Index.md node; exempt index and reference node types from the compound-abstract detector.
+      • Depends on: none.
+
 ┄┄┄ Phase 3 — Runtime and protocol
 
   10. plan_docs/issues/unimplemented/cleansing-apply-and-advanced-detectors.md
