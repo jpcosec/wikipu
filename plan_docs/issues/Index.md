@@ -32,31 +32,79 @@ Foundation, interface, and generation layers are functional. The immediate goals
   14. plan_docs/issues/unimplemented/scanner-plugin-interface.md
       • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
       • Depends on: artifact-validation-rollup.
+  15. plan_docs/issues/unimplemented/gate-table-runtime.md
+      • Add read/write helpers and state handling for `desk/Gates.md`.
+      • Depends on: none.
+  16. plan_docs/issues/unimplemented/run-skeleton.md
+      • Add a safe first version of `wiki-compiler run`.
+      • Depends on: perception-gates-and-classification.
+  17. plan_docs/issues/unimplemented/coordinator-gate-resume-flow.md
+      • Add gate pause/resume/apply flow to the coordinator.
+      • Depends on: gate-table-runtime, run-skeleton, cleansing-apply-and-advanced-detectors.
+  18. plan_docs/issues/unimplemented/coordinator-identity-preflight.md
+      • Add identity-rule and minimal-energy preflight before coordinator actions execute.
+      • Depends on: run-skeleton.
+  19. plan_docs/issues/unimplemented/cycle-record-persistence.md
+      • Persist a minimal cycle record for each coordinator run.
+      • Depends on: run-skeleton.
+  20. plan_docs/issues/unimplemented/trail-collect-closeout.md
+      • Add trail collect as the coordinator closeout step.
+      • Depends on: coordinator-gate-resume-flow, cycle-record-persistence.
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
-15. plan_docs/issues/unimplemented/perception-gates-and-classification.md
+21. plan_docs/issues/unimplemented/perception-gates-and-classification.md
     • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
     • Depends on: none.
-16. plan_docs/issues/unimplemented/cross-session-memory.md
-    • SessionLog + TrailArtifact models, session log writes, wiki-compiler history.
-    • Depends on: unimplemented/autopoiesis-loop-coordinator.md.
-17. plan_docs/issues/unimplemented/autopoiesis-loop-coordinator.md
-    • wiki-compiler run: the full cycle orchestrator with minimal energy enforcement.
-    • Depends on: perception-gates-and-classification, cleansing-apply-and-advanced-detectors.
-18. plan_docs/issues/unimplemented/context-routing.md
-    • Add wiki-compiler context command: graph-driven context bundle for any task in one CLI call.
-    • Depends on: query-server-runtime, how-to-wiki-section, verification-checklists.
+22. plan_docs/issues/unimplemented/context-router-contract.md
+    • Define the stable CLI contract and bundle schema for context routing.
+    • Depends on: none.
+23. plan_docs/issues/unimplemented/context-graph-aware-routing.md
+    • Upgrade context matching into graph-aware routing with ranking reasons.
+    • Depends on: context-router-contract.
+24. plan_docs/issues/unimplemented/context-checklists-and-rules.md
+    • Attach operation-aware checklists and governing rules to context bundles.
+    • Depends on: context-router-contract.
+25. plan_docs/issues/unimplemented/context-active-work-intersection.md
+    • Add active-issue intersection to context bundles.
+    • Depends on: context-router-contract, context-graph-aware-routing.
+26. plan_docs/issues/unimplemented/context-prose-bundles.md
+    • Render LLM-ready context bundles with prose snippets and ranked explanations.
+    • Depends on: context-router-contract, context-graph-aware-routing, context-checklists-and-rules, context-active-work-intersection.
+27. plan_docs/issues/unimplemented/session-log-schema.md
+    • Define `SessionLog` and `TrailArtifact` and reconcile the standards language.
+    • Depends on: none.
+28. plan_docs/issues/unimplemented/session-log-storage.md
+    • Add session-log storage helpers and canonical paths under `desk/autopoiesis/`.
+    • Depends on: session-log-schema.
+29. plan_docs/issues/unimplemented/history-command.md
+    • Add `wiki-compiler history` as a read-only session-log aggregator.
+    • Depends on: session-log-schema, session-log-storage.
+30. plan_docs/issues/unimplemented/trail-collect-session-log.md
+    • Write session logs from the trail collect closeout path.
+    • Depends on: session-log-schema, session-log-storage, trail-collect-closeout.
+31. plan_docs/issues/unimplemented/session-resume-from-log.md
+    • Restore coordinator context from the latest session log.
+    • Depends on: session-log-schema, session-log-storage, trail-collect-session-log, run-skeleton.
 
 ┄┄ Dependency summary
 
-Phase 3[10] → Phase 4[17]      (coordinator depends on the full cleanser, not just detection)
+Phase 3[10] → Phase 3[17]      (gate resume depends on cleanser apply)
 Phase 3[12] → Phase 3[13]      (rollup builds on operational artifact validators)
 Phase 3[13] → Phase 3[14]      (scanner plugin targets the stabilized validation surface)
-Phase 3[13] → Phase 4[18]      (context routing still depends on the broader validation/runtime foundation)
-Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for memory)
+Phase 3[15] → Phase 3[17]      (gate resume depends on gate runtime)
+Phase 3[16] → Phase 3[17,18,19] (run skeleton is the base for coordinator follow-ups)
+Phase 3[19] → Phase 3[20]      (trail collect closeout follows persisted cycles)
+Phase 4[21] → Phase 3[16]      (run skeleton depends on perception classification)
+Phase 4[22] → Phase 4[23,24]   (context feature work starts from the contract)
+Phase 4[23] → Phase 4[25,26]   (routing is required before work intersection and prose bundles)
+Phase 4[24] → Phase 4[26]      (prose bundles attach operation rules/checklists)
+Phase 4[27] → Phase 4[28,29,30,31] (session schema is the base for all memory work)
+Phase 4[28] → Phase 4[29,30,31] (storage helpers are required before history, writes, and resume)
+Phase 3[20] → Phase 4[30]      (session-log writing follows trail collect closeout)
+Phase 3[16] → Phase 4[31]      (session resume depends on coordinator startup)
 
 ┄┄ Parallelization map
 
-Phase 3  [10][12] then [13] then [14]     — 10 and 12 parallel, then 13, then 14
-Phase 4  [15] then [17] then [16]; [18] after [13]
+Phase 3  [10][12][15] then [13][21] then [14][16] then [17][18][19] then [20]
+Phase 4  [22][27] then [23][24][28] then [25][29] then [26][30][31]

@@ -2,6 +2,7 @@
 
 ## 2026-04-09
 
+- decomposed the remaining oversized coordinator, context-routing, and cross-session-memory issues into atomic child issues and updated `plan_docs/issues/Index.md` to reflect the new execution order
 - resolved the perception foundation: added `GitFacet`, build-time git metadata injection, `wiki-compiler status`, and spun perturbation classification plus gate-aware reporting into a follow-up issue
 - resolved the cleansing detection foundation: added `cleanse --detect`, cleansing proposal/report models, first-pass anomaly detectors, and spun the apply/advanced detector work into a follow-up issue
 - resolved the artifact validation foundation: added `wiki-compiler validate-wiki`, typed artifact validation reports, wiki/ADR checks, and split the remaining operational and rollup work into follow-up issues
