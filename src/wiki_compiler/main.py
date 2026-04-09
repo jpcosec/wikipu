@@ -12,6 +12,8 @@ from pathlib import Path
 from .auditor import run_audit
 from .builder import build_wiki
 from .context import render_context
+from .curate import promote_draft
+from .curate import score_drafts
 from .facet_validator import validate_facet_proposal
 from .graph_utils import load_graph
 from .ingest import ingest_raw_sources
@@ -160,6 +162,25 @@ def main() -> None:
             )
             print(json.dumps([path.as_posix() for path in written], indent=2))
             return
+        if args.command == "curate":
+            if args.score:
+                results = score_drafts(
+                    graph_path=Path(args.graph),
+                    drafts_dir=Path(args.drafts_dir),
+                )
+                print(json.dumps(results, indent=2))
+                return
+            if args.promote:
+                node_id, dest = args.promote
+                promote_draft(
+                    node_id=node_id,
+                    dest=dest,
+                    drafts_dir=Path(args.drafts_dir),
+                    wiki_dir=Path(args.wiki_dir),
+                )
+                print(f"[OK] Promoted {node_id} to wiki/{dest}")
+                return
+            raise ValueError("curate requires --score or --promote <node_id> <dest>")
         if args.command == "compose":
             output_path = Path(args.output)
             output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -358,6 +379,29 @@ def build_parser() -> argparse.ArgumentParser:
     )
     ingest_parser.add_argument(
         "--model", help="Reserved for future LLM-backed extraction"
+    )
+
+    curate_parser = subparsers.add_parser(
+        "curate", help="Score or promote draft wiki nodes"
+    )
+    curate_mode = curate_parser.add_mutually_exclusive_group(required=True)
+    curate_mode.add_argument(
+        "--score", action="store_true", help="Score all draft wiki nodes"
+    )
+    curate_mode.add_argument(
+        "--promote",
+        nargs=2,
+        metavar=("NODE_ID", "DEST"),
+        help="Promote one draft node into wiki/<DEST>",
+    )
+    curate_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
+    )
+    curate_parser.add_argument(
+        "--drafts-dir", default="wiki/drafts", help="Draft wiki directory"
+    )
+    curate_parser.add_argument(
+        "--wiki-dir", default="wiki", help="Canonical wiki directory"
     )
 
     compose_parser = subparsers.add_parser(

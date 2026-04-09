@@ -388,6 +388,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/__pycache__/curate.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/__pycache__/facet_injectors.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
@@ -933,7 +938,10 @@
           "exemption_reason": null
         },
         "adr": null,
-        "test_map": null
+        "test_map": {
+          "test_type": "unit",
+          "coverage_percent": null
+        }
       },
       "id": "file:src/wiki_compiler/curate.py"
     },
@@ -1275,6 +1283,8 @@
             "from .auditor import run_audit",
             "from .builder import build_wiki",
             "from .context import render_context",
+            "from .curate import promote_draft",
+            "from .curate import score_drafts",
             "from .facet_validator import validate_facet_proposal",
             "from .graph_utils import load_graph",
             "from .ingest import ingest_raw_sources",
@@ -2107,6 +2117,24 @@
       "status": "unknown",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/__pycache__/curate.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null
+      },
+      "id": "file:src/wiki_compiler/__pycache__/curate.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/__pycache__/facet_injectors.cpython-313.pyc",
           "node_type": "concept"
         },
@@ -2588,6 +2616,11 @@
           },
           {
             "target_id": "doc:wiki/reference/cli/build.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/curate.md",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -3115,6 +3148,77 @@
         "test_map": null
       },
       "id": "doc:wiki/reference/cli/build.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/curate.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/curate.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_get_abstract",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_node_id_to_file",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_rewrite_node_id",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_sentence_count",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:promote_draft",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:score_drafts",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Scores draft wiki nodes for promotion readiness and promotes selected drafts into the canonical wiki. This command is the middle step between `wiki-compiler ingest` and durable `wiki/` content.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/curate.md"
     },
     {
       "type": "reference",
@@ -9041,6 +9145,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
+      "target": "file:src/wiki_compiler/__pycache__/curate.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/facet_injectors.cpython-313.pyc"
     },
     {
@@ -10067,6 +10177,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/curate.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/cli/ingest.md"
     },
     {
@@ -10152,6 +10268,60 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/build.md",
       "target": "file:src/wiki_compiler/builder.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "file:src/wiki_compiler/curate.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:_evaluate_node"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:_get_abstract"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:_node_id_to_file"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:_rewrite_node_id"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:_sentence_count"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:promote_draft"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/curate.md",
+      "target": "code:src/wiki_compiler/curate.py:score_drafts"
     },
     {
       "relation": "documents",

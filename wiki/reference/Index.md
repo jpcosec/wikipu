@@ -6,6 +6,7 @@ edges:
   - {target_id: "doc:wiki/reference/faq.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/build.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/cli/curate.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/ingest.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/llm_agent.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/protocols/human_contributor.md", relation_type: "contains"}

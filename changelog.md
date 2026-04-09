@@ -2,6 +2,8 @@
 
 ## 2026-04-09
 
+- resolved the draft curation pipeline: ingest now mirrors source groups with per-source `INDEX.md`, `wiki-compiler curate` can score or promote drafts, and the promotion criteria are encoded in the house rules
+- added `wiki-compiler curate` with scoring and promotion support, documented it in `wiki/reference/cli/curate.md`, and encoded draft promotion criteria in the house rules
 - removed the resolved `query-server-runtime` issue after confirming the query runtime and topology proposal validation are already implemented and covered by tests
 - expanded `wiki/reference/faq.md` to cover the full planned onboarding question set and removed the resolved FAQ issue from `plan_docs/issues/`
 - added OP-6 to `wiki/standards/00_house_rules.md`: never begin editing from a dirty worktree

@@ -259,6 +259,11 @@ Each artifact type has a canonical schema defining its frontmatter fields and re
 **WK-6 — Reference Docs Are Derived**
 `wiki/reference/` nodes are generated from or kept in sync with source code. They document what exists, not what is planned. If the source changes, the reference doc must be updated in the same commit.
 
+**WK-7 — Draft Promotion Requires Curation**
+A draft may be promoted from `wiki/drafts/` into `wiki/` only when it has a clear single-purpose abstract, a non-fallback `node_type`, repository relevance, and no duplicate canonical node already covering the same concept.
+
+`Enforced by:` `wiki-compiler curate --score`; human or agent review before `wiki-compiler curate --promote`.
+
 ---
 
 ## Violation Examples

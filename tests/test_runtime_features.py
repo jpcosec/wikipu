@@ -443,3 +443,111 @@ def test_ingest_scaffolding_creates_draft_nodes(tmp_path: Path) -> None:
     assert 'node_id: "doc:wiki/raw_notes.md"' in draft_text
     assert 'status: "planned"' in draft_text
     assert "Generated from `raw/notes.md`" in draft_text
+
+
+def test_ingest_mirrors_source_subdirs_and_writes_index(tmp_path: Path) -> None:
+    from wiki_compiler.ingest import ingest_raw_sources
+
+    source_dir = tmp_path / "raw"
+    dest_dir = tmp_path / "wiki" / "drafts"
+    write(
+        source_dir / "source_a" / "notes.md",
+        """
+        # Source A Notes
+
+        This source explains one concept.
+        """,
+    )
+
+    written_files = ingest_raw_sources(source_dir=source_dir, dest_dir=dest_dir)
+    draft_path = dest_dir / "source_a" / "source_a_notes.md"
+    index_path = dest_dir / "source_a" / "INDEX.md"
+
+    assert draft_path in written_files
+    assert (
+        'node_id: "doc:wiki/drafts/source_a/source_a_notes.md"'
+        in draft_path.read_text(encoding="utf-8")
+    )
+    assert "doc:wiki/drafts/source_a/source_a_notes.md" in index_path.read_text(
+        encoding="utf-8"
+    )
+
+
+def test_curate_score_reports_ranked_draft_quality(tmp_path: Path) -> None:
+    from networkx.readwrite import json_graph
+    from wiki_compiler.curate import score_drafts
+
+    graph_path = tmp_path / "knowledge_graph.json"
+    drafts_dir = tmp_path / "wiki" / "drafts"
+    good_draft = drafts_dir / "group" / "good.md"
+    good_draft.parent.mkdir(parents=True, exist_ok=True)
+    good_draft.write_text("draft", encoding="utf-8")
+
+    graph_data = {
+        "directed": True,
+        "multigraph": False,
+        "graph": {},
+        "nodes": [
+            {
+                "id": "doc:wiki/drafts/group/good.md",
+                "schema": {
+                    "identity": {
+                        "node_id": "doc:wiki/drafts/group/good.md",
+                        "node_type": "concept",
+                    },
+                    "semantics": {"intent": "A clear abstract. Another sentence."},
+                },
+            },
+            {
+                "id": "doc:wiki/drafts/group/bad.md",
+                "schema": {
+                    "identity": {
+                        "node_id": "doc:wiki/drafts/group/bad.md",
+                        "node_type": "file",
+                    },
+                    "semantics": {"intent": ""},
+                },
+            },
+        ],
+        "links": [],
+    }
+    graph_path.write_text(json.dumps(graph_data), encoding="utf-8")
+
+    results = score_drafts(graph_path=graph_path, drafts_dir=drafts_dir)
+
+    assert results[0]["node_id"] == "doc:wiki/drafts/group/good.md"
+    assert results[0]["score"] > results[1]["score"]
+
+
+def test_curate_promote_moves_draft_and_rewrites_node_id(tmp_path: Path) -> None:
+    from wiki_compiler.curate import promote_draft
+
+    drafts_dir = tmp_path / "wiki" / "drafts"
+    wiki_dir = tmp_path / "wiki"
+    draft_path = drafts_dir / "group" / "draft.md"
+    draft_path.parent.mkdir(parents=True, exist_ok=True)
+    draft_path.write_text(
+        """---
+identity:
+  node_id: "doc:wiki/drafts/group/draft.md"
+  node_type: "concept"
+---
+
+Draft abstract.
+""",
+        encoding="utf-8",
+    )
+
+    promote_draft(
+        node_id="doc:wiki/drafts/group/draft.md",
+        dest="concepts/promoted.md",
+        drafts_dir=drafts_dir,
+        wiki_dir=wiki_dir,
+    )
+
+    promoted_path = wiki_dir / "concepts" / "promoted.md"
+    assert promoted_path.exists()
+    assert not draft_path.exists()
+    assert 'node_id: "doc:wiki/concepts/promoted.md"' in promoted_path.read_text(
+        encoding="utf-8"
+    )
