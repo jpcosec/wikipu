@@ -124,6 +124,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/cleanser.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/context.py",
             "relation_type": "contains",
             "metadata": {}
@@ -384,6 +389,11 @@
           },
           {
             "target_id": "file:src/wiki_compiler/__pycache__/builder.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/__pycache__/cleanser.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -776,6 +786,94 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/cleanser.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_stale_edge_proposals",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_orphaned_plan_proposals",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_compound_abstract_proposals",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_duplicate_abstract_proposals",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_sentence_count",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_has_dual_purpose_language",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_normalize_text",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:_dedupe",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Detect structural cleansing candidates in the knowledge graph.",
+          "raw_docstring": "Detect structural cleansing candidates in the knowledge graph."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/cleanser.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import re",
+            "from pathlib import Path",
+            "from .contracts import CleansingProposal",
+            "from .contracts import CleansingReport",
+            "from .graph_utils import iter_knowledge_nodes",
+            "from .graph_utils import load_graph"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": {
+          "test_type": "unit",
+          "coverage_percent": null
+        }
+      },
+      "id": "file:src/wiki_compiler/cleanser.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/context.py",
           "node_type": "file"
         },
@@ -919,6 +1017,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingProposal",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -1364,6 +1472,7 @@
             "from .auditor import run_audit",
             "from .artifact_validation import validate_wiki_artifact",
             "from .builder import build_wiki",
+            "from .cleanser import detect_cleansing_candidates",
             "from .context import render_context",
             "from .curate import promote_draft",
             "from .curate import score_drafts",
@@ -2175,6 +2284,24 @@
         "test_map": null
       },
       "id": "file:src/wiki_compiler/__pycache__/builder.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/__pycache__/cleanser.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null
+      },
+      "id": "file:src/wiki_compiler/__pycache__/cleanser.cpython-313.pyc"
     },
     {
       "type": "concept",
@@ -3356,7 +3483,7 @@
     },
     {
       "type": "reference",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/reference/cli/cleanse.md",
@@ -3367,16 +3494,26 @@
             "target_id": "file:src/wiki_compiler/main.py",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/cleanser.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "This planned command will detect graph anomalies and propose structural corrections before any destructive or topology-changing cleanup is applied. It exists as a protocol placeholder so the graph can model the cleansing step before the runtime is fully implemented.",
+          "intent": "Detects graph anomalies and proposes structural corrections before any destructive or topology-changing cleanup is applied. The current implementation covers `--detect`; `--apply` remains a follow-up.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
+          "status": "implemented",
           "failing_standards": [],
           "exemption_reason": null
         },
@@ -4633,6 +4770,37 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load a graph and return the current cleansing candidate proposals.",
+          "raw_docstring": "Load a graph and return the current cleansing candidate proposals."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "detect_cleansing_candidates(graph_path: Path) -> CleansingReport"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/curate.py:score_drafts",
           "node_type": "code_construct"
         },
@@ -5080,6 +5248,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingProposal",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -7191,6 +7369,254 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_stale_edge_proposals",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_stale_edge_proposals` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_stale_edge_proposals(graph: object) -> list[CleansingProposal]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_stale_edge_proposals"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_orphaned_plan_proposals",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_orphaned_plan_proposals` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_orphaned_plan_proposals(graph: object) -> list[CleansingProposal]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_orphaned_plan_proposals"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_compound_abstract_proposals",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_compound_abstract_proposals` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_compound_abstract_proposals(graph: object) -> list[CleansingProposal]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_compound_abstract_proposals"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_duplicate_abstract_proposals",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_duplicate_abstract_proposals` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_duplicate_abstract_proposals(graph: object) -> list[CleansingProposal]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_duplicate_abstract_proposals"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_sentence_count",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_sentence_count` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_sentence_count(text: str) -> int"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_sentence_count"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_has_dual_purpose_language",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_has_dual_purpose_language` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_has_dual_purpose_language(text: str) -> bool"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_has_dual_purpose_language"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_normalize_text",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_normalize_text` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_normalize_text(text: str) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_normalize_text"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/cleanser.py:_dedupe",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Function `_dedupe` in `src/wiki_compiler/cleanser.py`.",
+          "raw_docstring": null
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_dedupe(proposals: list[CleansingProposal]) -> list[CleansingProposal]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/cleanser.py:_dedupe"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
           "node_type": "code_construct"
         },
@@ -7251,6 +7677,72 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CleansingProposal",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A proposed corrective operation for an existing graph node.",
+          "raw_docstring": "A proposed corrective operation for an existing graph node."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CleansingProposal"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CleansingProposal"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Machine-readable output of cleansing candidate detection.",
+          "raw_docstring": "Machine-readable output of cleansing candidate detection."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CleansingReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CleansingReport"
     },
     {
       "type": "code_construct",
@@ -9684,6 +10176,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "file:src/wiki_compiler/cleanser.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/context.py"
     },
     {
@@ -9811,6 +10309,12 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/builder.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/__pycache__",
+      "target": "file:src/wiki_compiler/__pycache__/cleanser.cpython-313.pyc"
     },
     {
       "relation": "contains",
@@ -10097,6 +10601,60 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_stale_edge_proposals"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_orphaned_plan_proposals"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_compound_abstract_proposals"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_duplicate_abstract_proposals"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_sentence_count"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_has_dual_purpose_language"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_normalize_text"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/cleanser.py",
+      "target": "code:src/wiki_compiler/cleanser.py:_dedupe"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/context.py",
       "target": "code:src/wiki_compiler/context.py:render_context"
     },
@@ -10213,6 +10771,18 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/contracts.py",
       "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingProposal"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingReport"
     },
     {
       "relation": "contains",
@@ -11123,6 +11693,18 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/reference/cli/cleanse.md",
+      "target": "file:src/wiki_compiler/cleanser.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/cleanse.md",
+      "target": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/reference/cli/curate.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -11623,6 +12205,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/contracts.md",
       "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/contracts.md",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingProposal"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/contracts.md",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingReport"
     },
     {
       "relation": "documents",

@@ -20,8 +20,8 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
-  10. plan_docs/issues/unimplemented/cleansing-protocol.md
-      • Implement cleanser.py with anomaly detectors and CleansingProposal.
+  10. plan_docs/issues/unimplemented/cleansing-apply-and-advanced-detectors.md
+      • Add cleanse proposal application and the remaining anomaly detector families.
       • Depends on: none.
   12. plan_docs/issues/unimplemented/operational-artifact-validation.md
       • Add validators for issue, board, backlog, and gate artifacts using the new wiki artifact validation foundation.
@@ -50,7 +50,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Dependency summary
 
-Phase 3[10] → Phase 4[17]      (coordinator depends on cleanser alongside resolved curation/query foundations)
+Phase 3[10] → Phase 4[17]      (coordinator depends on the full cleanser, not just detection)
 Phase 3[12] → Phase 3[13]      (rollup builds on operational artifact validators)
 Phase 3[13] → Phase 3[14]      (scanner plugin targets the stabilized validation surface)
 Phase 3[13] → Phase 4[18]      (context routing still depends on the broader validation/runtime foundation)

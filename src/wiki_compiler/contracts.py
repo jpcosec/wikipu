@@ -321,3 +321,30 @@ class ArtifactValidationReport(BaseModel):
         default_factory=list,
         description="Rule-level validation failures for the artifact.",
     )
+
+
+class CleansingProposal(BaseModel):
+    """A proposed corrective operation for an existing graph node."""
+
+    node_id: str = Field(description="Primary node targeted by the proposal.")
+    operation: Literal["destroy", "relocate", "split", "merge"] = Field(
+        description="Structural operation proposed for the node."
+    )
+    rationale: str = Field(description="Why this corrective action is being proposed.")
+    affected_nodes: list[str] = Field(
+        default_factory=list,
+        description="All nodes implicated in the proposed operation.",
+    )
+    requires_human_approval: bool = Field(
+        default=True,
+        description="Whether the proposal requires explicit approval before application.",
+    )
+
+
+class CleansingReport(BaseModel):
+    """Machine-readable output of cleansing candidate detection."""
+
+    proposals: list[CleansingProposal] = Field(
+        default_factory=list,
+        description="Detected structural correction proposals.",
+    )

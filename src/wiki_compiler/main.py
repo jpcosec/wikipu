@@ -12,6 +12,7 @@ from pathlib import Path
 from .auditor import run_audit
 from .artifact_validation import validate_wiki_artifact
 from .builder import build_wiki
+from .cleanser import detect_cleansing_candidates
 from .context import render_context
 from .curate import promote_draft
 from .curate import score_drafts
@@ -160,6 +161,12 @@ def main() -> None:
                 )
             )
             return
+        if args.command == "cleanse":
+            if args.detect:
+                report = detect_cleansing_candidates(Path(args.graph))
+                print(json.dumps(report.model_dump(), indent=2))
+                return
+            raise ValueError("cleanse --apply is not implemented yet")
         if args.command == "ingest":
             written = ingest_raw_sources(
                 source_dir=Path(args.source),
@@ -376,6 +383,20 @@ def build_parser() -> argparse.ArgumentParser:
         "--include-planned",
         action="store_true",
         help="Include planned nodes in the output",
+    )
+
+    cleanse_parser = subparsers.add_parser(
+        "cleanse", help="Detect or apply structural cleansing proposals"
+    )
+    cleanse_mode = cleanse_parser.add_mutually_exclusive_group(required=True)
+    cleanse_mode.add_argument(
+        "--detect", action="store_true", help="Detect cleansing candidates"
+    )
+    cleanse_mode.add_argument(
+        "--apply", help="Apply one approved cleansing proposal report"
+    )
+    cleanse_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
     )
 
     ingest_parser = subparsers.add_parser(
