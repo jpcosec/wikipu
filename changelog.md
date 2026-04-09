@@ -2,6 +2,7 @@
 
 ## 2026-04-09
 
+- added OP-6 to `wiki/standards/00_house_rules.md`: never begin editing from a dirty worktree
 - added `wiki-compiler check-workflow` plus workflow rules in standards and `AGENTS.md` to enforce issue linkage, changelog updates, and branch naming for non-trivial work
 - reorganized wiki information architecture: added `wiki/Index.md`, introduced `wiki/standards/document_topology.md`, moved issue lifecycle rules into `wiki/standards/issues_lifecycle.md`, and updated planning guidance to point to the standards doc
 - moved conceptual and reference docs out of the wiki root, relocated FAQ to `wiki/reference/faq.md`, and retired the legacy `wiki/00_INDEX_MOC.md` naming

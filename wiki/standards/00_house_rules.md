@@ -160,6 +160,15 @@ Split when: a unit has more than 3–4 steps that could fail independently. Extr
 This rule applies to wiki nodes via WK-1 (Single Responsibility) and to code modules via CS-9. The same principle governs all levels of the system.
 `Enforced by:` issue atomization check in Stage 2.2 of `wiki/standards/issues_lifecycle.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
 
+**OP-6 — Clean Tree Before Editing**
+Do not start editing while the worktree has unstaged or untracked files. First bring the tree back to a deliberate state by committing, stashing, deleting, or otherwise resolving the pending changes.
+
+- Run `git status --short` before starting a new implementation slice.
+- If the tree is dirty, stop and resolve the pending state before editing any tracked or untracked file.
+- A new editing session begins only from a clean tree.
+
+`Enforced by:` agent workflow discipline; local git hygiene before any edit.
+
 **OP-7 — Git Commit Cadence and Branching**
 Git encodes state transitions at two levels of granularity: commits (atomic units) and branches (in-progress work streams). Together they make every stable state of the system recoverable and every change attributable.
 
