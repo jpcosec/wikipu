@@ -4,12 +4,13 @@
 
 **Reference:** `wiki/adrs/002_documentation_consolidation.md`, `agents/librarian/intro.md`
 
-**What to fix:** Create `wiki/standards/00_house_rules.md` as the canonical ecosystem law document, incorporating relevant rules from `raw/cleansing_protocol.md`, `wiki/concepts/wiki_construction_principles.md`, and the librarian protocol in `agents/librarian/intro.md`.
+**What to fix:** Create `wiki/standards/00_house_rules.md` as the canonical ecosystem law document — the identity rules for the autopoietic network. This is not just a human-readable reference; it must declare rules in a form that the autopoiesis loop coordinator can enforce.
 
 **How to do it:**
-1. Read `agents/librarian/intro.md` to extract the rules it references.
-2. Read `wiki/concepts/wiki_construction_principles.md` and `raw/cleansing_protocol.md` for additional laws.
-3. Write `wiki/standards/00_house_rules.md` as a consolidated, numbered law list.
-4. Update `agents/librarian/intro.md` to point to the new file (it already does by convention).
+1. Read `agents/librarian/intro.md`, `wiki/concepts/wiki_construction_principles.md`, `raw/cleansing_protocol.md`, and the four `raw/methodology_synthesis*.md` files to extract all identity rules.
+2. Read `raw/autopoiesis_system.md` for the minimal energy rule and the three-layer framework.
+3. Write `wiki/standards/00_house_rules.md` as a numbered law list, each law with: a machine-readable `rule_id`, a human-readable description, the layer it governs (identity / perception / response), and the enforcement mechanism (which process checks it).
+4. Each law should declare its check: orthogonality is checked by `submit_topology_proposal`; zone separation is checked by `build_wiki()`; minimal energy is checked by the loop coordinator before any proposal.
+5. Update `agents/librarian/intro.md` to point to the new file (it already does by convention).
 
-**Depends on:** none
+**Depends on:** none (this is the precondition for all other autopoiesis work)

@@ -18,3 +18,6 @@ dependencies = [
 [project.scripts]
 # This exposes the 'wiki-compiler' command in the terminal for installation.
 wiki-compiler = "wiki_compiler.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

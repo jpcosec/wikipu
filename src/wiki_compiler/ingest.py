@@ -1,6 +1,7 @@
 """
 Handles the ingestion of raw source files and their transformation into Knowledge Graph draft nodes.
 """
+
 from __future__ import annotations
 
 import re
@@ -21,7 +22,9 @@ def ingest_raw_sources(
     root = project_root or source_dir.parent
     ignore_rules = load_wikiignore_rules(root / ".wikiignore")
     written: list[Path] = []
-    for source_path in sorted(path for path in source_dir.rglob("*.md") if path.is_file()):
+    for source_path in sorted(
+        path for path in source_dir.rglob("*.md") if path.is_file()
+    ):
         if any(
             part.startswith(".") for part in source_path.relative_to(source_dir).parts
         ):
@@ -29,19 +32,18 @@ def ingest_raw_sources(
         rel_source = source_path.relative_to(root).as_posix()
         if match_ignore_reason(rel_source, ignore_rules) is not None:
             continue
-        
-        # New: Atomic Decomposition
+
         nodes = decompose_source(source_path)
         for title, content, node_type in nodes:
             draft_slug = slugify(title)
-            # If multiple nodes from same source, append slug part if needed?
-            # For now, slugify(title) should be unique enough within a source.
             draft_path = dest_dir / f"{draft_slug}.md"
             if draft_path.exists() and not overwrite:
                 continue
             draft_path.parent.mkdir(parents=True, exist_ok=True)
             draft_path.write_text(
-                render_draft(source_path, rel_source, dest_dir, draft_slug, title, content, node_type),
+                render_draft(
+                    rel_source, dest_dir, draft_slug, title, content, node_type
+                ),
                 encoding="utf-8",
             )
             written.append(draft_path)
@@ -60,12 +62,12 @@ def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
     # Split by ## headings
     sections = re.split(r"\n(?=## )", "\n" + text)
     nodes = []
-    
+
     for section in sections:
         section = section.strip()
         if not section:
             continue
-        
+
         lines = section.splitlines()
         if lines[0].startswith("## "):
             title = lines[0].lstrip("# ").strip()
@@ -83,14 +85,13 @@ def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
                 title = source_path.stem.replace("_", " ").title()
                 content = section
             node_type = "concept"
-            
+
         nodes.append((title, content, node_type))
-        
+
     return nodes
 
 
 def render_draft(
-    source_path: Path,
     rel_source: str,
     dest_dir: Path,
     draft_slug: str,
@@ -105,7 +106,7 @@ def render_draft(
     # Extract first paragraph as abstract
     lines = [line.strip() for line in content.splitlines() if line.strip()]
     abstract = lines[0] if lines else "No abstract provided."
-    
+
     return "\n".join(
         [
             "---",
@@ -114,6 +115,9 @@ def render_draft(
             f'  node_type: "{node_type}"',
             "edges:",
             f'  - {{target_id: "raw:{rel_source}", relation_type: "documents"}}',
+            "compliance:",
+            '  status: "planned"',
+            "  failing_standards: []",
             "---",
             "",
             abstract,
@@ -149,11 +153,17 @@ def draft_node_path(dest_dir: Path, stem: str) -> str:
     """
     Computes the canonical node path for a draft markdown file.
     """
-    base = dest_dir.parent.name + "/" + dest_dir.name
-    return f"{base}/{slugify(stem)}.md"
+    if dest_dir.is_absolute():
+        base_path = Path(dest_dir.name)
+        if dest_dir.parent.name == "wiki":
+            base_path = Path(dest_dir.parent.name) / dest_dir.name
+    else:
+        base_path = dest_dir
+    return (base_path / f"{slugify(stem)}.md").as_posix()
 
 
 _MAX_SLUG_LENGTH = 80
+
 
 def slugify(value: str) -> str:
     """

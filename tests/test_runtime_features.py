@@ -357,6 +357,71 @@ def test_validator_rejects_collisions_and_tracks_attempts(tmp_path: Path) -> Non
     assert "Unknown glossary terms" in (report.resolution_suggestion or "")
 
 
+def test_build_wiki_infers_documents_edges_from_reference_pages(tmp_path: Path) -> None:
+    project_root = tmp_path
+    source_dir = project_root / "wiki"
+    graph_path = project_root / "knowledge_graph.json"
+    write(
+        source_dir / "reference/scanner.md",
+        """
+        ---
+        identity:
+          node_id: "doc:wiki/reference/scanner.md"
+          node_type: "doc_standard"
+        edges: []
+        compliance:
+          status: "implemented"
+          failing_standards: []
+        ---
+
+        Scanner reference.
+        """,
+    )
+    write(
+        project_root / "src/wiki_compiler/scanner.py",
+        '''
+        """Scanner module."""
+
+        def scan() -> None:
+            """Scan the source tree."""
+            return None
+        ''',
+    )
+
+    build_wiki(
+        source_dir=source_dir,
+        graph_path=graph_path,
+        project_root=project_root,
+        code_roots=[project_root / "src"],
+        baseline_path=project_root / "baseline.json",
+        update_baseline=True,
+    )
+
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    scanner_doc = next(
+        node for node in graph["nodes"] if node["id"] == "doc:wiki/reference/scanner.md"
+    )
+    edges = {
+        (link["source"], link["target"], link["relation"]) for link in graph["links"]
+    }
+
+    assert (
+        "doc:wiki/reference/scanner.md",
+        "file:src/wiki_compiler/scanner.py",
+        "documents",
+    ) in edges
+    assert (
+        "doc:wiki/reference/scanner.md",
+        "code:src/wiki_compiler/scanner.py:scan",
+        "documents",
+    ) in edges
+    assert any(
+        edge["relation_type"] == "documents"
+        and edge["target_id"] == "file:src/wiki_compiler/scanner.py"
+        for edge in scanner_doc["schema"]["edges"]
+    )
+
+
 def test_ingest_scaffolding_creates_draft_nodes(tmp_path: Path) -> None:
     from wiki_compiler.ingest import ingest_raw_sources
 

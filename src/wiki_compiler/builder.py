@@ -2,6 +2,7 @@
 Builds the Knowledge Graph by scanning Markdown wiki nodes and Python source code.
 It orchestrates the multi-phase compilation: directory skeleton, node ingestion, and facet injection.
 """
+
 from __future__ import annotations
 
 import json
@@ -14,7 +15,13 @@ from pathlib import Path
 import networkx as nx
 import yaml
 
-from .contracts import ComplianceFacet, Edge, KnowledgeNode, SemanticFacet, SystemIdentity
+from .contracts import (
+    ComplianceFacet,
+    Edge,
+    KnowledgeNode,
+    SemanticFacet,
+    SystemIdentity,
+)
 from .facet_injectors import ADRInjector, TestMapInjector
 from .graph_utils import add_knowledge_node, load_knowledge_node, save_graph
 from .node_templates import (
@@ -36,6 +43,7 @@ class BuildResult:
     """
     Encapsulates the outcome of a Knowledge Graph build process.
     """
+
     graph_path: Path
     baseline_path: Path
     compliance_score: float
@@ -47,6 +55,7 @@ def build_wiki(
     source_dir: Path,
     graph_path: Path,
     *,
+    dest_dir: Path | None = None,
     project_root: Path | None = None,
     code_roots: list[Path] | None = None,
     baseline_path: Path | None = None,
@@ -59,7 +68,7 @@ def build_wiki(
     graph = nx.DiGraph()
 
     # Phase 1: directory skeleton
-    for code_root in (code_roots or [root / "src"]):
+    for code_root in code_roots or [root / "src"]:
         if code_root.exists():
             for dir_node in build_directory_skeleton(code_root, root):
                 add_knowledge_node(graph, dir_node)
@@ -68,6 +77,14 @@ def build_wiki(
     files_index = index_markdown_files(source_dir)
     for markdown_path in sorted(source_dir.rglob("*.md")):
         node, raw_markdown = parse_markdown_node(markdown_path)
+        if dest_dir is not None:
+            compile_markdown_node(
+                markdown_path=markdown_path,
+                source_dir=source_dir,
+                dest_dir=dest_dir,
+                raw_markdown=raw_markdown,
+                files_index=files_index,
+            )
         if node is not None:
             for transclusion_target in extract_transclusions(raw_markdown, files_index):
                 node.edges.append(
@@ -78,6 +95,7 @@ def build_wiki(
         project_root=root, source_roots=code_roots or [root / "src"]
     ):
         add_knowledge_node(graph, node)
+    infer_reference_documents_edges(graph)
 
     # Phase 2b: facet injector passes
     ctx = InjectionContext(
@@ -120,11 +138,13 @@ def build_directory_skeleton(root: Path, project_root: Path) -> list[KnowledgeNo
             )
             for c in sorted(dirpath.iterdir())
         ]
-        nodes.append(KnowledgeNode(
-            identity=SystemIdentity(node_id=f"dir:{rel}", node_type="directory"),
-            edges=edges,
-            compliance=ComplianceFacet(status="implemented", failing_standards=[]),
-        ))
+        nodes.append(
+            KnowledgeNode(
+                identity=SystemIdentity(node_id=f"dir:{rel}", node_type="directory"),
+                edges=edges,
+                compliance=ComplianceFacet(status="implemented", failing_standards=[]),
+            )
+        )
     return nodes
 
 
@@ -146,13 +166,12 @@ def parse_markdown_node(filepath: Path) -> tuple[KnowledgeNode | None, str]:
     raw_markdown = content[yaml_match.end() :].lstrip("\n")
     node_data = yaml.safe_load(yaml_match.group(1)) or {}
     validated_node = KnowledgeNode.model_validate(node_data)
-    
+
     # Wiki Construction: Extract abstract as intent
     abstract = extract_abstract(content)
     if validated_node.semantics is None:
         validated_node.semantics = SemanticFacet(
-            intent=abstract or extract_heading(raw_markdown),
-            raw_docstring=None
+            intent=abstract or extract_heading(raw_markdown), raw_docstring=None
         )
     elif abstract:
         validated_node.semantics.intent = abstract
@@ -162,14 +181,14 @@ def parse_markdown_node(filepath: Path) -> tuple[KnowledgeNode | None, str]:
     missing_sections = validate_template_sections(
         validated_node.identity.node_type, content, registry
     )
-    
+
     if validated_node.compliance is None:
         validated_node.compliance = ComplianceFacet(
             status="implemented", failing_standards=missing_sections
         )
     else:
         validated_node.compliance.failing_standards.extend(missing_sections)
-        
+
     return validated_node, raw_markdown
 
 
@@ -196,6 +215,119 @@ def extract_transclusions(markdown: str, files_index: dict[str, Path]) -> list[s
             continue
         targets.append(f"doc:{target_path.as_posix()}")
     return targets
+
+
+def compile_markdown_node(
+    *,
+    markdown_path: Path,
+    source_dir: Path,
+    dest_dir: Path,
+    raw_markdown: str,
+    files_index: dict[str, Path],
+) -> None:
+    """Writes a compiled markdown copy with wiki transclusions rendered as links."""
+    compiled_path = dest_dir / markdown_path.relative_to(source_dir)
+    compiled_path.parent.mkdir(parents=True, exist_ok=True)
+    compiled_path.write_text(
+        render_compiled_markdown(
+            markdown=raw_markdown,
+            output_dir=compiled_path.parent,
+            source_dir=source_dir,
+            dest_dir=dest_dir,
+            files_index=files_index,
+        ),
+        encoding="utf-8",
+    )
+
+
+def render_compiled_markdown(
+    markdown: str,
+    output_dir: Path,
+    source_dir: Path,
+    dest_dir: Path,
+    files_index: dict[str, Path],
+) -> str:
+    """Converts wiki transclusions into relative markdown links for compiled output."""
+
+    def replacement(match: re.Match[str]) -> str:
+        target_name = match.group(1)
+        target_path = files_index.get(target_name)
+        if target_path is None:
+            return match.group(0)
+        compiled_target = dest_dir / target_path.relative_to(source_dir)
+        relative = os.path.relpath(compiled_target, output_dir).replace(os.sep, "/")
+        return f"[See {target_name}]({relative})"
+
+    compiled = TRANSCLUSION_REGEX.sub(replacement, markdown).strip()
+    return compiled + "\n"
+
+
+def infer_reference_documents_edges(graph: nx.DiGraph) -> None:
+    """Adds inferred `documents` edges from wiki reference pages to code nodes."""
+    file_candidates = build_reference_file_candidates(graph)
+    for node_id in sorted(graph.nodes):
+        if not node_id.startswith("doc:wiki/reference/"):
+            continue
+        stem = Path(node_id.removeprefix("doc:")).stem
+        matched_file = match_reference_file(stem, file_candidates)
+        if matched_file is None:
+            continue
+        target_ids = [matched_file]
+        target_ids.extend(sorted(code_nodes_for_file(graph, matched_file)))
+        add_documents_edges(graph, node_id, target_ids)
+
+
+def build_reference_file_candidates(graph: nx.DiGraph) -> dict[str, list[str]]:
+    """Indexes file nodes by stem for wiki reference auto-linking."""
+    candidates: dict[str, list[str]] = {}
+    for node_id, data in graph.nodes(data=True):
+        if data.get("type") != "file" or not node_id.startswith("file:src/"):
+            continue
+        stem = Path(node_id.removeprefix("file:")).stem
+        candidates.setdefault(stem, []).append(node_id)
+    return candidates
+
+
+def match_reference_file(stem: str, candidates: dict[str, list[str]]) -> str | None:
+    """Returns the single best file match for a reference page stem."""
+    matches = candidates.get(stem, [])
+    if len(matches) == 1:
+        return matches[0]
+    preferred = [
+        node_id for node_id in matches if node_id.startswith("file:src/wiki_compiler/")
+    ]
+    if len(preferred) == 1:
+        return preferred[0]
+    return None
+
+
+def code_nodes_for_file(graph: nx.DiGraph, file_node_id: str) -> list[str]:
+    """Returns code construct node ids contained by a file node."""
+    file_prefix = f"code:{file_node_id.removeprefix('file:')}:"
+    return [
+        node_id
+        for node_id, data in graph.nodes(data=True)
+        if data.get("type") == "code_construct" and node_id.startswith(file_prefix)
+    ]
+
+
+def add_documents_edges(
+    graph: nx.DiGraph, source_id: str, target_ids: list[str]
+) -> None:
+    """Persists inferred documentation edges onto both the graph and source node schema."""
+    node = load_knowledge_node(graph, source_id)
+    existing_targets = {
+        edge.target_id for edge in node.edges if edge.relation_type == "documents"
+    }
+    changed = False
+    for target_id in target_ids:
+        if target_id in existing_targets:
+            continue
+        node.edges.append(Edge(target_id=target_id, relation_type="documents"))
+        existing_targets.add(target_id)
+        changed = True
+    if changed:
+        add_knowledge_node(graph, node)
 
 
 def calculate_compliance_score(graph: nx.DiGraph) -> float:
