@@ -12,6 +12,7 @@ logs/
 .serena/
 
 # Obsidian (Share graph UI, ignore personal workspace)
+.obsidian/workspace.json
 .obsidian/workspace
 .obsidian/workspace-mobile.json
 .obsidian/core-plugins.json
