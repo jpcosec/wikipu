@@ -11,7 +11,7 @@ compliance:
 
 The operational entry point for a `desk/` domain. A Board tracks the active work tree for one domain: what is being done, in what order, with what dependencies. It is mutable and updated continuously as work progresses. Resolved items are deleted from it, not archived.
 
-## Schema
+## Rule Schema
 
 Boards have no frontmatter. They are operational artifacts, not graph nodes.
 
@@ -40,9 +40,13 @@ Phase N  [item][item]  — all parallel
 Phase N  [item] then [item]  — sequential
 ```
 
-## Validation rules
+## Fields
 
 - One Board per `desk/` domain — no domain has two Boards.
 - Items are identified by their issue file path, not by title, to prevent drift.
 - An item stays on the Board until its issue file is deleted. Deletion = resolution.
 - All four sections are mandatory. A Board missing any section is malformed.
+
+## Usage Examples
+
+_To be added._

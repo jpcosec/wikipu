@@ -37,7 +37,7 @@ edges:
 
 Canonical Pydantic models and contracts for the Knowledge Graph ecosystem. Defines the schema for nodes, edges, and facets like ADR, compliance, and I/O.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 class KnowledgeNode(BaseModel):

@@ -9,6 +9,8 @@ edges:
     relation_type: "documents"
 ---
 
+A `KnowledgeNode` is enriched by facets — optional, independently injectable dimensions of knowledge that answer specific questions about a node. This document defines each facet's fields, the node types that use them, and the schema for declaring them in YAML frontmatter.
+
 # Knowledge Node Facets
 
 A `KnowledgeNode` is the universal building block of the graph. Its core is fixed (`SystemIdentity` + `edges`), but its meaning comes from **facets** — optional, independently injectable dimensions of knowledge.
@@ -141,8 +143,14 @@ Links a node to an Architectural Decision Record in `wiki/adrs/`.
 
 All facets are optional. The scanner injects what it can detect; the rest can be declared manually via YAML frontmatter in wiki nodes.
 
-## Rule/Schema
+## Rule Schema
+
+_To be added._
 
 ## Fields
 
+_To be added._
+
 ## Usage Examples
+
+_To be added._

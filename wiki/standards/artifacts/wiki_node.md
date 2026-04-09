@@ -12,7 +12,7 @@ compliance:
 
 The fundamental knowledge unit. Every file in `wiki/` is a wiki node. Its frontmatter is the machine-readable identity and graph contract; its body is the human-readable content. Together they make the node independently traversable by both agents and humans.
 
-## Schema
+## Rule Schema
 
 ### Frontmatter
 
@@ -42,10 +42,14 @@ compliance:
 
 **Abstract rule (applies to all types):** The first content after the frontmatter must be a 1–3 sentence plain-text paragraph stating the node's intent. No heading before it. It must stand alone as a summary.
 
-## Validation rules
+## Fields
 
 - `node_id` must match `"doc:" + relative_path_from_repo_root`.
 - `node_type` must be one of the enum values above.
 - `compliance.status` must be `implemented` only when the described thing actually exists and is current.
 - A node with no edges is valid but flagged by audit as a candidate orphan.
 - The abstract paragraph is mandatory. A file that starts with a heading has a missing abstract.
+
+## Usage Examples
+
+_See any file in `wiki/` for a concrete wiki node example._

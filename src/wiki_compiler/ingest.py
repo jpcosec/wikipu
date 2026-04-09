@@ -18,36 +18,89 @@ def ingest_raw_sources(
 ) -> list[Path]:
     """
     Scans a directory for raw source files and generates draft markdown nodes for each valid file.
+    Draft nodes land in dest_dir/<source_subdir>/ mirroring the first path component under source_dir.
+    After ingestion, generates an INDEX.md per subdirectory.
     """
     root = project_root or source_dir.parent
     ignore_rules = load_wikiignore_rules(root / ".wikiignore")
     written: list[Path] = []
+    subdir_nodes: dict[str, list[dict]] = {}
+
     for source_path in sorted(
         path for path in source_dir.rglob("*.md") if path.is_file()
     ):
-        if any(
-            part.startswith(".") for part in source_path.relative_to(source_dir).parts
-        ):
+        rel_to_source = source_path.relative_to(source_dir)
+        if any(part.startswith(".") for part in rel_to_source.parts):
             continue
         rel_source = source_path.relative_to(root).as_posix()
         if match_ignore_reason(rel_source, ignore_rules) is not None:
             continue
 
+        source_subdir = _source_subdir(rel_to_source)
+        subdir_dest = dest_dir / source_subdir if source_subdir else dest_dir
+
         nodes = decompose_source(source_path)
         for title, content, node_type in nodes:
             draft_slug = slugify(title)
-            draft_path = dest_dir / f"{draft_slug}.md"
+            draft_path = subdir_dest / f"{draft_slug}.md"
             if draft_path.exists() and not overwrite:
                 continue
             draft_path.parent.mkdir(parents=True, exist_ok=True)
+            node_id = _compute_node_id(dest_dir, source_subdir, draft_slug)
             draft_path.write_text(
                 render_draft(
-                    rel_source, dest_dir, draft_slug, title, content, node_type
+                    rel_source, node_id, title, content, node_type
                 ),
                 encoding="utf-8",
             )
             written.append(draft_path)
+            abstract = _extract_abstract(content)
+            subdir_nodes.setdefault(source_subdir, []).append(
+                {"node_id": node_id, "title": title, "abstract": abstract}
+            )
+
+    for source_subdir, entries in subdir_nodes.items():
+        index_path = (dest_dir / source_subdir / "INDEX.md") if source_subdir else (dest_dir / "INDEX.md")
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        index_path.write_text(_render_index(source_subdir, entries), encoding="utf-8")
+
     return written
+
+
+def _source_subdir(rel_to_source: Path) -> str:
+    """Returns the first path component of a relative source path, or empty string if top-level."""
+    parts = rel_to_source.parts
+    return parts[0] if len(parts) > 1 else ""
+
+
+def _compute_node_id(dest_dir: Path, source_subdir: str, draft_slug: str) -> str:
+    """Computes the canonical node_id for a draft node given its destination details."""
+    if dest_dir.is_absolute():
+        if dest_dir.parent.name == "wiki":
+            base = Path(dest_dir.parent.name) / dest_dir.name
+        else:
+            base = Path(dest_dir.name)
+    else:
+        base = dest_dir
+    if source_subdir:
+        return f"doc:{(base / source_subdir / draft_slug).as_posix()}.md"
+    return f"doc:{(base / draft_slug).as_posix()}.md"
+
+
+def _extract_abstract(content: str) -> str:
+    """Extracts the first non-empty line from content as the abstract."""
+    lines = [line.strip() for line in content.splitlines() if line.strip()]
+    return lines[0] if lines else "No abstract provided."
+
+
+def _render_index(source_subdir: str, entries: list[dict]) -> str:
+    """Renders an INDEX.md listing all draft node IDs, titles, and abstracts."""
+    label = source_subdir or "drafts"
+    lines = [f"# Index: {label}", ""]
+    for entry in entries:
+        lines.append(f"- **{entry['node_id']}** — {entry['title']}: {entry['abstract']}")
+    lines.append("")
+    return "\n".join(lines)
 
 
 def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
@@ -72,12 +125,10 @@ def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
         if lines[0].startswith("## "):
             title = lines[0].lstrip("# ").strip()
             content = "\n".join(lines[1:]).strip()
-            # Heuristic for node_type (must be a valid KnowledgeNode type)
             node_type = "concept"
             if "rule" in title.lower() or "standard" in title.lower():
                 node_type = "doc_standard"
         else:
-            # First section might be the main title
             if lines[0].startswith("# "):
                 title = lines[0].lstrip("# ").strip()
                 content = "\n".join(lines[1:]).strip()
@@ -93,8 +144,7 @@ def decompose_source(source_path: Path) -> list[tuple[str, str, str]]:
 
 def render_draft(
     rel_source: str,
-    dest_dir: Path,
-    draft_slug: str,
+    node_id: str,
     title: str,
     content: str,
     node_type: str = "concept",
@@ -102,16 +152,13 @@ def render_draft(
     """
     Generates the markdown content for a draft node, including required frontmatter.
     """
-    rel_dest = draft_node_path(dest_dir, draft_slug)
-    # Extract first paragraph as abstract
-    lines = [line.strip() for line in content.splitlines() if line.strip()]
-    abstract = lines[0] if lines else "No abstract provided."
+    abstract = _extract_abstract(content)
 
     return "\n".join(
         [
             "---",
             "identity:",
-            f'  node_id: "doc:{rel_dest}"',
+            f'  node_id: "{node_id}"',
             f'  node_type: "{node_type}"',
             "edges:",
             f'  - {{target_id: "raw:{rel_source}", relation_type: "documents"}}',
@@ -152,6 +199,7 @@ def summarize_source(source_path: Path) -> tuple[str, str]:
 def draft_node_path(dest_dir: Path, stem: str) -> str:
     """
     Computes the canonical node path for a draft markdown file.
+    Kept for backwards compatibility.
     """
     if dest_dir.is_absolute():
         base_path = Path(dest_dir.name)

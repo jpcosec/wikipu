@@ -5,6 +5,8 @@ identity:
 edges: []
 ---
 
+This document provides essential guidelines for human developers contributing to a `wikipu`-managed repository. It covers the house rules, domain glossary, exemption procedures, and the responsibilities of maintaining module knowledge nodes.
+
 # 🧑‍💻 Human Instructions for `wikipu`
 
 This document provides essential guidelines for human developers working within a `wikipu`-managed repository. Adherence to these instructions ensures consistency, maintains architectural integrity, and facilitates seamless collaboration with AI agents.
@@ -52,8 +54,14 @@ Your module's `README.md` is its `KnowledgeNode`. Keep it updated with:
 
 Remember, the goal is to create a self-documenting, auditable, and intelligent codebase that can be understood and evolved efficiently by everyone, human or AI.
 
-## Rule/Schema
+## Rule Schema
+
+_To be added._
 
 ## Fields
 
+_To be added._
+
 ## Usage Examples
+
+_To be added._

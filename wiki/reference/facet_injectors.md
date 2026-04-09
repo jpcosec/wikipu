@@ -15,7 +15,7 @@ edges:
 
 Enriches Knowledge Graph nodes with additional facets by scanning architectural decisions and test files. This module contains injectors that populate ADR and Test Map information into nodes during the build process.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 class ADRInjector:

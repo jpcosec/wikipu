@@ -29,7 +29,7 @@ edges:
 
 Builds the Knowledge Graph by scanning Markdown wiki nodes and Python source code. It orchestrates the multi-phase compilation: directory skeleton, node ingestion, and facet injection.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def build_wiki(

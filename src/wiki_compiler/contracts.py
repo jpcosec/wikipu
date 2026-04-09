@@ -28,7 +28,7 @@ class Edge(BaseModel):
 class SystemIdentity(BaseModel):
     """The immutable base identity of any node in your universe."""
     node_id: str = Field(description="A unique absolute identifier for the node (e.g., 'dir:src/data_processor' or 'file:wiki/concepts/core_concept.md').")
-    node_type: Literal["directory", "file", "code_construct", "doc_standard", "concept", "index"] = Field(
+    node_type: Literal["directory", "file", "code_construct", "doc_standard", "concept", "index", "how_to", "adr", "reference", "faq"] = Field(
         description="The type of entity this node represents."
     )
 

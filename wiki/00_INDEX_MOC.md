@@ -7,15 +7,13 @@ edges:
     relation_type: "contains"
   - target_id: "doc:wiki/knowledge_node_facets.md"
     relation_type: "contains"
-  - target_id: "doc:wiki/how_to_use.md"
-    relation_type: "contains"
-  - target_id: "doc:wiki/how_to_add_component.md"
-    relation_type: "contains"
   - target_id: "doc:wiki/llm_instructions.md"
     relation_type: "contains"
   - target_id: "doc:wiki/human_instructions.md"
     relation_type: "contains"
 ---
+
+This is the central index for the `wikipu` knowledge hub. It provides navigational links to all core documentation, user-specific instructions, and the standards governing the ecosystem.
 
 # 🧠 wikipu Knowledge Hub - Index
 
@@ -35,9 +33,15 @@ Use this index to navigate through the core aspects of the project:
 *   **[[LLM Instructions]]**: Guidelines and protocols for AI agents interacting with `wikipu`.
 *   **[[Human Instructions]]**: Best practices and rules for human developers contributing to the project.
 
-## Rule/Schema
+## Rule Schema
+
+_To be added._
 
 ## Fields
 
+_To be added._
+
 ## Usage Examples
+
+_To be added._
 

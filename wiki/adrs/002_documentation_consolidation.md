@@ -10,6 +10,8 @@ edges:
   - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "documents"}
 ---
 
+This ADR consolidates all documentation sources by designating `wiki/` as the single source of truth, deprecating duplicate drafts in `raw/` and `agents/`, and establishing the Librarian Agent's canonical protocol location.
+
 # ADR 002: Documentation Consolidation
 
 ## Context
@@ -28,8 +30,14 @@ Following the "Sanctuary" law, `raw/` remains immutable, but our operational pro
 - Agents must ignore `raw/sourcetalk_artifacts/` when looking for active rules.
 - The `wiki/standards/00_house_rules.md` is now the sole authority for ecosystem laws.
 
-## Rule/Schema
+## Rule Schema
+
+_To be added._
 
 ## Fields
 
+_To be added._
+
 ## Usage Examples
+
+_To be added._

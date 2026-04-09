@@ -18,19 +18,11 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Priority roadmap
 
-┄┄┄ Phase 2 — Documentation debt (parallelizable)
+┄┄┄ Phase 2 — Documentation debt
 
- 4. plan_docs/issues/unimplemented/wiki-template-compliance.md
-    • Update wiki nodes to include mandatory abstract and required sections.
- 5. plan_docs/issues/unimplemented/how-to-wiki-section.md
-    • Create wiki/how_to/ section with 8 how-to nodes covering core operations.
-    • Depends on: none.
  7. plan_docs/issues/unimplemented/faq.md
     • Create wiki/faq.md with answers to the most common agent/human questions.
-    • Depends on: how-to-wiki-section.md.
- 8. plan_docs/issues/unimplemented/language-style-guides.md
-    • Create wiki/standards/languages/ with per-language translations of Layer 5 CS rules.
-    • Depends on: none.
+    • Depends on: none (how-to-wiki-section resolved).
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
@@ -71,16 +63,14 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Dependency summary
 
-Phase 2[5] → Phase 2[7]      (FAQ links to how-to nodes)
-Phase 2[5] → Phase 4[18]     (context routing needs how-tos and checklists)
-Phase 3[9] → Phase 3[12]     (artifact validation needs query server)
-Phase 3[12] → Phase 3[13]    (scanner plugin targets stable KnowledgeNode schema)
+Phase 3[9] → Phase 3[12]       (artifact validation needs query server)
+Phase 3[12] → Phase 3[13]      (scanner plugin targets stable KnowledgeNode schema)
 Phase 3[9,10,11] → Phase 4[17] (coordinator depends on query server, cleanser, curation pipeline)
-Phase 3[9] → Phase 4[18]     (context routing needs query server)
-Phase 4[17] → Phase 4[16]    (coordinator triggers session open/close for memory)
+Phase 3[9] → Phase 4[18]       (context routing needs query server)
+Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for memory)
 
 ┄┄ Parallelization map
 
-Phase 2  [4][5][8] then [7]            — 4, 5, 8 parallel; 7 after 5
+Phase 2  [7]                              — unblocked, ready
 Phase 3  [9][10][11] then [12] then [13]  — 9/10/11 parallel, then 12, then 13
-Phase 4  [14][15] then [17] then [16]; [18] after [9][5]
+Phase 4  [14][15] then [17] then [16]; [18] after [9]

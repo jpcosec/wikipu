@@ -1,15 +1,60 @@
 """
 Serves graph queries for the Librarian Agent protocol.
 Supports path traversal and I/O searching via the CLI runtime.
+Also provides a stdin-based REPL loop for StructuredQuery JSON execution.
 """
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+from typing import IO
 
 import networkx as nx
 
 from .graph_utils import load_graph, load_knowledge_node
+from .query_executor import execute_query
+from .query_language import StructuredQuery
+
+
+def serve_structured_queries(
+    graph_path: Path,
+    input_stream: IO[str] = sys.stdin,
+    output_stream: IO[str] = sys.stdout,
+) -> None:
+    """
+    Reads StructuredQuery JSON objects one per line from input_stream,
+    executes each against the graph at graph_path, and writes results
+    as JSON lines to output_stream.
+
+    Malformed lines produce an error JSON response instead of crashing.
+    Exits cleanly when the input stream is exhausted.
+    """
+    graph = load_graph(graph_path)
+    for raw_line in input_stream:
+        raw_line = raw_line.strip()
+        if not raw_line:
+            continue
+        response = _handle_structured_query_line(graph, raw_line)
+        output_stream.write(json.dumps(response) + "\n")
+        output_stream.flush()
+
+
+def _handle_structured_query_line(graph: nx.DiGraph, raw_line: str) -> dict:
+    """Parses one line as a StructuredQuery JSON and returns a result dict."""
+    try:
+        data = json.loads(raw_line)
+    except json.JSONDecodeError as exc:
+        return {"error": f"Invalid JSON: {exc}"}
+    try:
+        query = StructuredQuery.model_validate(data)
+    except Exception as exc:
+        return {"error": f"Invalid StructuredQuery: {exc}"}
+    try:
+        nodes = execute_query(graph, query)
+        return {"nodes": [n.model_dump() for n in nodes]}
+    except Exception as exc:
+        return {"error": f"Query execution failed: {exc}"}
 
 
 def query_graph(

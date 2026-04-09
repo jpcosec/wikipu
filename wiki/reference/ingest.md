@@ -21,7 +21,7 @@ edges:
 
 Handles the ingestion of raw source files and their transformation into Knowledge Graph draft nodes. It supports atomic decomposition of sources into multiple nodes and generates initial markdown documentation with appropriate frontmatter.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def ingest_raw_sources(

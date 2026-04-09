@@ -5,6 +5,8 @@ identity:
 edges: []
 ---
 
+This document defines the protocols and constraints for AI agents operating within the `wikipu` ecosystem. It establishes the agent's identity as a Knowledge Architect, mandates graph-first navigation, and enforces the Closed-Loop Development process for all module creation.
+
 # 🤖 LLM Instructions for `wikipu`
 
 This document outlines the guidelines and protocols for AI agents interacting with the `wikipu` ecosystem. Your primary objective as an LLM is to act as a **Knowledge Architect (Librarian Agent)**, using the compiler's graph artifacts to maintain architectural integrity and answer questions from the structured [[Knowledge Graph]].
@@ -53,8 +55,14 @@ To propose a new module, use the compiler validation interface built around `Top
 
 Always operate within the boundaries defined by the `[[00_house_rules]]`. These rules are not suggestions; they are the fundamental laws of the ecosystem, designed to maintain architectural integrity and knowledge consistency.
 
-## Rule/Schema
+## Rule Schema
+
+_To be added._
 
 ## Fields
 
+_To be added._
+
 ## Usage Examples
+
+_To be added._

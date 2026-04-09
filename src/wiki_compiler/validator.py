@@ -16,6 +16,40 @@ from .graph_utils import iter_knowledge_nodes, load_graph
 DEFAULT_ATTEMPTS = 3
 
 
+def submit_topology_proposal(proposal_path: str, graph_path: str) -> dict:
+    """
+    Loads a TopologyProposal from a JSON file, validates it against the graph,
+    and returns a structured result.
+
+    Returns a dict with keys:
+      - "valid": bool — True if the proposal is orthogonal
+      - "issues": list[str] — human-readable problems found
+      - "proposal_id": str — the proposed_module_name from the proposal
+    """
+    proposal_data = json.loads(Path(proposal_path).read_text(encoding="utf-8"))
+    proposal = TopologyProposal.model_validate(proposal_data)
+
+    state_path = Path(graph_path).parent / ".validation_session.json"
+    glossary_path = Path(graph_path).parent / "wiki" / "domain_glossary.yaml"
+
+    report = validate_topology_proposal(
+        proposal_data=proposal_data,
+        graph_path=Path(graph_path),
+        glossary_path=glossary_path,
+        state_path=state_path,
+    )
+
+    issues: list[str] = []
+    if report.resolution_suggestion:
+        issues.append(report.resolution_suggestion)
+
+    return {
+        "valid": report.is_orthogonal,
+        "issues": issues,
+        "proposal_id": proposal.proposed_module_name,
+    }
+
+
 def validate_topology_proposal(
     proposal_data: dict[str, object],
     graph_path: Path,

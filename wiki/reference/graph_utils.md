@@ -19,7 +19,7 @@ edges:
 
 Provides utility functions for manipulating and persisting the Knowledge Graph. This module handles the integration of KnowledgeNodes into NetworkX graphs and their serialization to/from JSON.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def add_knowledge_node(graph: nx.DiGraph, node: KnowledgeNode) -> None: ...

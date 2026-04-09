@@ -27,7 +27,7 @@ edges:
 
 Audit system for checking Knowledge Graph quality and compliance. Includes checks for missing docstrings, undocumented code, and stale edges.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def run_audit(graph: nx.DiGraph) -> AuditReport

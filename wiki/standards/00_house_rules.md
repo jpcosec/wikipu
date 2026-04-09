@@ -11,6 +11,8 @@ compliance:
   failing_standards: []
 ---
 
+The House Rules define the invariant constraints that govern the entire `wikipu` ecosystem — from identity and zone separation to code style and wiki authoring. Every rule exists to keep one or more of the system's five load-bearing elements (Autopoiesis, Wiki, Knowledge Graph, Git, CLI) coherent and non-overlapping.
+
 # 🏠 House Rules
 
 The canonical identity rules for the Wikipu ecosystem. This document defines what this system *is* — the invariant network of constraints that must hold regardless of what content the system contains. Rules are organized by layer. Each rule carries a `rule_id` for machine reference, a description, and the enforcement mechanism that checks it.
@@ -259,3 +261,20 @@ Each artifact type has a canonical schema defining its frontmatter fields and re
 - Leaving a gate open in `desk/Gates.md` with no activity for more than one cycle.
 - Closing an issue without updating tests and changelog.
 - A rule in this document causing consistent friction and surviving the session that discovered it.
+
+## Rule Schema
+
+Each rule has: a `rule_id` (e.g. `ID-1`, `MA-2`, `WK-3`), a short name, a prose description, and an `Enforced by:` annotation naming the mechanism that checks it.
+
+## Fields
+
+| Field | Description |
+|---|---|
+| `rule_id` | Unique identifier combining layer prefix and number (e.g. `ID-1`) |
+| `name` | Short descriptive name for the rule |
+| `description` | Full prose statement of what the rule requires |
+| `enforced_by` | Mechanism or tool that checks compliance with this rule |
+
+## Usage Examples
+
+_See each layer section above for concrete rule definitions._

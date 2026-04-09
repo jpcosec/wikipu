@@ -5,6 +5,8 @@ identity:
 edges: []
 ---
 
+`wikipu` is a knowledge-graph-driven compiler that maintains architectural integrity by linking code, documentation, and decisions into a single queryable graph. It enforces structural rules through a CLI, ensuring both humans and AI agents operate from a shared, machine-readable representation of the repository.
+
 # 📖 How `wikipu` Works
 
 The `llm-wiki-compiler` is a powerful tool designed to maintain architectural integrity and provide a structured knowledge base for both human and AI developers. It operates on a few core principles:

@@ -11,7 +11,7 @@ compliance:
 
 A single, completable unit of work. Issues live in `plan_docs/issues/gaps/` (things that exist but are wrong) or `plan_docs/issues/unimplemented/` (things designed but not yet built). They are ephemeral: once resolved, the file is deleted and the work lives only in git and changelog.
 
-## Schema
+## Rule Schema
 
 Issues have no frontmatter. They are ephemeral operational artifacts (MA-3).
 
@@ -26,9 +26,13 @@ Issues have no frontmatter. They are ephemeral operational artifacts (MA-3).
 | How to do it | optional | Suggested implementation steps; omit if the fix is obvious |
 | Depends on | yes | Paths to blocking issues, or the word `none` |
 
-## Validation rules
+## Fields
 
 - One issue = one atomic unit of work. If "How to do it" has more than 3–4 steps that could fail independently, split into child issues.
 - "What to fix" describes outcome, not process. It must be verifiable: either the thing exists and passes tests, or it does not.
 - "Depends on: none" must be written explicitly — omitting the field is not the same as having no dependencies.
 - An issue is done only when: tests pass, changelog updated, file deleted, removed from Board.
+
+## Usage Examples
+
+_To be added._

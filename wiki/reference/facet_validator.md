@@ -25,7 +25,7 @@ edges:
 
 Provides logic for validating the orthogonality and uniqueness of proposed Knowledge Graph facets. This module ensures that new facets do not overlap with existing ones and that the information they provide is truly new.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def validate_facet_proposal(

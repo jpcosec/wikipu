@@ -47,7 +47,7 @@ def build_default_template_registry() -> TemplateRegistry:
     registry.register(NodeTemplate(
         "how_to",
         "How do I do X?",
-        ["abstract", "prerequisites", "steps", "outcome"]
+        ["abstract", "prerequisites", "steps", "verification"]
     ))
     registry.register(NodeTemplate(
         "doc_standard",

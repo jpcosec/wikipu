@@ -2,6 +2,8 @@
 
 ## 2026-04-09
 
+- added a root `AGENTS.md` with repository-specific commands, workflow guidance, style rules, and current test/lint status for coding agents
+- expanded `AGENTS.md` with explicit graph-usage guidance plus issue workflow references to `wiki/how_to/plan.md` and `wiki/issues_guide.md`
 - fixed ingest draft node IDs so generated drafts stay relative to the wiki root and restored planned draft metadata
 - restored optional compiled markdown output during `build` and added automatic `documents` edge inference from `wiki/reference/*.md` pages to matching code nodes
 - added the canonical `wiki/standards/00_house_rules.md` document for librarian and ecosystem rule references
@@ -22,6 +24,9 @@
 - updated issues index: marked verification-checklists [6] as resolved
 - added issues: artifact-schema-validation [12], scanner-plugin-interface [13]
 - clarified validation architecture: artifact validation (markdown/YAML) is always wiki-compiler/Python; code node extraction uses per-language scanner plugins outputting KnowledgeNode
+- closed issue [4] wiki-template-compliance: all wiki nodes now have mandatory abstracts and correct section structure; fixed `## Rule/Schema` → `## Rule Schema` heading normalization; extended contracts.py node_type Literal with how_to/adr/reference/faq; fixed how_to template section name (outcome → verification)
+- closed issue [5] how-to-wiki-section: created wiki/how_to/ with Index.md and 8 nodes (plan, design, document, research, use_the_graph, use_the_cli, use_socratic_methodology, use_autopoiesis); migrated and deleted wiki/how_to_use.md and wiki/how_to_add_component.md
+- closed issue [8] language-style-guides: created wiki/standards/languages/ with Index.md, python.md, typescript.md; Zod vs. interface split clarified; CS-4 TypeScript enforcement marked partial
 - closed issue `gaps/duplicate-docs-cleanup`: hausordnung now exists and is `status: implemented`; removed the issue file and updated `plan_docs/issues/Index.md` (renumbered items, collapsed Phase 3, cleared resolved dependencies)
 
 ## 2026-04-07

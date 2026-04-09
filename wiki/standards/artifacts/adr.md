@@ -11,7 +11,7 @@ compliance:
 
 An Architectural Decision Record captures a design decision that shaped the system — the context that forced it, what was decided, and what consequences followed. ADRs are permanent: once accepted, they are never deleted, only superseded. They live in `wiki/adrs/` and are part of the graph.
 
-## Schema
+## Rule Schema
 
 ### Frontmatter
 
@@ -41,9 +41,13 @@ compliance:
 | Rationale | yes | Why this option over discarded alternatives |
 | Consequences | yes | What changes, what becomes easier, what becomes harder |
 
-## Validation rules
+## Fields
 
 - Filename must be `<NNN>_<slug>.md` where `NNN` matches `adr.decision_id`.
 - A superseded ADR must keep its body intact and add `superseded_by`.
 - ADRs are never deleted — only marked `deprecated` or `superseded`.
 - At least one `documents` edge is required; an ADR with no edges is an orphan decision.
+
+## Usage Examples
+
+_See `wiki/adrs/002_documentation_consolidation.md` for a complete ADR example._

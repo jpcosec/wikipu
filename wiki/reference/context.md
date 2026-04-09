@@ -17,7 +17,7 @@ edges:
 
 Context rendering for the Knowledge Graph. Extracts and formats neighborhoods around specific nodes for LLM context generation.
 
-## Signature or Schema
+## Rule Schema
 
 ```python
 def render_context(
