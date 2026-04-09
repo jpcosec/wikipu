@@ -1,0 +1,20 @@
+---
+identity:
+  node_id: "doc:wiki/concepts/Index.md"
+  node_type: "index"
+edges:
+  - {target_id: "doc:wiki/concepts/how_wikipu_works.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/concepts/wiki_construction_principles.md", relation_type: "contains"}
+compliance:
+  status: "implemented"
+  failing_standards: []
+---
+
+This index lists the concept nodes that explain what Wikipu is and how its documentation system is structured. Use concept nodes when you need architectural meaning or definitions rather than task steps or standards.
+
+# Concepts Index
+
+| Node | Purpose |
+|---|---|
+| `how_wikipu_works.md` | Explains the graph-centered operating model of the system |
+| `wiki_construction_principles.md` | Explains the principles that shape wiki authoring and composition |

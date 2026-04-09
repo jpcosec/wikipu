@@ -4,8 +4,7 @@ identity:
   node_type: "doc_standard"
 edges:
   - {target_id: "doc:wiki/concepts/wiki_construction_principles.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/knowledge_node_facets.md", relation_type: "contains"}
-  - {target_id: "doc:agents/librarian/intro.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -149,6 +148,8 @@ When an issue is resolved:
 5. Delete the issue file AND remove it from `Board.md`.
 6. Commit with a message that names what was fixed.
 
+**Default rule:** non-trivial implementation or documentation work starts from an issue file in `plan_docs/issues/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.
+
 **OP-5 — Atomization**
 Every unit of work — issue, proposal, or task — must be independently completable by a single agent in a single session and independently verifiable without knowledge of sibling units.
 
@@ -157,7 +158,7 @@ The test: can this unit be handed to a subagent as a self-contained deliverable?
 Split when: a unit has more than 3–4 steps that could fail independently. Extract the shared concern into a parent or sibling unit with an explicit `depends_on` link. Never split for organizational neatness — only when failure modes are genuinely independent.
 
 This rule applies to wiki nodes via WK-1 (Single Responsibility) and to code modules via CS-9. The same principle governs all levels of the system.
-`Enforced by:` issue atomization check in Stage 2.2 of `wiki/issues_guide.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
+`Enforced by:` issue atomization check in Stage 2.2 of `wiki/standards/issues_lifecycle.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
 
 **OP-7 — Git Commit Cadence and Branching**
 Git encodes state transitions at two levels of granularity: commits (atomic units) and branches (in-progress work streams). Together they make every stable state of the system recoverable and every change attributable.
@@ -167,6 +168,7 @@ Git encodes state transitions at two levels of granularity: commits (atomic unit
 - Structural wiki changes (new node, deleted node, edge modification) that are not tied to an issue get their own commit.
 - Session-end trail collect gets a commit even if no issue was resolved.
 - Do not commit on every file save. A commit is a claim that the system is valid and self-consistent at the granularity of one logical unit. A half-written node or an incomplete refactor is not a commit boundary.
+- If runtime code or tests change, the default expectation is: linked issue, changelog update, and branch name `issue/<name>` or `phase/<name>`.
 
 **Branch = one issue or one coherent phase of work.**
 - Every issue or closely related group of issues gets its own branch: `issue/<name>` or `phase/<n>`.
@@ -179,7 +181,7 @@ Git encodes state transitions at two levels of granularity: commits (atomic unit
 - Never commit directly to `main` during active development.
 
 Commit message format: imperative verb + what changed + why if non-obvious.
-`Enforced by:` branch protection on main; pre-push hook verifies tests pass before merge; session log records last commit SHA and active branch.
+`Enforced by:` branch protection on main; pre-push hook verifies tests pass before merge; session log records last commit SHA and active branch; `wiki-compiler check-workflow` verifies issue/changelog/branch discipline before commit.
 
 **OP-8 — The Autopoietic Cycle**
 Periodically (at minimum after each significant development phase):

@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/artifacts/wiki_node.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/knowledge_node_facets.md", relation_type: "extends"}
+  - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "extends"}
   - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
@@ -22,7 +22,7 @@ identity:
   node_type: str      # required — one of: concept | how_to | doc_standard | adr | reference | faq | index
 edges:                # optional — omit if the node has no known relations yet
   - target_id: str    # "doc:<path>" | "file:<path>" | "code:<path>"
-    relation_type: str  # contains | implements | extends | supersedes | references | documents | transcludes
+    relation_type: str  # contains | depends_on | reads_from | writes_to | documents | transcludes | extends | implements
 compliance:
   status: str         # required — planned | scaffolding | implemented | deprecated
   failing_standards: []  # list of rule_ids not yet met; empty means compliant

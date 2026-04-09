@@ -21,7 +21,7 @@ Designing a new module or topology change in Wikipu means authoring a `TopologyP
 
 ## Steps
 
-1. Query the knowledge graph for existing nodes with overlapping intent: `wiki-compiler query --type find_by_io` or review `wiki/00_INDEX_MOC.md` to identify potential collisions.
+1. Query the knowledge graph for existing nodes with overlapping intent: `wiki-compiler query --type find_by_io` or review `wiki/Index.md` to identify the relevant domain entrypoints.
 2. Draft a `TopologyProposal` file in `desk/proposals/` using the schema from `wiki/standards/artifacts/proposal.md`. Assign a `proposal_id` in the format `topology-<YYYYMMDD>-<slug>`.
 3. Define the module's name, intent, I/O ports (medium, schema_ref, path_template), and any new glossary terms required.
 4. Fill in the Changes section as a numbered list of specific, independently reversible actions.

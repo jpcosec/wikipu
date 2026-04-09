@@ -13,7 +13,7 @@ per-language style toolchain (ruff / tsc / eslint / ...)
     → separate CI step
 ```
 
-**Reference:** `wiki/knowledge_node_facets.md`, `wiki/standards/artifacts/wiki_node.md`, `wiki/standards/languages/`
+**Reference:** `wiki/reference/knowledge_node_facets.md`, `wiki/standards/artifacts/wiki_node.md`, `wiki/standards/languages/`
 
 **What to fix:** Define and implement a scanner plugin interface so that any language can contribute nodes to the graph.
 

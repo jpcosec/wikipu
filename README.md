@@ -48,7 +48,8 @@ To keep the ecosystem tidy, we follow a strict temporal and conceptual organizat
 
 For detailed instructions on architecture, rules, and advanced usage, explore the `wiki/` directory:
 
-*   [How it Works](wiki/how_it_works.md)
+*   [Wiki Front Page](wiki/Index.md)
+*   [How it Works](wiki/concepts/how_wikipu_works.md)
 *   [How to Use the CLI](wiki/how_to_use.md)
 *   [How to Add a Component](wiki/how_to_add_component.md)
 *   [House Rules](wiki/standards/00_house_rules.md)

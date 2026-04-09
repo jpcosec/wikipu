@@ -11,12 +11,12 @@ The knowledge graph is the authoritative routing system for the Wikipu ecosystem
 
 # How to Use the Graph
 
-The knowledge graph is the authoritative routing system for the Wikipu ecosystem — it is not a secondary artifact of the Markdown files but the primary navigation surface for agents and the compliance enforcement mechanism for the system. Every node in `wiki/` compiles to a vertex in the graph, and every `edges:` declaration in frontmatter becomes a typed edge. Traversal and facet queries replace sequential file reading for any non-trivial structural question. The full node and edge type vocabulary is defined in `wiki/knowledge_node_facets.md`.
+The knowledge graph is the authoritative routing system for the Wikipu ecosystem — it is not a secondary artifact of the Markdown files but the primary navigation surface for agents and the compliance enforcement mechanism for the system. Every node in `wiki/` compiles to a vertex in the graph, and every `edges:` declaration in frontmatter becomes a typed edge. Traversal and facet queries replace sequential file reading for any non-trivial structural question. The full node and edge type vocabulary is defined in `wiki/reference/knowledge_node_facets.md`.
 
 ## Prerequisites
 
 - `knowledge_graph.json` must be current — run `wiki-compiler build` if it is stale.
-- Familiarity with the node types (`directory`, `file`, `code_construct`, `doc_standard`, `concept`) and facet types (`SemanticFacet`, `ASTFacet`, `IOFacet`, `ComplianceFacet`, `TestMapFacet`, `ADRFacet`) from `wiki/knowledge_node_facets.md`.
+- Familiarity with the node types (`directory`, `file`, `code_construct`, `doc_standard`, `concept`) and facet types (`SemanticFacet`, `ASTFacet`, `IOFacet`, `ComplianceFacet`, `TestMapFacet`, `ADRFacet`) from `wiki/reference/knowledge_node_facets.md`.
 - Understanding of edge relation types: `contains`, `depends_on`, `reads_from`, `writes_to`, `documents`, `transcludes`.
 
 ## Steps

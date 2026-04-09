@@ -1,7 +1,21 @@
-# ADR 001: Legacy old_standards material is retired
+---
+identity:
+  node_id: "doc:wiki/adrs/001_feature_methodology_superseded.md"
+  node_type: "adr"
+adr:
+  decision_id: "001"
+  status: "accepted"
+  context_summary: "Legacy methodology documents copied from another project created ambiguity, so they were retired and replaced by repo-specific standards and protocols."
+edges:
+  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "documents"}
+compliance:
+  status: "implemented"
+  failing_standards: []
+---
 
-- Status: accepted
-- Date: 2026-04-07
+Legacy methodology material copied from another project was retired so Wikipu could have one canonical standards surface. This ADR records that the repository should keep only repo-specific durable guidance rather than preserving unrelated prior-framework instructions as shadow authority.
+
+# ADR 001: Legacy old_standards material is retired
 
 ## Context
 
@@ -22,7 +36,7 @@ Relevant surviving ideas are now represented by the current canonical docs inste
 - `wiki/standards/00_house_rules.md`
 - `wiki/domain_glossary.yaml`
 - `agents/librarian/intro.md`
-- `plan_wiki/issues/Index.md`
+- `plan_docs/issues/Index.md`
 
 ## Consequences
 

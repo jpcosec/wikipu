@@ -129,6 +129,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/curate.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/facet_injectors.py",
             "relation_type": "contains",
             "metadata": {}
@@ -195,6 +200,11 @@
           },
           {
             "target_id": "file:src/wiki_compiler/validator.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/workflow_guard.py",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -439,6 +449,11 @@
           },
           {
             "target_id": "file:src/wiki_compiler/__pycache__/validator.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -855,6 +870,78 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/curate.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:score_drafts",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_get_abstract",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_sentence_count",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_node_id_to_file",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:promote_draft",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/curate.py:_rewrite_node_id",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Curation pipeline for draft wiki nodes: scoring quality and promoting drafts to the main wiki.",
+          "raw_docstring": "Curation pipeline for draft wiki nodes: scoring quality and promoting drafts to the main wiki."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/curate.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import json",
+            "import re",
+            "from pathlib import Path"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "file:src/wiki_compiler/curate.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/facet_injectors.py",
           "node_type": "file"
         },
@@ -1075,6 +1162,26 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/ingest.py:_source_subdir",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_extract_abstract",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_render_index",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/ingest.py:decompose_source",
             "relation_type": "contains",
             "metadata": {}
@@ -1176,7 +1283,10 @@
             "from .query_server import query_main",
             "from .registry import build_default_registry",
             "from .scaffolder import generate_scaffolding, init_repository",
-            "from .validator import validate_topology_proposal"
+            "from .validator import validate_topology_proposal",
+            "from .workflow_guard import guard_workflow",
+            "from .workflow_guard import read_current_branch",
+            "from .workflow_guard import read_git_changes"
           ]
         },
         "io_ports": [],
@@ -1444,6 +1554,16 @@
         },
         "edges": [
           {
+            "target_id": "code:src/wiki_compiler/query_server.py:serve_structured_queries",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/query_server.py:_handle_structured_query_line",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/query_server.py:query_graph",
             "relation_type": "contains",
             "metadata": {}
@@ -1476,7 +1596,7 @@
         ],
         "semantics": {
           "intent": "Serves graph queries for the Librarian Agent protocol.",
-          "raw_docstring": "Serves graph queries for the Librarian Agent protocol.\nSupports path traversal and I/O searching via the CLI runtime."
+          "raw_docstring": "Serves graph queries for the Librarian Agent protocol.\nSupports path traversal and I/O searching via the CLI runtime.\nAlso provides a stdin-based REPL loop for StructuredQuery JSON execution."
         },
         "ast": {
           "construct_type": "script",
@@ -1486,9 +1606,13 @@
           "dependencies": [
             "from __future__ import annotations",
             "import json",
+            "import sys",
             "from pathlib import Path",
+            "from typing import IO",
             "import networkx",
-            "from .graph_utils import load_graph, load_knowledge_node"
+            "from .graph_utils import load_graph, load_knowledge_node",
+            "from .query_executor import execute_query",
+            "from .query_language import StructuredQuery"
           ]
         },
         "io_ports": [],
@@ -1769,6 +1893,11 @@
         },
         "edges": [
           {
+            "target_id": "code:src/wiki_compiler/validator.py:submit_topology_proposal",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/validator.py:validate_topology_proposal",
             "relation_type": "contains",
             "metadata": {}
@@ -1830,6 +1959,76 @@
         }
       },
       "id": "file:src/wiki_compiler/validator.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/workflow_guard.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:FileChange",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:WorkflowGuardReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:read_git_changes",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:read_current_branch",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:guard_workflow",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Checks issue, changelog, and branch discipline for active work.",
+          "raw_docstring": "Checks issue, changelog, and branch discipline for active work."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/workflow_guard.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "from dataclasses import dataclass",
+            "from pathlib import Path",
+            "import subprocess"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": {
+          "test_type": "unit",
+          "coverage_percent": null
+        }
+      },
+      "id": "file:src/wiki_compiler/workflow_guard.py"
     },
     {
       "type": "concept",
@@ -2138,6 +2337,24 @@
       "id": "file:src/wiki_compiler/__pycache__/validator.cpython-313.pyc"
     },
     {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null
+      },
+      "id": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc"
+    },
+    {
       "type": "file",
       "status": "implemented",
       "schema": {
@@ -2178,37 +2395,47 @@
       "id": "file:src/wikipu/decorators.py"
     },
     {
-      "type": "doc_standard",
+      "type": "index",
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/00_INDEX_MOC.md",
-          "node_type": "doc_standard"
+          "node_id": "doc:wiki/Index.md",
+          "node_type": "index"
         },
         "edges": [
           {
-            "target_id": "doc:wiki/how_it_works.md",
+            "target_id": "doc:wiki/standards/00_house_rules.md",
             "relation_type": "contains",
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/knowledge_node_facets.md",
+            "target_id": "doc:wiki/how_to/Index.md",
             "relation_type": "contains",
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/llm_instructions.md",
+            "target_id": "doc:wiki/standards/artifacts/Index.md",
             "relation_type": "contains",
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/human_instructions.md",
+            "target_id": "doc:wiki/standards/languages/Index.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/Index.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/Index.md",
             "relation_type": "contains",
             "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "This is the central index for the `wikipu` knowledge hub. It provides navigational links to all core documentation, user-specific instructions, and the standards governing the ecosystem.",
+          "intent": "This is the front page of the Wikipu wiki. Start here when you need to understand where standards, workflows, reference material, concepts, and architectural decisions live.",
           "raw_docstring": null
         },
         "ast": null,
@@ -2221,55 +2448,234 @@
         "adr": null,
         "test_map": null
       },
-      "id": "doc:wiki/00_INDEX_MOC.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/how_it_works.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "`wikipu` is a knowledge-graph-driven compiler that maintains architectural integrity by linking code, documentation, and decisions into a single queryable graph. It enforces structural rules through a CLI, ensuring both humans and AI agents operate from a shared, machine-readable representation of the repository.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:wiki/how_it_works.md"
+      "id": "doc:wiki/Index.md"
     },
     {
       "type": "doc_standard",
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/knowledge_node_facets.md",
+          "node_id": "doc:wiki/standards/00_house_rules.md",
           "node_type": "doc_standard"
         },
         "edges": [
           {
-            "target_id": "file:src/wiki_compiler/contracts.py",
-            "relation_type": "documents",
+            "target_id": "doc:wiki/concepts/wiki_construction_principles.md",
+            "relation_type": "contains",
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/how_it_works.md",
+            "target_id": "doc:wiki/reference/knowledge_node_facets.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The House Rules define the invariant constraints that govern the entire `wikipu` ecosystem \u2014 from identity and zone separation to code style and wiki authoring. Every rule exists to keep one or more of the system's five load-bearing elements (Autopoiesis, Wiki, Knowledge Graph, Git, CLI) coherent and non-overlapping.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/how_to/Index.md",
+          "node_type": "index"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "This section contains operational guides for working within the Wikipu ecosystem. Each node addresses one concrete task: how to plan, design, document, research, navigate the graph, use the CLI, apply the Socratic method, or trigger the autopoietic cycle.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/how_to/Index.md"
+    },
+    {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/artifacts/Index.md",
+          "node_type": "index"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Canonical structure definitions for every artifact type in the Wikipu ecosystem. Each document defines the frontmatter schema and required body sections for one artifact. These definitions are the ground truth for authoring, validation, and automated checking.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/standards/artifacts/Index.md"
+    },
+    {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/languages/Index.md",
+          "node_type": "index"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Per-language style guides that translate the language-agnostic CS-1 through CS-9 rules from `wiki/standards/00_house_rules.md` (Layer 5) into each language's idioms, toolchain, and enforcement mechanisms. Every guide covers rule mapping, recommended toolchain configuration, and a breakdown of automated versus manual enforcement.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/standards/languages/Index.md"
+    },
+    {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/Index.md",
+          "node_type": "index"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/reference/faq.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/knowledge_node_facets.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/build.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/cli/ingest.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/llm_agent.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/protocols/human_contributor.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This index gathers lookup-oriented pages: command references, schema references, FAQs, and audience protocols. Use reference nodes when you already know the subject and need the exact fields, commands, or operating constraints.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/Index.md"
+    },
+    {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/Index.md",
+          "node_type": "index"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/how_wikipu_works.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/wiki_construction_principles.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This index lists the concept nodes that explain what Wikipu is and how its documentation system is structured. Use concept nodes when you need architectural meaning or definitions rather than task steps or standards.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/concepts/Index.md"
+    },
+    {
+      "type": "adr",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/adrs/001_feature_methodology_superseded.md",
+          "node_type": "adr"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/00_house_rules.md",
             "relation_type": "documents",
             "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "A `KnowledgeNode` is enriched by facets \u2014 optional, independently injectable dimensions of knowledge that answer specific questions about a node. This document defines each facet's fields, the node types that use them, and the schema for declaring them in YAML frontmatter.",
+          "intent": "Legacy methodology material copied from another project was retired so Wikipu could have one canonical standards surface. This ADR records that the repository should keep only repo-specific durable guidance rather than preserving unrelated prior-framework instructions as shadow authority.",
           "raw_docstring": null
         },
         "ast": null,
@@ -2279,68 +2685,22 @@
           "failing_standards": [],
           "exemption_reason": null
         },
-        "adr": null,
+        "adr": {
+          "decision_id": "001",
+          "status": "accepted",
+          "context_summary": "Legacy methodology documents copied from another project created ambiguity, so they were retired and replaced by repo-specific standards and protocols."
+        },
         "test_map": null
       },
-      "id": "doc:wiki/knowledge_node_facets.md"
+      "id": "doc:wiki/adrs/001_feature_methodology_superseded.md"
     },
     {
-      "type": "doc_standard",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/llm_instructions.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "This document defines the protocols and constraints for AI agents operating within the `wikipu` ecosystem. It establishes the agent's identity as a Knowledge Architect, mandates graph-first navigation, and enforces the Closed-Loop Development process for all module creation.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:wiki/llm_instructions.md"
-    },
-    {
-      "type": "doc_standard",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/human_instructions.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "This document provides essential guidelines for human developers contributing to a `wikipu`-managed repository. It covers the house rules, domain glossary, exemption procedures, and the responsibilities of maintaining module knowledge nodes.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:wiki/human_instructions.md"
-    },
-    {
-      "type": "doc_standard",
+      "type": "adr",
       "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/adrs/002_documentation_consolidation.md",
-          "node_type": "doc_standard"
+          "node_type": "adr"
         },
         "edges": [
           {
@@ -2370,32 +2730,27 @@
       "id": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
     {
-      "type": "doc_standard",
+      "type": "concept",
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/standards/00_house_rules.md",
-          "node_type": "doc_standard"
+          "node_id": "doc:wiki/concepts/how_wikipu_works.md",
+          "node_type": "concept"
         },
         "edges": [
           {
-            "target_id": "doc:wiki/concepts/wiki_construction_principles.md",
+            "target_id": "doc:wiki/standards/00_house_rules.md",
             "relation_type": "contains",
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/knowledge_node_facets.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:agents/librarian/intro.md",
+            "target_id": "doc:wiki/reference/knowledge_node_facets.md",
             "relation_type": "contains",
             "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "The House Rules define the invariant constraints that govern the entire `wikipu` ecosystem \u2014 from identity and zone separation to code style and wiki authoring. Every rule exists to keep one or more of the system's five load-bearing elements (Autopoiesis, Wiki, Knowledge Graph, Git, CLI) coherent and non-overlapping.",
+          "intent": "Wikipu works by compiling code, documentation, and decisions into a shared knowledge graph that both humans and agents can navigate. The wiki is not just prose; it is structured input to a graph-shaped system that enforces architectural rules and preserves traceable context.",
           "raw_docstring": null
         },
         "ast": null,
@@ -2408,7 +2763,7 @@
         "adr": null,
         "test_map": null
       },
-      "id": "doc:wiki/standards/00_house_rules.md"
+      "id": "doc:wiki/concepts/how_wikipu_works.md"
     },
     {
       "type": "concept",
@@ -2447,6 +2802,42 @@
       "id": "doc:wiki/concepts/wiki_construction_principles.md"
     },
     {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/knowledge_node_facets.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/contracts.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/how_wikipu_works.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This reference defines the node and facet vocabulary used throughout the Wikipu knowledge graph. Use it when you need to look up what a node type, edge, or facet field means rather than when you need an explanation of why the graph exists.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/knowledge_node_facets.md"
+    },
+    {
       "type": "concept",
       "status": "unknown",
       "schema": {
@@ -2463,31 +2854,6 @@
         "test_map": null
       },
       "id": "raw:raw/wiki_construction_principles.md"
-    },
-    {
-      "type": "index",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/how_to/Index.md",
-          "node_type": "index"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "This section contains operational guides for working within the Wikipu ecosystem. Each node addresses one concrete task: how to plan, design, document, research, navigate the graph, use the CLI, apply the Socratic method, or trigger the autopoietic cycle.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:wiki/how_to/Index.md"
     },
     {
       "type": "how_to",
@@ -2549,7 +2915,7 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design \u2014 it lives in `plan_docs/` or `desk/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.",
+          "intent": "Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design \u2014 it lives in `plan_docs/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.",
           "raw_docstring": null
         },
         "ast": null,
@@ -2688,6 +3054,215 @@
         "test_map": null
       },
       "id": "doc:wiki/how_to/use_the_graph.md"
+    },
+    {
+      "type": "faq",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/faq.md",
+          "node_type": "faq"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "This FAQ answers the recurring questions that agents and developers hit when they first work with Wikipu. Use it for quick clarification, then follow the `see_also` pointers to the canonical standards, concepts, or how-to pages.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/faq.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/build.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/builder.py",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Compiles all wiki Markdown nodes into a NetworkX knowledge graph, runs facet injection passes, calculates a compliance score, and optionally checks or updates a persistent compliance baseline. This is the primary command for regenerating `knowledge_graph.json` after any wiki or source change.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/build.md"
+    },
+    {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/cli/ingest.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/main.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/ingest.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_extract_abstract",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_render_index",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_source_subdir",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:decompose_source",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:draft_node_path",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:render_draft",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:slugify",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:summarize_source",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Converts raw source files in a staging directory into draft wiki nodes with well-formed frontmatter, writing them to a destination directory. It is the first stage of the ore-to-node pipeline: unstructured knowledge enters `raw/` and exits as structured Markdown stubs ready for editing and promotion.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/cli/ingest.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/llm_agent.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This protocol summarizes the expectations for LLM agents operating inside Wikipu. It is a lookup-oriented companion to the house rules and librarian protocol, not a replacement for them.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/llm_agent.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/protocols/human_contributor.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This protocol summarizes the expectations for human contributors working in a Wikipu-managed repository. It is a quick reference to the durable rules that keep code, docs, and the graph aligned.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/reference/protocols/human_contributor.md"
     },
     {
       "type": "doc_standard",
@@ -4931,6 +5506,26 @@
             "target_id": "code:src/wiki_compiler/ingest.py:slugify",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_extract_abstract",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_render_index",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/ingest.py:_source_subdir",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -4960,7 +5555,7 @@
         "edges": [],
         "semantics": {
           "intent": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.",
-          "raw_docstring": "Scans a directory for raw source files and generates draft markdown nodes for each valid file."
+          "raw_docstring": "Scans a directory for raw source files and generates draft markdown nodes for each valid file.\nDraft nodes land in dest_dir/<source_subdir>/ mirroring the first path component under source_dir.\nAfter ingestion, generates an INDEX.md per subdirectory."
         },
         "ast": {
           "construct_type": "function",
@@ -5027,7 +5622,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "render_draft(rel_source: str, dest_dir: Path, draft_slug: str, title: str, content: str, node_type: str = 'concept') -> str"
+            "render_draft(rel_source: str, node_id: str, title: str, content: str, node_type: str = 'concept') -> str"
           ],
           "dependencies": []
         },
@@ -5084,7 +5679,7 @@
         "edges": [],
         "semantics": {
           "intent": "Computes the canonical node path for a draft markdown file.",
-          "raw_docstring": "Computes the canonical node path for a draft markdown file."
+          "raw_docstring": "Computes the canonical node path for a draft markdown file.\nKept for backwards compatibility."
         },
         "ast": {
           "construct_type": "function",
@@ -5136,49 +5731,6 @@
       "id": "code:src/wiki_compiler/ingest.py:slugify"
     },
     {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:agents/librarian/intro.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:agents/librarian/intro.md"
-    },
-    {
-      "type": "index",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/artifacts/Index.md",
-          "node_type": "index"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Canonical structure definitions for every artifact type in the Wikipu ecosystem. Each document defines the frontmatter schema and required body sections for one artifact. These definitions are the ground truth for authoring, validation, and automated checking.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null
-      },
-      "id": "doc:wiki/standards/artifacts/Index.md"
-    },
-    {
       "type": "doc_standard",
       "status": "implemented",
       "schema": {
@@ -5219,7 +5771,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/knowledge_node_facets.md",
+            "target_id": "doc:wiki/reference/knowledge_node_facets.md",
             "relation_type": "extends",
             "metadata": {}
           },
@@ -5420,12 +5972,12 @@
       "id": "doc:wiki/standards/checklists.md"
     },
     {
-      "type": "index",
+      "type": "doc_standard",
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/standards/languages/Index.md",
-          "node_type": "index"
+          "node_id": "doc:wiki/standards/document_topology.md",
+          "node_type": "doc_standard"
         },
         "edges": [
           {
@@ -5435,7 +5987,7 @@
           }
         ],
         "semantics": {
-          "intent": "Per-language style guides that translate the language-agnostic CS-1 through CS-9 rules from `wiki/standards/00_house_rules.md` (Layer 5) into each language's idioms, toolchain, and enforcement mechanisms. Every guide covers rule mapping, recommended toolchain configuration, and a breakdown of automated versus manual enforcement.",
+          "intent": "Document topology defines where durable knowledge belongs in the Wikipu wiki. It separates hand-authored standards, concepts, and workflows from derived reference material so agents can decide where to read, write, or relocate documentation without guessing.",
           "raw_docstring": null
         },
         "ast": null,
@@ -5448,7 +6000,79 @@
         "adr": null,
         "test_map": null
       },
-      "id": "doc:wiki/standards/languages/Index.md"
+      "id": "doc:wiki/standards/document_topology.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/issues_index_seed.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/issues_lifecycle.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This seed defines the canonical starting shape for `plan_docs/issues/Index.md`. Use it when regenerating the issue index so subagents always receive the same operational structure and completion checklist.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/standards/issues_index_seed.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/issues_lifecycle.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/standards/artifacts/issue.md",
+            "relation_type": "extends",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/standards/issues_index_seed.md",
+            "relation_type": "extends",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The issue lifecycle standard defines how active work is represented, indexed, split, and retired in Wikipu. It is the canonical source for issue file structure, atomization, contradiction checks, dependency mapping, and resolution rules.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "doc:wiki/standards/issues_lifecycle.md"
     },
     {
       "type": "doc_standard",
@@ -5728,6 +6352,347 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/builder.py:add_documents_edges"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:score_drafts",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",",
+          "raw_docstring": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",\nrun quality checks, return ranked list (highest quality first).\n\nQuality signals:\n  +1  non-empty abstract (not the fallback \"No abstract provided.\")\n  +1  abstract length > 1 sentence\n  +1  node_type is not the fallback default (\"file\")\n  +1  source file still exists on disk\n\nEach result: {\"node_id\": str, \"score\": int, \"issues\": list[str]}"
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:score_drafts"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Runs quality checks on a single node schema, returns (score, issues).",
+          "raw_docstring": "Runs quality checks on a single node schema, returns (score, issues)."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_evaluate_node(node_id: str, schema: dict, drafts_dir: Path) -> tuple[int, list[str]]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:_evaluate_node"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:_get_abstract",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extracts the abstract from a node schema (first line of semantics intent or raw_docstring).",
+          "raw_docstring": "Extracts the abstract from a node schema (first line of semantics intent or raw_docstring)."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_get_abstract(schema: dict) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:_get_abstract"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:_sentence_count",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Counts approximate number of sentences in text.",
+          "raw_docstring": "Counts approximate number of sentences in text."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_sentence_count(text: str) -> int"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:_sentence_count"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:_node_id_to_file",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Maps a node_id like \"doc:wiki/drafts/sub/slug.md\" to an absolute file path",
+          "raw_docstring": "Maps a node_id like \"doc:wiki/drafts/sub/slug.md\" to an absolute file path\nunder drafts_dir."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_node_id_to_file(node_id: str, drafts_dir: Path) -> Path | None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:_node_id_to_file"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:promote_draft",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Move draft node file from wiki/drafts/ to dest path in wiki/,",
+          "raw_docstring": "Move draft node file from wiki/drafts/ to dest path in wiki/,\nrewrite node_id in frontmatter to match new path.\nTrigger is external \u2014 caller runs wiki-compiler build after."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "promote_draft(node_id: str, dest: str, drafts_dir: Path, wiki_dir: Path) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:promote_draft"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/curate.py:_rewrite_node_id",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Replaces the node_id value in YAML frontmatter.",
+          "raw_docstring": "Replaces the node_id value in YAML frontmatter."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_rewrite_node_id(content: str, old_id: str, new_id: str) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/curate.py:_rewrite_node_id"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/ingest.py:_source_subdir",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Returns the first path component of a relative source path, or empty string if top-level.",
+          "raw_docstring": "Returns the first path component of a relative source path, or empty string if top-level."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_source_subdir(rel_to_source: Path) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/ingest.py:_source_subdir"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Computes the canonical node_id for a draft node given its destination details.",
+          "raw_docstring": "Computes the canonical node_id for a draft node given its destination details."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_compute_node_id(dest_dir: Path, source_subdir: str, draft_slug: str) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/ingest.py:_compute_node_id"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/ingest.py:_extract_abstract",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extracts the first non-empty line from content as the abstract.",
+          "raw_docstring": "Extracts the first non-empty line from content as the abstract."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_extract_abstract(content: str) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/ingest.py:_extract_abstract"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/ingest.py:_render_index",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Renders an INDEX.md listing all draft node IDs, titles, and abstracts.",
+          "raw_docstring": "Renders an INDEX.md listing all draft node IDs, titles, and abstracts."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_render_index(source_subdir: str, entries: list[dict]) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/ingest.py:_render_index"
     },
     {
       "type": "code_construct",
@@ -6335,6 +7300,68 @@
         "test_map": null
       },
       "id": "code:src/wiki_compiler/query_language.py:StructuredQuery"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/query_server.py:serve_structured_queries",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Reads StructuredQuery JSON objects one per line from input_stream,",
+          "raw_docstring": "Reads StructuredQuery JSON objects one per line from input_stream,\nexecutes each against the graph at graph_path, and writes results\nas JSON lines to output_stream.\n\nMalformed lines produce an error JSON response instead of crashing.\nExits cleanly when the input stream is exhausted."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "serve_structured_queries(graph_path: Path, input_stream: IO[str] = sys.stdin, output_stream: IO[str] = sys.stdout) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/query_server.py:serve_structured_queries"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/query_server.py:_handle_structured_query_line",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Parses one line as a StructuredQuery JSON and returns a result dict.",
+          "raw_docstring": "Parses one line as a StructuredQuery JSON and returns a result dict."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_handle_structured_query_line(graph: nx.DiGraph, raw_line: str) -> dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/query_server.py:_handle_structured_query_line"
     },
     {
       "type": "code_construct",
@@ -7369,6 +8396,37 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/validator.py:submit_topology_proposal",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Loads a TopologyProposal from a JSON file, validates it against the graph,",
+          "raw_docstring": "Loads a TopologyProposal from a JSON file, validates it against the graph,\nand returns a structured result.\n\nReturns a dict with keys:\n  - \"valid\": bool \u2014 True if the proposal is orthogonal\n  - \"issues\": list[str] \u2014 human-readable problems found\n  - \"proposal_id\": str \u2014 the proposed_module_name from the proposal"
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "submit_topology_proposal(proposal_path: str, graph_path: str) -> dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/validator.py:submit_topology_proposal"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/validator.py:validate_topology_proposal",
           "node_type": "code_construct"
         },
@@ -7555,6 +8613,192 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:FileChange",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A single git-tracked path change.",
+          "raw_docstring": "A single git-tracked path change."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FileChange"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:FileChange"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:WorkflowGuardReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Result of checking current work against workflow rules.",
+          "raw_docstring": "Result of checking current work against workflow rules."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class WorkflowGuardReport"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:WorkflowGuardReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:read_git_changes",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return tracked and untracked worktree changes from git status.",
+          "raw_docstring": "Return tracked and untracked worktree changes from git status."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "read_git_changes(project_root: Path) -> list[FileChange]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:read_git_changes"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:read_current_branch",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return the current git branch name.",
+          "raw_docstring": "Return the current git branch name."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "read_current_branch(project_root: Path) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:read_current_branch"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:guard_workflow",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate active work against issue and commit discipline rules.",
+          "raw_docstring": "Validate active work against issue and commit discipline rules."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "guard_workflow(changes: list[FileChange], branch_name: str, allow_structural: bool = False) -> WorkflowGuardReport"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:guard_workflow"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return True when a path should count toward workflow discipline checks.",
+          "raw_docstring": "Return True when a path should count toward workflow discipline checks."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "is_relevant_change(path: str) -> bool"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null
+      },
+      "id": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wikipu/decorators.py:wiki_exempt",
           "node_type": "code_construct"
         },
@@ -7671,6 +8915,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "file:src/wiki_compiler/curate.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/facet_injectors.py"
     },
     {
@@ -7750,6 +9000,12 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/validator.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
+      "target": "file:src/wiki_compiler/workflow_guard.py"
     },
     {
       "relation": "contains",
@@ -7858,6 +9114,12 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/validator.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/__pycache__",
+      "target": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc"
     },
     {
       "relation": "contains",
@@ -8126,6 +9388,48 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:score_drafts"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:_evaluate_node"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:_get_abstract"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:_sentence_count"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:_node_id_to_file"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:promote_draft"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/curate.py",
+      "target": "code:src/wiki_compiler/curate.py:_rewrite_node_id"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/facet_injectors.py",
       "target": "code:src/wiki_compiler/facet_injectors.py:ADRInjector"
     },
@@ -8224,6 +9528,30 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/ingest.py",
       "target": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/ingest.py",
+      "target": "code:src/wiki_compiler/ingest.py:_source_subdir"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/ingest.py",
+      "target": "code:src/wiki_compiler/ingest.py:_compute_node_id"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/ingest.py",
+      "target": "code:src/wiki_compiler/ingest.py:_extract_abstract"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/ingest.py",
+      "target": "code:src/wiki_compiler/ingest.py:_render_index"
     },
     {
       "relation": "contains",
@@ -8368,6 +9696,18 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/query_language.py",
       "target": "code:src/wiki_compiler/query_language.py:StructuredQuery"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/query_server.py",
+      "target": "code:src/wiki_compiler/query_server.py:serve_structured_queries"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/query_server.py",
+      "target": "code:src/wiki_compiler/query_server.py:_handle_structured_query_line"
     },
     {
       "relation": "contains",
@@ -8571,6 +9911,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/validator.py",
+      "target": "code:src/wiki_compiler/validator.py:submit_topology_proposal"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/validator.py",
       "target": "code:src/wiki_compiler/validator.py:validate_topology_proposal"
     },
     {
@@ -8606,50 +9952,80 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:FileChange"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:WorkflowGuardReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:read_git_changes"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:read_current_branch"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:guard_workflow"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/workflow_guard.py",
+      "target": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wikipu/decorators.py",
       "target": "code:src/wikipu/decorators.py:wiki_exempt"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/00_INDEX_MOC.md",
-      "target": "doc:wiki/how_it_works.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/00_INDEX_MOC.md",
-      "target": "doc:wiki/knowledge_node_facets.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/00_INDEX_MOC.md",
-      "target": "doc:wiki/llm_instructions.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/00_INDEX_MOC.md",
-      "target": "doc:wiki/human_instructions.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/knowledge_node_facets.md",
-      "target": "file:src/wiki_compiler/contracts.py"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/knowledge_node_facets.md",
-      "target": "doc:wiki/how_it_works.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/adrs/002_documentation_consolidation.md",
+      "source": "doc:wiki/Index.md",
       "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/Index.md",
+      "target": "doc:wiki/how_to/Index.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/Index.md",
+      "target": "doc:wiki/standards/artifacts/Index.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/Index.md",
+      "target": "doc:wiki/standards/languages/Index.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/Index.md",
+      "target": "doc:wiki/reference/Index.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/Index.md",
+      "target": "doc:wiki/concepts/Index.md"
     },
     {
       "relation": "contains",
@@ -8661,13 +10037,85 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/standards/00_house_rules.md",
-      "target": "doc:wiki/knowledge_node_facets.md"
+      "target": "doc:wiki/reference/knowledge_node_facets.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/standards/languages/Index.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
-      "target": "doc:agents/librarian/intro.md"
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/faq.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/knowledge_node_facets.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/build.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/cli/ingest.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/llm_agent.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/reference/Index.md",
+      "target": "doc:wiki/reference/protocols/human_contributor.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/Index.md",
+      "target": "doc:wiki/concepts/how_wikipu_works.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/Index.md",
+      "target": "doc:wiki/concepts/wiki_construction_principles.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/adrs/001_feature_methodology_superseded.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/adrs/002_documentation_consolidation.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/how_wikipu_works.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/how_wikipu_works.md",
+      "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
     {
       "relation": "documents",
@@ -8679,6 +10127,114 @@
       "relation": "depends_on",
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/knowledge_node_facets.md",
+      "target": "file:src/wiki_compiler/contracts.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/knowledge_node_facets.md",
+      "target": "doc:wiki/concepts/how_wikipu_works.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/build.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/build.md",
+      "target": "file:src/wiki_compiler/builder.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "file:src/wiki_compiler/main.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "file:src/wiki_compiler/ingest.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_compute_node_id"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_extract_abstract"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_render_index"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_source_subdir"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:decompose_source"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:draft_node_path"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:render_draft"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:slugify"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:summarize_source"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/reference/protocols/llm_agent.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/reference/protocols/human_contributor.md",
       "target": "doc:wiki/standards/00_house_rules.md"
     },
     {
@@ -9126,6 +10682,30 @@
       "target": "code:src/wiki_compiler/ingest.py:slugify"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_compute_node_id"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_extract_abstract"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_render_index"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/ingest.md",
+      "target": "code:src/wiki_compiler/ingest.py:_source_subdir"
+    },
+    {
       "relation": "extends",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/adr.md",
@@ -9135,7 +10715,7 @@
       "relation": "extends",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/wiki_node.md",
-      "target": "doc:wiki/knowledge_node_facets.md"
+      "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
     {
       "relation": "implements",
@@ -9170,8 +10750,32 @@
     {
       "relation": "implements",
       "metadata": {},
-      "source": "doc:wiki/standards/languages/Index.md",
+      "source": "doc:wiki/standards/document_topology.md",
       "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/standards/issues_index_seed.md",
+      "target": "doc:wiki/standards/issues_lifecycle.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/standards/issues_lifecycle.md",
+      "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/standards/issues_lifecycle.md",
+      "target": "doc:wiki/standards/artifacts/issue.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/standards/issues_lifecycle.md",
+      "target": "doc:wiki/standards/issues_index_seed.md"
     },
     {
       "relation": "implements",

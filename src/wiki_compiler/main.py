@@ -1,6 +1,7 @@
 """
 Entry point for the Wiki Compiler CLI, coordinating build, audit, and query operations.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -20,6 +21,9 @@ from .query_server import query_main
 from .registry import build_default_registry
 from .scaffolder import generate_scaffolding, init_repository
 from .validator import validate_topology_proposal
+from .workflow_guard import guard_workflow
+from .workflow_guard import read_current_branch
+from .workflow_guard import read_git_changes
 
 
 def main() -> None:
@@ -51,7 +55,9 @@ def main() -> None:
         if args.command == "query":
             if getattr(args, "query_file", None):
                 graph = load_graph(Path(args.graph))
-                query_data = json.loads(Path(args.query_file).read_text(encoding="utf-8"))
+                query_data = json.loads(
+                    Path(args.query_file).read_text(encoding="utf-8")
+                )
                 query = StructuredQuery.model_validate(query_data)
                 results = execute_query(graph, query)
                 print(json.dumps([n.model_dump() for n in results], indent=2))
@@ -71,13 +77,22 @@ def main() -> None:
             graph = load_graph(Path(args.graph))
             report = run_audit(graph)
             if args.format == "json":
-                print(json.dumps({
-                    "summary": report.summary,
-                    "findings": [
-                        {"check": f.check_name, "node_id": f.node_id, "detail": f.detail}
-                        for f in report.findings
-                    ],
-                }, indent=2))
+                print(
+                    json.dumps(
+                        {
+                            "summary": report.summary,
+                            "findings": [
+                                {
+                                    "check": f.check_name,
+                                    "node_id": f.node_id,
+                                    "detail": f.detail,
+                                }
+                                for f in report.findings
+                            ],
+                        },
+                        indent=2,
+                    )
+                )
             else:
                 print("## Audit Report\n")
                 for check_name, count in report.summary.items():
@@ -91,11 +106,17 @@ def main() -> None:
             return
         if args.command == "propose-facet":
             from .contracts import FacetProposal
+
             proposal_data = json.loads(Path(args.proposal).read_text(encoding="utf-8"))
             proposal = FacetProposal.model_validate(proposal_data)
             registry = build_default_registry()
             import networkx as nx
-            graph = load_graph(Path(args.graph)) if Path(args.graph).exists() else nx.DiGraph()
+
+            graph = (
+                load_graph(Path(args.graph))
+                if Path(args.graph).exists()
+                else nx.DiGraph()
+            )
             report = validate_facet_proposal(
                 proposal=proposal,
                 registry=registry,
@@ -151,26 +172,46 @@ def main() -> None:
                 "edges:",
             ]
             for nid in node_ids:
-                lines.append(f'  - {{target_id: "{nid}", relation_type: "transcludes"}}')
-            lines.extend([
-                "---",
-                "",
-                f"# {args.title}",
-                "",
-                args.abstract,
-                "",
-            ])
+                lines.append(
+                    f'  - {{target_id: "{nid}", relation_type: "transcludes"}}'
+                )
+            lines.extend(
+                [
+                    "---",
+                    "",
+                    f"# {args.title}",
+                    "",
+                    args.abstract,
+                    "",
+                ]
+            )
             for nid in node_ids:
                 # Extract slug from node_id (e.g., 'doc:wiki/foo.md' -> 'foo')
                 slug = Path(nid.split(":")[-1]).stem
                 lines.append(f"![[{slug}]]")
-            
+
             output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
             print(f"[OK] Composite node created at {args.output}")
             return
         if args.command == "init":
             init_repository()
             print("[OK] Wikipu ecosystem initialized. Base folders created.")
+            return
+        if args.command == "check-workflow":
+            report = guard_workflow(
+                read_git_changes(Path(args.project_root)),
+                branch_name=read_current_branch(Path(args.project_root)),
+                allow_structural=args.allow_structural,
+            )
+            if report.checked_files:
+                print("[INFO] Checked files:")
+                for path in report.checked_files:
+                    print(f"- {path}")
+            if report.errors:
+                for error in report.errors:
+                    print(f"[ERROR] {error}")
+                sys.exit(1)
+            print("[OK] Workflow discipline checks passed.")
             return
     except Exception as exc:
         print(f"[ERROR] {exc}")
@@ -195,9 +236,7 @@ def build_parser() -> argparse.ArgumentParser:
     build_parser = subparsers.add_parser(
         "build", help="Compile the wiki and generate the graph"
     )
-    build_parser.add_argument(
-        "--source", default="wiki", help="Source wiki directory"
-    )
+    build_parser.add_argument("--source", default="wiki", help="Source wiki directory")
     build_parser.add_argument(
         "--graph", default="knowledge_graph.json", help="NetworkX JSON output path"
     )
@@ -236,11 +275,17 @@ def build_parser() -> argparse.ArgumentParser:
     query_parser.add_argument("--medium", help="Filter I/O medium")
     query_parser.add_argument("--schema-ref", help="Filter I/O schema")
     query_parser.add_argument("--path-template", help="Filter I/O path template")
-    query_parser.add_argument("--query-file", help="Path to a StructuredQuery JSON file")
+    query_parser.add_argument(
+        "--query-file", help="Path to a StructuredQuery JSON file"
+    )
 
-    audit_parser = subparsers.add_parser("audit", help="Run documentation quality checks")
+    audit_parser = subparsers.add_parser(
+        "audit", help="Run documentation quality checks"
+    )
     audit_parser.add_argument("--graph", default="knowledge_graph.json")
-    audit_parser.add_argument("--format", default="markdown", choices=["markdown", "json"])
+    audit_parser.add_argument(
+        "--format", default="markdown", choices=["markdown", "json"]
+    )
 
     propose_facet_parser = subparsers.add_parser(
         "propose-facet", help="Validate a new facet proposal for orthogonality"
@@ -318,10 +363,28 @@ def build_parser() -> argparse.ArgumentParser:
     compose_parser = subparsers.add_parser(
         "compose", help="Create a composite node from atomic ones"
     )
-    compose_parser.add_argument("--nodes", required=True, help="Space-separated list of node IDs")
-    compose_parser.add_argument("--title", required=True, help="Title of the composite node")
-    compose_parser.add_argument("--abstract", required=True, help="Abstract of the composite node")
+    compose_parser.add_argument(
+        "--nodes", required=True, help="Space-separated list of node IDs"
+    )
+    compose_parser.add_argument(
+        "--title", required=True, help="Title of the composite node"
+    )
+    compose_parser.add_argument(
+        "--abstract", required=True, help="Abstract of the composite node"
+    )
     compose_parser.add_argument("--output", required=True, help="Output markdown path")
+
+    workflow_parser = subparsers.add_parser(
+        "check-workflow", help="Validate issue and changelog discipline"
+    )
+    workflow_parser.add_argument(
+        "--project-root", default=".", help="Git repository root to inspect"
+    )
+    workflow_parser.add_argument(
+        "--allow-structural",
+        action="store_true",
+        help="Allow docs-only structural work without an issue link",
+    )
 
     subparsers.add_parser("init", help="Initialize the base wikipu structure")
     return parser

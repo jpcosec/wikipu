@@ -24,6 +24,7 @@ Agents working here should optimize for small, reversible changes that preserve 
 - Recompute and refresh baseline: `wiki-compiler build --update-baseline`
 - Ingest raw notes into wiki drafts: `wiki-compiler ingest`
 - Audit the built graph: `wiki-compiler audit`
+- Check issue/changelog workflow discipline: `wiki-compiler check-workflow`
 - Render focused graph context: `wiki-compiler context --nodes "doc:wiki/index.md"`
 
 ## Test Commands
@@ -57,7 +58,7 @@ Agents working here should optimize for small, reversible changes that preserve 
 - `tests/`: pytest suite.
 - `wiki/`: current truth and standards.
 - `wiki/how_to/`: canonical operational guides for graph usage, planning, design, documentation, and research.
-- `wiki/issues_guide.md`: canonical issue lifecycle and indexing process.
+- `wiki/standards/issues_lifecycle.md`: canonical issue lifecycle and indexing process.
 - `raw/`: source material; read-only for agents.
 - `plan_docs/`: active planning artifacts.
 - `future_docs/`: deferred ideas.
@@ -80,15 +81,17 @@ Agents working here should optimize for small, reversible changes that preserve 
 - Use `wiki-compiler context --nodes "<node_id>"` for focused context instead of reading many files.
 - Common node IDs include `doc:wiki/...`, `file:src/...`, and `code:src/...`.
 - Key edge types include `contains`, `depends_on`, `documents`, `transcludes`, and `implements`.
-- Canonical guidance lives in `wiki/how_to/use_the_graph.md` and `wiki/knowledge_node_facets.md`.
+- Canonical guidance lives in `wiki/how_to/use_the_graph.md` and `wiki/reference/knowledge_node_facets.md`.
 
 ## Working With Issues
 - Active issues live under `plan_docs/issues/`, usually in `plan_docs/issues/gaps/` and `plan_docs/issues/unimplemented/`.
 - The first file to inspect is `plan_docs/issues/Index.md`, which is the subagent entrypoint generated from the issue graph.
-- Use `wiki/issues_guide.md` as the canonical source for issue format, atomization, contradiction checks, dependency mapping, and resolution lifecycle.
-- Use `wiki/how_to/plan.md` for the operational planning workflow that points back to the issue guide.
+- Use `wiki/standards/issues_lifecycle.md` as the canonical source for issue format, atomization, contradiction checks, dependency mapping, and resolution lifecycle.
+- Use `wiki/how_to/plan.md` for the operational planning workflow that points back to the lifecycle standard.
 - Issue files are ephemeral: when resolved, delete the issue file, remove it from `plan_docs/issues/Index.md`, and record lasting design decisions in `wiki/adrs/` when needed.
 - `future_docs/` holds deferred ideas, not active implementation issues.
+- Default rule: non-trivial code, tests, or durable docs changes should start from an issue file unless the work is an explicitly structural docs-only change.
+- Before committing, run `wiki-compiler check-workflow` to catch missing issue linkage, missing `changelog.md`, or wrong branch naming.
 
 ## Core Style Rules
 - Prefer small, explicit functions over large control-heavy ones.
@@ -160,6 +163,8 @@ Agents working here should optimize for small, reversible changes that preserve 
 - For CLI or graph-schema work, validate with both tests and a CLI smoke check.
 - Avoid broad reformatting in files you were not asked to clean up.
 - Keep changes atomic and easy to review.
+- Prefer one active issue per implementation slice; do not batch unrelated issue resolutions together.
+- When code or tests change, prefer `issue/<name>` branches and commit after the slice is valid rather than carrying multiple unresolved units.
 
 ## Cursor / Copilot Rules
 - No `.cursorrules` file was found at the repo root.

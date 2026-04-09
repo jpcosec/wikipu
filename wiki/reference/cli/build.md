@@ -12,17 +12,15 @@ compliance:
 
 Compiles all wiki Markdown nodes into a NetworkX knowledge graph, runs facet injection passes, calculates a compliance score, and optionally checks or updates a persistent compliance baseline. This is the primary command for regenerating `knowledge_graph.json` after any wiki or source change.
 
-## Overview
+## Signature or Schema
 
 `wiki-compiler build` performs a multi-phase compilation: it scans the wiki directory for Markdown nodes, scans Python source directories for code constructs, injects ADR and test-map facets, then saves the resulting graph to a JSON file. It reports a compliance score and exits non-zero if the score has regressed against the stored baseline.
 
-## Commands / API
+## Fields
 
 ```
 wiki-compiler build [OPTIONS]
 ```
-
-**Options:**
 
 | Flag | Default | Description |
 |---|---|---|
@@ -33,7 +31,7 @@ wiki-compiler build [OPTIONS]
 | `--baseline` | `.compliance_baseline.json` | Path to the compliance baseline file |
 | `--update-baseline` | `false` | When set, overwrites the stored baseline with the current score |
 
-## Examples
+## Usage Examples
 
 ```bash
 # Basic build from the project root

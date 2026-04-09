@@ -1,3 +1,31 @@
+---
+identity:
+  node_id: "doc:wiki/standards/issues_index_seed.md"
+  node_type: "doc_standard"
+edges:
+  - {target_id: "doc:wiki/standards/issues_lifecycle.md", relation_type: "implements"}
+compliance:
+  status: "implemented"
+  failing_standards: []
+---
+
+This seed defines the canonical starting shape for `plan_docs/issues/Index.md`. Use it when regenerating the issue index so subagents always receive the same operational structure and completion checklist.
+
+## Rule Schema
+
+`plan_docs/issues/Index.md` should preserve these sections in order: entrypoint note, working rule for every issue, current state, priority roadmap, dependency summary, and parallelization map.
+
+## Fields
+
+- `[Project Name]` is replaced by the real repository name.
+- Phase names should reflect the current work program, not archival history.
+- Each issue entry should use the file path as the durable identifier.
+
+## Usage Examples
+
+- Regenerate the live issue index after splitting, adding, or resolving issues.
+- Keep the operational checklist at the top so subagents see completion rules first.
+
 ┄ [Project Name] Issues Index
 
 This file is the entrypoint for subagents deployed to solve issues in this repository.

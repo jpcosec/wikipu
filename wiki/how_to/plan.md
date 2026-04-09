@@ -7,15 +7,15 @@ compliance:
   failing_standards: []
 ---
 
-Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design — it lives in `plan_docs/` or `desk/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.
+Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design — it lives in `plan_docs/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.
 
 # How to Plan
 
-Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design — it lives in `plan_docs/` or `desk/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs. Good plans are atomic, checkable, and traceable to a specific perturbation in the system.
+Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. Good plans are atomic, checkable, and traceable to a specific perturbation in the system. The normative rules for issue format, indexing, contradiction checks, and lifecycle live in `wiki/standards/issues_lifecycle.md`; this guide is the operator workflow for applying them.
 
 ## Prerequisites
 
-- Access to `wiki/issues_guide.md` — the canonical reference for the planning lifecycle.
+- Access to `wiki/standards/issues_lifecycle.md` — the canonical reference for issue format and lifecycle.
 - Familiarity with the five zones: `raw/`, `wiki/`, `desk/`, `backlog/`, `src/`.
 - Understanding of OP-4 (Issue Resolution Protocol) and OP-5 (Atomization) in `wiki/standards/00_house_rules.md`.
 
@@ -23,8 +23,8 @@ Planning in Wikipu means converting a perceived gap or requirement into a discre
 
 1. Identify the perturbation — a broken contract, a missing node, an unimplemented rule, or a new requirement from an external source.
 2. Classify it: is it a **gap** (something exists but is wrong) or an **unimplemented** item (something designed but not built)?
-3. Create a file under `plan_docs/issues/gaps/` or `plan_docs/issues/unimplemented/` using the issue format from `wiki/issues_guide.md`: Title, Explanation, Reference, What to fix, How to do it, Depends on.
-4. Run the Stage 2 indexing steps from `wiki/issues_guide.md`: legacy audit, atomization check, contradiction check, dependency graph, and Index.md update.
+3. Create a file under `plan_docs/issues/gaps/` or `plan_docs/issues/unimplemented/` using the format defined in `wiki/standards/issues_lifecycle.md`.
+4. Run the indexing stages from `wiki/standards/issues_lifecycle.md`: legacy audit, atomization check, contradiction check, dependency graph, and `Index.md` update.
 5. If the issue has more than 3–4 independently failing steps, split it into child issues with explicit `Depends on:` links.
 6. If the issue conflicts with or duplicates another, resolve the overlap before adding it to the Index.
 7. Add the issue to `plan_docs/issues/Index.md` with its dependency links and parallelization status.

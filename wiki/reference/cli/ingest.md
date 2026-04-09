@@ -12,17 +12,15 @@ compliance:
 
 Converts raw source files in a staging directory into draft wiki nodes with well-formed frontmatter, writing them to a destination directory. It is the first stage of the ore-to-node pipeline: unstructured knowledge enters `raw/` and exits as structured Markdown stubs ready for editing and promotion.
 
-## Overview
+## Signature or Schema
 
 `wiki-compiler ingest` walks the source directory, reads each raw file, generates a draft Markdown node with a minimal frontmatter block, and writes it under the destination directory. Existing files are skipped unless `--overwrite` is passed. The command prints a JSON array of the written file paths. A `.wikiignore` file at the project root controls which source files are excluded.
 
-## Commands / API
+## Fields
 
 ```
 wiki-compiler ingest [OPTIONS]
 ```
-
-**Options:**
 
 | Flag | Default | Description |
 |---|---|---|
@@ -34,7 +32,7 @@ wiki-compiler ingest [OPTIONS]
 
 **Output:** JSON array of posix paths for every file written.
 
-## Examples
+## Usage Examples
 
 ```bash
 # Ingest all raw files into the default drafts directory

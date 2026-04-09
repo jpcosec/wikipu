@@ -21,7 +21,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 ┄┄┄ Phase 2 — Documentation debt
 
  7. plan_docs/issues/unimplemented/faq.md
-    • Create wiki/faq.md with answers to the most common agent/human questions.
+    • Create wiki/reference/faq.md with answers to the most common agent/human questions.
     • Depends on: none (how-to-wiki-section resolved).
 
 ┄┄┄ Phase 3 — Runtime and protocol
