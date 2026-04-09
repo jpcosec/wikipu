@@ -18,12 +18,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Priority roadmap
 
-┄┄┄ Phase 2 — Documentation debt
-
- 7. plan_docs/issues/unimplemented/faq.md
-    • Create wiki/reference/faq.md with answers to the most common agent/human questions.
-    • Depends on: none (how-to-wiki-section resolved).
-
 ┄┄┄ Phase 3 — Runtime and protocol
 
  9. plan_docs/issues/unimplemented/query-server-runtime.md
@@ -71,6 +65,5 @@ Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for me
 
 ┄┄ Parallelization map
 
-Phase 2  [7]                              — unblocked, ready
 Phase 3  [9][10][11] then [12] then [13]  — 9/10/11 parallel, then 12, then 13
 Phase 4  [14][15] then [17] then [16]; [18] after [9]
