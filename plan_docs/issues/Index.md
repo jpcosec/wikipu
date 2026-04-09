@@ -20,22 +20,19 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
- 9. plan_docs/issues/unimplemented/query-server-runtime.md
-    • Build the query server and tool runtime for the Librarian agent.
-    • Depends on: none.
-10. plan_docs/issues/unimplemented/cleansing-protocol.md
-    • Implement cleanser.py with anomaly detectors and CleansingProposal.
-    • Depends on: none.
-11. plan_docs/issues/unimplemented/draft-curation-pipeline.md
-    • Add source-mirrored subdirectories to wiki/drafts/, per-source INDEX.md, and
-      a `wiki-compiler curate` command with --score and --promote modes.
-    • Depends on: none.
-12. plan_docs/issues/unimplemented/artifact-schema-validation.md
-    • Pydantic models and wiki-compiler validate command for all artifact schemas (markdown/YAML only).
-    • Depends on: query-server-runtime.
-13. plan_docs/issues/unimplemented/scanner-plugin-interface.md
-    • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
-    • Depends on: artifact-schema-validation.
+ 10. plan_docs/issues/unimplemented/cleansing-protocol.md
+     • Implement cleanser.py with anomaly detectors and CleansingProposal.
+     • Depends on: none.
+ 11. plan_docs/issues/unimplemented/draft-curation-pipeline.md
+     • Add source-mirrored subdirectories to wiki/drafts/, per-source INDEX.md, and
+       a `wiki-compiler curate` command with --score and --promote modes.
+     • Depends on: none.
+ 12. plan_docs/issues/unimplemented/artifact-schema-validation.md
+     • Pydantic models and wiki-compiler validate command for all artifact schemas (markdown/YAML only).
+     • Depends on: query-server-runtime.
+ 13. plan_docs/issues/unimplemented/scanner-plugin-interface.md
+     • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
+     • Depends on: artifact-schema-validation.
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
@@ -57,13 +54,13 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄ Dependency summary
 
-Phase 3[9] → Phase 3[12]       (artifact validation needs query server)
+Phase 3[10] → Phase 3[12]      (artifact validation needs query server)
 Phase 3[12] → Phase 3[13]      (scanner plugin targets stable KnowledgeNode schema)
-Phase 3[9,10,11] → Phase 4[17] (coordinator depends on query server, cleanser, curation pipeline)
-Phase 3[9] → Phase 4[18]       (context routing needs query server)
+Phase 3[10,11] → Phase 4[17]   (coordinator depends on cleanser and curation pipeline, plus resolved query runtime)
+Phase 3[12] → Phase 4[18]      (context routing still depends on the query runtime foundation carried by artifact validation)
 Phase 4[17] → Phase 4[16]      (coordinator triggers session open/close for memory)
 
 ┄┄ Parallelization map
 
-Phase 3  [9][10][11] then [12] then [13]  — 9/10/11 parallel, then 12, then 13
-Phase 4  [14][15] then [17] then [16]; [18] after [9]
+Phase 3  [10][11] then [12] then [13]     — 10/11 parallel, then 12, then 13
+Phase 4  [14][15] then [17] then [16]; [18] after [12]

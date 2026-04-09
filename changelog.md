@@ -2,6 +2,7 @@
 
 ## 2026-04-09
 
+- removed the resolved `query-server-runtime` issue after confirming the query runtime and topology proposal validation are already implemented and covered by tests
 - expanded `wiki/reference/faq.md` to cover the full planned onboarding question set and removed the resolved FAQ issue from `plan_docs/issues/`
 - added OP-6 to `wiki/standards/00_house_rules.md`: never begin editing from a dirty worktree
 - added `wiki-compiler check-workflow` plus workflow rules in standards and `AGENTS.md` to enforce issue linkage, changelog updates, and branch naming for non-trivial work
