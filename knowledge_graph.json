@@ -612,9 +612,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "63ff4b3717a8d7e901b1f49dd9a04812170d7968",
+          "blob_sha": "4ee02a8cbd23b48a9e24a97a452fcaf37c3b87c3",
           "created_at_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
-          "last_modified_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_commit": "616a9ef2475ef9fbe11a2b2a8cbad14df19bb0fe",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -2564,7 +2564,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7bbc71f1394d3fb2589277f8c5c57fc8b5688429",
+          "blob_sha": "551677577aa71f64bd1bef5c4b4ccdfda22d6d4d",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3654,6 +3654,49 @@
       "id": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
     {
+      "type": "index",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/adrs/Index.md",
+          "node_type": "index"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/adrs/001_feature_methodology_superseded.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/adrs/002_documentation_consolidation.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Architectural Decision Records (ADRs) for the Wikipu repository. This domain tracks the history of significant design choices, their context, rationale, and consequences over time. Each ADR records a stable state of the system's architecture at the moment the decision was made.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "059f78597c51cdc8ca0091ab4dee5e251cab8f8e",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        }
+      },
+      "id": "doc:wiki/adrs/Index.md"
+    },
+    {
       "type": "concept",
       "status": "implemented",
       "schema": {
@@ -4397,7 +4440,7 @@
         "git": {
           "blob_sha": "bb4569551fd8c46c08b1bc05c4f706298aa93f76",
           "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
-          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
+          "last_modified_commit": "216faa567f09557a592329ebd57149d1e7084bcb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -13169,6 +13212,18 @@
       "metadata": {},
       "source": "doc:wiki/adrs/002_documentation_consolidation.md",
       "target": "doc:wiki/standards/00_house_rules.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/adrs/Index.md",
+      "target": "doc:wiki/adrs/001_feature_methodology_superseded.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/adrs/Index.md",
+      "target": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
     {
       "relation": "contains",

@@ -8,6 +8,7 @@
 - resolved issue G4 `find-by-io-scanner-coverage`: extended AST scanner to detect `Path.read_text`, `Path.write_text`, `json.load`, and `json.dump` patterns; added `direction` field to `IOFacet`
 - resolved issue G5 `find-by-io-cli-documentation`: documented the `find_by_io` scanner-coverage dependency and supported patterns in `wiki/reference/cli/query.md`
 - resolved issue G6 `find-by-io-not-found-guard`: added explicit file-existence check to `validate-wiki` to distinguish missing files from malformed frontmatter
+- resolved issue G7 `missing-adrs-index-node`: created `wiki/adrs/Index.md` as the navigational entry point for the ADR domain
 
 ## 2026-04-09
 

@@ -20,9 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G7. plan_docs/issues/gaps/missing-adrs-index-node.md
-      • Create wiki/adrs/Index.md — the ADR domain entry point is graph-referenced but does not exist on disk.
-      • Depends on: none.
   G8. plan_docs/issues/gaps/cleanser-index-false-positives.md
       • cleanse --detect proposes splitting every Index.md node; exempt index and reference node types from the compound-abstract detector.
       • Depends on: none.
