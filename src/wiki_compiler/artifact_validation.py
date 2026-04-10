@@ -23,6 +23,18 @@ def validate_wiki_artifact(path: Path) -> ArtifactValidationReport:
             ],
         )
 
+    # Dispatch to operational validators if in specific folders
+    parts = path.parts
+    if "plan_docs" in parts and "issues" in parts and path.suffix == ".md":
+        if path.name != "Index.md":
+            return _validate_issue(path)
+    if path.name == "Gates.md" and "desk" in parts:
+        return _validate_gates(path)
+    if "backlog" in parts and path.suffix == ".md":
+        return _validate_backlog_item(path)
+    if path.name == "Board.md" and ("desk" in parts or "plan_docs" in parts):
+        return _validate_board(path)
+
     findings: list[ArtifactValidationFinding] = []
 
     try:
@@ -94,6 +106,86 @@ def _repo_style_path(path: Path) -> str:
     if "agents" in parts:
         return Path(*parts[parts.index("agents") :]).as_posix()
     return path.as_posix()
+
+
+def _validate_issue(path: Path) -> ArtifactValidationReport:
+    content = path.read_text(encoding="utf-8")
+    findings: list[ArtifactValidationFinding] = []
+    
+    required_sections = ["Explanation", "Reference", "What to fix", "Depends on"]
+    for section in required_sections:
+        if f"**{section}:**" not in content:
+            findings.append(ArtifactValidationFinding(
+                rule_id=f"issue/{section.lower().replace(' ', '_')}",
+                message=f"Issue missing required field: {section}"
+            ))
+            
+    if not content.startswith("# "):
+        findings.append(ArtifactValidationFinding(
+            rule_id="issue/title",
+            message="Issue must start with an H1 title."
+        ))
+        
+    return ArtifactValidationReport(
+        path=path.as_posix(),
+        is_valid=not findings,
+        findings=findings
+    )
+
+
+def _validate_gates(path: Path) -> ArtifactValidationReport:
+    content = path.read_text(encoding="utf-8")
+    findings: list[ArtifactValidationFinding] = []
+    
+    if "| gate_id | proposal | opened | description | status |" not in content:
+        findings.append(ArtifactValidationFinding(
+            rule_id="gates/header",
+            message="Gates.md missing required table header."
+        ))
+        
+    return ArtifactValidationReport(
+        path=path.as_posix(),
+        is_valid=not findings,
+        findings=findings
+    )
+
+
+def _validate_backlog_item(path: Path) -> ArtifactValidationReport:
+    content = path.read_text(encoding="utf-8")
+    findings: list[ArtifactValidationFinding] = []
+    
+    required = ["**Added:**", "**Description:**", "**Why deferred:**", "**Trigger:**"]
+    for req in required:
+        if req not in content:
+            findings.append(ArtifactValidationFinding(
+                rule_id=f"backlog/{req.strip(':*').lower().replace(' ', '_')}",
+                message=f"Backlog item missing required field: {req}"
+            ))
+            
+    return ArtifactValidationReport(
+        path=path.as_posix(),
+        is_valid=not findings,
+        findings=findings
+    )
+
+
+def _validate_board(path: Path) -> ArtifactValidationReport:
+    content = path.read_text(encoding="utf-8")
+    findings: list[ArtifactValidationFinding] = []
+    
+    required_headers = ["Current state", "Priority roadmap", "Dependency summary", "Parallelization map"]
+    for header in required_headers:
+        if f"┄┄ {header}" not in content:
+            findings.append(ArtifactValidationFinding(
+                rule_id=f"board/{header.lower().replace(' ', '_')}",
+                message=f"Board missing required section: {header}"
+            ))
+            
+    return ArtifactValidationReport(
+        path=path.as_posix(),
+        is_valid=not findings,
+        findings=findings
+    )
 
 
 def _validate_adr(path: Path, node: object) -> list[ArtifactValidationFinding]:

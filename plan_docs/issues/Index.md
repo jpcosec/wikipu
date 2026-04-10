@@ -27,7 +27,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   10. [DONE] plan_docs/issues/unimplemented/cleansing-apply-and-advanced-detectors.md
       • Add cleanse proposal application and the remaining anomaly detector families.
       • Depends on: none.
-  12. plan_docs/issues/unimplemented/operational-artifact-validation.md
+  12. [DONE] plan_docs/issues/unimplemented/operational-artifact-validation.md
       • Add validators for issue, board, backlog, and gate artifacts using the new wiki artifact validation foundation.
       • Depends on: none.
   13. plan_docs/issues/unimplemented/artifact-validation-rollup.md
