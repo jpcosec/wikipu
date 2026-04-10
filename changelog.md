@@ -2,6 +2,8 @@
 
 ## 2026-04-10
 
+- resolved issue 34 `define-energy-and-calculation`: defined systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments in ID-2
+
 - resolved issue 33 `define-topology-and-facet`: defined Topology and Facet concepts in the wiki to clarify structural language and removed human comments from ID-1
 
 - resolved issue 32 `documentation-debt-resolution`: created documentation nodes for coordinator, session_storage, trails, preflight, gates, manifest, drafts, artifact_validation, and fixed scanner_plugins compliance

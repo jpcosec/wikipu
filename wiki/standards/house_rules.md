@@ -50,7 +50,7 @@ No two elements do the same thing. Before any new module, node, or `[[facet]]` i
 `Enforced by:` TopologyProposal validation, FacetProposal orthogonality check.
 
 **ID-2 — Minimal Energy**
-When multiple valid responses to a perturbation exist, choose the one that minimizes: LLM token consumption, structural complexity added to the graph, uncertainty in the resulting state, and number of new elements created — while fully satisfying the requirement. Extend existing nodes before creating new ones. <!-- Human Comment: we might want to add the orthogonalythy as a energy consuption  here. Maybe it's wortht it to define Energy in it's own document (and create a deterministic way to calculate it) -->
+When multiple valid responses to a perturbation exist, choose the one that minimizes systemic `[[energy]]`: LLM token consumption, structural complexity added to the graph, uncertainty in the resulting state, and number of new elements created (while maintaining strict orthogonality) — fully satisfying the requirement. Extend existing nodes before creating new ones.
 `Enforced by:` Autopoiesis loop coordinator pre-proposal check; graph query for overlapping intent before any TopologyProposal is submitted.
 
 **ID-3 — Typed Contracts at Every Boundary**

@@ -4508,9 +4508,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "91288703e1d37c0f8281b57a02c3a50f3b940595",
+          "blob_sha": "31236e76c29ba2da4d029f3dc4b8d6c1f679cd97",
           "created_at_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
-          "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
+          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4765,6 +4765,11 @@
             "target_id": "doc:wiki/concepts/facet.md",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/energy.md",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -4781,9 +4786,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5f85a2c5f5af3bc59767c0161180939d7e994808",
+          "blob_sha": "00ad2bcd08d8b205731e5fc7e539e543fea72bd7",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
-          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5033,10 +5038,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "4df068256d8e74bc4cf75e299809c76134a95863",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -5066,6 +5071,39 @@
         "test_map": null,
         "git": {
           "blob_sha": "84109c490baa01457324d6183e0f1a2df94693da",
+          "created_at_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/facet.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/energy.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Energy in Wikipu is the conceptual and structural cost of creating or modifying elements within the system. Minimizing this energy (Rule ID-2) ensures the Knowledge Graph remains lean, orthogonal, and maintainable.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "b6bacad2a953434ca04d46344793cb95d1cef886",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -5073,7 +5111,7 @@
         },
         "source": null
       },
-      "id": "doc:wiki/concepts/facet.md"
+      "id": "doc:wiki/concepts/energy.md"
     },
     {
       "type": "reference",
@@ -18037,6 +18075,12 @@
       "metadata": {},
       "source": "doc:wiki/concepts/Index.md",
       "target": "doc:wiki/concepts/facet.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/Index.md",
+      "target": "doc:wiki/concepts/energy.md"
     },
     {
       "relation": "documents",

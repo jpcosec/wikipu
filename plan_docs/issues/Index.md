@@ -98,7 +98,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 33. [DONE] plan_docs/issues/unimplemented/define-topology-and-facet.md
     • Define Topology and Facet concepts in the wiki to clarify structural language and remove human comments.
     • Depends on: none.
-34. plan_docs/issues/unimplemented/define-energy-and-calculation.md
+34. [DONE] plan_docs/issues/unimplemented/define-energy-and-calculation.md
     • Define systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments.
     • Depends on: none.
 35. plan_docs/issues/unimplemented/deepen-socratic-protocol.md
