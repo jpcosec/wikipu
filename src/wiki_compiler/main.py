@@ -145,11 +145,30 @@ def main() -> None:
                 sys.exit(1)
             return
         if args.command == "validate-wiki":
-            report = validate_wiki_artifact(Path(args.path))
-            print(json.dumps(report.model_dump(), indent=2))
-            if not report.is_valid:
-                sys.exit(1)
-            return
+            from .artifact_validation import (
+                validate_wiki_artifact,
+                validate_all_artifacts,
+            )
+
+            if args.all:
+                reports = validate_all_artifacts(project_root=Path("."))
+                all_valid = True
+                for report in reports:
+                    if not report.is_valid:
+                        all_valid = False
+                        print(json.dumps(report.model_dump(), indent=2))
+                if not all_valid:
+                    sys.exit(1)
+                print(f"[OK] Validated {len(reports)} artifacts.")
+                return
+
+            if args.path:
+                report = validate_wiki_artifact(Path(args.path))
+                print(json.dumps(report.model_dump(), indent=2))
+                if not report.is_valid:
+                    sys.exit(1)
+                return
+            raise ValueError("validate-wiki requires --path <path> or --all")
         if args.command == "context":
             print(
                 render_context(
@@ -431,10 +450,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     validate_wiki_parser = subparsers.add_parser(
-        "validate-wiki", help="Validate one authored wiki artifact"
+        "validate-wiki", help="Validate authored wiki artifacts"
     )
     validate_wiki_parser.add_argument(
-        "--path", required=True, help="Path to the wiki artifact markdown file"
+        "--path", help="Path to a single wiki artifact markdown file"
+    )
+    validate_wiki_parser.add_argument(
+        "--all", action="store_true", help="Validate all wiki and operational artifacts"
     )
 
     context_parser = subparsers.add_parser(

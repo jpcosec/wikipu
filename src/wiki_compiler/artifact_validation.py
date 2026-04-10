@@ -84,6 +84,42 @@ def validate_wiki_artifact(path: Path) -> ArtifactValidationReport:
     )
 
 
+def validate_all_artifacts(project_root: Path) -> list[ArtifactValidationReport]:
+    """Traverses the repository and validates all wiki and operational artifacts."""
+    reports: list[ArtifactValidationReport] = []
+    
+    # 1. All markdown files in wiki/
+    wiki_dir = project_root / "wiki"
+    if wiki_dir.exists():
+        for path in wiki_dir.rglob("*.md"):
+            reports.append(validate_wiki_artifact(path))
+            
+    # 2. All issue files in plan_docs/issues/
+    issues_dir = project_root / "plan_docs/issues"
+    if issues_dir.exists():
+        for path in issues_dir.rglob("*.md"):
+            if path.name != "Index.md":
+                reports.append(validate_wiki_artifact(path))
+                
+    # 3. All backlog items
+    backlog_dir = project_root / "backlog"
+    if backlog_dir.exists():
+        for path in backlog_dir.rglob("*.md"):
+            reports.append(validate_wiki_artifact(path))
+            
+    # 4. Operational files in desk/
+    desk_dir = project_root / "desk"
+    if desk_dir.exists():
+        gates_path = desk_dir / "Gates.md"
+        if gates_path.exists():
+            reports.append(validate_wiki_artifact(gates_path))
+        
+        for board_path in desk_dir.rglob("Board.md"):
+            reports.append(validate_wiki_artifact(board_path))
+            
+    return reports
+
+
 def _validate_identity_path(
     path: Path, node_id: str
 ) -> list[ArtifactValidationFinding]:

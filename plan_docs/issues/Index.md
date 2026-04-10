@@ -30,7 +30,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   12. [DONE] plan_docs/issues/unimplemented/operational-artifact-validation.md
       • Add validators for issue, board, backlog, and gate artifacts using the new wiki artifact validation foundation.
       • Depends on: none.
-  13. plan_docs/issues/unimplemented/artifact-validation-rollup.md
+  13. [DONE] plan_docs/issues/unimplemented/artifact-validation-rollup.md
       • Add repo-wide artifact validation traversal and workflow integration.
       • Depends on: operational-artifact-validation.
   14. plan_docs/issues/unimplemented/scanner-plugin-interface.md
