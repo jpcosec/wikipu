@@ -75,7 +75,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 26. [DONE] plan_docs/issues/unimplemented/context-checklists-and-rules.md
     • Attach operation-aware checklists and governing rules to context bundles.
     • Depends on: context-router-contract.
-27. plan_docs/issues/unimplemented/session-log-schema.md
+27. [DONE] plan_docs/issues/unimplemented/session-log-schema.md
     • Define `SessionLog` and `TrailArtifact` and reconcile the standards language.
     • Depends on: none.
 28. plan_docs/issues/unimplemented/session-log-storage.md

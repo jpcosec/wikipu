@@ -442,6 +442,25 @@ class TrailCollection(BaseModel):
     artifacts: list[TrailArtifact] = Field(default_factory=list)
 
 
+class SessionLog(BaseModel):
+    """Durable record of a single development session."""
+
+    session_id: str = Field(description="Unique session identifier.")
+    start_time: str = Field(description="ISO-8601 start timestamp.")
+    end_time: str | None = Field(default=None, description="ISO-8601 end timestamp.")
+    branch: str | None = Field(default=None, description="Git branch where work occurred.")
+    commit_sha: str | None = Field(default=None, description="Resulting commit SHA.")
+    resolved_issues: list[str] = Field(
+        default_factory=list, description="IDs of issues resolved in this session."
+    )
+    pending_issues: list[str] = Field(
+        default_factory=list, description="IDs of issues left in progress."
+    )
+    trails: TrailCollection | None = Field(
+        default=None, description="Extracted durable signals (Phase 6)."
+    )
+
+
 class ContextRequest(BaseModel):
     """A formal request for graph context."""
 
