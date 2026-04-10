@@ -23,6 +23,7 @@
 - resolved issue 16 `run-skeleton`: added `wiki-compiler run` and the initial autopoietic loop coordinator for safe, non-gated actions
 - resolved issue 17 `coordinator-gate-resume-flow`: implemented full gate pause/resume/apply orchestration in the coordinator, including approved proposal execution
 - resolved issue 18 `coordinator-identity-preflight`: added identity-rule validation (ID-4, ID-5) and minimal-energy (ID-2) action selection to the coordinator
+- resolved issue 19 `cycle-record-persistence`: implemented durable coordinator run history via `CycleRecord` JSON persistence in `desk/autopoiesis/cycles/`
 
 ## 2026-04-09
 

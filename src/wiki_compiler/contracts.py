@@ -406,6 +406,23 @@ class GateTable(BaseModel):
     gates: list[GateRow] = Field(default_factory=list)
 
 
+class CycleRecord(BaseModel):
+    """Execution record for one coordinator run."""
+
+    cycle_id: str = Field(description="Unique ID for the cycle (e.g. timestamp-based).")
+    timestamp: str = Field(description="ISO-8601 start time.")
+    status: str = Field(description="Final status: success, paused, or error.")
+    perturbations_detected: int = Field(default=0)
+    actions_taken: list[str] = Field(default_factory=list)
+    open_gates: list[str] = Field(default_factory=list)
+
+
+class CycleHistory(BaseModel):
+    """Collection of historical cycle records."""
+
+    cycles: list[CycleRecord] = Field(default_factory=list)
+
+
 class CleansingProposal(BaseModel):
     """A proposed corrective operation for an existing graph node."""
 

@@ -51,7 +51,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   18. [DONE] plan_docs/issues/unimplemented/coordinator-identity-preflight.md
       • Add identity-rule and minimal-energy preflight before coordinator actions execute.
       • Depends on: run-skeleton.
-  19. plan_docs/issues/unimplemented/cycle-record-persistence.md
+  19. [DONE] plan_docs/issues/unimplemented/cycle-record-persistence.md
       • Persist a minimal cycle record for each coordinator run.
       • Depends on: run-skeleton.
   20. plan_docs/issues/unimplemented/trail-collect-closeout.md

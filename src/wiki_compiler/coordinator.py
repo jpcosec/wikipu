@@ -12,6 +12,7 @@ from .builder import build_wiki
 from .ingest import ingest_raw_sources
 from .gates import load_gates, add_gate, update_gate_status, save_gates
 from .cleanser import detect_cleansing_candidates, apply_cleansing_proposal
+from .contracts import CycleRecord
 
 
 def run_coordinator_cycle(
@@ -29,17 +30,33 @@ def run_coordinator_cycle(
     5. Execution: run safe or approved actions.
     6. Rebuild: update the knowledge graph.
     """
+    start_time = datetime.now().isoformat()
+    cycle_id = f"cycle-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+    
     gates_path = project_root / "desk/Gates.md"
     gates_table = load_gates(gates_path)
     
     executed_actions: list[str] = []
     
+    def finalize(status: str, perturbations: int, actions: list[str], gates: list[str]):
+        record = CycleRecord(
+            cycle_id=cycle_id,
+            timestamp=start_time,
+            status=status,
+            perturbations_detected=perturbations,
+            actions_taken=actions,
+            open_gates=gates
+        )
+        cycle_dir = project_root / "desk/autopoiesis/cycles"
+        cycle_dir.mkdir(parents=True, exist_ok=True)
+        (cycle_dir / f"{cycle_id}.json").write_text(record.model_dump_json(indent=2), encoding="utf-8")
+        return record.model_dump()
+
     # --- 1. Resume Flow ---
-    processed_any = False
+    processed_cleansing = False
     gates_to_remove = []
     for gate in list(gates_table.gates):
         if gate.status == "approved":
-            # Resume action based on proposal type
             if "cleansing" in gate.proposal.lower() or "test-destroy" in gate.proposal.lower():
                 proposal_file = project_root / gate.proposal
                 if proposal_file.exists():
@@ -51,29 +68,24 @@ def run_coordinator_cycle(
                             apply_cleansing_proposal(proposal, project_root)
                         executed_actions.append(f"applied_cleansing_{gate.gate_id}")
                         gates_to_remove.append(gate)
-                        processed_any = True
+                        processed_cleansing = True
                     except Exception as e:
                         print(f"[ERROR] Failed to apply approved gate {gate.gate_id}: {e}")
     
-    if processed_any:
-        # Also remove ANY other cleansing gates to prevent redundant cycles
+    if processed_cleansing:
         for other in list(gates_table.gates):
-            if other not in gates_to_remove and ("cleansing" in other.proposal.lower() or "test-destroy" in other.proposal.lower()):
+            if "cleansing" in other.proposal.lower() and other not in gates_to_remove:
                 gates_to_remove.append(other)
-                
         for g in gates_to_remove:
             if g in gates_table.gates:
                 gates_table.gates.remove(g)
-                
         save_gates(gates_path, gates_table)
         build_wiki(source_dir=wiki_dir, graph_path=graph_path, project_root=project_root)
         
-        return {
-            "status": "success",
-            "perturbations_detected": 0,
-            "actions_taken": executed_actions,
-            "open_gates": [g.gate_id for g in gates_table.gates if g.status == "open"]
-        }
+        return finalize(
+            "success", 0, executed_actions, 
+            [g.gate_id for g in gates_table.gates if g.status == "open"]
+        )
     
     # --- 2. Perception & Classification ---
     report = build_status_report(graph_path, project_root)
@@ -85,17 +97,10 @@ def run_coordinator_cycle(
     untracked_raw = [p for p in perturbations if p["type"] == "untracked_raw"]
     for p in untracked_raw:
         if p["action"] == "ingest_raw_source":
-            # Preflight check
             finding = evaluate_action_safety("write", f"wiki/drafts/{Path(p['id']).name}", project_root)
-            
             if finding and finding.severity == "error":
-                print(f"[ERROR] Preflight blocked action: {finding.message}")
                 continue
-            
             if finding and finding.action_override == "gate":
-                # Downgrade to gated action (not implemented in this skeleton yet, 
-                # but we could add a gate row here)
-                print(f"[INFO] Preflight gated action: {finding.message}")
                 continue
 
             ingest_raw_sources(
@@ -105,12 +110,11 @@ def run_coordinator_cycle(
                 manifest_path=manifest_path
             )
             executed_actions.append(f"ingested_raw_files")
-            break # ingest_raw_sources handles all at once
+            break 
 
     # --- 4. Gating (Unsafe Actions) ---
     cleansing_report = detect_cleansing_candidates(graph_path)
     if cleansing_report.proposals:
-        # Check if we already have an open gate for cleansing
         has_cleansing_gate = any(("cleansing" in g.proposal.lower() or "test-destroy" in g.proposal.lower()) for g in gates_table.gates)
         if not has_cleansing_gate:
             timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -128,9 +132,9 @@ def run_coordinator_cycle(
         executed_actions.append("rebuilt_graph")
 
     open_gates = [g for g in gates_table.gates if g.status == "open"]
-    return {
-        "status": "paused" if open_gates else "success",
-        "perturbations_detected": len(perturbations),
-        "actions_taken": executed_actions,
-        "open_gates": [g.gate_id for g in open_gates]
-    }
+    return finalize(
+        "paused" if open_gates else "success",
+        len(perturbations),
+        executed_actions,
+        [g.gate_id for g in open_gates]
+    )
