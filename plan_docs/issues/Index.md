@@ -44,6 +44,18 @@ Foundation, interface, and generation layers are functional. The immediate goals
   G8. plan_docs/issues/gaps/cleanser-index-false-positives.md
       • cleanse --detect proposes splitting every Index.md node; exempt index and reference node types from the compound-abstract detector.
       • Depends on: none.
+  G9. plan_docs/issues/gaps/raw-source-manifest.md
+       • Create raw source manifest system (CSV + CLI) to track raw files with content hash and status.
+       • Depends on: none.
+  G10. plan_docs/issues/gaps/delta-compile-workflow.md
+       • Implement draft-write workflow that generates draft stubs for stale pages instead of auto-overwriting.
+       • Depends on: raw-source-manifest.
+  G11. plan_docs/issues/gaps/ci-enforcement.md
+       • Add GitHub Actions workflow to run build/audit/check-workflow on every push.
+       • Depends on: none.
+  G12. plan_docs/issues/gaps/bootstrap-upgrade-lifecycle.md
+       • Add bootstrap scaffolding command and upgrade path for existing projects.
+       • Depends on: none.
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
