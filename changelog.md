@@ -20,6 +20,7 @@
 - resolved issue 14 `scanner-plugin-interface`: refactored the scanner into a language-agnostic plugin system with `ScannerPlugin` protocol and basic TypeScript support
 - resolved issue 15 `gate-table-runtime`: implemented read/write helpers and sequential ID generation for the `desk/Gates.md` human-approval table
 - resolved issue 21 `perception-gates-and-classification`: implemented perturbation classification and gate-aware reporting in `wiki-compiler status`
+- resolved issue 16 `run-skeleton`: added `wiki-compiler run` and the initial autopoietic loop coordinator for safe, non-gated actions
 
 ## 2026-04-09
 

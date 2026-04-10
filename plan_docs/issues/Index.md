@@ -42,7 +42,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   21. [DONE] plan_docs/issues/unimplemented/perception-gates-and-classification.md
       • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
       • Depends on: none.
-  16. plan_docs/issues/unimplemented/run-skeleton.md
+  16. [DONE] plan_docs/issues/unimplemented/run-skeleton.md
       • Add a safe first version of `wiki-compiler run`.
       • Depends on: perception-gates-and-classification.
   17. plan_docs/issues/unimplemented/coordinator-gate-resume-flow.md

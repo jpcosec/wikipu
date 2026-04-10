@@ -305,6 +305,17 @@ def main() -> None:
                 print(f"[OK] Registered {entry.path} in {args.manifest}")
                 return
             raise ValueError("manifest requires --add <path>")
+        if args.command == "run":
+            from .coordinator import run_coordinator_cycle
+
+            result = run_coordinator_cycle(
+                project_root=Path(args.project_root),
+                graph_path=Path(args.graph),
+                wiki_dir=Path(args.source),
+                manifest_path=Path(args.manifest),
+            )
+            print(json.dumps(result, indent=2))
+            return
         if args.command == "drafts":
             from .drafts import (
                 detect_stale_nodes,
@@ -639,6 +650,26 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser(
         "upgrade",
         help="Upgrade an existing project to the latest structure.",
+    )
+
+    # --- run ---
+    run_parser = subparsers.add_parser(
+        "run",
+        help="Run the autopoietic loop coordinator cycle.",
+    )
+    run_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
+    )
+    run_parser.add_argument(
+        "--project-root", default=".", help="Project root directory"
+    )
+    run_parser.add_argument(
+        "--source", default="wiki", help="Source wiki directory"
+    )
+    run_parser.add_argument(
+        "--manifest",
+        default="manifests/raw_sources.csv",
+        help="Path to the CSV manifest file.",
     )
 
     return parser
