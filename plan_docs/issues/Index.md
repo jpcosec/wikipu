@@ -78,7 +78,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 27. [DONE] plan_docs/issues/unimplemented/session-log-schema.md
     • Define `SessionLog` and `TrailArtifact` and reconcile the standards language.
     • Depends on: none.
-28. plan_docs/issues/unimplemented/session-log-storage.md
+28. [DONE] plan_docs/issues/unimplemented/session-log-storage.md
     • Add session-log storage helpers and canonical paths under `desk/autopoiesis/`.
     • Depends on: session-log-schema.
 29. plan_docs/issues/unimplemented/history-command.md

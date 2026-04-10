@@ -31,6 +31,7 @@
 - resolved issue 25 `context-active-work-intersection`: implemented active-issue intersection in context bundles by matching subgraph nodes against `plan_docs/issues/`
 - resolved issue 26 `context-checklists-and-rules`: implemented operation-aware checklist selection and parsing from `wiki/standards/checklists.md` for context bundles
 - resolved issue 27 `session-log-schema`: defined `SessionLog` and `TrailArtifact` contracts for cross-session memory
+- resolved issue 28 `session-log-storage`: implemented session log persistence and discovery helpers with canonical paths in `desk/autopoiesis/sessions/`
 
 ## 2026-04-09
 
