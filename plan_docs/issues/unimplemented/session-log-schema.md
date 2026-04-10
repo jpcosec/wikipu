@@ -2,7 +2,7 @@
 
 **Explanation:** Cross-session memory needs a typed contract before any runtime starts writing logs. Right now the standards and the issue describe overlapping but not identical ideas, so the schema must reconcile them first.
 
-**Reference:** `src/wiki_compiler/contracts.py`, `plan_docs/issues/unimplemented/cross-session-memory.md`, `wiki/standards/00_house_rules.md`, `raw/trail_collect.md`
+**Reference:** `src/wiki_compiler/contracts.py`, `wiki/standards/00_house_rules.md`, `raw/trail_collect.md`
 
 **What to fix:** Define `SessionLog` and `TrailArtifact` models and reconcile the standards language around session history.
 

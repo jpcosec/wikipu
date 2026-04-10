@@ -2,7 +2,7 @@
 
 **Explanation:** Once the schema exists, the runtime still needs stable paths and helpers for reading and writing logs. Storage policy should be isolated before `history` or coordinator resume logic depends on it.
 
-**Reference:** `src/wiki_compiler/main.py`, `src/wiki_compiler/scaffolder.py`, `plan_docs/issues/unimplemented/cross-session-memory.md`
+**Reference:** `src/wiki_compiler/main.py`, `src/wiki_compiler/scaffolder.py`, `plan_docs/issues/unimplemented/session-log-schema.md`
 
 **What to fix:** Add storage helpers and canonical path conventions for session logs under `desk/autopoiesis/`.
 

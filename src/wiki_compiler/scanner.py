@@ -332,7 +332,7 @@ def infer_io_from_ast(tree: ast.AST) -> list[IOFacet]:
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call):
             continue
-        inferred = infer_open_call(node) or infer_pathlib_call(node)
+        inferred = infer_open_call(node) or infer_pathlib_call(node) or infer_json_call(node)
         if inferred is not None:
             ports.append(inferred)
     return ports
@@ -347,9 +347,10 @@ def infer_open_call(node: ast.Call) -> IOFacet | None:
         return None
     mode = extract_string(node.args[1]) if len(node.args) > 1 else "r"
     medium = "disk"
+    direction: Literal["input", "output"] = "input"
     if mode and any(flag in mode for flag in ("w", "a", "x")):
-        return IOFacet(medium=medium, path_template=path)
-    return IOFacet(medium=medium, path_template=path)
+        direction = "output"
+    return IOFacet(medium=medium, path_template=path, direction=direction)
 
 
 def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
@@ -358,15 +359,32 @@ def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
         return None
     if node.func.attr not in {"read_text", "write_text", "read_bytes", "write_bytes"}:
         return None
+    direction: Literal["input", "output"] = "input"
+    if node.func.attr.startswith("write"):
+        direction = "output"
+
     owner = node.func.value
-    if not isinstance(owner, ast.Call):
-        return None
-    if base_name(owner.func) != "Path" or not owner.args:
-        return None
-    path = extract_string(owner.args[0])
-    if path is None:
-        return None
-    return IOFacet(medium="disk", path_template=path)
+    # Case 1: Path("foo.txt").read_text()
+    if isinstance(owner, ast.Call) and base_name(owner.func) == "Path" and owner.args:
+        path = extract_string(owner.args[0])
+        if path:
+            return IOFacet(medium="disk", path_template=path, direction=direction)
+
+    # Case 2: p = Path("foo.txt"); p.read_text()
+    # We don't have full data flow, but we can at least return a generic disk IO
+    # if the attribute is on something that looks like a path variable or if we just want to mark the file as doing IO.
+    # For now, let's keep it simple as per instructions.
+    return None
+
+
+def infer_json_call(node: ast.Call) -> IOFacet | None:
+    """Infers an I/O port from calls to json.load or json.dump."""
+    name = base_name(node.func)
+    if name == "json.load":
+        return IOFacet(medium="disk", direction="input")
+    if name == "json.dump":
+        return IOFacet(medium="disk", direction="output")
+    return None
 
 
 def extract_string(node: ast.AST) -> str | None:

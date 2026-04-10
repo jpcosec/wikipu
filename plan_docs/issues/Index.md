@@ -20,18 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G1. plan_docs/issues/gaps/perception-gates-phase-mislabel.md
-      • Move perception-gates-and-classification from Phase 4 heading to Phase 3 in this index.
-      • Depends on: none.
-  G2. plan_docs/issues/gaps/desk-directory-bootstrap.md
-      • Create desk/ directory with Gates.md stub and autopoiesis/ subtree before runtime writes to it.
-      • Depends on: none.
-  G3. plan_docs/issues/gaps/dangling-issue-references.md
-      • Replace dead references to cross-session-memory.md and autopoiesis-loop-coordinator.md in 7 issue files.
-      • Depends on: none.
-  G4. plan_docs/issues/gaps/find-by-io-scanner-coverage.md
-      • Extend scanner to detect pathlib/json I/O patterns so find_by_io returns non-empty results.
-      • Depends on: none.
   G5. plan_docs/issues/gaps/find-by-io-cli-documentation.md
       • Document find_by_io scanner-coverage dependency in wiki/reference/cli/query.md.
       • Depends on: none.
@@ -74,6 +62,9 @@ Foundation, interface, and generation layers are functional. The immediate goals
   15. plan_docs/issues/unimplemented/gate-table-runtime.md
       • Add read/write helpers and state handling for `desk/Gates.md`.
       • Depends on: none.
+  21. plan_docs/issues/unimplemented/perception-gates-and-classification.md
+      • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
+      • Depends on: none.
   16. plan_docs/issues/unimplemented/run-skeleton.md
       • Add a safe first version of `wiki-compiler run`.
       • Depends on: perception-gates-and-classification.
@@ -92,9 +83,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
-21. plan_docs/issues/unimplemented/perception-gates-and-classification.md
-    • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
-    • Depends on: none.
 22. plan_docs/issues/unimplemented/context-router-contract.md
     • Define the stable CLI contract and bundle schema for context routing.
     • Depends on: none.
@@ -134,7 +122,7 @@ Phase 3[13] → Phase 3[14]      (scanner plugin targets the stabilized validati
 Phase 3[15] → Phase 3[17]      (gate resume depends on gate runtime)
 Phase 3[16] → Phase 3[17,18,19] (run skeleton is the base for coordinator follow-ups)
 Phase 3[19] → Phase 3[20]      (trail collect closeout follows persisted cycles)
-Phase 4[21] → Phase 3[16]      (run skeleton depends on perception classification)
+Phase 3[21] → Phase 3[16]      (run skeleton depends on perception classification)
 Phase 4[22] → Phase 4[23,24]   (context feature work starts from the contract)
 Phase 4[23] → Phase 4[25,26]   (routing is required before work intersection and prose bundles)
 Phase 4[24] → Phase 4[26]      (prose bundles attach operation rules/checklists)

@@ -61,6 +61,10 @@ class IOFacet(BaseModel):
     medium: Literal["memory", "disk", "network"] = Field(
         description="The medium through which data is transferred (e.g., 'memory', 'disk', 'network')."
     )
+    direction: Literal["input", "output"] = Field(
+        default="input",
+        description="The direction of data flow (e.g., 'input' for reading, 'output' for writing)."
+    )
     schema_ref: str | None = Field(
         default=None,
         description="The name of the associated Pydantic model, if applicable (e.g., 'JobPosting').",

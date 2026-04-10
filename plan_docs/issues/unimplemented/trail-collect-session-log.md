@@ -2,7 +2,7 @@
 
 **Explanation:** Cross-session memory needs a write path from trail collect into durable session logs. Without that bridge, session models and storage exist but no runtime populates them.
 
-**Reference:** `raw/trail_collect.md`, `wiki/reference/protocols/trail_collect.md`, `plan_docs/issues/unimplemented/cross-session-memory.md`
+**Reference:** `raw/trail_collect.md`, `wiki/reference/protocols/trail_collect.md`, `plan_docs/issues/unimplemented/session-log-schema.md`, `plan_docs/issues/unimplemented/session-log-storage.md`
 
 **What to fix:** Implement trail-collect-to-session-log writing as a library/runtime surface.
 

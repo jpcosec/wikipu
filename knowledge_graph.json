@@ -853,7 +853,7 @@
         "git": {
           "blob_sha": "c6537439e8127222005d686e0457fac391ae60b0",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -1157,7 +1157,7 @@
         "git": {
           "blob_sha": "fb0e4d272ed8c8407a6698ebdb2813ff44d641d9",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -1642,7 +1642,7 @@
         "git": {
           "blob_sha": "4b38e5a6d69161d55f8ba7cecfa56fb2b0d556e9",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "17366be1bfcab05762828725314b80ab08cd8420",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -1807,10 +1807,10 @@
         },
         "git": {
           "blob_sha": "6805ab27ec8b32e590fee4117b0e34631e255da8",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "file:src/wiki_compiler/perception.py"
@@ -2586,9 +2586,9 @@
         "git": {
           "blob_sha": "bc1a567b1a362e5de66649ebc8b8ffe308b5bb14",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/auditor.cpython-313.pyc"
@@ -2611,9 +2611,9 @@
         "git": {
           "blob_sha": "37813f5003455c2fcd43f90b8e55633eefbbd3e3",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/builder.cpython-313.pyc"
@@ -2661,9 +2661,9 @@
         "git": {
           "blob_sha": "fc6ee9efa4c93591d36371f89f76e4ddacfd7b2d",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/context.cpython-313.pyc"
@@ -2686,9 +2686,9 @@
         "git": {
           "blob_sha": "17dcce35b60a345553401becc40873687b12ba67",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/contracts.cpython-313.pyc"
@@ -2736,9 +2736,9 @@
         "git": {
           "blob_sha": "6e0ad38362ef2af74fd7a16f67e77220108f9361",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/facet_injectors.cpython-313.pyc"
@@ -2761,9 +2761,9 @@
         "git": {
           "blob_sha": "1f0031d3ada93a1d1931872896e8773a53f9fa07",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/facet_validator.cpython-313.pyc"
@@ -2786,9 +2786,9 @@
         "git": {
           "blob_sha": "3cacd7f3af2d90272217accb71c3f8a817b5a180",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/graph_utils.cpython-313.pyc"
@@ -2811,9 +2811,9 @@
         "git": {
           "blob_sha": "72c18f6920306a3231042d13d513aaa80a5f852f",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/ingest.cpython-313.pyc"
@@ -2836,9 +2836,9 @@
         "git": {
           "blob_sha": "2ad7bdc276bf3136112c50da39e537dccc5b53c8",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/main.cpython-313.pyc"
@@ -2861,9 +2861,9 @@
         "git": {
           "blob_sha": "7aaaacfa9c8f4cacfd94ff484f9814f5061f3b69",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/node_templates.cpython-313.pyc"
@@ -2911,9 +2911,9 @@
         "git": {
           "blob_sha": "de308cbc9e0352d4220b1a3c49dde4dc2d78a82d",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_executor.cpython-313.pyc"
@@ -2936,9 +2936,9 @@
         "git": {
           "blob_sha": "4cfda2ea28632cafbfe8f07d50f16752bd050cd7",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_language.cpython-313.pyc"
@@ -2961,9 +2961,9 @@
         "git": {
           "blob_sha": "e3eb865cf561c7a78ceb16aa2b479f629921a01b",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/query_server.cpython-313.pyc"
@@ -2986,9 +2986,9 @@
         "git": {
           "blob_sha": "8a9b15acaef1efe435424d27d03c7c1214d979a8",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/registry.cpython-313.pyc"
@@ -3011,9 +3011,9 @@
         "git": {
           "blob_sha": "532d077eaa362589fe4bda850519818dbaff0526",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/scaffolder.cpython-313.pyc"
@@ -3036,9 +3036,9 @@
         "git": {
           "blob_sha": "71ec7df1411fd23c8527ed1177bd335b8cb6b78c",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/scanner.cpython-313.pyc"
@@ -3061,9 +3061,9 @@
         "git": {
           "blob_sha": "e4bfeafc51eea7009faddb984309c41052261dfb",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
+          "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
+          "status": "untracked"
         }
       },
       "id": "file:src/wiki_compiler/__pycache__/validator.cpython-313.pyc"
@@ -3514,7 +3514,7 @@
         "git": {
           "blob_sha": "1c82c97fed5540028509046dc13d295ab3d34cef",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
-          "last_modified_commit": "70773d087a1d4b906527df5640b79247c3b35cfb",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -3770,7 +3770,7 @@
         "git": {
           "blob_sha": "3939882b2c3d4e83accf9de78cc69a87e0b3cd80",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
-          "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -4487,10 +4487,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "023f73f589373686c6ba1b56100c386f6f50dd60",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
+          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         }
       },
       "id": "doc:wiki/reference/cli/status.md"
