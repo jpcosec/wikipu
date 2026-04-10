@@ -34,6 +34,7 @@
 - resolved issue 28 `session-log-storage`: implemented session log persistence and discovery helpers with canonical paths in `desk/autopoiesis/sessions/`
 - resolved issue 29 `history-command`: added `wiki-compiler history` to summarize development session logs and extracted trail artifacts
 - resolved issue 30 `trail-collect-session-log`: integrated `SessionLog` generation into the coordinator's trail collection closeout step
+- resolved issue 31 `session-resume-from-log`: implemented session continuity by loading the most recent log at coordinator startup
 
 ## 2026-04-09
 

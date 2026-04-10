@@ -23,13 +23,17 @@ def run_coordinator_cycle(
 ) -> dict[str, object]:
     """
     Executes one cycle of the autopoietic loop.
-    1. Resume: check for approved gates from previous cycles.
+    1. Resume: check for approved gates and load latest session log.
     2. Perception: detect perturbations.
     3. Classification: decide response actions.
     4. Gating: write new gates for actions requiring approval.
     5. Execution: run safe or approved actions.
     6. Rebuild: update the knowledge graph.
     """
+    from .session_storage import get_latest_session
+    latest_session = get_latest_session(project_root)
+    resumed_from = latest_session.session_id if latest_session else None
+    
     start_time = datetime.now().isoformat()
     cycle_id = f"cycle-{datetime.now().strftime('%Y%m%d%H%M%S')}"
     
@@ -79,6 +83,7 @@ def run_coordinator_cycle(
         result = record.model_dump()
         result["trail_artifacts"] = [a.model_dump() for a in trail.artifacts]
         result["session_log_path"] = f"desk/autopoiesis/sessions/{cycle_id}.json"
+        result["resumed_from"] = resumed_from
         return result
 
     # --- 1. Resume Flow ---
