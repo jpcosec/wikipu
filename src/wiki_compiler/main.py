@@ -232,7 +232,19 @@ def main() -> None:
             return
         if args.command == "init":
             init_repository()
-            print("[OK] Wikipu ecosystem initialized. Base folders created.")
+            return
+        if args.command == "bootstrap":
+            from .scaffolder import bootstrap_repository
+
+            bootstrap_repository(
+                project_root=Path(args.project),
+                project_name=args.name,
+            )
+            return
+        if args.command == "upgrade":
+            from .scaffolder import upgrade_repository
+
+            upgrade_repository(project_root=Path("."))
             return
         if args.command == "check-workflow":
             report = guard_workflow(
@@ -576,6 +588,24 @@ def build_parser() -> argparse.ArgumentParser:
     )
     drafts_parser.add_argument(
         "--drafts-dir", default="wiki/drafts", help="Drafts destination directory"
+    )
+
+    # --- bootstrap ---
+    bootstrap_parser = subparsers.add_parser(
+        "bootstrap",
+        help="Scaffold a new Wikipu project from scratch.",
+    )
+    bootstrap_parser.add_argument(
+        "--project", required=True, help="Path to the project root directory."
+    )
+    bootstrap_parser.add_argument(
+        "--name", default="New Project", help="Name of the project."
+    )
+
+    # --- upgrade ---
+    subparsers.add_parser(
+        "upgrade",
+        help="Upgrade an existing project to the latest structure.",
     )
 
     return parser

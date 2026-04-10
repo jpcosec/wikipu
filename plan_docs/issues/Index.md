@@ -20,9 +20,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G12. plan_docs/issues/gaps/bootstrap-upgrade-lifecycle.md
-       • Add bootstrap scaffolding command and upgrade path for existing projects.
-       • Depends on: none.
+  none
 
 ┄┄┄ Phase 3 — Runtime and protocol
 

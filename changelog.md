@@ -13,6 +13,7 @@
 - resolved issue G9 `raw-source-manifest`: added `wiki-compiler manifest` command and CSV-backed raw source tracking for file provenance
 - resolved issue G10 `delta-compile-workflow`: implemented stale node detection, draft stub generation, and draft promotion via `wiki-compiler drafts` and `SourceFacet`
 - resolved issue G11 `ci-enforcement`: added GitHub Actions workflow to automate wiki build, audit, and workflow discipline checks
+- resolved issue G12 `bootstrap-upgrade-lifecycle`: added `wiki-compiler bootstrap` and `wiki-compiler upgrade` commands for lifecycle management
 
 ## 2026-04-09
 

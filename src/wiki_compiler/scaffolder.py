@@ -61,16 +61,79 @@ def generate_scaffolding(module_path: Path, intent: str):
 
 
 def init_repository():
-    """Creates the base directory structure required by the House Rules."""
+    """Simple initialization of the base directory structure."""
+    bootstrap_repository(Path("."), "New Project")
+
+
+def bootstrap_repository(project_root: Path, project_name: str):
+    """Creates the full directory structure and seed files for a new Wikipu project."""
     directories = [
         "raw",
         "wiki/adrs",
         "wiki/concepts",
-        "wiki/standards",
+        "wiki/how_to",
+        "wiki/reference",
+        "wiki/standards/artifacts",
+        "wiki/standards/languages",
+        "manifests",
+        "desk/proposals",
+        "desk/autopoiesis/cycles",
+        "plan_docs/issues/gaps",
+        "plan_docs/issues/unimplemented",
+        "future_docs",
+        "src",
+        "tests",
     ]
     for directory in directories:
-        os.makedirs(directory, exist_ok=True)
-        # Create a .gitkeep to ensure Git tracks empty folders
-        (Path(directory) / ".gitkeep").touch()
+        dir_path = project_root / directory
+        dir_path.mkdir(parents=True, exist_ok=True)
+        (dir_path / ".gitkeep").touch()
 
-    print("[✅] Wikipu ecosystem initialized. Base folders created.")
+    # Seed Index.md files
+    wiki_index = project_root / "wiki/Index.md"
+    if not wiki_index.exists():
+        wiki_index.write_text(textwrap.dedent(f"""
+            ---
+            identity:
+              node_id: "doc:wiki/Index.md"
+              node_type: "index"
+            compliance:
+              status: "implemented"
+              failing_standards: []
+            ---
+            
+            # {project_name} Knowledge Base
+            
+            This is the central entry point for the {project_name} wiki.
+        """).strip() + "\n", encoding="utf-8")
+
+    # Seed Gates.md
+    gates_path = project_root / "desk/Gates.md"
+    if not gates_path.exists():
+        gates_path.write_text("| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n", encoding="utf-8")
+
+    print(f"[✅] Wikipu ecosystem bootstrapped for '{project_name}'.")
+
+
+def upgrade_repository(project_root: Path):
+    """Upgrades an existing Wikipu repository to the latest structure and markers."""
+    # Ensure manifests and desk exist (new in 1.1.0)
+    directories = [
+        "manifests",
+        "desk/proposals",
+        "desk/autopoiesis/cycles",
+    ]
+    for directory in directories:
+        dir_path = project_root / directory
+        if not dir_path.exists():
+            dir_path.mkdir(parents=True, exist_ok=True)
+            (dir_path / ".gitkeep").touch()
+            print(f"[INFO] Created missing directory: {directory}")
+
+    # Seed Gates.md if missing
+    gates_path = project_root / "desk/Gates.md"
+    if not gates_path.exists():
+        gates_path.write_text("| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n", encoding="utf-8")
+        print("[INFO] Created missing desk/Gates.md")
+
+    print("[✅] Wikipu ecosystem upgraded to latest version.")
