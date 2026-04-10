@@ -4,12 +4,24 @@ identity:
   node_type: "doc_standard"
 edges:
   - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
+  - {target_id: "file:AGENTS.md", relation_type: "documents"}
+  - {target_id: "file:CLAUDE.md", relation_type: "documents"}
+  - {target_id: "file:GEMINI.md", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []
 ---
 
-This protocol summarizes the expectations for LLM agents operating inside Wikipu. It is a lookup-oriented companion to the house rules and librarian protocol, not a replacement for them.
+This protocol summarizes the expectations and initialization routing for LLM agents operating inside Wikipu. It explicitly documents the unified preamble system used to bootstrap new agent sessions.
+
+## Agent Initialization Routing
+
+To ensure all agents receive the exact same invariant rules and guardrails, the repository uses a unified entrypoint strategy:
+- **`AGENTS.md`**: The single, authoritative initialization preamble for all AI agents.
+- **`CLAUDE.md`**: A symlink routing to `AGENTS.md`.
+- **`GEMINI.md`**: A symlink routing to `AGENTS.md`.
+
+This symlink topology guarantees that any updates to the agent preamble apply universally across different LLM platforms without duplication.
 
 ## Rule Schema
 
