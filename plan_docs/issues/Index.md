@@ -95,7 +95,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 5 — Conceptual Maturation & Protocol Deepening
 
-33. plan_docs/issues/unimplemented/define-topology-and-facet.md
+33. [DONE] plan_docs/issues/unimplemented/define-topology-and-facet.md
     • Define Topology and Facet concepts in the wiki to clarify structural language and remove human comments.
     • Depends on: none.
 34. plan_docs/issues/unimplemented/define-energy-and-calculation.md

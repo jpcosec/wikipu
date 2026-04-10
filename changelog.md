@@ -2,6 +2,8 @@
 
 ## 2026-04-10
 
+- resolved issue 33 `define-topology-and-facet`: defined Topology and Facet concepts in the wiki to clarify structural language and removed human comments from ID-1
+
 - resolved issue 32 `documentation-debt-resolution`: created documentation nodes for coordinator, session_storage, trails, preflight, gates, manifest, drafts, artifact_validation, and fixed scanner_plugins compliance
 
 - resolved issue G1 `perception-gates-phase-mislabel`: moved `perception-gates-and-classification` from Phase 4 to Phase 3 in `plan_docs/issues/Index.md` to reflect correct dependency order

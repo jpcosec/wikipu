@@ -4508,7 +4508,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5dedfd8958c9f3ec1181cd1aa70703563d0bd020",
+          "blob_sha": "91288703e1d37c0f8281b57a02c3a50f3b940595",
           "created_at_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
           "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4755,6 +4755,16 @@
             "target_id": "doc:wiki/concepts/wiki_construction_principles.md",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/topology.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/facet.md",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -4771,7 +4781,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1f04e73584ff03e9714ae1f136b42ecf0fbf7b0b",
+          "blob_sha": "5f85a2c5f5af3bc59767c0161180939d7e994808",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4998,6 +5008,72 @@
         "source": null
       },
       "id": "doc:wiki/concepts/wiki_construction_principles.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/topology.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Topology in Wikipu refers to the entire internal boundary, structure, and arrangement of the repository's Knowledge Graph, codebase, and informational zones.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "4df068256d8e74bc4cf75e299809c76134a95863",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/topology.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/facet.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A Facet is a strongly typed data dimension attached to a `KnowledgeNode` within the Knowledge Graph. Facets carry the structured attributes that give meaning to a node beyond its basic identity and edges.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "84109c490baa01457324d6183e0f1a2df94693da",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/facet.md"
     },
     {
       "type": "reference",
@@ -5945,7 +6021,7 @@
         "git": {
           "blob_sha": "e3dca944cdba2e70ff5929ff64f7848d3c98bd94",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
-          "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
+          "last_modified_commit": "8c998407e5ca3bbb7ae47ac19a0d387ecde26910",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10221,9 +10297,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c4a8fa43f4b11db438dab21267460e2856b9e5b6",
+          "blob_sha": "9fc89f4dfcd51dec21feb1f21133b8fa4e96c459",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
-          "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
+          "last_modified_commit": "84b4d6e942b67046373a5ec8a402c31a0483ff77",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10247,7 +10323,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c4a8fa43f4b11db438dab21267460e2856b9e5b6",
+          "blob_sha": "9fc89f4dfcd51dec21feb1f21133b8fa4e96c459",
           "created_at_commit": "191e43e3eb6096a0b4419995931589f8b8d61300",
           "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10273,7 +10349,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c4a8fa43f4b11db438dab21267460e2856b9e5b6",
+          "blob_sha": "9fc89f4dfcd51dec21feb1f21133b8fa4e96c459",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -17949,6 +18025,18 @@
       "metadata": {},
       "source": "doc:wiki/concepts/Index.md",
       "target": "doc:wiki/concepts/wiki_construction_principles.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/Index.md",
+      "target": "doc:wiki/concepts/topology.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/Index.md",
+      "target": "doc:wiki/concepts/facet.md"
     },
     {
       "relation": "documents",

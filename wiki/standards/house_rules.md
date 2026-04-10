@@ -46,7 +46,7 @@ These five are the load-bearing structure. Every rule in this document exists to
 *The invariants that define the system. Violating these means the system is no longer itself.*
 
 **ID-1 — Orthogonality**
-No two elements do the same thing. Before any new module, node, or facet is created, it must prove it does not duplicate or overlap with an existing one. Redundancy is a structural error, not a style preference. <!-- Human Comment: we have some unclear definitions, what is a facet? what is a topolgy?  concept folder should be deepend  -->
+No two elements do the same thing. Before any new module, node, or `[[facet]]` is created, it must prove it does not duplicate or overlap with an existing one within the system's `[[topology]]`. Redundancy is a structural error, not a style preference.
 `Enforced by:` TopologyProposal validation, FacetProposal orthogonality check.
 
 **ID-2 — Minimal Energy**
