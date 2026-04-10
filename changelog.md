@@ -2,6 +2,8 @@
 
 ## 2026-04-10
 
+- resolved issue 35 `deepen-socratic-protocol`: expanded the Socratic protocol from a stub to a fully defined operational schema and removed the human placeholder comment
+
 - resolved issue 34 `define-energy-and-calculation`: defined systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments in ID-2
 
 - resolved issue 33 `define-topology-and-facet`: defined Topology and Facet concepts in the wiki to clarify structural language and removed human comments from ID-1

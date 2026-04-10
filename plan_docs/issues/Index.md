@@ -101,7 +101,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 34. [DONE] plan_docs/issues/unimplemented/define-energy-and-calculation.md
     • Define systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments.
     • Depends on: none.
-35. plan_docs/issues/unimplemented/deepen-socratic-protocol.md
+35. [DONE] plan_docs/issues/unimplemented/deepen-socratic-protocol.md
     • Expand the Socratic protocol from a stub to a fully defined operational schema.
     • Depends on: none.
 

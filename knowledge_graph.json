@@ -4510,7 +4510,7 @@
         "git": {
           "blob_sha": "31236e76c29ba2da4d029f3dc4b8d6c1f679cd97",
           "created_at_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
-          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_commit": "f50096463b4c90b660ead1f2a9ce806497cff706",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4788,7 +4788,7 @@
         "git": {
           "blob_sha": "00ad2bcd08d8b205731e5fc7e539e543fea72bd7",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
-          "last_modified_commit": "ce4eb9c4d5371a743be7a6734d6050df621e0d65",
+          "last_modified_commit": "f50096463b4c90b660ead1f2a9ce806497cff706",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5104,10 +5104,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b6bacad2a953434ca04d46344793cb95d1cef886",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "f50096463b4c90b660ead1f2a9ce806497cff706",
+          "last_modified_commit": "f50096463b4c90b660ead1f2a9ce806497cff706",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -6108,7 +6108,7 @@
     },
     {
       "type": "doc_standard",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/reference/protocols/socratic.md",
@@ -6122,20 +6122,20 @@
           }
         ],
         "semantics": {
-          "intent": "<!--  we need to deepen these documents, --> This protocol placeholder marks the Socratic interrogation step as a first-class graph node. Its operational details are currently carried by the how-to guide and will be promoted into a fuller protocol surface as the desk and subagent flow mature.",
+          "intent": "The Socratic Protocol is the structured interrogation workflow executed by an agent (or human) before a plan or proposal is authorized for implementation. It systematically identifies hidden assumptions, missing constraints, and architectural contradictions to guarantee ID-1 Orthogonality and ID-2 Minimal Energy.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
+          "status": "implemented",
           "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7aae6e648fdb4fb2c46c4b168db3e5bcc7969d3d",
+          "blob_sha": "c94ce2f77163d9b09324457ac54be1f593c1780c",
           "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
           "last_modified_commit": "3e6aa8e36485b43a96cb65ef224c965500d29015",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
