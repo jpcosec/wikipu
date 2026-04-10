@@ -21,7 +21,7 @@ def attach_git_facets(graph: object, project_root: Path) -> None:
 
 
 def build_status_report(graph_path: Path, project_root: Path) -> dict[str, object]:
-    """Compare stored GitFacet data against the current worktree."""
+    """Compare stored GitFacet data against the current worktree and report perturbations."""
     graph = load_graph(graph_path)
     modified_nodes: list[dict[str, str]] = []
     for node in iter_knowledge_nodes(graph):
@@ -41,10 +41,53 @@ def build_status_report(graph_path: Path, project_root: Path) -> dict[str, objec
                     "status": "modified_since_build",
                 }
             )
+    
+    untracked_raw = git_untracked_files(project_root, Path("raw"))
+    
+    # Gate perception
+    from .gates import load_gates
+    gates_table = load_gates(project_root / "desk/Gates.md")
+    open_gates = [g.model_dump() for g in gates_table.gates if g.status == "open"]
+    
+    # Classification
+    perturbations: list[dict[str, str]] = []
+    for node in modified_nodes:
+        perturbations.append({
+            "type": "modified_node",
+            "id": node["node_id"],
+            "action": classify_perturbation("modified_node", node["node_id"])
+        })
+    for raw in untracked_raw:
+        perturbations.append({
+            "type": "untracked_raw",
+            "id": raw,
+            "action": classify_perturbation("untracked_raw", raw)
+        })
+    for gate in open_gates:
+        perturbations.append({
+            "type": "open_gate",
+            "id": gate["gate_id"],
+            "action": "await_human_approval"
+        })
+
     return {
         "modified_nodes": modified_nodes,
-        "untracked_raw_files": git_untracked_files(project_root, Path("raw")),
+        "untracked_raw_files": untracked_raw,
+        "open_gates": open_gates,
+        "perturbations": perturbations
     }
+
+
+def classify_perturbation(p_type: str, p_id: str) -> str:
+    """Classifies a perturbation into a recommended system response."""
+    if p_type == "modified_node":
+        if p_id.startswith("doc:wiki/"):
+            return "rebuild_graph"
+        if p_id.startswith("file:src/"):
+            return "rebuild_graph_and_audit"
+    if p_type == "untracked_raw":
+        return "ingest_raw_source"
+    return "ignore"
 
 
 def build_git_facet(project_root: Path, file_path: Path) -> GitFacet:

@@ -19,6 +19,7 @@
 - resolved issue 13 `artifact-validation-rollup`: implemented repo-wide artifact validation via `validate-wiki --all` and integrated it into the CI hygiene workflow
 - resolved issue 14 `scanner-plugin-interface`: refactored the scanner into a language-agnostic plugin system with `ScannerPlugin` protocol and basic TypeScript support
 - resolved issue 15 `gate-table-runtime`: implemented read/write helpers and sequential ID generation for the `desk/Gates.md` human-approval table
+- resolved issue 21 `perception-gates-and-classification`: implemented perturbation classification and gate-aware reporting in `wiki-compiler status`
 
 ## 2026-04-09
 

@@ -39,7 +39,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   15. [DONE] plan_docs/issues/unimplemented/gate-table-runtime.md
       • Add read/write helpers and state handling for `desk/Gates.md`.
       • Depends on: none.
-  21. plan_docs/issues/unimplemented/perception-gates-and-classification.md
+  21. [DONE] plan_docs/issues/unimplemented/perception-gates-and-classification.md
       • Add perturbation classification and gate-aware status reporting on top of the perception foundation.
       • Depends on: none.
   16. plan_docs/issues/unimplemented/run-skeleton.md
