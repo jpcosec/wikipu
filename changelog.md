@@ -6,6 +6,7 @@
 - resolved issue G2 `desk-directory-bootstrap`: created `desk/` directory with `Gates.md` table header, `proposals/` and `autopoiesis/cycles/` stubs, and `autopoiesis/Board.md` to support active operational state tracking
 - resolved issue G3 `dangling-issue-references`: replaced 6 dead references to `cross-session-memory.md` and `autopoiesis-loop-coordinator.md` in Phase 3 and Phase 4 issue files with their current atomic replacements
 - resolved issue G4 `find-by-io-scanner-coverage`: extended AST scanner to detect `Path.read_text`, `Path.write_text`, `json.load`, and `json.dump` patterns; added `direction` field to `IOFacet`
+- resolved issue G5 `find-by-io-cli-documentation`: documented the `find_by_io` scanner-coverage dependency and supported patterns in `wiki/reference/cli/query.md`
 
 ## 2026-04-09
 

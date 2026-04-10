@@ -20,9 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G5. plan_docs/issues/gaps/find-by-io-cli-documentation.md
-      • Document find_by_io scanner-coverage dependency in wiki/reference/cli/query.md.
-      • Depends on: none.
   G6. plan_docs/issues/gaps/find-by-io-not-found-guard.md
       • validate-wiki wraps FileNotFoundError as a frontmatter finding; add a dedicated not_found guard.
       • Depends on: none.

@@ -30,6 +30,24 @@ Queries the compiled knowledge graph for nodes, graph neighborhoods, and I/O mat
 | `--path-template` | none | Filter by I/O path template |
 | `--query-file` | none | Path to a `StructuredQuery` JSON payload |
 
+## find_by_io and Scanner Coverage
+
+The `find_by_io` query type matches nodes where the scanner has successfully detected I/O operations in the source code or docstrings. If a module performs I/O using patterns not currently supported by the scanner, it will not appear in results even if it functionally performs I/O.
+
+### Detected Patterns
+
+The scanner currently detects the following Python call patterns and emits `IOFacet` entries for them:
+
+- `open(path, mode)`: Standard built-in file open.
+- `Path(path).read_text()`, `Path(path).read_bytes()`: Pathlib disk reads (`direction="input"`).
+- `Path(path).write_text()`, `Path(path).write_bytes()`: Pathlib disk writes (`direction="output"`).
+- `json.load(f)`: JSON deserialization from a file handle (`direction="input"`).
+- `json.dump(obj, f)`: JSON serialization to a file handle (`direction="output"`).
+
+### Empty Results
+
+If `find_by_io` returns an empty list for a known I/O-heavy module, verify the module uses one of the detected patterns above or has explicit `io_ports` declarations in its docstring.
+
 ## Usage Examples
 
 ```bash

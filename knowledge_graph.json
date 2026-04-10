@@ -1155,9 +1155,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "fb0e4d272ed8c8407a6698ebdb2813ff44d641d9",
+          "blob_sha": "3fb601134dc6ae7aa638f0cfac3d80b5ea49a752",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "0a866e94a0bc069daafd87e541e99a2b6a191942",
+          "last_modified_commit": "586e41a0917cc9755cc30bce510ed045017f56e9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -2336,6 +2336,11 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/scanner.py:infer_json_call",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/scanner.py:extract_string",
             "relation_type": "contains",
             "metadata": {}
@@ -2373,9 +2378,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "cc219dbd45a9455500c9f775b8be2a853893eb66",
+          "blob_sha": "59b5f3bb8f8840b6f768d6bcdb76ac15d06f1931",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "ecb5bd811832c165c038fe5bb57a1a5c3e15069d",
+          "last_modified_commit": "586e41a0917cc9755cc30bce510ed045017f56e9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         }
@@ -2684,7 +2689,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "17dcce35b60a345553401becc40873687b12ba67",
+          "blob_sha": "66a1fc3771d068003f8a5de99f29a8c1358ea944",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3034,7 +3039,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "71ec7df1411fd23c8527ed1177bd335b8cb6b78c",
+          "blob_sha": "0535509b11ea9121181c2836a47df71c707e6db6",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
           "last_modified_commit": "0572dd5226167a7ddf52fa851ace7d2deeb20ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4390,7 +4395,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7dbafc900b27ad5337be0a027e48a3f9aa761ed2",
+          "blob_sha": "bb4569551fd8c46c08b1bc05c4f706298aa93f76",
           "created_at_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
           "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -11036,6 +11041,38 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/scanner.py:infer_json_call",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Infers an I/O port from calls to json.load or json.dump.",
+          "raw_docstring": "Infers an I/O port from calls to json.load or json.dump."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "infer_json_call(node: ast.Call) -> IOFacet | None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null
+      },
+      "id": "code:src/wiki_compiler/scanner.py:infer_json_call"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/scanner.py:extract_string",
           "node_type": "code_construct"
         },
@@ -12790,6 +12827,12 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/scanner.py",
       "target": "code:src/wiki_compiler/scanner.py:infer_pathlib_call"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/scanner.py",
+      "target": "code:src/wiki_compiler/scanner.py:infer_json_call"
     },
     {
       "relation": "contains",
