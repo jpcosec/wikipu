@@ -29,3 +29,17 @@ class AuditCheck(Protocol):
     def run(self, graph: nx.DiGraph) -> list[AuditFinding]:
         """Executes the audit check against the provided graph and returns a list of findings."""
         ...
+
+
+@runtime_checkable
+class ScannerPlugin(Protocol):
+    """A plugin that extracts KnowledgeNodes from source files of a specific language."""
+    
+    @property
+    def supported_extensions(self) -> set[str]:
+        """Returns the set of file extensions this scanner handles (e.g. {'.py'})."""
+        ...
+
+    def scan(self, path: Path, project_root: Path) -> list[KnowledgeNode]:
+        """Scans a file and returns extracted knowledge nodes."""
+        ...

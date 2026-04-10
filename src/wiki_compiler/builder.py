@@ -92,7 +92,9 @@ def build_wiki(
                     Edge(target_id=transclusion_target, relation_type="transcludes")
                 )
             add_knowledge_node(graph, node)
-    for node in scan_python_sources(
+    
+    from .scanner import scan_codebase
+    for node in scan_codebase(
         project_root=root, source_roots=code_roots or [root / "src"]
     ):
         add_knowledge_node(graph, node)

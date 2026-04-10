@@ -41,28 +41,89 @@ class IgnoreRule:
         )
 
 
-def scan_python_sources(
+from .protocols import ScannerPlugin
+
+
+def scan_codebase(
     project_root: Path,
     source_roots: list[Path] | None = None,
     wikiignore_path: Path | None = None,
+    plugins: list[ScannerPlugin] | None = None,
 ) -> list[KnowledgeNode]:
-    """Recursively scans Python source directories for knowledge nodes, respecting ignore rules."""
+    """Recursively scans source directories for knowledge nodes using available scanner plugins."""
     roots = source_roots or [project_root / "src"]
     ignore_rules = load_wikiignore_rules(
         wikiignore_path or project_root / ".wikiignore"
     )
+    
+    # Use default plugins if none provided
+    if plugins is None:
+        plugins = [PythonScanner(), TypeScriptScanner()]
+        
     nodes: list[KnowledgeNode] = []
+    
+    # Map extensions to plugins
+    extension_map: dict[str, ScannerPlugin] = {}
+    for plugin in plugins:
+        for ext in plugin.supported_extensions:
+            extension_map[ext] = plugin
+
     for root in roots:
         if not root.exists():
             continue
-        for file_path in sorted(root.rglob("*.py")):
+        for file_path in sorted(p for p in root.rglob("*") if p.is_file()):
             rel_path = file_path.relative_to(project_root).as_posix()
             reason = match_ignore_reason(rel_path, ignore_rules)
             if reason is not None:
                 nodes.append(build_ignored_file_node(rel_path, reason))
                 continue
-            nodes.extend(scan_python_file(project_root, file_path))
+            
+            plugin = extension_map.get(file_path.suffix)
+            if plugin:
+                nodes.extend(plugin.scan(file_path, project_root))
+                
     return nodes
+
+
+class PythonScanner:
+    """Scanner plugin for Python source code."""
+    
+    @property
+    def supported_extensions(self) -> set[str]:
+        return {".py"}
+
+    def scan(self, path: Path, project_root: Path) -> list[KnowledgeNode]:
+        return scan_python_file(project_root, path)
+
+
+class TypeScriptScanner:
+    """Scanner plugin for TypeScript source code."""
+    
+    @property
+    def supported_extensions(self) -> set[str]:
+        return {".ts", ".tsx"}
+
+    def scan(self, path: Path, project_root: Path) -> list[KnowledgeNode]:
+        # For now, return a basic file node. Full extraction to be added.
+        rel_path = path.relative_to(project_root).as_posix()
+        return [
+            KnowledgeNode(
+                identity=SystemIdentity(node_id=f"file:{rel_path}", node_type="file"),
+                semantics=SemanticFacet(
+                    intent=f"TypeScript source file `{rel_path}`.", raw_docstring=None
+                ),
+                compliance=ComplianceFacet(status="implemented", failing_standards=[]),
+            )
+        ]
+
+
+def scan_python_sources(
+    project_root: Path,
+    source_roots: list[Path] | None = None,
+    wikiignore_path: Path | None = None,
+) -> list[KnowledgeNode]:
+    """Legacy wrapper for backward compatibility."""
+    return scan_codebase(project_root, source_roots, wikiignore_path, [PythonScanner()])
 
 
 def load_wikiignore_rules(wikiignore_path: Path) -> list[IgnoreRule]:

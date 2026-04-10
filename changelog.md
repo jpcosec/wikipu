@@ -17,6 +17,7 @@
 - resolved issue 10 `cleansing-apply-and-advanced-detectors`: implemented `cleanse --apply` for approved structural corrections and added new detector families for misplaced folders, stale configs, and orphaned tests
 - resolved issue 12 `operational-artifact-validation`: added structural validators for Issue, Board, Backlog Item, and Gate artifacts to ensure metadata consistency
 - resolved issue 13 `artifact-validation-rollup`: implemented repo-wide artifact validation via `validate-wiki --all` and integrated it into the CI hygiene workflow
+- resolved issue 14 `scanner-plugin-interface`: refactored the scanner into a language-agnostic plugin system with `ScannerPlugin` protocol and basic TypeScript support
 
 ## 2026-04-09
 

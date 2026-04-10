@@ -33,7 +33,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   13. [DONE] plan_docs/issues/unimplemented/artifact-validation-rollup.md
       • Add repo-wide artifact validation traversal and workflow integration.
       • Depends on: operational-artifact-validation.
-  14. plan_docs/issues/unimplemented/scanner-plugin-interface.md
+  14. [DONE] plan_docs/issues/unimplemented/scanner-plugin-interface.md
       • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
       • Depends on: artifact-validation-rollup.
   15. plan_docs/issues/unimplemented/gate-table-runtime.md
