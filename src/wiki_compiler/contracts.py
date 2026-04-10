@@ -388,6 +388,24 @@ class RawSourceManifest(BaseModel):
     entries: list[RawSourceEntry] = Field(default_factory=list)
 
 
+class GateRow(BaseModel):
+    """A single row in the desk/Gates.md table."""
+
+    gate_id: str = Field(description="Sequential identifier: gate-<NNN>")
+    proposal: str = Field(description="Relative path to the proposal file.")
+    opened: str = Field(description="YYYY-MM-DD when the gate was created.")
+    description: str = Field(description="One-line summary of what needs approval.")
+    status: Literal["open", "approved", "rejected"] = Field(
+        default="open", description="The current status of the gate."
+    )
+
+
+class GateTable(BaseModel):
+    """The collection of all gates in desk/Gates.md."""
+
+    gates: list[GateRow] = Field(default_factory=list)
+
+
 class CleansingProposal(BaseModel):
     """A proposed corrective operation for an existing graph node."""
 

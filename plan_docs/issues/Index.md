@@ -36,7 +36,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   14. [DONE] plan_docs/issues/unimplemented/scanner-plugin-interface.md
       • ScannerPlugin protocol + PythonScanner refactor + TypeScriptScanner; language-agnostic graph extraction.
       • Depends on: artifact-validation-rollup.
-  15. plan_docs/issues/unimplemented/gate-table-runtime.md
+  15. [DONE] plan_docs/issues/unimplemented/gate-table-runtime.md
       • Add read/write helpers and state handling for `desk/Gates.md`.
       • Depends on: none.
   21. plan_docs/issues/unimplemented/perception-gates-and-classification.md
