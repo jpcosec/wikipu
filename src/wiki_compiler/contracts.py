@@ -442,6 +442,25 @@ class TrailCollection(BaseModel):
     artifacts: list[TrailArtifact] = Field(default_factory=list)
 
 
+class ContextRequest(BaseModel):
+    """A formal request for graph context."""
+
+    node_ids: list[str] = Field(default_factory=list)
+    task_hint: str | None = Field(default=None)
+    depth: int = Field(default=1)
+    include_planned: bool = Field(default=False)
+
+
+class ContextBundle(BaseModel):
+    """The stable output schema for the context router."""
+
+    nodes: list[KnowledgeNode] = Field(description="The set of included knowledge nodes.")
+    edges: list[Edge] = Field(description="The subset of edges connecting the included nodes.")
+    rationale: dict[str, str] = Field(
+        default_factory=dict, description="Reasoning for each node's inclusion."
+    )
+
+
 class CleansingProposal(BaseModel):
     """A proposed corrective operation for an existing graph node."""
 

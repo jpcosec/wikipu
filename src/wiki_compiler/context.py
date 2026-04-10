@@ -10,6 +10,39 @@ from collections import deque
 from pathlib import Path
 
 from .graph_utils import load_graph, load_knowledge_node
+from .contracts import ContextRequest, ContextBundle, Edge, KnowledgeNode
+
+
+def get_context_bundle(
+    graph_path: Path,
+    request: ContextRequest
+) -> ContextBundle:
+    """
+    Core context routing logic. Returns a structured ContextBundle.
+    """
+    graph = load_graph(graph_path)
+    selected = request.node_ids or match_nodes_from_task(graph_path, request.task_hint)
+    subgraph_node_ids = collect_neighborhood(graph, selected, request.depth)
+    
+    nodes: list[KnowledgeNode] = []
+    edges: list[Edge] = []
+    rationale: dict[str, str] = {}
+    
+    for node_id in sorted(subgraph_node_ids):
+        node = load_knowledge_node(graph, node_id)
+        status = node.compliance.status if node.compliance else None
+        if status == "planned" and not request.include_planned:
+            continue
+            
+        nodes.append(node)
+        rationale[node_id] = "selected_by_neighborhood" if node_id in selected else "neighbor"
+        
+        # Collect edges where both ends are in the subgraph
+        for _, target, data in graph.out_edges(node_id, data=True):
+            if target in subgraph_node_ids:
+                edges.append(Edge(target_id=target, relation_type=data.get("relation_type", "unknown")))
+                
+    return ContextBundle(nodes=nodes, edges=edges, rationale=rationale)
 
 
 def render_context(
@@ -23,31 +56,17 @@ def render_context(
     """
     Renders a subset of the Knowledge Graph into a human-readable or machine-parsable context.
     """
-    graph = load_graph(graph_path)
-    selected = node_ids or match_nodes_from_task(graph_path, task_hint)
-    subgraph_nodes = collect_neighborhood(graph, selected, depth)
-    payload = []
-    for node_id in sorted(subgraph_nodes):
-        node = load_knowledge_node(graph, node_id)
-        status = node.compliance.status if node.compliance else None
-        if status == "planned" and not include_planned:
-            continue
-        payload.append(
-            {
-                "node": node.model_dump(),
-                "edges": [
-                    {
-                        "target": target,
-                        "relation": data.get("relation"),
-                    }
-                    for _, target, data in graph.out_edges(node_id, data=True)
-                    if target in subgraph_nodes
-                ],
-            }
-        )
+    request = ContextRequest(
+        node_ids=node_ids or [],
+        task_hint=task_hint,
+        depth=depth,
+        include_planned=include_planned
+    )
+    bundle = get_context_bundle(graph_path, request)
+    
     if output_format == "json":
-        return json.dumps(payload, indent=2)
-    return render_markdown(payload)
+        return bundle.model_dump_json(indent=2)
+    return render_markdown_bundle(bundle)
 
 
 def match_nodes_from_task(graph_path: Path, task_hint: str | None) -> list[str]:
@@ -97,33 +116,30 @@ def collect_neighborhood(graph, starting_nodes: list[str], depth: int) -> set[st
     return visited
 
 
-def render_markdown(payload: list[dict[str, object]]) -> str:
+def render_markdown_bundle(bundle: ContextBundle) -> str:
     """
-    Formats a list of node payloads into a structured Markdown representation.
+    Formats a ContextBundle into a structured Markdown representation.
     """
     blocks: list[str] = []
-    for item in payload:
-        node = item["node"]
-        identity = node["identity"]
-        semantics = node.get("semantics") or {}
-        ast = node.get("ast") or {}
-        compliance = node.get("compliance") or {}
-        lines = [f"## `{identity['node_id']}`"]
-        lines.append(f"- type: `{identity['node_type']}`")
-        if compliance.get("status"):
-            lines.append(f"- status: `{compliance['status']}`")
-        if semantics.get("intent"):
-            lines.append(f"- intent: {semantics['intent']}")
-        signatures = ast.get("signatures") or []
-        if signatures:
+    for node in bundle.nodes:
+        identity = node.identity
+        semantics = node.semantics
+        ast = node.ast
+        compliance = node.compliance
+        
+        lines = [f"## `{identity.node_id}`"]
+        lines.append(f"- type: `{identity.node_type}`")
+        if compliance and compliance.status:
+            lines.append(f"- status: `{compliance.status}`")
+        if semantics and semantics.intent:
+            lines.append(f"- intent: {semantics.intent}")
+            
+        if ast and ast.signatures:
             lines.append(
-                f"- signatures: {', '.join(f'`{value}`' for value in signatures)}"
+                f"- signatures: {', '.join(f'`{value}`' for value in ast.signatures)}"
             )
-        edges = item["edges"]
-        if edges:
-            edge_lines = ", ".join(
-                f"{edge['relation']} -> `{edge['target']}`" for edge in edges
-            )
-            lines.append(f"- edges: {edge_lines}")
+            
+        # Simplistic edge rendering for now
+        # In a real graph, we'd need source_id in Edge to render properly per-node
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)

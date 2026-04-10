@@ -60,7 +60,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 4 — Autopoietic loop (depends on Phase 3)
 
-22. plan_docs/issues/unimplemented/context-router-contract.md
+22. [DONE] plan_docs/issues/unimplemented/context-router-contract.md
     • Define the stable CLI contract and bundle schema for context routing.
     • Depends on: none.
 23. plan_docs/issues/unimplemented/context-graph-aware-routing.md

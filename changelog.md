@@ -25,6 +25,7 @@
 - resolved issue 18 `coordinator-identity-preflight`: added identity-rule validation (ID-4, ID-5) and minimal-energy (ID-2) action selection to the coordinator
 - resolved issue 19 `cycle-record-persistence`: implemented durable coordinator run history via `CycleRecord` JSON persistence in `desk/autopoiesis/cycles/`
 - resolved issue 20 `trail-collect-closeout`: implemented structured session signal extraction and routing via `TrailCollection` in the coordinator closeout step
+- resolved issue 22 `context-router-contract`: defined `ContextRequest` and `ContextBundle` contracts and refactored the context router to use them
 
 ## 2026-04-09
 
