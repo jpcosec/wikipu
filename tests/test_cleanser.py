@@ -96,3 +96,40 @@ def test_cleanse_detect_flags_duplicate_abstracts(tmp_path: Path) -> None:
     report = detect_cleansing_candidates(graph_path)
 
     assert any(proposal.operation == "merge" for proposal in report.proposals)
+
+
+def test_cleanse_detect_exempts_index_and_reference(tmp_path: Path) -> None:
+    graph_path = write_graph(
+        tmp_path / "graph.json",
+        make_node(
+            "doc:wiki/adrs/Index.md",
+            node_type="index",
+            semantics=SemanticFacet(
+                intent="This index lists all ADRs and explains their relationships.",
+                raw_docstring=None,
+            ),
+        ),
+        make_node(
+            "doc:wiki/reference/cli/query.md",
+            node_type="reference",
+            semantics=SemanticFacet(
+                intent="This command queries the graph and also supports structured queries.",
+                raw_docstring=None,
+            ),
+        ),
+        make_node(
+            "doc:wiki/concepts/real_compound.md",
+            node_type="concept",
+            semantics=SemanticFacet(
+                intent="This node does A. It also does B and C.",
+                raw_docstring=None,
+            ),
+        ),
+    )
+
+    report = detect_cleansing_candidates(graph_path)
+
+    # Should only flag 'real_compound.md'
+    split_nodes = [p.node_id for p in report.proposals if p.operation == "split"]
+    assert len(split_nodes) == 1
+    assert split_nodes[0] == "doc:wiki/concepts/real_compound.md"

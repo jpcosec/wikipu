@@ -66,6 +66,8 @@ def _compound_abstract_proposals(graph: object) -> list[CleansingProposal]:
     for node in iter_knowledge_nodes(graph):
         if not node.identity.node_id.startswith("doc:") or not node.semantics:
             continue
+        if node.identity.node_type in {"index", "reference"}:
+            continue
         abstract = node.semantics.intent.strip()
         if not abstract:
             continue
