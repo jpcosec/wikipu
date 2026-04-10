@@ -7,6 +7,7 @@
 - resolved issue G3 `dangling-issue-references`: replaced 6 dead references to `cross-session-memory.md` and `autopoiesis-loop-coordinator.md` in Phase 3 and Phase 4 issue files with their current atomic replacements
 - resolved issue G4 `find-by-io-scanner-coverage`: extended AST scanner to detect `Path.read_text`, `Path.write_text`, `json.load`, and `json.dump` patterns; added `direction` field to `IOFacet`
 - resolved issue G5 `find-by-io-cli-documentation`: documented the `find_by_io` scanner-coverage dependency and supported patterns in `wiki/reference/cli/query.md`
+- resolved issue G6 `find-by-io-not-found-guard`: added explicit file-existence check to `validate-wiki` to distinguish missing files from malformed frontmatter
 
 ## 2026-04-09
 

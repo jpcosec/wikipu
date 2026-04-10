@@ -11,6 +11,18 @@ from .contracts import ArtifactValidationReport
 
 def validate_wiki_artifact(path: Path) -> ArtifactValidationReport:
     """Validate one wiki markdown artifact against implemented local rules."""
+    if not path.exists():
+        return ArtifactValidationReport(
+            path=path.as_posix(),
+            is_valid=False,
+            findings=[
+                ArtifactValidationFinding(
+                    rule_id="artifact/not_found",
+                    message=f"File not found: {path.as_posix()}",
+                )
+            ],
+        )
+
     findings: list[ArtifactValidationFinding] = []
 
     try:

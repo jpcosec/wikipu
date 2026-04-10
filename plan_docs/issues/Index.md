@@ -20,9 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G6. plan_docs/issues/gaps/find-by-io-not-found-guard.md
-      • validate-wiki wraps FileNotFoundError as a frontmatter finding; add a dedicated not_found guard.
-      • Depends on: none.
   G7. plan_docs/issues/gaps/missing-adrs-index-node.md
       • Create wiki/adrs/Index.md — the ADR domain entry point is graph-referenced but does not exist on disk.
       • Depends on: none.

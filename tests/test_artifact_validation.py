@@ -125,3 +125,10 @@ def test_validate_wiki_artifact_reports_missing_frontmatter(tmp_path: Path) -> N
 
     assert report.is_valid is False
     assert any(f.rule_id == "artifact/frontmatter" for f in report.findings)
+
+
+def test_validate_wiki_artifact_reports_not_found(tmp_path: Path) -> None:
+    report = validate_wiki_artifact(tmp_path / "nonexistent.md")
+
+    assert report.is_valid is False
+    assert any(f.rule_id == "artifact/not_found" for f in report.findings)
