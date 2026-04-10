@@ -93,6 +93,18 @@ Foundation, interface, and generation layers are functional. The immediate goals
     • Restore coordinator context from the latest session log.
     • Depends on: session-log-schema, session-log-storage, trail-collect-session-log, run-skeleton.
 
+┄┄┄ Phase 5 — Conceptual Maturation & Protocol Deepening
+
+33. plan_docs/issues/unimplemented/define-topology-and-facet.md
+    • Define Topology and Facet concepts in the wiki to clarify structural language and remove human comments.
+    • Depends on: none.
+34. plan_docs/issues/unimplemented/define-energy-and-calculation.md
+    • Define systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments.
+    • Depends on: none.
+35. plan_docs/issues/unimplemented/deepen-socratic-protocol.md
+    • Expand the Socratic protocol from a stub to a fully defined operational schema.
+    • Depends on: none.
+
 ┄┄ Dependency summary
 
 Phase 3[10] → Phase 3[17]      (gate resume depends on cleanser apply)
