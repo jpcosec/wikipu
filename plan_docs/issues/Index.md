@@ -24,7 +24,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
-  10. plan_docs/issues/unimplemented/cleansing-apply-and-advanced-detectors.md
+  10. [DONE] plan_docs/issues/unimplemented/cleansing-apply-and-advanced-detectors.md
       • Add cleanse proposal application and the remaining anomaly detector families.
       • Depends on: none.
   12. plan_docs/issues/unimplemented/operational-artifact-validation.md

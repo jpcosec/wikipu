@@ -163,11 +163,22 @@ def main() -> None:
             )
             return
         if args.command == "cleanse":
+            from .cleanser import (
+                detect_cleansing_candidates,
+                apply_cleansing_proposal,
+            )
+
             if args.detect:
                 report = detect_cleansing_candidates(Path(args.graph))
                 print(json.dumps(report.model_dump(), indent=2))
                 return
-            raise ValueError("cleanse --apply is not implemented yet")
+            if args.apply:
+                report_data = json.loads(Path(args.apply).read_text(encoding="utf-8"))
+                report = CleansingReport.model_validate(report_data)
+                for proposal in report.proposals:
+                    apply_cleansing_proposal(proposal, project_root=Path("."))
+                return
+            raise ValueError("cleanse requires --detect or --apply <report.json>")
         if args.command == "ingest":
             written = ingest_raw_sources(
                 source_dir=Path(args.source),

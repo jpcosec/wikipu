@@ -14,6 +14,7 @@
 - resolved issue G10 `delta-compile-workflow`: implemented stale node detection, draft stub generation, and draft promotion via `wiki-compiler drafts` and `SourceFacet`
 - resolved issue G11 `ci-enforcement`: added GitHub Actions workflow to automate wiki build, audit, and workflow discipline checks
 - resolved issue G12 `bootstrap-upgrade-lifecycle`: added `wiki-compiler bootstrap` and `wiki-compiler upgrade` commands for lifecycle management
+- resolved issue 10 `cleansing-apply-and-advanced-detectors`: implemented `cleanse --apply` for approved structural corrections and added new detector families for misplaced folders, stale configs, and orphaned tests
 
 ## 2026-04-09
 
