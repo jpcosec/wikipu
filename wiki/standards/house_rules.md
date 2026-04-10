@@ -1,6 +1,6 @@
 ---
 identity:
-  node_id: "doc:wiki/standards/00_house_rules.md"
+  node_id: "doc:wiki/standards/house_rules.md"
   node_type: "doc_standard"
 edges:
   - {target_id: "doc:wiki/concepts/wiki_construction_principles.md", relation_type: "contains"}
@@ -46,11 +46,11 @@ These five are the load-bearing structure. Every rule in this document exists to
 *The invariants that define the system. Violating these means the system is no longer itself.*
 
 **ID-1 — Orthogonality**
-No two elements do the same thing. Before any new module, node, or facet is created, it must prove it does not duplicate or overlap with an existing one. Redundancy is a structural error, not a style preference.
+No two elements do the same thing. Before any new module, node, or facet is created, it must prove it does not duplicate or overlap with an existing one. Redundancy is a structural error, not a style preference. <!-- Human Comment: we have some unclear definitions, what is a facet? what is a topolgy?  concept folder should be deepend  -->
 `Enforced by:` TopologyProposal validation, FacetProposal orthogonality check.
 
 **ID-2 — Minimal Energy**
-When multiple valid responses to a perturbation exist, choose the one that minimizes: LLM token consumption, structural complexity added to the graph, uncertainty in the resulting state, and number of new elements created — while fully satisfying the requirement. Extend existing nodes before creating new ones.
+When multiple valid responses to a perturbation exist, choose the one that minimizes: LLM token consumption, structural complexity added to the graph, uncertainty in the resulting state, and number of new elements created — while fully satisfying the requirement. Extend existing nodes before creating new ones. <!-- Human Comment: we might want to add the orthogonalythy as a energy consuption  here. Maybe it's wortht it to define Energy in it's own document (and create a deterministic way to calculate it) -->
 `Enforced by:` Autopoiesis loop coordinator pre-proposal check; graph query for overlapping intent before any TopologyProposal is submitted.
 
 **ID-3 — Typed Contracts at Every Boundary**

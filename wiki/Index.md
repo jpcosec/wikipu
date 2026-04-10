@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/Index.md"
   node_type: "index"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "contains"}
   - {target_id: "doc:wiki/how_to/Index.md", relation_type: "contains"}
   - {target_id: "doc:wiki/standards/artifacts/Index.md", relation_type: "contains"}
   - {target_id: "doc:wiki/standards/languages/Index.md", relation_type: "contains"}
@@ -20,7 +20,7 @@ This is the front page of the Wikipu wiki. Start here when you need to understan
 
 | Area | Purpose | Start here |
 |---|---|---|
-| Standards | Invariant rules, schemas, lifecycle definitions | `wiki/standards/00_house_rules.md` |
+| Standards | Invariant rules, schemas, lifecycle definitions | `wiki/standards/house_rules.md` |
 | How-to | Step-by-step workflows for operating in the repo | `wiki/how_to/Index.md` |
 | Reference | Commands, facets, FAQs, and lookup material | `wiki/reference/Index.md` |
 | Concepts | Explanatory architecture and system meaning | `wiki/concepts/Index.md` |

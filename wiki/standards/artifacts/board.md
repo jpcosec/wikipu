@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/artifacts/board.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []

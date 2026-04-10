@@ -50,7 +50,7 @@
 - added `wiki-compiler curate` with scoring and promotion support, documented it in `wiki/reference/cli/curate.md`, and encoded draft promotion criteria in the house rules
 - removed the resolved `query-server-runtime` issue after confirming the query runtime and topology proposal validation are already implemented and covered by tests
 - expanded `wiki/reference/faq.md` to cover the full planned onboarding question set and removed the resolved FAQ issue from `plan_docs/issues/`
-- added OP-6 to `wiki/standards/00_house_rules.md`: never begin editing from a dirty worktree
+- added OP-6 to `wiki/standards/house_rules.md`: never begin editing from a dirty worktree
 - added `wiki-compiler check-workflow` plus workflow rules in standards and `AGENTS.md` to enforce issue linkage, changelog updates, and branch naming for non-trivial work
 - reorganized wiki information architecture: added `wiki/Index.md`, introduced `wiki/standards/document_topology.md`, moved issue lifecycle rules into `wiki/standards/issues_lifecycle.md`, and updated planning guidance to point to the standards doc
 - moved conceptual and reference docs out of the wiki root, relocated FAQ to `wiki/reference/faq.md`, and retired the legacy `wiki/00_INDEX_MOC.md` naming
@@ -58,7 +58,7 @@
 - expanded `AGENTS.md` with explicit graph-usage guidance plus issue workflow references to `wiki/how_to/plan.md` and `wiki/issues_guide.md`
 - fixed ingest draft node IDs so generated drafts stay relative to the wiki root and restored planned draft metadata
 - restored optional compiled markdown output during `build` and added automatic `documents` edge inference from `wiki/reference/*.md` pages to matching code nodes
-- added the canonical `wiki/standards/00_house_rules.md` document for librarian and ecosystem rule references
+- added the canonical `wiki/standards/house_rules.md` document for librarian and ecosystem rule references
 - added OP-5 (Atomization) to hausordnung: every work unit must be independently completable and verifiable; split when more than 3-4 steps can fail independently
 - added System Core table to hausordnung defining the five load-bearing elements (autopoiesis/wiki/knowledge-graph/git/cli) and their roles
 - revised ID-5 (Human Gate): scope narrowed to topology-boundary-crossing operations only; in-topology reversible actions no longer require human approval

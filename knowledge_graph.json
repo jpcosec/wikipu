@@ -1267,7 +1267,7 @@
         "git": {
           "blob_sha": "990298fe9fe0cc73bd00bb2560f47cd915f1b4ab",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
-          "last_modified_commit": "d22e2ed72223bbe73effba0ef72b412554157c6a",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4360,7 +4360,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -4404,7 +4404,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "84ee2c2b6e85de406319f6e8dcd28b7c6f88eebd",
+          "blob_sha": "7192fa853d50ac35de069cc9d140bdf74c0a5e67",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4419,7 +4419,7 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/standards/00_house_rules.md",
+          "node_id": "doc:wiki/standards/house_rules.md",
           "node_type": "doc_standard"
         },
         "edges": [
@@ -4508,15 +4508,15 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "801f01f0f786d31560f3812534673b93d4c2beb2",
-          "created_at_commit": "c556fcf923eeff555248cdb3e59ddff508c72503",
-          "last_modified_commit": "4c3946faa3d207afa83e1f95673eef7329f64a58",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "blob_sha": "d98ec21b2c6b3d9bb026d0297abdd0c8c667470a",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
           "status": "tracked"
         },
         "source": null
       },
-      "id": "doc:wiki/standards/00_house_rules.md"
+      "id": "doc:wiki/standards/house_rules.md"
     },
     {
       "type": "index",
@@ -4594,13 +4594,13 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "Per-language style guides that translate the language-agnostic CS-1 through CS-9 rules from `wiki/standards/00_house_rules.md` (Layer 5) into each language's idioms, toolchain, and enforcement mechanisms. Every guide covers rule mapping, recommended toolchain configuration, and a breakdown of automated versus manual enforcement.",
+          "intent": "Per-language style guides that translate the language-agnostic CS-1 through CS-9 rules from `wiki/standards/house_rules.md` (Layer 5) into each language's idioms, toolchain, and enforcement mechanisms. Every guide covers rule mapping, recommended toolchain configuration, and a breakdown of automated versus manual enforcement.",
           "raw_docstring": null
         },
         "ast": null,
@@ -4613,7 +4613,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "387a97b596aee39a6065fc5b02e8c11f6c26c300",
+          "blob_sha": "e5509fd56a508287af5b0a61cef8c654bf147b6d",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4791,7 +4791,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -4814,7 +4814,7 @@
         },
         "test_map": null,
         "git": {
-          "blob_sha": "81c75e6fe94aad254994b577998e8e4db9735b35",
+          "blob_sha": "a2a781c24da1962ca4308e4c7b24f57f3e3b0f24",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4834,7 +4834,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -4857,7 +4857,7 @@
         },
         "test_map": null,
         "git": {
-          "blob_sha": "7b3ccb470e60558ccb1475b4766e29c9eb5bedc4",
+          "blob_sha": "d02174983d3f9d45d8fee8cec8b0a9adf6cd5f9d",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4921,7 +4921,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -4945,7 +4945,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "23ac04666159008352a2ad9699a5fcc8f3f1d780",
+          "blob_sha": "5c5100b5a4f57a9540ea7bd1f1fd56baeb577aef",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4970,7 +4970,7 @@
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "depends_on",
             "metadata": {}
           }
@@ -4989,7 +4989,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8781c73a09bb0d6fe5d47e20abd0d0389be3d4a2",
+          "blob_sha": "e1beee22583bd27c46759a67167e4741df6071f8",
           "created_at_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
           "last_modified_commit": "2d621a6a6100cbbc567641d7e3d44e3d75449d07",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5086,7 +5086,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1443150ed2251b1b2559988d177fe44fa0551ae6",
+          "blob_sha": "1853c8db36d25804703ce8dfabf7e17ea90b5d81",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5119,7 +5119,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "faec483062c34663106418e2aa999b4a7debc147",
+          "blob_sha": "76e481cfee9367aaae381cbf73061afe10dc976c",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5152,7 +5152,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "264e09d7d424d3e1c3176f34c87c6178562d4eb2",
+          "blob_sha": "5491f51464bc228100444933b45b5b13d46c0616",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5185,7 +5185,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1e1f59dd311d9cf4c15d20bd9feeba98e603558c",
+          "blob_sha": "de59ad16dd194c408ed478d7c1c9747c998ea113",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5218,7 +5218,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "76c092c4d4809f926acbf22a9d9b565f9d1f3e95",
+          "blob_sha": "3f449b878ca35f1d26e39a858618d1543a6d9098",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5251,7 +5251,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "852212d4fbc8bd3df40cb98d33e36bb1d16bf2b7",
+          "blob_sha": "8cb5e785195af7d01b57a25f5c6b5eab10e6320d",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5284,7 +5284,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5446a3417de644d317b4fffdb68d17d86c7dc396",
+          "blob_sha": "a7a1745acf0d1a02c8ea65b291f7102cfbb63b98",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5317,7 +5317,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a541b7bb447036e0e687596053895c6fe4f77917",
+          "blob_sha": "24c1ab2ffe330a1c79249859a8078b8e2d489f00",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5350,7 +5350,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "232ba57c6c66cbb013b41b7d52d17286e3efdfaa",
+          "blob_sha": "01fd1cc932f7649e6bb8c0bdce6584c6a6c2c52f",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "3c182f021726db861ca6ede4366bc267d94e5822",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5909,7 +5909,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -5928,7 +5928,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "68832d32f220b0e3f3001e1fcc5d0e473689ddeb",
+          "blob_sha": "aa98aa2c986933a8d9187a615b4dc5e08bea1176",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5948,7 +5948,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -5967,7 +5967,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "03f3e9842c3715b243212f2c13e8a2629cdb0d3f",
+          "blob_sha": "752832a7dbad0008daec6a14526e2fe97f3c974a",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6124,10 +6124,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "a23a3bd5b90c60c28385d79026c3b4fe4b388223",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -8436,10 +8436,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "a525b697d17549ab644686afc944a2490aedbc1c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -8523,10 +8523,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "8e8061f96e706f6a8c0a4bdaad3c23a33718257a",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -9180,10 +9180,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "5f047e434f4191d2ff8c85727918425f2493747b",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -9854,10 +9854,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d885b243f0d5c4b82f8381dbf6c752b61e63272b",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -10045,10 +10045,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "c3fdda28ec4c429a8d8b6ccc26feae59f1a949b4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -10231,7 +10231,7 @@
         "git": {
           "blob_sha": "18f973f6152388ea5f49afa53de9cc5225603c6d",
           "created_at_commit": "8267e6f199fca2a7819905cedb202ceb970a9257",
-          "last_modified_commit": "8267e6f199fca2a7819905cedb202ceb970a9257",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10331,10 +10331,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b785d77ff83ec0bc2c016f6441b2ffac69325649",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -10545,10 +10545,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "bae14453133c1b6a760e50014b9b9b78c417b3ad",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_commit": "358fbd6d52e0bb95844f1beb77f35d8766de01ed",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -10674,7 +10674,7 @@
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10693,7 +10693,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "445ff841e93c8ba7fc97b141f34897286035120e",
+          "blob_sha": "3753db67325b446e3027b3216110ab5f5a087978",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10746,7 +10746,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10765,7 +10765,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e4e029130edabd5550d1d5bebce130162feac3da",
+          "blob_sha": "01d32b7be65058afd02a7a3b863f5ab175abdff7",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10785,7 +10785,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10804,7 +10804,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6098aa0344203f3dda52af1f3a7000d5f392d77a",
+          "blob_sha": "328dece4d1c25273321d7251a82375e063483426",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10824,7 +10824,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10843,7 +10843,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a47e4b954a3716e9c67c79007ebc6ad35a21dcf4",
+          "blob_sha": "68a6304516533282f685db833a0176d083cf88f3",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "f7527f96c23d1bc301df0a52c9ce65119db5a362",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10896,7 +10896,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10915,7 +10915,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "13932de931712a137e71b24a416efacc25f6b2c6",
+          "blob_sha": "b2da86931aebc2a0e7bb8f946c9c90afb2ac2100",
           "created_at_commit": "3ee1dcd5a67e9367d95bfcbf7e39792e0e0df3f0",
           "last_modified_commit": "e9c62488b3f911bcc027fecbad29512b023a64d6",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10935,7 +10935,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -10954,7 +10954,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "daba52306cee6894af3bc6cdfdb3173fb70dc4a1",
+          "blob_sha": "d84ad8ff888af40a79232d9a5dfabd44fcb40fd6",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -11013,7 +11013,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           },
@@ -11042,7 +11042,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "fbc19ff77249a38db2028601350feebec9e24afa",
+          "blob_sha": "3ec5eb0c2b0ec165177472e41dbbe20e76e3673f",
           "created_at_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_commit": "a68bab88c29098ff6bf9ad5ee284f4aa10a652dd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -11062,7 +11062,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -11081,7 +11081,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "52ef48a687a051f9e5225e77b01e01e37a78c2e0",
+          "blob_sha": "a154277c4dc5d92ef5110b24a1ccc1a2cb3f18c0",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -11101,7 +11101,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/standards/00_house_rules.md",
+            "target_id": "doc:wiki/standards/house_rules.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -11120,7 +11120,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "861cb8aa29f5f299431fd292ee2acb5e78486740",
+          "blob_sha": "31e15ef72c31194dd273689bbed7fec45c94a6f4",
           "created_at_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_commit": "cedbf2977d7e2ed3dccd104aa661b521d6f65450",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -17627,7 +17627,7 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/Index.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "contains",
@@ -17662,92 +17662,92 @@
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/concepts/wiki_construction_principles.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/build.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/cleanse.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/curate.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/ingest.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/query.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/cli/scaffold.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/gate_loop.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/human_contributor.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/llm_agent.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/socratic.md"
     },
     {
       "relation": "contains",
       "metadata": {},
-      "source": "doc:wiki/standards/00_house_rules.md",
+      "source": "doc:wiki/standards/house_rules.md",
       "target": "doc:wiki/reference/protocols/trail_collect.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/languages/Index.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "contains",
@@ -17861,13 +17861,13 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/adrs/001_feature_methodology_superseded.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/adrs/002_documentation_consolidation.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "contains",
@@ -17885,7 +17885,7 @@
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/concepts/how_wikipu_works.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "contains",
@@ -17903,7 +17903,7 @@
       "relation": "depends_on",
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "documents",
@@ -18161,13 +18161,13 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/reference/protocols/llm_agent.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/reference/protocols/human_contributor.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "documents",
@@ -19061,37 +19061,37 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/wiki_node.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/board.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/gate.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/artifacts/issue.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/checklists.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/document_topology.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
@@ -19103,7 +19103,7 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/issues_lifecycle.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "extends",
@@ -19121,13 +19121,13 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/languages/python.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     },
     {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/languages/typescript.md",
-      "target": "doc:wiki/standards/00_house_rules.md"
+      "target": "doc:wiki/standards/house_rules.md"
     }
   ]
 }

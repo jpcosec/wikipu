@@ -32,5 +32,5 @@ def test_get_context_bundle_contract(tmp_path: Path):
     assert any(n.identity.node_id == "doc:wiki/b.md" for n in bundle.nodes)
     assert len(bundle.edges) == 1
     assert bundle.edges[0].target_id == "doc:wiki/b.md"
-    assert bundle.rationale["doc:wiki/a.md"] == "selected_by_neighborhood"
-    assert bundle.rationale["doc:wiki/b.md"] == "neighbor"
+    assert bundle.rationale["doc:wiki/a.md"] == "direct_match"
+    assert bundle.rationale["doc:wiki/b.md"] == "descendant_of_doc:wiki/a.md"

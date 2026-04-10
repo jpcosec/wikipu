@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/checklists.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -15,7 +15,7 @@ Verification checklists provide a machine-readable set of binary (pass/fail) che
 
 ## Rule Schema
 
-Each checklist consists of a set of items, where each item includes a description, the `rule_id` it enforces from the `[[00_house_rules]]`, and the verification method (command or query).
+Each checklist consists of a set of items, where each item includes a description, the `rule_id` it enforces from the `[[house_rules]]`, and the verification method (command or query).
 
 ### 1. Issue Resolution Checklist (`issue-resolution`)
 *Enforces the OP-4 Protocol.*
@@ -95,7 +95,7 @@ Each checklist consists of a set of items, where each item includes a descriptio
 |---|---|
 | Checklist Name | Unique identifier for the operation class. |
 | Item | A specific, binary check to perform. |
-| rule_id | The ID of the rule from `[[00_house_rules]]` being enforced. |
+| rule_id | The ID of the rule from `[[house_rules]]` being enforced. |
 | Verification | The suggested command or query to verify the check. |
 
 ## Usage Examples

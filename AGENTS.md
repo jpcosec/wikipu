@@ -10,7 +10,7 @@ Agents working here should optimize for small, reversible changes that preserve 
 - Secondary package: `src/wikipu/`.
 - Tests live in `tests/` and use `pytest`.
 - CLI entrypoint: `wiki-compiler`.
-- Canonical documentation: `README.md`, `wiki/`, and `wiki/standards/00_house_rules.md`.
+- Canonical documentation: `README.md`, `wiki/`, and `wiki/standards/house_rules.md`.
 - Changelog updates are expected for significant changes.
 
 ## Setup Commands

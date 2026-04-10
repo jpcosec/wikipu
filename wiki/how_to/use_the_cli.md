@@ -23,7 +23,7 @@ The `wiki-compiler` CLI is the deterministic entry point for all Wikipu operatio
 ### Initialize a repository
 
 1. Navigate to the root of the target repository.
-2. Run `wiki-compiler init` to create the base directory structure required by `00_house_rules`: `raw/`, `wiki/`, `wiki/adrs/`, `wiki/concepts/`.
+2. Run `wiki-compiler init` to create the base directory structure required by `house_rules`: `raw/`, `wiki/`, `wiki/adrs/`, `wiki/concepts/`.
 
 ```bash
 wiki-compiler init

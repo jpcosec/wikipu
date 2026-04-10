@@ -4,7 +4,7 @@ identity:
   node_type: "concept"
 edges:
   - {target_id: "raw:raw/wiki_construction_principles.md", relation_type: "documents"}
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "depends_on"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "depends_on"}
 compliance:
   status: "implemented"
   failing_standards: []

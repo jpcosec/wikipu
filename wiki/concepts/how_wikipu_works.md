@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/concepts/how_wikipu_works.md"
   node_type: "concept"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "contains"}
 compliance:
   status: "implemented"
@@ -32,5 +32,5 @@ This lets the system answer structural questions such as what depends on a node,
 ## Related Concepts
 
 - `wiki/reference/knowledge_node_facets.md` defines the facet vocabulary used by the graph.
-- `wiki/standards/00_house_rules.md` defines the rules the graph helps enforce.
+- `wiki/standards/house_rules.md` defines the rules the graph helps enforce.
 - `wiki/how_to/use_the_graph.md` explains the operational workflow for graph-first navigation.

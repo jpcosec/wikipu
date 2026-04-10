@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/languages/python.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -164,7 +164,7 @@ Each rule maps a CS rule ID to its Python-specific equivalent, the enforcement t
 
 | Field | Description |
 |---|---|
-| CS Rule | The code-style rule identifier from `00_house_rules.md` Layer 5 |
+| CS Rule | The code-style rule identifier from `house_rules.md` Layer 5 |
 | Python Equivalent | How the rule manifests in Python idioms and tooling |
 | Enforcement Tool | The tool (ruff, mypy, docstring-coverage, ASTFacet) that checks this rule |
 

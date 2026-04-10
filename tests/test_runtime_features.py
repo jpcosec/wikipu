@@ -266,7 +266,7 @@ def test_query_and_context_runtime_cover_graph_navigation(tmp_path: Path) -> Non
     assert by_io["nodes"][0]["identity"]["node_id"] == "file:src/service.py"
     assert "## `file:src/service.py`" in context
     assert "Service entrypoint." in context
-    assert "contains -> `code:src/service.py:run`" in context
+    assert "routing: descendant_of_file:src/service.py" in context
 
 
 def test_validator_rejects_collisions_and_tracks_attempts(tmp_path: Path) -> None:

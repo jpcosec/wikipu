@@ -11,11 +11,11 @@ Writing a wiki node means creating or updating a Markdown file in `wiki/` that d
 
 # How to Document
 
-Writing a wiki node means creating or updating a Markdown file in `wiki/` that describes current truth — not plans, not aspirations, not historical decisions. Every node must answer exactly one question, start with a mandatory abstract, use transclusion instead of copying content, and carry YAML frontmatter that makes the node machine-readable as a graph vertex. The rules are defined in Layer 6 (WK rules) of `wiki/standards/00_house_rules.md`.
+Writing a wiki node means creating or updating a Markdown file in `wiki/` that describes current truth — not plans, not aspirations, not historical decisions. Every node must answer exactly one question, start with a mandatory abstract, use transclusion instead of copying content, and carry YAML frontmatter that makes the node machine-readable as a graph vertex. The rules are defined in Layer 6 (WK rules) of `wiki/standards/house_rules.md`.
 
 ## Prerequisites
 
-- Read WK-1 through WK-6 in `wiki/standards/00_house_rules.md` (Layer 6).
+- Read WK-1 through WK-6 in `wiki/standards/house_rules.md` (Layer 6).
 - Read the artifact template for the node type you are writing — see `wiki/standards/artifacts/` for `how_to`, `concept`, `doc_standard`, `adr`, `reference`, and `faq` schemas.
 - Know the node's `node_type` — this determines the required body sections (WK-4).
 - Understand when NOT to create a new node: if a concept already exists, transclude it rather than duplicate it (WK-3).

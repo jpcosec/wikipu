@@ -86,7 +86,7 @@ def test_validate_wiki_artifact_reports_adr_filename_mismatch(tmp_path: Path) ->
           status: "accepted"
           context_summary: "Context."
         edges:
-          - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "documents"}
+          - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "documents"}
         compliance:
           status: "implemented"
           failing_standards: []

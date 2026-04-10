@@ -4,7 +4,7 @@ identity:
   node_type: "doc_standard"
 edges:
   - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "extends"}
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []

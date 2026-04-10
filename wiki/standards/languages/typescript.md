@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/languages/typescript.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -178,7 +178,7 @@ Each rule maps a CS rule ID to its TypeScript-specific equivalent, the enforceme
 
 | Field | Description |
 |---|---|
-| CS Rule | The code-style rule identifier from `00_house_rules.md` Layer 5 |
+| CS Rule | The code-style rule identifier from `house_rules.md` Layer 5 |
 | TypeScript Equivalent | How the rule manifests in TypeScript idioms and tooling |
 | Enforcement Tool | The tool (tsc, ESLint, Zod, Prettier) that checks this rule |
 

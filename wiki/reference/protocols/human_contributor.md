@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/reference/protocols/human_contributor.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -13,7 +13,7 @@ This protocol summarizes the expectations for human contributors working in a Wi
 
 ## Rule Schema
 
-- Treat `wiki/standards/00_house_rules.md` as the primary normative source.
+- Treat `wiki/standards/house_rules.md` as the primary normative source.
 - Keep code, wiki nodes, and changelog entries aligned when behavior changes.
 - Use the graph and reference docs to understand the system before introducing new structure.
 - Record exemptions explicitly rather than hiding non-compliance.

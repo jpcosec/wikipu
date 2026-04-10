@@ -21,7 +21,7 @@ The knowledge graph is the authoritative routing system for the Wikipu ecosystem
 
 ## Steps
 
-1. Start every structural query with `wiki-compiler query` rather than reading Markdown files directly (NAV-1, NAV-3 in `wiki/standards/00_house_rules.md`).
+1. Start every structural query with `wiki-compiler query` rather than reading Markdown files directly (NAV-1, NAV-3 in `wiki/standards/house_rules.md`).
 2. Retrieve a single node by ID: `wiki-compiler query --type get_node --node-id <node_id>`. Node ID format: `doc:wiki/<path>`, `file:src/<path>`, `code:<module>.<class>`.
 3. Traverse upward to find what a node belongs to: `wiki-compiler query --type get_ancestors --node-id <node_id>`.
 4. Traverse downward to find what depends on a node: `wiki-compiler query --type get_descendants --node-id <node_id>`.

@@ -8,7 +8,7 @@ compliance:
   status: "planned"
   failing_standards: []
 ---
-
+<!--  we need to deepen these documents, -->
 This protocol placeholder marks the Socratic interrogation step as a first-class graph node. Its operational details are currently carried by the how-to guide and will be promoted into a fuller protocol surface as the desk and subagent flow mature.
 
 ## Rule Schema

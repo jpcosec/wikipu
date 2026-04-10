@@ -15,7 +15,7 @@ Researching in Wikipu means ingesting external sources — papers, documentation
 
 ## Prerequisites
 
-- Understand the four-zone model (ID-4 in `wiki/standards/00_house_rules.md`): `raw/` is immutable seed; `wiki/` is current truth.
+- Understand the four-zone model (ID-4 in `wiki/standards/house_rules.md`): `raw/` is immutable seed; `wiki/` is current truth.
 - Know the difference between ingest (parsing `raw/` into graph nodes) and build (compiling `wiki/` into `knowledge_graph.json`).
 - Have `wiki-compiler` installed (`pip install -e .` from the repository root).
 

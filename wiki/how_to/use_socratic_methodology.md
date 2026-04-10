@@ -26,7 +26,7 @@ The Socratic method in Wikipu is the pre-design gap finder — the structured in
 2. Read the artifact and generate questions by type for each claim or section. For each question, record: the question type, the specific claim or section that prompted it, and what resolution would look like.
 3. Create a structured Q&A artifact in `desk/socratic/` with one board item per open question.
 4. Add each question to `desk/socratic/Board.md`. Each item is unresolved until a human or authorized agent provides an explicit answer.
-5. For each question: if it reveals a **missing constraint**, encode the answer in the relevant wiki node or `00_house_rules.md`. If it reveals a **contradiction**, revise the plan or the conflicting node before proceeding. If it reveals **scope creep**, split the plan at the boundary.
+5. For each question: if it reveals a **missing constraint**, encode the answer in the relevant wiki node or `house_rules.md`. If it reveals a **contradiction**, revise the plan or the conflicting node before proceeding. If it reveals **scope creep**, split the plan at the boundary.
 6. When a question is answered, record the resolution inline in the board item, apply the encoding (doc update, rule update, or new issue), and delete the item from the board.
 7. Once all questions for the artifact are resolved, delete the `desk/socratic/` artifact and promote the plan to `desk/issues/` for implementation.
 

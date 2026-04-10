@@ -12,7 +12,7 @@ Wikipu is designed to be the starting point for any new or existing project.
 2.  **Plug in your Code**: Move your existing code into `src/` or start building new modules using `wiki-compiler scaffold`.
 3.  **Define the Raw Source**: Dump your "seminal" thoughts, chat logs, and messy notes into `raw/`.
 4.  **Generate Navigation**: Use `wiki-compiler ingest` to turn raw notes into draft wiki nodes.
-5.  **Follow the Rules**: Adhere to the `wiki/standards/00_house_rules.md` to ensure your code and documentation are perfectly aligned (Pydantic contracts, clear docstrings, and orthogonal design).
+5.  **Follow the Rules**: Adhere to the `wiki/standards/house_rules.md` to ensure your code and documentation are perfectly aligned (Pydantic contracts, clear docstrings, and orthogonal design).
 6.  **Compile & Explore**: Run `wiki-compiler build` to generate the `knowledge_graph.json`. Now, both you and your LLM can use the `wiki/` and the graph to explore, design, and implement features with perfect context.
 
 ## 🛠️ Quick Start
@@ -52,7 +52,7 @@ For detailed instructions on architecture, rules, and advanced usage, explore th
 *   [How it Works](wiki/concepts/how_wikipu_works.md)
 *   [How to Use the CLI](wiki/how_to_use.md)
 *   [How to Add a Component](wiki/how_to_add_component.md)
-*   [House Rules](wiki/standards/00_house_rules.md)
+*   [House Rules](wiki/standards/house_rules.md)
 *   [Librarian Agent Protocol](agents/librarian/intro.md)
 
 ---

@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/issues_lifecycle.md"
   node_type: "doc_standard"
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "implements"}
   - {target_id: "doc:wiki/standards/artifacts/issue.md", relation_type: "extends"}
   - {target_id: "doc:wiki/standards/issues_index_seed.md", relation_type: "extends"}
 compliance:

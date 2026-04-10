@@ -17,7 +17,7 @@ Planning in Wikipu means converting a perceived gap or requirement into a discre
 
 - Access to `wiki/standards/issues_lifecycle.md` — the canonical reference for issue format and lifecycle.
 - Familiarity with the five zones: `raw/`, `wiki/`, `desk/`, `backlog/`, `src/`.
-- Understanding of OP-4 (Issue Resolution Protocol) and OP-5 (Atomization) in `wiki/standards/00_house_rules.md`.
+- Understanding of OP-4 (Issue Resolution Protocol) and OP-5 (Atomization) in `wiki/standards/house_rules.md`.
 
 ## Steps
 

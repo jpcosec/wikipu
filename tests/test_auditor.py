@@ -85,7 +85,7 @@ def test_compliance_violations_detects_failing_standards() -> None:
         "file:src/sloppy.py",
         compliance=ComplianceFacet(
             status="implemented",
-            failing_standards=["00_house_rules#docstrings"],
+            failing_standards=["house_rules#docstrings"],
         ),
     ))
     findings = ComplianceViolationsCheck().run(graph)

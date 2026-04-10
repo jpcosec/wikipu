@@ -30,7 +30,7 @@ Designing a new module or topology change in Wikipu means authoring a `TopologyP
 7. Submit the proposal. If `wiki-compiler` returns a `CollisionReport`, revise the proposal to eliminate overlaps. You have a maximum of 3 attempts before human escalation is required.
 8. Once approved, scaffold the module: `wiki-compiler scaffold --module src/<name> --intent "<intent>"`. This creates `contracts.py`, `__init__.py`, and `README.md`.
 9. Define Pydantic input/output models in `contracts.py` with `Field(description=...)` on every field.
-10. Implement the module logic, following CS-1 through CS-9 in `wiki/standards/00_house_rules.md`.
+10. Implement the module logic, following CS-1 through CS-9 in `wiki/standards/house_rules.md`.
 11. Update the module's `README.md` (`KnowledgeNode`) with correct `edges`, `io_ports`, and `compliance.status`.
 12. Run `wiki-compiler build` to update `knowledge_graph.json` and `.compliance_baseline.json`.
 13. Delete the proposal file from `desk/proposals/` and record the outcome in `changelog.md`. If the design involved a decision, write an ADR in `wiki/adrs/`.

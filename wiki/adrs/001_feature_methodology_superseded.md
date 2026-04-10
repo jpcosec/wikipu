@@ -7,7 +7,7 @@ adr:
   status: "accepted"
   context_summary: "Legacy methodology documents copied from another project created ambiguity, so they were retired and replaced by repo-specific standards and protocols."
 edges:
-  - {target_id: "doc:wiki/standards/00_house_rules.md", relation_type: "documents"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -33,7 +33,7 @@ Verdict by document group:
 
 Relevant surviving ideas are now represented by the current canonical docs instead of preserved as legacy reference:
 
-- `wiki/standards/00_house_rules.md`
+- `wiki/standards/house_rules.md`
 - `wiki/domain_glossary.yaml`
 - `agents/librarian/intro.md`
 - `plan_docs/issues/Index.md`
