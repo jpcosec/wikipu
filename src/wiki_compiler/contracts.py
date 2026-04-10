@@ -161,6 +161,20 @@ class ComplianceFacet(BaseModel):
     )
 
 
+class SourceFacet(BaseModel):
+    """Dimension: Provenance and Source Tracking.
+
+    Question: Where did this node come from, and is it stale?
+    """
+
+    source_path: str = Field(description="Relative path to the original raw source file.")
+    source_hash: str = Field(description="Content hash of the raw source at compilation time.")
+    compiled_at: str = Field(description="ISO-8601 timestamp of when the node was compiled.")
+    compiled_from: str = Field(
+        default="wiki-compiler", description="The tool or version that performed the compilation."
+    )
+
+
 class GitFacet(BaseModel):
     """Dimension: Git-tracked state for a file-backed node."""
 
@@ -224,6 +238,9 @@ class KnowledgeNode(BaseModel):
     )
     git: GitFacet | None = Field(
         default=None, description="Git metadata for file-backed or doc-backed nodes."
+    )
+    source: SourceFacet | None = Field(
+        default=None, description="Provenance and source tracking metadata."
     )
 
 

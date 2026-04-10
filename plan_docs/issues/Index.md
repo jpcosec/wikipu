@@ -20,9 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G10. plan_docs/issues/gaps/delta-compile-workflow.md
-       • Implement draft-write workflow that generates draft stubs for stale pages instead of auto-overwriting.
-       • Depends on: none.
   G11. plan_docs/issues/gaps/ci-enforcement.md
        • Add GitHub Actions workflow to run build/audit/check-workflow on every push.
        • Depends on: none.

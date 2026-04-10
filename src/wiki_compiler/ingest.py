@@ -15,12 +15,15 @@ def ingest_raw_sources(
     dest_dir: Path,
     project_root: Path | None = None,
     overwrite: bool = False,
+    manifest_path: Path | None = None,
 ) -> list[Path]:
     """
     Scans a directory for raw source files and generates draft markdown nodes for each valid file.
     Draft nodes land in dest_dir/<source_subdir>/ mirroring the first path component under source_dir.
     After ingestion, generates an INDEX.md per subdirectory.
     """
+    from .manifest import compute_content_hash, add_to_manifest
+    
     root = project_root or source_dir.parent
     ignore_rules = load_wikiignore_rules(root / ".wikiignore")
     written: list[Path] = []
@@ -39,6 +42,10 @@ def ingest_raw_sources(
         source_subdir = _source_subdir(rel_to_source)
         subdir_dest = dest_dir / source_subdir if source_subdir else dest_dir
 
+        source_hash = compute_content_hash(source_path)
+        if manifest_path:
+            add_to_manifest(root, manifest_path, source_path)
+
         nodes = decompose_source(source_path)
         for title, content, node_type in nodes:
             draft_slug = slugify(title)
@@ -49,7 +56,7 @@ def ingest_raw_sources(
             node_id = _compute_node_id(dest_dir, source_subdir, draft_slug)
             draft_path.write_text(
                 render_draft(
-                    rel_source, node_id, title, content, node_type
+                    rel_source, node_id, title, content, node_type, source_hash
                 ),
                 encoding="utf-8",
             )
@@ -148,34 +155,41 @@ def render_draft(
     title: str,
     content: str,
     node_type: str = "concept",
+    source_hash: str = "",
 ) -> str:
     """
     Generates the markdown content for a draft node, including required frontmatter.
     """
+    from datetime import datetime
     abstract = _extract_abstract(content)
+    compiled_at = datetime.now().isoformat()
 
-    return "\n".join(
-        [
-            "---",
-            "identity:",
-            f'  node_id: "{node_id}"',
-            f'  node_type: "{node_type}"',
-            "edges:",
-            f'  - {{target_id: "raw:{rel_source}", relation_type: "documents"}}',
-            "compliance:",
-            '  status: "planned"',
-            "  failing_standards: []",
-            "---",
-            "",
-            abstract,
-            "",
-            f"## Details",
-            "",
-            content,
-            "",
-            f"Generated from `{rel_source}`.",
-        ]
-    )
+    lines = [
+        "---",
+        "identity:",
+        f'  node_id: "{node_id}"',
+        f'  node_type: "{node_type}"',
+        "edges:",
+        f'  - {{target_id: "raw:{rel_source}", relation_type: "documents"}}',
+        "compliance:",
+        '  status: "planned"',
+        "  failing_standards: []",
+        "source:",
+        f'  source_path: "{rel_source}"',
+        f'  source_hash: "{source_hash}"',
+        f'  compiled_at: "{compiled_at}"',
+        '  compiled_from: "wiki-compiler"',
+        "---",
+        "",
+        abstract,
+        "",
+        f"## Details",
+        "",
+        content,
+        "",
+        f"Generated from `{rel_source}`.",
+    ]
+    return "\n".join(lines)
 
 
 def summarize_source(source_path: Path) -> tuple[str, str]:

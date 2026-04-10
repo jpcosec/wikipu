@@ -174,6 +174,7 @@ def main() -> None:
                 dest_dir=Path(args.dest),
                 project_root=Path(args.project_root),
                 overwrite=args.overwrite,
+                manifest_path=Path(args.manifest) if args.manifest else None,
             )
             print(json.dumps([path.as_posix() for path in written], indent=2))
             return
@@ -262,6 +263,38 @@ def main() -> None:
                 print(f"[OK] Registered {entry.path} in {args.manifest}")
                 return
             raise ValueError("manifest requires --add <path>")
+        if args.command == "drafts":
+            from .drafts import (
+                detect_stale_nodes,
+                write_stale_drafts,
+                promote_draft_node,
+            )
+
+            if args.detect_stale:
+                stale_ids = detect_stale_nodes(
+                    graph_path=Path(args.graph),
+                    manifest_path=Path(args.manifest),
+                )
+                print(json.dumps(stale_ids, indent=2))
+                return
+            if args.write_drafts:
+                written = write_stale_drafts(
+                    graph_path=Path(args.graph),
+                    manifest_path=Path(args.manifest),
+                    drafts_dir=Path(args.drafts_dir),
+                )
+                print(json.dumps([path.as_posix() for path in written], indent=2))
+                return
+            if args.promote:
+                dest = promote_draft_node(
+                    node_id=args.promote,
+                    drafts_dir=Path(args.drafts_dir),
+                )
+                print(f"[OK] Promoted {args.promote} to {dest}")
+                return
+            raise ValueError(
+                "drafts requires --detect-stale, --write-drafts, or --promote <id>"
+            )
         if args.command == "status":
             report = build_status_report(
                 graph_path=Path(args.graph),
@@ -434,6 +467,10 @@ def build_parser() -> argparse.ArgumentParser:
         "--overwrite", action="store_true", help="Overwrite existing draft files"
     )
     ingest_parser.add_argument(
+        "--manifest",
+        help="Optional path to the CSV manifest file to update during ingestion.",
+    )
+    ingest_parser.add_argument(
         "--model", help="Reserved for future LLM-backed extraction"
     )
 
@@ -513,6 +550,32 @@ def build_parser() -> argparse.ArgumentParser:
     )
     manifest_parser.add_argument(
         "--notes", default="", help="Optional notes for the manifest entry."
+    )
+
+    # --- drafts ---
+    drafts_parser = subparsers.add_parser(
+        "drafts",
+        help="Manage wiki draft stubs and stale node detection.",
+    )
+    drafts_parser.add_argument(
+        "--detect-stale", action="store_true", help="Detect stale wiki nodes"
+    )
+    drafts_parser.add_argument(
+        "--write-drafts", action="store_true", help="Write draft stubs for stale nodes"
+    )
+    drafts_parser.add_argument(
+        "--promote", help="Promote a draft node ID to the live wiki"
+    )
+    drafts_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
+    )
+    drafts_parser.add_argument(
+        "--manifest",
+        default="manifests/raw_sources.csv",
+        help="Path to the CSV manifest file.",
+    )
+    drafts_parser.add_argument(
+        "--drafts-dir", default="wiki/drafts", help="Drafts destination directory"
     )
 
     return parser

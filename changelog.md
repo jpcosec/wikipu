@@ -11,6 +11,7 @@
 - resolved issue G7 `missing-adrs-index-node`: created `wiki/adrs/Index.md` as the navigational entry point for the ADR domain
 - resolved issue G8 `cleanser-index-false-positives`: exempted `index` and `reference` node types from the `cleanse --detect` compound-abstract detector
 - resolved issue G9 `raw-source-manifest`: added `wiki-compiler manifest` command and CSV-backed raw source tracking for file provenance
+- resolved issue G10 `delta-compile-workflow`: implemented stale node detection, draft stub generation, and draft promotion via `wiki-compiler drafts` and `SourceFacet`
 
 ## 2026-04-09
 
