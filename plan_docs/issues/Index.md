@@ -66,7 +66,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 23. [DONE] plan_docs/issues/unimplemented/context-graph-aware-routing.md
     • Upgrade context matching into graph-aware routing with ranking reasons.
     • Depends on: context-router-contract.
-24. plan_docs/issues/unimplemented/context-prose-bundles.md
+24. [DONE] plan_docs/issues/unimplemented/context-prose-bundles.md
     • Render LLM-ready context bundles with prose snippets and ranked explanations.
     • Depends on: context-router-contract, context-graph-aware-routing, context-checklists-and-rules, context-active-work-intersection.
 25. [DONE] plan_docs/issues/unimplemented/context-active-work-intersection.md

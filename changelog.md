@@ -27,6 +27,7 @@
 - resolved issue 20 `trail-collect-closeout`: implemented structured session signal extraction and routing via `TrailCollection` in the coordinator closeout step
 - resolved issue 22 `context-router-contract`: defined `ContextRequest` and `ContextBundle` contracts and refactored the context router to use them
 - resolved issue 23 `context-graph-aware-routing`: upgraded context routing to distinguish between direct matches, ancestors, and descendants with ranking scores and reasons
+- resolved issue 24 `context-prose-bundles`: implemented prose snippet hydration and refined markdown/JSON rendering for LLM-ready context bundles
 - resolved issue 25 `context-active-work-intersection`: implemented active-issue intersection in context bundles by matching subgraph nodes against `plan_docs/issues/`
 - resolved issue 26 `context-checklists-and-rules`: implemented operation-aware checklist selection and parsing from `wiki/standards/checklists.md` for context bundles
 

@@ -18,9 +18,10 @@ def get_context_bundle(
     request: ContextRequest
 ) -> ContextBundle:
     """
-    Graph-aware context routing with active issue intersection and checklists.
+    Graph-aware context routing with active issue intersection, checklists, and prose hydration.
     """
     graph = load_graph(graph_path)
+    project_root = graph_path.parent
     
     # 1. Identify seeds (direct matches)
     seeds = set(request.node_ids)
@@ -55,13 +56,14 @@ def get_context_bundle(
                 scores[descendant] = 0.6
                 rationale[descendant] = f"descendant_of_{node_id}"
 
-    # 3. Active Issue & Checklist Intersection
-    active_issues = match_active_issues(graph_path.parent, subgraph_node_ids, request.task_hint)
-    checklists = load_relevant_checklists(graph_path.parent, request.task_hint)
+    # 3. Intersection (Issues & Checklists)
+    active_issues = match_active_issues(project_root, subgraph_node_ids, request.task_hint)
+    checklists = load_relevant_checklists(project_root, request.task_hint)
 
     # 4. Filter and Build Bundle
     nodes: list[KnowledgeNode] = []
     edges: list[Edge] = []
+    prose: dict[str, str] = {}
     
     for node_id in sorted(subgraph_node_ids):
         node = load_knowledge_node(graph, node_id)
@@ -69,6 +71,13 @@ def get_context_bundle(
             continue
             
         nodes.append(node)
+        
+        # Hydrate prose for wiki nodes
+        if node_id.startswith("doc:"):
+            rel_path = node_id.removeprefix("doc:")
+            abs_path = project_root / rel_path
+            if abs_path.exists():
+                prose[node_id] = abs_path.read_text(encoding="utf-8")
         
         for _, target, data in graph.out_edges(node_id, data=True):
             if target in subgraph_node_ids:
@@ -80,7 +89,8 @@ def get_context_bundle(
         rationale=rationale, 
         scores=scores, 
         active_issues=active_issues,
-        checklists=checklists
+        checklists=checklists,
+        prose=prose
     )
 
 
@@ -91,12 +101,8 @@ def load_relevant_checklists(project_root: Path, task_hint: str | None) -> list[
         return []
         
     content = checklist_path.read_text(encoding="utf-8")
-    
-    # Simple regex-based parser for our known checklist structure
-    # In a real app, we might use a more robust markdown parser.
     checklists: list[Checklist] = []
     
-    # Basic mapping of task keywords to checklist names
     kw_to_checklist = {
         "issue": "issue-resolution",
         "resolve": "issue-resolution",
@@ -119,7 +125,6 @@ def load_relevant_checklists(project_root: Path, task_hint: str | None) -> list[
     if not selected_names:
         return []
         
-    # Extract sections starting with '### N. Name (`id`)'
     sections = re.split(r"### \d+\. ", content)
     for section in sections:
         match = re.match(r"(.*?) \(`(.*?)`\)", section)
@@ -127,7 +132,6 @@ def load_relevant_checklists(project_root: Path, task_hint: str | None) -> list[
             title, name = match.groups()
             if name in selected_names:
                 items = []
-                # Extract numbered list items: 1. **Desc?** (RULE) — ... `Verification:` ...
                 item_matches = re.findall(r"\d+\. \*\*(.*?)\*\* \((.*?)\) — .*?`Verification:` `(.*?)`", section, re.DOTALL)
                 for desc, rule, verify in item_matches:
                     items.append(ChecklistItem(description=desc, rule_id=rule, verification=verify))
@@ -148,8 +152,6 @@ def match_active_issues(
         return []
         
     relevant_issues: list[str] = []
-    
-    # Extract short names and stems from node IDs
     node_names = set()
     for node_id in subgraph_node_ids:
         node_names.add(node_id)
@@ -164,7 +166,6 @@ def match_active_issues(
         content = issue_file.read_text(encoding="utf-8").lower()
         rel_issue = issue_file.relative_to(project_root).as_posix()
         
-        # 1. Direct node ID, name, or stem match
         matched = False
         for name in node_names:
             if name.lower() in content:
@@ -174,7 +175,6 @@ def match_active_issues(
         if matched:
             continue
             
-        # 2. Task hint term match
         if task_hint:
             terms = [t.lower() for t in re.findall(r"[a-z0-9_]+", task_hint) if len(t) > 3]
             if any(term in content for term in terms):
@@ -286,27 +286,23 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
         blocks.append("\n".join(cl_blocks))
 
     for node in bundle.nodes:
-        identity = node.identity
-        semantics = node.semantics
-        ast = node.ast
-        compliance = node.compliance
+        node_id = node.identity.node_id
+        lines = [f"## `{node_id}`"]
+        lines.append(f"- type: `{node.identity.node_type}`")
+        if node.compliance and node.compliance.status:
+            lines.append(f"- status: `{node.compliance.status}`")
         
-        lines = [f"### `{identity.node_id}`"]
-        lines.append(f"- type: `{identity.node_type}`")
-        if compliance and compliance.status:
-            lines.append(f"- status: `{compliance.status}`")
-        
-        reason = bundle.rationale.get(identity.node_id, "unknown")
-        score = bundle.scores.get(identity.node_id, 0.0)
+        reason = bundle.rationale.get(node_id, "unknown")
+        score = bundle.scores.get(node_id, 0.0)
         lines.append(f"- routing: {reason} (score: {score:.2f})")
 
-        if semantics and semantics.intent:
-            lines.append(f"- intent: {semantics.intent}")
-            
-        if ast and ast.signatures:
-            lines.append(
-                f"- signatures: {', '.join(f'`{value}`' for value in ast.signatures)}"
-            )
+        if node_id in bundle.prose:
+            # Extract content between frontmatter separators
+            full_prose = bundle.prose[node_id]
+            body = re.sub(r"\A---\s*\n.*?\n---(\s*\n|$)", "", full_prose, flags=re.DOTALL).strip()
+            lines.append("\n" + body)
+        elif node.semantics and node.semantics.intent:
+            lines.append(f"- intent: {node.semantics.intent}")
             
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)

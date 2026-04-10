@@ -485,6 +485,9 @@ class ContextBundle(BaseModel):
     checklists: list[Checklist] = Field(
         default_factory=list, description="Relevant verification checklists."
     )
+    prose: dict[str, str] = Field(
+        default_factory=dict, description="Markdown prose for doc-backed nodes."
+    )
 
 
 class CleansingProposal(BaseModel):
