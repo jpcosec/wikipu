@@ -81,7 +81,7 @@ def get_context_bundle(
         
         for _, target, data in graph.out_edges(node_id, data=True):
             if target in subgraph_node_ids:
-                edges.append(Edge(target_id=target, relation_type=data.get("relation_type", "unknown")))
+                edges.append(Edge(target_id=target, relation_type=data.get("relation_type", "contains")))
                 
     return ContextBundle(
         nodes=nodes, 

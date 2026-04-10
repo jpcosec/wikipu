@@ -2,6 +2,8 @@
 
 ## 2026-04-10
 
+- resolved issue 32 `documentation-debt-resolution`: created documentation nodes for coordinator, session_storage, trails, preflight, gates, manifest, drafts, artifact_validation, and fixed scanner_plugins compliance
+
 - resolved issue G1 `perception-gates-phase-mislabel`: moved `perception-gates-and-classification` from Phase 4 to Phase 3 in `plan_docs/issues/Index.md` to reflect correct dependency order
 - resolved issue G2 `desk-directory-bootstrap`: created `desk/` directory with `Gates.md` table header, `proposals/` and `autopoiesis/cycles/` stubs, and `autopoiesis/Board.md` to support active operational state tracking
 - resolved issue G3 `dangling-issue-references`: replaced 6 dead references to `cross-session-memory.md` and `autopoiesis-loop-coordinator.md` in Phase 3 and Phase 4 issue files with their current atomic replacements

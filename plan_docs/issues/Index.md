@@ -20,7 +20,9 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  none
+  32. [DONE] plan_docs/issues/unimplemented/documentation-debt-resolution.md
+      • Resolve 147 undocumented nodes and the scanner_plugins.md compliance violation.
+      • Depends on: none.
 
 ┄┄┄ Phase 3 — Runtime and protocol
 
