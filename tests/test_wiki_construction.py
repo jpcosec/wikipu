@@ -35,7 +35,7 @@ def test_template_registry_stores_and_retrieves_template() -> None:
 
 def test_default_registry_has_standard_templates() -> None:
     registry = build_default_template_registry()
-    assert set(registry.node_types) >= {"concept", "how_to", "standard", "reference", "index"}
+    assert set(registry.node_types) >= {"concept", "how_to", "doc_standard", "reference", "index"}
 
 
 # --- Abstract extraction ---

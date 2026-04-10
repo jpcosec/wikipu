@@ -21,6 +21,7 @@
 - resolved issue 15 `gate-table-runtime`: implemented read/write helpers and sequential ID generation for the `desk/Gates.md` human-approval table
 - resolved issue 21 `perception-gates-and-classification`: implemented perturbation classification and gate-aware reporting in `wiki-compiler status`
 - resolved issue 16 `run-skeleton`: added `wiki-compiler run` and the initial autopoietic loop coordinator for safe, non-gated actions
+- resolved issue 17 `coordinator-gate-resume-flow`: implemented full gate pause/resume/apply orchestration in the coordinator, including approved proposal execution
 
 ## 2026-04-09
 

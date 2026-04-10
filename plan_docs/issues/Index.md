@@ -45,7 +45,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   16. [DONE] plan_docs/issues/unimplemented/run-skeleton.md
       • Add a safe first version of `wiki-compiler run`.
       • Depends on: perception-gates-and-classification.
-  17. plan_docs/issues/unimplemented/coordinator-gate-resume-flow.md
+  17. [DONE] plan_docs/issues/unimplemented/coordinator-gate-resume-flow.md
       • Add gate pause/resume/apply flow to the coordinator.
       • Depends on: gate-table-runtime, run-skeleton, cleansing-apply-and-advanced-detectors.
   18. plan_docs/issues/unimplemented/coordinator-identity-preflight.md

@@ -21,19 +21,33 @@ def load_gates(gates_path: Path) -> GateTable:
     # Simple markdown table parser
     lines = content.splitlines()
     for line in lines:
-        if not line.strip().startswith("|"):
+        stripped = line.strip()
+        if not stripped.startswith("|"):
             continue
-        if "gate_id" in line.lower() or "---" in line:
+        if "gate_id" in stripped.lower() or "---" in stripped:
             continue
             
-        parts = [p.strip() for p in line.split("|") if p.strip()]
+        # Split by | and filter out empty strings
+        raw_parts = [p.strip() for p in stripped.split("|")]
+        # For a 5-column table with outer pipes, we expect ['', col1, col2, col3, col4, col5, '']
+        # Filtered, it should be [col1, col2, col3, col4, col5]
+        parts = [p for p in raw_parts if p]
+        
         if len(parts) >= 5:
+            status_val = parts[4].lower().strip()
+            if "approved" in status_val:
+                status_val = "approved"
+            elif "rejected" in status_val:
+                status_val = "rejected"
+            else:
+                status_val = "open"
+                
             rows.append(GateRow(
                 gate_id=parts[0],
                 proposal=parts[1],
                 opened=parts[2],
                 description=parts[3],
-                status=parts[4].lower() # type: ignore
+                status=status_val # type: ignore
             ))
             
     return GateTable(gates=rows)
@@ -90,6 +104,6 @@ def update_gate_status(gates_path: Path, gate_id: str, status: str) -> None:
     table = load_gates(gates_path)
     for gate in table.gates:
         if gate.gate_id == gate_id:
-            gate.status = status # type: ignore
+            gate.status = status.lower().strip() # type: ignore
             break
     save_gates(gates_path, table)
