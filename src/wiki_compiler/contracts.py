@@ -423,6 +423,25 @@ class CycleHistory(BaseModel):
     cycles: list[CycleRecord] = Field(default_factory=list)
 
 
+class TrailArtifact(BaseModel):
+    """A durable fact or signal extracted during closeout."""
+
+    kind: Literal["decision", "gap", "correction", "new_concept", "rule_patch"] = Field(
+        description="The category of the extracted signal."
+    )
+    content: str = Field(description="The distilled fact or observation.")
+    destination: str = Field(
+        description="Target path or node where this fact was encoded (e.g. 'wiki/concepts/foo.md')."
+    )
+
+
+class TrailCollection(BaseModel):
+    """The aggregate output of a trail collect closeout step."""
+
+    session_id: str = Field(description="ID of the session or cycle being closed.")
+    artifacts: list[TrailArtifact] = Field(default_factory=list)
+
+
 class CleansingProposal(BaseModel):
     """A proposed corrective operation for an existing graph node."""
 

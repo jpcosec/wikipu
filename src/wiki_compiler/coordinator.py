@@ -39,6 +39,8 @@ def run_coordinator_cycle(
     executed_actions: list[str] = []
     
     def finalize(status: str, perturbations: int, actions: list[str], gates: list[str]):
+        from .trails import collect_cycle_trails, persist_trail
+        
         record = CycleRecord(
             cycle_id=cycle_id,
             timestamp=start_time,
@@ -47,10 +49,19 @@ def run_coordinator_cycle(
             actions_taken=actions,
             open_gates=gates
         )
+        # Write record to disk
         cycle_dir = project_root / "desk/autopoiesis/cycles"
         cycle_dir.mkdir(parents=True, exist_ok=True)
         (cycle_dir / f"{cycle_id}.json").write_text(record.model_dump_json(indent=2), encoding="utf-8")
-        return record.model_dump()
+        
+        # Trail Collect closeout
+        trail = collect_cycle_trails(cycle_id, actions, perturbations)
+        if trail.artifacts:
+            persist_trail(project_root, trail)
+            
+        result = record.model_dump()
+        result["trail_artifacts"] = [a.model_dump() for a in trail.artifacts]
+        return result
 
     # --- 1. Resume Flow ---
     processed_cleansing = False

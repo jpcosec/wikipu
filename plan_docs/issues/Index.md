@@ -54,7 +54,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   19. [DONE] plan_docs/issues/unimplemented/cycle-record-persistence.md
       • Persist a minimal cycle record for each coordinator run.
       • Depends on: run-skeleton.
-  20. plan_docs/issues/unimplemented/trail-collect-closeout.md
+  20. [DONE] plan_docs/issues/unimplemented/trail-collect-closeout.md
       • Add trail collect as the coordinator closeout step.
       • Depends on: coordinator-gate-resume-flow, cycle-record-persistence.
 
