@@ -63,10 +63,10 @@ Foundation, interface, and generation layers are functional. The immediate goals
 22. [DONE] plan_docs/issues/unimplemented/context-router-contract.md
     • Define the stable CLI contract and bundle schema for context routing.
     • Depends on: none.
-23. plan_docs/issues/unimplemented/context-graph-aware-routing.md
+23. [DONE] plan_docs/issues/unimplemented/context-graph-aware-routing.md
     • Upgrade context matching into graph-aware routing with ranking reasons.
     • Depends on: context-router-contract.
-24. plan_docs/issues/unimplemented/context-checklists-and-rules.md
+24. plan_docs/issues/unimplemented/context-prose-bundles.md
     • Attach operation-aware checklists and governing rules to context bundles.
     • Depends on: context-router-contract.
 25. plan_docs/issues/unimplemented/context-active-work-intersection.md

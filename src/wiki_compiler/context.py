@@ -18,31 +18,85 @@ def get_context_bundle(
     request: ContextRequest
 ) -> ContextBundle:
     """
-    Core context routing logic. Returns a structured ContextBundle.
+    Graph-aware context routing. 
+    Distinguishes direct matches, ancestors, descendants, and related nodes.
     """
     graph = load_graph(graph_path)
-    selected = request.node_ids or match_nodes_from_task(graph_path, request.task_hint)
-    subgraph_node_ids = collect_neighborhood(graph, selected, request.depth)
     
+    # 1. Identify seeds (direct matches)
+    seeds = set(request.node_ids)
+    if request.task_hint:
+        seeds.update(match_nodes_from_task(graph_path, request.task_hint))
+    
+    # 2. Score and categorize
+    scores: dict[str, float] = {}
+    rationale: dict[str, str] = {}
+    subgraph_node_ids: set[str] = set()
+    
+    # Direct matches
+    for node_id in seeds:
+        if node_id in graph:
+            scores[node_id] = 1.0
+            rationale[node_id] = "direct_match"
+            subgraph_node_ids.add(node_id)
+            
+    # Ancestors (dependencies)
+    for node_id in list(subgraph_node_ids):
+        # We'll use a simple BFS for depth
+        for ancestor in collect_neighborhood_by_direction(graph, {node_id}, request.depth, direction="incoming"):
+            if ancestor not in subgraph_node_ids:
+                subgraph_node_ids.add(ancestor)
+                scores[ancestor] = 0.8
+                rationale[ancestor] = f"ancestor_of_{node_id}"
+                
+    # Descendants (dependents)
+    for node_id in list(seeds):
+        for descendant in collect_neighborhood_by_direction(graph, {node_id}, request.depth, direction="outgoing"):
+            if descendant not in subgraph_node_ids:
+                subgraph_node_ids.add(descendant)
+                scores[descendant] = 0.6
+                rationale[descendant] = f"descendant_of_{node_id}"
+
+    # 3. Filter and Build Bundle
     nodes: list[KnowledgeNode] = []
     edges: list[Edge] = []
-    rationale: dict[str, str] = {}
     
     for node_id in sorted(subgraph_node_ids):
         node = load_knowledge_node(graph, node_id)
-        status = node.compliance.status if node.compliance else None
-        if status == "planned" and not request.include_planned:
+        if node.compliance and node.compliance.status == "planned" and not request.include_planned:
             continue
             
         nodes.append(node)
-        rationale[node_id] = "selected_by_neighborhood" if node_id in selected else "neighbor"
         
-        # Collect edges where both ends are in the subgraph
+        # Collect edges between nodes in the bundle
         for _, target, data in graph.out_edges(node_id, data=True):
             if target in subgraph_node_ids:
                 edges.append(Edge(target_id=target, relation_type=data.get("relation_type", "unknown")))
                 
-    return ContextBundle(nodes=nodes, edges=edges, rationale=rationale)
+    return ContextBundle(nodes=nodes, edges=edges, rationale=rationale, scores=scores)
+
+
+def collect_neighborhood_by_direction(graph, starting_nodes: set[str], depth: int, direction: str) -> set[str]:
+    visited = set()
+    queue = deque((node_id, 0) for node_id in starting_nodes)
+    while queue:
+        node_id, level = queue.popleft()
+        if level >= depth:
+            continue
+        
+        neighbors = set()
+        if direction == "incoming":
+            neighbors = set(graph.predecessors(node_id))
+        elif direction == "outgoing":
+            neighbors = set(graph.successors(node_id))
+        else:
+            neighbors = set(graph.predecessors(node_id)) | set(graph.successors(node_id))
+            
+        for neighbor in neighbors:
+            if neighbor not in visited and neighbor not in starting_nodes:
+                visited.add(neighbor)
+                queue.append((neighbor, level + 1))
+    return visited
 
 
 def render_context(
@@ -99,21 +153,9 @@ def match_nodes_from_task(graph_path: Path, task_hint: str | None) -> list[str]:
 
 def collect_neighborhood(graph, starting_nodes: list[str], depth: int) -> set[str]:
     """
-    Expands a set of starting nodes by traversing the graph up to a specified depth.
+    Legacy helper for backward compatibility.
     """
-    visited = set(starting_nodes)
-    queue = deque((node_id, 0) for node_id in starting_nodes)
-    while queue:
-        node_id, level = queue.popleft()
-        if level >= depth:
-            continue
-        neighbors = set(graph.predecessors(node_id)) | set(graph.successors(node_id))
-        for neighbor in neighbors:
-            if neighbor in visited:
-                continue
-            visited.add(neighbor)
-            queue.append((neighbor, level + 1))
-    return visited
+    return collect_neighborhood_by_direction(graph, set(starting_nodes), depth, direction="both") | set(starting_nodes)
 
 
 def render_markdown_bundle(bundle: ContextBundle) -> str:
@@ -131,6 +173,11 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
         lines.append(f"- type: `{identity.node_type}`")
         if compliance and compliance.status:
             lines.append(f"- status: `{compliance.status}`")
+        
+        reason = bundle.rationale.get(identity.node_id, "unknown")
+        score = bundle.scores.get(identity.node_id, 0.0)
+        lines.append(f"- routing: {reason} (score: {score:.2f})")
+
         if semantics and semantics.intent:
             lines.append(f"- intent: {semantics.intent}")
             
@@ -139,7 +186,5 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
                 f"- signatures: {', '.join(f'`{value}`' for value in ast.signatures)}"
             )
             
-        # Simplistic edge rendering for now
-        # In a real graph, we'd need source_id in Edge to render properly per-node
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)

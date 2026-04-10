@@ -26,6 +26,7 @@
 - resolved issue 19 `cycle-record-persistence`: implemented durable coordinator run history via `CycleRecord` JSON persistence in `desk/autopoiesis/cycles/`
 - resolved issue 20 `trail-collect-closeout`: implemented structured session signal extraction and routing via `TrailCollection` in the coordinator closeout step
 - resolved issue 22 `context-router-contract`: defined `ContextRequest` and `ContextBundle` contracts and refactored the context router to use them
+- resolved issue 23 `context-graph-aware-routing`: upgraded context routing to distinguish between direct matches, ancestors, and descendants with ranking scores and reasons
 
 ## 2026-04-09
 

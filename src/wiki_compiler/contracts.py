@@ -459,6 +459,9 @@ class ContextBundle(BaseModel):
     rationale: dict[str, str] = Field(
         default_factory=dict, description="Reasoning for each node's inclusion."
     )
+    scores: dict[str, float] = Field(
+        default_factory=dict, description="Relevance score for each node."
+    )
 
 
 class CleansingProposal(BaseModel):
