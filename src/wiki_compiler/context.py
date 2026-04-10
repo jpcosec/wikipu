@@ -10,7 +10,7 @@ from collections import deque
 from pathlib import Path
 
 from .graph_utils import load_graph, load_knowledge_node
-from .contracts import ContextRequest, ContextBundle, Edge, KnowledgeNode
+from .contracts import ContextRequest, ContextBundle, Edge, KnowledgeNode, Checklist, ChecklistItem
 
 
 def get_context_bundle(
@@ -18,7 +18,7 @@ def get_context_bundle(
     request: ContextRequest
 ) -> ContextBundle:
     """
-    Graph-aware context routing with active issue intersection.
+    Graph-aware context routing with active issue intersection and checklists.
     """
     graph = load_graph(graph_path)
     
@@ -55,8 +55,9 @@ def get_context_bundle(
                 scores[descendant] = 0.6
                 rationale[descendant] = f"descendant_of_{node_id}"
 
-    # 3. Active Issue Intersection
+    # 3. Active Issue & Checklist Intersection
     active_issues = match_active_issues(graph_path.parent, subgraph_node_ids, request.task_hint)
+    checklists = load_relevant_checklists(graph_path.parent, request.task_hint)
 
     # 4. Filter and Build Bundle
     nodes: list[KnowledgeNode] = []
@@ -78,8 +79,62 @@ def get_context_bundle(
         edges=edges, 
         rationale=rationale, 
         scores=scores, 
-        active_issues=active_issues
+        active_issues=active_issues,
+        checklists=checklists
     )
+
+
+def load_relevant_checklists(project_root: Path, task_hint: str | None) -> list[Checklist]:
+    """Parses checklists.md and selects those relevant to the task."""
+    checklist_path = project_root / "wiki/standards/checklists.md"
+    if not checklist_path.exists():
+        return []
+        
+    content = checklist_path.read_text(encoding="utf-8")
+    
+    # Simple regex-based parser for our known checklist structure
+    # In a real app, we might use a more robust markdown parser.
+    checklists: list[Checklist] = []
+    
+    # Basic mapping of task keywords to checklist names
+    kw_to_checklist = {
+        "issue": "issue-resolution",
+        "resolve": "issue-resolution",
+        "wiki": "new-wiki-node",
+        "node": "new-wiki-node",
+        "module": "new-module",
+        "topology": "new-module",
+        "structure": "structural-change",
+        "refactor": "structural-change",
+        "session": "session-close",
+        "finish": "session-close",
+    }
+    
+    selected_names = set()
+    if task_hint:
+        for kw, name in kw_to_checklist.items():
+            if kw in task_hint.lower():
+                selected_names.add(name)
+    
+    if not selected_names:
+        return []
+        
+    # Extract sections starting with '### N. Name (`id`)'
+    sections = re.split(r"### \d+\. ", content)
+    for section in sections:
+        match = re.match(r"(.*?) \(`(.*?)`\)", section)
+        if match:
+            title, name = match.groups()
+            if name in selected_names:
+                items = []
+                # Extract numbered list items: 1. **Desc?** (RULE) — ... `Verification:` ...
+                item_matches = re.findall(r"\d+\. \*\*(.*?)\*\* \((.*?)\) — .*?`Verification:` `(.*?)`", section, re.DOTALL)
+                for desc, rule, verify in item_matches:
+                    items.append(ChecklistItem(description=desc, rule_id=rule, verification=verify))
+                
+                checklists.append(Checklist(name=name, items=items))
+                
+    return checklists
 
 
 def match_active_issues(
@@ -218,6 +273,17 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
     
     if bundle.active_issues:
         blocks.append("## Relevant Active Issues\n" + "\n".join(f"- `{i}`" for i in bundle.active_issues))
+
+    if bundle.checklists:
+        cl_blocks = ["## Verification Checklists"]
+        for cl in bundle.checklists:
+            cl_blocks.append(f"### {cl.name}")
+            for item in cl.items:
+                rule_info = f" ({item.rule_id})" if item.rule_id else ""
+                cl_blocks.append(f"- [ ] **{item.description}**{rule_info}")
+                if item.verification:
+                    cl_blocks.append(f"  - `Verification:` `{item.verification}`")
+        blocks.append("\n".join(cl_blocks))
 
     for node in bundle.nodes:
         identity = node.identity

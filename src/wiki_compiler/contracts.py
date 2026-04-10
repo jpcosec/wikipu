@@ -451,6 +451,23 @@ class ContextRequest(BaseModel):
     include_planned: bool = Field(default=False)
 
 
+class ChecklistItem(BaseModel):
+    """A single item in a verification checklist."""
+
+    description: str = Field(description="What needs to be checked.")
+    rule_id: str | None = Field(default=None, description="The House Rule ID being enforced.")
+    verification: str | None = Field(
+        default=None, description="The command or method to verify the item."
+    )
+
+
+class Checklist(BaseModel):
+    """A collection of items for verifying a specific operation."""
+
+    name: str = Field(description="The unique name of the checklist.")
+    items: list[ChecklistItem] = Field(default_factory=list)
+
+
 class ContextBundle(BaseModel):
     """The stable output schema for the context router."""
 
@@ -464,6 +481,9 @@ class ContextBundle(BaseModel):
     )
     active_issues: list[str] = Field(
         default_factory=list, description="Paths to relevant active issue files."
+    )
+    checklists: list[Checklist] = Field(
+        default_factory=list, description="Relevant verification checklists."
     )
 
 
