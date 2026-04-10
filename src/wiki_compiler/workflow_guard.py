@@ -77,15 +77,19 @@ def read_git_changes(project_root: Path) -> list[FileChange]:
 
 
 def read_current_branch(project_root: Path) -> str:
-    """Return the current git branch name."""
-    result = subprocess.run(
-        ["git", "branch", "--show-current"],
-        cwd=project_root,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return result.stdout.strip()
+    """Return the current git branch name, or 'unknown' if not in a git repo."""
+    try:
+        result = subprocess.run(
+            ["git", "branch", "--show-current"],
+            cwd=project_root,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip() or "main"
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return "unknown"
+
 
 
 def guard_workflow(

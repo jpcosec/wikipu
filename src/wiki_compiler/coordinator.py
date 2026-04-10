@@ -40,6 +40,11 @@ def run_coordinator_cycle(
     
     def finalize(status: str, perturbations: int, actions: list[str], gates: list[str]):
         from .trails import collect_cycle_trails, persist_trail
+        from .session_storage import save_session_log
+        from .contracts import SessionLog
+        from .workflow_guard import read_current_branch
+        
+        end_time = datetime.now().isoformat()
         
         record = CycleRecord(
             cycle_id=cycle_id,
@@ -59,8 +64,21 @@ def run_coordinator_cycle(
         if trail.artifacts:
             persist_trail(project_root, trail)
             
+        # Create and save SessionLog
+        log = SessionLog(
+            session_id=cycle_id,
+            start_time=start_time,
+            end_time=end_time,
+            branch=read_current_branch(project_root),
+            resolved_issues=[a.split("_")[-1] for a in actions if a.startswith("applied_cleansing")],
+            pending_issues=gates,
+            trails=trail
+        )
+        save_session_log(project_root, log)
+            
         result = record.model_dump()
         result["trail_artifacts"] = [a.model_dump() for a in trail.artifacts]
+        result["session_log_path"] = f"desk/autopoiesis/sessions/{cycle_id}.json"
         return result
 
     # --- 1. Resume Flow ---

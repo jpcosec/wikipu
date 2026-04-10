@@ -84,7 +84,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 29. [DONE] plan_docs/issues/unimplemented/history-command.md
     • Add `wiki-compiler history` as a read-only session-log aggregator.
     • Depends on: session-log-schema, session-log-storage.
-30. plan_docs/issues/unimplemented/trail-collect-session-log.md
+30. [DONE] plan_docs/issues/unimplemented/trail-collect-session-log.md
     • Write session logs from the trail collect closeout path.
     • Depends on: session-log-schema, session-log-storage, trail-collect-closeout.
 31. plan_docs/issues/unimplemented/session-resume-from-log.md

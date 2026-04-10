@@ -33,6 +33,7 @@
 - resolved issue 27 `session-log-schema`: defined `SessionLog` and `TrailArtifact` contracts for cross-session memory
 - resolved issue 28 `session-log-storage`: implemented session log persistence and discovery helpers with canonical paths in `desk/autopoiesis/sessions/`
 - resolved issue 29 `history-command`: added `wiki-compiler history` to summarize development session logs and extracted trail artifacts
+- resolved issue 30 `trail-collect-session-log`: integrated `SessionLog` generation into the coordinator's trail collection closeout step
 
 ## 2026-04-09
 
