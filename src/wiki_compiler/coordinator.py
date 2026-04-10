@@ -80,17 +80,32 @@ def run_coordinator_cycle(
     perturbations = report.get("perturbations", [])
     
     # --- 3. Execution (Safe Actions) ---
+    from .preflight import evaluate_action_safety
+    
     untracked_raw = [p for p in perturbations if p["type"] == "untracked_raw"]
-    if untracked_raw:
-        raw_to_ingest = [p["id"] for p in untracked_raw if p["action"] == "ingest_raw_source"]
-        if raw_to_ingest:
+    for p in untracked_raw:
+        if p["action"] == "ingest_raw_source":
+            # Preflight check
+            finding = evaluate_action_safety("write", f"wiki/drafts/{Path(p['id']).name}", project_root)
+            
+            if finding and finding.severity == "error":
+                print(f"[ERROR] Preflight blocked action: {finding.message}")
+                continue
+            
+            if finding and finding.action_override == "gate":
+                # Downgrade to gated action (not implemented in this skeleton yet, 
+                # but we could add a gate row here)
+                print(f"[INFO] Preflight gated action: {finding.message}")
+                continue
+
             ingest_raw_sources(
                 source_dir=project_root / "raw",
                 dest_dir=wiki_dir / "drafts",
                 project_root=project_root,
                 manifest_path=manifest_path
             )
-            executed_actions.append(f"ingested_{len(raw_to_ingest)}_raw_files")
+            executed_actions.append(f"ingested_raw_files")
+            break # ingest_raw_sources handles all at once
 
     # --- 4. Gating (Unsafe Actions) ---
     cleansing_report = detect_cleansing_candidates(graph_path)

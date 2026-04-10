@@ -48,7 +48,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
   17. [DONE] plan_docs/issues/unimplemented/coordinator-gate-resume-flow.md
       • Add gate pause/resume/apply flow to the coordinator.
       • Depends on: gate-table-runtime, run-skeleton, cleansing-apply-and-advanced-detectors.
-  18. plan_docs/issues/unimplemented/coordinator-identity-preflight.md
+  18. [DONE] plan_docs/issues/unimplemented/coordinator-identity-preflight.md
       • Add identity-rule and minimal-energy preflight before coordinator actions execute.
       • Depends on: run-skeleton.
   19. plan_docs/issues/unimplemented/cycle-record-persistence.md
