@@ -10,6 +10,7 @@
 - resolved issue G6 `find-by-io-not-found-guard`: added explicit file-existence check to `validate-wiki` to distinguish missing files from malformed frontmatter
 - resolved issue G7 `missing-adrs-index-node`: created `wiki/adrs/Index.md` as the navigational entry point for the ADR domain
 - resolved issue G8 `cleanser-index-false-positives`: exempted `index` and `reference` node types from the `cleanse --detect` compound-abstract detector
+- resolved issue G9 `raw-source-manifest`: added `wiki-compiler manifest` command and CSV-backed raw source tracking for file provenance
 
 ## 2026-04-09
 

@@ -351,6 +351,26 @@ class ArtifactValidationReport(BaseModel):
     )
 
 
+class RawSourceEntry(BaseModel):
+    """Entry in the raw source manifest."""
+
+    filename: str = Field(description="The name of the raw source file.")
+    path: str = Field(description="The relative path to the file from project root.")
+    file_kind: str = Field(description="The kind of file (e.g., 'pdf', 'md', 'txt').")
+    content_hash: str = Field(description="SHA-256 hash of the file content.")
+    status: Literal["new", "processed", "ignored"] = Field(
+        default="new", description="The processing status of the source."
+    )
+    created: str = Field(description="ISO-8601 timestamp of when the entry was created.")
+    notes: str = Field(default="", description="Optional notes about the source.")
+
+
+class RawSourceManifest(BaseModel):
+    """The manifest tracking all raw source files."""
+
+    entries: list[RawSourceEntry] = Field(default_factory=list)
+
+
 class CleansingProposal(BaseModel):
     """A proposed corrective operation for an existing graph node."""
 

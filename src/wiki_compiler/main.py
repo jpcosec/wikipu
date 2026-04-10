@@ -249,6 +249,19 @@ def main() -> None:
                 sys.exit(1)
             print("[OK] Workflow discipline checks passed.")
             return
+        if args.command == "manifest":
+            from .manifest import add_to_manifest
+
+            if args.add:
+                entry = add_to_manifest(
+                    project_root=Path("."),
+                    manifest_path=Path(args.manifest),
+                    source_path=Path(args.add),
+                    notes=args.notes,
+                )
+                print(f"[OK] Registered {entry.path} in {args.manifest}")
+                return
+            raise ValueError("manifest requires --add <path>")
         if args.command == "status":
             report = build_status_report(
                 graph_path=Path(args.graph),
@@ -484,6 +497,24 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     subparsers.add_parser("init", help="Initialize the base wikipu structure")
+
+    # --- manifest ---
+    manifest_parser = subparsers.add_parser(
+        "manifest",
+        help="Manage the raw source manifest for file provenance.",
+    )
+    manifest_parser.add_argument(
+        "--add", help="Relative path to a raw source file to register."
+    )
+    manifest_parser.add_argument(
+        "--manifest",
+        default="manifests/raw_sources.csv",
+        help="Path to the CSV manifest file.",
+    )
+    manifest_parser.add_argument(
+        "--notes", default="", help="Optional notes for the manifest entry."
+    )
+
     return parser
 
 
