@@ -20,9 +20,6 @@ Foundation, interface, and generation layers are functional. The immediate goals
 
 ┄┄┄ Gap issues (no dependencies — fix before starting phase work)
 
-  G11. plan_docs/issues/gaps/ci-enforcement.md
-       • Add GitHub Actions workflow to run build/audit/check-workflow on every push.
-       • Depends on: none.
   G12. plan_docs/issues/gaps/bootstrap-upgrade-lifecycle.md
        • Add bootstrap scaffolding command and upgrade path for existing projects.
        • Depends on: none.
