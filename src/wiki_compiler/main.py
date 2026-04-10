@@ -276,7 +276,32 @@ def main() -> None:
 
             upgrade_repository(project_root=Path("."))
             return
-        if args.command == "check-workflow":
+        if args.command == "history":
+            from .session_storage import list_sessions
+
+            sessions = list_sessions(Path(args.project_root))
+            recent = sessions[-args.limit :]
+            if not recent:
+                print("No session history found.")
+                return
+
+            print(f"## Session History (showing last {len(recent)})\n")
+            for s in reversed(recent):
+                print(f"### Session: {s.session_id}")
+                print(f"- Time: {s.start_time}")
+                if s.branch:
+                    print(f"- Branch: {s.branch}")
+                if s.resolved_issues:
+                    print(f"- Resolved: {', '.join(s.resolved_issues)}")
+                if s.pending_issues:
+                    print(f"- Pending: {', '.join(s.pending_issues)}")
+                if s.trails and s.trails.artifacts:
+                    print("- Trails:")
+                    for a in s.trails.artifacts:
+                        print(f"  - [{a.kind}] {a.content} -> {a.destination}")
+                print("")
+            return
+        if args.command == "run":
             report = guard_workflow(
                 read_git_changes(Path(args.project_root)),
                 branch_name=read_current_branch(Path(args.project_root)),
@@ -650,6 +675,18 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser(
         "upgrade",
         help="Upgrade an existing project to the latest structure.",
+    )
+
+    # --- history ---
+    history_parser = subparsers.add_parser(
+        "history",
+        help="Summarize session log history.",
+    )
+    history_parser.add_argument(
+        "--limit", type=int, default=10, help="Max number of sessions to show."
+    )
+    history_parser.add_argument(
+        "--project-root", default=".", help="Project root directory"
     )
 
     # --- run ---

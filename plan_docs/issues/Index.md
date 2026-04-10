@@ -81,7 +81,7 @@ Foundation, interface, and generation layers are functional. The immediate goals
 28. [DONE] plan_docs/issues/unimplemented/session-log-storage.md
     • Add session-log storage helpers and canonical paths under `desk/autopoiesis/`.
     • Depends on: session-log-schema.
-29. plan_docs/issues/unimplemented/history-command.md
+29. [DONE] plan_docs/issues/unimplemented/history-command.md
     • Add `wiki-compiler history` as a read-only session-log aggregator.
     • Depends on: session-log-schema, session-log-storage.
 30. plan_docs/issues/unimplemented/trail-collect-session-log.md
