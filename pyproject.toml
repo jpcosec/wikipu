@@ -3,10 +3,10 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "wikipu"
+name = "llm-wiki-compiler"
 version = "1.0.0"
-description = "Knowledge Graph compiler for LLM-driven development. Enforces structural integrity and builds deterministic NetworkX graphs."
-authors = [{name = "JP", email = "jp@example.com"}]
+description = "A Knowledge Graph compiler for LLM-driven development"
+authors = [{name = "Your Name", email = "your@email.com"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -16,4 +16,8 @@ dependencies = [
 ]
 
 [project.scripts]
+# This exposes the 'wiki-compiler' command in the terminal for installation.
 wiki-compiler = "wiki_compiler.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

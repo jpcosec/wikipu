@@ -1,37 +1,18 @@
 # Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Environment
-.env
-.venv
-env/
-venv/
-ENV/
+**/__pycache__/
+*.pyc
 
 # IDEs
 .vscode/
 .idea/
-.obsidian/
+.pytest_cache/
+.ruff_cache/
+.trash/
+logs/
+.serena/
 
-# wikipu artifacts
-knowledge_graph.json
-docs/compiled/
+# Obsidian (Share graph UI, ignore personal workspace)
+.obsidian/workspace.json
+.obsidian/workspace
+.obsidian/workspace-mobile.json
+.obsidian/core-plugins.json

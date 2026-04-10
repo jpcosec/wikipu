@@ -2,14 +2,91 @@ Metadata-Version: 2.4
 Name: llm-wiki-compiler
 Version: 1.0.0
 Summary: A Knowledge Graph compiler for LLM-driven development
-Author-email: JP <jp@example.com>
+Author-email: Your Name <your@email.com>
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 Requires-Dist: pydantic>=2.0.0
 Requires-Dist: PyYAML>=6.0
 Requires-Dist: networkx>=3.0
 
-# LLM Wiki Compiler
+# wikipu
 
-A Knowledge Graph compiler for LLM-driven development. 
-Implements the Hausordnung laws and builds a NetworkX-based graph for agent reasoning.
+`wikipu` is a small Knowledge Graph compiler for LLM-oriented repositories. It bakes Markdown from `wiki_source/`, exports a NetworkX JSON graph, and keeps the documentation layer aligned with the repository's house rules.
+
+## Installation
+
+Install the CLI from the repository root:
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+Initialize the base repository structure:
+
+```bash
+wiki-compiler init
+```
+
+Scaffold a new module without hand-building the skeleton:
+
+```bash
+wiki-compiler scaffold --module src/core/auth --intent "Manage user authentication"
+```
+
+Compile the wiki source, scan Python code, bake docs, and emit the graph artifact:
+
+```bash
+wiki-compiler build --source wiki_source/nodes --dest docs/compiled --graph knowledge_graph.json
+```
+
+Query the exported graph at runtime:
+
+```bash
+wiki-compiler query --graph knowledge_graph.json --type get_descendants --node-id file:src/wiki_compiler/builder.py
+```
+
+Validate a `TopologyProposal` before scaffolding new code:
+
+```bash
+wiki-compiler validate --proposal proposal.json --graph knowledge_graph.json
+```
+
+Render focused Markdown or JSON context for a subagent:
+
+```bash
+wiki-compiler context --graph knowledge_graph.json --nodes file:src/wiki_compiler/builder.py --depth 1
+```
+
+Draft reviewable wiki nodes from `raw/`:
+
+```bash
+wiki-compiler ingest --source raw --dest wiki_source/nodes
+```
+
+## Key Files
+
+- `docs/standards/00_house_rules.md` is the canonical repository rule set.
+- `docs/domain_glossary.yaml` defines shared vocabulary used by the compiler and future validators.
+- `wiki_source/nodes/` contains source wiki nodes with YAML frontmatter and transclusions.
+- `agents/librarian/intro.md` is the canonical librarian-agent operating guide.
+- `docs/adrs/` stores architectural decision records.
+- `plan_docs/` contains ephemeral execution plans and issue breakdowns.
+
+## Repository Layout
+
+- `src/wiki_compiler/` - CLI and graph build implementation
+- `wiki_source/` - source Markdown nodes
+- `docs/` - durable documentation and ADRs
+- `agents/` - agent-facing operational guidance
+- `raw/` - immutable source material
+
+## Current Runtime Capabilities
+
+- Python source scanning for modules, classes, and functions with AST, semantic, I/O, and exemption facets.
+- `.wikiignore` exemptions and compliance baseline scoring during `build`.
+- Graph querying, topology validation, and focused context rendering from `knowledge_graph.json`.
+- Safe raw-ingestion scaffolding that creates planned draft wiki nodes for human review.
+
+Major documentation changes are recorded in `changelog.md`.

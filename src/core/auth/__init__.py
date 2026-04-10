@@ -1,1 +1,0 @@
-# Superficie pública de auth

@@ -1,0 +1,53 @@
+# Domain Glossary (wikipu)
+# Format:
+# MainConcept:
+#   description: "Strict definition"
+#   synonyms: ["term1", "term2"]
+
+KnowledgeNode:
+  description: "Canonical graph entity composed of identity, edges, and optional facets."
+  synonyms: ["Node"]
+
+KnowledgeGraph:
+  description: "The directed repository graph exported by the compiler for navigation and validation."
+  synonyms: ["Meta-Graph", "Graph"]
+
+WikiNode:
+  description: "Markdown source document in `wiki/` that compiles into a KnowledgeNode."
+  synonyms: ["Source Node"]
+
+Edge:
+  description: "Directed relation between two graph nodes such as `contains`, `depends_on`, or `transcludes`."
+  synonyms: ["Relation"]
+
+Facet:
+  description: "Optional dimension attached to a node, such as semantic, AST, I/O, compliance, or ADR metadata."
+  synonyms: ["Node Facet"]
+
+Transclusion:
+  description: "`![[...]]` embedding syntax used in wiki source so shared knowledge is maintained once and baked into compiled docs."
+  synonyms: ["Atomic Transclusion"]
+
+TopologyProposal:
+  description: "Pre-implementation design contract submitted to check orthogonality before scaffolding or coding new modules."
+  synonyms: ["Proposal"]
+
+CollisionReport:
+  description: "Validator response describing whether a proposal is orthogonal and which existing nodes collide with it."
+  synonyms: ["Orthogonality Report"]
+
+ComplianceScore:
+  description: "Aggregate quality signal used by repository policy to detect whether graph compliance regressed."
+  synonyms: ["Compliance Metric"]
+
+Scaffolding:
+  description: "CLI-generated starter module structure that creates required files without manual skeleton creation."
+  synonyms: ["Module Skeleton"]
+
+SystemIdentity:
+  description: "Immutable node identity contract containing the stable node ID and allowed node type."
+  synonyms: ["Identity"]
+
+LibrarianAgent:
+  description: "The repository agent persona that navigates the knowledge graph before answering or changing code."
+  synonyms: ["Librarian", "Knowledge Architect"]

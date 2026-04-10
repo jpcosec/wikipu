@@ -1,0 +1,57 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "query_knowledge_graph",
+      "description": "Queries the Knowledge Graph through the canonical `wiki-compiler query` runtime instead of reading individual Markdown files.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query_type": {
+            "type": "string",
+            "enum": ["get_node", "get_ancestors", "get_descendants", "find_by_io"],
+            "description": "The type of topological query."
+          },
+          "node_id": {
+            "type": "string",
+            "description": "Node ID (e.g., 'file:src/core/auth'). Required for ancestors/descendants."
+          },
+          "relation_filter": {
+            "type": "string",
+            "description": "Filter by edge (e.g., 'writes_to', 'depends_on')."
+          }
+        },
+        "required": ["query_type"]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "submit_topology_proposal",
+      "description": "Submits a new module design to `wiki-compiler` for orthogonality validation. It has a strict limit of 3 attempts.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "proposed_module_name": { "type": "string" },
+          "intent": { "type": "string" },
+          "glossary_terms_used": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "proposed_inputs": {
+            "type": "array",
+            "description": "List of input I/O (medium, path_template, schema_ref)",
+            "items": { "type": "object" }
+          },
+          "proposed_outputs": {
+            "type": "array",
+            "description": "List of output I/O",
+            "items": { "type": "object" }
+          }
+        },
+        "required": ["proposed_module_name", "intent", "proposed_inputs", "proposed_outputs"]
+      }
+    }
+  }
+]
