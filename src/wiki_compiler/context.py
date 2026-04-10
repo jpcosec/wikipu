@@ -18,8 +18,7 @@ def get_context_bundle(
     request: ContextRequest
 ) -> ContextBundle:
     """
-    Graph-aware context routing. 
-    Distinguishes direct matches, ancestors, descendants, and related nodes.
+    Graph-aware context routing with active issue intersection.
     """
     graph = load_graph(graph_path)
     
@@ -42,7 +41,6 @@ def get_context_bundle(
             
     # Ancestors (dependencies)
     for node_id in list(subgraph_node_ids):
-        # We'll use a simple BFS for depth
         for ancestor in collect_neighborhood_by_direction(graph, {node_id}, request.depth, direction="incoming"):
             if ancestor not in subgraph_node_ids:
                 subgraph_node_ids.add(ancestor)
@@ -57,7 +55,10 @@ def get_context_bundle(
                 scores[descendant] = 0.6
                 rationale[descendant] = f"descendant_of_{node_id}"
 
-    # 3. Filter and Build Bundle
+    # 3. Active Issue Intersection
+    active_issues = match_active_issues(graph_path.parent, subgraph_node_ids, request.task_hint)
+
+    # 4. Filter and Build Bundle
     nodes: list[KnowledgeNode] = []
     edges: list[Edge] = []
     
@@ -68,12 +69,63 @@ def get_context_bundle(
             
         nodes.append(node)
         
-        # Collect edges between nodes in the bundle
         for _, target, data in graph.out_edges(node_id, data=True):
             if target in subgraph_node_ids:
                 edges.append(Edge(target_id=target, relation_type=data.get("relation_type", "unknown")))
                 
-    return ContextBundle(nodes=nodes, edges=edges, rationale=rationale, scores=scores)
+    return ContextBundle(
+        nodes=nodes, 
+        edges=edges, 
+        rationale=rationale, 
+        scores=scores, 
+        active_issues=active_issues
+    )
+
+
+def match_active_issues(
+    project_root: Path, 
+    subgraph_node_ids: set[str], 
+    task_hint: str | None
+) -> list[str]:
+    """Finds active issues in plan_docs/issues/ relevant to the current context."""
+    issues_dir = project_root / "plan_docs/issues/unimplemented"
+    if not issues_dir.exists():
+        return []
+        
+    relevant_issues: list[str] = []
+    
+    # Extract short names and stems from node IDs
+    node_names = set()
+    for node_id in subgraph_node_ids:
+        node_names.add(node_id)
+        if ":" in node_id:
+            val = node_id.split(":", 1)[1]
+            node_names.add(val)
+            stem = Path(val).stem
+            if len(stem) > 3:
+                node_names.add(stem)
+    
+    for issue_file in issues_dir.rglob("*.md"):
+        content = issue_file.read_text(encoding="utf-8").lower()
+        rel_issue = issue_file.relative_to(project_root).as_posix()
+        
+        # 1. Direct node ID, name, or stem match
+        matched = False
+        for name in node_names:
+            if name.lower() in content:
+                relevant_issues.append(rel_issue)
+                matched = True
+                break
+        if matched:
+            continue
+            
+        # 2. Task hint term match
+        if task_hint:
+            terms = [t.lower() for t in re.findall(r"[a-z0-9_]+", task_hint) if len(t) > 3]
+            if any(term in content for term in terms):
+                relevant_issues.append(rel_issue)
+                
+    return sorted(list(set(relevant_issues)))
 
 
 def collect_neighborhood_by_direction(graph, starting_nodes: set[str], depth: int, direction: str) -> set[str]:
@@ -163,13 +215,17 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
     Formats a ContextBundle into a structured Markdown representation.
     """
     blocks: list[str] = []
+    
+    if bundle.active_issues:
+        blocks.append("## Relevant Active Issues\n" + "\n".join(f"- `{i}`" for i in bundle.active_issues))
+
     for node in bundle.nodes:
         identity = node.identity
         semantics = node.semantics
         ast = node.ast
         compliance = node.compliance
         
-        lines = [f"## `{identity.node_id}`"]
+        lines = [f"### `{identity.node_id}`"]
         lines.append(f"- type: `{identity.node_type}`")
         if compliance and compliance.status:
             lines.append(f"- status: `{compliance.status}`")

@@ -69,10 +69,10 @@ Foundation, interface, and generation layers are functional. The immediate goals
 24. plan_docs/issues/unimplemented/context-prose-bundles.md
     • Attach operation-aware checklists and governing rules to context bundles.
     • Depends on: context-router-contract.
-25. plan_docs/issues/unimplemented/context-active-work-intersection.md
+25. [DONE] plan_docs/issues/unimplemented/context-active-work-intersection.md
     • Add active-issue intersection to context bundles.
     • Depends on: context-router-contract, context-graph-aware-routing.
-26. plan_docs/issues/unimplemented/context-prose-bundles.md
+26. plan_docs/issues/unimplemented/context-checklists-and-rules.md
     • Render LLM-ready context bundles with prose snippets and ranked explanations.
     • Depends on: context-router-contract, context-graph-aware-routing, context-checklists-and-rules, context-active-work-intersection.
 27. plan_docs/issues/unimplemented/session-log-schema.md

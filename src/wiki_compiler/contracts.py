@@ -462,6 +462,9 @@ class ContextBundle(BaseModel):
     scores: dict[str, float] = Field(
         default_factory=dict, description="Relevance score for each node."
     )
+    active_issues: list[str] = Field(
+        default_factory=list, description="Paths to relevant active issue files."
+    )
 
 
 class CleansingProposal(BaseModel):

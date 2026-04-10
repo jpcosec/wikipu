@@ -27,6 +27,7 @@
 - resolved issue 20 `trail-collect-closeout`: implemented structured session signal extraction and routing via `TrailCollection` in the coordinator closeout step
 - resolved issue 22 `context-router-contract`: defined `ContextRequest` and `ContextBundle` contracts and refactored the context router to use them
 - resolved issue 23 `context-graph-aware-routing`: upgraded context routing to distinguish between direct matches, ancestors, and descendants with ranking scores and reasons
+- resolved issue 25 `context-active-work-intersection`: implemented active-issue intersection in context bundles by matching subgraph nodes against `plan_docs/issues/`
 
 ## 2026-04-09
 
