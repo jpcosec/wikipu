@@ -3384,7 +3384,7 @@
         "git": {
           "blob_sha": "5ffc30794c4b14ea628acbfd33e1925c7948476f",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "86240a624433a1f84a537236ca8a6e10a0bebecb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4510,7 +4510,7 @@
         "git": {
           "blob_sha": "2031b34f453df6885fd4d93e51d8b94be8553853",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "86240a624433a1f84a537236ca8a6e10a0bebecb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7829,54 +7829,6 @@
         }
       },
       "id": "doc:wiki/drafts/proposed_direction.md"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "No abstract provided.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "8fb6472ce6236e0df315b93298daa229cae553c9",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:49:32.208600",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md"
     },
     {
       "type": "concept",
@@ -16833,54 +16785,6 @@
       "id": "doc:wiki/standards/artifacts/proposal.md"
     },
     {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/benefits.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "- Clear separation: blocking issues vs. ready work",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "163d5ad2af410406d23ef0411e5b3dc611bf87fd",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651851",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/benefits.md"
-    },
-    {
       "type": "doc_standard",
       "status": "implemented",
       "schema": {
@@ -16957,54 +16861,6 @@
         "source": null
       },
       "id": "doc:wiki/standards/document_topology.md"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/implementation_steps.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "1. Create `desk/tasks/` directory structure",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "ba760d1da56f7f0a8f4821f6322058a7b95277d6",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651810",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/implementation_steps.md"
     },
     {
       "type": "doc_standard",
@@ -17171,150 +17027,6 @@
         "source": null
       },
       "id": "doc:wiki/standards/languages/typescript.md"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/open_questions.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "- Exact location for desk/tasks/ (desk/ is preferred for consistency)",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "1804c6b36190e672902ff214ba1df0fdabe4e8a4",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651889",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/open_questions.md"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/proposed_solution.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "Split `plan_docs/` into two distinct zones and introduce a new organizational concept:",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "0cc53c875eda842282928dd2778a38f7ea97448c",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651761",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/proposed_solution.md"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/proposed_zone_reorganization.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "No abstract provided.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "a36485bfe6377673ae18e91121e9028034f0f082",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "ed37dcff120cc90c2d6e3a9e8f0110599c3b75de",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651577",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/proposed_zone_reorganization.md"
     },
     {
       "type": "code_construct",
@@ -24418,12 +24130,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/drafts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md",
       "target": "raw:raw/methodology_synthesis_addendum.md"
     },
@@ -25976,12 +25682,6 @@
       "target": "doc:wiki/standards/house_rules.md"
     },
     {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/benefits.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/checklists.md",
@@ -25992,12 +25692,6 @@
       "metadata": {},
       "source": "doc:wiki/standards/document_topology.md",
       "target": "doc:wiki/standards/house_rules.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/implementation_steps.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
     },
     {
       "relation": "implements",
@@ -26034,24 +25728,6 @@
       "metadata": {},
       "source": "doc:wiki/standards/languages/typescript.md",
       "target": "doc:wiki/standards/house_rules.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/open_questions.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/proposed_solution.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/proposed_zone_reorganization.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
     }
   ]
 }
