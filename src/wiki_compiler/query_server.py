@@ -65,9 +65,36 @@ def query_graph(
     medium: str | None = None,
     schema_ref: str | None = None,
     path_template: str | None = None,
+    issues: bool = False,
+    gaps: bool = False,
+    unimplemented: bool = False,
 ) -> dict[str, object]:
     """Executes a query against the knowledge graph and returns the result as a dictionary."""
     graph = load_graph(graph_path)
+    if issues or gaps or unimplemented:
+        conditions = []
+        if gaps:
+            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:plan_docs/issues/gaps/"})
+        elif unimplemented:
+            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:plan_docs/issues/unimplemented/"})
+        elif issues:
+            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:"})
+        
+        query = StructuredQuery(
+            select="nodes",
+            filters=[
+                {"facet": "identity", "conditions": conditions},
+            ],
+        )
+        nodes = execute_query(graph, query)
+        return {
+            "query_type": "structured_query",
+            "nodes": [n.model_dump() for n in nodes],
+        }
+    
+    if query_type is None:
+        raise ValueError("A query type or a flag (--issues, --gaps, --unimplemented) must be provided.")
+    
     if query_type == "get_node":
         ensure_node(node_id)
         return {
@@ -148,6 +175,9 @@ def query_main(
     medium: str | None = None,
     schema_ref: str | None = None,
     path_template: str | None = None,
+    issues: bool = False,
+    gaps: bool = False,
+    unimplemented: bool = False,
 ) -> None:
     """Main entry point for querying the graph and printing the results in JSON format."""
     result = query_graph(
@@ -158,6 +188,9 @@ def query_main(
         medium=medium,
         schema_ref=schema_ref,
         path_template=path_template,
+        issues=issues,
+        gaps=gaps,
+        unimplemented=unimplemented,
     )
     payload = json.loads(json.dumps(result, default=serialize_model))
     print(json.dumps(payload, indent=2))

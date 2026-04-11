@@ -29,6 +29,9 @@ Queries the compiled knowledge graph for nodes, graph neighborhoods, and I/O mat
 | `--schema-ref` | none | Filter by I/O schema reference |
 | `--path-template` | none | Filter by I/O path template |
 | `--query-file` | none | Path to a `StructuredQuery` JSON payload |
+| `--issues` | none | Find all issue nodes |
+| `--gaps` | none | Find all gap issue nodes |
+| `--unimplemented` | none | Find all unimplemented issue nodes |
 
 ## find_by_io and Scanner Coverage
 

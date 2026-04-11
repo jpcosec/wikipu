@@ -47,6 +47,7 @@ def _facet_matches(node: KnowledgeNode, facet_filter: FacetFilter) -> bool:
 def _get_facet(node: KnowledgeNode, facet_name: str) -> object:
     """Retrieves the value of a specific facet from a KnowledgeNode."""
     mapping = {
+        "identity": node.identity,
         "semantics": node.semantics,
         "ast": node.ast,
         "compliance": node.compliance,
@@ -74,6 +75,8 @@ def _condition_matches(facet_value: object, cond: FieldCondition) -> bool:
         return actual is not None and actual > cond.value
     if cond.op == "lt":
         return actual is not None and actual < cond.value
+    if cond.op == "starts_with":
+        return isinstance(actual, str) and actual.startswith(cond.value)
     return False
 
 

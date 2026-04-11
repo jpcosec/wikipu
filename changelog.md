@@ -4,6 +4,8 @@
 
 - resolved issue 1 `01-zone-reorganization`: Implemented the zone reorganization. Created `desk/` and `future_docs/drawers/` zones. Updated `hausordnung` and `AGENTS.md`. Updated `wiki-compiler guard` (formerly `check-workflow`) to be aware of the new structure and fixed a bug in the `run` command.
 
+- resolved issue 2 `02-improve-query-cli`: Improved `wiki-compiler query` CLI with `--issues`, `--gaps`, and `--unimplemented` flags for more specific searches.
+
 ## 2026-04-10
 
 

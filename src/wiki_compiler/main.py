@@ -76,6 +76,9 @@ def main() -> None:
                 medium=args.medium,
                 schema_ref=args.schema_ref,
                 path_template=args.path_template,
+                issues=args.issues,
+                gaps=args.gaps,
+                unimplemented=args.unimplemented,
             )
             return
         if args.command == "audit":
@@ -330,6 +333,21 @@ def main() -> None:
             print(json.dumps(result, indent=2))
             return
         if args.command == "guard":
+            report = guard_workflow(
+                read_git_changes(Path(args.project_root)),
+                branch_name=read_current_branch(Path(args.project_root)),
+                allow_structural=args.allow_structural,
+            )
+            if report.checked_files:
+                print("[INFO] Checked files:")
+                for path in report.checked_files:
+                    print(f"- {path}")
+            if report.errors:
+                for error in report.errors:
+                    print(f"[ERROR] {error}")
+                sys.exit(1)
+            print("[OK] Workflow discipline checks passed.")
+            return
         if args.command == "drafts":
             from .drafts import (
                 detect_stale_nodes,
@@ -433,6 +451,15 @@ def build_parser() -> argparse.ArgumentParser:
     query_parser.add_argument("--path-template", help="Filter I/O path template")
     query_parser.add_argument(
         "--query-file", help="Path to a StructuredQuery JSON file"
+    )
+    query_parser.add_argument(
+        "--issues", action="store_true", help="Find all issue nodes"
+    )
+    query_parser.add_argument(
+        "--gaps", action="store_true", help="Find all gap issue nodes"
+    )
+    query_parser.add_argument(
+        "--unimplemented", action="store_true", help="Find all unimplemented issue nodes"
     )
 
     audit_parser = subparsers.add_parser(

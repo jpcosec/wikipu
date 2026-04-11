@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 class FieldCondition(BaseModel):
     """Represents a single comparison condition on a facet field."""
     field: str
-    op: Literal["eq", "ne", "is_null", "is_not_null", "contains", "gt", "lt"]
+    op: Literal["eq", "ne", "is_null", "is_not_null", "contains", "gt", "lt", "starts_with"]
     value: Any = None
 
 
