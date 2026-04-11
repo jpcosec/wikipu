@@ -16,13 +16,14 @@ Your primary directive is to preserve the integrity of the graph and follow the 
 - **Tests:** `tests/` (run via `python -m pytest -q`)
 - **CLI:** `wiki-compiler`
 
-## The 4-Zone Rule (ID-4)
-| Zone           | Purpose                   | Agents may write?                                 |
-| -------------- | ------------------------- | ------------------------------------------------- |
-| `wiki/`        | Current truth (The Graph) | Yes (curated, must update `knowledge_graph.json`) |
-| `raw/`         | Immutable source ore      | **NO**                                            |
-| `plan_docs/`   | Active issues/proposals   | Yes (ephemeral, delete when done)                 |
-| `future_docs/` | Deferred backlog          | Yes (low-churn)                                   |
+## The 5-Zone Rule (ID-4)
+| Zone           | Purpose                            | Agents may write?                                 |
+| -------------- | ---------------------------------- | ------------------------------------------------- |
+| `raw/`         | Immutable source ore               | **NO**                                            |
+| `wiki/`        | Current truth (The Graph)          | Yes (curated, must update `knowledge_graph.json`) |
+| `plan_docs/`   | Active issues and proposals        | Yes (ephemeral, delete when done)                 |
+| `desk/`        | Active operational state           | Yes (ephemeral, for transient work files)         |
+| `future_docs/` | Deferred backlog and designs       | Yes (low-churn)                                   |
 
 ## Essential Commands
 

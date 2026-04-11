@@ -58,12 +58,13 @@ All data crossing a process boundary must be a typed Pydantic model. No untyped 
 `Enforced by:` ASTFacet scanning detects untyped cross-module calls; audit checks for missing Field descriptions.
 
 **ID-4 — Zone Separation**
-The four information zones are inviolable:
+The five information zones are inviolable:
 - `raw/` — immutable seed. Agents read, never write.
 - `wiki/` — current truth. Curated, governed, never contaminated by plan references.
+- `plan_docs/` — active issues and proposals.
 - `desk/` — active operational state. Ephemeral — items deleted when resolved.
-- `backlog/` — deferred ideas. Low-churn, reviewed periodically.
-No zone may reference or write into a zone above it in the chain: `desk/` may reference `wiki/`; `wiki/` may not reference `desk/`.
+- `future_docs/` — deferred ideas and complete designs-in-waiting.
+No zone may reference or write into a zone above it in the chain. For example, `desk/` may reference `wiki/`, but `wiki/` may not reference `desk/`.
 `Enforced by:` build_wiki() checks frontmatter edges for cross-zone violations; CI scan on commit.
 
 **ID-5 — Human Gate at the Topology Boundary**
@@ -91,7 +92,7 @@ Deterministic logic, AI logic, persistence, and presentation are always separate
 Every interface — between modules, between human and agent, between current and future state — is a typed schema. The schema IS the documentation. Descriptions must be accurate because LLMs read them. This generates: Pydantic everywhere, Field(description=...) required, contracts as the only inter-module API, docstrings as specifications.
 
 **MA-3 — Plans Are Ephemeral. Code and Changelog Are Permanent.**
-A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the desk/issues lifecycle, the 6-month stale rule on backlog, the prohibition on archive folders.
+A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the plan_docs/issues lifecycle, the 6-month stale rule on future_docs, the prohibition on archive folders.
 
 **MA-4 — Agents Operate Within Explicit, Bounded Permission Frames**
 At every moment, an agent's scope is known: what it can create, what it can modify, what it cannot touch. Mode determines scope. Four modes:
@@ -120,9 +121,9 @@ Agents navigate by graph traversal and facet query, not by guessing file paths o
 
 **NAV-2 — Temporal State Is a Facet, Not an Axis**
 Current truth, planned state, deferred state, and historical state are expressed as `ComplianceFacet.status` values and node_id prefixes — not as a separate coordinate axis. Agents scope queries by temporal state using facet filters.
-- Current truth: `compliance.status = "implemented"`, no `desk/` prefix
-- Planned: node in `desk/issues/` or `desk/proposals/`
-- Deferred: node in `backlog/`
+- Current truth: `compliance.status = "implemented"`, no `plan_docs/` or `desk/` prefix
+- Planned: node in `plan_docs/issues/` or `plan_docs/proposals/`
+- Deferred: node in `future_docs/`
 - Historical: ADR node with `adr.status = "superseded"`
 
 **NAV-3 — Read the Graph First, Markdown Second**
@@ -157,7 +158,7 @@ When an issue is resolved:
 2. Add new tests for the new behaviour.
 3. Run the relevant tests — all must pass.
 4. Update `changelog.md`.
-5. Delete the issue file AND remove it from `Board.md`.
+5. Delete the issue file AND remove it from `Index.md`.
 6. Commit with a message that names what was fixed.
 
 **Default rule:** non-trivial implementation or documentation work starts from an issue file in `plan_docs/issues/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.

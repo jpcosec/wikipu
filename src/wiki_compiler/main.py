@@ -302,10 +302,11 @@ def main() -> None:
                 print("")
             return
         if args.command == "run":
+            # First, guard the workflow
             report = guard_workflow(
                 read_git_changes(Path(args.project_root)),
                 branch_name=read_current_branch(Path(args.project_root)),
-                allow_structural=args.allow_structural,
+                allow_structural=False, # run should not be structural
             )
             if report.checked_files:
                 print("[INFO] Checked files:")
@@ -316,21 +317,8 @@ def main() -> None:
                     print(f"[ERROR] {error}")
                 sys.exit(1)
             print("[OK] Workflow discipline checks passed.")
-            return
-        if args.command == "manifest":
-            from .manifest import add_to_manifest
 
-            if args.add:
-                entry = add_to_manifest(
-                    project_root=Path("."),
-                    manifest_path=Path(args.manifest),
-                    source_path=Path(args.add),
-                    notes=args.notes,
-                )
-                print(f"[OK] Registered {entry.path} in {args.manifest}")
-                return
-            raise ValueError("manifest requires --add <path>")
-        if args.command == "run":
+            # Then, run the coordinator cycle
             from .coordinator import run_coordinator_cycle
 
             result = run_coordinator_cycle(
@@ -341,6 +329,7 @@ def main() -> None:
             )
             print(json.dumps(result, indent=2))
             return
+        if args.command == "guard":
         if args.command == "drafts":
             from .drafts import (
                 detect_stale_nodes,
@@ -593,7 +582,7 @@ def build_parser() -> argparse.ArgumentParser:
     compose_parser.add_argument("--output", required=True, help="Output markdown path")
 
     workflow_parser = subparsers.add_parser(
-        "check-workflow", help="Validate issue and changelog discipline"
+        "guard", help="Validate issue and changelog discipline"
     )
     workflow_parser.add_argument(
         "--project-root", default=".", help="Git repository root to inspect"

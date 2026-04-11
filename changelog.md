@@ -1,6 +1,11 @@
 # Changelog
 
+## 2026-04-11
+
+- resolved issue 1 `01-zone-reorganization`: Implemented the zone reorganization. Created `desk/` and `future_docs/drawers/` zones. Updated `hausordnung` and `AGENTS.md`. Updated `wiki-compiler guard` (formerly `check-workflow`) to be aware of the new structure and fixed a bug in the `run` command.
+
 ## 2026-04-10
+
 
 - resolved issue 35 `deepen-socratic-protocol`: expanded the Socratic protocol from a stub to a fully defined operational schema
 - resolved issue 36 `commit-after-build-protocol`: established OP-9 rule requiring immediate atomic commits after graph builds and hardened `workflow_guard.py` to track `knowledge_graph.json`
