@@ -1,0 +1,300 @@
+Systems Research and Behavioral Science
+Syst. Res. 23, 39^49 (2006)
+Published online inWiley InterScience (www.interscience.wiley.com)
+DOI:10.1002/sres.745
+
+&
+
+Research Paper
+
+Autopoiesis and Knowledge in the
+Organization: Conceptual Foundation
+for Authentic Knowledge Management
+Aquiles Limone* and Luis E. Bastias
+Commerce School, Faculty of Economics and Management, Pontiﬁcia Universidad Católica de Valparaiso, Chile
+
+Traditionally, Knowledge Management (KM) has focused primarily on the implementation of information technologies, with greater emphasis being placed on technology rather
+than on information or knowledge, understanding them as epistemological entities. This
+has had serious consequences, for there is the risk of converting KM in a mere fashion or
+even a commercial name designed to sell certain Information Technology tools. This
+paper suggests that authentic knowledge management must start with the study of the
+cognitive phenomena inside the enterprise. It should not be related only with individual
+knowledge and learning, but rather mainly to organizational knowledge and learning.
+This paper also suggests that there is such thing as corporate learning, beyond individual
+learning, for both—individuals and corporations—are cognitive systems. The scientiﬁc
+arguments supporting that corporations, regarded as systemic wholes, are indeed cognitive
+systems lie in the understanding of the enterprise as an autopoietic entity. The fact that the
+enterprise is an autopoietic system implies that not only it has the capacity to acquire
+knowledge, but also that knowledge itself, understood as effective action, determines the
+viability and, indeed, the very existence of the enterprise. Hence, Knowledge Management
+ceases to be an alternative administrative tool and becomes an inherent necessity for the
+proper functioning of the enterprise. Copyright # 2006 John Wiley & Sons, Ltd.
+Keywords Knowledge Management (KM); autopoiesis; epistemology; information; Information
+Technology; cybernetics; cognitive processes; cognition; cognitive sciences; theory of the
+organization
+INTRODUCTION
+
+* Correspondence to: Aquiles Limone, Commerce School, Faculty of
+Economics and Management, Pontiﬁcia Universidad Católica de
+Valparaiso, Chile. E-mail: alimone@ucv.cl
+
+Copyright # 2006 John Wiley & Sons, Ltd.
+
+Today the concept of knowledge undoubtedly
+arouses interest for those who study or are
+involved in business management and the
+economic dynamics of societies, especially in
+the framework of the crucial transformation
+Received 20 August 2004
+Accepted 25 July 2005
+
+RESEARCH PAPER
+associated with the phenomenon generally
+known as ‘globalization’.
+For almost 15 years, a variety of notable
+authors have concerned themselves with the
+enormous utility of this concept and others—
+information, data, learning, creativity and innovation among others—associated with competitiveness. A series of relevant traits have been
+suggested as the result of the management and
+generation of knowledge.
+The success of companies that demonstrate
+creativity.
+* The ability of some ﬁrms to adapt to profound
+changes in the work environment (changes in
+fashion and taste, in technology, in the world
+order, etc.)
+* The ability to consistently excel and maintain a
+position as market leader.
+* The ability to capture and retain customers.
+* The ability to assure timely, properly priced,
+and reliable supply by managing its relations
+with suppliers and others, too numerous to
+mention here, through an ability to add value
+to its products or services.
+*
+
+Authors of the stature of P. Drucker, I. Nonaka,
+P. Senge, A. de Geuss, D. Garvin, Ch. Argyris, J.
+B. Quinn, among others, have repeatedly emphasized this topic, suggesting that this may be the
+most momentous change of the century, whose
+consequences will be none other than the most
+profound transformation of the ‘reality’ in which
+we live.
+Although there may be no doubt as to the
+importance of the concept of knowledge, its
+epistemological status generates certain disquiet,
+as do the various terms employed by the various
+authors when referring to it.
+Intellectual concern about the topic and the
+concept of knowledge is nothing new. To the
+contrary, its study is rooted in the most pristine
+anxieties of humanity and there is a long,
+philosophical tradition surrounding it. In the
+Western culture this tradition dates back to the
+pre-Socratic philosophers. Epistemology, both in
+its original consideration as a branch of philosophy and as its more recent consideration as a
+scientiﬁc discipline (experimental epistemology),
+has had the nature of knowledge as its central
+Copyright  2006 John Wiley & Sons, Ltd.
+
+40
+
+Syst. Res.
+object of study—What is it? How is it disseminated? How is it conserved? How is it validated?
+Nevertheless, it is not common to ﬁnd references
+to this tradition or to the scientiﬁc depictions
+referring to the nature and generation of
+knowledge in studies dealing with Knowledge
+Management (KM). In our opinion this consideration should constitute the starting point for
+any reﬂection on the matter. In this regard, the
+approach of E. Bueno, of the U. Autónoma de
+Madrid, seems quite appropriate when he
+states, ‘This development in economic thought
+of considering knowledge as a critical resource
+and as the objective of the creation of value, has
+been quite successful. At the same time it is
+introducing greater complexity and a certain
+degree of confusion of concepts, terms, models,
+proposals, and other mental developments at the
+end of the 20th century. And it seems that it will
+continue doing so in the ﬁrst years of the 21st
+century’. ‘The profusion of terms, occasionally
+amounting to linguistic nonsense, ﬂippancy as to
+the way the concept is used, ignorance of the
+classical categories of thought and the frivolous
+abuse of fashions and of pseudo-scientiﬁc and
+postmodernist movements are constructing a new
+‘‘Tower of Babel’’, provoking injustice and unease
+in the unnecessary formulation and accelerated
+substitution of propositions of new models and
+expressions without allowing them to mature
+and without making even a minimal effort to
+contrast them to prior ones . . . At the present time,
+the lack of agreement, of order, of objectivity, and
+the social explanation in this ﬁeld of knowledge is
+an ‘‘objective reality’’’ (Bueno, 2001).
+On the other hand, the excessive emphasis that
+has been placed on Information Technology—
+which, as we will see below, reﬂects only one of
+the schools of thought in relation to the generation of knowledge—has tended to deform and
+displace the centre of attention from the heart of
+the problem to the merely instrumental. Such a
+displacement has in many cases allowed ‘Knowledge Management’ to become just another
+fashion in the ﬁeld of Business Administration,
+just another commercial term devised to sell
+certain software and hardware tools to businesses—avid for solutions to problems that arise
+in the current working environment. However,
+Syst. Res. 23, 39^49 (2006)
+
+Aquiles Limone and Luis E. Bastias
+
+Syst. Res.
+beyond fashion, the subject of knowledge today
+is not only important but also crucial to a
+profound understanding of the true nature of
+an organization and the processes that allow it to
+sustain itself over time. In the remainder of this
+paper we propose to demonstrate and support
+this last assertion.
+
+WHAT IS KNOWLEDGE? HOW
+IS IT GENERATED?
+As we have already alluded to above, there
+is a long, philosophical tradition underlying
+the area of knowledge that should be studied
+and analysed in order to adequately deal
+with this subject. Likewise, there is an abundant
+bibliography in the scientiﬁc ﬁeld, which
+deals with it, particularly beginning with the
+advent of cybernetic science during the 20th
+century.
+In the philosophical tradition, the oldest
+epistemological reﬂections are mixed with the
+ontological and metaphysical reﬂections, at least
+during the periods of time that we can call
+Antiquity (mainly Greece) and the Middle
+Ages. According to Hessen (Hessen, 1926), the
+theory of knowledge as an autonomous discipline appears with the work entitled ‘Essay on
+Human Understanding’ in 1690 by John Locke,
+the English philosopher, in the so-called Modern
+Age. On the European continent the celebrated
+work by I. Kant in 1781, ‘A Critique of Pure
+Reason’ is the starting point. These two landmark works were followed by numerous contributions, by a series of notable philosophers, in
+the 18th, 19th and 20th centuries. These works
+should not be overlooked when referring to the
+subject of knowledge. However, in this paper we
+focus fundamentally on the 20th century, or
+more precisely on the two main lines of thought
+generated by the cybernetic studies in the 1940s
+because they bring us not only a philosophical
+point of view but also fresh and scientiﬁc
+grounding.
+Cognitive Science (C. S.) or the Cognitive
+Sciences, as designated by others—noting that
+there was more than one discipline involved in
+its origin—was born with the cybernetic moveCopyright  2006 John Wiley & Sons, Ltd.
+
+Autopoiesis and Knowledge in the Organization
+
+RESEARCH PAPER
+ment of the 1940s. During this founding cybernetic era there was a fundamental concern for the
+phenomenon of the mind and intelligence at the
+core of the movement. This concern was particularly strongly felt by four brilliant minds:
+Norbert Wiener, John Von Neumann, Warren
+McCulloch and Gregory Bateson. The ﬁrst two
+were mathematicians, McCulloch specialized in
+psychology and neurophysiology, and Bateson
+was an anthropologist, although he worked in
+more than one discipline. At this time the seed
+was planted which would ten years later bear
+fruit in the form of classic cognitivism beginning in the decade of the 1950s. Following the
+distinction suggested by F. Varela (Varela, 2000),
+today we may differentiate among three main
+lines of thought in cognitive science: cognitivism;
+the connectionist approach; and the enactivist
+approach.
+Cognitivism is the heir of one of the principal
+views about the mind and knowledge in cybernetics. This approach is markedly reductionist
+and revolves around the thinking of John von
+Neumann. This idea ultimately gave rise to the
+digital computer. The traditional, generic structure of a digital computer is still known today as
+‘Von Neumann’s Machine’.
+Given the fact that for von Neumann and his
+school of cyberneticists, the human brain processed information, it was natural for them to
+view the use of the computer as a metaphor for
+the functioning of the brain.
+The other main line of thought of the ﬁrst
+cyberneticists, suggested by Wiener, McCulloch,
+and Bateson, was more organic and systemic.
+However, it was overshadowed—provisionally
+in this era—by the traditional ‘Von Neumann’
+view, which developed rapidly and saw a
+meteoric rise and application in the ﬁelds of
+information technology, robotics and the ﬁrst
+ventures into artiﬁcial intelligence, culminating in
+the victory of ‘Deep Blue’, the computer, over the
+reigning world chess champion of the time.
+Cognitivism was established mainly during the
+years 1953–1955 with the contribution of such
+authors as H. Simon, N. Chomsky and M. Minsky.
+The basic ideas of this era gave foundation to the
+principal patterns of modern cognitive science
+(Varela, 2000).
+Syst. Res. 23, 39^49 (2006)
+
+41
+
+RESEARCH PAPER
+The connectionist approach came forward as
+an alternative to the symbolic cognitivism and
+ﬁnally become a complement, taking up again
+the ideas that had been overlooked in the ﬁrst
+cybernetic discussions (Wiener, McCulloch, and
+Bateson). It favoured the concept of self-organization, which was also beginning to take root
+in physics, chemistry, and the development of
+nonlinear mathematics. At this point, it is
+extremely important to point out the two main
+‘ﬂaws’ of cognitivism. Perhaps the best way to do
+this is through the words of Francisco Varela:
+‘The motivation for a second look at selforganization was based on two widely recognized deﬁciencies. The ﬁrst is that the processing
+of symbolic information is based on sequential
+norms applied one at a time. This well-known
+bottleneck of Von Neumann is a dramatic
+limitation when the task in question requires
+great quantities of sequential operations (such as
+climate prediction or the analysis of natural
+images). The permanent search for algorithms
+of parallel processing in the classic architectures
+has not had much success due to the fact that the
+entire computing/computational philosophy has
+developed in the opposite direction’.
+The second major limitation is that the symbolic processing is localized: the loss of any part
+of the symbols or norms of the system implies
+signiﬁcant failure in the overall functioning of
+the system. In contrast, a distributed operation is
+highly desirable, in such a way that there is at
+least a relative equipotentiality and an immunity
+to mutilations.
+This two deviations from cognitivism can be
+expressed the same way: the architectures and
+the mechanisms are far removed from biology.
+The most ordinary, visual tasks, even those
+performed by small insects, are carried out faster
+than what is physically possible when they are
+simulated in a sequential manner. The elasticity
+of the mind to face damage without compromising its overall competence has been known by
+neurobiologists for a long time.
+The above suggests that instead of focusing on
+symbols as the point of departure, one could
+begin with simple components (non-cognitive)
+that connect to each other by forming tight
+patterns. With this approach each component
+Copyright  2006 John Wiley & Sons, Ltd.
+
+42
+
+Syst. Res.
+operates only in its local environment, but due to
+the structure of the network of the complete
+system there is an overall cooperation that
+emerges spontaneously when the states of all

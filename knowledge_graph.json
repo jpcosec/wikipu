@@ -5118,6 +5118,74 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "doc:wiki/concepts/autopoiesis.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/core_philosophy.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Autopoiesis in Wikipu refers to the system's ability to self-define, self-maintain, and regenerate its own knowledge structures through a closed loop of perception, classification, and execution.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "81a05afba2fac553af0c41373be29808e711c945",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/autopoiesis.md"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "doc:wiki/concepts/core_philosophy.md",
           "node_type": "concept"
         },
@@ -5152,10 +5220,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6b22f7bbd7a6f3794667cc6a89807ffe3d31ec4a",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "04a5b9358d25d344063c01c471c0ce5a7673c53a",
+          "last_modified_commit": "04a5b9358d25d344063c01c471c0ce5a7673c53a",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": null
       },
@@ -23888,6 +23956,18 @@
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
       "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/concepts/autopoiesis.md",
+      "target": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/autopoiesis.md",
+      "target": "doc:wiki/concepts/core_philosophy.md"
     },
     {
       "relation": "documents",
