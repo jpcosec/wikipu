@@ -3384,7 +3384,7 @@
         "git": {
           "blob_sha": "f3e128add960f0d0056773a79e6c42369aae4ebd",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "86240a624433a1f84a537236ca8a6e10a0bebecb",
+          "last_modified_commit": "9aa0deeca87868cad7bbb01870cf292e376526a1",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5112,6 +5112,74 @@
         "source": null
       },
       "id": "doc:wiki/concepts/energy.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/core_philosophy.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/sourcetalk.txt",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/how_wikipu_works.md",
+            "relation_type": "extends",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The Core Philosophy of Wikipu is the transformation of passive documentation into an active, compiled Knowledge Graph\u2014shifting the paradigm from stateless RAG to a stateful \"LLM Wiki.\"",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "6b22f7bbd7a6f3794667cc6a89807ffe3d31ec4a",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/core_philosophy.md"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/sourcetalk.txt",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/sourcetalk.txt"
     },
     {
       "type": "reference",
@@ -23820,6 +23888,18 @@
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
       "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/concepts/core_philosophy.md",
+      "target": "raw:raw/sourcetalk.txt"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/concepts/core_philosophy.md",
+      "target": "doc:wiki/concepts/how_wikipu_works.md"
     },
     {
       "relation": "documents",

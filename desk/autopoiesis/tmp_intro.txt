@@ -1,0 +1,250 @@
+Has dicho
+Podrias buscar el tweet de karpathy sobre llm wiki?
+
+Gemini ha dicho
+El tuit al que te refieres es muy reciente (de abril de 2026) y ha causado mucho revuelo en la comunidad de IA. En él, Andrej Karpathy propone un cambio de paradigma: pasar del tradicional RAG (Generación Aumentada por Recuperación) a lo que él llama un "LLM Wiki".
+
+Aquí tienes los detalles clave de su propuesta:
+
+La idea central: "Compilar" en lugar de "Buscar"
+Karpathy critica que el RAG estándar es "sin memoria" o "sin acumulación". Cada vez que haces una pregunta, el sistema busca trozos de texto sueltos y trata de unirlos. Su propuesta es:
++1
+
+Carpeta raw/: Un lugar donde simplemente tiras archivos "sucios" (PDFs, notas, capturas, código).
+
+Compilación: El LLM actúa como un bibliotecario que lee todo eso y escribe una Wiki en Markdown organizada, con páginas de conceptos interconectadas y un índice maestro.
+
+Interfaz: El usuario no interactúa con los archivos originales, sino que navega por esta Wiki (usando herramientas como Obsidian) o le pregunta al LLM, que ahora tiene una estructura de conocimiento coherente para consultar.
+
+Metáfora técnica
+Karpathy utilizó una analogía muy clara en su Gist y publicaciones de seguimiento:
+
+Obsidian es el IDE (el entorno de desarrollo).
+
+El LLM es el programador (quien mantiene y actualiza los archivos).
+
+La Wiki es el código fuente (el conocimiento estructurado).
+
+¿Por qué es importante?
+Según Karpathy, para proyectos personales o de departamentos (~100 artículos), no necesitas bases de datos vectoriales complejas. Un LLM es lo suficientemente inteligente como para navegar por una estructura de carpetas y archivos Markdown bien organizados. Además, esto permite que el conocimiento sea propiedad del usuario (archivos locales) y no dependa de un proveedor de nube específico.
++2
+
+Dato curioso: Tras su tuit, han surgido varios proyectos de código abierto como CacheZero, graphifyy o aura-research que intentan automatizar exactamente este flujo de "Raw -> Wiki -> Chat".
+
+Has dicho
+Que le falta a esto para poder acercarse a eso?
+
+Gemini ha dicho
+Para acercar este repositorio al concepto de "LLM Wiki" o la visión de Karpathy de "compilar conocimiento" en lugar de solo "recuperar fragmentos" (RAG tradicional), le faltan principalmente tres componentes estructurales y un cambio de filosofía en el manejo de los datos:
+
+1. El "Compilador" de Conocimiento (De raw/ a structured/)
+Actualmente, tus estándares (como ingestion_layer.md) están muy enfocados en la validación de esquemas rígidos y la ingesta de datos específicos (como vacantes de empleo).
+
+Lo que falta: Una capa de procesamiento que tome archivos "sucios" o desestructurados y, en lugar de solo extraer campos, genere páginas de Wiki interconectadas (Markdown).
+
+Acción: Necesitarías un nuevo tipo de módulo en src/ orientado a la síntesis, no solo a la extracción. Su trabajo sería leer múltiples fuentes y redactar un documento maestro que resuma el estado del conocimiento sobre un tema.
+
+2. Una Estructura de "Grafo de Archivos" (Obsidian-ready)
+Karpathy enfatiza el uso de herramientas como Obsidian porque permiten navegar el conocimiento humanamente.
+
+Lo que falta: Tus estándares de persistencia (llm_langgraph_components.md) guardan los resultados en carpetas de salida (output/) con estructuras pensadas para la máquina (state.json, proposal.json).
+
+Acción: El estándar de almacenamiento (storage.py) debería evolucionar para producir una estructura de enlaces internos (wikilinks tipo [[archivo]]). El output no debería ser solo un JSON para el sistema, sino un conjunto de archivos Markdown organizados temáticamente que un humano pueda abrir en Obsidian y entender de inmediato.
+
+3. Memoria Acumulativa (Evitar el "Sin Memoria")
+El tuit critica que el RAG estándar olvida lo que buscó la última vez. Tus procesos actuales de LangGraph son cíclicos pero específicos por tarea (ej. generar un documento).
+
+Lo que falta: Un Índice Maestro o Tabla de Contenidos dinámica que el LLM actualice cada vez que ingiere algo nuevo.
+
+Acción: En llm_langgraph_methodology.md, podrías añadir un paso de "Indexación Semántica de Wiki". Al final de cada ejecución exitosa, el grafo no solo guarda el artefacto, sino que "reescribe" o "parchea" el índice global de la Wiki para reflejar el nuevo conocimiento.
+
+4. El LLM como "Bibliotecario", no solo "Extractor"
+Tus estándares de Crawl4AI (crawl4ai_usage.md) y de ingesta buscan "estabilizar selectores" y "validar contratos". Esto es excelente para datos, pero limitado para conocimiento.
+
+Lo que falta: Cambiar el enfoque de "Extraer campos X y Y" a "¿Cómo encaja esta información en lo que ya sabemos?".
+
+Acción: Crear un prompt.py que no solo pida un JSON, sino que pida al LLM que identifique contradicciones o complementos con la "Wiki" actual.
+
+Resumen de cambios técnicos necesarios:
+Nuevo Estándar de Formato: Priorizar Markdown con metadatos (YAML frontmatter) sobre JSON puro para los artefactos de salida que representen "conocimiento".
+
+Mecanismo de "Linkage": Un script o nodo de grafo que cree conexiones automáticas entre documentos nuevos y existentes.
+
+Interfaz de Navegación: Aunque ya tienes un review_ui, el "LLM Wiki" se beneficia de una interfaz donde el usuario pueda ver el "árbol" de conocimiento, no solo aprobar o rechazar una tarea individual.
+
+En esencia, tienes la infraestructura de ejecución (LangGraph) y de ingesta (Crawl4AI), pero te falta la capa de síntesis editorial que transforme esos datos validados en una base de conocimientos coherente y navegable.
+
+Has dicho
+Centrate en estos
+
+Gemini ha dicho
+Basado en los estándares definidos en los documentos proporcionados (future_docs_guide.md, documentation_and_planning_guide.md y documentation_quality_checklist.md), para acercar este repositorio a la visión de "LLM Wiki" de Karpathy, se deben implementar los siguientes cambios estructurales en la gestión de la documentación y el conocimiento:
+
+1. Transformar future_docs/ en un Grafo de Conocimiento
+Actualmente, future_docs/ se define como un almacén de "trabajo diferido". Para que funcione como una "Wiki", debe evolucionar de un listado de problemas a una red de conocimiento:
+
+Enlaces Bidireccionales: El estándar ya exige vincular archivos de future_docs/ con TODOs en el código. Para la visión de Karpathy, se debe extender esto para que los archivos en future_docs/ se enlacen entre sí (ej. usando sintaxis [[archivo]]), permitiendo que el LLM "navegue" por la arquitectura técnica como una red y no como archivos aislados.
+
+Actualización de Estado: El estándar impone un "umbral de obsolescencia" de 6 meses. En una LLM Wiki, este proceso de revisión no sería solo manual; el LLM debería actuar como un "bibliotecario" que sintetiza entradas antiguas cuando se añade información nueva, manteniendo la Wiki "viva".
+
+2. Evolucionar los READMEs de "Manuales" a "Nodos de Wiki"
+El principio central del repositorio es que el código es la fuente de verdad y la documentación explica el porqué.
+
+Arquitectura Interconectada: Actualmente, la sección ## 🏗️ Architecture & Features debe enlazar a archivos exactos de código. Para acercarse a la Wiki, estos enlaces deben ser el punto de entrada para que un LLM entienda la jerarquía del sistema, transformando el README en un índice semántico que conecta dimensiones conceptuales con implementaciones físicas.
+
+Eliminación de Tablas Estáticas: Los estándares prohíben duplicar tablas de argumentos o esquemas Pydantic en la documentación porque "derivan". Esto se alinea con Karpathy: la Wiki debe contener el conocimiento estructurado y el LLM debe leer el código (o los modelos Pydantic) para obtener los detalles técnicos en tiempo real.
+
+3. El Ciclo de Vida del Conocimiento (Plan -> Wiki)
+El ciclo de vida actual mueve ideas de future_docs/ a plan_docs/ y finalmente al código (eliminando el plan).
+
+De lo Efímero a lo Permanente: Mientras que los planes de ejecución son efímeros y se eliminan al terminar, la visión de Karpathy sugiere que el "aprendizaje" obtenido durante el refactor (el Journal o las decisiones de diseño) debería ser "compilado" de vuelta en la Wiki técnica, no simplemente borrado.
+
+Validación de Enlaces como Integridad de Wiki: El uso de scripts/validate_doc_links.py para asegurar que no haya enlaces rotos es la base técnica para asegurar que la "Wiki" del repositorio sea un grafo coherente que el LLM pueda recorrer sin errores de referencia.
+
+4. Checklist de Calidad para la "Mentalidad Wiki"
+Para cumplir con la Documentation Quality Checklist bajo este nuevo paradigma, cada nuevo componente debería asegurar:
+
+Navegabilidad: ¿Puede un LLM entender la relación entre este módulo y el resto del sistema leyendo solo los READMEs y los archivos de future_docs/?.
+
+Semántica en el Código: El uso de Field(description=...) y docstrings estructurados es obligatorio. En una LLM Wiki, estos no son solo para humanos; son las "hojas" de conocimiento que el LLM compila para generar la documentación maestra.
+
+En resumen, los cimientos están en la estricta vinculación entre código y docs que ya exigen tus guías; la "Wiki" se completa cuando dejas de tratar a future_docs/ y los READMEs como simples textos y empiezas a tratarlos como nodos de un grafo de conocimiento técnico que el LLM mantiene actualizado.
+
+Has dicho
+Te parece armar un sistema en la onda skill, que vaya anidado a 1- los readmes 2- los standards y los agents/claude/setup/intro.md?
+
+Gemini ha dicho
+Para alinear tu sistema con la visión de Karpathy (LLM Wiki) y estructurarlo bajo la lógica de "skills" anidadas a tus estándares actuales, el enfoque debe ser transformar la documentación pasiva en un grafo de conocimiento activo.
+
+Basado en tus estándares de documentación y planificación, aquí tienes una propuesta de arquitectura para ese sistema:
+
+1. El Core: src/wiki_compiler/ (El Agente Bibliotecario)
+Siguiendo tu metodología de creación de features, este nuevo módulo no sería un simple scraper, sino un compilador de contexto.
+
+Skill de Síntesis: Su función es leer los README.md y future_docs/ para detectar contradicciones o lagunas de conocimiento.
+
+Anidación con Standards: Cada vez que se crea un nuevo estándar en docs/standards/, esta skill debe "re-indexar" el repositorio para asegurar que los agentes (en setup/intro.md) tengan la versión más fresca de las reglas de juego.
+
+2. Estructura de "Knowledge Skills" anidada
+Podemos organizar el sistema en tres capas de anidación, utilizando tus archivos actuales como base:
+
+Capa A: La Base Normativa (standards/)
+Es el nivel más profundo de anidación. Define el "cómo" operamos.
+
+Acción: El sistema debe convertir los estándares (ej. ingestion_layer.md o llm_langgraph_components.md) en reglas de sistema (System Prompts) inyectables dinámicamente.
+
+Integración: Si el estándar cambia, la skill actualiza automáticamente las instrucciones de los agentes en setup/intro.md.
+
+Capa B: La Memoria Técnica (future_docs/ + README.md)
+Es la capa de conocimiento acumulado.
+
+Acción: En lugar de ser archivos estáticos, el sistema los trata como nodos de un grafo. Los # TODO(future) se convierten en "puntos de curiosidad" para el LLM.
+
+Skill de Navegación: Una skill que permita a Claude preguntar: "¿Qué problemas de arquitectura tenemos pendientes en el scraper?" y que este responda consultando el archivo específico en future_docs/.
+
+Capa C: La Interfaz de Agente (agents/claude/setup/intro.md)
+Es la capa superior donde el sistema "cobra vida".
+
+Acción: Este archivo no debe ser un texto fijo, sino un entry point que el sistema compila.
+
+Integración: El intro.md debería decir: "Eres un agente experto que sigue los estándares y conoce los desafíos actuales detallados en future_docs/".
+
+3. Implementación táctica sugerida
+Para que esto no sea solo teoría, puedes aplicar tu Documentation Quality Checklist para validar este nuevo sistema:
+
+Validación de Enlaces: Usa tu script validate_doc_links.py para asegurar que cada "Skill" tenga un rastro de papel claro desde el código hasta el estándar.
+
+LogTag Knowledge: Crear un nuevo LogTag.KNOWLEDGE (siguiendo tu estándar de basic.md) para marcar cuándo el sistema está "aprendiendo" o "sintetizando" una nueva parte de la Wiki.
+
+Idempotencia de Wiki: Al igual que tu capa de ingesta, el compilador de la Wiki no debe re-escribir todo cada vez, sino solo parchear lo que ha cambiado (usando hashes como en tus nodos de LangGraph).
+
+¿Te parece bien empezar definiendo el contracts.py de esta "Skill de Compilación" para ver qué datos fluirían entre los READMEs y el setup de Claude?
+
+Has dicho
+Sobre 1, creo que a esto hay que agregarle 2 cosas para estar "en la linea" de lo mio. 1- revision de docstrings, 2- Revision de codigo (creo que seria bueno aca tener tambien arboles de consulta rapida por cada cosa, onda ASTs por cada "dimension"; codigo, docstrings, flujo de datos, componentes, Nivel de cumplimiento (planificado, scaffolding, mocked, diseñado, planificado, solo mencion, implementado testeado, TESTING pero ligado a su posicion en en arbol sobretodo, etc) asi nos aseguramos de poder ver que afecta a que, facilitando la reimplementacion, reuso, factorizacion, etc.
+
+Gemini ha dicho
+Me parece una evolución brutal. Al incorporar el análisis de código (AST) y niveles de cumplimiento, el sistema deja de ser un simple "compilador de textos" y se convierte en un Grafo de Conocimiento Arquitectónico (Code-Aware Knowledge Graph).
+
+Esto se alinea perfectamente con tu principio rector: "Clean, well-structured code beats documentation... the how lives in the code itself". Si el código es la fuente de verdad, la Wiki debe indexarlo estructuralmente.
+
+Aquí tienes cómo integraríamos estas dos adiciones a la arquitectura, respetando tus estándares:
+
+1. Extensión del wiki_compiler: El Parser Multi-Dimensional
+Para lograr esa "consulta rápida por cada cosa", el compilador no solo leerá Markdown, sino que usará la librería ast de Python para extraer árboles de dependencias.
+
+Podemos estructurar esto en las "Dimensiones Ortogonales" que mencionas en tu metodología de creación de features:
+
+Dimensión Semántica (Docstrings): El AST extrae los docstrings de módulos, clases (ABCs) y métodos. El LLM los valida contra tu Documentation Quality Checklist (ej. verificar si una excepción atrapada se documenta, o si los campos Pydantic tienen descripciones útiles para el LLM).
+
+Dimensión Estructural (AST de Código & Componentes): Mapeo de qué archivo importa qué contrato (contracts.py) o qué almacenamiento (storage.py). Esto permite saber instantáneamente el impacto de un refactor ("Si cambio este JobKG, ¿qué nodos de LangGraph se rompen?").
+
+Dimensión de Flujo de Datos: Específico para tus módulos LangGraph. El sistema lee graph.py, parsea las definiciones de State (el "bus de ruteo") y traza los ejes (edges) entre nodos, creando un mapa navegable del flujo.
+
+2. El Árbol de Estado de Cumplimiento (Compliance Level)
+Esta es la idea más potente para el reuso y refactorización. Cada "Nodo de Conocimiento" en tu Wiki tendrá una propiedad de estado inyectada desde tu llm_langgraph_methodology.md y tu ciclo de future_docs/.
+
+Podemos modelar los niveles de cumplimiento basándonos en tus "Validation Gates":
+
+Planned: Solo existe mención en un archivo future_docs/ o plan_docs/.
+
+Designed: Los contracts.py existen (esquemas Pydantic).
+
+Scaffolding / Storage: Directorios creados, storage.py implementado y aislado.
+
+Mocked (Demo Chain): El nodo de LangGraph existe y funciona con una cadena falsa sin API keys.
+
+Implemented (Real Model): Conectado al modelo real.
+
+Tested & Hardened: Pruebas automatizadas (Approve, Regenerate, Stale Hash, etc.) cubiertas.
+
+3. El Contrato de Datos (src/wiki_compiler/contracts.py)
+Para que esto siga "la línea de lo tuyo", la salida de esta ingesta debe ser un modelo Pydantic fuertemente tipado. Así es como se vería el contrato central del compilador:
+
+Python
+from pydantic import BaseModel, Field
+from typing import Literal
+
+class ComplianceLevel(BaseModel):
+    status: Literal["planned", "designed", "scaffolding", "mocked", "implemented", "tested"]
+    failing_checks: list[str] = Field(description="List of documentation or test rules not met")
+
+class ASTNodeSignature(BaseModel):
+    node_type: Literal["pydantic_model", "graph_node", "determinisic_tool", "abc"]
+    dependencies: list[str] = Field(description="List of internal contract names this node depends on")
+
+class KnowledgeNode(BaseModel):
+    """
+    Representa una entidad en la Wiki. Puede ser un concepto de negocio, 
+    un componente técnico o un módulo completo.
+    """
+    entity_id: str = Field(description="Unique identifier (e.g., 'core.ai.generate_documents')")
+    description_from_code: str = Field(description="Extracted directly from the module docstring")
+    ast_signature: ASTNodeSignature | None
+    compliance: ComplianceLevel
+    linked_future_docs: list[str] = Field(description="List of future_docs files affecting this node")
+El Impacto en tu Flujo de Trabajo
+Con esta estructura, el "Agente Bibliotecario" o tú mismo podrían hacer consultas a la Wiki (mediante CLI o un agente en intro.md) del estilo:
+
+"Muestra el flujo de datos del módulo de Ingesta, filtrando solo los componentes que están en nivel 'Mocked' o inferior, y lista qué contratos de Pydantic necesitan para llegar a 'Implemented'."
+
+Al anidar los ASTs y los docstrings junto con el cumplimiento de tus metodologías, el código se autodescribe a nivel de sistema, garantizando que el diseño y la implementación nunca se desincronicen. ¿Te gustaría que definamos el graph.py u orquestación para este compilador?
+
+Has dicho
+Generaliza tu idea, NO TODA IMPLEMENTACION ES LANGRAPH. Ademas intentemos que todo sea lo mas extensible posible (seria buena idea tener un "pseudoesquema" dando vueltas que documente que grafos existen.)
+
+1. Extensión del wiki_compiler: El Parser Multi-Dimensional -> En tu idea falta el que, pero lo bueno es que si hacemos el parser facil hacer esto va a ser rapidisimo.
+
+imensión de Flujo de Datos: Específico para tus módulos LangGraph. El sistema lee graph.py, parsea las definiciones de State (el "bus de ruteo") y traza los ejes (edges) entre nodos, creando un mapa navegable del flujo. -> No solo langraph lee esto. Cada modulo tiene un IO que puede ser en memoria o disco.
+
+Gemini ha dicho
+Tienes toda la razón. El error en mi propuesta anterior fue anclar la solución a LangGraph solo porque era el ejemplo dominante en los documentos. Si queremos un sistema verdaderamente resiliente y en la filosofía "Karpathy", la arquitectura debe ser agnóstica al motor de ejecución.
+
+Un script secuencial, un worker asíncrono, o un grafo de LangGraph son solo detalles de implementación; a nivel de sistema, todos tienen entradas (Inputs), salidas (Outputs) y efectos secundarios (Storage).
+
+Aquí tienes la generalización de la idea, enfocada en la extensibilidad y en responder al "qué" del parser y al IO universal:
+
+1. El "Pseudo-esquema" Global: El Registro de Topología
+Para documentar "qué flujos existen" sin acoplarnos a una librería, el sistema debe generar un Mapa de Topología. Este mapa es un artefacto vivo (un JSON o un archivo Markdown con frontmatter) que el wiki_compiler actualiza.
+
+En lugar de leer solo LangGraph, el mapa registra Productores y Consumidores.
