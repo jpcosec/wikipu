@@ -1,6 +1,6 @@
 ---
 identity:
-  node_id: "doc:wiki/drafts/implementation_steps.md"
+  node_id: "doc:wiki/standards/implementation_steps.md"
   node_type: "concept"
 edges:
   - {target_id: "raw:raw/proposed_zone_reorganization.md", relation_type: "documents"}

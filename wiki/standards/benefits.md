@@ -1,6 +1,6 @@
 ---
 identity:
-  node_id: "doc:wiki/drafts/benefits.md"
+  node_id: "doc:wiki/standards/benefits.md"
   node_type: "concept"
 edges:
   - {target_id: "raw:raw/proposed_zone_reorganization.md", relation_type: "documents"}

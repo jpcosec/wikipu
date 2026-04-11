@@ -5211,10 +5211,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "0fe4c1218c751f4a86a8233abfd058b79a30d4bf",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -5279,10 +5279,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b18ca3b3924655c6f0e28e00afb3109762657cb2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -5327,10 +5327,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "03bdd5972b5ace712a3fe24bc1dfcefeb8b24da7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -5395,10 +5395,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "8755430749c4f4179f51935225ceb84abfa6242b",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/claw_session.md",
@@ -5464,10 +5464,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "da9286698b009538b69dd7f6e8113c5c4bcdb443",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -5532,10 +5532,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "f340fe0cfbf73538e96ecfb3c71890c842d964eb",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -5580,10 +5580,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "df28f01fd66eb030d276ae0866e305b5f3ab4fb6",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -5628,10 +5628,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "9128df5d7392373c0c9ed6ab3409055ad34b09a6",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -5696,10 +5696,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "121593929aa1a521f720d4637cfc134ea9b6389a",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -5764,10 +5764,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "56a3f085894c91dc4f9a8a5e0423485fb34a64a8",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -5812,10 +5812,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "16479771c844f088735be274a9c8b403dc907a2c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -5860,10 +5860,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "e5a019c3ea32fbd240199bba7d8c8592a734b988",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -5908,10 +5908,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "bfa15ed27371a7edfcc94c622d5befcb2fde67bc",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -5956,10 +5956,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b1cba3c23c3901a8a768b2c1a384ec1a9cbbc418",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6024,10 +6024,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "3b4328ef8af0a3025dc5960b1bb4b9357d9aff1e",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6072,10 +6072,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "764624c9e5a2f69b1b5669df523bea1d6acea726",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6120,10 +6120,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "0e41885a2df0c4e4b4ac9f16b354946acf2db252",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6168,10 +6168,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "e8011e1b4bbeec3007820ed4f97b9ddd14161527",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6216,10 +6216,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "792a6576f10fb953c14afd8b59a83292de0e3dae",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6264,10 +6264,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "f0e8e0ed0b09e7c36214112ce77cfdf81d4e123e",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6312,10 +6312,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b686b38ef8a69af04239db20fdcf83df8bc73481",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6360,10 +6360,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "f0f8e1c3e3d7930d2ab50d94736e00faf8ffd989",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -6408,10 +6408,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "82be4872bc66beabdc09b50da53303f60cbf1202",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -6476,10 +6476,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7d901895aa21f85d629a5b4c6f02483fc9d64c15",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -6524,10 +6524,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "c8846a87614bb5468fb10bb91d064e284e32bccd",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -6592,10 +6592,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "aaad30a65a494e044c1263aee431c6220b856a2a",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -6660,10 +6660,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d9eba16c11949ea108f6c5d84ad4817b7d546fa4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -6708,10 +6708,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "60958dc219afd4e724082fb7bf5ef6ec3707bb97",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -6756,10 +6756,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "021b28fce1e5d86a891e5ac10d1f16d19d588f66",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/karpathy_tweet.md",
@@ -6824,10 +6824,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "400631933e5764521a6fbf3f277f75f231be4837",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -6872,10 +6872,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "5ede98ca4e12948971b8adb6f91599e0609bfe5f",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -6940,10 +6940,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7cc2ed3f62dbf4aa4945ff1ccdbfceca502a71b2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7008,10 +7008,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "396c55ef3bf310ebdc517d7f1e70366330cebdec",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -7076,10 +7076,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "dc2bace6d117aa6119f6cc50de87b03bcc516027",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -7124,10 +7124,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d2238dea62e9616663c993f71e8bdc0c2233bc9c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7172,10 +7172,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "081e7d68a2aa64368a5eb1a31ab36284f3fa45d5",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -7220,10 +7220,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "9cf62d09e0d414189bb6ab570de0addab2e7affc",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -7268,10 +7268,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "1da410fa518096fcf7d4cd5963c1c56a5bda1809",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -7316,10 +7316,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "2629dbfe9096f60d8f1955c1644f02638bda59dd",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -7364,10 +7364,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "fc0d5f13ed231e45e28a8153fb7cf922db4d1dc1",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -7412,10 +7412,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "703fd18a65dc73f727ea288521c68bf76467f4f0",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7460,10 +7460,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "fd4cc53347943755cfa1d73338a6fea30daa4476",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7508,10 +7508,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "a69b6d75ac6adce842fc3ca860c820d171423d4c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7556,10 +7556,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b905c0cb88c21ca6a2c100f09b241a4be3ea346f",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7604,10 +7604,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "95aa3fda7c05c6d115259dd889eda2d473fe37c4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7652,10 +7652,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "500fad60999fdcc03c0889177a3638357a72a8a0",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -7700,10 +7700,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "c547caadc076555045811c8430145329a29782e7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7713,6 +7713,74 @@
         }
       },
       "id": "doc:wiki/drafts/problem_motivation.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/problem_statement.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The current `plan_docs/` structure conflates issue tracking with active task management, leading to confusion about what constitutes \"blocking work\" vs. \"work in progress.\"",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "5416b7ae89d32ba94ae030baadadc505b78081fd",
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651704",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/problem_statement.md"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/proposed_zone_reorganization.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/proposed_zone_reorganization.md"
     },
     {
       "type": "concept",
@@ -7748,10 +7816,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "badb7fe27788060459403a7a86bfe88512bcbd91",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7761,6 +7829,54 @@
         }
       },
       "id": "doc:wiki/drafts/proposed_direction.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "No abstract provided.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "8fb6472ce6236e0df315b93298daa229cae553c9",
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:49:32.208600",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md"
     },
     {
       "type": "concept",
@@ -7796,10 +7912,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "18472f8e4cebeaab29502ca6eb5aeaf5f2838af7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -7844,10 +7960,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "0f8b91a742c9571a986c10095964f46601076df8",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7892,10 +8008,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ef64f80fb1d402d672f09079f51b445111040ed5",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -7941,10 +8057,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "45e11344b8d27cbddba036972d272e379f18c307",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -7989,10 +8105,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d8a2019491099df1b792d44b7659bfe16cbff1e2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -8037,10 +8153,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "e0b038889958842b1e57a3caf4eae8ea43bdf950",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8085,10 +8201,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "a887411bab0684b8dc12521f194b015db0fb3ffa",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -8133,10 +8249,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "3100fec86d6fee79ccb6b7abad289155f9116f89",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8181,10 +8297,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "36f4669d179e117c7123cbf5195bc5c803471f43",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8229,10 +8345,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "aab9bd74008584e832edf91af5253dd6d6c2b13c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -8277,10 +8393,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "2bf8f8eab728608164bf77f9e26b34916fa35c93",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8325,10 +8441,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "049e22fec20704fbd943c42683d73df3ae02940e",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8373,10 +8489,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "498d85b99bd6d57bd9c65ffc2df29122d61cc8e4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_extended.md",
@@ -8421,10 +8537,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "89be04d3deb094881a6482d2e3e92f16595004b4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/socratic_protocol.md",
@@ -8489,10 +8605,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "54fffb48df56f5c756f060a55632c9cf6fbb4f83",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -8537,10 +8653,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "de57c4dd284fbdb4ac3140e275ecf219aea02f73",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -8585,10 +8701,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "00ceb89b5bff32979140a227bb8fdb34f35d8117",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -8633,10 +8749,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "5e20665223eefea3a25e6c91b7725d0f42c2504d",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -8681,10 +8797,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "af04aebce6a051ee75519e24bf4b0b1befa4784e",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/socratic_protocol.md",
@@ -8729,10 +8845,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "fc570650e0cd9fbac20d8dc2b191d438abd0fcab",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -8777,10 +8893,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "17042e23b4c08aab80ceedbe3d686079339fe4df",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -8825,10 +8941,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6450dfb464b44ec495653474b79f5cbe77af3687",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_graph_routing.md",
@@ -8893,10 +9009,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d3598d8fe062a65f7248080040c89a45ca215690",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_graph_routing.md",
@@ -8941,10 +9057,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d43a658aaddb6475d9317ef403f7ba2f0baa52c2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -8989,10 +9105,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "13ad0eb322a0b4c3d09f587fae4b9f2b780cf050",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/socratic_protocol.md",
@@ -9037,10 +9153,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "d28218048cec014063baa9c81f420876927ebe98",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -9085,10 +9201,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "567e866c0e4d64696c0dcb1cbd1afbf590a7cbac",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_addendum.md",
@@ -9133,10 +9249,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ef0582784679e73d55f528c28dfa1a71867157ae",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -9182,10 +9298,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "9657277529f31d0509b075c897eeaceb49f3d3a7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -9230,10 +9346,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7bb37c8ed307b2f5f69e25537191b79ddf03097f",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -9278,10 +9394,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7da3ad100d0902d6a15bae7c4637dd6c60fca722",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -9326,10 +9442,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "52d5df49122d67fa383f47ee5fcb633930dd741c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -9374,10 +9490,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "889f708197e4c55cbf2fcdebe942ed95fc31b9c6",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -9422,10 +9538,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6192b3b245029659473a095dd914693ea7c924e7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -9470,10 +9586,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ab3261a6af3ed8f0e1cdde5b3330a395edbdae94",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -9518,10 +9634,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "631bff9a243370e0433e43dbccfb27f4fb80387c",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -9566,10 +9682,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "15510294ffc6322ae016bc9e2075cfa42a92d766",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_graph_routing.md",
@@ -9614,10 +9730,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "5eb3f89cc2821b0c4e93613da1c704423d5c95b4",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -9662,10 +9778,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "53e88d1809938fe4b6d08479678257391bb3097f",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -9710,10 +9826,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "dcb3afd4f933b5dd6b4ddd9c4f8f38c2450d1d5a",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facet_orthogonalization.md",
@@ -9758,10 +9874,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "f958034733e1c561a541e9a7b81f87aa36c2c868",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -9806,10 +9922,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "8e0c7e73d644c6b197bf5620a3b30de7d48d4a93",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -9854,10 +9970,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "60f5696d3654c1f41514ee459a78430299355dab",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/system_concept.md",
@@ -9922,10 +10038,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "a482513c519d4c704712965a83573d0d6a40d967",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/graph_construction_process.md",
@@ -9970,10 +10086,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6b93617777aa0acc21632ab500f9f4286aae72a7",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -10018,10 +10134,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "74117d1df8d61f50633c0eadf856f0a7cd35d678",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -10066,10 +10182,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "98e87124ae1e34d665948570ba8f3ea59f72a677",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis.md",
@@ -10114,10 +10230,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7ba8cb4e035356469689830e589860556c3d9720",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -10162,10 +10278,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6b833659ce421cdcc1f56f8c58b5632ef6bc05b9",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -10210,10 +10326,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "7c7f99221ef3ceed9cd8e1f58d8064a8b5c2a3da",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/socratic_protocol.md",
@@ -10258,10 +10374,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "b3ae039f8c0a67aaeff67ea855e9e687289f2775",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -10306,10 +10422,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "c1f4895f8e545d92bae523d6397698172f6fbd8b",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/git_tracked_nodes.md",
@@ -10354,10 +10470,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ea4d6ec6eac568074ff7198acf183c6ae5390ce5",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/methodology_synthesis_graph_routing.md",
@@ -10402,10 +10518,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "91046913872d754719f016af54c04529d79c4e70",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/trail_collect.md",
@@ -10450,10 +10566,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "72da39e5d40ad0f975e958b4947590b3b90b3da8",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/facets_as_questions.md",
@@ -10498,10 +10614,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "502ae04d3cccf058d38a0abdbea1dff67e516584",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/socratic_protocol.md",
@@ -10546,10 +10662,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "8ff329c891898b2f77d7e44c6b23438ae0a348b2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/cleansing_protocol.md",
@@ -10594,10 +10710,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ce0846c052e235ab5bb1795ba753d562243ca2b5",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/desk_zone.md",
@@ -10642,10 +10758,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "5e85c083a9c01b22f0a77f4e39d12a1fcae038c8",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/board_gate_pattern.md",
@@ -10690,10 +10806,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "ec4b20f48d6a329fce4fbd0159281cd31ff54bc9",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/wiki_construction_principles.md",
@@ -10738,10 +10854,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "1151c12978e940fbcef910e14668bebcda915d78",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/autopoiesis_system.md",
@@ -10786,10 +10902,10 @@
         "test_map": null,
         "git": {
           "blob_sha": "6ae76294716338aaecfe4b6a1fd13188b443153d",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
+          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
         },
         "source": {
           "source_path": "raw/system_concept.md",
@@ -10957,7 +11073,7 @@
         "git": {
           "blob_sha": "2799725a4adc6a9f041b18963e2caf96649ea2bd",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15960,7 +16076,7 @@
         "git": {
           "blob_sha": "fe8df3da5b423766c57242208c08f71aabce2de6",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16717,6 +16833,54 @@
       "id": "doc:wiki/standards/artifacts/proposal.md"
     },
     {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/benefits.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "- Clear separation: blocking issues vs. ready work",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "163d5ad2af410406d23ef0411e5b3dc611bf87fd",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651851",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/standards/benefits.md"
+    },
+    {
       "type": "doc_standard",
       "status": "implemented",
       "schema": {
@@ -16793,6 +16957,54 @@
         "source": null
       },
       "id": "doc:wiki/standards/document_topology.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/implementation_steps.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "1. Create `desk/tasks/` directory structure",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "ba760d1da56f7f0a8f4821f6322058a7b95277d6",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651810",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/standards/implementation_steps.md"
     },
     {
       "type": "doc_standard",
@@ -16959,6 +17171,150 @@
         "source": null
       },
       "id": "doc:wiki/standards/languages/typescript.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/open_questions.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "- Exact location for desk/tasks/ (desk/ is preferred for consistency)",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "1804c6b36190e672902ff214ba1df0fdabe4e8a4",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651889",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/standards/open_questions.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/proposed_solution.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Split `plan_docs/` into two distinct zones and introduce a new organizational concept:",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "0cc53c875eda842282928dd2778a38f7ea97448c",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651761",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/standards/proposed_solution.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/proposed_zone_reorganization.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/proposed_zone_reorganization.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "No abstract provided.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "a36485bfe6377673ae18e91121e9028034f0f082",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/proposed_zone_reorganization.md",
+          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
+          "compiled_at": "2026-04-11T02:42:45.651577",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/standards/proposed_zone_reorganization.md"
     },
     {
       "type": "code_construct",
@@ -24050,8 +24406,20 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/drafts/problem_statement.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/drafts/proposed_direction.md",
       "target": "raw:raw/methodology_synthesis_extended.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/proposed_wikipu_zone_reorganization.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
     },
     {
       "relation": "documents",
@@ -25608,6 +25976,12 @@
       "target": "doc:wiki/standards/house_rules.md"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/standards/benefits.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
+    },
+    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/checklists.md",
@@ -25618,6 +25992,12 @@
       "metadata": {},
       "source": "doc:wiki/standards/document_topology.md",
       "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/standards/implementation_steps.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
     },
     {
       "relation": "implements",
@@ -25654,6 +26034,24 @@
       "metadata": {},
       "source": "doc:wiki/standards/languages/typescript.md",
       "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/standards/open_questions.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/standards/proposed_solution.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/standards/proposed_zone_reorganization.md",
+      "target": "raw:raw/proposed_zone_reorganization.md"
     }
   ]
 }
