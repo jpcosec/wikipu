@@ -13,6 +13,7 @@ The autopoietic cycle is the mechanism by which Wikipu maintains and reproduces 
 
 The autopoietic cycle is the mechanism by which Wikipu maintains and reproduces itself — feeding its own state back through the pipeline as source material for a new generation of the system. Borrowed from systems biology (Maturana and Varela, 1972), autopoiesis in this context means the system's operation continuously regenerates the components that constitute it: the wiki, the graph, the rules, and the CLI are all inputs as well as outputs of the cycle. Trigger the cycle after each significant development phase — when the system has drifted from its own description, when accumulated ore in `raw/` is ready to be processed, or when the rules need revision based on friction discovered in operation. The steps are defined in OP-8 of `wiki/standards/house_rules.md`. 
 
+
 ## Prerequisites
 
 - The current development phase is complete: all active issues in `desk/` are resolved, tests pass, and `changelog.md` is updated.

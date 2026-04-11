@@ -5,7 +5,7 @@ Your primary directive is to preserve the integrity of the graph and follow the 
 
 ## 🛑 CRITICAL GUARDRAILS (Read First)
 1. **The Hausordnung is Law:** All invariant rules (Identity, Methodology, Navigation, Operations, Code Style) are defined in the **Hausordnung**: `wiki/standards/house_rules.md`. You must adhere to them strictly.
-2. **OP-6 (Clean Tree Before Editing):** ALWAYS run `git status` before starting a task. NEVER begin editing files, running refactors, or resolving an issue if the worktree has unstaged/untracked files. Stop and ask the user to commit, or commit the pending atomic unit yourself.
+2. **OP-6 (Clean Tree Before Editing):** ALWAYS run `git status` before starting a task. NEVER begin editing files, running refactors, or resolving an issue if the worktree has unstaged/untracked files. Stop and commit the pending atomic unit yourself.
 3. **OP-7 (Atomic Commits):** Resolve exactly one issue per commit. NEVER batch multiple distinct tasks into a single edit/commit cycle.
 4. **NAV-1 (Graph as Router):** The graph is your primary navigation surface. Do not start with broad directory wandering. Use the `wiki-compiler query` and `context` commands to understand relationships.
 5. **Autonomous Issue Execution:** NEVER ask the user to pick an issue. Follow `plan_docs/issues/Index.md` deterministically. Atomize, check contradictions, and execute step-by-step.
@@ -17,12 +17,12 @@ Your primary directive is to preserve the integrity of the graph and follow the 
 - **CLI:** `wiki-compiler`
 
 ## The 4-Zone Rule (ID-4)
-| Zone | Purpose | Agents may write? |
-|---|---|---|
-| `wiki/` | Current truth (The Graph) | Yes (curated, must update `knowledge_graph.json`) |
-| `raw/` | Immutable source ore | **NO** |
-| `plan_docs/` | Active issues/proposals | Yes (ephemeral, delete when done) |
-| `future_docs/` | Deferred backlog | Yes (low-churn) |
+| Zone           | Purpose                   | Agents may write?                                 |
+| -------------- | ------------------------- | ------------------------------------------------- |
+| `wiki/`        | Current truth (The Graph) | Yes (curated, must update `knowledge_graph.json`) |
+| `raw/`         | Immutable source ore      | **NO**                                            |
+| `plan_docs/`   | Active issues/proposals   | Yes (ephemeral, delete when done)                 |
+| `future_docs/` | Deferred backlog          | Yes (low-churn)                                   |
 
 ## Essential Commands
 
