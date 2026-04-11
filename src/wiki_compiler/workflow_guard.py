@@ -117,6 +117,24 @@ def guard_workflow(
         if change.path.startswith(ISSUE_PREFIX) and "D" in change.status
     )
 
+    # --- Blocking Issue Enforcement ---
+    # Check if there are any open issue files in plan_docs/issues/
+    issues_root = project_root / ISSUE_PREFIX
+    open_issues = []
+    if issues_root.exists():
+        open_issues = [p for p in issues_root.rglob("*.md") if p.name != "Index.md"]
+    
+    # If we are making code/doc changes, but there are open issues that AREN'T being deleted in this commit, block.
+    if (has_code_changes or has_doc_changes) and open_issues:
+        # Filter out the issues being deleted in this change
+        remaining_issues = [p for p in open_issues if str(p.relative_to(project_root)) not in paths]
+        if remaining_issues:
+            issue_list = ", ".join(str(p.relative_to(project_root)) for p in remaining_issues[:3])
+            errors.append(
+                f"Blocking issues found in `{ISSUE_PREFIX}`. You must resolve or delete all issues "
+                f"before starting new implementation or documentation work. Open: {issue_list}..."
+            )
+
     if has_code_changes and not issue_paths:
         errors.append(
             "Code or test changes require a linked issue under `plan_docs/issues/`. "
