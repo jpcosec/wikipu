@@ -29,7 +29,6 @@ IGNORED_PREFIXES = (
 )
 IGNORED_FILES = {
     ".compliance_baseline.json",
-    "knowledge_graph.json",
 }
 CODE_PREFIXES = ("src/", "tests/")
 DOC_PREFIXES = ("wiki/", "agents/")

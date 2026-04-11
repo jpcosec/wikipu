@@ -2,7 +2,9 @@
 
 ## 2026-04-10
 
-- resolved issue 35 `deepen-socratic-protocol`: expanded the Socratic protocol from a stub to a fully defined operational schema and removed the human placeholder comment
+- resolved issue 35 `deepen-socratic-protocol`: expanded the Socratic protocol from a stub to a fully defined operational schema
+- resolved issue 36 `commit-after-build-protocol`: established OP-9 rule requiring immediate atomic commits after graph builds and hardened `workflow_guard.py` to track `knowledge_graph.json`
+- resolved issue 37 `session-log-management-fix`: consolidated session logs into `desk/autopoiesis/sessions/` via `.gemini/settings.json` and root pollution prevention in `.gitignore` and removed the human placeholder comment
 
 - resolved issue 34 `define-energy-and-calculation`: defined systemic Energy and a deterministic calculation method for orthogonality/cost, resolving human comments in ID-2
 

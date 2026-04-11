@@ -215,6 +215,10 @@ Periodically (at minimum after each significant development phase):
 7. Write a new version of the hausordnung incorporating what the cycle revealed.
 8. Commit.
 
+**OP-9 — Build Synchronization (Commit-After-Build)**
+Any operation that modifies the Knowledge Graph (`knowledge_graph.json`) via `wiki-compiler build` must result in an immediate atomic commit. The graph must never be left in a drifted state relative to the `wiki/` source. Build outputs are not "artifacts" to be ignored; they are the compiled truth of the system and must be synchronized on every change.
+`Enforced by:` `check-workflow` (ensures `knowledge_graph.json` is not drifted); `MA-5` (verification is inline).
+
 ---
 
 ## Layer 5 — Code Style

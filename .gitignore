@@ -11,6 +11,10 @@
 logs/
 .serena/
 
+# Gemini CLI session logs (Pollution prevention)
+session-ses_*.md
+session-*.md
+
 # Obsidian (Share graph UI, ignore personal workspace)
 .obsidian/workspace.json
 .obsidian/workspace
