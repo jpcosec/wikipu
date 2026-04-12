@@ -9,84 +9,62 @@ Requires-Dist: pydantic>=2.0.0
 Requires-Dist: PyYAML>=6.0
 Requires-Dist: networkx>=3.0
 
-# wikipu
+# 🧠 Wikipu: An LLM-Driven Wiki Ecosystem
 
-`wikipu` is a small Knowledge Graph compiler for LLM-oriented repositories. It bakes Markdown from `wiki_source/`, exports a NetworkX JSON graph, and keeps the documentation layer aligned with the repository's house rules.
+Welcome to **Wikipu**. This is not just a CLI tool; it is a self-contained **Seed Repository** and **Development Operating System** designed for human-AI collaboration.
 
-## Installation
+Wikipu allows you to "compile" knowledge from code, documentation, and raw brainstorming into a unified, machine-readable **Knowledge Graph**.
 
-Install the CLI from the repository root:
+## 🚀 The 6-Step Workflow
 
-```bash
-pip install -e .
-```
+Wikipu is designed to be the starting point for any new or existing project.
 
-## Usage
+1.  **Download as Seed**: Clone this repository as the foundation for your project.
+2.  **Install**: `pip install -e .` to get the `wiki-compiler` command.
+3.  **Plug in your Code**: Move your existing code into `src/` or start building new modules using `wiki-compiler scaffold`.
+4.  **Define the Raw Source**: Dump your "seminal" thoughts, chat logs, and messy notes into `raw/`.
+5.  **Follow the Rules**: Adhere to `desk/STANDARDS.md` and `wiki/standards/house_rules.md` for code and documentation.
+6.  **Compile & Run**: Run `wiki-compiler build` to generate the knowledge graph. Run `wiki-compiler run` to start the autopoiesis cycle.
 
-Initialize the base repository structure:
+## 🛠️ Quick Start
 
+### 1. Initialize
+If you are plugging Wikipu into an existing repo, set up the structure:
 ```bash
 wiki-compiler init
 ```
 
-Scaffold a new module without hand-building the skeleton:
-
+### 2. Build the Graph
+Generate your knowledge graph and check compliance:
 ```bash
-wiki-compiler scaffold --module src/core/auth --intent "Manage user authentication"
+wiki-compiler build
 ```
 
-Compile the wiki source, scan Python code, bake docs, and emit the graph artifact:
-
+### 3. Ingest Raw Ideas
+Transform your `raw/` files into wiki drafts:
 ```bash
-wiki-compiler build --source wiki_source/nodes --dest docs/compiled --graph knowledge_graph.json
+wiki-compiler ingest
 ```
 
-Query the exported graph at runtime:
+## 📂 The 4-Zone Model
 
-```bash
-wiki-compiler query --graph knowledge_graph.json --type get_descendants --node-id file:src/wiki_compiler/builder.py
-```
+To keep the ecosystem tidy, we follow a strict temporal and conceptual organization:
 
-Validate a `TopologyProposal` before scaffolding new code:
+- **`raw/` (Origin)**: The immutable seed source. Read-only for LLMs, contains the "ore" refined into the wiki.
+- **`wiki/` (Truth)**: The living documentation, standards, and concepts. Single source of truth for humans and machines.
+- **`desk/` (Active)**: Active work surface. Ephemeral — items deleted when resolved. Contains issues, tasks, and gates.
+- **`drawers/` (Deferred)**: Deferred work surface. Ideas waiting for prioritization. Stale after 6 months.
 
-```bash
-wiki-compiler validate --proposal proposal.json --graph knowledge_graph.json
-```
+## 📖 Deep Dive
 
-Render focused Markdown or JSON context for a subagent:
+For detailed instructions on architecture, rules, and advanced usage, explore the `wiki/` directory:
 
-```bash
-wiki-compiler context --graph knowledge_graph.json --nodes file:src/wiki_compiler/builder.py --depth 1
-```
+*   [Wiki Front Page](wiki/Index.md)
+*   [How it Works](wiki/concepts/how_wikipu_works.md)
+*   [How to Use the CLI](wiki/how_to_use.md)
+*   [How to Add a Component](wiki/how_to_add_component.md)
+*   [House Rules](wiki/standards/house_rules.md)
+*   [Librarian Agent Protocol](agents/librarian/intro.md)
 
-Draft reviewable wiki nodes from `raw/`:
-
-```bash
-wiki-compiler ingest --source raw --dest wiki_source/nodes
-```
-
-## Key Files
-
-- `docs/standards/00_house_rules.md` is the canonical repository rule set.
-- `docs/domain_glossary.yaml` defines shared vocabulary used by the compiler and future validators.
-- `wiki_source/nodes/` contains source wiki nodes with YAML frontmatter and transclusions.
-- `agents/librarian/intro.md` is the canonical librarian-agent operating guide.
-- `docs/adrs/` stores architectural decision records.
-- `plan_docs/` contains ephemeral execution plans and issue breakdowns.
-
-## Repository Layout
-
-- `src/wiki_compiler/` - CLI and graph build implementation
-- `wiki_source/` - source Markdown nodes
-- `docs/` - durable documentation and ADRs
-- `agents/` - agent-facing operational guidance
-- `raw/` - immutable source material
-
-## Current Runtime Capabilities
-
-- Python source scanning for modules, classes, and functions with AST, semantic, I/O, and exemption facets.
-- `.wikiignore` exemptions and compliance baseline scoring during `build`.
-- Graph querying, topology validation, and focused context rendering from `knowledge_graph.json`.
-- Safe raw-ingestion scaffolding that creates planned draft wiki nodes for human review.
-
-Major documentation changes are recorded in `changelog.md`.
+---
+*Wikipu ensures that code is the truth, documentation is the why, and the wiki is the index.*

@@ -9,40 +9,44 @@ Wikipu allows you to "compile" knowledge from code, documentation, and raw brain
 Wikipu is designed to be the starting point for any new or existing project.
 
 1.  **Download as Seed**: Clone this repository as the foundation for your project.
-2.  **Plug in your Code**: Move your existing code into `src/` or start building new modules using `wiki-compiler scaffold`.
-3.  **Define the Raw Source**: Dump your "seminal" thoughts, chat logs, and messy notes into `raw/`.
-4.  **Generate Navigation**: Use `wiki-compiler ingest` to turn raw notes into draft wiki nodes.
-5.  **Follow the Rules**: Adhere to the `wiki/standards/house_rules.md` to ensure your code and documentation are perfectly aligned (Pydantic contracts, clear docstrings, and orthogonal design).
-6.  **Compile & Explore**: Run `wiki-compiler build` to generate the `knowledge_graph.json`. Now, both you and your LLM can use the `wiki/` and the graph to explore, design, and implement features with perfect context.
+2.  **Install**: `pip install -e .` to get the `wiki-compiler` command.
+3.  **Plug in your Code**: Move your existing code into `src/` or start building new modules using `wiki-compiler scaffold`.
+4.  **Define the Raw Source**: Dump your "seminal" thoughts, chat logs, and messy notes into `raw/`.
+5.  **Follow the Rules**: Adhere to `desk/STANDARDS.md` and `wiki/standards/house_rules.md` for code and documentation.
+6.  **Compile & Run**: Run `wiki-compiler build` to generate the knowledge graph. Run `wiki-compiler run` to start the autopoiesis cycle.
 
 ## 🛠️ Quick Start
 
-### 1. Initialize
-If you are plugging Wikipu into an existing repo, set up the structure:
+### 1. Install
 ```bash
-wiki-compiler init
+pip install -e .
 ```
 
+**If `wiki-compiler` command is not found after install:**
+- Restart your terminal (or open a new shell)
+- Verify Python path: `which python` and `echo $PATH`
+- Try: `python -m wiki_compiler build` as fallback
+- Or run directly: `python -c "from wiki_compiler.main import main; main()" -- build`
+
 ### 2. Build the Graph
-Generate your knowledge graph and check compliance:
 ```bash
 wiki-compiler build
 ```
 
-### 3. Ingest Raw Ideas
-Transform your `raw/` files into wiki drafts:
+### 3. Start the Autopoiesis Cycle (Optional)
 ```bash
-wiki-compiler ingest
+wiki-compiler run
 ```
+This runs the self-maintaining loop - detects perturbations, creates cycles, pauses at Gates for human approval.
 
-## 📂 The 4-Place Design
+## 📂 The 4-Zone Model
 
 To keep the ecosystem tidy, we follow a strict temporal and conceptual organization:
 
-- **`wiki/` (Past/Truth)**: The living documentation, standards, and concepts. This is the single source of truth for humans and machines.
-- **`plan_docs/` (Present/Doing)**: Ephemeral plans and active issue tracking. Once implemented, these are deleted.
-- **`future_docs/` (Future/Waiting)**: A backlog for ideas and architectural shifts not yet in progress.
-- **`raw/` (Source/Origin)**: The immutable seed source. Read-only for LLMs, it contains the "ore" refined into the wiki.
+- **`raw/` (Origin)**: The immutable seed source. Read-only for LLMs, contains the "ore" refined into the wiki.
+- **`wiki/` (Truth)**: The living documentation, standards, and concepts. Single source of truth for humans and machines.
+- **`desk/` (Active)**: Active work surface. Ephemeral — items deleted when resolved. Contains issues, tasks, and gates.
+- **`drawers/` (Deferred)**: Deferred work surface. Ideas waiting for prioritization. Stale after 6 months.
 
 ## 📖 Deep Dive
 

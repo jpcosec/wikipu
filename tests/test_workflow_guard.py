@@ -22,7 +22,7 @@ def test_guard_accepts_code_changes_with_issue_and_changelog() -> None:
         [
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
             FileChange(status="M ", path="tests/test_workflow_guard.py"),
-            FileChange(status="M ", path="plan_docs/issues/gaps/workflow.md"),
+            FileChange(status="M ", path="desk/issues/gaps/workflow.md"),
             FileChange(status="M ", path="changelog.md"),
         ],
         branch_name="issue/workflow-guard",
@@ -34,7 +34,7 @@ def test_guard_accepts_code_changes_with_issue_and_changelog() -> None:
 def test_guard_requires_issue_index_when_issue_deleted() -> None:
     report = guard_workflow(
         [
-            FileChange(status="D ", path="plan_docs/issues/gaps/workflow.md"),
+            FileChange(status="D ", path="desk/issues/gaps/workflow.md"),
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
             FileChange(status="M ", path="changelog.md"),
         ],
@@ -42,7 +42,7 @@ def test_guard_requires_issue_index_when_issue_deleted() -> None:
     )
 
     assert report.ok is False
-    assert any("Index.md" in error for error in report.errors)
+    assert any("Board.md" in error for error in report.errors)
 
 
 def test_guard_allows_structural_docs_with_override() -> None:
@@ -76,7 +76,7 @@ def test_guard_requires_issue_or_phase_branch_for_code_changes() -> None:
     report = guard_workflow(
         [
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
-            FileChange(status="M ", path="plan_docs/issues/gaps/workflow.md"),
+            FileChange(status="M ", path="desk/issues/gaps/workflow.md"),
             FileChange(status="M ", path="changelog.md"),
         ],
         branch_name="main",

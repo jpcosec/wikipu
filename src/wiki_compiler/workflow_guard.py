@@ -134,7 +134,7 @@ def guard_workflow(
 
     if deleted_issue_paths and ISSUE_INDEX not in paths:
         errors.append(
-            "Deleting a resolved issue also requires updating `plan_docs/issues/Index.md`."
+            "Deleting a resolved issue also requires updating `desk/issues/Board.md`."
         )
 
     if (
