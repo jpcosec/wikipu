@@ -81,7 +81,6 @@ def query_graph(
             conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:"})
         
         query = StructuredQuery(
-            select="nodes",
             filters=[
                 {"facet": "identity", "conditions": conditions},
             ],
