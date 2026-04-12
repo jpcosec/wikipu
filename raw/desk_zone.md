@@ -23,9 +23,8 @@ Everything currently in motion that requires a human or agent decision to advanc
 |---|---|
 | `desk/Gates.md` | Central gate monitor — all open HITL blocks across all boards |
 | `desk/issues/Board.md` | Implementation work: gaps and unimplemented features |
-| `desk/proposals/Board.md` | Topology and facet proposals awaiting approval |
-| `desk/socratic/Board.md` | Open design questions awaiting resolution |
-| `desk/autopoiesis/Board.md` | Self-repair cycles: cleansing proposals, drift corrections, rule patches |
+| `desk/proposals/` | Topology and facet proposals awaiting approval |
+| `desk/tasks/` | In-flight task artifacts |
 
 `Gates.md` lives at the root of `desk/` — it is not a domain board but the monitoring surface across all domains.
 

@@ -33,8 +33,8 @@ IGNORED_FILES = {
 CODE_PREFIXES = ("src/", "tests/")
 DOC_PREFIXES = ("wiki/", "agents/")
 DOC_FILES = {"README.md", "AGENTS.md", "changelog.md"}
-ISSUE_PREFIX = "plan_docs/issues/"
-ISSUE_INDEX = "plan_docs/issues/Index.md"
+ISSUE_PREFIX = "desk/issues/"
+ISSUE_INDEX = "desk/issues/Board.md"
 
 
 @dataclass(frozen=True)
@@ -88,7 +88,6 @@ def read_current_branch(project_root: Path) -> str:
         return result.stdout.strip() or "main"
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "unknown"
-
 
 
 def guard_workflow(

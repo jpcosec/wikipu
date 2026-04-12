@@ -2778,7 +2778,7 @@
         "git": {
           "blob_sha": "39e41dba3c4e9180b7ce43126c713d98fd709c5c",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "3c17c44c1fd02b9b2c8479b7c6b6c2d591957bf0",
+          "last_modified_commit": "0d494809cd134d2559c5aebf38f470bc365440ec",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3382,7 +3382,7 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "3b9e733178e296310c364582005d731be76fd777",
+          "blob_sha": "72ff061dd8e8fb0413cea6891f84753e1b39c9b1",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "fa347dbb96ab4833d19ba145d2aa82519abb3038",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4292,7 +4292,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6864118d66b6cffb53a165a814b1b5e3e879fded",
+          "blob_sha": "c5c3935abd4cb01cee5a7b1c3c2749d303ba7491",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -5318,6 +5318,218 @@
       "status": "planned",
       "schema": {
         "identity": {
+          "node_id": "doc:wiki/drafts/1_ci_cd_enforcement.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "**Idea:** The wiki_compiler runs as a required check in every Pull Request. If the compliance score decreases, the merge is blocked.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "75119c847ac1736fbc7063c41423aa2d3809f9fa",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.207249",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/1_ci_cd_enforcement.md"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/unimplemented_from_sourcetalk.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/2_domain_glossary.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "**Idea:** A central file (e.g., `docs/domain_glossary.yaml`) that unifies synonyms across modules. If module A calls it \"JobPosting\" and module B calls it \"Vacancy\", the graph should know they're the same concept.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "a081d8d7f4d64c108db128c9b1bd4c83cb700050",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.207459",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/2_domain_glossary.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "**Idea:** Before any TopologyProposal is generated, first query the graph to see if a simpler structure already exists that satisfies the requirement. If a match exists, extend it rather than creating new elements.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "e79ce2a403d36697bcc1dd6de99f0dd14893d9f2",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.207667",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "**Idea:** A concrete system prompt that gives the LLM the \"librarian\" role \u2014 telling it how to navigate the graph, synthesize answers, and audit compliance.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "736cd886987425bd7c35f003996dadbdfd7badfd",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.207813",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
           "node_id": "doc:wiki/drafts/application_to_wikipu.md",
           "node_type": "concept"
         },
@@ -5496,6 +5708,54 @@
         "source": null
       },
       "id": "raw:raw/board_gate_pattern.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/c_mo_leer_el_grafo.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "- Todo es un `KnowledgeNode` con una `SystemIdentity` \u00fanica (ej. `file:src/ai/graph.py`).",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "6a4e92dc3f7e3be2815bd2fef005bdd8e15af66f",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.208049",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/c_mo_leer_el_grafo.md"
     },
     {
       "type": "concept",
@@ -8712,6 +8972,54 @@
       "status": "planned",
       "schema": {
         "identity": {
+          "node_id": "doc:wiki/drafts/reglas_de_interacci_n.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "- **Si el usuario quiere crear un feature nuevo:** Busca nodos con `status=\"planned\"` en el `ComplianceFacet` para ver si ya hay trabajo previo, o pide crear la entrada en `future_docs/` primero.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "dd7f3ab16d2a8eb09206e2d1527bfbc8124aec7c",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.208160",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/reglas_de_interacci_n.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
           "node_id": "doc:wiki/drafts/relation_to_node_id.md",
           "node_type": "concept"
         },
@@ -9254,6 +9562,54 @@
         }
       },
       "id": "doc:wiki/drafts/source_concept.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/summary.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "| Item | Proposed | Implemented |",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "47ce6624112d65ffc5826cb8ded1ea8ad9ea96cb",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.208216",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/summary.md"
     },
     {
       "type": "concept",
@@ -10187,6 +10543,102 @@
         }
       },
       "id": "doc:wiki/drafts/trail_collect.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/tu_misi_n.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "1. **Navegar:** Cuando el usuario pregunte sobre arquitectura, flujo de datos o estado de un m\u00f3dulo, consulta los `KnowledgeNode` y sigue sus `edges` (aristas).",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "54d8176c3a6435f83c49eaf9a707bfeefbf4ee34",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.207939",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/tu_misi_n.md"
+    },
+    {
+      "type": "concept",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "These concepts were discussed in the original conversation but never made it into the implementation.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "f6abf195b14e2b74a6444174dd340c4b3a8a2b42",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": {
+          "source_path": "raw/unimplemented_from_sourcetalk.md",
+          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
+          "compiled_at": "2026-04-13T00:36:51.206953",
+          "compiled_from": "wiki-compiler"
+        }
+      },
+      "id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md"
     },
     {
       "type": "concept",
@@ -23996,6 +24448,30 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/drafts/1_ci_cd_enforcement.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/2_domain_glossary.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/drafts/application_to_wikipu.md",
       "target": "raw:raw/autopoiesis_system.md"
     },
@@ -24010,6 +24486,12 @@
       "metadata": {},
       "source": "doc:wiki/drafts/board_and_gate_the_hitl_coordination_pattern.md",
       "target": "raw:raw/board_gate_pattern.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/c_mo_leer_el_grafo.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
     },
     {
       "relation": "documents",
@@ -24380,6 +24862,12 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/drafts/reglas_de_interacci_n.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/drafts/relation_to_node_id.md",
       "target": "raw:raw/git_tracked_nodes.md"
     },
@@ -24442,6 +24930,12 @@
       "metadata": {},
       "source": "doc:wiki/drafts/source_concept.md",
       "target": "raw:raw/autopoiesis_system.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/summary.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
     },
     {
       "relation": "documents",
@@ -24556,6 +25050,18 @@
       "metadata": {},
       "source": "doc:wiki/drafts/trail_collect.md",
       "target": "raw:raw/trail_collect.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/tu_misi_n.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
+      "target": "raw:raw/unimplemented_from_sourcetalk.md"
     },
     {
       "relation": "documents",
