@@ -534,3 +534,28 @@ class CleansingReport(BaseModel):
         default_factory=list,
         description="Detected structural correction proposals.",
     )
+
+
+class SystemicEnergy(BaseModel):
+    """
+    ID-2: Minimal Energy.
+    The conceptual and structural cost of the current system state.
+    """
+    energy_score: float = Field(description="The total calculated energy score.")
+    node_count: int = Field(description="Total number of nodes in the graph.")
+    edge_count: int = Field(description="Total number of edges in the graph.")
+    compliance_violations: int = Field(description="Total number of failing standards across all nodes.")
+    perturbations: int = Field(description="Number of detected git-backed drifts or untracked files.")
+    open_gates: int = Field(description="Number of active human-in-the-loop gates.")
+    
+    # Heuristic breakdown
+    node_energy: float = Field(description="Energy contributed by structural volume (nodes).")
+    violation_energy: float = Field(description="Energy contributed by compliance debt.")
+    perturbation_energy: float = Field(description="Energy contributed by systemic uncertainty/drift.")
+
+class EnergyReport(BaseModel):
+    """The result of an energy audit."""
+    timestamp: str = Field(description="ISO-8601 timestamp of the measurement.")
+    current_energy: SystemicEnergy = Field(description="The energy state at the time of measurement.")
+    baseline_energy: SystemicEnergy | None = Field(default=None, description="The energy state at the last stable baseline.")
+    delta: float = Field(default=0.0, description="The change in total energy since the baseline.")

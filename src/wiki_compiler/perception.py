@@ -20,9 +20,17 @@ def attach_git_facets(graph: object, project_root: Path) -> None:
         graph.nodes[node.identity.node_id]["schema"] = node.model_dump()
 
 
-def build_status_report(graph_path: Path, project_root: Path) -> dict[str, object]:
+def build_status_report(
+    graph_path: Path | None, 
+    project_root: Path, 
+    graph: object | None = None
+) -> dict[str, object]:
     """Compare stored GitFacet data against the current worktree and report perturbations."""
-    graph = load_graph(graph_path)
+    if graph is None:
+        if graph_path is None:
+            raise ValueError("Either graph or graph_path must be provided.")
+        graph = load_graph(graph_path)
+    
     modified_nodes: list[dict[str, str]] = []
     for node in iter_knowledge_nodes(graph):
         if node.git is None:

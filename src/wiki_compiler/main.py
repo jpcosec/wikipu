@@ -16,9 +16,11 @@ from .cleanser import detect_cleansing_candidates
 from .context import render_context
 from .curate import promote_draft
 from .curate import score_drafts
+from .energy import run_energy_audit
 from .facet_validator import validate_facet_proposal
 from .graph_utils import load_graph
 from .ingest import ingest_raw_sources
+from .contracts import CleansingReport
 from .query_executor import execute_query
 from .query_language import StructuredQuery
 from .perception import build_status_report
@@ -387,6 +389,31 @@ def main() -> None:
             )
             print(json.dumps(report, indent=2))
             return
+        if args.command == "energy":
+            graph = load_graph(Path(args.graph))
+            report = run_energy_audit(graph, Path(args.project_root))
+            if args.format == "json":
+                print(report.model_dump_json(indent=2))
+            else:
+                ce = report.current_energy
+                print(f"## Systemic Energy Report\n")
+                print(f"**Total Energy Score: {ce.energy_score:.2f}**\n")
+                print(f"### Breakdown")
+                print(f"- **Structural (Nodes/Edges)**: {ce.node_energy:.2f} (n={ce.node_count}, e={ce.edge_count})")
+                print(f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})")
+                print(f"- **Operational (Drift/Gates)**: {ce.perturbation_energy:.2f} (p={ce.perturbations}, g={ce.open_gates})")
+
+                if ce.energy_score > 500:
+                    print(
+                        f"\n[❌] **CRITICAL ENERGY LEVEL**: System entropy is high. Resolve compliance debt and close open gates immediately."
+                    )
+                elif ce.energy_score > 200:
+                    print(
+                        f"\n[⚠️] **HIGH ENERGY**: Consider a cleansing cycle to simplify the graph."
+                    )
+                else:
+                    print(f"\n[✅] **LOW ENERGY**: System is lean and stable.")
+            return
     except Exception as exc:
         print(f"[ERROR] {exc}")
         sys.exit(1)
@@ -627,7 +654,20 @@ def build_parser() -> argparse.ArgumentParser:
         "--graph", default="knowledge_graph.json", help="Graph JSON path"
     )
     status_parser.add_argument(
-        "--project-root", default=".", help="Git repository root to inspect"
+        "--project-root", default=".", help="Project root directory"
+    )
+
+    energy_parser = subparsers.add_parser(
+        "energy", help="Calculate the systemic energy score (structural and operational cost)"
+    )
+    energy_parser.add_argument(
+        "--graph", default="knowledge_graph.json", help="Graph JSON path"
+    )
+    energy_parser.add_argument(
+        "--project-root", default=".", help="Project root directory"
+    )
+    energy_parser.add_argument(
+        "--format", default="markdown", choices=["markdown", "json"]
     )
 
     subparsers.add_parser("init", help="Initialize the base wikipu structure")

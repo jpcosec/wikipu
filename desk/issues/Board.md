@@ -6,8 +6,8 @@
 
 | ID | Domain | Issue | Priority | Depends On |
 |----|--------|-------|----------|------------|
-| 1 | ingest | Ingest raw unimplemented source | p0 | none |
-| 2 | cleanse | Resolve Cleansing Gate | p0 | none |
+| 1 | ingest | Ingest raw unimplemented source | p0 | none | {closed with commit id f7b42e9} |
+| 2 | cleanse | Resolve Cleansing Gate | p0 | none | {closed with commit id pending} |
 | 3 | compliance | Fix Compliance Regressions | p1 | 2 |
 
 ## Blocked (status=blocked)

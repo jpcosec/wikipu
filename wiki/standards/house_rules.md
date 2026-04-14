@@ -59,11 +59,12 @@ All data crossing a process boundary must be a typed Pydantic model. No untyped 
 
 **ID-4 — Zone Separation**
 The five information zones are inviolable:
-- `raw/` — immutable seed. Agents read, never write.
-- `wiki/` — current truth. Curated, governed, never contaminated by plan references.
-- `plan_docs/` — active issues and proposals.
-- `desk/` — active operational state. Ephemeral — items deleted when resolved.
-- `future_docs/` — deferred ideas and complete designs-in-waiting.
+- `raw/` — Inviolable. Immutable seed. Agents read, never write.
+- `exclusion/` — Inviolable. The Non-Self. Untouchable by agents or the autopoietic motor.
+- `wiki/` — Current Truth. The self-image of the system.
+- `desk/` — Active Operational Surface.
+- `drawers/` — Deferred potential.
+- `src/` — The motor and sensory organs. (Formerly `future_docs/` in deprecated models).
 No zone may reference or write into a zone above it in the chain. For example, `desk/` may reference `wiki/`, but `wiki/` may not reference `desk/`.
 `Enforced by:` build_wiki() checks frontmatter edges for cross-zone violations; CI scan on commit.
 
@@ -79,6 +80,10 @@ Every element's existence must trace to a perturbation that created it. No orpha
 **ID-7 — Self-Inclusion**
 The system's own processes (CLI commands, agent protocols, the hausordnung itself) are nodes in the graph they govern. A system that cannot model itself cannot maintain itself.
 `Enforced by:` wiki/reference/cli/ nodes must exist for each CLI command; build audit checks for missing self-nodes.
+
+**ID-8 — Total Queryability**
+Everything within the system's workspace must be queryable by the CLI and eventually absorbable into the knowledge graph's topology. If an element (file, data, or code) cannot be expressed as a topological truth or used to maintain the system, it is "Not-Self" and must be relocated to the `exclusion/` folder.
+`Enforced by:` `wiki-compiler energy` (Not-Self elements outside exclusion/ increase uncertainty energy); audit check for unqueryable files.
 
 ---
 
