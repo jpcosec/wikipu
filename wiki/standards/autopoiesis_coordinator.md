@@ -9,6 +9,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** The autopoiesis coordinator orchestrates the system's self-maintenance cycle by managing ingest, build, and rule revision in sequence.
+
 This protocol placeholder reserves a graph node for the autopoiesis coordinator that will eventually orchestrate the system's self-maintenance cycle. It links the conceptual cycle to a future operational coordinator surface.
 
 ## Rule Schema

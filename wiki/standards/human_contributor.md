@@ -9,6 +9,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** Human contributors use this protocol for reference to the durable rules that keep code, docs, and the graph aligned.
+
 This protocol summarizes the expectations for human contributors working in a Wikipu-managed repository. It is a quick reference to the durable rules that keep code, docs, and the graph aligned.
 
 ## Rule Schema

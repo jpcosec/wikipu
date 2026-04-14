@@ -12,6 +12,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** LLM agents operating inside Wikipu use this protocol for initialization and routing via the unified preamble system.
+
 This protocol summarizes the expectations and initialization routing for LLM agents operating inside Wikipu. It explicitly documents the unified preamble system used to bootstrap new agent sessions.
 
 ## Agent Initialization Routing

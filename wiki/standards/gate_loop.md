@@ -7,6 +7,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** The gate loop monitors open human-approval requirements and surfaces them to prevent topology boundary crossings until approved.
+
 This protocol placeholder reserves a graph node for the gate monitoring loop that tracks open human-approval requirements. It exists so the graph can represent that control point before the desk runtime is fully encoded.
 
 ## Rule Schema
