@@ -879,6 +879,7 @@
           "dependencies": [
             "from __future__ import annotations",
             "from dataclasses import dataclass, field",
+            "from pathlib import Path",
             "import networkx",
             "from .contracts import AuditFinding, KnowledgeNode",
             "from .graph_utils import iter_knowledge_nodes, load_knowledge_node",
@@ -898,9 +899,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "8a878601a9730bc5b13ea60866438e62aece4dbc",
+          "blob_sha": "565ebddf55716511bc7e4d379a0de6c495594f74",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "f924e4011818d8035b29278111f93acec394b747",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3597,7 +3598,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d2689cb1f17107a5bc9fe579b1832e6121a775a6",
+          "blob_sha": "3724d6df17dfe947cbf22d0371b04fe28cc60195",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,

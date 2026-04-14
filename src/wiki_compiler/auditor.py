@@ -5,6 +5,7 @@ Includes checks for missing docstrings, undocumented code, and stale edges.
 
 from __future__ import annotations
 from dataclasses import dataclass, field
+from pathlib import Path
 import networkx as nx
 from .contracts import AuditFinding, KnowledgeNode
 from .graph_utils import iter_knowledge_nodes, load_knowledge_node
@@ -265,18 +266,23 @@ class OrphanedPlansCheck:
             for n in iter_knowledge_nodes(graph)
             if n.identity.node_type in {"file", "code_construct"}
         }
+        raw_ids = {
+            n.identity.node_id
+            for n in iter_knowledge_nodes(graph)
+            if n.identity.node_id.startswith("raw:")
+        }
         findings = []
         for node in iter_knowledge_nodes(graph):
             if "future_docs" not in node.identity.node_id:
                 continue
-            if not any(
-                t in code_ids for _, t in graph.out_edges(node.identity.node_id)
-            ):
+            # Connect to code OR raw is not orphaned
+            outgoing = {t for _, t in graph.out_edges(node.identity.node_id)}
+            if not any(t in code_ids or t.startswith("raw:") for t in outgoing):
                 findings.append(
                     AuditFinding(
                         check_name=self.check_name,
                         node_id=node.identity.node_id,
-                        detail="future_docs node has no outgoing edge to any code node.",
+                        detail="future_docs node has no outgoing edge to code or raw.",
                     )
                 )
         return findings
@@ -304,11 +310,17 @@ class MissingAbstractCheck:
                 or not node.semantics.intent
                 or node.semantics.intent == "Wiki node"
             ):
+                # Non-existent files are high-priority broken links
+                node_path = Path(node.identity.node_id.removeprefix("doc:"))
+                is_missing = not node_path.exists()
+                detail = "No valid abstract paragraph detected in wiki node."
+                if is_missing:
+                    detail = "Referenced file does not exist - broken link."
                 findings.append(
                     AuditFinding(
                         check_name=self.check_name,
                         node_id=node.identity.node_id,
-                        detail="No valid abstract paragraph detected in wiki node.",
+                        detail=detail,
                     )
                 )
         return findings

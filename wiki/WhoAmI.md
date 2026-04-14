@@ -7,6 +7,7 @@ edges:
   - {target_id: "doc:wiki/HowAmI.md", relation_type: "contains"}
   - {target_id: "doc:wiki/WhereAmI.md", relation_type: "contains"}
   - {target_id: "doc:wiki/WhenAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/WhyAmI.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []
@@ -44,5 +45,6 @@ Autopoiesis (from Greek αὐτο- (auto-) 'self', and ποίησις (poiesis) 
 -   `[[WhatAmI]]`
 -   `[[HowAmI]]`
 -   `[[WhereAmI]]`
+-   `[[WhyAmI]]`
 -   `[[topology]]`
 -   `[[energy]]`
