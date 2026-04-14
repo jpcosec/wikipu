@@ -1,0 +1,2058 @@
+{
+  "proposals": [
+    {
+      "node_id": "doc:wiki/standards/house_rules.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/house_rules.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/concepts/how_wikipu_works.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/concepts/how_wikipu_works.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/concepts/wiki_construction_principles.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/concepts/wiki_construction_principles.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/concepts/facet.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/concepts/facet.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/concepts/energy.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/concepts/energy.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/application_to_wikipu.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/application_to_wikipu.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_6_debt_topology.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_6_debt_topology.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/failure_mode_without_trail_collect.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/failure_mode_without_trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/implementation_note.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/implementation_note.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/key_constraint.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/key_constraint.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/naming_note.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/naming_note.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/problem_motivation.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/problem_motivation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_node_id.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_node_id.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_the_board_and_gate_pattern.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_the_board_and_gate_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_the_q_a_pattern.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_the_q_a_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/seed_rule.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/seed_rule.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_implication_for_wikipu.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_implication_for_wikipu.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_problem_with_path_only_identity.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_problem_with_path_only_identity.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_doesn_t_fit_any_axiom_yet.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_doesn_t_fit_any_axiom_yet.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_it_is_not.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_it_is_not.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_to_preserve_from_the_matrix_model.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_to_preserve_from_the_matrix_model.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_trail_collect_is_not.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_trail_collect_is_not.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/design.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/design.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/document.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/document.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/plan.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/plan.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/research.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/research.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/use_autopoiesis.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/use_autopoiesis.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/use_socratic_methodology.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/use_socratic_methodology.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/use_the_cli.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/use_the_cli.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/how_to/use_the_graph.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/how_to/use_the_graph.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/faq.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/faq.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/llm_agent.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/llm_agent.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/human_contributor.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/human_contributor.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/socratic.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/socratic.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/trail_collect.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/artifact_validation.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/artifact_validation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/auditor.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/auditor.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/builder.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/builder.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/context.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/context.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/contracts.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/contracts.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/coordinator.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/coordinator.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/drafts.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/drafts.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/facet_injectors.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/facet_injectors.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/facet_validator.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/facet_validator.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/gates.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/gates.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/graph_utils.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/graph_utils.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/ingest.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/ingest.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/manifest.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/manifest.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/preflight.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/preflight.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/scanner_plugins.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/scanner_plugins.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/session_storage.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/session_storage.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/trails.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/reference/trails.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/adr.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/adr.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/wiki_node.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/wiki_node.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/backlog_item.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/backlog_item.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/board.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/board.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/gate.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/gate.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/issue.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/issue.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/artifacts/proposal.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/artifacts/proposal.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/checklists.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/checklists.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/document_topology.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/document_topology.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/issues_index_seed.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/issues_index_seed.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/issues_lifecycle.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/issues_lifecycle.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/languages/python.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/languages/python.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/standards/languages/typescript.md",
+      "operation": "split",
+      "rationale": "Abstract appears compound and may cover multiple responsibilities.",
+      "affected_nodes": [
+        "doc:wiki/standards/languages/typescript.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/board_and_gate_the_hitl_coordination_pattern.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/board_and_gate_the_hitl_coordination_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/cleansing_protocol.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/cleansing_protocol.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/example_future_facets.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/current_facets_and_their_questions.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/current_facets_and_their_questions.md",
+        "doc:wiki/drafts/example_future_facets.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_orthogonalization.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/facet_orthogonalization.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facets_as_questions.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/facets_as_questions.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/git_tracked_node_identity.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/git_tracked_node_identity.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/socratic_protocol.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/socratic_protocol.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_desk_zone.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/the_desk_zone.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_three_phase_graph_construction_process.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/the_three_phase_graph_construction_process.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/trail_collect.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/wiki_construction_principles.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/wiki_construction_principles.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/wikipu_conceptual_foundation.md",
+      "operation": "merge",
+      "rationale": "Abstract duplicates existing node `doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/drafts/wikipu_conceptual_foundation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/application_to_wikipu.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/application_to_wikipu.md",
+        "doc:wiki/concepts/application_to_wikipu.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/autopoiesis_self_maintaining_knowledge_systems.md",
+        "doc:wiki/concepts/autopoiesis_self_maintaining_knowledge_systems.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/board_and_gate_the_hitl_coordination_pattern.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/board_and_gate_the_hitl_coordination_pattern.md",
+        "doc:wiki/concepts/board_and_gate_the_hitl_coordination_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/claw_session.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/claw_session.md",
+        "doc:wiki/concepts/claw_session.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/cleansing_candidates_by_node_type.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/cleansing_candidates_by_node_type.md",
+        "doc:wiki/concepts/cleansing_candidates_by_node_type.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/cleansing_protocol.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/cleansing_protocol.md",
+        "doc:wiki/concepts/cleansing_protocol.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/core_idea.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/core_idea.md",
+        "doc:wiki/concepts/core_idea.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/current_facets_and_their_questions.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/current_facets_and_their_questions.md",
+        "doc:wiki/concepts/current_facets_and_their_questions.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/design_principles.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/design_principles.md",
+        "doc:wiki/concepts/design_principles.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/design_rule.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/design_rule.md",
+        "doc:wiki/standards/design_rule.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/desk_gates_md_the_central_monitor.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/desk_gates_md_the_central_monitor.md",
+        "doc:wiki/concepts/desk_gates_md_the_central_monitor.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/detection_signals.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/detection_signals.md",
+        "doc:wiki/concepts/detection_signals.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/example_future_facets.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/example_future_facets.md",
+        "doc:wiki/concepts/example_future_facets.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_1_plan_anatomy.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_1_plan_anatomy.md",
+        "doc:wiki/concepts/facet_1_plan_anatomy.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_2_documentation_lifecycle.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_2_documentation_lifecycle.md",
+        "doc:wiki/concepts/facet_2_documentation_lifecycle.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_3_agent_permissions_model.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_3_agent_permissions_model.md",
+        "doc:wiki/concepts/facet_3_agent_permissions_model.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_4_architectural_invariants.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_4_architectural_invariants.md",
+        "doc:wiki/concepts/facet_4_architectural_invariants.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_5_verification_contract.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_5_verification_contract.md",
+        "doc:wiki/concepts/facet_5_verification_contract.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_6_debt_topology.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_6_debt_topology.md",
+        "doc:wiki/concepts/facet_6_debt_topology.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_7_code_style_axioms.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_7_code_style_axioms.md",
+        "doc:wiki/concepts/facet_7_code_style_axioms.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_8_inter_project_divergence.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_8_inter_project_divergence.md",
+        "doc:wiki/concepts/facet_8_inter_project_divergence.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_9_minimum_seed.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_9_minimum_seed.md",
+        "doc:wiki/concepts/facet_9_minimum_seed.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facet_orthogonalization.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facet_orthogonalization.md",
+        "doc:wiki/concepts/facet_orthogonalization.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/facets_as_questions.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/facets_as_questions.md",
+        "doc:wiki/concepts/facets_as_questions.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/failure_mode_without_trail_collect.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/failure_mode_without_trail_collect.md",
+        "doc:wiki/concepts/failure_mode_without_trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/git_tracked_node_identity.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/git_tracked_node_identity.md",
+        "doc:wiki/concepts/git_tracked_node_identity.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/how_this_relates_to_the_graph.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/how_this_relates_to_the_graph.md",
+        "doc:wiki/concepts/how_this_relates_to_the_graph.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/implementation_note.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/implementation_note.md",
+        "doc:wiki/concepts/implementation_note.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/karpathy_tweet.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/karpathy_tweet.md",
+        "doc:wiki/concepts/karpathy_tweet.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/key_constraint.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/key_constraint.md",
+        "doc:wiki/concepts/key_constraint.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/lifecycle_of_a_desk_item.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/lifecycle_of_a_desk_item.md",
+        "doc:wiki/concepts/lifecycle_of_a_desk_item.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/linked_todos.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/linked_todos.md",
+        "doc:wiki/concepts/linked_todos.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/methodology_synthesis_addendum.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/methodology_synthesis_addendum.md",
+        "doc:wiki/concepts/methodology_synthesis_addendum.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/methodology_synthesis_cross_project_analysis.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/methodology_synthesis_cross_project_analysis.md",
+        "doc:wiki/concepts/methodology_synthesis_cross_project_analysis.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/methodology_synthesis_extended_analysis.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/methodology_synthesis_extended_analysis.md",
+        "doc:wiki/concepts/methodology_synthesis_extended_analysis.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/naming_note.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/naming_note.md",
+        "doc:wiki/concepts/naming_note.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/paper_autopoiesis_and_knowledge_in_the_organization.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/paper_autopoiesis_and_knowledge_in_the_organization.md",
+        "doc:wiki/concepts/paper_autopoiesis_and_knowledge_in_the_organization.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/phase_1_build_the_raw_graph_structure.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/phase_1_build_the_raw_graph_structure.md",
+        "doc:wiki/concepts/phase_1_build_the_raw_graph_structure.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/phase_2_inject_facets_semantics.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/phase_2_inject_facets_semantics.md",
+        "doc:wiki/concepts/phase_2_inject_facets_semantics.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/phase_3_query_for_documentation_quality.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/phase_3_query_for_documentation_quality.md",
+        "doc:wiki/concepts/phase_3_query_for_documentation_quality.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_1_single_responsibility.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_1_single_responsibility.md",
+        "doc:wiki/concepts/principle_1_single_responsibility.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_2_mandatory_abstract.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_2_mandatory_abstract.md",
+        "doc:wiki/concepts/principle_2_mandatory_abstract.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_3_composition_via_cli_not_prose.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_3_composition_via_cli_not_prose.md",
+        "doc:wiki/concepts/principle_3_composition_via_cli_not_prose.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_4_node_templates.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_4_node_templates.md",
+        "doc:wiki/concepts/principle_4_node_templates.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_5_the_digestion_pipeline.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_5_the_digestion_pipeline.md",
+        "doc:wiki/concepts/principle_5_the_digestion_pipeline.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/principle_6_free_text_has_a_place_but_not_a_permanent_home.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/principle_6_free_text_has_a_place_but_not_a_permanent_home.md",
+        "doc:wiki/concepts/principle_6_free_text_has_a_place_but_not_a_permanent_home.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/problem_motivation.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/problem_motivation.md",
+        "doc:wiki/concepts/problem_motivation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/problem_statement.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/problem_statement.md",
+        "doc:wiki/concepts/problem_statement.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/proposed_direction.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/proposed_direction.md",
+        "doc:wiki/concepts/proposed_direction.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md",
+        "doc:wiki/concepts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md",
+        "doc:wiki/concepts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q2_navigation_philosophy_how_do_you_find_what_you_need.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q2_navigation_philosophy_how_do_you_find_what_you_need.md",
+        "doc:wiki/concepts/q2_navigation_philosophy_how_do_you_find_what_you_need.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md",
+        "doc:wiki/concepts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md",
+        "doc:wiki/concepts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q3_what_standards_rules_documents_exist_is_there_a_consistent_structure.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q3_what_standards_rules_documents_exist_is_there_a_consistent_structure.md",
+        "doc:wiki/standards/q3_what_standards_rules_documents_exist_is_there_a_consistent_structure.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q4_context_router_for_agents_how_are_agents_navigated.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q4_context_router_for_agents_how_are_agents_navigated.md",
+        "doc:wiki/concepts/q4_context_router_for_agents_how_are_agents_navigated.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q4_do_we_have_any_information_about_drifting.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q4_do_we_have_any_information_about_drifting.md",
+        "doc:wiki/concepts/q4_do_we_have_any_information_about_drifting.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q5_is_the_human_considered_in_the_overall_loop.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q5_is_the_human_considered_in_the_overall_loop.md",
+        "doc:wiki/concepts/q5_is_the_human_considered_in_the_overall_loop.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md",
+        "doc:wiki/standards/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q6_how_is_git_used.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q6_how_is_git_used.md",
+        "doc:wiki/concepts/q6_how_is_git_used.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q7_what_weaknesses_exist_across_implementations.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q7_what_weaknesses_exist_across_implementations.md",
+        "doc:wiki/concepts/q7_what_weaknesses_exist_across_implementations.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/q8_how_are_things_tested.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/q8_how_are_things_tested.md",
+        "doc:wiki/concepts/q8_how_are_things_tested.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/question_types.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/question_types.md",
+        "doc:wiki/concepts/question_types.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/re_orthogonalization_process.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/re_orthogonalization_process.md",
+        "doc:wiki/concepts/re_orthogonalization_process.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_node_id.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_node_id.md",
+        "doc:wiki/concepts/relation_to_node_id.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_phase_6_meta_review.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_phase_6_meta_review.md",
+        "doc:wiki/concepts/relation_to_phase_6_meta_review.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_the_board_and_gate_pattern.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_the_board_and_gate_pattern.md",
+        "doc:wiki/concepts/relation_to_the_board_and_gate_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relation_to_the_q_a_pattern.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relation_to_the_q_a_pattern.md",
+        "doc:wiki/concepts/relation_to_the_q_a_pattern.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/relationship_to_other_gates.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/relationship_to_other_gates.md",
+        "doc:wiki/concepts/relationship_to_other_gates.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/renaming_from_plan_docs.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/renaming_from_plan_docs.md",
+        "doc:wiki/concepts/renaming_from_plan_docs.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/routing_matrix_vs_graph.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/routing_matrix_vs_graph.md",
+        "doc:wiki/concepts/routing_matrix_vs_graph.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/seed_rule.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/seed_rule.md",
+        "doc:wiki/standards/seed_rule.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/signals_that_re_orthogonalization_is_needed.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/signals_that_re_orthogonalization_is_needed.md",
+        "doc:wiki/concepts/signals_that_re_orthogonalization_is_needed.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/socratic_protocol.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/socratic_protocol.md",
+        "doc:wiki/concepts/socratic_protocol.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/source_concept.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/source_concept.md",
+        "doc:wiki/concepts/source_concept.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/synthesis_what_these_5_questions_add_to_the_distillation.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/synthesis_what_these_5_questions_add_to_the_distillation.md",
+        "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_auditor_s_role.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_auditor_s_role.md",
+        "doc:wiki/concepts/the_auditor_s_role.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_board.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_board.md",
+        "doc:wiki/concepts/the_board.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_collection_step.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_collection_step.md",
+        "doc:wiki/concepts/the_collection_step.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_desk_zone.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_desk_zone.md",
+        "doc:wiki/concepts/the_desk_zone.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_ephemeral_contract.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_ephemeral_contract.md",
+        "doc:wiki/concepts/the_ephemeral_contract.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_facetproposal_gate.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_facetproposal_gate.md",
+        "doc:wiki/concepts/the_facetproposal_gate.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_four_operations.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_four_operations.md",
+        "doc:wiki/concepts/the_four_operations.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_gate.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_gate.md",
+        "doc:wiki/concepts/the_gate.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_gitfacet.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_gitfacet.md",
+        "doc:wiki/concepts/the_gitfacet.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_implication_for_wikipu.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_implication_for_wikipu.md",
+        "doc:wiki/concepts/the_implication_for_wikipu.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_key_insight.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_key_insight.md",
+        "doc:wiki/concepts/the_key_insight.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_pca_analogy.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_pca_analogy.md",
+        "doc:wiki/concepts/the_pca_analogy.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_problem.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_problem.md",
+        "doc:wiki/concepts/the_problem.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_problem_with_path_only_identity.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_problem_with_path_only_identity.md",
+        "doc:wiki/concepts/the_problem_with_path_only_identity.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_protocol.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_protocol.md",
+        "doc:wiki/concepts/the_protocol.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md",
+        "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/the_three_phase_graph_construction_process.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/the_three_phase_graph_construction_process.md",
+        "doc:wiki/concepts/the_three_phase_graph_construction_process.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/trail_collect.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/trail_collect.md",
+        "doc:wiki/concepts/trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_belongs_on_the_desk.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_belongs_on_the_desk.md",
+        "doc:wiki/concepts/what_belongs_on_the_desk.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_doesn_t_fit_any_axiom_yet.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_doesn_t_fit_any_axiom_yet.md",
+        "doc:wiki/concepts/what_doesn_t_fit_any_axiom_yet.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_gets_collected.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_gets_collected.md",
+        "doc:wiki/concepts/what_gets_collected.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_is_exempt.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_is_exempt.md",
+        "doc:wiki/concepts/what_is_exempt.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_it_is_not.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_it_is_not.md",
+        "doc:wiki/concepts/what_it_is_not.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_the_system_needs_to_be_truly_autopoietic.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_the_system_needs_to_be_truly_autopoietic.md",
+        "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_this_enables.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_this_enables.md",
+        "doc:wiki/concepts/what_this_enables.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_to_preserve_from_the_matrix_model.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_to_preserve_from_the_matrix_model.md",
+        "doc:wiki/concepts/what_to_preserve_from_the_matrix_model.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/what_trail_collect_is_not.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/what_trail_collect_is_not.md",
+        "doc:wiki/concepts/what_trail_collect_is_not.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/when_is_a_facet_worth_adding.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/when_is_a_facet_worth_adding.md",
+        "doc:wiki/concepts/when_is_a_facet_worth_adding.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/where_it_fits.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/where_it_fits.md",
+        "doc:wiki/concepts/where_it_fits.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/why_code_is_not_self_cleaning.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/why_code_is_not_self_cleaning.md",
+        "doc:wiki/concepts/why_code_is_not_self_cleaning.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/why_desk.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/why_desk.md",
+        "doc:wiki/concepts/why_desk.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/why_two_constructs.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/why_two_constructs.md",
+        "doc:wiki/concepts/why_two_constructs.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/wiki_construction_principles.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/wiki_construction_principles.md",
+        "doc:wiki/concepts/wiki_construction_principles.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/wikipedia_definition_april_2026.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/wikipedia_definition_april_2026.md",
+        "doc:wiki/concepts/wikipedia_definition_april_2026.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/drafts/wikipu_conceptual_foundation.md",
+      "operation": "relocate",
+      "rationale": "Node type `concept` should be in `wiki/concepts/`.",
+      "affected_nodes": [
+        "doc:wiki/drafts/wikipu_conceptual_foundation.md",
+        "doc:wiki/concepts/wikipu_conceptual_foundation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
+        "doc:wiki/standards/autopoiesis_coordinator.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/gate_loop.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/gate_loop.md",
+        "doc:wiki/standards/gate_loop.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/llm_agent.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/llm_agent.md",
+        "doc:wiki/standards/llm_agent.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/human_contributor.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/human_contributor.md",
+        "doc:wiki/standards/human_contributor.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/socratic.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/socratic.md",
+        "doc:wiki/standards/socratic.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/protocols/trail_collect.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/protocols/trail_collect.md",
+        "doc:wiki/standards/trail_collect.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/artifact_validation.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/artifact_validation.md",
+        "doc:wiki/standards/artifact_validation.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/auditor.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/auditor.md",
+        "doc:wiki/standards/auditor.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/builder.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/builder.md",
+        "doc:wiki/standards/builder.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/context.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/context.md",
+        "doc:wiki/standards/context.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/contracts.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/contracts.md",
+        "doc:wiki/standards/contracts.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/coordinator.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/coordinator.md",
+        "doc:wiki/standards/coordinator.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/drafts.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/drafts.md",
+        "doc:wiki/standards/drafts.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/facet_injectors.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/facet_injectors.md",
+        "doc:wiki/standards/facet_injectors.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/facet_validator.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/facet_validator.md",
+        "doc:wiki/standards/facet_validator.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/gates.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/gates.md",
+        "doc:wiki/standards/gates.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/graph_utils.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/graph_utils.md",
+        "doc:wiki/standards/graph_utils.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/ingest.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/ingest.md",
+        "doc:wiki/standards/ingest.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/manifest.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/manifest.md",
+        "doc:wiki/standards/manifest.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/preflight.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/preflight.md",
+        "doc:wiki/standards/preflight.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/scanner_plugins.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/scanner_plugins.md",
+        "doc:wiki/standards/scanner_plugins.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/session_storage.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/session_storage.md",
+        "doc:wiki/standards/session_storage.md"
+      ],
+      "requires_human_approval": true
+    },
+    {
+      "node_id": "doc:wiki/reference/trails.md",
+      "operation": "relocate",
+      "rationale": "Node type `doc_standard` should be in `wiki/standards/`.",
+      "affected_nodes": [
+        "doc:wiki/reference/trails.md",
+        "doc:wiki/standards/trails.md"
+      ],
+      "requires_human_approval": true
+    }
+  ]
+}

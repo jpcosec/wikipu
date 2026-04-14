@@ -1,0 +1,13 @@
+{
+  "cycle_id": "cycle-20260413003650",
+  "timestamp": "2026-04-13T00:36:50.802497",
+  "status": "paused",
+  "perturbations_detected": 2,
+  "actions_taken": [
+    "ingested_raw_files",
+    "rebuilt_graph"
+  ],
+  "open_gates": [
+    "gate-001"
+  ]
+}

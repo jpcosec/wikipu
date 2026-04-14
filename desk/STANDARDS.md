@@ -4,27 +4,25 @@
 
 ---
 
-## 1. The Two-Surface Model
+## 1. The Multi-Surface Model
 
 ```
 wikipu/
 ├── desk/          # Active work surface. Ephemeral — items deleted when resolved.
-│   ├── issues/   # Issue tracking + execution queue
+│   ├── issues/   # Issue tracking + execution queue (The Board)
 │   ├── tasks/    # In-flight task artifacts
 │   ├── proposals/ # Pending human approval
 │   └── Gates.md   # Cross-domain blocking decisions
 ├── drawers/      # Future work surface. Deferred — ideas waiting for prioritization.
 │   └── <topic>   # Organized by domain/theme
-└── plan_docs/    # Active issues and context pills (as per Hausordnung)
+└── plan_docs/    # Durable rationale and context pills.
 ```
 
 | Surface | State | Lifecycle | Entry Gate |
 |---------|-------|-----------|------------|
-| Surface | State | Lifecycle | Entry Gate |
-|---------|-------|-----------|------------|
-| `plan_docs/` | Active issues | Resolve → Delete → Index update | Issue creation |
-| `desk/` | Ephemeral state | Resolve → Delete → Changelog | Any transient item |
+| `desk/` | Active work | Resolve → Delete → Changelog | Any actionable item |
 | `drawers/` | Deferred ideas | Stale at 6 months, promote or delete | Design review |
+| `plan_docs/` | Durable context | Research → Context Pills | Domain analysis |
 
 **Rule:** No directory may reference a surface below it. `desk/` may reference `drawers/` (to see what's deferred), but never the reverse.
 
@@ -107,11 +105,26 @@ Once an issue is resolved, the executor MUST:
 
 ---
 
-## 5. Issues Index (Single Entry Point)
+## 5. Issues Board (Single Entry Point)
 
-`plan_docs/issues/Index.md` is the single entry point for all active work (following the Hausordnung and `@instructions/`).
+`desk/issues/Board.md` is the single entry point for all active work.
 
-See `wiki/standards/issues_index_seed.md` for the canonical structure of the Index.
+```markdown
+# Issues Board
+
+## Active (status=open|in_progress)
+| ID | Domain | Issue | Priority | Depends On |
+|----|--------|-------|----------|------------|
+
+## Blocked (status=blocked)
+| ID | Domain | Blocker | Gate |
+|----|--------|--------|------|
+
+## Ready to Promote (from drawers/)
+| ID | Domain | Item |
+|----|--------|------|
+```
+
 
 
 ---

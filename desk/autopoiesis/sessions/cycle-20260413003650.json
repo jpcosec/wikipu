@@ -1,0 +1,21 @@
+{
+  "session_id": "cycle-20260413003650",
+  "start_time": "2026-04-13T00:36:50.802497",
+  "end_time": "2026-04-13T00:36:59.195735",
+  "branch": "main",
+  "commit_sha": null,
+  "resolved_issues": [],
+  "pending_issues": [
+    "gate-001"
+  ],
+  "trails": {
+    "session_id": "cycle-20260413003650",
+    "artifacts": [
+      {
+        "kind": "new_concept",
+        "content": "Extracted new concepts from raw source.",
+        "destination": "wiki/drafts/"
+      }
+    ]
+  }
+}

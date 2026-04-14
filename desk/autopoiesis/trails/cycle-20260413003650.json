@@ -1,0 +1,10 @@
+{
+  "session_id": "cycle-20260413003650",
+  "artifacts": [
+    {
+      "kind": "new_concept",
+      "content": "Extracted new concepts from raw source.",
+      "destination": "wiki/drafts/"
+    }
+  ]
+}
