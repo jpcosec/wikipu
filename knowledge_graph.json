@@ -1184,9 +1184,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "6cebe994aae9e18640cd7334582517b505e15512",
+          "blob_sha": "42c9195c58c14d150ab05cb198d8829b97793649",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "611477d65502d58d2e8249808e905a88cc232ac7",
+          "last_modified_commit": "a7898c1a6b00463c6df2e6e09014d27061a3b5f4",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3649,7 +3649,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d3478c505f7d83bcf1355ea07296da10155f2800",
+          "blob_sha": "f0301d40d3a835404fa6e29ed3665eaec77fa9a3",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -17343,8 +17343,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_execute_destroy` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Delete the file referenced by the proposal.",
+          "raw_docstring": "Delete the file referenced by the proposal."
         },
         "ast": {
           "construct_type": "function",
@@ -17376,8 +17376,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_execute_relocate` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Move the file to a new location based on affected_nodes.",
+          "raw_docstring": "Move the file to a new location based on affected_nodes."
         },
         "ast": {
           "construct_type": "function",
@@ -17409,8 +17409,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_execute_split` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Split a node into multiple nodes (requires manual intervention).",
+          "raw_docstring": "Split a node into multiple nodes (requires manual intervention)."
         },
         "ast": {
           "construct_type": "function",
@@ -17442,8 +17442,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_execute_merge` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Merge multiple affected nodes into one.",
+          "raw_docstring": "Merge multiple affected nodes into one."
         },
         "ast": {
           "construct_type": "function",
@@ -17475,8 +17475,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_node_id_to_path` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Convert a node_id to a file path.",
+          "raw_docstring": "Convert a node_id to a file path."
         },
         "ast": {
           "construct_type": "function",
@@ -17508,8 +17508,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_sentence_count` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Count sentences in text by counting terminators.",
+          "raw_docstring": "Count sentences in text by counting terminators."
         },
         "ast": {
           "construct_type": "function",
@@ -17541,8 +17541,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_has_dual_purpose_language` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Check if text contains dual-purpose language (and/also).",
+          "raw_docstring": "Check if text contains dual-purpose language (and/also)."
         },
         "ast": {
           "construct_type": "function",
@@ -17574,8 +17574,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_normalize_text` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Normalize text for comparison by removing non-word characters.",
+          "raw_docstring": "Normalize text for comparison by removing non-word characters."
         },
         "ast": {
           "construct_type": "function",
@@ -17607,8 +17607,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_dedupe` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Remove duplicate proposals based on node_id, operation, and rationale.",
+          "raw_docstring": "Remove duplicate proposals based on node_id, operation, and rationale."
         },
         "ast": {
           "construct_type": "function",
