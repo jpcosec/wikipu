@@ -51,6 +51,7 @@ No two elements do the same thing. Before any new module, node, or `[[facet]]` i
 
 **ID-2 — Minimal Energy**
 When multiple valid responses to a perturbation exist, choose the one that minimizes systemic `[[energy]]`: LLM token consumption, structural complexity added to the graph, uncertainty in the resulting state, and number of new elements created (while maintaining strict orthogonality) — fully satisfying the requirement. Extend existing nodes before creating new ones.
+*Clarification:* The core objective is to hold maximum knowledge in the smallest possible physical space, ensuring no false or contradicting knowledge and avoiding duplication. Highly granular, atomic composition is encouraged; structural mass is penalized primarily when it represents redundant boilerplate rather than orthogonal truth.
 `Enforced by:` Autopoiesis loop coordinator pre-proposal check; graph query for overlapping intent before any TopologyProposal is submitted.
 
 **ID-3 — Typed Contracts at Every Boundary**

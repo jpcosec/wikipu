@@ -26,7 +26,7 @@ Energy in Wikipu is the conceptual and structural cost of creating or modifying 
 Systemic Energy can be deterministically calculated or estimated using the following factors:
 
 1. **Orthogonality Cost:** Does the proposed change overlap in intent with an existing node? If an intent overlaps by >80% (as scored by query context routing), creating a new node is a high-energy error. Updating the existing node is a low-energy extension.
-2. **Structural Complexity:** The number of new files, `KnowledgeNode` definitions, and graph edges introduced. Each new node adds maintenance overhead.
+2. **Structural Complexity (Redundancy vs. Atomization):** The core objective is to hold maximum knowledge in the smallest possible physical space without duplication or contradiction. Highly granular, atomic files (WK-1) are strongly encouraged. The raw node count penalty is a temporary proxy to prevent uncompressed boilerplate; the true structural penalty comes from redundancy, unstructured bloat, and overlapping intent.
 3. **Execution Cost:** The volume of LLM tokens required to generate and validate the change, or the number of independent autopoietic cycles required to stabilize the topology.
 4. **State Uncertainty:** The likelihood that a change will introduce compliance violations (e.g., missing fields, broken links) requiring subsequent cleanup passes.
 
