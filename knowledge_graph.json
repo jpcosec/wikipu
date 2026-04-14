@@ -1275,9 +1275,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "990298fe9fe0cc73bd00bb2560f47cd915f1b4ab",
+          "blob_sha": "263c18ad00b456bf87db01f7b9495d4383819e44",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "6eb1e8c8a8e68b3edec098b18ae1fc9dee2081fd",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3675,7 +3675,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "798b9da57aeaba6025dc68eb2437875579749eb5",
+          "blob_sha": "ae14491ef59a17cede83d372225ccf5cb93a0244",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -17739,8 +17739,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `collect_neighborhood_by_direction` in `src/wiki_compiler/context.py`.",
-          "raw_docstring": null
+          "intent": "Collect nodes within a given depth and direction (in/out) from starting nodes.",
+          "raw_docstring": "Collect nodes within a given depth and direction (in/out) from starting nodes."
         },
         "ast": {
           "construct_type": "function",

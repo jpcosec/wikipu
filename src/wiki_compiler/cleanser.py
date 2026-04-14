@@ -241,6 +241,7 @@ def apply_cleansing_proposal(proposal: CleansingProposal, project_root: Path) ->
 
 
 def _execute_destroy(proposal: CleansingProposal, project_root: Path) -> None:
+    """Delete the file referenced by the proposal."""
     path = _node_id_to_path(proposal.node_id, project_root)
     if path and path.exists():
         path.unlink()
@@ -250,6 +251,7 @@ def _execute_destroy(proposal: CleansingProposal, project_root: Path) -> None:
 
 
 def _execute_relocate(proposal: CleansingProposal, project_root: Path) -> None:
+    """Move the file to a new location based on affected_nodes."""
     # Relocate needs a destination in the proposal.
     # Current CleansingProposal doesn't have a 'destination' field.
     # We should probably add it or derive it from the rationale if it's there.
@@ -277,6 +279,7 @@ def _execute_relocate(proposal: CleansingProposal, project_root: Path) -> None:
 
 
 def _execute_split(proposal: CleansingProposal, project_root: Path) -> None:
+    """Split a node into multiple nodes (requires manual intervention)."""
     # Split is complex: requires creating new nodes.
     # The proposal should ideally contain the new content or paths.
     # For now, we'll mark it as manual or needing more metadata.
@@ -286,6 +289,7 @@ def _execute_split(proposal: CleansingProposal, project_root: Path) -> None:
 
 
 def _execute_merge(proposal: CleansingProposal, project_root: Path) -> None:
+    """Merge multiple affected nodes into one."""
     if len(proposal.affected_nodes) < 2:
         return
     canonical = proposal.affected_nodes[0]
@@ -298,6 +302,7 @@ def _execute_merge(proposal: CleansingProposal, project_root: Path) -> None:
 
 
 def _node_id_to_path(node_id: str, project_root: Path) -> Path | None:
+    """Convert a node_id to a file path."""
     if node_id.startswith("doc:"):
         return project_root / node_id.removeprefix("doc:")
     if node_id.startswith("file:"):
@@ -306,19 +311,23 @@ def _node_id_to_path(node_id: str, project_root: Path) -> Path | None:
 
 
 def _sentence_count(text: str) -> int:
+    """Count sentences in text by counting terminators."""
     return len(re.findall(r"[.!?]+", text))
 
 
 def _has_dual_purpose_language(text: str) -> bool:
+    """Check if text contains dual-purpose language (and/also)."""
     lowered = text.lower()
     return " and " in lowered or " also " in lowered
 
 
 def _normalize_text(text: str) -> str:
+    """Normalize text for comparison by removing non-word characters."""
     return re.sub(r"\W+", " ", text).strip().lower()
 
 
 def _dedupe(proposals: list[CleansingProposal]) -> list[CleansingProposal]:
+    """Remove duplicate proposals based on node_id, operation, and rationale."""
     unique: list[CleansingProposal] = []
     seen: set[tuple[str, str, str]] = set()
     for proposal in proposals:
