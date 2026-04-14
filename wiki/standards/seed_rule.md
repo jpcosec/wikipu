@@ -14,6 +14,8 @@ source:
   compiled_from: "wiki-compiler"
 ---
 
+**Abstract:** The knowledge graph is the routing system. Agents navigate by traversal and facet query, not by coordinate lookup.
+
 > The knowledge graph is the routing system. Agents navigate by traversal and facet query, not by coordinate lookup. Temporal state is a facet, not an axis.
 
 ## Details
@@ -21,3 +23,20 @@ source:
 > The knowledge graph is the routing system. Agents navigate by traversal and facet query, not by coordinate lookup. Temporal state is a facet, not an axis.
 
 Generated from `raw/methodology_synthesis_graph_routing.md`.
+
+## Rule Schema
+
+- Graph is the routing system
+- Navigation via traversal and facet query
+- Temporal state is a facet, not an axis
+
+## Fields
+
+- `node_id`: Unique graph identifier
+- `edges`: Relationships between nodes
+- `temporal`: Time-based facet
+
+## Usage Examples
+
+- Query by traversal: `wiki-compiler query --type get_node`
+- Query by facet: `wiki-compiler query --type get_facet`

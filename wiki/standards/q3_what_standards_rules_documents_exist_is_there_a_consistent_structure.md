@@ -48,3 +48,22 @@ UI standards follow the same layering pattern but in TypeScript. Architecture pr
 ---
 
 Generated from `raw/methodology_synthesis_extended.md`.
+
+## Rule Schema
+
+- Title: domain + what this governs
+- Extension declaration: explicit layering
+- Numbered sections: rule + code + rationale
+- Reference implementation pointer
+
+## Fields
+
+- `rule_statement`: Declarative rule (not procedural)
+- `anti_pattern`: What to avoid
+- `code_example`: Copy-pasteable
+- `reference`: Implementation link
+
+## Usage Examples
+
+- `basic.md` → universal Python rules
+- `llm_langgraph_components.md` → AI/LangGraph specific

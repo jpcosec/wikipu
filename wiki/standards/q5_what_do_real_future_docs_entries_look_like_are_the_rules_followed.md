@@ -51,3 +51,22 @@ The methodology only defines the first type. The second type exists in practice 
 ---
 
 Generated from `raw/methodology_synthesis_addendum.md`.
+
+## Rule Schema
+
+- Why deferred: context for deferral
+- Last reviewed: date
+- Problem: specific and scoped
+- Proposed direction: numbered steps
+
+## Fields
+
+- `deferral_reason`: Why this is not immediate
+- `last_reviewed`: Date reviewed
+- `problem`: Specific problem statement
+- `proposed_direction`: Concrete steps
+
+## Usage Examples
+
+- `logging_layer_confactors.md` → well-formed entry
+- `extract_understand_node.md` → full output contract
