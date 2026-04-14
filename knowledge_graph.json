@@ -898,7 +898,7 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "3824b3b4e78dfcda1d33e3d2a042f79d121582cf",
+          "blob_sha": "8a878601a9730bc5b13ea60866438e62aece4dbc",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3597,7 +3597,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "9e7a701edf857c4cdd68db4eb651df1664f8bf59",
+          "blob_sha": "d2689cb1f17107a5bc9fe579b1832e6121a775a6",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -12480,8 +12480,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Checks for code nodes that lack an incoming 'documents' edge from a wiki node.",
-          "raw_docstring": "Checks for code nodes that lack an incoming 'documents' edge from a wiki node."
+          "intent": "Checks for code nodes that lack documentation (either via wiki edge OR docstring).",
+          "raw_docstring": "Checks for code nodes that lack documentation (either via wiki edge OR docstring).\nConsiders code documented if:\n1. Has explicit 'documents' edge from wiki, OR\n2. Has docstring in semantics facet, OR\n3. Parent module has documentation"
         },
         "ast": {
           "construct_type": "class",
