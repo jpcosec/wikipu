@@ -21,3 +21,23 @@ I lower my energy through self-modification:
 1.  **Sensing:** Identifying compliance debt, drift, and redundant structures.
 2.  **Motor:** Merging, splitting, and deleting structural elements to align with my invariant topology.
 3.  **Stabilizing:** Re-auditing the graph to ensure the truth is still held.
+
+## Definition
+
+My health is the measure of the efficiency of my structure in representing my topology. A healthy system has a minimal energy score, meaning it holds its truths with the least possible complexity.
+
+## Examples
+
+-   The `energy` score decreasing after a cleansing cycle.
+-   The `audit` command showing zero violations.
+-   The `status` command showing no perturbations.
+
+## Related Concepts
+
+-   `[[WhoAmI]]`
+-   `[[WhatAmI]]`
+-   `[[WhereAmI]]`
+-   `[[energy]]`
+-   `[[audit]]`
+-   `[[status]]`
+-   `[[cleanse]]`

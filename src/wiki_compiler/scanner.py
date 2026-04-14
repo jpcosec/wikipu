@@ -72,6 +72,10 @@ def scan_codebase(
         if not root.exists():
             continue
         for file_path in sorted(p for p in root.rglob("*") if p.is_file()):
+            # Rule: Hidden files/directories are implicitly excluded (Not-Self)
+            if any(part.startswith(".") for part in file_path.parts):
+                continue
+
             rel_path = file_path.relative_to(project_root).as_posix()
             reason = match_ignore_reason(rel_path, ignore_rules)
             if reason is not None:
