@@ -62,7 +62,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         node_count=node_count,
         edge_count=edge_count,
         compliance_violations=violations,
-        perturbations=perturbations,
+        perturbations=len(perturbations),
         open_gates=open_gates,
         node_energy=node_energy + edge_energy,
         violation_energy=violation_energy,
