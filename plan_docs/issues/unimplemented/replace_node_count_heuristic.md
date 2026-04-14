@@ -8,7 +8,7 @@ The current `wiki-compiler energy` calculation penalizes the system by adding 1.
 - `wiki/standards/house_rules.md` (ID-2)
 
 ## What to fix
-The heuristic must drop the absolute node/edge count penalty and replace it with a direct measurement of redundancy (e.g., Jaccard similarity across `SemanticFacet.intent` or AST signatures) and boilerplate-to-truth ratios. Orthogonal micro-files should not be artificially penalized if they successfully abstract a cross-cutting pattern.
+The heuristic must drop the absolute node/edge count penalty and replace it with a direct measurement of redundancy (e.g., Jaccard similarity across `SemanticFacet.intent` or AST structural hashing/clusters) and boilerplate-to-truth ratios. Orthogonal micro-files should not be artificially penalized if they successfully abstract a cross-cutting pattern.
 
 ## Depends on
 none
