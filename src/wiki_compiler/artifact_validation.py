@@ -146,6 +146,7 @@ def _repo_style_path(path: Path) -> str:
 
 
 def _validate_issue(path: Path) -> ArtifactValidationReport:
+    """Validate an issue file has required sections."""
     content = path.read_text(encoding="utf-8")
     findings: list[ArtifactValidationFinding] = []
 
@@ -172,6 +173,7 @@ def _validate_issue(path: Path) -> ArtifactValidationReport:
 
 
 def _validate_gates(path: Path) -> ArtifactValidationReport:
+    """Validate a gates file has required table structure."""
     content = path.read_text(encoding="utf-8")
     findings: list[ArtifactValidationFinding] = []
 
@@ -189,6 +191,7 @@ def _validate_gates(path: Path) -> ArtifactValidationReport:
 
 
 def _validate_backlog_item(path: Path) -> ArtifactValidationReport:
+    """Validate a backlog item file has required fields."""
     content = path.read_text(encoding="utf-8")
     findings: list[ArtifactValidationFinding] = []
 
@@ -208,6 +211,7 @@ def _validate_backlog_item(path: Path) -> ArtifactValidationReport:
 
 
 def _validate_board(path: Path) -> ArtifactValidationReport:
+    """Validate a board file has required structure."""
     content = path.read_text(encoding="utf-8")
     findings: list[ArtifactValidationFinding] = []
 
@@ -232,6 +236,7 @@ def _validate_board(path: Path) -> ArtifactValidationReport:
 
 
 def _validate_adr(path: Path, node: object) -> list[ArtifactValidationFinding]:
+    """Validate an ADR file has required structure."""
     findings: list[ArtifactValidationFinding] = []
     adr = getattr(node, "adr", None)
     if adr is None:
