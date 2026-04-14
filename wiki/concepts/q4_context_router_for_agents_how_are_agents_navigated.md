@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q4_context_router_for_agents_how_are_agents_navigated.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q4_context_router_for_agents_how_are_agents_navigated.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_addendum.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_addendum.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_addendum.md"
-  source_hash: "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504"
-  compiled_at: "2026-04-14T16:50:28.662712"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_addendum.md
+  source_hash: 4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504
+  compiled_at: '2026-04-14T16:50:28.662712'
+  compiled_from: wiki-compiler
 ---
 
 **The core protocol (doc_methodology):**
+
+## Definition
+
+**The core protocol (doc_methodology):**.
+
+## Examples
+
+- Their identity ("PhD 2.0 Architect, autonomous developer agent")
+- Their tools (5 tools: fetch_context, sync_code_to_docs, implement_plan, draft_plan, hotfix)
+- Their domains and stages (coordinate vocabulary)
+- Their rules (ALWAYS acquire lock before writing, hotfix REQUIRES doc update, implement_plan DELETES the plan)
+- A decision matrix (is there a bug? is there a plan? want to propose? did code drift?)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

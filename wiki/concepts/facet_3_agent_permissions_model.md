@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_3_agent_permissions_model.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_3_agent_permissions_model.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661766"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661766'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What are agents explicitly allowed vs. forbidden? How is scope enforced?
+
+## Definition
+
+**Question:** What are agents explicitly allowed vs.
+
+## Examples
+
+- Question:
+- Most sophisticated (doc_methodology) — 4 intervention templates:
+- Lighter enforcement (cotizador):
+- AGENTS.md approach (postulador_v2):
+- Finding:
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

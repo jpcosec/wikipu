@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q6_how_is_git_used.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q6_how_is_git_used.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_extended.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_extended.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_extended.md"
-  source_hash: "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30"
-  compiled_at: "2026-04-14T16:50:28.663725"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_extended.md
+  source_hash: 0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30
+  compiled_at: '2026-04-14T16:50:28.663725'
+  compiled_from: wiki-compiler
 ---
 
 **Commit message format (doc_methodology / PhD 2.0):**
+
+## Definition
+
+**Commit message format (doc_methodology / PhD 2.
+
+## Examples
+
+- <component 1>
+- <component 2>
+- TestSprite: Passed | ID-123
+- <component 1>
+- <component 2>
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

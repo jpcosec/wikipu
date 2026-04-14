@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/source_concept.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/source_concept.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/autopoiesis_system.md", relation_type: "documents"}
+- target_id: raw:raw/autopoiesis_system.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/autopoiesis_system.md"
-  source_hash: "708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0"
-  compiled_at: "2026-04-14T16:50:28.656305"
-  compiled_from: "wiki-compiler"
+  source_path: raw/autopoiesis_system.md
+  source_hash: 708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0
+  compiled_at: '2026-04-14T16:50:28.656305'
+  compiled_from: wiki-compiler
 ---
 
 Autopoiesis (from Greek *auto-* "self" + *poiesis* "creation, production") was introduced by Chilean biologists Humberto Maturana and Francisco Varela in their 1972 publication *Autopoiesis and Cognition: The Realization of the Living* to describe the self-maintaining chemistry of biological cells.
+
+## Definition
+
+Autopoiesis (from Greek *auto-* "self" + *poiesis* "creation, production") was introduced by Chilean biologists Humberto Maturana and Francisco Varela in their 1972 publication *Autopoiesis and Cognition: The Realization of the Living* to describe the self-maintaining chemistry of biological cells.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

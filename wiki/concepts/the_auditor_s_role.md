@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/the_auditor_s_role.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/the_auditor_s_role.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/facets_as_questions.md", relation_type: "documents"}
+- target_id: raw:raw/facets_as_questions.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/facets_as_questions.md"
-  source_hash: "1159abdd773043bbfb19f64dd1bb2058bf81d60b78a5f5954777a51ee89cc0ed"
-  compiled_at: "2026-04-14T16:50:28.659680"
-  compiled_from: "wiki-compiler"
+  source_path: raw/facets_as_questions.md
+  source_hash: 1159abdd773043bbfb19f64dd1bb2058bf81d60b78a5f5954777a51ee89cc0ed
+  compiled_at: '2026-04-14T16:50:28.659680'
+  compiled_from: wiki-compiler
 ---
 
 The auditor is the inverse of the facet question:
+
+## Definition
+
+The auditor is the inverse of the facet question:.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

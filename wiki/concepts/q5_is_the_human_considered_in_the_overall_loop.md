@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q5_is_the_human_considered_in_the_overall_loop.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q5_is_the_human_considered_in_the_overall_loop.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_extended.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_extended.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_extended.md"
-  source_hash: "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30"
-  compiled_at: "2026-04-14T16:50:28.663672"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_extended.md
+  source_hash: 0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30
+  compiled_at: '2026-04-14T16:50:28.663672'
+  compiled_from: wiki-compiler
 ---
 
 Yes, and it's a core design assumption, not an afterthought.
+
+## Definition
+
+Yes, and it's a core design assumption, not an afterthought.
+
+## Examples
+
+- Inspect the review surface (`review/current.json`)
+- Make an explicit semantic decision per row
+- Provide patch evidence when requesting regeneration
+- Submit a typed ReviewPayload, not just pressing Continue
+- Pause at the right moment (`interrupt_before` the review node)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

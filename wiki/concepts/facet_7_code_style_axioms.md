@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_7_code_style_axioms.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_7_code_style_axioms.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661943"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661943'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What conventions appear in every project without being discussed — the assumed rules?
+
+## Definition
+
+**Question:** What conventions appear in every project without being discussed — the assumed rules?.
+
+## Examples
+
+- `from __future__ import annotations` at the top of every module
+- Module docstring: one paragraph, executive summary of the module's role
+- Every public class, method, function has a structured docstring
+- `contracts.py` / Pydantic models are the only legitimate way to pass data between modules
+- `Field(description=...)` is dual-purpose: human + LLM readable, always semantic and specific
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

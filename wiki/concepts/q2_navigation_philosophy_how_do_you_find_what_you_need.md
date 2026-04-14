@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q2_navigation_philosophy_how_do_you_find_what_you_need.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q2_navigation_philosophy_how_do_you_find_what_you_need.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_addendum.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_addendum.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_addendum.md"
-  source_hash: "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504"
-  compiled_at: "2026-04-14T16:50:28.662597"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_addendum.md
+  source_hash: 4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504
+  compiled_at: '2026-04-14T16:50:28.662597'
+  compiled_from: wiki-compiler
 ---
 
 **The 4D matrix model (doc_methodology context router):**
+
+## Definition
+
+**The 4D matrix model (doc_methodology context router):**.
+
+## Examples
+
+- **X — Domain:** `ui`, `api`, `pipeline`, `core`, `data`, `policy`
+- **Y — Stage:** `scrape → translate → extract → match → strategy → drafting → render → package`
+- **Z — Layer:** `docs` or `code`
+- **W — Temporal state:** `runtime` (current truth) or `plan` (future designs)
+- Current runtime truth (use these first)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

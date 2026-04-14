@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/autopoiesis_system.md", relation_type: "documents"}
+- target_id: raw:raw/autopoiesis_system.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/autopoiesis_system.md"
-  source_hash: "708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0"
-  compiled_at: "2026-04-14T16:50:28.656613"
-  compiled_from: "wiki-compiler"
+  source_path: raw/autopoiesis_system.md
+  source_hash: 708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0
+  compiled_at: '2026-04-14T16:50:28.656613'
+  compiled_from: wiki-compiler
 ---
 
 The Spanish Wikipedia definition is the most precise:
+
+## Definition
+
+The Spanish Wikipedia definition is the most precise:.
+
+## Examples
+
+- **Network of processes (invariant):** `build`, `ingest`, `query`, `cleanse`, `curate`, `scaffold`, the Socratic protocol, the gate loop, trail collect. These define what the system *is*. They do not change as content changes.
+- **Elements (mutable):** wiki nodes, plans, the graph, docs, the CLI modules themselves, the hausordnung. Created and destroyed in response to perturbations.
+- **Perturbations from the medium:** human interactions through gates, files dropped in `raw/`, test failures, execution logs, agent memory, outputs of `src/`.
+- **Orthogonality** — no two elements do the same thing
+- **Minimal energy** — prefer the simplest structure that satisfies the requirement; minimize LLM consumption, uncertainty, and topology complexity
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

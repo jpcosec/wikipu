@@ -1,18 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/cleansing_candidates_by_node_type.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/cleansing_candidates_by_node_type.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/cleansing_protocol.md", relation_type: "documents"}
+- target_id: raw:raw/cleansing_protocol.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/cleansing_protocol.md"
-  source_hash: "b5b3922be9089eb922885b17d43a45d212f4078f7ed6c85a899554499a6eead5"
-  compiled_at: "2026-04-14T16:50:28.657812"
-  compiled_from: "wiki-compiler"
+  source_path: raw/cleansing_protocol.md
+  source_hash: b5b3922be9089eb922885b17d43a45d212f4078f7ed6c85a899554499a6eead5
+  compiled_at: '2026-04-14T16:50:28.657812'
+  compiled_from: wiki-compiler
 ---
+
+This node defines and documents the cleansing candidates by node type.
+
+## Definition
+
+This node defines and documents the cleansing candidates by node type.
+
+## Examples
+
+- Duplicate: module with IOFacet overlapping another (TopologyProposal gates this
+- Misplaced: module in wrong architectural layer (e.g. business logic in I/O layer)
+- Split candidate: file with too many responsibilities visible in ASTFacet.signatures
+- Stale: documents edge points to a code node that no longer exists
+- Duplicate: two nodes with near-identical abstracts
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ### Code nodes (file:src/, code:)
 

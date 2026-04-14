@@ -1,20 +1,37 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_1_plan_anatomy.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_1_plan_anatomy.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661655"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661655'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What sections does a well-formed plan always contain?
+
+## Definition
+
+**Question:** What sections does a well-formed plan always contain?.
+
+## Examples
+
+- **postulador_langgraph** has the most complete format: TL;DR, Context, Objectives, Must have / Must not have, Verification strategy, Execution waves, Dependency matrix, Task checklist, Final verification wave.
+- **doc_methodology** planning templates (UI and backend) use: Problem Statement, State Contract, Core Functions, Node Implementation, HITL Requirements, File Changes Summary, Dependencies, Testing Strategy, Rollback Plan.
+- **cotizador** uses lighter agent_guideline files: Context, numbered steps, "What NOT to do".
+- **postulador_refactor** documentation guide says: goal, constraints, ordered steps, open questions.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

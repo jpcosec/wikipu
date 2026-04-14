@@ -1,20 +1,36 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/system_concept.md", relation_type: "documents"}
+- target_id: raw:raw/system_concept.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/system_concept.md"
-  source_hash: "1b44fcf0a25e5628440aa7a45a1ca2873540bf3607cc12b6f41476a6505101d8"
-  compiled_at: "2026-04-14T16:50:28.665214"
-  compiled_from: "wiki-compiler"
+  source_path: raw/system_concept.md
+  source_hash: 1b44fcf0a25e5628440aa7a45a1ca2873540bf3607cc12b6f41476a6505101d8
+  compiled_at: '2026-04-14T16:50:28.665214'
+  compiled_from: wiki-compiler
 ---
 
 ---
+
+## Definition
+
+The concept of the system is a living knowledge ecosystem with two layers within the Wikipu framework.
+
+## Examples
+
+- **Auditable** — you can see what happened and why
+- **Replicable** — the same inputs always produce the same outputs
+- **Testable** — no hidden side effects, no magic
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

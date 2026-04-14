@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/lifecycle_of_a_desk_item.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/lifecycle_of_a_desk_item.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/desk_zone.md", relation_type: "documents"}
+- target_id: raw:raw/desk_zone.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/desk_zone.md"
-  source_hash: "8719d650771e57b8cb2c6dda66c04511f3223100d4954abb4fa2c1d02fcb9213"
-  compiled_at: "2026-04-14T16:50:28.658526"
-  compiled_from: "wiki-compiler"
+  source_path: raw/desk_zone.md
+  source_hash: 8719d650771e57b8cb2c6dda66c04511f3223100d4954abb4fa2c1d02fcb9213
+  compiled_at: '2026-04-14T16:50:28.658526'
+  compiled_from: wiki-compiler
 ---
 
 ```
+
+## Definition
+
+The concept of lifecycle of a desk item within the Wikipu framework.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

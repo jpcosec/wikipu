@@ -1,10 +1,10 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/energy.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/energy.md
+  node_type: concept
 edges: []
 compliance:
-  status: "implemented"
+  status: implemented
   failing_standards: []
 ---
 
@@ -12,7 +12,16 @@ Energy in Wikipu is the conceptual and structural cost of creating or modifying 
 
 ## Definition
 
-The Minimal Energy principle states that when resolving an issue or responding to a perturbation, the system (or agent) should choose the path that incurs the lowest systemic cost. 
+Energy in Wikipu is the conceptual and structural cost of creating or modifying elements within the system.
+
+## Examples
+
+- Energy Score Heuristic:
+
+## Related Concepts
+
+- [[facet]]
+- [[topology]]
 
 Systemic Energy can be deterministically calculated or estimated using the following factors:
 
@@ -25,13 +34,3 @@ Systemic Energy can be deterministically calculated or estimated using the follo
 `Energy = (New Nodes * 10) + (New Edges * 2) + (Orthogonality Violations * 100)`
 
 A score > 50 for a single functional change suggests the proposal should be rejected or refactored into smaller, extension-based increments.
-
-## Examples
-
-- **Low Energy (Preferred):** Adding a new field to an existing Pydantic model in `contracts.py` and updating its corresponding `doc_standard` node.
-- **High Energy (Rejected):** Creating a parallel `contracts_v2.py` module because the original model was deemed too complex to safely modify, creating massive orthogonality violations.
-
-## Related Concepts
-
-- `[[topology]]`
-- `[[facet]]`

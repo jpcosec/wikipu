@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_9_minimum_seed.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_9_minimum_seed.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.662031"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.662031'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What is the smallest set of rules that generates the rest?
+
+## Definition
+
+**Question:** What is the smallest set of rules that generates the rest?.
+
+## Examples
+
+- Question:
+- Axiom 1: Separation is non-negotiable.
+- Axiom 2: Contracts define all boundaries.
+- Axiom 3: Plans are ephemeral. Code and changelog are permanent.
+- Axiom 4: Agents operate within explicit, bounded permission frames.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

@@ -1,18 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/the_board.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/the_board.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/board_gate_pattern.md", relation_type: "documents"}
+- target_id: raw:raw/board_gate_pattern.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/board_gate_pattern.md"
-  source_hash: "5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06"
-  compiled_at: "2026-04-14T16:50:28.657131"
-  compiled_from: "wiki-compiler"
+  source_path: raw/board_gate_pattern.md
+  source_hash: 5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06
+  compiled_at: '2026-04-14T16:50:28.657131'
+  compiled_from: wiki-compiler
 ---
+
+This node defines and documents the the board.
+
+## Definition
+
+This node defines and documents the the board.
+
+## Examples
+
+- Current state summary (one paragraph)
+- Priority roadmap with phases
+- Each phase lists items with a one-line description
+- Dependency summary (what blocks what)
+- Parallelization map
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ### Structure
 

@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q8_how_are_things_tested.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q8_how_are_things_tested.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_extended.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_extended.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_extended.md"
-  source_hash: "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30"
-  compiled_at: "2026-04-14T16:50:28.663823"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_extended.md
+  source_hash: 0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30
+  compiled_at: '2026-04-14T16:50:28.663823'
+  compiled_from: wiki-compiler
 ---
 
 **Per domain:**
+
+## Definition
+
+**Per domain:**.
+
+## Examples
+
+- Each ingestion run is idempotent — tests verify that re-running produces the same output, not a duplicate
+- Partial failure handling: tests verify that one failed record doesn't abort the batch
+- LLM rescue path: rescue is only triggered on explicit failure, never speculatively
+- Validation at boundary: missing mandatory fields raise domain exceptions, not generic errors
+- Many unit tests (contracts, pure functions, storage round-trips)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

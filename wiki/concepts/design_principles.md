@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/design_principles.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/design_principles.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/graph_construction_process.md", relation_type: "documents"}
+- target_id: raw:raw/graph_construction_process.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/graph_construction_process.md"
-  source_hash: "5cce04b66b0ac2624ccae799d5a8d22e00e6b9dd15ccc31cb63eb7dcb12cfaa9"
-  compiled_at: "2026-04-14T16:50:28.660927"
-  compiled_from: "wiki-compiler"
+  source_path: raw/graph_construction_process.md
+  source_hash: 5cce04b66b0ac2624ccae799d5a8d22e00e6b9dd15ccc31cb63eb7dcb12cfaa9
+  compiled_at: '2026-04-14T16:50:28.660927'
+  compiled_from: wiki-compiler
 ---
 
 1. **Separation of concerns** — topology is built once; semantics are layered on top independently.
+
+## Definition
+
+The concept of design principles within the Wikipu framework.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

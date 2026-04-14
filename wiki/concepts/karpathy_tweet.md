@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/karpathy_tweet.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/karpathy_tweet.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/karpathy_tweet.md", relation_type: "documents"}
+- target_id: raw:raw/karpathy_tweet.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/karpathy_tweet.md"
-  source_hash: "051a1d103b16a3c3cd7b3b9803e370f9fd05cca932634c6d43f0bf6e10ca3286"
-  compiled_at: "2026-04-14T16:50:28.661231"
-  compiled_from: "wiki-compiler"
+  source_path: raw/karpathy_tweet.md
+  source_hash: 051a1d103b16a3c3cd7b3b9803e370f9fd05cca932634c6d43f0bf6e10ca3286
+  compiled_at: '2026-04-14T16:50:28.661231'
+  compiled_from: wiki-compiler
 ---
 
 LLM Knowledge Bases
+
+## Definition
+
+LLM Knowledge Bases.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

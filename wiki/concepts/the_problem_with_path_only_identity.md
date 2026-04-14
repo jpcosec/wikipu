@@ -1,20 +1,35 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/the_problem_with_path_only_identity.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/the_problem_with_path_only_identity.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/git_tracked_nodes.md", relation_type: "documents"}
+- target_id: raw:raw/git_tracked_nodes.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/git_tracked_nodes.md"
-  source_hash: "7c36edc7b0a0b842072085f28a670c5aa2609fe5be25d43befc28a8bd7788a7c"
-  compiled_at: "2026-04-14T16:50:28.660157"
-  compiled_from: "wiki-compiler"
+  source_path: raw/git_tracked_nodes.md
+  source_hash: 7c36edc7b0a0b842072085f28a670c5aa2609fe5be25d43befc28a8bd7788a7c
+  compiled_at: '2026-04-14T16:50:28.660157'
+  compiled_from: wiki-compiler
 ---
 
 Current node IDs are path-based. This is correct for stability: edges point to node IDs, and renaming a node would break all edges. Path-based IDs must stay.
+
+## Definition
+
+Current node IDs are path-based.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

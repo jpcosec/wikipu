@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/the_gate.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/the_gate.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/board_gate_pattern.md", relation_type: "documents"}
+- target_id: raw:raw/board_gate_pattern.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/board_gate_pattern.md"
-  source_hash: "5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06"
-  compiled_at: "2026-04-14T16:50:28.657175"
-  compiled_from: "wiki-compiler"
+  source_path: raw/board_gate_pattern.md
+  source_hash: 5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06
+  compiled_at: '2026-04-14T16:50:28.657175'
+  compiled_from: wiki-compiler
 ---
 
 A gate is any item that:
+
+## Definition
+
+A gate is any item that:.
+
+## Examples
+
+- Cannot be resolved by the system alone
+- Blocks the system from proceeding
+- Requires explicit human input (approval, decision, or answer)
+- An issue item waiting to be picked up (implementation decision)
+- A CleansingProposal with `requires_human_approval: true`
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

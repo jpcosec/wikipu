@@ -1,20 +1,36 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_2_documentation_lifecycle.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_2_documentation_lifecycle.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661712"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661712'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** How does an idea move from thought to plan to code to history?
+
+## Definition
+
+**Question:** How does an idea move from thought to plan to code to history?.
+
+## Examples
+
+- `docs/runtime/` = current truth. Never contaminated by plan references.
+- `plan/` can reference `docs/runtime/`. `docs/runtime/` cannot reference `plan/`.
+- Temporal unidirectionality: the current state of the world does not point forward to an uncommitted future.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

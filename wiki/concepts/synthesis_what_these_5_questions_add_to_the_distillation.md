@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_addendum.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_addendum.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_addendum.md"
-  source_hash: "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504"
-  compiled_at: "2026-04-14T16:50:28.662811"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_addendum.md
+  source_hash: 4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504
+  compiled_at: '2026-04-14T16:50:28.662811'
+  compiled_from: wiki-compiler
 ---
 
 **Addition to the 5 axioms:**
+
+## Definition
+
+**Addition to the 5 axioms:**.
+
+## Examples
+
+- Addition to the 5 axioms:
+- Axiom 6 (confirmed): The methodology improves itself.
+- New finding — the missing document type:
+- New finding — navigation is a first-class concern, not an afterthought:
+- New finding — the routing matrix is the missing link in wikipu:
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_addendum.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_addendum.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_addendum.md"
-  source_hash: "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504"
-  compiled_at: "2026-04-14T16:50:28.662537"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_addendum.md
+  source_hash: 4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504
+  compiled_at: '2026-04-14T16:50:28.662537'
+  compiled_from: wiki-compiler
 ---
 
 The most complete answer is the 6-phase lifecycle from `entrypoint.md` (doc_methodology). It defines the Zero-Tolerance Policy: **no code change is valid unless it satisfies all 5 pillars.**
+
+## Definition
+
+The most complete answer is the 6-phase lifecycle from `entrypoint.
+
+## Examples
+
+- Reviews what the agent (or developer) did
+- Identifies friction: hallucinations, stuck states, routing failures, ambiguous rules
+- Immediately patches the meta-documentation that caused the friction
+- Protocol failed → update `12_context_router_protocol.md`
+- Missing keyword → inject into `11_routing_matrix.md`
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

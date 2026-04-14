@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/paper_autopoiesis_and_knowledge_in_the_organization.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/paper_autopoiesis_and_knowledge_in_the_organization.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/autopoiesis_system.md", relation_type: "documents"}
+- target_id: raw:raw/autopoiesis_system.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/autopoiesis_system.md"
-  source_hash: "708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0"
-  compiled_at: "2026-04-14T16:50:28.656432"
-  compiled_from: "wiki-compiler"
+  source_path: raw/autopoiesis_system.md
+  source_hash: 708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0
+  compiled_at: '2026-04-14T16:50:28.656432'
+  compiled_from: wiki-compiler
 ---
 
 **Full title:** Autopoiesis and Knowledge in the Organization: Conceptual Foundation for Authentic Knowledge Management
+
+## Definition
+
+**Full title:** Autopoiesis and Knowledge in the Organization: Conceptual Foundation for Authentic Knowledge Management.
+
+## Examples
+
+- What is cognition? Processing of information: manipulation of symbols based on a set of norms and rules.
+- How does it function? Through any mechanism that can sustain and manipulate discrete physical elements.
+- Criterion of validity: when the symbols appropriately represent some aspect of the 'real world' and the processing leads to successfully solving problems.
+- Flaw: symbolic processing is localized — loss of any part of the symbols implies significant failure in overall functioning.
+- What is cognition? The emergence of global states in a network of simple components.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

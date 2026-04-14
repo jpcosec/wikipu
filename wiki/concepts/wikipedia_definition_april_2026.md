@@ -1,20 +1,37 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/wikipedia_definition_april_2026.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/wikipedia_definition_april_2026.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/autopoiesis_system.md", relation_type: "documents"}
+- target_id: raw:raw/autopoiesis_system.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/autopoiesis_system.md"
-  source_hash: "708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0"
-  compiled_at: "2026-04-14T16:50:28.656370"
-  compiled_from: "wiki-compiler"
+  source_path: raw/autopoiesis_system.md
+  source_hash: 708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0
+  compiled_at: '2026-04-14T16:50:28.656370'
+  compiled_from: wiki-compiler
 ---
 
 **Core characteristics:**
+
+## Definition
+
+**Core characteristics:**.
+
+## Examples
+
+- **Self-production**: Components continuously regenerate and maintain the network that produced them
+- **Operational closure**: Sufficient internal processes exist to maintain the whole system
+- **Structural coupling**: The system remains embedded in dynamic interaction with its environment
+- **Organizational closure**: Networks of constraints work to sustain themselves
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

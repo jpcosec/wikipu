@@ -1,16 +1,33 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/autopoiesis.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/autopoiesis.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf", relation_type: "documents"}
-  - {target_id: "doc:wiki/concepts/core_philosophy.md", relation_type: "implements"}
+- target_id: 'raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation
+    for authentic knowledge management.pdf'
+  relation_type: documents
+- target_id: doc:wiki/concepts/core_philosophy.md
+  relation_type: implements
 compliance:
-  status: "implemented"
+  status: implemented
   failing_standards: []
 ---
 
 Autopoiesis in Wikipu refers to the system's ability to self-define, self-maintain, and regenerate its own knowledge structures through a closed loop of perception, classification, and execution.
+
+## Definition
+
+Autopoiesis in Wikipu refers to the system's ability to self-define, self-maintain, and regenerate its own knowledge structures through a closed loop of perception, classification, and execution.
+
+## Examples
+
+- **Perturbation:** An external change (e.g., a new raw file, a code edit).
+- **Compensation:** The autopoietic loop (via the Bibliotecario) compensates for the perturbation by updating the graph, resolving the gap, and restoring the baseline.
+
+## Related Concepts
+
+- [[core philosophy]]
+- [[core_philosophy]]
 
 ## The Triadic Process Model
 Following the cybernetic model of Limone & Bastias (2006), the Wikipu autopoietic loop operates through three coupled fundamental processes:

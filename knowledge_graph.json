@@ -3167,9 +3167,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "d41ef773e6a5ae9433cfd6fc57ebfae8a4282d90",
+          "blob_sha": "b31e0e5cbaf34af299664f8394592c7aad20cf57",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4293,7 +4293,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a3a8ee5188926ca3d509575219b3dcf8ecfd8382",
+          "blob_sha": "65bb9a04701dda19061ba66d852c64d7866d4a4b",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4478,19 +4478,15 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "72eb6ed00114ad174f4dcdb70c030cae19426c7f",
+          "blob_sha": "6afe47d9f71ecb980bd384d178eebe733c95d05a",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4531,19 +4527,15 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "008eb6572df676157d41e0f546cc818862611a52",
+          "blob_sha": "780eabff04144b6af3e06aeec6f0c8ef633740b8",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4987,7 +4979,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "00ad2bcd08d8b205731e5fc7e539e543fea72bd7",
+          "blob_sha": "24cb740b0373184d4aed29b33d7e438a21add33f",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5020,19 +5012,15 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "96578b47ad4321f8ca6af8d8552e3479d305b7c1",
+          "blob_sha": "823e8ff39816804944de69e32b4fac616f0ddb4e",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5063,19 +5051,15 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5ee1d0753ed186400b68d944023c549ece2fda0e",
+          "blob_sha": "e42c3805a18401700f34a4ebeb38ad845eb79262",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5247,7 +5231,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5c5100b5a4f57a9540ea7bd1f1fd56baeb577aef",
+          "blob_sha": "ced0aecb8b48b95e1e45c7e0bb148b36b1ccbfef",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5291,7 +5275,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e1beee22583bd27c46759a67167e4741df6071f8",
+          "blob_sha": "ed66e1b7e397458d830118c68ba0c1ed21588f15",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5324,7 +5308,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4df068256d8e74bc4cf75e299809c76134a95863",
+          "blob_sha": "70f3c31140de3783ed9cf78431a8611534068bda",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5357,7 +5341,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "84109c490baa01457324d6183e0f1a2df94693da",
+          "blob_sha": "8b49c15572b876177749bcbb4ba3caa941d11e53",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5390,7 +5374,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b6bacad2a953434ca04d46344793cb95d1cef886",
+          "blob_sha": "e7d9f507724010299cae50a5181face9cb98a6bb",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5402,7 +5386,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/application_to_wikipu.md",
@@ -5422,18 +5406,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "96fe402763dd82e03eea7ad0324b3048868cee71",
+          "blob_sha": "69c761718bce48491ccf35bb3e46c94c6c0dd2d4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5496,17 +5476,13 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "81a05afba2fac553af0c41373be29808e711c945",
+          "blob_sha": "393c39fc4dbf3ad28b7bdaeee43453080f97892a",
           "created_at_commit": "5615807c788dfbef8f2e3b0b9100da7f8316ed92",
           "last_modified_commit": "5615807c788dfbef8f2e3b0b9100da7f8316ed92",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5546,37 +5522,28 @@
         },
         "edges": [
           {
-            "target_id": "raw:raw/sourcetalk.txt",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/concepts/how_wikipu_works.md",
-            "relation_type": "extends",
+            "target_id": "doc:wiki/concepts/autopoiesis.md",
+            "relation_type": "contains",
             "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "The Core Philosophy of Wikipu is the transformation of passive documentation into an active, compiled Knowledge Graph\u2014shifting the paradigm from stateless RAG to a stateful \"LLM Wiki.\"",
+          "intent": "Wikipu is built on the philosophy that **Documentation is Code** and **Knowledge is a Graph**.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6b22f7bbd7a6f3794667cc6a89807ffe3d31ec4a",
+          "blob_sha": "47c3714c9dd66ca436e311dc0f4e28c445e59f69",
           "created_at_commit": "04a5b9358d25d344063c01c471c0ce5a7673c53a",
-          "last_modified_commit": "04a5b9358d25d344063c01c471c0ce5a7673c53a",
+          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5586,7 +5553,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/autopoiesis_self_maintaining_knowledge_systems.md",
@@ -5606,18 +5573,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "fa33f280f840077adbb28a5ff19f30735c92f4e7",
+          "blob_sha": "320e55f8d600cd815152fb5b13c455807f6ec978",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5634,7 +5597,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/claw_session.md",
@@ -5654,18 +5617,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "59672fb1ed203458e19b7c2138e91a9ce6a80cfa",
+          "blob_sha": "9280466ddcc011ba10ad2efdde4e14303eeb4f51",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5702,7 +5661,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/cleansing_candidates_by_node_type.md",
@@ -5716,25 +5675,20 @@
           }
         ],
         "semantics": {
-          "intent": "Code nodes (file:src/, code:)",
+          "intent": "This node defines and documents the cleansing candidates by node type.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "abstract",
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0084e337a477c82af05ae76c8108a37897d2e38d",
+          "blob_sha": "20adc95dc7a1357e1f38e697167b0102e7470f84",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5771,7 +5725,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/core_idea.md",
@@ -5791,18 +5745,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "bcb4642dac1115028ca5b980aad4d7678bacaf4e",
+          "blob_sha": "ac0ef36ee35036ffae1163e43e7f380d7f105000",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5839,27 +5789,7 @@
     },
     {
       "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/sourcetalk.txt",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/sourcetalk.txt"
-    },
-    {
-      "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/current_facets_and_their_questions.md",
@@ -5879,18 +5809,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "14d0803185b777ed7caa6a3cd3cc7507f314b1c8",
+          "blob_sha": "572f488e25f7953e5ae48e0af012f36954b12e3a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5927,7 +5853,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/design_principles.md",
@@ -5947,18 +5873,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "fff16d489087838825761fdbc251b0303bf325b3",
+          "blob_sha": "c4fb44961797072d19812ab1a19d9ab9d2b9184e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5995,7 +5917,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/desk_gates_md_the_central_monitor.md",
@@ -6015,18 +5937,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0bc9840167974fe99955fd47f563f1ddadaf5a1d",
+          "blob_sha": "d6f5c0821ed69f351df5c6a9211a0120e34b223f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6063,7 +5981,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/detection_signals.md",
@@ -6083,18 +6001,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "2b48f5700f7a0e048c09ee6b702eee90b09c4cae",
+          "blob_sha": "95100d573c49f54e2ee539e1efafc87b8b477ce3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6111,7 +6025,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_1_plan_anatomy.md",
@@ -6131,18 +6045,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6ad11e1582f35772c9065822cfec960c1ea268dd",
+          "blob_sha": "d860bd88b95484d13b9375012a0967c5640bd494",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6179,7 +6089,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_2_documentation_lifecycle.md",
@@ -6199,18 +6109,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ece711270300091d951dd0f33e02c41920d8c695",
+          "blob_sha": "06d6246d8b0077895265fb3d937d64ce16579648",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6227,7 +6133,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_3_agent_permissions_model.md",
@@ -6247,18 +6153,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "119ad02f3667f0277bf641a5131b4d29cfe158a6",
+          "blob_sha": "6e654c2de8ff4b452e062c1bd909e5939dc91760",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6275,7 +6177,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_4_architectural_invariants.md",
@@ -6295,18 +6197,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f86f3a1ec2eeed0edae62b8d51e1f94893e5a7e3",
+          "blob_sha": "2d1198220fb7ad2cacbeb3060e192702b2851fbb",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6323,7 +6221,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_5_verification_contract.md",
@@ -6343,18 +6241,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "2b4745500580eb884243b8056151f2ec4f810f78",
+          "blob_sha": "45bfc579ad8bd4fb6fdf57744ff92f55ff4a18be",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6371,7 +6265,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_6_debt_topology.md",
@@ -6391,18 +6285,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3040a50df1af5866dbb67181f0eb9d0acb868301",
+          "blob_sha": "c4893580e09839009c0bc307ce9396acf5f5796a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6419,7 +6309,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_7_code_style_axioms.md",
@@ -6439,18 +6329,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b1ab4ce4d43a033c93459301bf6997387ba6ddb4",
+          "blob_sha": "9d21e876f4257eb42ae7cc62f3d618d2501eeb15",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6467,7 +6353,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_8_inter_project_divergence.md",
@@ -6487,18 +6373,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "cd9b04c4a43a502844a905e44f6a40dafed321ee",
+          "blob_sha": "31803b1ff968de057e2a7d1681009086910564fe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6515,7 +6397,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/facet_9_minimum_seed.md",
@@ -6535,18 +6417,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b55998bf9b2944e18365e759a0fcf8f1d15bd034",
+          "blob_sha": "ecfba9debe101211da576bb46d7c829b19ddd465",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6563,7 +6441,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/failure_mode_without_trail_collect.md",
@@ -6577,24 +6455,20 @@
           }
         ],
         "semantics": {
-          "intent": "The same design question gets asked in three different sessions. Each time, the answer is derived from scratch. Each time, a slightly different answer emerges. The system accumulates inconsistencies that no one can trace because the context that produced each answer is gone.",
+          "intent": "The same design question gets asked in three different sessions. Each time, the answer is derived from scratch. Each time, a slightly different answer emerges.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1e8472e961d488e18e6e622f36fe08f507308f61",
+          "blob_sha": "d55709dcfbb7e6aa022c1fa09da11c838506ade1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6631,7 +6505,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/how_this_relates_to_the_graph.md",
@@ -6651,18 +6525,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "491cd1b4f12c4f1af71fe954e93d35970a134226",
+          "blob_sha": "6e0e6fc5113fd34ba4c21ee83f15131e5878ccf1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6723,7 +6593,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/implementation_note.md",
@@ -6743,18 +6613,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f03f8f78ae38711bcb95cb26e2a712d5a6655267",
+          "blob_sha": "8864f41946514b897674049e663f118cd02dff83",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6791,7 +6657,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/karpathy_tweet.md",
@@ -6811,18 +6677,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a46154b84edb15101341dcf84074db7fea80a2bf",
+          "blob_sha": "b4906cf868e007e0785a6e480477df65c3fca310",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6859,7 +6721,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/key_constraint.md",
@@ -6873,24 +6735,20 @@
           }
         ],
         "semantics": {
-          "intent": "Operational closure requires that the system has sufficient internal processes to maintain itself without requiring ad hoc human intervention at every step. Human approval is the gate, not the engine. The engine \u2014 detection, proposal generation, trail collection, rebuild \u2014 must run autonomously. The gate \u2014 structural approval \u2014 requires human authorization. This is the precise boundary between the autopoietic interior and the sympoietic coupling with the human environment.",
+          "intent": "Operational closure requires that the system has sufficient internal processes to maintain itself without requiring ad hoc human intervention at every step. Human approval is the gate, not the engine. The engine \u2014 detection, proposal generation, trail collection, rebuild \u2014 must run autonomously.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c53717efcaa425cd0b903f990f9ac22f4360d0e3",
+          "blob_sha": "4cde223b7c443d21cbefaa4ebf8013a5bb94d281",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6907,7 +6765,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/lifecycle_of_a_desk_item.md",
@@ -6927,18 +6785,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d04c75a63b06a324379f5185f4f9a7d8dfefb9b9",
+          "blob_sha": "0084bd200fbf5d1ede82a71193be93d1588df4a5",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -6975,7 +6829,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/linked_todos.md",
@@ -6995,18 +6849,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "09e22b6e1a55209cf355d17904e3bba24176b571",
+          "blob_sha": "9aee2de08c2b4a6d5c77a7fbf4f2e875601bc562",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7043,7 +6893,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/methodology_synthesis_addendum.md",
@@ -7063,18 +6913,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "73adc48c5baf9b71c37b261012b26da1e5fc370c",
+          "blob_sha": "36ef50fdba822314e425db57edff2f3a07c9fe4a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7111,7 +6957,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/methodology_synthesis_cross_project_analysis.md",
@@ -7131,18 +6977,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1ecd73763be89d40954c3e635a242c895021e486",
+          "blob_sha": "2208e290623fb8b348a9eedaaf7c1194b5cd1f09",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7159,7 +7001,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/methodology_synthesis_extended_analysis.md",
@@ -7179,18 +7021,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f92aa20772c4bbabf9bc2a1996946fa20a4cce2a",
+          "blob_sha": "ec2c1299752ac4d8dca0a98e813c63896f4316fa",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7207,7 +7045,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/naming_note.md",
@@ -7227,18 +7065,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d1d394ec01ebf4dfad46887d3b5a1225c60e92b8",
+          "blob_sha": "1d1e378a46d24620509ba413673a32991179a374",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7255,7 +7089,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/paper_autopoiesis_and_knowledge_in_the_organization.md",
@@ -7275,18 +7109,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "baf2142929c89c17cab76fecf32703c99a3106cc",
+          "blob_sha": "d9734f22e735223de805a46c810248ecb5958b4c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7303,7 +7133,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/phase_1_build_the_raw_graph_structure.md",
@@ -7323,18 +7153,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ad26ff0e2ac06daab5c9687f6c9a6f0c774d9875",
+          "blob_sha": "a4863a1d7217b275a1170c54fdacad5eded68364",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7351,7 +7177,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/phase_2_inject_facets_semantics.md",
@@ -7371,18 +7197,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "04a7bc0bd59ea02a6162756d30ae5ea12d84b80d",
+          "blob_sha": "14f50b5d1344015a1a34cc27b3b142f64672d4f7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7399,7 +7221,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/phase_3_query_for_documentation_quality.md",
@@ -7419,18 +7241,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e1f39248334c950b7f4c1f08acde90834a8aaf31",
+          "blob_sha": "dbda99ca6b376eb05cfa9a7ec44b1f2a3111bbf3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7447,7 +7265,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_1_single_responsibility.md",
@@ -7467,18 +7285,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f2db2596a544c68522f39addd6ab421d0af73875",
+          "blob_sha": "87cff6536221f6b4bdc2c590b5965b5dea47409d",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7495,7 +7309,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_2_mandatory_abstract.md",
@@ -7515,18 +7329,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "61b6bd776b3dff1e162f6a04c219ad7e7d478e75",
+          "blob_sha": "8064255ac7e1e0a34b7b7c182fc0647782fce369",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7543,7 +7353,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_3_composition_via_cli_not_prose.md",
@@ -7563,18 +7373,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a20d6d81a4b01552eb0941e5c8a749d7f1ccf7d2",
+          "blob_sha": "33c028f903cd1d03850bd11ae3a0d7e727531891",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7591,7 +7397,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_4_node_templates.md",
@@ -7611,18 +7417,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6ca20697cb298076d69c3bf50838631bafc13d04",
+          "blob_sha": "43074a39d28ae7e0e944beb3cb7695f4dc4c33b1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7639,7 +7441,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_5_the_digestion_pipeline.md",
@@ -7659,18 +7461,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "737d5d86dd928fb5fc78f3bfc6805803e92ceef7",
+          "blob_sha": "16556ccf005f335995f6dd9905131d8117ef66ba",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7687,7 +7485,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/principle_6_free_text_has_a_place_but_not_a_permanent_home.md",
@@ -7707,18 +7505,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "64c0610c43f37e37488a8af2fe4230cac9f5c973",
+          "blob_sha": "3cf2eba9582b14f9d192cd2bdc0ad320d79983ce",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7735,7 +7529,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/problem_motivation.md",
@@ -7755,18 +7549,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "58bd9b43082c0b5f38cec470034fabff2272d995",
+          "blob_sha": "2e9c3dba2525e28426122060bc67fbdc413d3fe7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7783,7 +7573,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/problem_statement.md",
@@ -7803,18 +7593,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f70be6f323ea2952fa4bef46bf11c8eed94f562e",
+          "blob_sha": "45165cf1ccc4a91b73e5edd19c8ecff564213bb6",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7851,7 +7637,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/proposed_direction.md",
@@ -7871,18 +7657,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "51128e5a189f756c36f92e0afb69fc06368eab9c",
+          "blob_sha": "d7ffb075629f0dbf82317928979ddb74940e8841",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7899,7 +7681,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md",
@@ -7919,18 +7701,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "9da654d156fb7edb66e64daa86f674eda2d4cc92",
+          "blob_sha": "2e6a1a28bf4bdeefb68d7ba226cd30b6eccf5f56",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7947,7 +7725,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q1_what_differences_exist_when_implementing_ai_vs_backend_vs_frontend_vs_api.md",
@@ -7967,18 +7745,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dfe12582b2b48e83b10a4ac39ebbcc8f71e68b6d",
+          "blob_sha": "d6771cb0546b6dd66bb9450ef9db4da4b7c81605",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -7995,7 +7769,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q2_navigation_philosophy_how_do_you_find_what_you_need.md",
@@ -8015,18 +7789,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0b9e03c27f4051e7d520a1869786bb26b1cf1607",
+          "blob_sha": "20fdf64460bd2bfd852e06f0c41ca5b2dfcc7437",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8043,7 +7813,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md",
@@ -8057,25 +7827,20 @@
           }
         ],
         "semantics": {
-          "intent": "future_docs/ \u2014 Deferred work",
+          "intent": "This node defines and documents the q2 what document templates exist for future docs plan docs docs what types exist.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "abstract",
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dcef1e9073b1859b2d242734a5aa5b30d0f8d621",
+          "blob_sha": "6a2b9d1fe2031403e4eb0ccefe4d5351ba49cfe4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8092,7 +7857,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md",
@@ -8112,18 +7877,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f27c959c3c691863cf28ab783ad98b4e4bcf2845",
+          "blob_sha": "963912c41307e57f8edf0b13e2b3547ceeb8ff32",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8140,7 +7901,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q4_context_router_for_agents_how_are_agents_navigated.md",
@@ -8160,18 +7921,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "9f185116d491ed80075706c39ecb31e65642b5c0",
+          "blob_sha": "d4ce86d277bf2c26fed257788dcf26ccb64d37f3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8188,7 +7945,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q4_do_we_have_any_information_about_drifting.md",
@@ -8208,18 +7965,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ef74d3afe85a1905452645cc1c930e8c30fad51c",
+          "blob_sha": "e2fd51a2b5428db3c3fbbfdfea5844546a42b90c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8236,7 +7989,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q5_is_the_human_considered_in_the_overall_loop.md",
@@ -8256,18 +8009,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1f360691fe43123f042a88a8f576f4de9384785a",
+          "blob_sha": "aa63d1ffd9f6e126d4f82c4f003bcbaa177701be",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8284,7 +8033,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q6_how_is_git_used.md",
@@ -8304,18 +8053,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3a24a8d3b73c070a75024a115095f40455c6e275",
+          "blob_sha": "3d1e063b16c1f8784f5eaf99680b1830918b52cc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8332,7 +8077,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q7_what_weaknesses_exist_across_implementations.md",
@@ -8352,18 +8097,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a6a242aa58deef216aa807e21e94e4618ffcdc44",
+          "blob_sha": "44a3d29b290355534ca485178ff72b890dfeb77f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8380,7 +8121,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/q8_how_are_things_tested.md",
@@ -8400,18 +8141,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0061dfdeaf509126b8628ce7ecd0be074acd3965",
+          "blob_sha": "e45127d6fc7862cd1ca9d1f9e66273fc0bd93dc4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8428,7 +8165,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/question_types.md",
@@ -8448,18 +8185,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "bf6fbf97fafba9b0a91a9ca6bed7a58482062fdb",
+          "blob_sha": "93866283c82c5288d74735321f810df53601bcf1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8496,7 +8229,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/re_orthogonalization_process.md",
@@ -8516,18 +8249,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "001e338732fa2c3c741a652d8b29b3719dbd4f83",
+          "blob_sha": "32c1baa37052a890fc09a76676e6f4245e029629",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8564,7 +8293,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/relation_to_node_id.md",
@@ -8578,24 +8307,20 @@
           }
         ],
         "semantics": {
-          "intent": "The node ID never encodes a git ref. The ID is the stable logical identity. The `GitFacet` is the temporal, mutable layer. Separating them preserves edge stability while enabling lifecycle queries.",
+          "intent": "The node ID never encodes a git ref. The ID is the stable logical identity. The `GitFacet` is the temporal, mutable layer.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4fcde99ebc7ac1a0c0dab78fd1e45de28d63933d",
+          "blob_sha": "738fb42e2b62a0f52115deb6ac344d734a165e33",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8612,7 +8337,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/relation_to_phase_6_meta_review.md",
@@ -8632,18 +8357,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b29efb9fa5118686be7ef5b00d9474fec6f46e49",
+          "blob_sha": "8a8615f20b87e0cba7e82c02ed4a9be25561548d",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8660,7 +8381,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/relation_to_the_board_and_gate_pattern.md",
@@ -8674,24 +8395,20 @@
           }
         ],
         "semantics": {
-          "intent": "The desk is the container. Boards and Gates are the structures within it. A Board is a domain view; a Gate is a blocking item; Gates.md is the cross-domain monitor. The desk makes all three accessible from one root directory.",
+          "intent": "The desk is the container. Boards and Gates are the structures within it. A Board is a domain view; a Gate is a blocking item; Gates.md is the cross-domain monitor.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5d627caa7d9ef915605093b2cf0a47e1837231b8",
+          "blob_sha": "81994db56acc5d6d8947856800673af811856cad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8708,7 +8425,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/relation_to_the_q_a_pattern.md",
@@ -8728,18 +8445,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8d7e58c4da786a21e6c2f9d12403bb3ac8913478",
+          "blob_sha": "005fdacd4727631b3fe38943b308a11fda6b5971",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8756,7 +8469,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/relationship_to_other_gates.md",
@@ -8776,18 +8489,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c4e6121a586925a330a94408002cff115d265350",
+          "blob_sha": "aa62f60e891d21fd43991500a1572cd921be8b15",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8804,7 +8513,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/renaming_from_plan_docs.md",
@@ -8824,18 +8533,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "2e5abd2f0d46cdcb928c4d517acb908f44bdb67f",
+          "blob_sha": "f1dcd1d69931ab87d42c0a1ec7c05632b179fb2c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8852,7 +8557,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/routing_matrix_vs_graph.md",
@@ -8872,18 +8577,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "bdae411955d587ccdea6d158bc6bb19d3c7bd66e",
+          "blob_sha": "eb0edef61624376c935e914982af61889b656319",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8920,7 +8621,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/signals_that_re_orthogonalization_is_needed.md",
@@ -8940,18 +8641,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5eb5c29e2182f69c969a4b77dc1f7487bd4c96a8",
+          "blob_sha": "b54f19c040590113642abf0ca945bd2568d01efc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -8968,7 +8665,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/source_concept.md",
@@ -8988,18 +8685,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "44da3eb042de9a1f05df77174eaf374eaee73cad",
+          "blob_sha": "b49ea778b859394b08766136e1cc080356e8d6e0",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9016,7 +8709,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md",
@@ -9036,18 +8729,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "541994bf8446a3f959f9f75d4aac3bc3dcebedfc",
+          "blob_sha": "5a8a535aa1ada1795082742711ee164bb92e7ed5",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9064,7 +8753,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_auditor_s_role.md",
@@ -9084,18 +8773,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "27214a15bbc346dff310804ff8ea41ac9988fefb",
+          "blob_sha": "da15cf5f5fa5e589f217dae619ba3d543aa48cba",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9112,7 +8797,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_board.md",
@@ -9126,25 +8811,20 @@
           }
         ],
         "semantics": {
-          "intent": "Structure",
+          "intent": "This node defines and documents the the board.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "abstract",
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ed638cb342772622daf906a0384ef75f7c0b8ed2",
+          "blob_sha": "0aedd2b33134c780a6c0f5faae2bad9684405814",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9161,7 +8841,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_collection_step.md",
@@ -9181,18 +8861,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5b4f4fcfd7d4261c668a1433dfe3aa655655d573",
+          "blob_sha": "211c5ca597b96a297debb53a14c911805a25e56e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9209,7 +8885,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_ephemeral_contract.md",
@@ -9229,18 +8905,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1edd8e4493dcf2c2bcb7466dda70f5b87fe8e8dc",
+          "blob_sha": "f0e2176f5952f725352f1b95412e78f227142cfc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9257,7 +8929,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_facetproposal_gate.md",
@@ -9277,18 +8949,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5b6286207c76378f83028c378b160c3547cc4004",
+          "blob_sha": "b5a083e151627b1c533e63783dd836bce4866112",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9305,7 +8973,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_four_operations.md",
@@ -9325,18 +8993,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "069660c7edacd2493114985c9a51f4805e545248",
+          "blob_sha": "3ac1a1e92d4bc68002b47d18c7fcbaab9747b6ad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9353,7 +9017,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_gate.md",
@@ -9373,18 +9037,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dff7fec5e9646ad6dc7038ed4c125c48abba03f5",
+          "blob_sha": "7bbf58d3862a1a0eb0baeb2b09e0f75d9e2d4d6a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9401,7 +9061,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_gitfacet.md",
@@ -9421,18 +9081,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d2e7a4bfbcb400c5f8fc85eb39c5c1ee071f8321",
+          "blob_sha": "3e6e59e4bb3d9a1788611f3db6d9433d31149ed8",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9449,7 +9105,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_implication_for_wikipu.md",
@@ -9469,18 +9125,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0c8ba7b9c1123a9b3ac1bbfc13026db4a7f976cc",
+          "blob_sha": "e59f9c4210dcde2f75577a2dae42d56bc0da556f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9497,7 +9149,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_key_insight.md",
@@ -9517,18 +9169,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d074c886ddab94514bfa98d8d14bfaf272fc6c64",
+          "blob_sha": "63b29fbc875d4c91b6d9ff16644080e3986844bd",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9545,7 +9193,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_pca_analogy.md",
@@ -9565,18 +9213,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0c447dd38783ff5f7e53b662208c357b20efa051",
+          "blob_sha": "13a88e561fcc7f17aef18a9f1c27a3701da08444",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9593,7 +9237,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_problem.md",
@@ -9613,18 +9257,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1e82bab0fec6ee91637be5c0819c96dd91897464",
+          "blob_sha": "2da4b449618f0031f8963b5a55149ccaeedb434f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9641,7 +9281,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_problem_with_path_only_identity.md",
@@ -9661,18 +9301,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "14e96aefa7a897fdaf5d5d5ec157ad277d2efad9",
+          "blob_sha": "b77c9a855d8e21d950a8acf4bc8543a39dacd8dc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9689,7 +9325,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_protocol.md",
@@ -9709,18 +9345,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d14e960ca317200aa66cccf9479fafd5dda0d23f",
+          "blob_sha": "849c068adc8aaae6acbf2945a40ffd80b34d8c8a",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9737,7 +9369,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md",
@@ -9757,18 +9389,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0e12f193f3bb9f7658a8230cf812d6dc530d0820",
+          "blob_sha": "78354c59668a3bc7a3c6e92dd92e9a868699d758",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9805,7 +9433,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_belongs_on_the_desk.md",
@@ -9825,18 +9453,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4ff8acc87b59e035ac05d54b7bdcac700980ca13",
+          "blob_sha": "b15b939e33eb4490896b32b4eb9d7cf3354519ee",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9853,7 +9477,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_doesn_t_fit_any_axiom_yet.md",
@@ -9867,24 +9491,20 @@
           }
         ],
         "semantics": {
-          "intent": "**The critique pattern (cotizador mixin-arch/03_critique.md):** The codebase has a practice of writing explicit architectural critiques \u2014 documents that identify the failure modes, hidden coupling, and scalability cliffs of current patterns BEFORE they become problems. This is distinct from future_docs/ (which tracks known deferred work) and ADRs (which record decisions). It's a structural risk register. No other project does this explicitly, but it may be the most valuable artifact in the cotizador docs. Worth considering as Axiom 6.",
+          "intent": "**The critique pattern (cotizador mixin-arch/03_critique.md):** The codebase has a practice of writing explicit architectural critiques \u2014 documents that identify the failure modes, hidden coupling, and scalability cliffs of current patterns BEFORE they become problems. This is distinct from future_docs/ (which tracks known deferred work) and ADRs (which record decisions). It's a structural risk register.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ffeed65aba9782bf4d6e82feafb6f82eda28b349",
+          "blob_sha": "ba8d9b52c1521e5615bd3d58f86be4a42fb3cd2b",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9901,7 +9521,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_gets_collected.md",
@@ -9921,18 +9541,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a9451935d62060a5e425b41ed2486a0df06c36da",
+          "blob_sha": "5e05e455ea8ade02752ef34855f4e86477a1bec6",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9949,7 +9565,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_is_exempt.md",
@@ -9969,18 +9585,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8402773c64133388e44f58041c0829de9ecc9acb",
+          "blob_sha": "b932f702328077f7dccbade59d97cb9274edb92e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -9997,7 +9609,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_it_is_not.md",
@@ -10011,24 +9623,20 @@
           }
         ],
         "semantics": {
-          "intent": "Socratic is not code review (that's post-implementation). It is not the cleansing protocol (that's post-build graph analysis). It is not trail collect (that's post-session artifact recovery). It is the pre-design gap finder \u2014 the step that transforms vague intentions into plans that can actually be implemented.",
+          "intent": "Socratic is not code review (that's post-implementation). It is not the cleansing protocol (that's post-build graph analysis). It is not trail collect (that's post-session artifact recovery).",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "17acd7c111939c82d364056d0c84b9c2200a6f1c",
+          "blob_sha": "d06bba6879944a619320c395511a9840a0492db7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10045,7 +9653,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md",
@@ -10065,18 +9673,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f52a276faeab8b6c5b9ad79fa92de854ec5cdffc",
+          "blob_sha": "3380a68283177a05c663a0032d87f967a291b389",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10093,7 +9697,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_this_enables.md",
@@ -10113,18 +9717,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "91f7b6707520ce53b87d3f60fdc21347d9ce7e63",
+          "blob_sha": "9643eb9e3aa8413394807685cad48cb0929656af",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10141,7 +9741,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_to_preserve_from_the_matrix_model.md",
@@ -10155,24 +9755,20 @@
           }
         ],
         "semantics": {
-          "intent": "The matrix's real contribution is not the coordinate system \u2014 it is the **separation of temporal state**. `runtime` vs. `plan` as a navigation axis is valuable regardless of graph or matrix. A node in the graph should carry a temporal facet: is this current truth, a plan, a deferred item, or historical?",
+          "intent": "The matrix's real contribution is not the coordinate system \u2014 it is the **separation of temporal state**. `runtime` vs. `plan` as a navigation axis is valuable regardless of graph or matrix.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "68182dcf8a8b07a6fde35c827041b4f67707fe6d",
+          "blob_sha": "8ad9da067215b8758cd97314782ef3c727d7b212",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10189,7 +9785,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/what_trail_collect_is_not.md",
@@ -10203,24 +9799,20 @@
           }
         ],
         "semantics": {
-          "intent": "It is not a memory dump. It is not a session summary. It is not a log of everything that happened. It is a targeted extraction of the facts that should change the system's behavior in future sessions \u2014 the minimal set of updates that makes the next session better than this one.",
+          "intent": "It is not a memory dump. It is not a session summary. It is not a log of everything that happened.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ad9689390cfc6de926eca47abe0408a473b52a47",
+          "blob_sha": "b8258c15c3d1676b3e3e0bc033e497a25ec36d02",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10237,7 +9829,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/when_is_a_facet_worth_adding.md",
@@ -10257,18 +9849,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c3b46a908991e13a8c6cad9c09aa7888d79b0e76",
+          "blob_sha": "850c842323674b8fdd1279d0c8c4008196e027ad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10285,7 +9873,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/where_it_fits.md",
@@ -10305,18 +9893,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "491612f323cb05fbba3a9bb74410ec0e550ac1ec",
+          "blob_sha": "b2b3501efeca5750d6269c0809c2592ea6d1c2d1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10333,7 +9917,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/why_code_is_not_self_cleaning.md",
@@ -10353,18 +9937,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ecc456af5840e5e39a5aca4a62b821eeafb959fa",
+          "blob_sha": "ce96aaffd2c15fc13a6d60706436daecca01cdbe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10381,7 +9961,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/why_desk.md",
@@ -10401,18 +9981,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b358e50c58ba88d762dd4c175f93ede48796e6e9",
+          "blob_sha": "1e31b8ac659733339024ea4e2ebbacc3a545defb",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10429,7 +10005,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/why_two_constructs.md",
@@ -10449,18 +10025,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0eef33185266e2105f7aeccbfd8ab163773e82b7",
+          "blob_sha": "b248478d08bfab29722671550735ee4e0d0e5830",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10477,7 +10049,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/concepts/wikipedia_definition_april_2026.md",
@@ -10497,18 +10069,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "651c360207c2195952da124d2b8327ade0c93a94",
+          "blob_sha": "dafd729719db2c692b2f7b238d5298f277fa7cfe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10525,7 +10093,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/1_ci_cd_enforcement.md",
@@ -10545,18 +10113,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4831c04a3798035055e7564e3d53c088e434cbfe",
+          "blob_sha": "b446a09ded578eebe1694fd4acec6a8a41ba7cd7",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10593,7 +10157,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/2_domain_glossary.md",
@@ -10613,18 +10177,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "446d91aafe3b220dc04948048e624fc1b823176c",
+          "blob_sha": "d4fb7a2c217a0d1540c7cc631eb3cacfd888cf6f",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10641,7 +10201,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md",
@@ -10661,18 +10221,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1101f6bf29fd0046b42bb6df84d48c37dceb46ef",
+          "blob_sha": "33702b24d15648b787c2452911d94f7282ed4287",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10689,7 +10245,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md",
@@ -10709,18 +10265,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8f5ec4baf9e46af012dd495d734e8fa0fb1584a5",
+          "blob_sha": "2115f047323f677b6e41024443e5b5522c328332",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10737,7 +10289,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/c_mo_leer_el_grafo.md",
@@ -10757,18 +10309,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "46aa88fbf78c4a819a898aa6ee7f497a197eb1a9",
+          "blob_sha": "aeadd96eaf7e96e2ce2375b10377765b81437dee",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10785,7 +10333,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/reglas_de_interacci_n.md",
@@ -10805,18 +10353,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3dcbb4e2d446c72b782b3f7e9b457f8b037f091c",
+          "blob_sha": "2794241ee3ce614870c695a1b0ebb7cd2b7cb5b4",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10833,7 +10377,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/summary.md",
@@ -10853,18 +10397,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b0015afe3ba64228df18626008edc21e71f4513a",
+          "blob_sha": "7a002bbc2f4cf997491098bdc05c99d08269475b",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10881,7 +10421,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/tu_misi_n.md",
@@ -10901,18 +10441,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c2b735e8d29c79f878e5a33ad10003edb50849e6",
+          "blob_sha": "cc3ce2e0e02213e9ea43f42be35d6d19b4a4933f",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -10929,7 +10465,7 @@
     },
     {
       "type": "concept",
-      "status": "planned",
+      "status": "implemented",
       "schema": {
         "identity": {
           "node_id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
@@ -10949,18 +10485,14 @@
         "ast": null,
         "io_ports": [],
         "compliance": {
-          "status": "planned",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "status": "implemented",
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6e07d95f2a66e848acb82b43a1a1cbb2b843709a",
+          "blob_sha": "00c1869ac479e5bf71aa1b8d006f71dfd492dd17",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -24292,16 +23824,10 @@
       "target": "doc:wiki/concepts/core_philosophy.md"
     },
     {
-      "relation": "documents",
+      "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/concepts/core_philosophy.md",
-      "target": "raw:raw/sourcetalk.txt"
-    },
-    {
-      "relation": "extends",
-      "metadata": {},
-      "source": "doc:wiki/concepts/core_philosophy.md",
-      "target": "doc:wiki/concepts/how_wikipu_works.md"
+      "target": "doc:wiki/concepts/autopoiesis.md"
     },
     {
       "relation": "documents",

@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_4_architectural_invariants.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_4_architectural_invariants.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661812"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661812'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What layer/module rules appear in every project?
+
+## Definition
+
+**Question:** What layer/module rules appear in every project?.
+
+## Examples
+
+- UI (projection/intent) → orchestration (transitions) → domain (pure logic) → adapters (I/O)
+- No layer absorbs another's responsibility
+- Pure domain: no DB access, no UI state reads, no transport concerns
+- CLI > API > UI: all functionality born as deterministic CLI function first
+- Deterministic functions (core/) are always separate from AI/LangGraph nodes (nodes/)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

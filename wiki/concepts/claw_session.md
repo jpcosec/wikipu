@@ -1,20 +1,43 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/claw_session.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/claw_session.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/claw_session.md", relation_type: "documents"}
+- target_id: raw:raw/claw_session.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/claw_session.md"
-  source_hash: "0ef760dbcb681b6148b3546a9065d919e2eec7c5432c417a07c7213bb1ef8ce0"
-  compiled_at: "2026-04-10T17:47:33.726998"
-  compiled_from: "wiki-compiler"
+  source_path: raw/claw_session.md
+  source_hash: 0ef760dbcb681b6148b3546a9065d919e2eec7c5432c417a07c7213bb1ef8ce0
+  compiled_at: '2026-04-10T17:47:33.726998'
+  compiled_from: wiki-compiler
 ---
 
 ╭─── Claude Code v2.1.96 ──────────────────────────────────────────────────────╮
+
+## Definition
+
+╭─── Claude Code v2.
+
+## Examples
+
+- Implementation of this concept within the Wikipu workflow.
+- Application of these principles in current documentation.
+
+## Related Concepts
+
+- [[...]]
+- [[How does this work?]]
+- [[How to add a component?]]
+- [[How to use it?]]
+- [[Knowledge Node Facets]]
+- [[concept_a]]
+- [[concept_b]]
+- [[node_a]]
+- [[node_b]]
+- [[transclusion]]
 
 ## Details
 

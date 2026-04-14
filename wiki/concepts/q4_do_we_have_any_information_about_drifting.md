@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/q4_do_we_have_any_information_about_drifting.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/q4_do_we_have_any_information_about_drifting.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis_extended.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis_extended.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis_extended.md"
-  source_hash: "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30"
-  compiled_at: "2026-04-14T16:50:28.663616"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis_extended.md
+  source_hash: 0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30
+  compiled_at: '2026-04-14T16:50:28.663616'
+  compiled_from: wiki-compiler
 ---
 
 Yes — and it's one of the richest areas in the data.
+
+## Definition
+
+Yes — and it's one of the richest areas in the data.
+
+## Examples
+
+- The intended architectural invariant
+- The observed implementation (current state)
+- A drift timeline with exact commit hashes and dates
+- Why the drift happened (root causes: delivery pressure, parallel evolution without enforcement gate)
+- Impact analysis (architectural mismatch, lifecycle ambiguity, API inconsistency, onboarding friction)
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_8_inter_project_divergence.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_8_inter_project_divergence.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661988"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661988'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** Where do projects contradict each other? Which version is better?
+
+## Definition
+
+**Question:** Where do projects contradict each other? Which version is better?.
+
+## Examples
+
+- Doc_methodology: mechanical enforcement via git hooks + 4-template system with tooling (DocMutator auto-manages file lifecycles, TestSprite required in commits)
+- Postulador: AGENTS.md + convention, no hard enforcement
+- Cotizador: per-task agent_guideline, enforcement by human review only
+- Cotizador: atomic feature-scoped plans (`plan/<feature>/` folder with phases as separate files). One feature = one plan.
+- Postulador: larger multi-phase plans with dependency matrices in single documents.
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 

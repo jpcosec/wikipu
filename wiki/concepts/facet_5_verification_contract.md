@@ -1,20 +1,38 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/facet_5_verification_contract.md"
-  node_type: "concept"
+  node_id: doc:wiki/concepts/facet_5_verification_contract.md
+  node_type: concept
 edges:
-  - {target_id: "raw:raw/methodology_synthesis.md", relation_type: "documents"}
+- target_id: raw:raw/methodology_synthesis.md
+  relation_type: documents
 compliance:
-  status: "planned"
+  status: implemented
   failing_standards: []
 source:
-  source_path: "raw/methodology_synthesis.md"
-  source_hash: "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34"
-  compiled_at: "2026-04-14T16:50:28.661855"
-  compiled_from: "wiki-compiler"
+  source_path: raw/methodology_synthesis.md
+  source_hash: 509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34
+  compiled_at: '2026-04-14T16:50:28.661855'
+  compiled_from: wiki-compiler
 ---
 
 **Question:** What does "done" mean? What proof is required?
+
+## Definition
+
+**Question:** What does "done" mean? What proof is required?.
+
+## Examples
+
+- Question:
+- postulador_langgraph:
+- doc_methodology:
+- Feature creation methodology (postulador_v2):
+- Deterministic rebuild plan (postulador_langgraph):
+
+## Related Concepts
+
+- [[Index]]
+- [[core_philosophy]]
 
 ## Details
 
