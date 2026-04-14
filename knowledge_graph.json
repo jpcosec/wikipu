@@ -802,9 +802,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "6f20a31e6fe55b34c2efbb5a72a198a5ccb2a550",
+          "blob_sha": "7a104e644948832ee507d60ade017b9a8972ffc8",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "e163e7dec7ba8a16818ad6a42338cebe3f31d63f",
+          "last_modified_commit": "6816677623ef455b73b329c354cc23b0472af6eb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3545,7 +3545,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "bfd224138b4e9034caa8c40dcad090510b9b5164",
+          "blob_sha": "cffd678335687b05e7a3e592217c067f5b179111",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -11865,8 +11865,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_issue` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate an issue file has required sections.",
+          "raw_docstring": "Validate an issue file has required sections."
         },
         "ast": {
           "construct_type": "function",
@@ -11898,8 +11898,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_gates` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate a gates file has required table structure.",
+          "raw_docstring": "Validate a gates file has required table structure."
         },
         "ast": {
           "construct_type": "function",
@@ -11931,8 +11931,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_backlog_item` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate a backlog item file has required fields.",
+          "raw_docstring": "Validate a backlog item file has required fields."
         },
         "ast": {
           "construct_type": "function",
@@ -11964,8 +11964,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_board` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate a board file has required structure.",
+          "raw_docstring": "Validate a board file has required structure."
         },
         "ast": {
           "construct_type": "function",
@@ -11997,8 +11997,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_adr` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate an ADR file has required structure.",
+          "raw_docstring": "Validate an ADR file has required structure."
         },
         "ast": {
           "construct_type": "function",
