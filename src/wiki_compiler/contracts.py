@@ -63,7 +63,7 @@ class IOFacet(BaseModel):
     )
     direction: Literal["input", "output"] = Field(
         default="input",
-        description="The direction of data flow (e.g., 'input' for reading, 'output' for writing)."
+        description="The direction of data flow (e.g., 'input' for reading, 'output' for writing).",
     )
     schema_ref: str | None = Field(
         default=None,
@@ -167,11 +167,18 @@ class SourceFacet(BaseModel):
     Question: Where did this node come from, and is it stale?
     """
 
-    source_path: str = Field(description="Relative path to the original raw source file.")
-    source_hash: str = Field(description="Content hash of the raw source at compilation time.")
-    compiled_at: str = Field(description="ISO-8601 timestamp of when the node was compiled.")
+    source_path: str = Field(
+        description="Relative path to the original raw source file."
+    )
+    source_hash: str = Field(
+        description="Content hash of the raw source at compilation time."
+    )
+    compiled_at: str = Field(
+        description="ISO-8601 timestamp of when the node was compiled."
+    )
     compiled_from: str = Field(
-        default="wiki-compiler", description="The tool or version that performed the compilation."
+        default="wiki-compiler",
+        description="The tool or version that performed the compilation.",
     )
 
 
@@ -378,7 +385,9 @@ class RawSourceEntry(BaseModel):
     status: Literal["new", "processed", "ignored"] = Field(
         default="new", description="The processing status of the source."
     )
-    created: str = Field(description="ISO-8601 timestamp of when the entry was created.")
+    created: str = Field(
+        description="ISO-8601 timestamp of when the entry was created."
+    )
     notes: str = Field(default="", description="Optional notes about the source.")
 
 
@@ -395,7 +404,7 @@ class GateRow(BaseModel):
     proposal: str = Field(description="Relative path to the proposal file.")
     opened: str = Field(description="YYYY-MM-DD when the gate was created.")
     description: str = Field(description="One-line summary of what needs approval.")
-    status: Literal["open", "approved", "rejected"] = Field(
+    status: Literal["open", "approved", "rejected", "closed"] = Field(
         default="open", description="The current status of the gate."
     )
 
@@ -448,7 +457,9 @@ class SessionLog(BaseModel):
     session_id: str = Field(description="Unique session identifier.")
     start_time: str = Field(description="ISO-8601 start timestamp.")
     end_time: str | None = Field(default=None, description="ISO-8601 end timestamp.")
-    branch: str | None = Field(default=None, description="Git branch where work occurred.")
+    branch: str | None = Field(
+        default=None, description="Git branch where work occurred."
+    )
     commit_sha: str | None = Field(default=None, description="Resulting commit SHA.")
     resolved_issues: list[str] = Field(
         default_factory=list, description="IDs of issues resolved in this session."
@@ -474,7 +485,9 @@ class ChecklistItem(BaseModel):
     """A single item in a verification checklist."""
 
     description: str = Field(description="What needs to be checked.")
-    rule_id: str | None = Field(default=None, description="The House Rule ID being enforced.")
+    rule_id: str | None = Field(
+        default=None, description="The House Rule ID being enforced."
+    )
     verification: str | None = Field(
         default=None, description="The command or method to verify the item."
     )
@@ -490,8 +503,12 @@ class Checklist(BaseModel):
 class ContextBundle(BaseModel):
     """The stable output schema for the context router."""
 
-    nodes: list[KnowledgeNode] = Field(description="The set of included knowledge nodes.")
-    edges: list[Edge] = Field(description="The subset of edges connecting the included nodes.")
+    nodes: list[KnowledgeNode] = Field(
+        description="The set of included knowledge nodes."
+    )
+    edges: list[Edge] = Field(
+        description="The subset of edges connecting the included nodes."
+    )
     rationale: dict[str, str] = Field(
         default_factory=dict, description="Reasoning for each node's inclusion."
     )
@@ -541,21 +558,40 @@ class SystemicEnergy(BaseModel):
     ID-2: Minimal Energy.
     The conceptual and structural cost of the current system state.
     """
+
     energy_score: float = Field(description="The total calculated energy score.")
     node_count: int = Field(description="Total number of nodes in the graph.")
     edge_count: int = Field(description="Total number of edges in the graph.")
-    compliance_violations: int = Field(description="Total number of failing standards across all nodes.")
-    perturbations: int = Field(description="Number of detected git-backed drifts or untracked files.")
+    compliance_violations: int = Field(
+        description="Total number of failing standards across all nodes."
+    )
+    perturbations: int = Field(
+        description="Number of detected git-backed drifts or untracked files."
+    )
     open_gates: int = Field(description="Number of active human-in-the-loop gates.")
-    
+
     # Heuristic breakdown
-    node_energy: float = Field(description="Energy contributed by structural volume (nodes).")
-    violation_energy: float = Field(description="Energy contributed by compliance debt.")
-    perturbation_energy: float = Field(description="Energy contributed by systemic uncertainty/drift.")
+    node_energy: float = Field(
+        description="Energy contributed by structural volume (nodes)."
+    )
+    violation_energy: float = Field(
+        description="Energy contributed by compliance debt."
+    )
+    perturbation_energy: float = Field(
+        description="Energy contributed by systemic uncertainty/drift."
+    )
+
 
 class EnergyReport(BaseModel):
     """The result of an energy audit."""
+
     timestamp: str = Field(description="ISO-8601 timestamp of the measurement.")
-    current_energy: SystemicEnergy = Field(description="The energy state at the time of measurement.")
-    baseline_energy: SystemicEnergy | None = Field(default=None, description="The energy state at the last stable baseline.")
-    delta: float = Field(default=0.0, description="The change in total energy since the baseline.")
+    current_energy: SystemicEnergy = Field(
+        description="The energy state at the time of measurement."
+    )
+    baseline_energy: SystemicEnergy | None = Field(
+        default=None, description="The energy state at the last stable baseline."
+    )
+    delta: float = Field(
+        default=0.0, description="The change in total energy since the baseline."
+    )
