@@ -28,23 +28,27 @@ Wikipu is designed to be the starting point for any new or existing project.
 
 ## 🛠️ Quick Start
 
-### 1. Initialize
-If you are plugging Wikipu into an existing repo, set up the structure:
+### 1. Install
 ```bash
-wiki-compiler init
+pip install -e .
 ```
 
+**If `wiki-compiler` command is not found after install:**
+- Restart your terminal (or open a new shell)
+- Verify Python path: `which python` and `echo $PATH`
+- Try: `python -m wiki_compiler build` as fallback
+- Or run directly: `python -c "from wiki_compiler.main import main; main()" -- build`
+
 ### 2. Build the Graph
-Generate your knowledge graph and check compliance:
 ```bash
 wiki-compiler build
 ```
 
-### 3. Ingest Raw Ideas
-Transform your `raw/` files into wiki drafts:
+### 3. Start the Autopoiesis Cycle (Optional)
 ```bash
-wiki-compiler ingest
+wiki-compiler run
 ```
+This runs the self-maintaining loop - detects perturbations, creates cycles, pauses at Gates for human approval.
 
 ## 📂 The 4-Zone Model
 

@@ -1,1 +1,0 @@
-wikipu is a Python package/CLI (`llm-wiki-compiler`) that compiles markdown wiki nodes with YAML frontmatter into baked documentation and a NetworkX knowledge graph JSON. Core source is in `src/wiki_compiler`, issue/planning docs in `plan_docs`, and source wiki content in `wiki_source`.

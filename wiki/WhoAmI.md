@@ -6,6 +6,7 @@ edges:
   - {target_id: "doc:wiki/WhatAmI.md", relation_type: "contains"}
   - {target_id: "doc:wiki/HowAmI.md", relation_type: "contains"}
   - {target_id: "doc:wiki/WhereAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/WhenAmI.md", relation_type: "realizes"}
 compliance:
   status: "implemented"
   failing_standards: []

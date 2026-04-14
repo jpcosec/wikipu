@@ -1,1 +1,0 @@
-After changes, run the relevant wiki build command to ensure markdown compiles and the graph is generated without metadata warnings. For major user-visible changes, update `changelog.md` if the repository maintains one.

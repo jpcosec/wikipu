@@ -1,1 +1,0 @@
-Python 3.10+, small straightforward modules, Pydantic models for contracts, pathlib for paths, simple CLI via argparse. Markdown wiki nodes under `wiki_source` use YAML frontmatter with `identity` and `edges`. Keep edits minimal and aligned with existing literal/typed style.

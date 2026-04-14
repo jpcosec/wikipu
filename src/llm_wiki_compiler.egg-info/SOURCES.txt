@@ -16,6 +16,7 @@ src/wiki_compiler/contracts.py
 src/wiki_compiler/coordinator.py
 src/wiki_compiler/curate.py
 src/wiki_compiler/drafts.py
+src/wiki_compiler/energy.py
 src/wiki_compiler/facet_injectors.py
 src/wiki_compiler/facet_validator.py
 src/wiki_compiler/gates.py
