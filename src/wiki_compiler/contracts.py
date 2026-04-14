@@ -569,6 +569,7 @@ class SystemicEnergy(BaseModel):
         description="Number of detected git-backed drifts or untracked files."
     )
     open_gates: int = Field(description="Number of active human-in-the-loop gates.")
+    agent_violations: int = Field(default=0, description="Number of agent rule violations.")
 
     # Heuristic breakdown
     node_energy: float = Field(
@@ -580,6 +581,7 @@ class SystemicEnergy(BaseModel):
     perturbation_energy: float = Field(
         description="Energy contributed by systemic uncertainty/drift."
     )
+    agent_violation_energy: float = Field(default=0.0, description="Energy contributed by agent rule violations.")
 
 
 class EnergyReport(BaseModel):

@@ -34,6 +34,13 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     perturbations = status.get("perturbations", [])
     open_gates = len(status.get("open_gates", []))
 
+    # Read agent violations
+    agent_violations = 0
+    violations_log = project_root / "desk/agent_violations.log"
+    if violations_log.exists():
+        with open(violations_log, "r", encoding="utf-8") as f:
+            agent_violations = sum(1 for line in f if line.strip())
+
     # Check for uncommitted changes (highest energy state)
     uncommitted = 0
     for p in perturbations:
@@ -47,6 +54,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     perturbation_energy = len(perturbations) * 5.0
     gate_energy = open_gates * 20.0
     uncommitted_energy = uncommitted * 50.0  # Maximum entropy - uncommitted changes
+    agent_violation_energy = agent_violations * 25.0
 
     total_score = (
         node_energy
@@ -55,6 +63,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         + perturbation_energy
         + gate_energy
         + uncommitted_energy
+        + agent_violation_energy
     )
 
     return SystemicEnergy(
@@ -64,9 +73,11 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         compliance_violations=violations,
         perturbations=len(perturbations),
         open_gates=open_gates,
+        agent_violations=agent_violations,
         node_energy=node_energy + edge_energy,
         violation_energy=violation_energy,
         perturbation_energy=perturbation_energy + gate_energy,
+        agent_violation_energy=agent_violation_energy,
     )
 
 

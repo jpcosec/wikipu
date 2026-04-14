@@ -403,6 +403,8 @@ def main() -> None:
                 print(f"- **Structural (Nodes/Edges)**: {ce.node_energy:.2f} (n={ce.node_count}, e={ce.edge_count})")
                 print(f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})")
                 print(f"- **Operational (Drift/Gates)**: {ce.perturbation_energy:.2f} (p={ce.perturbations}, g={ce.open_gates})")
+                if ce.agent_violations > 0:
+                    print(f"- **Agent Rule Violations**: {ce.agent_violation_energy:.2f} (v={ce.agent_violations})")
 
                 if ce.energy_score > 500:
                     print(
