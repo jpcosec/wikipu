@@ -484,8 +484,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Python module `src/wiki_compiler/__init__.py`.",
-          "raw_docstring": null
+          "intent": "Wikipu Wiki Compiler - Knowledge Graph-driven development ecosystem.",
+          "raw_docstring": "Wikipu Wiki Compiler - Knowledge Graph-driven development ecosystem."
         },
         "ast": {
           "construct_type": "script",
@@ -503,9 +503,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6849410aae0a8010e76d5f0a44ced13d750b0989",
+          "blob_sha": "0612de0cb09a8b4308d7464e26c920b610d6ac75",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "e163e7dec7ba8a16818ad6a42338cebe3f31d63f",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -802,9 +802,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "ddc364a2a7a6ef47131b0c4aa9e12d693c419510",
+          "blob_sha": "6f20a31e6fe55b34c2efbb5a72a198a5ccb2a550",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "e163e7dec7ba8a16818ad6a42338cebe3f31d63f",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3519,7 +3519,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7202bef0ae1034a50c7a665e63fe628cfdcd667c",
+          "blob_sha": "ae74ce3ae8c8cd377addd89199dc86450b5ebf94",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3545,7 +3545,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d5d2a9e553d5877d9ce77974b6efa8fd34669cab",
+          "blob_sha": "bfd224138b4e9034caa8c40dcad090510b9b5164",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -12063,8 +12063,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_validate_identity_path` in `src/wiki_compiler/artifact_validation.py`.",
-          "raw_docstring": null
+          "intent": "Validate the node_id matches the expected path format.",
+          "raw_docstring": "Validate the node_id matches the expected path format."
         },
         "ast": {
           "construct_type": "function",
@@ -16682,7 +16682,7 @@
         "git": {
           "blob_sha": "f3bbbc444d2cca871107db7d2a3ac1dc5314cc67",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "fc13f138bb26d80b72f3106575614e5b2f9232ff",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16715,7 +16715,7 @@
         "git": {
           "blob_sha": "649406cb3d550ef4a42df4899455b86f1586d8a7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "fc13f138bb26d80b72f3106575614e5b2f9232ff",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
