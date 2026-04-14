@@ -26,6 +26,7 @@ def detect_cleansing_candidates(graph_path: Path) -> CleansingReport:
 
 
 def _stale_edge_proposals(graph: object) -> list[CleansingProposal]:
+    """Find edges that point to missing target nodes."""
     proposals: list[CleansingProposal] = []
     for source, target, data in graph.edges(data=True):
         if "type" in graph.nodes[target]:
@@ -44,26 +45,30 @@ def _stale_edge_proposals(graph: object) -> list[CleansingProposal]:
 def _stale_config_proposals(graph: object) -> list[CleansingProposal]:
     """Detects config/data nodes that are not read by any code node."""
     proposals: list[CleansingProposal] = []
-    
+
     # Common config/data suffixes
     config_suffixes = {".json", ".yaml", ".yml", ".toml", ".csv"}
-    
+
     for node_id in graph.nodes:
         data = graph.nodes[node_id]
         if data.get("type") != "file":
             continue
-        
+
         path = Path(node_id.removeprefix("file:"))
         if path.suffix not in config_suffixes:
             continue
-            
+
         # Check for incoming 'reads_from', 'configures', or 'documents' edges
         has_usage = False
         for _, _, edge_data in graph.in_edges(node_id, data=True):
-            if edge_data.get("relation_type") in {"reads_from", "configures", "documents"}:
+            if edge_data.get("relation_type") in {
+                "reads_from",
+                "configures",
+                "documents",
+            }:
                 has_usage = True
                 break
-        
+
         if not has_usage:
             proposals.append(
                 CleansingProposal(
@@ -83,7 +88,7 @@ def _orphaned_test_proposals(graph: object) -> list[CleansingProposal]:
         data = graph.nodes[node_id]
         if data.get("type") != "file" or not node_id.startswith("file:tests/"):
             continue
-            
+
         # Check for 'covers' edges to existing code/file nodes
         has_coverage = False
         for _, target, edge_data in graph.out_edges(node_id, data=True):
@@ -91,7 +96,7 @@ def _orphaned_test_proposals(graph: object) -> list[CleansingProposal]:
                 if target in graph.nodes:
                     has_coverage = True
                     break
-                    
+
         if not has_coverage:
             proposals.append(
                 CleansingProposal(
@@ -105,6 +110,7 @@ def _orphaned_test_proposals(graph: object) -> list[CleansingProposal]:
 
 
 def _orphaned_plan_proposals(graph: object) -> list[CleansingProposal]:
+    """Find planned nodes with no graph connections."""
     proposals: list[CleansingProposal] = []
     for node in iter_knowledge_nodes(graph):
         compliance = node.compliance
@@ -128,6 +134,7 @@ def _orphaned_plan_proposals(graph: object) -> list[CleansingProposal]:
 
 
 def _compound_abstract_proposals(graph: object) -> list[CleansingProposal]:
+    """Find nodes with abstracts containing multiple sentences."""
     proposals: list[CleansingProposal] = []
     for node in iter_knowledge_nodes(graph):
         if not node.identity.node_id.startswith("doc:") or not node.semantics:
@@ -153,6 +160,7 @@ def _compound_abstract_proposals(graph: object) -> list[CleansingProposal]:
 
 
 def _duplicate_abstract_proposals(graph: object) -> list[CleansingProposal]:
+    """Find nodes with duplicate abstract content."""
     proposals: list[CleansingProposal] = []
     seen: dict[str, str] = {}
     for node in iter_knowledge_nodes(graph):
@@ -179,7 +187,7 @@ def _duplicate_abstract_proposals(graph: object) -> list[CleansingProposal]:
 def _misplaced_folder_proposals(graph: object) -> list[CleansingProposal]:
     """Detects nodes whose folder path does not match their declared node_type."""
     proposals: list[CleansingProposal] = []
-    
+
     # Mapping of node_type to expected directory prefixes (repo-relative)
     type_to_prefix = {
         "concept": "wiki/concepts/",
@@ -188,17 +196,17 @@ def _misplaced_folder_proposals(graph: object) -> list[CleansingProposal]:
         "adr": "wiki/adrs/",
         "how_to": "wiki/how_to/",
     }
-    
+
     for node in iter_knowledge_nodes(graph):
         node_id = node.identity.node_id
         if not node_id.startswith("doc:wiki/"):
             continue
-        
+
         path_str = node_id.removeprefix("doc:")
         expected_prefix = type_to_prefix.get(node.identity.node_type)
         if not expected_prefix:
             continue
-            
+
         if not path_str.startswith(expected_prefix):
             # Propose relocation
             correct_path = expected_prefix + Path(path_str).name
@@ -216,10 +224,10 @@ def _misplaced_folder_proposals(graph: object) -> list[CleansingProposal]:
 def apply_cleansing_proposal(proposal: CleansingProposal, project_root: Path) -> None:
     """Executes one approved cleansing proposal on the filesystem."""
     # Note: node_id 'doc:wiki/foo.md' maps to 'wiki/foo.md' relative to project_root.
-    # file: and code: nodes are derived from code, we don't 'cleanse' them by 
+    # file: and code: nodes are derived from code, we don't 'cleanse' them by
     # editing code yet, usually we cleanse the doc nodes that point to them.
     # But some file: nodes might be config/data that we can destroy.
-    
+
     if proposal.operation == "destroy":
         _execute_destroy(proposal, project_root)
     elif proposal.operation == "relocate":
@@ -242,24 +250,26 @@ def _execute_destroy(proposal: CleansingProposal, project_root: Path) -> None:
 
 
 def _execute_relocate(proposal: CleansingProposal, project_root: Path) -> None:
-    # Relocate needs a destination in the proposal. 
+    # Relocate needs a destination in the proposal.
     # Current CleansingProposal doesn't have a 'destination' field.
     # We should probably add it or derive it from the rationale if it's there.
     # For now, let's assume it might be in affected_nodes[1] if operation is relocate.
     if len(proposal.affected_nodes) < 2:
         print(f"[ERROR] Relocate proposal for {proposal.node_id} missing destination.")
         return
-    
+
     old_path = _node_id_to_path(proposal.node_id, project_root)
     new_node_id = proposal.affected_nodes[1]
     new_path = _node_id_to_path(new_node_id, project_root)
-    
+
     if old_path and old_path.exists() and new_path:
         new_path.parent.mkdir(parents=True, exist_ok=True)
         old_path.rename(new_path)
         # We also need to update the node_id inside the frontmatter
         content = new_path.read_text(encoding="utf-8")
-        updated = content.replace(f'node_id: "{proposal.node_id}"', f'node_id: "{new_node_id}"')
+        updated = content.replace(
+            f'node_id: "{proposal.node_id}"', f'node_id: "{new_node_id}"'
+        )
         new_path.write_text(updated, encoding="utf-8")
         print(f"[OK] Relocated {proposal.node_id} to {new_node_id}")
     else:
@@ -270,7 +280,9 @@ def _execute_split(proposal: CleansingProposal, project_root: Path) -> None:
     # Split is complex: requires creating new nodes.
     # The proposal should ideally contain the new content or paths.
     # For now, we'll mark it as manual or needing more metadata.
-    print(f"[INFO] Split operation for {proposal.node_id} requires manual intervention or more metadata.")
+    print(
+        f"[INFO] Split operation for {proposal.node_id} requires manual intervention or more metadata."
+    )
 
 
 def _execute_merge(proposal: CleansingProposal, project_root: Path) -> None:
@@ -278,7 +290,7 @@ def _execute_merge(proposal: CleansingProposal, project_root: Path) -> None:
         return
     canonical = proposal.affected_nodes[0]
     to_dissolve = proposal.affected_nodes[1]
-    
+
     dissolve_path = _node_id_to_path(to_dissolve, project_root)
     if dissolve_path and dissolve_path.exists():
         dissolve_path.unlink()
