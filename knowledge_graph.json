@@ -4720,7 +4720,7 @@
         "git": {
           "blob_sha": "a3cd317dd575efe84afbe7a30c2d951b5db4fdff",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "0eaf5fccf631311be319d70d3adfc23d97d5034e",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4751,7 +4751,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "184fb467e1722bfa22b300576082f67164c2a77f",
+          "blob_sha": "b24efc1cce8a997861c21e84a6b0b0e61294b252",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5158,7 +5158,7 @@
         "git": {
           "blob_sha": "3cb19c62eeb37bb375d71939803d43a18ffc1fec",
           "created_at_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
-          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
+          "last_modified_commit": "0eaf5fccf631311be319d70d3adfc23d97d5034e",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10605,6 +10605,50 @@
         }
       },
       "id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md"
+    },
+    {
+      "type": "how_to",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/how_to/create_edge_relations.md",
+          "node_type": "how_to"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/reference/knowledge_node_facets.md",
+            "relation_type": "extends",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The Edge Relation Creation protocol defines how a new \"Faceted Edge\" (indexed edge node relation) is evaluated for orthogonality, disambiguated by a Relation Creator agent, and structurally encoded into the knowledge graph and source code.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "d9b7eb9703b0265f70b424010e1946a47ca8ac18",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/how_to/create_edge_relations.md"
     },
     {
       "type": "how_to",
@@ -24604,6 +24648,18 @@
       "metadata": {},
       "source": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
       "target": "raw:raw/unimplemented_from_sourcetalk.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/how_to/create_edge_relations.md",
+      "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/how_to/create_edge_relations.md",
+      "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
     {
       "relation": "documents",

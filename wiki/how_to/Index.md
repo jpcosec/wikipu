@@ -23,3 +23,4 @@ This section contains operational guides for working within the Wikipu ecosystem
 | [use_the_cli.md](use_the_cli.md) | How to use `wiki-compiler` CLI commands |
 | [use_socratic_methodology.md](use_socratic_methodology.md) | What the Socratic method means in this system and why it is used |
 | [use_autopoiesis.md](use_autopoiesis.md) | How the autopoietic cycle works and when to trigger it |
+| [create_edge_relations.md](create_edge_relations.md) | How to disambiguate and structurally encode a new Faceted Edge relation |
