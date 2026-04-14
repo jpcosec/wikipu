@@ -4544,9 +4544,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
+          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
+          "last_modified_commit": "0d44bdda6d51de220cb597ba1fa5067fe091f69b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15782,7 +15782,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
+          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -15808,7 +15808,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
+          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -16667,7 +16667,7 @@
           }
         ],
         "semantics": {
-          "intent": "The Socratic Protocol is the structured interrogation workflow executed by an agent (or human) before a plan or proposal is authorized for implementation. It systematically identifies hidden assumptions, missing constraints, and architectural contradictions to guarantee ID-1 Orthogonality and ID-2 Minimal Energy.",
+          "intent": "**Abstract:** The Socratic Protocol is the structured interrogation workflow that identifies hidden assumptions, missing constraints, and architectural contradictions before a plan is authorized.",
           "raw_docstring": null
         },
         "ast": null,
@@ -16680,7 +16680,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d81b95b1cb1dd2fc084f7ba1d12d71538c8b0a6c",
+          "blob_sha": "f3bbbc444d2cca871107db7d2a3ac1dc5314cc67",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -16700,7 +16700,7 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "This protocol placeholder reserves a graph node for the trail collect process that summarizes and commits a completed session. It exists so the graph can represent the lifecycle step even before a fuller protocol document or runtime is implemented.",
+          "intent": "**Abstract:** The trail collect process summarizes and commits a completed session, capturing durable outcomes and tying them to changelog and commit boundaries.",
           "raw_docstring": null
         },
         "ast": null,
@@ -16713,7 +16713,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7a07c4df390b73a4350d2e07f29cd7125a2d9781",
+          "blob_sha": "649406cb3d550ef4a42df4899455b86f1586d8a7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",

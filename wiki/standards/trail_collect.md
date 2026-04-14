@@ -7,6 +7,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** The trail collect process summarizes and commits a completed session, capturing durable outcomes and tying them to changelog and commit boundaries.
+
 This protocol placeholder reserves a graph node for the trail collect process that summarizes and commits a completed session. It exists so the graph can represent the lifecycle step even before a fuller protocol document or runtime is implemented.
 
 ## Rule Schema

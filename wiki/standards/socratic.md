@@ -9,6 +9,8 @@ compliance:
   failing_standards: []
 ---
 
+**Abstract:** The Socratic Protocol is the structured interrogation workflow that identifies hidden assumptions, missing constraints, and architectural contradictions before a plan is authorized.
+
 The Socratic Protocol is the structured interrogation workflow executed by an agent (or human) before a plan or proposal is authorized for implementation. It systematically identifies hidden assumptions, missing constraints, and architectural contradictions to guarantee ID-1 Orthogonality and ID-2 Minimal Energy.
 
 ## Rule Schema
