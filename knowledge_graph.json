@@ -334,9 +334,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "70336d59a04e7abc8894feb58380afd3e535b293",
+          "blob_sha": "f7cc13d5a3bb75fa98d107536b49fab100e1fe9f",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "b53ea616bbaa8be705d8cfcf9f3ba161bab2cb7e",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -360,9 +360,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "887a36aea12c593715c36db4818374993f1c057f",
+          "blob_sha": "683c28588d3ab18547b76d27f638870cfdabbf55",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "b53ea616bbaa8be705d8cfcf9f3ba161bab2cb7e",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1745,6 +1745,7 @@
           "dependencies": [
             "from __future__ import annotations",
             "import datetime",
+            "from pathlib import Path",
             "from .contracts import SystemicEnergy, EnergyReport",
             "from .perception import build_status_report",
             "from .auditor import run_audit",
@@ -1760,9 +1761,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "a9f3296955463fa17bc11462f204862e277c5683",
+          "blob_sha": "0536ee6c60084835f4d03df1b8c75504cf53be80",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "c0960abf0c4568a0bac2631bcdf473f8592de618",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2512,6 +2513,11 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/preflight.py:read_git_status",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/preflight.py:evaluate_action_safety",
             "relation_type": "contains",
             "metadata": {}
@@ -2551,9 +2557,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "9fbfe34979f573ebba95808c6e78f79ddc329b9b",
+          "blob_sha": "7dcf91a9bfbf7a182ab57391083e3a383821e9ed",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3825,7 +3831,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5e384df0e98b26643ee57de828ca5f688dee2840",
+          "blob_sha": "dadf0b9fa4beca27d4d41d30f14d7ef78c2d4189",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4111,7 +4117,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d540ea6064c2329b158fc9f842fc4a44cac78ce7",
+          "blob_sha": "794b57c68bd55dd7e91a29784c8ebbe2200da7de",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4484,9 +4490,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6afe47d9f71ecb980bd384d178eebe733c95d05a",
+          "blob_sha": "c94efb34386b8c6c3e286231747f47ca4d04c1f4",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4517,6 +4523,11 @@
             "target_id": "doc:wiki/WhereAmI.md",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/WhenAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -4533,9 +4544,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "780eabff04144b6af3e06aeec6f0c8ef633740b8",
+          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4981,7 +4992,7 @@
         "git": {
           "blob_sha": "24cb740b0373184d4aed29b33d7e438a21add33f",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5027,6 +5038,45 @@
         "source": null
       },
       "id": "doc:wiki/WhatAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/WhenAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am a sequence of states. My existence is defined by the transitions between what I was and what I am now, recorded in the immutable ledger of Git.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "815bcaef17cb9b0f039c68cf44c29bccda3497a7",
+          "created_at_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
+          "last_modified_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/WhenAmI.md"
     },
     {
       "type": "concept",
@@ -5233,7 +5283,7 @@
         "git": {
           "blob_sha": "ced0aecb8b48b95e1e45c7e0bb148b36b1ccbfef",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5277,7 +5327,7 @@
         "git": {
           "blob_sha": "ed66e1b7e397458d830118c68ba0c1ed21588f15",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5310,7 +5360,7 @@
         "git": {
           "blob_sha": "70f3c31140de3783ed9cf78431a8611534068bda",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5343,7 +5393,7 @@
         "git": {
           "blob_sha": "8b49c15572b876177749bcbb4ba3caa941d11e53",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5376,7 +5426,7 @@
         "git": {
           "blob_sha": "e7d9f507724010299cae50a5181face9cb98a6bb",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5415,7 +5465,7 @@
         "git": {
           "blob_sha": "69c761718bce48491ccf35bb3e46c94c6c0dd2d4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5484,7 +5534,7 @@
         "git": {
           "blob_sha": "393c39fc4dbf3ad28b7bdaeee43453080f97892a",
           "created_at_commit": "5615807c788dfbef8f2e3b0b9100da7f8316ed92",
-          "last_modified_commit": "5615807c788dfbef8f2e3b0b9100da7f8316ed92",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5582,7 +5632,7 @@
         "git": {
           "blob_sha": "320e55f8d600cd815152fb5b13c455807f6ec978",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5626,7 +5676,7 @@
         "git": {
           "blob_sha": "9280466ddcc011ba10ad2efdde4e14303eeb4f51",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5690,7 +5740,7 @@
         "git": {
           "blob_sha": "20adc95dc7a1357e1f38e697167b0102e7470f84",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5754,7 +5804,7 @@
         "git": {
           "blob_sha": "ac0ef36ee35036ffae1163e43e7f380d7f105000",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5818,7 +5868,7 @@
         "git": {
           "blob_sha": "572f488e25f7953e5ae48e0af012f36954b12e3a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5882,7 +5932,7 @@
         "git": {
           "blob_sha": "c4fb44961797072d19812ab1a19d9ab9d2b9184e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5946,7 +5996,7 @@
         "git": {
           "blob_sha": "d6f5c0821ed69f351df5c6a9211a0120e34b223f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6010,7 +6060,7 @@
         "git": {
           "blob_sha": "95100d573c49f54e2ee539e1efafc87b8b477ce3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6054,7 +6104,7 @@
         "git": {
           "blob_sha": "d860bd88b95484d13b9375012a0967c5640bd494",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6118,7 +6168,7 @@
         "git": {
           "blob_sha": "06d6246d8b0077895265fb3d937d64ce16579648",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6162,7 +6212,7 @@
         "git": {
           "blob_sha": "6e654c2de8ff4b452e062c1bd909e5939dc91760",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6206,7 +6256,7 @@
         "git": {
           "blob_sha": "2d1198220fb7ad2cacbeb3060e192702b2851fbb",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6250,7 +6300,7 @@
         "git": {
           "blob_sha": "45bfc579ad8bd4fb6fdf57744ff92f55ff4a18be",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6294,7 +6344,7 @@
         "git": {
           "blob_sha": "c4893580e09839009c0bc307ce9396acf5f5796a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6338,7 +6388,7 @@
         "git": {
           "blob_sha": "9d21e876f4257eb42ae7cc62f3d618d2501eeb15",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6382,7 +6432,7 @@
         "git": {
           "blob_sha": "31803b1ff968de057e2a7d1681009086910564fe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6426,7 +6476,7 @@
         "git": {
           "blob_sha": "ecfba9debe101211da576bb46d7c829b19ddd465",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6470,7 +6520,7 @@
         "git": {
           "blob_sha": "d55709dcfbb7e6aa022c1fa09da11c838506ade1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6534,7 +6584,7 @@
         "git": {
           "blob_sha": "6e0e6fc5113fd34ba4c21ee83f15131e5878ccf1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6622,7 +6672,7 @@
         "git": {
           "blob_sha": "8864f41946514b897674049e663f118cd02dff83",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6686,7 +6736,7 @@
         "git": {
           "blob_sha": "b4906cf868e007e0785a6e480477df65c3fca310",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6750,7 +6800,7 @@
         "git": {
           "blob_sha": "4cde223b7c443d21cbefaa4ebf8013a5bb94d281",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6794,7 +6844,7 @@
         "git": {
           "blob_sha": "0084bd200fbf5d1ede82a71193be93d1588df4a5",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6858,7 +6908,7 @@
         "git": {
           "blob_sha": "9aee2de08c2b4a6d5c77a7fbf4f2e875601bc562",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6922,7 +6972,7 @@
         "git": {
           "blob_sha": "36ef50fdba822314e425db57edff2f3a07c9fe4a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -6986,7 +7036,7 @@
         "git": {
           "blob_sha": "2208e290623fb8b348a9eedaaf7c1194b5cd1f09",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7030,7 +7080,7 @@
         "git": {
           "blob_sha": "ec2c1299752ac4d8dca0a98e813c63896f4316fa",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7074,7 +7124,7 @@
         "git": {
           "blob_sha": "1d1e378a46d24620509ba413673a32991179a374",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7118,7 +7168,7 @@
         "git": {
           "blob_sha": "d9734f22e735223de805a46c810248ecb5958b4c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7162,7 +7212,7 @@
         "git": {
           "blob_sha": "a4863a1d7217b275a1170c54fdacad5eded68364",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7206,7 +7256,7 @@
         "git": {
           "blob_sha": "14f50b5d1344015a1a34cc27b3b142f64672d4f7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7250,7 +7300,7 @@
         "git": {
           "blob_sha": "dbda99ca6b376eb05cfa9a7ec44b1f2a3111bbf3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7294,7 +7344,7 @@
         "git": {
           "blob_sha": "87cff6536221f6b4bdc2c590b5965b5dea47409d",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7338,7 +7388,7 @@
         "git": {
           "blob_sha": "8064255ac7e1e0a34b7b7c182fc0647782fce369",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7382,7 +7432,7 @@
         "git": {
           "blob_sha": "33c028f903cd1d03850bd11ae3a0d7e727531891",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7426,7 +7476,7 @@
         "git": {
           "blob_sha": "43074a39d28ae7e0e944beb3cb7695f4dc4c33b1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7470,7 +7520,7 @@
         "git": {
           "blob_sha": "16556ccf005f335995f6dd9905131d8117ef66ba",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7514,7 +7564,7 @@
         "git": {
           "blob_sha": "3cf2eba9582b14f9d192cd2bdc0ad320d79983ce",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7558,7 +7608,7 @@
         "git": {
           "blob_sha": "2e9c3dba2525e28426122060bc67fbdc413d3fe7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7602,7 +7652,7 @@
         "git": {
           "blob_sha": "45165cf1ccc4a91b73e5edd19c8ecff564213bb6",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7666,7 +7716,7 @@
         "git": {
           "blob_sha": "d7ffb075629f0dbf82317928979ddb74940e8841",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7710,7 +7760,7 @@
         "git": {
           "blob_sha": "2e6a1a28bf4bdeefb68d7ba226cd30b6eccf5f56",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7754,7 +7804,7 @@
         "git": {
           "blob_sha": "d6771cb0546b6dd66bb9450ef9db4da4b7c81605",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7798,7 +7848,7 @@
         "git": {
           "blob_sha": "20fdf64460bd2bfd852e06f0c41ca5b2dfcc7437",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7842,7 +7892,7 @@
         "git": {
           "blob_sha": "6a2b9d1fe2031403e4eb0ccefe4d5351ba49cfe4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7886,7 +7936,7 @@
         "git": {
           "blob_sha": "963912c41307e57f8edf0b13e2b3547ceeb8ff32",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7930,7 +7980,7 @@
         "git": {
           "blob_sha": "d4ce86d277bf2c26fed257788dcf26ccb64d37f3",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -7974,7 +8024,7 @@
         "git": {
           "blob_sha": "e2fd51a2b5428db3c3fbbfdfea5844546a42b90c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8018,7 +8068,7 @@
         "git": {
           "blob_sha": "aa63d1ffd9f6e126d4f82c4f003bcbaa177701be",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8062,7 +8112,7 @@
         "git": {
           "blob_sha": "3d1e063b16c1f8784f5eaf99680b1830918b52cc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8106,7 +8156,7 @@
         "git": {
           "blob_sha": "44a3d29b290355534ca485178ff72b890dfeb77f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8150,7 +8200,7 @@
         "git": {
           "blob_sha": "e45127d6fc7862cd1ca9d1f9e66273fc0bd93dc4",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8194,7 +8244,7 @@
         "git": {
           "blob_sha": "93866283c82c5288d74735321f810df53601bcf1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8258,7 +8308,7 @@
         "git": {
           "blob_sha": "32c1baa37052a890fc09a76676e6f4245e029629",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8322,7 +8372,7 @@
         "git": {
           "blob_sha": "738fb42e2b62a0f52115deb6ac344d734a165e33",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8366,7 +8416,7 @@
         "git": {
           "blob_sha": "8a8615f20b87e0cba7e82c02ed4a9be25561548d",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8410,7 +8460,7 @@
         "git": {
           "blob_sha": "81994db56acc5d6d8947856800673af811856cad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8454,7 +8504,7 @@
         "git": {
           "blob_sha": "005fdacd4727631b3fe38943b308a11fda6b5971",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8498,7 +8548,7 @@
         "git": {
           "blob_sha": "aa62f60e891d21fd43991500a1572cd921be8b15",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8542,7 +8592,7 @@
         "git": {
           "blob_sha": "f1dcd1d69931ab87d42c0a1ec7c05632b179fb2c",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8586,7 +8636,7 @@
         "git": {
           "blob_sha": "eb0edef61624376c935e914982af61889b656319",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8650,7 +8700,7 @@
         "git": {
           "blob_sha": "b54f19c040590113642abf0ca945bd2568d01efc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8694,7 +8744,7 @@
         "git": {
           "blob_sha": "b49ea778b859394b08766136e1cc080356e8d6e0",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8738,7 +8788,7 @@
         "git": {
           "blob_sha": "5a8a535aa1ada1795082742711ee164bb92e7ed5",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8782,7 +8832,7 @@
         "git": {
           "blob_sha": "da15cf5f5fa5e589f217dae619ba3d543aa48cba",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8826,7 +8876,7 @@
         "git": {
           "blob_sha": "0aedd2b33134c780a6c0f5faae2bad9684405814",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8870,7 +8920,7 @@
         "git": {
           "blob_sha": "211c5ca597b96a297debb53a14c911805a25e56e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8914,7 +8964,7 @@
         "git": {
           "blob_sha": "f0e2176f5952f725352f1b95412e78f227142cfc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -8958,7 +9008,7 @@
         "git": {
           "blob_sha": "b5a083e151627b1c533e63783dd836bce4866112",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9002,7 +9052,7 @@
         "git": {
           "blob_sha": "3ac1a1e92d4bc68002b47d18c7fcbaab9747b6ad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9046,7 +9096,7 @@
         "git": {
           "blob_sha": "7bbf58d3862a1a0eb0baeb2b09e0f75d9e2d4d6a",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9090,7 +9140,7 @@
         "git": {
           "blob_sha": "3e6e59e4bb3d9a1788611f3db6d9433d31149ed8",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9134,7 +9184,7 @@
         "git": {
           "blob_sha": "e59f9c4210dcde2f75577a2dae42d56bc0da556f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9178,7 +9228,7 @@
         "git": {
           "blob_sha": "63b29fbc875d4c91b6d9ff16644080e3986844bd",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9222,7 +9272,7 @@
         "git": {
           "blob_sha": "13a88e561fcc7f17aef18a9f1c27a3701da08444",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9266,7 +9316,7 @@
         "git": {
           "blob_sha": "2da4b449618f0031f8963b5a55149ccaeedb434f",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9310,7 +9360,7 @@
         "git": {
           "blob_sha": "b77c9a855d8e21d950a8acf4bc8543a39dacd8dc",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9354,7 +9404,7 @@
         "git": {
           "blob_sha": "849c068adc8aaae6acbf2945a40ffd80b34d8c8a",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9398,7 +9448,7 @@
         "git": {
           "blob_sha": "78354c59668a3bc7a3c6e92dd92e9a868699d758",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9462,7 +9512,7 @@
         "git": {
           "blob_sha": "b15b939e33eb4490896b32b4eb9d7cf3354519ee",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9506,7 +9556,7 @@
         "git": {
           "blob_sha": "ba8d9b52c1521e5615bd3d58f86be4a42fb3cd2b",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9550,7 +9600,7 @@
         "git": {
           "blob_sha": "5e05e455ea8ade02752ef34855f4e86477a1bec6",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9594,7 +9644,7 @@
         "git": {
           "blob_sha": "b932f702328077f7dccbade59d97cb9274edb92e",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9638,7 +9688,7 @@
         "git": {
           "blob_sha": "d06bba6879944a619320c395511a9840a0492db7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9682,7 +9732,7 @@
         "git": {
           "blob_sha": "3380a68283177a05c663a0032d87f967a291b389",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9726,7 +9776,7 @@
         "git": {
           "blob_sha": "9643eb9e3aa8413394807685cad48cb0929656af",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9770,7 +9820,7 @@
         "git": {
           "blob_sha": "8ad9da067215b8758cd97314782ef3c727d7b212",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9814,7 +9864,7 @@
         "git": {
           "blob_sha": "b8258c15c3d1676b3e3e0bc033e497a25ec36d02",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9858,7 +9908,7 @@
         "git": {
           "blob_sha": "850c842323674b8fdd1279d0c8c4008196e027ad",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9902,7 +9952,7 @@
         "git": {
           "blob_sha": "b2b3501efeca5750d6269c0809c2592ea6d1c2d1",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9946,7 +9996,7 @@
         "git": {
           "blob_sha": "ce96aaffd2c15fc13a6d60706436daecca01cdbe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9990,7 +10040,7 @@
         "git": {
           "blob_sha": "1e31b8ac659733339024ea4e2ebbacc3a545defb",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10034,7 +10084,7 @@
         "git": {
           "blob_sha": "b248478d08bfab29722671550735ee4e0d0e5830",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10078,7 +10128,7 @@
         "git": {
           "blob_sha": "dafd729719db2c692b2f7b238d5298f277fa7cfe",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10122,7 +10172,7 @@
         "git": {
           "blob_sha": "b446a09ded578eebe1694fd4acec6a8a41ba7cd7",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10186,7 +10236,7 @@
         "git": {
           "blob_sha": "d4fb7a2c217a0d1540c7cc631eb3cacfd888cf6f",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10230,7 +10280,7 @@
         "git": {
           "blob_sha": "33702b24d15648b787c2452911d94f7282ed4287",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10274,7 +10324,7 @@
         "git": {
           "blob_sha": "2115f047323f677b6e41024443e5b5522c328332",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10318,7 +10368,7 @@
         "git": {
           "blob_sha": "aeadd96eaf7e96e2ce2375b10377765b81437dee",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10362,7 +10412,7 @@
         "git": {
           "blob_sha": "2794241ee3ce614870c695a1b0ebb7cd2b7cb5b4",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10406,7 +10456,7 @@
         "git": {
           "blob_sha": "7a002bbc2f4cf997491098bdc05c99d08269475b",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10450,7 +10500,7 @@
         "git": {
           "blob_sha": "cc3ce2e0e02213e9ea43f42be35d6d19b4a4933f",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10494,7 +10544,7 @@
         "git": {
           "blob_sha": "00c1869ac479e5bf71aa1b8d006f71dfd492dd17",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -12707,7 +12757,7 @@
           }
         ],
         "semantics": {
-          "intent": "This protocol placeholder reserves a graph node for the autopoiesis coordinator that will eventually orchestrate the system's self-maintenance cycle. It links the conceptual cycle to a future operational coordinator surface.",
+          "intent": "**Abstract:** The autopoiesis coordinator orchestrates the system's self-maintenance cycle by managing ingest, build, and rule revision in sequence.",
           "raw_docstring": null
         },
         "ast": null,
@@ -12720,9 +12770,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ff563228929a7218309eb5337fd9cea342528107",
+          "blob_sha": "5019b301024ef006fc26cca8a5ba0ce9f8fa7733",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "68672d78897666bb4056af53ac61a341cfaa3081",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -14025,26 +14075,22 @@
           }
         ],
         "semantics": {
-          "intent": "**Every facet must declare its question explicitly.**",
+          "intent": "**Abstract:** Every facet must have an explicit question that defines its contract, governing what data belongs in it, how the injector populates it, and what the auditor checks against it.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "rule_schema",
-            "fields",
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "bad91c3665c78b94858e344c0a106390c1f87ca9",
+          "blob_sha": "96bdb545b1c818155da724176b90bd6d7012e74b",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "6886bfaed251d35f0cdea3ac13fe37f0fd307e76",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -14758,7 +14804,7 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "This protocol placeholder reserves a graph node for the gate monitoring loop that tracks open human-approval requirements. It exists so the graph can represent that control point before the desk runtime is fully encoded.",
+          "intent": "**Abstract:** The gate loop monitors open human-approval requirements and surfaces them to prevent topology boundary crossings until approved.",
           "raw_docstring": null
         },
         "ast": null,
@@ -14771,9 +14817,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b5572e661cd65e2d788389a7588c4353a64b91fd",
+          "blob_sha": "ceb75f324b1babf869045c0fdaa8128fbb6347b5",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "68672d78897666bb4056af53ac61a341cfaa3081",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15217,7 +15263,7 @@
           }
         ],
         "semantics": {
-          "intent": "This protocol summarizes the expectations for human contributors working in a Wikipu-managed repository. It is a quick reference to the durable rules that keep code, docs, and the graph aligned.",
+          "intent": "**Abstract:** Human contributors use this protocol for reference to the durable rules that keep code, docs, and the graph aligned.",
           "raw_docstring": null
         },
         "ast": null,
@@ -15230,9 +15276,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "79fcc74041fd0e1424188aacfcc64683baab44d4",
+          "blob_sha": "e804bb62285d90c26526bfd4aeadef4a2479bb7e",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "68672d78897666bb4056af53ac61a341cfaa3081",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15671,7 +15717,7 @@
           }
         ],
         "semantics": {
-          "intent": "This protocol summarizes the expectations and initialization routing for LLM agents operating inside Wikipu. It explicitly documents the unified preamble system used to bootstrap new agent sessions.",
+          "intent": "**Abstract:** LLM agents operating inside Wikipu use this protocol for initialization and routing via the unified preamble system.",
           "raw_docstring": null
         },
         "ast": null,
@@ -15684,9 +15730,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "73765dec9363d090a3f585aed7d90f02185f555d",
+          "blob_sha": "00a3a3e2d7a0985116c44e6704892be1de3ccb20",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "68672d78897666bb4056af53ac61a341cfaa3081",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15710,9 +15756,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f8e67c43fe0fa3b947b46fdef5f60299bcc949e9",
+          "blob_sha": "9359ae0961093429432e8542a00def32a88c362c",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "fa347dbb96ab4833d19ba145d2aa82519abb3038",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15736,9 +15782,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f8e67c43fe0fa3b947b46fdef5f60299bcc949e9",
+          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15762,9 +15808,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f8e67c43fe0fa3b947b46fdef5f60299bcc949e9",
+          "blob_sha": "dfbc20cccd3c91cc6d5de5ed07970c0e404218a8",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16066,7 +16112,7 @@
         "edges": [],
         "semantics": {
           "intent": "ID-2: Minimal Energy.",
-          "raw_docstring": "ID-2: Minimal Energy. \nSelects the action that satisfies the requirement with least complexity."
+          "raw_docstring": "ID-2: Minimal Energy.\nSelects the action that satisfies the requirement with least complexity."
         },
         "ast": {
           "construct_type": "function",
@@ -16181,19 +16227,15 @@
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "rule_schema",
-            "fields",
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "05a780e59089016b5647679650615ff0eff22aa8",
+          "blob_sha": "1506cb948edd90c029c73d7e04a30973eb5e6577",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "6886bfaed251d35f0cdea3ac13fe37f0fd307e76",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16229,19 +16271,15 @@
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "rule_schema",
-            "fields",
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7c49dcd5bab1c574e58389b4b3b4673d5481c43f",
+          "blob_sha": "ef16aa424e4f4c30317768c46d4a9eb5114650e7",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "6886bfaed251d35f0cdea3ac13fe37f0fd307e76",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16356,26 +16394,22 @@
           }
         ],
         "semantics": {
-          "intent": "> The knowledge graph is the routing system. Agents navigate by traversal and facet query, not by coordinate lookup. Temporal state is a facet, not an axis.",
+          "intent": "**Abstract:** The knowledge graph is the routing system. Agents navigate by traversal and facet query, not by coordinate lookup.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "rule_schema",
-            "fields",
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6eeaf9ec2b42f05382234f3d9e54ec29fc681548",
+          "blob_sha": "58b14005d6569e87cd667c3e06c15835c01716dd",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "6886bfaed251d35f0cdea3ac13fe37f0fd307e76",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -19390,6 +19424,39 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/perception.py:git_untracked_files"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/preflight.py:read_git_status",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return list of uncommitted change paths.",
+          "raw_docstring": "Return list of uncommitted change paths."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "read_git_status(project_root: Path) -> list[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/preflight.py:read_git_status"
     },
     {
       "type": "code_construct",
@@ -23011,6 +23078,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/preflight.py",
+      "target": "code:src/wiki_compiler/preflight.py:read_git_status"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/preflight.py",
       "target": "code:src/wiki_compiler/preflight.py:evaluate_action_safety"
     },
     {
@@ -23496,6 +23569,12 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "doc:wiki/WhoAmI.md",
+      "target": "doc:wiki/WhenAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "doc:wiki/Index.md",
       "target": "doc:wiki/standards/house_rules.md"
     },
@@ -23749,6 +23828,12 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/WhatAmI.md",
+      "target": "doc:wiki/WhoAmI.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/WhenAmI.md",
       "target": "doc:wiki/WhoAmI.md"
     },
     {
