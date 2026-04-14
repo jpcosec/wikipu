@@ -901,7 +901,7 @@
         "git": {
           "blob_sha": "565ebddf55716511bc7e4d379a0de6c495594f74",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "f924e4011818d8035b29278111f93acec394b747",
+          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1497,9 +1497,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "e2ecb76bc29de9770e939525d73699e9393682cc",
+          "blob_sha": "955a8cfaf913c615a39dd91c590f3ca1e908f5a0",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "aed73de949f3626b0bbeab07ec5f1e04d1eae1d4",
+          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1762,9 +1762,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0536ee6c60084835f4d03df1b8c75504cf53be80",
+          "blob_sha": "e39c4830e05a739fa46ae5ed095aa42cefb3985a",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "c0960abf0c4568a0bac2631bcdf473f8592de618",
+          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2241,9 +2241,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "547cdb89eaf3c6b1a36fb7d28a2573ed862d2a9e",
+          "blob_sha": "2b09f1949a44f15c0e6ee0519da6dabf3f65985b",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2862,9 +2862,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "39e41dba3c4e9180b7ce43126c713d98fd709c5c",
+          "blob_sha": "bc4fcff579c89413364333b44290375e8ea0691c",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "0d494809cd134d2559c5aebf38f470bc365440ec",
+          "last_modified_commit": "6ca530679e15eb4a4e2276ae709498b713b66034",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3728,7 +3728,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f54326c9a927bdd23fe63a19b4995dd090f27a81",
+          "blob_sha": "4308ce573ef05f0a84da825f4333b4456a611542",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3832,7 +3832,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "dadf0b9fa4beca27d4d41d30f14d7ef78c2d4189",
+          "blob_sha": "6ff450873a7edfe50dcb8dbb2157b23f9d122e19",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4014,7 +4014,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "efa01ac6c3167a8c43b670fc9201dc8c4a90ffd5",
+          "blob_sha": "61008fd03c09a5644e4c0b81b681651e78553a91",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4222,7 +4222,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "80fffe040563e50e5015f394c942d473a6a099fb",
+          "blob_sha": "3fa4947648d06605870f9d890a93c229daa3702b",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4491,9 +4491,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "c94efb34386b8c6c3e286231747f47ca4d04c1f4",
+          "blob_sha": "4fdf3322031f8793fba10a420d052240507d197b",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
+          "last_modified_commit": "f2ad29bbc969129b54101a46e114cad96469ee2b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4529,6 +4529,11 @@
             "target_id": "doc:wiki/WhenAmI.md",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/WhyAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -4545,9 +4550,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
+          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "0d44bdda6d51de220cb597ba1fa5067fe091f69b",
+          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4713,7 +4718,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "112441a511eddaf8861812d3385f7683a90a597d",
+          "blob_sha": "a3cd317dd575efe84afbe7a30c2d951b5db4fdff",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5069,9 +5074,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "815bcaef17cb9b0f039c68cf44c29bccda3497a7",
+          "blob_sha": "4441334e458efa6b0b56bbda1edb7cd48e466a9d",
           "created_at_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
-          "last_modified_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
+          "last_modified_commit": "f2ad29bbc969129b54101a46e114cad96469ee2b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5117,6 +5122,49 @@
         "source": null
       },
       "id": "doc:wiki/WhereAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/WhyAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I exist to fulfill the intrinsic purpose defined in my topology. My primary existence serves four functions:",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [
+            "definition",
+            "examples",
+            "related_concepts"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "3cb19c62eeb37bb375d71939803d43a18ffc1fec",
+          "created_at_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
+          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/WhyAmI.md"
     },
     {
       "type": "adr",
@@ -11623,7 +11671,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False) -> None"
+            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> None"
           ],
           "dependencies": []
         },
@@ -15757,9 +15805,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "9359ae0961093429432e8542a00def32a88c362c",
+          "blob_sha": "0e3a3571937708d7d00534292c9a5d8e6c246f46",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
+          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15783,7 +15831,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
+          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -15809,7 +15857,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f849aaa0f67b0ea4a6d63904efdafa483a192d56",
+          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -19951,7 +19999,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "query_graph(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False) -> dict[str, object]"
+            "query_graph(graph_path: Path, query_type: str | None, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> dict[str, object]"
           ],
           "dependencies": []
         },
@@ -23576,6 +23624,12 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "doc:wiki/WhoAmI.md",
+      "target": "doc:wiki/WhyAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "doc:wiki/Index.md",
       "target": "doc:wiki/standards/house_rules.md"
     },
@@ -23841,6 +23895,12 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/WhereAmI.md",
+      "target": "doc:wiki/WhoAmI.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/WhyAmI.md",
       "target": "doc:wiki/WhoAmI.md"
     },
     {

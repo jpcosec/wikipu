@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/WhyAmI.md"
   node_type: "concept"
 edges:
-  - {target_id: "doc:wiki/WhoAmI.md", relation_type: "clarifies"}
+  - {target_id: "doc:wiki/WhoAmI.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []

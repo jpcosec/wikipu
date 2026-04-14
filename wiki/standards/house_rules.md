@@ -225,6 +225,10 @@ Periodically (at minimum after each significant development phase):
 Any operation that modifies the Knowledge Graph (`knowledge_graph.json`) via `wiki-compiler build` must result in an immediate atomic commit. The graph must never be left in a drifted state relative to the `wiki/` source. Build outputs are not "artifacts" to be ignored; they are the compiled truth of the system and must be synchronized on every change.
 `Enforced by:` `check-workflow` (ensures `knowledge_graph.json` is not drifted); `MA-5` (verification is inline).
 
+**OP-10 — The Socratic Design Method**
+Every proposed plan, node draft, or architectural design must be interrogated using the Socratic method before any implementation begins. The agent or human must generate typed questions (missing constraints, unstated assumptions, contradictions, undefined edge cases, scope creep signals, ownership gaps) and track them in `desk/socratic/Board.md`. A plan cannot move to `desk/issues/` for execution until every open question on the board is explicitly answered and the resolution is structurally encoded into the topology (e.g., via house rule updates, wiki node changes, or plan revisions).
+`Enforced by:` Agent system prompt circuit breakers; manual audit of `desk/socratic/` before issue promotion.
+
 ---
 
 ## Layer 5 — Code Style
