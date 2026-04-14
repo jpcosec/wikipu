@@ -9,6 +9,7 @@
 | 1 | ingest | Ingest raw unimplemented source | p0 | none | {closed with commit id f7b42e9} |
 | 2 | cleanse | Resolve Cleansing Gate | p0 | none | {closed with commit id pending} |
 | 3 | compliance | Fix Compliance Regressions | p1 | 2 |
+| 4 | compliance | Reduce Compliance Debt | p0 | none |
 
 ## Blocked (status=blocked)
 
