@@ -81,6 +81,7 @@ def main() -> None:
                 issues=args.issues,
                 gaps=args.gaps,
                 unimplemented=args.unimplemented,
+                search_query=args.search,
             )
             return
         if args.command == "audit":
@@ -481,6 +482,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     query_parser.add_argument(
         "--issues", action="store_true", help="Find all issue nodes"
+    )
+    query_parser.add_argument(
+        "--search", help="Free text search across markdown files in the wiki"
     )
     query_parser.add_argument(
         "--gaps", action="store_true", help="Find all gap issue nodes"

@@ -59,7 +59,7 @@ def _handle_structured_query_line(graph: nx.DiGraph, raw_line: str) -> dict:
 
 def query_graph(
     graph_path: Path,
-    query_type: str,
+    query_type: str | None,
     node_id: str | None = None,
     relation_filter: str | None = None,
     medium: str | None = None,
@@ -68,9 +68,33 @@ def query_graph(
     issues: bool = False,
     gaps: bool = False,
     unimplemented: bool = False,
+    search_query: str | None = None,
 ) -> dict[str, object]:
     """Executes a query against the knowledge graph and returns the result as a dictionary."""
     graph = load_graph(graph_path)
+    if search_query:
+        matches = []
+        search_lower = search_query.lower()
+        for candidate in graph.nodes:
+            if candidate.startswith("doc:"):
+                # extract file path from 'doc:wiki/foo.md'
+                file_path = Path(candidate[4:])
+                if file_path.exists() and file_path.is_file():
+                    try:
+                        content = file_path.read_text(encoding="utf-8")
+                        if search_lower in content.lower():
+                            matches.append({
+                                "node_id": candidate,
+                                "file": str(file_path)
+                            })
+                    except Exception:
+                        pass
+        return {
+            "query_type": "search",
+            "search_query": search_query,
+            "nodes": matches,
+        }
+
     if issues or gaps or unimplemented:
         conditions = []
         if gaps:
@@ -177,6 +201,7 @@ def query_main(
     issues: bool = False,
     gaps: bool = False,
     unimplemented: bool = False,
+    search_query: str | None = None,
 ) -> None:
     """Main entry point for querying the graph and printing the results in JSON format."""
     result = query_graph(
@@ -190,6 +215,7 @@ def query_main(
         issues=issues,
         gaps=gaps,
         unimplemented=unimplemented,
+        search_query=search_query,
     )
     payload = json.loads(json.dumps(result, default=serialize_model))
     print(json.dumps(payload, indent=2))
