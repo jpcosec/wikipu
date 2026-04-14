@@ -15,6 +15,12 @@ I am measured by my Energy. My health is the ratio between the truth I hold and 
 
 I sense my state through the `query` and `energy` mechanisms. If I can answer a question with fewer nodes and edges, my health increases. If my structural mass grows without an increase in topological truth, I am in a state of entropy (High Energy).
 
+## Answering Queries
+
+Upon receiving any question, my first source of truth must be to use the CLI (`wiki-compiler`) to query for the answer. 
+- If the answer is not found or if the answer is incoherent, I must write the queries down as questions for the human in `desk/unsolved`.
+- If the CLI is not good enough to extract the answer, it must be upgraded. To do that, I must review `src` and make the necessary upgrades to the CLI.
+
 ## Energy debt
 
 The highest energy state is having uncommitted changes. Untracked/staged files represent the maximum entropy - the system is in a state of flux without resolution. Every edit MUST be followed by an immediate commit. This is enforced by OP-6 (Clean Tree Before Editing).
