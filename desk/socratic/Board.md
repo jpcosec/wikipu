@@ -1,25 +1,30 @@
-# Socratic Interrogation: Replacing Raw Node Count with a Redundancy Heuristic
+# Socratic Interrogation: First-Class Concept of "Contradiction"
 
-**Input Artifact:** Proposal to remove the strict node/edge count penalty in the `wiki-compiler energy` calculation to encourage highly granular atomization and "multidimensional styling," replacing it with a direct measurement of redundancy and contradiction.
+**Input Artifact:** Proposal to define "Contradiction" as a first-class concept within the Wikipu topology, beyond its current use in Socratic methodology, to enable its direct measurement and resolution.
 
 ## Open Questions
 
 ### 1. Missing Constraint
-**Claim:** We should stop penalizing raw node and edge counts to encourage minimal, highly atomic composition.
-**Question:** If we remove the structural cost of $1.0$ per node and $0.2$ per edge, what prevents the system from generating millions of 1-line files? While they might be orthogonal, infinite micro-files introduce high filesystem overhead and latency. What is the new counter-balancing constraint to prevent extreme fragmentation?
-**Resolution:** We must define a "Boilerplate-to-Truth" ratio constraint. A node must contain enough semantic density to justify the overhead of its Pydantic `KnowledgeNode` schema and file headers.
+**Claim:** "Contradiction" can be a first-class concept to be solved by a mechanism not yet mapped.
+**Question:** If contradiction is a fundamental issue, how do we prevent its proliferation? What is the *cost* of a contradiction in terms of energy? Does it have a compliance status, similar to how `failing_standards` are tracked? What mechanisms automatically detect and flag contradictions (e.g., semantic vs. structural)?
+**Resolution:** Define the types of contradictions (semantic, structural, temporal, behavioral) and their respective energy penalties. Establish a `ContradictionFacet` to track them.
 
 ### 2. Unstated Assumption
-**Claim:** We can find another way to measure redundancy directly instead of using node count as a proxy.
-**Question:** This assumes we have a deterministic, low-energy way to calculate semantic overlap across the entire repository during every build. How exactly do we mathematically measure this redundancy without relying on expensive LLM calls or slow vector embeddings (which we rejected)?
-**Resolution:** We need to design a deterministic NLP heuristic (e.g., Jaccard similarity between `SemanticFacet.intent` fields or AST structural hashing) that can run offline in $<1$ second during the `wiki-compiler energy` calculation.
+**Claim:** There might be an issue that can only be solved via a concept we have not yet mapped into the system: contradiction.
+**Question:** Is "Contradiction" always a negative state to be resolved? Can a temporary, acknowledged contradiction exist (e.g., during refactoring, or a deliberate divergence for experimentation)? If so, how do we track its lifecycle, similar to how we track `compliance.status`?
+**Resolution:** Introduce `Contradiction.status` (e.g., `active`, `acknowledged`, `resolved`) and define its lifecycle rules, possibly linking to a new type of `issue` node.
 
-### 3. Contradiction
-**Claim:** We want to query only relevant sections and dynamically compose them.
-**Question:** As noted previously, dynamic query-time composition contradicts **ID-6 (Traceable Causality)** and **WK-3 (Composition over Duplication)** which demand explicit, static transclusions (`![[node]]`). If we atomize heavily, do we abandon static indices for dynamic composite nodes?
-**Resolution:** We must retain static indices. The "composition mechanism" must be a static compiler step (like `wiki-compiler compose`) that physically writes the composite Transclusion nodes to disk, rather than hallucinating them at query time.
+### 3. Contradiction (Self-Referential)
+**Claim:** Define "Contradiction" as a concept.
+**Question:** Does defining "Contradiction" as a concept inherently create a meta-contradiction? Is it possible to define a concept that, by its very nature, challenges the logical consistency of the system? How do we ensure the definition of "Contradiction" itself is non-contradictory?
+**Resolution:** The definition of "Contradiction" must focus on its *detection and resolution mechanisms* rather than attempting to define its philosophical essence in a way that could lead to paradox. It is a signal for action, not an abstract truth.
 
-### 4. Ownership Gap
-**Claim:** We need to update the self-docs to make it clear that the goal is maximum knowledge in minimum physical space without duplication, not just a low file count.
-**Question:** Who updates the `calculate_systemic_energy` function in `src/wiki_compiler/energy.py` once the new redundancy math is finalized?
-**Resolution:** The docs will be updated immediately to clarify the philosophy, but the Python implementation of the new redundancy heuristic will be spun out into a dedicated `plan_docs/issues/unimplemented/` issue so an agent can tackle the math carefully.
+### 4. Undefined Edge Case
+**Claim:** Contradictions can only be solved by a concept not yet mapped into the system.
+**Question:** What if the contradiction itself *is* a mapped concept (e.g., two rules that clash)? How do we prioritize or resolve contradictions between core house rules or architectural principles (Layer 1 rules like Orthogonality vs. a new rule)?
+**Resolution:** Define a hierarchy or precedence for contradiction resolution, possibly linking to ADRs for decisions on clashing principles.
+
+### 5. Ownership Gap
+**Claim:** We need a way to track contradiction in our system.
+**Question:** Who is responsible for detecting semantic contradictions between `SemanticFacet.intent` fields if there is no explicit `contradiction_detector` in the `auditor.py`? Who manually or automatically creates the `Contradiction.status` and manages its lifecycle?
+**Resolution:** The "Auditor" (specifically `auditor.py`) must be upgraded to include specific contradiction checks, and the autopoietic loop (`coordinator.py`) must integrate contradiction resolution into its motor stage.
