@@ -1184,9 +1184,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "4b48b41693a46b27fca5f80dbbc44200f7ffd6ac",
+          "blob_sha": "6cebe994aae9e18640cd7334582517b505e15512",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "611477d65502d58d2e8249808e905a88cc232ac7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1498,7 +1498,7 @@
         "git": {
           "blob_sha": "e2ecb76bc29de9770e939525d73699e9393682cc",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "aed73de949f3626b0bbeab07ec5f1e04d1eae1d4",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1991,7 +1991,7 @@
         "git": {
           "blob_sha": "4d3dc98d39ceda85b208ad4557a30b750626be0e",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "aed73de949f3626b0bbeab07ec5f1e04d1eae1d4",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3649,7 +3649,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "63fddd5c120833f4a169e0a5254a0ff44db3c76d",
+          "blob_sha": "d3478c505f7d83bcf1355ea07296da10155f2800",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -17079,8 +17079,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_stale_edge_proposals` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Find edges that point to missing target nodes.",
+          "raw_docstring": "Find edges that point to missing target nodes."
         },
         "ast": {
           "construct_type": "function",
@@ -17178,8 +17178,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_orphaned_plan_proposals` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Find planned nodes with no graph connections.",
+          "raw_docstring": "Find planned nodes with no graph connections."
         },
         "ast": {
           "construct_type": "function",
@@ -17211,8 +17211,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_compound_abstract_proposals` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Find nodes with abstracts containing multiple sentences.",
+          "raw_docstring": "Find nodes with abstracts containing multiple sentences."
         },
         "ast": {
           "construct_type": "function",
@@ -17244,8 +17244,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Function `_duplicate_abstract_proposals` in `src/wiki_compiler/cleanser.py`.",
-          "raw_docstring": null
+          "intent": "Find nodes with duplicate abstract content.",
+          "raw_docstring": "Find nodes with duplicate abstract content."
         },
         "ast": {
           "construct_type": "function",
