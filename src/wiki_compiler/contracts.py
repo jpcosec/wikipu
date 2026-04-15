@@ -590,6 +590,11 @@ class SystemicEnergy(BaseModel):
         default=0, description="Number of functions exceeding statement threshold."
     )
 
+    # Code-doc drift detection
+    drift_flags: int = Field(
+        default=0, description="Number of code-doc drift violations detected."
+    )
+
     # Heuristic breakdown
     structural_energy: float = Field(
         description="Energy from redundancy and boilerplate (replaces raw node/edge count)."

@@ -7,7 +7,7 @@
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 | 7 | energy | Replace node count with redundancy heuristic | p0 | none | {closed with commit id 8171198} |
-| 6a | energy | Add descriptive abstraction penalties | p1 | 7 |
+| 6a | energy | Add descriptive abstraction penalties | p1 | 7 | {closed with commit id e65eab9} |
 | 6c | energy | Add code-doc drift detection | p1 | 7 |
 | 8 | audit | Multidimensional styling audit | p1 | 7 |
 

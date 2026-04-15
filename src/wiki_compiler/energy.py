@@ -18,6 +18,7 @@ JACCARD_THRESHOLD = 0.7
 BOILERPLATE_THRESHOLD = 0.85
 FILE_LINE_THRESHOLD = 300
 FUNCTION_STATEMENT_THRESHOLD = 30
+DRIFT_PENALTY_WEIGHT = 5.0
 
 
 def tokenize(text: str) -> set[str]:
@@ -134,6 +135,87 @@ def detect_long_files_and_functions(project_root: Path) -> tuple[int, int]:
     return long_files, complex_functions
 
 
+def detect_code_doc_drift(project_root: Path) -> int:
+    """
+    Detect drift between documented intent and actual code behavior.
+    Returns count of drift violations.
+    """
+    import json
+
+    drift_count = 0
+    graph_path = project_root / "knowledge_graph.json"
+
+    if not graph_path.exists():
+        return 0
+
+    with open(graph_path, "r", encoding="utf-8") as f:
+        graph_data = json.load(f)
+
+    nodes = graph_data.get("nodes", [])
+
+    for node in nodes:
+        node_id = node.get("id", "")
+
+        # Only check wiki nodes with intent
+        if not node_id.startswith("doc:wiki/"):
+            continue
+
+        sem = node.get("schema", {}).get("semantics", {})
+        intent = sem.get("intent") if sem else None
+        if not intent:
+            continue
+
+        # Check for corresponding code file
+        # Wiki node name to source file mapping
+        wiki_name = node_id.replace("doc:wiki/", "")
+        source_name = wiki_name.replace(".md", ".py")
+
+        # Look for matching source file in src/
+        src_dir = project_root / "src"
+        source_file = None
+        for py_file in src_dir.rglob("*.py"):
+            if py_file.stem in (
+                wiki_name.replace(".md", ""),
+                wiki_name.replace("_", ""),
+            ):
+                source_file = py_file
+                break
+
+        if not source_file:
+            continue
+
+        try:
+            content = source_file.read_text(encoding="utf-8")
+
+            # Check for docstring
+            has_docstring = '"""' in content or "'''" in content
+
+            # Check if intent mentions certain keywords
+            intent_lower = intent.lower()
+            expects_return = any(
+                w in intent_lower for w in ["return", "result", "output"]
+            )
+            expects_save = any(w in intent_lower for w in ["save", "write", "store"])
+
+            # Check actual behavior from AST
+            has_return = "return " in content
+            has_write = any(w in content for w in ["write(", "save(", "dump("])
+
+            # Flag drift: documented but not present, or vice versa
+            if expects_return and not has_return:
+                drift_count += 1
+            if expects_save and not has_write:
+                drift_count += 1
+            if not has_docstring and len(intent) > 50:
+                # No docstring but long intent - likely drifted
+                drift_count += 1
+
+        except (UnicodeDecodeError, OSError):
+            continue
+
+    return drift_count
+
+
 def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> SystemicEnergy:
     """
     Calculates the systemic energy score based on redundancy heuristic.
@@ -185,10 +267,16 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     # Detect long files and complex functions
     long_files, complex_functions = detect_long_files_and_functions(project_root)
 
+    # Detect code-doc drift
+    drift_flags = detect_code_doc_drift(project_root)
+
     # Abstraction penalties
     long_file_penalty = long_files * 5.0
     complex_function_penalty = complex_functions * 3.0
     abstraction_energy = long_file_penalty + complex_function_penalty
+
+    # Drift penalty
+    drift_energy = drift_flags * DRIFT_PENALTY_WEIGHT
 
     # Redundancy-based energy (replaces raw node/edge count)
     redundancy_energy = redundant_nodes * 10.0
@@ -208,6 +296,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     total_score = (
         structural_energy
         + abstraction_energy
+        + drift_energy
         + node_energy
         + edge_energy
         + violation_energy
@@ -229,6 +318,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         boilerplate_ratio=boilerplate_ratio,
         long_files=long_files,
         complex_functions=complex_functions,
+        drift_flags=drift_flags,
         structural_energy=structural_energy,
         abstraction_energy=abstraction_energy,
         violation_energy=violation_energy,

@@ -16,7 +16,7 @@ from .cleanser import detect_cleansing_candidates
 from .context import render_context
 from .curate import promote_draft
 from .curate import score_drafts
-from .energy import run_energy_audit
+from .energy import run_energy_audit, DRIFT_PENALTY_WEIGHT
 from .facet_validator import validate_facet_proposal
 from .graph_utils import load_graph
 from .ingest import ingest_raw_sources
@@ -405,6 +405,9 @@ def main() -> None:
                 )
                 print(
                     f"- **Abstraction (Complexity)**: {ce.abstraction_energy:.2f} (f={ce.long_files}, c={ce.complex_functions})"
+                )
+                print(
+                    f"- **Drift (Code-Doc)**: {ce.drift_flags * DRIFT_PENALTY_WEIGHT:.2f} (d={ce.drift_flags})"
                 )
                 print(
                     f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})"
