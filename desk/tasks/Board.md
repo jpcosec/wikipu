@@ -11,6 +11,7 @@
 | 11 | energy | Reduce file complexity (main.py 791 lines) | p1 | none |
 | 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
 | 13 | refactor | Refactor main.py:main (1489 statements) | p2 | 11 |
+| 14 | perception | Add zone contracts for automatic tracking | p1 | none |
 
 ## Blocked (status=blocked)
 
