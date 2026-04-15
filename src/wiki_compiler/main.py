@@ -401,7 +401,7 @@ def main() -> None:
                 print(f"**Total Energy Score: {ce.energy_score:.2f}**\n")
                 print(f"### Breakdown")
                 print(
-                    f"- **Structural (Nodes/Edges)**: {ce.node_energy:.2f} (n={ce.node_count}, e={ce.edge_count})"
+                    f"- **Structural (Redundancy)**: {ce.structural_energy:.2f} (r={ce.redundant_nodes}, b={ce.boilerplate_ratio:.2f})"
                 )
                 print(
                     f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})"

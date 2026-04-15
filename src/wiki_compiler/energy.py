@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import datetime
 from pathlib import Path
+from collections import Counter
 
 from .contracts import SystemicEnergy, EnergyReport
 from .perception import build_status_report
@@ -13,12 +14,85 @@ from .auditor import run_audit
 import networkx as nx
 
 
+JACCARD_THRESHOLD = 0.7
+BOILERPLATE_THRESHOLD = 0.85
+
+
+def tokenize(text: str) -> set[str]:
+    """Convert text to set of normalized tokens for Jaccard comparison."""
+    if not text:
+        return set()
+    tokens = text.lower().split()
+    return set(t for t in tokens if len(t) > 2)
+
+
+def jaccard_similarity(set1: set[str], set2: set[str]) -> float:
+    """Calculate Jaccard similarity between two sets."""
+    if not set1 or not set2:
+        return 0.0
+    intersection = len(set1 & set2)
+    union = len(set1 | set2)
+    return intersection / union if union > 0 else 0.0
+
+
+def detect_redundant_nodes(graph_data: dict) -> tuple[int, float]:
+    """
+    Detect semantically redundant nodes using Jaccard similarity on intents.
+    Returns (redundant_count, boilerplate_ratio).
+    """
+    nodes = graph_data.get("nodes", [])
+
+    # Extract intents from wiki nodes
+    intents: dict[str, str] = {}
+    for node in nodes:
+        node_id = node.get("id", "")
+        if node_id.startswith("doc:wiki/"):
+            sem = node.get("schema", {}).get("semantics", {})
+            intent = sem.get("intent") if sem else None
+            if intent:
+                intents[node_id] = intent
+
+    if len(intents) < 2:
+        return 0, 0.0
+
+    # Calculate pairwise Jaccard similarities
+    redundant_count = 0
+    token_sets = {nid: tokenize(txt) for nid, txt in intents.items()}
+    node_ids = list(token_sets.keys())
+
+    for i, id1 in enumerate(node_ids):
+        for id2 in node_ids[i + 1 :]:
+            sim = jaccard_similarity(token_sets[id1], token_sets[id2])
+            if sim > JACCARD_THRESHOLD:
+                redundant_count += 1
+
+    # Calculate boilerplate ratio (template repetition without new truth)
+    # Count common tokens across all intents
+    all_tokens = []
+    for tokens in token_sets.values():
+        all_tokens.extend(tokens)
+
+    token_freq = Counter(all_tokens)
+    total_tokens = sum(token_freq.values())
+
+    # High frequency tokens are likely boilerplate
+    boilerplate_tokens = sum(
+        c for t, c in token_freq.items() if c > len(token_sets) * 0.5
+    )
+
+    boilerplate_ratio = boilerplate_tokens / total_tokens if total_tokens > 0 else 0.0
+
+    return redundant_count, boilerplate_ratio
+
+
 def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> SystemicEnergy:
     """
-    Calculates the systemic energy score based on the heuristic in wiki/concepts/energy.md.
+    Calculates the systemic energy score based on redundancy heuristic.
 
     Heuristic:
-    Energy = (Nodes * 1) + (Edges * 0.2) + (Violations * 10) + (Perturbations * 5) + (Gates * 20)
+    Energy = (Redundancy * 10) + (BoilerplateRatio * 50) + (Violations * 10) + (Perturbations * 5) + (Gates * 20)
+
+    Replaces raw node/edge count with semantic quality metrics.
     """
     node_count = graph.number_of_nodes()
     edge_count = graph.number_of_edges()
@@ -47,9 +121,27 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         if p.get("type") in ("modified_node", "untracked_raw", "staged"):
             uncommitted += 1
 
-    # Weighted energy components
-    node_energy = node_count * 1.0
-    edge_energy = edge_count * 0.2
+    # Calculate redundancy metrics from graph JSON
+    import json
+
+    graph_path = project_root / "knowledge_graph.json"
+    redundant_nodes = 0
+    boilerplate_ratio = 0.0
+
+    if graph_path.exists():
+        with open(graph_path, "r", encoding="utf-8") as f:
+            graph_data = json.load(f)
+        redundant_nodes, boilerplate_ratio = detect_redundant_nodes(graph_data)
+
+    # Redundancy-based energy (replaces raw node/edge count)
+    redundancy_energy = redundant_nodes * 10.0
+    boilerplate_energy = boilerplate_ratio * 50.0
+    structural_energy = redundancy_energy + boilerplate_energy
+
+    # Legacy component (kept for baseline comparison)
+    node_energy = node_count * 0.1  # Reduced weight
+    edge_energy = edge_count * 0.02
+
     violation_energy = violations * 10.0
     perturbation_energy = len(perturbations) * 5.0
     gate_energy = open_gates * 20.0
@@ -57,7 +149,8 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     agent_violation_energy = agent_violations * 25.0
 
     total_score = (
-        node_energy
+        structural_energy
+        + node_energy
         + edge_energy
         + violation_energy
         + perturbation_energy
@@ -74,7 +167,9 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         perturbations=len(perturbations),
         open_gates=open_gates,
         agent_violations=agent_violations,
-        node_energy=node_energy + edge_energy,
+        redundant_nodes=redundant_nodes,
+        boilerplate_ratio=boilerplate_ratio,
+        structural_energy=structural_energy,
         violation_energy=violation_energy,
         perturbation_energy=perturbation_energy + gate_energy,
         agent_violation_energy=agent_violation_energy,

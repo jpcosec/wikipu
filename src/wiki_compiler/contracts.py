@@ -573,9 +573,18 @@ class SystemicEnergy(BaseModel):
         default=0, description="Number of agent rule violations."
     )
 
+    # Redundancy detection
+    redundant_nodes: int = Field(
+        default=0,
+        description="Number of semantically redundant nodes (Jaccard similarity > threshold).",
+    )
+    boilerplate_ratio: float = Field(
+        default=0.0, description="Ratio of boilerplate to unique content."
+    )
+
     # Heuristic breakdown
-    node_energy: float = Field(
-        description="Energy contributed by structural volume (nodes)."
+    structural_energy: float = Field(
+        description="Energy from redundancy and boilerplate (replaces raw node/edge count)."
     )
     violation_energy: float = Field(
         description="Energy contributed by compliance debt."
