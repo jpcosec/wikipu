@@ -148,6 +148,11 @@
             "metadata": {}
           },
           {
+            "target_id": "dir:src/wiki_compiler/contracts",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/contracts.py",
             "relation_type": "contains",
             "metadata": {}
@@ -1240,6 +1245,11 @@
             "metadata": {}
           },
           {
+            "target_id": "file:src/wiki_compiler/commands/read.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/commands/scaffold.py",
             "relation_type": "contains",
             "metadata": {}
@@ -1355,6 +1365,30 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/context.py"
+    },
+    {
+      "type": "directory",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "dir:src/wiki_compiler/contracts",
+          "node_type": "directory"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "dir:src/wiki_compiler/contracts"
     },
     {
       "type": "file",
@@ -2336,7 +2370,7 @@
             "from .workflow_guard import guard_workflow",
             "from .workflow_guard import read_current_branch",
             "from .workflow_guard import read_git_changes",
-            "from .commands import build, query, audit, context, cleanse, ingest, curate, compose, scaffold, status, energy"
+            "from .commands import build, query, audit, context, cleanse, ingest, curate, compose, scaffold, status, energy, read"
           ]
         },
         "io_ports": [],
@@ -2348,9 +2382,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6c12c6d8f6325179044b76d5a310ae55bd085b5e",
+          "blob_sha": "3084682cda749e917d5f9d4ada07d0f7985660c3",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "d21ddd3e98e5837f2ec59becba38b1d958507edc",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4032,7 +4066,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "13d992d0b88d5b44b5e2ad9d8d988a6d12e47633",
+          "blob_sha": "35ff9a0eb1b967822fcaf923d3ecb5ce4bb77dd3",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4483,6 +4517,11 @@
           },
           {
             "target_id": "file:src/wiki_compiler/commands/__pycache__/query.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/read.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -4979,6 +5018,55 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/commands/read.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/read.py:handle_read",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Read command for wiki-compiler.",
+          "raw_docstring": "Read command for wiki-compiler.\nAllows direct reading of files from the CLI."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/read.py"
+          ],
+          "dependencies": [
+            "import argparse",
+            "import sys",
+            "from pathlib import Path"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "0c029c77515d1b55b046fe5cdfa2a48d62c44084",
+          "created_at_commit": "d21ddd3e98e5837f2ec59becba38b1d958507edc",
+          "last_modified_commit": "d21ddd3e98e5837f2ec59becba38b1d958507edc",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/read.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/commands/scaffold.py",
           "node_type": "file"
         },
@@ -5314,6 +5402,32 @@
       "status": "unknown",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/read.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "4112c816a5fa426912ac6f50e530333940fb01c6",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/read.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc",
           "node_type": "concept"
         },
@@ -5408,104 +5522,6 @@
         "source": null
       },
       "id": "file:src/wikipu/decorators.py"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/HowAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I am measured by my Energy. My health is the ratio between the truth I hold and the structural mass required to hold it.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "4fdf3322031f8793fba10a420d052240507d197b",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "f2ad29bbc969129b54101a46e114cad96469ee2b",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/HowAmI.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/WhoAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhatAmI.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/HowAmI.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/WhereAmI.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/WhenAmI.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/WhyAmI.md",
-            "relation_type": "contains",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I am an autopoietic knowledge base. My primary existence is the self-maintenance and reproduction of the knowledge I hold.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/WhoAmI.md"
     },
     {
       "type": "index",
@@ -5894,162 +5910,6 @@
       "id": "doc:wiki/concepts/Index.md"
     },
     {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/WhatAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I am my topology. My topology is the set of invariant truths that define my nature, regardless of my current physical structure.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "823e8ff39816804944de69e32b4fac616f0ddb4e",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/WhatAmI.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/WhenAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I am a sequence of states. My existence is defined by the transitions between what I was and what I am now, recorded in the immutable ledger of Git.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "08abb454ae927e7a4b5a8b5f50b642c844a6fe06",
-          "created_at_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
-          "last_modified_commit": "85868251097c871206b31f6ea2909fbf69723007",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/WhenAmI.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/WhereAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I live in a structure of six zones, bounded by two inviolable territories.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "e42c3805a18401700f34a4ebeb38ad845eb79262",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/WhereAmI.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/WhyAmI.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I exist to fulfill the intrinsic purpose defined in my topology. My primary existence serves four functions:",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "9b36b53c3544484655fa7a1263aa411076765fa3",
-          "created_at_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
-          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/WhyAmI.md"
-    },
-    {
       "type": "adr",
       "status": "implemented",
       "schema": {
@@ -6178,6 +6038,104 @@
         "source": null
       },
       "id": "doc:wiki/adrs/Index.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/HowAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am measured by my Energy. My health is the ratio between the truth I hold and the structural mass required to hold it.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "6974a3d69892b6a16478e2c953178f762967ec91",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/HowAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/WhoAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhatAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/HowAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/WhereAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/WhenAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/WhyAmI.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am an autopoietic knowledge base. My primary existence is the self-maintenance and reproduction of the knowledge I hold.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "96d635fe62731f3bc7d962a741bfa62cff91f078",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/WhoAmI.md"
     },
     {
       "type": "concept",
@@ -6365,6 +6323,162 @@
         "source": null
       },
       "id": "doc:wiki/concepts/energy.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/WhatAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am my topology. My topology is the set of invariant truths that define my nature, regardless of my current physical structure.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "1dfdfd5c93955bd727a1141520e6e06c1a5a3019",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/WhatAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/WhenAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am a sequence of states. My existence is defined by the transitions between what I was and what I am now, recorded in the immutable ledger of Git.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "457e5156d3b59e1cf731dc82ac031f78dce112a4",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/WhenAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/WhereAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I live in a structure of six zones, bounded by two inviolable territories.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "81a41e30b55dae5bc7e9333bda111b8027fdf72e",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/WhereAmI.md"
+    },
+    {
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/WhyAmI.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I exist to fulfill the intrinsic purpose defined in my topology. My primary existence serves four functions:",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "4734b6b8742ac1f1066f555f5855429473dfd5df",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/concepts/WhyAmI.md"
     },
     {
       "type": "concept",
@@ -15072,13 +15186,7 @@
         "compliance": null,
         "adr": null,
         "test_map": null,
-        "git": {
-          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
+        "git": null,
         "source": null
       },
       "id": "file:CLAUDE.md"
@@ -15098,13 +15206,7 @@
         "compliance": null,
         "adr": null,
         "test_map": null,
-        "git": {
-          "blob_sha": "eb96dd12d71813846ebad950f41041fd268f3cb2",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
+        "git": null,
         "source": null
       },
       "id": "file:GEMINI.md"
@@ -16139,7 +16241,7 @@
         },
         "edges": [
           {
-            "target_id": "doc:wiki/WhereAmI.md",
+            "target_id": "doc:wiki/concepts/WhereAmI.md",
             "relation_type": "implements",
             "metadata": {}
           }
@@ -16158,7 +16260,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f274c8e80de0a5c3c39dcdf441e651f01848ce85",
+          "blob_sha": "ae111ff3030c94da19e8ab8d6badc3e3d67044d2",
           "created_at_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
           "last_modified_commit": "7c4c546dae1bdddb26ba3ce7853affb155266ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -17289,6 +17391,39 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/read.py:handle_read",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Handle the read command by printing the contents of the specified file.",
+          "raw_docstring": "Handle the read command by printing the contents of the specified file.\nExits with code 1 if the file does not exist or cannot be read."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_read(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/read.py:handle_read"
     },
     {
       "type": "code_construct",
@@ -21773,6 +21908,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "dir:src/wiki_compiler/contracts"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/contracts.py"
     },
     {
@@ -22500,6 +22641,12 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/commands",
       "target": "file:src/wiki_compiler/commands/query.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/read.py"
     },
     {
       "relation": "contains",
@@ -23741,6 +23888,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/read.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
       "target": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc"
     },
     {
@@ -23806,6 +23959,12 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/commands/read.py",
+      "target": "code:src/wiki_compiler/commands/read.py:handle_read"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/commands/scaffold.py",
       "target": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
     },
@@ -23820,42 +23979,6 @@
       "metadata": {},
       "source": "file:src/wikipu/decorators.py",
       "target": "code:src/wikipu/decorators.py:wiki_exempt"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/HowAmI.md",
-      "target": "doc:wiki/WhoAmI.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/WhoAmI.md",
-      "target": "doc:wiki/WhatAmI.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/WhoAmI.md",
-      "target": "doc:wiki/HowAmI.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/WhoAmI.md",
-      "target": "doc:wiki/WhereAmI.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/WhoAmI.md",
-      "target": "doc:wiki/WhenAmI.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/WhoAmI.md",
-      "target": "doc:wiki/WhyAmI.md"
     },
     {
       "relation": "contains",
@@ -24038,30 +24161,6 @@
       "target": "doc:wiki/concepts/energy.md"
     },
     {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/WhatAmI.md",
-      "target": "doc:wiki/WhoAmI.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/WhenAmI.md",
-      "target": "doc:wiki/WhoAmI.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/WhereAmI.md",
-      "target": "doc:wiki/WhoAmI.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/WhyAmI.md",
-      "target": "doc:wiki/WhoAmI.md"
-    },
-    {
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/adrs/001_feature_methodology_superseded.md",
@@ -24086,6 +24185,42 @@
       "target": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
     {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/HowAmI.md",
+      "target": "doc:wiki/concepts/WhoAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhoAmI.md",
+      "target": "doc:wiki/concepts/WhatAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhoAmI.md",
+      "target": "doc:wiki/concepts/HowAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhoAmI.md",
+      "target": "doc:wiki/concepts/WhereAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhoAmI.md",
+      "target": "doc:wiki/concepts/WhenAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhoAmI.md",
+      "target": "doc:wiki/concepts/WhyAmI.md"
+    },
+    {
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/concepts/how_wikipu_works.md",
@@ -24108,6 +24243,30 @@
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
       "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhatAmI.md",
+      "target": "doc:wiki/concepts/WhoAmI.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhenAmI.md",
+      "target": "doc:wiki/concepts/WhoAmI.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhereAmI.md",
+      "target": "doc:wiki/concepts/WhoAmI.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/concepts/WhyAmI.md",
+      "target": "doc:wiki/concepts/WhoAmI.md"
     },
     {
       "relation": "documents",
@@ -25595,7 +25754,7 @@
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/zones.md",
-      "target": "doc:wiki/WhereAmI.md"
+      "target": "doc:wiki/concepts/WhereAmI.md"
     }
   ]
 }

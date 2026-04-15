@@ -1,9 +1,9 @@
 ---
 identity:
-  node_id: "doc:wiki/HowAmI.md"
+  node_id: "doc:wiki/concepts/HowAmI.md"
   node_type: "concept"
 edges:
-  - {target_id: "doc:wiki/WhoAmI.md", relation_type: "implements"}
+  - {target_id: "doc:wiki/concepts/WhoAmI.md", relation_type: "implements"}
 compliance:
   status: "implemented"
   failing_standards: []

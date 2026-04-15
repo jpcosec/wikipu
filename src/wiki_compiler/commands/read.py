@@ -1,8 +1,16 @@
+"""
+Read command for wiki-compiler.
+Allows direct reading of files from the CLI.
+"""
 import argparse
 import sys
 from pathlib import Path
 
 def handle_read(args: argparse.Namespace) -> None:
+    """
+    Handle the read command by printing the contents of the specified file.
+    Exits with code 1 if the file does not exist or cannot be read.
+    """
     path = Path(args.file)
     if not path.exists():
         print(f"[ERROR] File not found: {args.file}")
