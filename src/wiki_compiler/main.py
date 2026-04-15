@@ -35,6 +35,7 @@ from .commands import (
     scaffold,
     status,
     energy,
+    read,
 )
 
 
@@ -45,6 +46,9 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
     try:
+        if args.command == "read":
+            read.handle_read(args)
+            return
         if args.command == "scaffold":
             scaffold.handle_scaffold(args)
             return
@@ -514,6 +518,11 @@ def build_parser() -> argparse.ArgumentParser:
     energy_parser.add_argument(
         "--format", default="markdown", choices=["markdown", "json"]
     )
+
+    read_parser = subparsers.add_parser(
+        "read", help="Read the contents of a file directly"
+    )
+    read_parser.add_argument("file", help="Path to the file to read")
 
     subparsers.add_parser("init", help="Initialize the base wikipu structure")
 
