@@ -7,6 +7,7 @@
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 | 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
+| 15 | audit | Auto-generate tasks from audit findings | p2 | none |
 
 ## Blocked (status=blocked)
 
