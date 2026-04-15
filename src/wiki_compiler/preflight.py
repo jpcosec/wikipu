@@ -35,17 +35,20 @@ class PreflightReport(BaseModel):
 
 
 def read_git_status(project_root: Path) -> list[str]:
-    """Return list of uncommitted change paths."""
+    """Return list of uncommitted change paths. Returns empty list if not a git repo."""
     import subprocess
 
-    result = subprocess.run(
-        ["git", "status", "--short"],
-        cwd=project_root,
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return [line for line in result.stdout.splitlines() if line.strip()]
+    try:
+        result = subprocess.run(
+            ["git", "status", "--short"],
+            cwd=project_root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        return [line for line in result.stdout.splitlines() if line.strip()]
+    except subprocess.CalledProcessError:
+        return []
 
 
 def evaluate_action_safety(

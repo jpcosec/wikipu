@@ -23,7 +23,7 @@ def ingest_raw_sources(
     After ingestion, generates an INDEX.md per subdirectory.
     """
     from .manifest import compute_content_hash, add_to_manifest
-    
+
     root = project_root or source_dir.parent
     ignore_rules = load_wikiignore_rules(root / ".wikiignore")
     written: list[Path] = []
@@ -67,7 +67,11 @@ def ingest_raw_sources(
             )
 
     for source_subdir, entries in subdir_nodes.items():
-        index_path = (dest_dir / source_subdir / "INDEX.md") if source_subdir else (dest_dir / "INDEX.md")
+        index_path = (
+            (dest_dir / source_subdir / "INDEX.md")
+            if source_subdir
+            else (dest_dir / "INDEX.md")
+        )
         index_path.parent.mkdir(parents=True, exist_ok=True)
         index_path.write_text(_render_index(source_subdir, entries), encoding="utf-8")
 
@@ -85,6 +89,8 @@ def _compute_node_id(dest_dir: Path, source_subdir: str, draft_slug: str) -> str
     if dest_dir.is_absolute():
         if dest_dir.parent.name == "wiki":
             base = Path(dest_dir.parent.name) / dest_dir.name
+        elif dest_dir.parent.name == "desk":
+            base = Path("desk") / dest_dir.name
         else:
             base = Path(dest_dir.name)
     else:
@@ -105,7 +111,9 @@ def _render_index(source_subdir: str, entries: list[dict]) -> str:
     label = source_subdir or "drafts"
     lines = [f"# Index: {label}", ""]
     for entry in entries:
-        lines.append(f"- **{entry['node_id']}** — {entry['title']}: {entry['abstract']}")
+        lines.append(
+            f"- **{entry['node_id']}** — {entry['title']}: {entry['abstract']}"
+        )
     lines.append("")
     return "\n".join(lines)
 
@@ -161,6 +169,7 @@ def render_draft(
     Generates the markdown content for a draft node, including required frontmatter.
     """
     from datetime import datetime
+
     abstract = _extract_abstract(content)
     compiled_at = datetime.now().isoformat()
 
