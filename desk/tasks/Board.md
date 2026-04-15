@@ -8,7 +8,7 @@
 |----|--------|------|----------|------------|
 | 1 | ingest | Ingest raw unimplemented source | p0 | none | {closed with commit id f7b42e9} |
 | 2 | cleanse | Resolve Cleansing Gate | p0 | none | {closed with commit id 6816677} |
-| 3 | compliance | Fix Compliance Regressions | p1 | 2 |
+| 3 | compliance | Fix Compliance Regressions | p1 | 2 | {closed with commit id 4dfee81} |
 | 4 | compliance | Reduce Compliance Debt | p0 | none | {closed with commit id 4dfee81} |
 | 5 | meta | Fix zone alignment test failures | p1 | none | {closed with commit id 6d706d4} |
 
