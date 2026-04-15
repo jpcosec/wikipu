@@ -33,8 +33,8 @@ IGNORED_FILES = {
 CODE_PREFIXES = ("src/", "tests/")
 DOC_PREFIXES = ("wiki/", "agents/")
 DOC_FILES = {"README.md", "AGENTS.md", "changelog.md"}
-ISSUE_PREFIX = "desk/issues/"
-ISSUE_INDEX = "desk/issues/Board.md"
+ISSUE_PREFIX = "desk/tasks/"
+ISSUE_INDEX = "desk/tasks/Board.md"
 
 
 @dataclass(frozen=True)
@@ -119,13 +119,13 @@ def guard_workflow(
     # If we are making code/doc changes, but there are open issues that AREN'T being deleted in this commit, block.
     if has_code_changes and not issue_paths:
         errors.append(
-            "Code or test changes require a linked issue under `plan_docs/issues/`. "
-            "Create or update an issue before continuing."
+            "Code or test changes require a linked task under `desk/tasks/`. "
+            "Create or update a task before continuing."
         )
 
     if has_doc_changes and not issue_paths and not allow_structural:
         errors.append(
-            "Documentation or process changes require an issue by default. "
+            "Documentation or process changes require a task by default. "
             "Use `--allow-structural` only for intentional structural/docs-only work."
         )
 
@@ -134,7 +134,7 @@ def guard_workflow(
 
     if deleted_issue_paths and ISSUE_INDEX not in paths:
         errors.append(
-            "Deleting a resolved issue also requires updating `desk/issues/Board.md`."
+            "Deleting a resolved task also requires updating `desk/tasks/Board.md`."
         )
 
     if (

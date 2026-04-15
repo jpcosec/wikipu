@@ -78,9 +78,9 @@ def evaluate_action_safety(
         )
 
     # ID-5: Topology Boundary
-    # Any action affecting files outside of src/, wiki/, plan_docs/, or desk/
+    # Any action affecting files outside of src/, wiki/, desk/, or drawers/
     # requires a human gate.
-    safe_zones = {"src/", "wiki/", "plan_docs/", "desk/", "tests/", "manifests/"}
+    safe_zones = {"src/", "wiki/", "desk/", "drawers/", "tests/", "manifests/"}
     is_internal = any(target_id.startswith(zone) for zone in safe_zones)
 
     if not is_internal:

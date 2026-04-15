@@ -250,11 +250,11 @@ class StaleEdgesCheck:
 
 class OrphanedPlansCheck:
     """
-    Checks for future documentation nodes that have no connection to any code node.
+    Checks for deferred nodes (drawers/) that have no connection to any code node.
     """
 
     check_name = "orphaned_plans"
-    question = "Which future_docs nodes have no connection to any code node?"
+    question = "Which drawers/ nodes have no connection to any code node?"
     related_facet = "compliance"
 
     def run(self, graph: nx.DiGraph) -> list[AuditFinding]:
@@ -273,7 +273,7 @@ class OrphanedPlansCheck:
         }
         findings = []
         for node in iter_knowledge_nodes(graph):
-            if "future_docs" not in node.identity.node_id:
+            if "drawers" not in node.identity.node_id:
                 continue
             # Connect to code OR raw is not orphaned
             outgoing = {t for _, t in graph.out_edges(node.identity.node_id)}
@@ -282,7 +282,7 @@ class OrphanedPlansCheck:
                     AuditFinding(
                         check_name=self.check_name,
                         node_id=node.identity.node_id,
-                        detail="future_docs node has no outgoing edge to code or raw.",
+                        detail="drawers node has no outgoing edge to code or raw.",
                     )
                 )
         return findings

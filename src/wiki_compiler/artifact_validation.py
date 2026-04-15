@@ -25,14 +25,14 @@ def validate_wiki_artifact(path: Path) -> ArtifactValidationReport:
 
     # Dispatch to operational validators if in specific folders
     parts = path.parts
-    if "plan_docs" in parts and "issues" in parts and path.suffix == ".md":
-        if path.name != "Index.md":
-            return _validate_issue(path)
+    if "desk" in parts and "tasks" in parts and path.suffix == ".md":
+        if path.name != "Board.md":
+            return _validate_task(path)
     if path.name == "Gates.md" and "desk" in parts:
         return _validate_gates(path)
-    if "backlog" in parts and path.suffix == ".md":
+    if "drawers" in parts and path.suffix == ".md":
         return _validate_backlog_item(path)
-    if path.name == "Board.md" and ("desk" in parts or "plan_docs" in parts):
+    if path.name == "Board.md" and "desk" in parts:
         return _validate_board(path)
 
     findings: list[ArtifactValidationFinding] = []
@@ -94,17 +94,17 @@ def validate_all_artifacts(project_root: Path) -> list[ArtifactValidationReport]
         for path in wiki_dir.rglob("*.md"):
             reports.append(validate_wiki_artifact(path))
 
-    # 2. All issue files in plan_docs/issues/
-    issues_dir = project_root / "plan_docs/issues"
-    if issues_dir.exists():
-        for path in issues_dir.rglob("*.md"):
-            if path.name != "Index.md":
+    # 2. All task files in desk/tasks/
+    tasks_dir = project_root / "desk/tasks"
+    if tasks_dir.exists():
+        for path in tasks_dir.rglob("*.md"):
+            if path.name != "Board.md":
                 reports.append(validate_wiki_artifact(path))
 
-    # 3. All backlog items
-    backlog_dir = project_root / "backlog"
-    if backlog_dir.exists():
-        for path in backlog_dir.rglob("*.md"):
+    # 3. All backlog items in drawers/
+    drawers_dir = project_root / "drawers"
+    if drawers_dir.exists():
+        for path in drawers_dir.rglob("*.md"):
             reports.append(validate_wiki_artifact(path))
 
     # 4. Operational files in desk/
@@ -145,8 +145,8 @@ def _repo_style_path(path: Path) -> str:
     return path.as_posix()
 
 
-def _validate_issue(path: Path) -> ArtifactValidationReport:
-    """Validate an issue file has required sections."""
+def _validate_task(path: Path) -> ArtifactValidationReport:
+    """Validate a task file has required sections."""
     content = path.read_text(encoding="utf-8")
     findings: list[ArtifactValidationFinding] = []
 
@@ -155,15 +155,15 @@ def _validate_issue(path: Path) -> ArtifactValidationReport:
         if f"**{section}:**" not in content:
             findings.append(
                 ArtifactValidationFinding(
-                    rule_id=f"issue/{section.lower().replace(' ', '_')}",
-                    message=f"Issue missing required field: {section}",
+                    rule_id=f"task/{section.lower().replace(' ', '_')}",
+                    message=f"Task missing required field: {section}",
                 )
             )
 
     if not content.startswith("# "):
         findings.append(
             ArtifactValidationFinding(
-                rule_id="issue/title", message="Issue must start with an H1 title."
+                rule_id="task/title", message="Task must start with an H1 title."
             )
         )
 

@@ -114,7 +114,7 @@ def _orphaned_plan_proposals(graph: object) -> list[CleansingProposal]:
     proposals: list[CleansingProposal] = []
     for node in iter_knowledge_nodes(graph):
         compliance = node.compliance
-        if not node.identity.node_id.startswith("doc:plan_docs/"):
+        if not node.identity.node_id.startswith("doc:desk/tasks/"):
             continue
         if not compliance or compliance.status != "planned":
             continue

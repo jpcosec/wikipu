@@ -78,7 +78,7 @@ def main() -> None:
                 medium=args.medium,
                 schema_ref=args.schema_ref,
                 path_template=args.path_template,
-                issues=args.issues,
+                tasks=args.tasks,
                 gaps=args.gaps,
                 unimplemented=args.unimplemented,
                 search_query=args.search,
@@ -312,7 +312,7 @@ def main() -> None:
             report = guard_workflow(
                 read_git_changes(Path(args.project_root)),
                 branch_name=read_current_branch(Path(args.project_root)),
-                allow_structural=False, # run should not be structural
+                allow_structural=False,  # run should not be structural
             )
             if report.checked_files:
                 print("[INFO] Checked files:")
@@ -400,11 +400,19 @@ def main() -> None:
                 print(f"## Systemic Energy Report\n")
                 print(f"**Total Energy Score: {ce.energy_score:.2f}**\n")
                 print(f"### Breakdown")
-                print(f"- **Structural (Nodes/Edges)**: {ce.node_energy:.2f} (n={ce.node_count}, e={ce.edge_count})")
-                print(f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})")
-                print(f"- **Operational (Drift/Gates)**: {ce.perturbation_energy:.2f} (p={ce.perturbations}, g={ce.open_gates})")
+                print(
+                    f"- **Structural (Nodes/Edges)**: {ce.node_energy:.2f} (n={ce.node_count}, e={ce.edge_count})"
+                )
+                print(
+                    f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})"
+                )
+                print(
+                    f"- **Operational (Drift/Gates)**: {ce.perturbation_energy:.2f} (p={ce.perturbations}, g={ce.open_gates})"
+                )
                 if ce.agent_violations > 0:
-                    print(f"- **Agent Rule Violations**: {ce.agent_violation_energy:.2f} (v={ce.agent_violations})")
+                    print(
+                        f"- **Agent Rule Violations**: {ce.agent_violation_energy:.2f} (v={ce.agent_violations})"
+                    )
 
                 if ce.energy_score > 500:
                     print(
@@ -483,16 +491,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--query-file", help="Path to a StructuredQuery JSON file"
     )
     query_parser.add_argument(
-        "--issues", action="store_true", help="Find all issue nodes"
+        "--tasks", action="store_true", help="Find all task nodes"
     )
     query_parser.add_argument(
         "--search", help="Free text search across markdown files in the wiki"
     )
     query_parser.add_argument(
-        "--gaps", action="store_true", help="Find all gap issue nodes"
+        "--gaps", action="store_true", help="Find all gap task nodes"
     )
     query_parser.add_argument(
-        "--unimplemented", action="store_true", help="Find all unimplemented issue nodes"
+        "--unimplemented", action="store_true", help="Find all unimplemented task nodes"
     )
 
     audit_parser = subparsers.add_parser(
@@ -664,7 +672,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     energy_parser = subparsers.add_parser(
-        "energy", help="Calculate the systemic energy score (structural and operational cost)"
+        "energy",
+        help="Calculate the systemic energy score (structural and operational cost)",
     )
     energy_parser.add_argument(
         "--graph", default="knowledge_graph.json", help="Graph JSON path"
@@ -762,9 +771,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument(
         "--project-root", default=".", help="Project root directory"
     )
-    run_parser.add_argument(
-        "--source", default="wiki", help="Source wiki directory"
-    )
+    run_parser.add_argument("--source", default="wiki", help="Source wiki directory")
     run_parser.add_argument(
         "--manifest",
         default="manifests/raw_sources.csv",

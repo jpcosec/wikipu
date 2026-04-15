@@ -3,6 +3,7 @@ Serves graph queries for the Librarian Agent protocol.
 Supports path traversal and I/O searching via the CLI runtime.
 Also provides a stdin-based REPL loop for StructuredQuery JSON execution.
 """
+
 from __future__ import annotations
 
 import json
@@ -65,7 +66,7 @@ def query_graph(
     medium: str | None = None,
     schema_ref: str | None = None,
     path_template: str | None = None,
-    issues: bool = False,
+    tasks: bool = False,
     gaps: bool = False,
     unimplemented: bool = False,
     search_query: str | None = None,
@@ -83,10 +84,9 @@ def query_graph(
                     try:
                         content = file_path.read_text(encoding="utf-8")
                         if search_lower in content.lower():
-                            matches.append({
-                                "node_id": candidate,
-                                "file": str(file_path)
-                            })
+                            matches.append(
+                                {"node_id": candidate, "file": str(file_path)}
+                            )
                     except Exception:
                         pass
         return {
@@ -95,15 +95,21 @@ def query_graph(
             "nodes": matches,
         }
 
-    if issues or gaps or unimplemented:
+    if tasks or gaps or unimplemented:
         conditions = []
         if gaps:
-            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:plan_docs/issues/gaps/"})
+            conditions.append(
+                {"field": "node_id", "op": "starts_with", "value": "doc:desk/tasks/"}
+            )
         elif unimplemented:
-            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:plan_docs/issues/unimplemented/"})
-        elif issues:
-            conditions.append({"field": "node_id", "op": "starts_with", "value": "issue:"})
-        
+            conditions.append(
+                {"field": "node_id", "op": "starts_with", "value": "doc:desk/tasks/"}
+            )
+        elif tasks:
+            conditions.append(
+                {"field": "node_id", "op": "starts_with", "value": "doc:"}
+            )
+
         query = StructuredQuery(
             filters=[
                 {"facet": "identity", "conditions": conditions},
@@ -114,10 +120,12 @@ def query_graph(
             "query_type": "structured_query",
             "nodes": [n.model_dump() for n in nodes],
         }
-    
+
     if query_type is None:
-        raise ValueError("A query type or a flag (--issues, --gaps, --unimplemented) must be provided.")
-    
+        raise ValueError(
+            "A query type or a flag (--tasks, --gaps, --unimplemented) must be provided."
+        )
+
     if query_type == "get_node":
         ensure_node(node_id)
         return {
@@ -198,7 +206,7 @@ def query_main(
     medium: str | None = None,
     schema_ref: str | None = None,
     path_template: str | None = None,
-    issues: bool = False,
+    tasks: bool = False,
     gaps: bool = False,
     unimplemented: bool = False,
     search_query: str | None = None,
@@ -212,7 +220,7 @@ def query_main(
         medium=medium,
         schema_ref=schema_ref,
         path_template=path_template,
-        issues=issues,
+        tasks=tasks,
         gaps=gaps,
         unimplemented=unimplemented,
         search_query=search_query,

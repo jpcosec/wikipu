@@ -2,6 +2,7 @@
 Creates immutable scaffolding for new modules.
 Initializes code structure, contracts, and tests based on House Rules.
 """
+
 import os
 from pathlib import Path
 import textwrap
@@ -80,9 +81,8 @@ def bootstrap_repository(project_root: Path, project_name: str):
         "desk/autopoiesis/cycles",
         "desk/autopoiesis/sessions",
         "desk/autopoiesis/trails",
-        "plan_docs/issues/gaps",
-        "plan_docs/issues/unimplemented",
-        "future_docs",
+        "desk/tasks",
+        "drawers",
         "src",
         "tests",
     ]
@@ -94,7 +94,8 @@ def bootstrap_repository(project_root: Path, project_name: str):
     # Seed Index.md files
     wiki_index = project_root / "wiki/Index.md"
     if not wiki_index.exists():
-        wiki_index.write_text(textwrap.dedent(f"""
+        wiki_index.write_text(
+            textwrap.dedent(f"""
             ---
             identity:
               node_id: "doc:wiki/Index.md"
@@ -107,12 +108,18 @@ def bootstrap_repository(project_root: Path, project_name: str):
             # {project_name} Knowledge Base
             
             This is the central entry point for the {project_name} wiki.
-        """).strip() + "\n", encoding="utf-8")
+        """).strip()
+            + "\n",
+            encoding="utf-8",
+        )
 
     # Seed Gates.md
     gates_path = project_root / "desk/Gates.md"
     if not gates_path.exists():
-        gates_path.write_text("| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n", encoding="utf-8")
+        gates_path.write_text(
+            "| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
 
     print(f"[✅] Wikipu ecosystem bootstrapped for '{project_name}'.")
 
@@ -135,7 +142,10 @@ def upgrade_repository(project_root: Path):
     # Seed Gates.md if missing
     gates_path = project_root / "desk/Gates.md"
     if not gates_path.exists():
-        gates_path.write_text("| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n", encoding="utf-8")
+        gates_path.write_text(
+            "| gate_id | proposal | opened | description | status |\n|---|---|---|---|---|\n",
+            encoding="utf-8",
+        )
         print("[INFO] Created missing desk/Gates.md")
 
     print("[✅] Wikipu ecosystem upgraded to latest version.")

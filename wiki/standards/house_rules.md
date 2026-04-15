@@ -281,7 +281,7 @@ Each artifact type has a canonical schema defining its frontmatter fields and re
 - `faq`: Abstract → Q&A pairs
 
 **WK-5 — Current Truth Separation**
-`wiki/` contains only current state. It never references `desk/` (active work) or `backlog/` (deferred). If a node describes something planned but not yet implemented, its `compliance.status` must reflect that (`planned` or `scaffolding`). A node with `status: "implemented"` is a claim that the code and docs match reality.
+`wiki/` contains only current state. It never references `desk/` (active work) or `drawers/` (deferred). If a node describes something planned but not yet implemented, its `compliance.status` must reflect that (`planned` or `scaffolding`). A node with `status: "implemented"` is a claim that the code and docs match reality.
 
 **WK-6 — Reference Docs Are Derived**
 `wiki/reference/` nodes are generated from or kept in sync with source code. They document what exists, not what is planned. If the source changes, the reference doc must be updated in the same commit.

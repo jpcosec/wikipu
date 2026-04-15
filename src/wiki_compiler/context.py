@@ -65,8 +65,8 @@ def get_context_bundle(graph_path: Path, request: ContextRequest) -> ContextBund
                 scores[descendant] = 0.6
                 rationale[descendant] = f"descendant_of_{node_id}"
 
-    # 3. Intersection (Issues & Checklists)
-    active_issues = match_active_issues(
+    # 3. Intersection (Tasks & Checklists)
+    active_tasks = match_active_tasks(
         project_root, subgraph_node_ids, request.task_hint
     )
     checklists = load_relevant_checklists(project_root, request.task_hint)
@@ -171,12 +171,12 @@ def load_relevant_checklists(
     return checklists
 
 
-def match_active_issues(
+def match_active_tasks(
     project_root: Path, subgraph_node_ids: set[str], task_hint: str | None
 ) -> list[str]:
-    """Finds active issues in plan_docs/issues/ relevant to the current context."""
-    issues_dir = project_root / "plan_docs/issues/unimplemented"
-    if not issues_dir.exists():
+    """Finds active tasks in desk/tasks/ relevant to the current context."""
+    tasks_dir = project_root / "desk/tasks"
+    if not tasks_dir.exists():
         return []
 
     relevant_issues: list[str] = []
