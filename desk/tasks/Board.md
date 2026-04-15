@@ -6,8 +6,6 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 9 | test | Fix test_delta_compile_workflow | p0 | none |
-| 10 | test | Fix test_run_skeleton_auto_ingest | p0 | none |
 | 11 | energy | Reduce file complexity (main.py 791 lines) | p1 | none |
 | 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
 | 13 | refactor | Refactor main.py:main (1489 statements) | p2 | 11 |

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-04-15
+
+- resolved issue 9 `fix test_delta_compile_workflow`: Fixed `_compute_node_id` in ingest.py to properly handle `desk/drafts/` zone, now generates correct `doc:desk/drafts/...` node_id
+- resolved issue 10 `fix test_run_skeleton_auto_ingest`: Added fallback in `read_git_status` and `read_git_changes` for non-git repos (test environment), preventing subprocess errors
+
 ## 2026-04-11
 
 - resolved issue 1 `01-zone-reorganization`: Implemented the zone reorganization. Created `desk/` and `future_docs/drawers/` zones. Updated `hausordnung` and `AGENTS.md`. Updated `wiki-compiler guard` (formerly `check-workflow`) to be aware of the new structure and fixed a bug in the `run` command.
