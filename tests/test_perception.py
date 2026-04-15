@@ -115,4 +115,4 @@ def test_status_report_flags_modified_file_and_untracked_raw(tmp_path: Path) -> 
     assert any(
         item["node_id"] == "doc:wiki/concept.md" for item in report["modified_nodes"]
     )
-    assert "raw/new_note.md" in report["untracked_raw_files"]
+    assert "raw/new_note.md" in report["untracked_by_zone"].get("raw", [])
