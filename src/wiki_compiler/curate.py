@@ -11,7 +11,7 @@ from pathlib import Path
 
 def score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]:
     """
-    Load graph, filter nodes whose node_id starts with "doc:wiki/drafts/",
+    Load graph, filter nodes whose node_id starts with "doc:desk/drafts/",
     run quality checks, return ranked list (highest quality first).
 
     Quality signals:
@@ -27,7 +27,7 @@ def score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]:
 
     for node in graph_data.get("nodes", []):
         node_id = node.get("id", "")
-        if not node_id.startswith("doc:wiki/drafts/"):
+        if not node_id.startswith("doc:desk/drafts/"):
             continue
 
         schema = node.get("schema", {})
@@ -37,7 +37,9 @@ def score_drafts(graph_path: Path, drafts_dir: Path) -> list[dict]:
     return sorted(results, key=lambda r: r["score"], reverse=True)
 
 
-def _evaluate_node(node_id: str, schema: dict, drafts_dir: Path) -> tuple[int, list[str]]:
+def _evaluate_node(
+    node_id: str, schema: dict, drafts_dir: Path
+) -> tuple[int, list[str]]:
     """Runs quality checks on a single node schema, returns (score, issues)."""
     score = 0
     issues: list[str] = []
@@ -81,19 +83,17 @@ def _sentence_count(text: str) -> int:
 
 def _node_id_to_file(node_id: str, drafts_dir: Path) -> Path | None:
     """
-    Maps a node_id like "doc:wiki/drafts/sub/slug.md" to an absolute file path
+    Maps a node_id like "doc:desk/drafts/sub/slug.md" to an absolute file path
     under drafts_dir.
     """
-    prefix = "doc:wiki/drafts/"
-    if not node_id.startswith(prefix):
-        return None
-    rel = node_id[len(prefix):]
+    prefix = "doc:desk/drafts/"
+    rel = node_id[len(prefix) :]
     return drafts_dir / rel
 
 
 def promote_draft(node_id: str, dest: str, drafts_dir: Path, wiki_dir: Path) -> None:
     """
-    Move draft node file from wiki/drafts/ to dest path in wiki/,
+    Move draft node file from desk/drafts/ to dest path in wiki/,
     rewrite node_id in frontmatter to match new path.
     Trigger is external — caller runs wiki-compiler build after.
     """

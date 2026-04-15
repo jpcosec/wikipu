@@ -596,7 +596,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     ingest_parser.add_argument("--source", default="raw", help="Raw source directory")
     ingest_parser.add_argument(
-        "--dest", default="wiki/drafts", help="Draft node destination"
+        "--dest", default="desk/drafts", help="Draft node destination"
     )
     ingest_parser.add_argument(
         "--project-root", default=".", help="Project root used for .wikiignore lookup"
@@ -629,7 +629,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--graph", default="knowledge_graph.json", help="Graph JSON path"
     )
     curate_parser.add_argument(
-        "--drafts-dir", default="wiki/drafts", help="Draft wiki directory"
+        "--drafts-dir", default="desk/drafts", help="Draft wiki directory"
     )
     curate_parser.add_argument(
         "--wiki-dir", default="wiki", help="Canonical wiki directory"
@@ -727,7 +727,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to the CSV manifest file.",
     )
     drafts_parser.add_argument(
-        "--drafts-dir", default="wiki/drafts", help="Drafts destination directory"
+        "--drafts-dir", default="desk/drafts", help="Drafts destination directory"
     )
 
     # --- bootstrap ---

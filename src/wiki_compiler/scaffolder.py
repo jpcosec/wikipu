@@ -82,6 +82,7 @@ def bootstrap_repository(project_root: Path, project_name: str):
         "desk/autopoiesis/sessions",
         "desk/autopoiesis/trails",
         "desk/tasks",
+        "desk/drafts",
         "drawers",
         "src",
         "tests",
