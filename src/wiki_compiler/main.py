@@ -31,6 +31,7 @@ from .validator import validate_topology_proposal
 from .workflow_guard import guard_workflow
 from .workflow_guard import read_current_branch
 from .workflow_guard import read_git_changes
+from .commands import build, query, audit
 
 
 def main() -> None:
@@ -45,75 +46,13 @@ def main() -> None:
             print(f"[OK] Scaffolding successfully created in {args.module}")
             return
         if args.command == "build":
-            result = build_wiki(
-                source_dir=Path(args.source),
-                graph_path=Path(args.graph),
-                project_root=Path(args.project_root),
-                code_roots=[Path(path) for path in args.code_root],
-                baseline_path=Path(args.baseline),
-                update_baseline=args.update_baseline,
-            )
-            print(f"[OK] Graph saved to {args.graph}")
-            print(f"[INFO] Compliance score: {result.compliance_score:.2f}")
-            if result.baseline_regressed:
-                print("[ERROR] Compliance score regressed against the baseline")
-                sys.exit(1)
+            build.handle_build(args)
             return
         if args.command == "query":
-            if getattr(args, "query_file", None):
-                graph = load_graph(Path(args.graph))
-                query_data = json.loads(
-                    Path(args.query_file).read_text(encoding="utf-8")
-                )
-                query = StructuredQuery.model_validate(query_data)
-                results = execute_query(graph, query)
-                print(json.dumps([n.model_dump() for n in results], indent=2))
-                return
-
-            query_main(
-                graph_path=Path(args.graph),
-                query_type=args.type,
-                node_id=args.node_id,
-                relation_filter=args.relation_filter,
-                medium=args.medium,
-                schema_ref=args.schema_ref,
-                path_template=args.path_template,
-                tasks=args.tasks,
-                gaps=args.gaps,
-                unimplemented=args.unimplemented,
-                search_query=args.search,
-            )
+            query.handle_query(args)
             return
         if args.command == "audit":
-            graph = load_graph(Path(args.graph))
-            report = run_audit(graph)
-            if args.format == "json":
-                print(
-                    json.dumps(
-                        {
-                            "summary": report.summary,
-                            "findings": [
-                                {
-                                    "check": f.check_name,
-                                    "node_id": f.node_id,
-                                    "detail": f.detail,
-                                }
-                                for f in report.findings
-                            ],
-                        },
-                        indent=2,
-                    )
-                )
-            else:
-                print("## Audit Report\n")
-                for check_name, count in report.summary.items():
-                    print(f"- **{check_name}**: {count} finding(s)")
-                if report.findings:
-                    print()
-                    for f in report.findings:
-                        print(f"[{f.check_name}] {f.node_id}\n  {f.detail}")
-            if report.findings:
-                sys.exit(1)
+            audit.handle_audit(args)
             return
         if args.command == "propose-facet":
             from .contracts import FacetProposal
