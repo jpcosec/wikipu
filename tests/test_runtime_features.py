@@ -449,7 +449,7 @@ def test_ingest_mirrors_source_subdirs_and_writes_index(tmp_path: Path) -> None:
     from wiki_compiler.ingest import ingest_raw_sources
 
     source_dir = tmp_path / "raw"
-    dest_dir = tmp_path / "wiki" / "drafts"
+    dest_dir = tmp_path / "desk/drafts"
     write(
         source_dir / "source_a" / "notes.md",
         """
@@ -465,10 +465,10 @@ def test_ingest_mirrors_source_subdirs_and_writes_index(tmp_path: Path) -> None:
 
     assert draft_path in written_files
     assert (
-        'node_id: "doc:wiki/drafts/source_a/source_a_notes.md"'
+        'node_id: "doc:desk/drafts/source_a/source_a_notes.md"'
         in draft_path.read_text(encoding="utf-8")
     )
-    assert "doc:wiki/drafts/source_a/source_a_notes.md" in index_path.read_text(
+    assert "doc:desk/drafts/source_a/source_a_notes.md" in index_path.read_text(
         encoding="utf-8"
     )
 
@@ -478,7 +478,7 @@ def test_curate_score_reports_ranked_draft_quality(tmp_path: Path) -> None:
     from wiki_compiler.curate import score_drafts
 
     graph_path = tmp_path / "knowledge_graph.json"
-    drafts_dir = tmp_path / "wiki" / "drafts"
+    drafts_dir = tmp_path / "desk/drafts"
     good_draft = drafts_dir / "group" / "good.md"
     good_draft.parent.mkdir(parents=True, exist_ok=True)
     good_draft.write_text("draft", encoding="utf-8")
@@ -489,20 +489,20 @@ def test_curate_score_reports_ranked_draft_quality(tmp_path: Path) -> None:
         "graph": {},
         "nodes": [
             {
-                "id": "doc:wiki/drafts/group/good.md",
+                "id": "doc:desk/drafts/group/good.md",
                 "schema": {
                     "identity": {
-                        "node_id": "doc:wiki/drafts/group/good.md",
+                        "node_id": "doc:desk/drafts/group/good.md",
                         "node_type": "concept",
                     },
                     "semantics": {"intent": "A clear abstract. Another sentence."},
                 },
             },
             {
-                "id": "doc:wiki/drafts/group/bad.md",
+                "id": "doc:desk/drafts/group/bad.md",
                 "schema": {
                     "identity": {
-                        "node_id": "doc:wiki/drafts/group/bad.md",
+                        "node_id": "doc:desk/drafts/group/bad.md",
                         "node_type": "file",
                     },
                     "semantics": {"intent": ""},
@@ -515,21 +515,21 @@ def test_curate_score_reports_ranked_draft_quality(tmp_path: Path) -> None:
 
     results = score_drafts(graph_path=graph_path, drafts_dir=drafts_dir)
 
-    assert results[0]["node_id"] == "doc:wiki/drafts/group/good.md"
+    assert results[0]["node_id"] == "doc:desk/drafts/group/good.md"
     assert results[0]["score"] > results[1]["score"]
 
 
 def test_curate_promote_moves_draft_and_rewrites_node_id(tmp_path: Path) -> None:
     from wiki_compiler.curate import promote_draft
 
-    drafts_dir = tmp_path / "wiki" / "drafts"
+    drafts_dir = tmp_path / "desk/drafts"
     wiki_dir = tmp_path / "wiki"
     draft_path = drafts_dir / "group" / "draft.md"
     draft_path.parent.mkdir(parents=True, exist_ok=True)
     draft_path.write_text(
         """---
 identity:
-  node_id: "doc:wiki/drafts/group/draft.md"
+  node_id: "doc:desk/drafts/group/draft.md"
   node_type: "concept"
 ---
 
@@ -539,7 +539,7 @@ Draft abstract.
     )
 
     promote_draft(
-        node_id="doc:wiki/drafts/group/draft.md",
+        node_id="doc:desk/drafts/group/draft.md",
         dest="concepts/promoted.md",
         drafts_dir=drafts_dir,
         wiki_dir=wiki_dir,

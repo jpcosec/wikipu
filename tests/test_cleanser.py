@@ -49,7 +49,7 @@ def test_cleanse_detect_flags_orphaned_plan(tmp_path: Path) -> None:
     graph_path = write_graph(
         tmp_path / "graph.json",
         make_node(
-            "doc:plan_docs/issues/gaps/lonely.md",
+            "doc:desk/tasks/lonely.md",
             node_type="doc_standard",
             compliance=ComplianceFacet(status="planned", failing_standards=[]),
         ),

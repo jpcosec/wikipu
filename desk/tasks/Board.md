@@ -10,6 +10,7 @@
 | 2 | cleanse | Resolve Cleansing Gate | p0 | none | {closed with commit id pending} |
 | 3 | compliance | Fix Compliance Regressions | p1 | 2 |
 | 4 | compliance | Reduce Compliance Debt | p0 | none |
+| 5 | meta | Fix zone alignment test failures | p1 | none |
 
 ## Blocked (status=blocked)
 

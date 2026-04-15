@@ -4,7 +4,7 @@ from wiki_compiler.workflow_guard import FileChange
 from wiki_compiler.workflow_guard import guard_workflow
 
 
-def test_guard_requires_issue_for_code_changes() -> None:
+def test_guard_requires_task_for_code_changes() -> None:
     report = guard_workflow(
         [
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
@@ -14,15 +14,15 @@ def test_guard_requires_issue_for_code_changes() -> None:
     )
 
     assert report.ok is False
-    assert any("linked issue" in error for error in report.errors)
+    assert any("linked task" in error for error in report.errors)
 
 
-def test_guard_accepts_code_changes_with_issue_and_changelog() -> None:
+def test_guard_accepts_code_changes_with_task_and_changelog() -> None:
     report = guard_workflow(
         [
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
             FileChange(status="M ", path="tests/test_workflow_guard.py"),
-            FileChange(status="M ", path="desk/issues/gaps/workflow.md"),
+            FileChange(status="M ", path="desk/tasks/workflow.md"),
             FileChange(status="M ", path="changelog.md"),
         ],
         branch_name="issue/workflow-guard",
@@ -31,10 +31,10 @@ def test_guard_accepts_code_changes_with_issue_and_changelog() -> None:
     assert report.ok is True
 
 
-def test_guard_requires_issue_index_when_issue_deleted() -> None:
+def test_guard_requires_task_board_when_task_deleted() -> None:
     report = guard_workflow(
         [
-            FileChange(status="D ", path="desk/issues/gaps/workflow.md"),
+            FileChange(status="D ", path="desk/tasks/workflow.md"),
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
             FileChange(status="M ", path="changelog.md"),
         ],
@@ -72,11 +72,11 @@ def test_guard_requires_issue_or_override_for_docs_changes() -> None:
     assert any("docs-only" in error for error in report.errors)
 
 
-def test_guard_requires_issue_or_phase_branch_for_code_changes() -> None:
+def test_guard_requires_task_or_phase_branch_for_code_changes() -> None:
     report = guard_workflow(
         [
             FileChange(status="M ", path="src/wiki_compiler/main.py"),
-            FileChange(status="M ", path="desk/issues/gaps/workflow.md"),
+            FileChange(status="M ", path="desk/tasks/workflow.md"),
             FileChange(status="M ", path="changelog.md"),
         ],
         branch_name="main",

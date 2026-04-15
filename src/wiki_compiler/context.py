@@ -108,7 +108,7 @@ def get_context_bundle(graph_path: Path, request: ContextRequest) -> ContextBund
         edges=edges,
         rationale=rationale,
         scores=scores,
-        active_issues=active_issues,
+        active_tasks=active_tasks,
         checklists=checklists,
         prose=prose,
     )
@@ -179,7 +179,7 @@ def match_active_tasks(
     if not tasks_dir.exists():
         return []
 
-    relevant_issues: list[str] = []
+    relevant_tasks: list[str] = []
     node_names = set()
     for node_id in subgraph_node_ids:
         node_names.add(node_id)
@@ -190,14 +190,14 @@ def match_active_tasks(
             if len(stem) > 3:
                 node_names.add(stem)
 
-    for issue_file in issues_dir.rglob("*.md"):
-        content = issue_file.read_text(encoding="utf-8").lower()
-        rel_issue = issue_file.relative_to(project_root).as_posix()
+    for task_file in tasks_dir.rglob("*.md"):
+        content = task_file.read_text(encoding="utf-8").lower()
+        rel_task = task_file.relative_to(project_root).as_posix()
 
         matched = False
         for name in node_names:
             if name.lower() in content:
-                relevant_issues.append(rel_issue)
+                relevant_tasks.append(rel_task)
                 matched = True
                 break
         if matched:
@@ -208,9 +208,9 @@ def match_active_tasks(
                 t.lower() for t in re.findall(r"[a-z0-9_]+", task_hint) if len(t) > 3
             ]
             if any(term in content for term in terms):
-                relevant_issues.append(rel_issue)
+                relevant_tasks.append(rel_task)
 
-    return sorted(list(set(relevant_issues)))
+    return sorted(list(set(relevant_tasks)))
 
 
 def collect_neighborhood_by_direction(
@@ -308,10 +308,10 @@ def render_markdown_bundle(bundle: ContextBundle) -> str:
     """
     blocks: list[str] = []
 
-    if bundle.active_issues:
+    if bundle.active_tasks:
         blocks.append(
-            "## Relevant Active Issues\n"
-            + "\n".join(f"- `{i}`" for i in bundle.active_issues)
+            "## Relevant Active Tasks\n"
+            + "\n".join(f"- `{i}`" for i in bundle.active_tasks)
         )
 
     if bundle.checklists:
