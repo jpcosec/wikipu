@@ -7,10 +7,10 @@
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 | 1 | ingest | Ingest raw unimplemented source | p0 | none |
-| 2 | cleanse | Resolve Cleansing Gate | p0 | none |
-| 6 | energy | Enforce structural abstraction and drift | p1 | none |
-| 7 | energy | Replace node count heuristic | p1 | none |
-| 8 | audit | Multidimensional styling audit | p1 | none |
+| 7 | energy | Replace node count with redundancy heuristic | p0 | none |
+| 6a | energy | Add descriptive abstraction penalties | p1 | 7 |
+| 6c | energy | Add code-doc drift detection | p1 | 7 |
+| 8 | audit | Multidimensional styling audit | p1 | 7 |
 
 ## Blocked (status=blocked)
 
