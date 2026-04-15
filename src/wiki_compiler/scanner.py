@@ -2,6 +2,7 @@
 Scans Python source code using AST to extract semantics, code structure, and I/O.
 It identifies modules, classes, and functions, generating corresponding KnowledgeNode objects.
 """
+
 from __future__ import annotations
 
 import ast
@@ -31,6 +32,7 @@ IO_LINE_RE = re.compile(
 @dataclass(frozen=True)
 class IgnoreRule:
     """Represents a rule for ignoring files during scanning, based on a glob pattern."""
+
     pattern: str
     reason: str | None
 
@@ -55,13 +57,13 @@ def scan_codebase(
     ignore_rules = load_wikiignore_rules(
         wikiignore_path or project_root / ".wikiignore"
     )
-    
+
     # Use default plugins if none provided
     if plugins is None:
         plugins = [PythonScanner(), TypeScriptScanner()]
-        
+
     nodes: list[KnowledgeNode] = []
-    
+
     # Map extensions to plugins
     extension_map: dict[str, ScannerPlugin] = {}
     for plugin in plugins:
@@ -81,17 +83,17 @@ def scan_codebase(
             if reason is not None:
                 nodes.append(build_ignored_file_node(rel_path, reason))
                 continue
-            
+
             plugin = extension_map.get(file_path.suffix)
             if plugin:
                 nodes.extend(plugin.scan(file_path, project_root))
-                
+
     return nodes
 
 
 class PythonScanner:
     """Scanner plugin for Python source code."""
-    
+
     @property
     def supported_extensions(self) -> set[str]:
         return {".py"}
@@ -102,7 +104,7 @@ class PythonScanner:
 
 class TypeScriptScanner:
     """Scanner plugin for TypeScript source code."""
-    
+
     @property
     def supported_extensions(self) -> set[str]:
         return {".ts", ".tsx"}
@@ -397,7 +399,9 @@ def infer_io_from_ast(tree: ast.AST) -> list[IOFacet]:
     for node in ast.walk(tree):
         if not isinstance(node, ast.Call):
             continue
-        inferred = infer_open_call(node) or infer_pathlib_call(node) or infer_json_call(node)
+        inferred = (
+            infer_open_call(node) or infer_pathlib_call(node) or infer_json_call(node)
+        )
         if inferred is not None:
             ports.append(inferred)
     return ports
@@ -413,9 +417,19 @@ def infer_open_call(node: ast.Call) -> IOFacet | None:
     mode = extract_string(node.args[1]) if len(node.args) > 1 else "r"
     medium = "disk"
     direction: Literal["input", "output"] = "input"
+    schema_ref = None
     if mode and any(flag in mode for flag in ("w", "a", "x")):
         direction = "output"
-    return IOFacet(medium=medium, path_template=path, direction=direction)
+    if path:
+        if path.endswith(".json"):
+            schema_ref = "json"
+        elif path.endswith(".csv"):
+            schema_ref = "csv"
+        elif path.endswith((".yaml", ".yml")):
+            schema_ref = "yaml"
+    return IOFacet(
+        medium=medium, path_template=path, direction=direction, schema_ref=schema_ref
+    )
 
 
 def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
@@ -430,10 +444,22 @@ def infer_pathlib_call(node: ast.Call) -> IOFacet | None:
 
     owner = node.func.value
     # Case 1: Path("foo.txt").read_text()
+    schema_ref = None
     if isinstance(owner, ast.Call) and base_name(owner.func) == "Path" and owner.args:
         path = extract_string(owner.args[0])
         if path:
-            return IOFacet(medium="disk", path_template=path, direction=direction)
+            if path.endswith(".json"):
+                schema_ref = "json"
+            elif path.endswith(".csv"):
+                schema_ref = "csv"
+            elif path.endswith((".yaml", ".yml")):
+                schema_ref = "yaml"
+            return IOFacet(
+                medium="disk",
+                path_template=path,
+                direction=direction,
+                schema_ref=schema_ref,
+            )
 
     # Case 2: p = Path("foo.txt"); p.read_text()
     # We don't have full data flow, but we can at least return a generic disk IO
@@ -446,9 +472,9 @@ def infer_json_call(node: ast.Call) -> IOFacet | None:
     """Infers an I/O port from calls to json.load or json.dump."""
     name = base_name(node.func)
     if name == "json.load":
-        return IOFacet(medium="disk", direction="input")
+        return IOFacet(medium="disk", direction="input", schema_ref="json")
     if name == "json.dump":
-        return IOFacet(medium="disk", direction="output")
+        return IOFacet(medium="disk", direction="output", schema_ref="json")
     return None
 
 

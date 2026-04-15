@@ -1,5 +1,10 @@
 """
 Minimal Energy (ID-2) calculation and reporting.
+
+I/O:
+- Reads knowledge_graph.json (input, json, schema=graph_schema)
+- Reads manifests/*.csv (input, csv, schema=manifest_schema)
+- Writes to terminal/stdout (output, terminal)
 """
 
 from __future__ import annotations
