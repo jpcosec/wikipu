@@ -16,6 +16,8 @@ import networkx as nx
 
 JACCARD_THRESHOLD = 0.7
 BOILERPLATE_THRESHOLD = 0.85
+FILE_LINE_THRESHOLD = 300
+FUNCTION_STATEMENT_THRESHOLD = 30
 
 
 def tokenize(text: str) -> set[str]:
@@ -85,6 +87,53 @@ def detect_redundant_nodes(graph_data: dict) -> tuple[int, float]:
     return redundant_count, boilerplate_ratio
 
 
+def detect_long_files_and_functions(project_root: Path) -> tuple[int, int]:
+    """
+    Detect files exceeding line threshold and functions exceeding statement threshold.
+    Returns (long_file_count, complex_function_count).
+    """
+    long_files = 0
+    complex_functions = 0
+
+    src_dir = project_root / "src"
+    if not src_dir.exists():
+        return 0, 0
+
+    for py_file in src_dir.rglob("*.py"):
+        try:
+            content = py_file.read_text(encoding="utf-8")
+            lines = content.splitlines()
+
+            # Check file length
+            if len(lines) > FILE_LINE_THRESHOLD:
+                long_files += 1
+
+            # Count function definitions and check complexity
+            in_function = False
+            statement_count = 0
+            for line in lines:
+                stripped = line.strip()
+                # Detect function/method definitions
+                if stripped.startswith("def ") or stripped.startswith("async def "):
+                    # Previous function ended
+                    if in_function and statement_count > FUNCTION_STATEMENT_THRESHOLD:
+                        complex_functions += 1
+                    in_function = True
+                    statement_count = 0
+                elif in_function and stripped and not stripped.startswith("#"):
+                    # Count non-empty, non-comment lines as statements
+                    statement_count += 1
+
+            # Check last function
+            if in_function and statement_count > FUNCTION_STATEMENT_THRESHOLD:
+                complex_functions += 1
+
+        except (UnicodeDecodeError, OSError):
+            continue
+
+    return long_files, complex_functions
+
+
 def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> SystemicEnergy:
     """
     Calculates the systemic energy score based on redundancy heuristic.
@@ -133,6 +182,14 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
             graph_data = json.load(f)
         redundant_nodes, boilerplate_ratio = detect_redundant_nodes(graph_data)
 
+    # Detect long files and complex functions
+    long_files, complex_functions = detect_long_files_and_functions(project_root)
+
+    # Abstraction penalties
+    long_file_penalty = long_files * 5.0
+    complex_function_penalty = complex_functions * 3.0
+    abstraction_energy = long_file_penalty + complex_function_penalty
+
     # Redundancy-based energy (replaces raw node/edge count)
     redundancy_energy = redundant_nodes * 10.0
     boilerplate_energy = boilerplate_ratio * 50.0
@@ -150,6 +207,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
 
     total_score = (
         structural_energy
+        + abstraction_energy
         + node_energy
         + edge_energy
         + violation_energy
@@ -169,7 +227,10 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         agent_violations=agent_violations,
         redundant_nodes=redundant_nodes,
         boilerplate_ratio=boilerplate_ratio,
+        long_files=long_files,
+        complex_functions=complex_functions,
         structural_energy=structural_energy,
+        abstraction_energy=abstraction_energy,
         violation_energy=violation_energy,
         perturbation_energy=perturbation_energy + gate_energy,
         agent_violation_energy=agent_violation_energy,

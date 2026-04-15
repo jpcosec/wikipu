@@ -404,6 +404,9 @@ def main() -> None:
                     f"- **Structural (Redundancy)**: {ce.structural_energy:.2f} (r={ce.redundant_nodes}, b={ce.boilerplate_ratio:.2f})"
                 )
                 print(
+                    f"- **Abstraction (Complexity)**: {ce.abstraction_energy:.2f} (f={ce.long_files}, c={ce.complex_functions})"
+                )
+                print(
                     f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})"
                 )
                 print(

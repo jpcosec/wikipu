@@ -582,9 +582,20 @@ class SystemicEnergy(BaseModel):
         default=0.0, description="Ratio of boilerplate to unique content."
     )
 
+    # Descriptive abstraction penalties
+    long_files: int = Field(
+        default=0, description="Number of files exceeding line threshold."
+    )
+    complex_functions: int = Field(
+        default=0, description="Number of functions exceeding statement threshold."
+    )
+
     # Heuristic breakdown
     structural_energy: float = Field(
         description="Energy from redundancy and boilerplate (replaces raw node/edge count)."
+    )
+    abstraction_energy: float = Field(
+        default=0.0, description="Energy from descriptive abstraction penalties."
     )
     violation_energy: float = Field(
         description="Energy contributed by compliance debt."
