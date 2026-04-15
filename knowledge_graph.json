@@ -523,22 +523,12 @@
         },
         "edges": [
           {
-            "target_id": "file:src/wiki_compiler/__pycache__/__init__.cpython-312.pyc",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
             "target_id": "file:src/wiki_compiler/__pycache__/__init__.cpython-313.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
           {
             "target_id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "file:src/wiki_compiler/__pycache__/auditor.cpython-312.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -559,11 +549,6 @@
           },
           {
             "target_id": "file:src/wiki_compiler/__pycache__/context.cpython-313.pyc",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "file:src/wiki_compiler/__pycache__/contracts.cpython-312.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -614,11 +599,6 @@
           },
           {
             "target_id": "file:src/wiki_compiler/__pycache__/ingest.cpython-313.pyc",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "file:src/wiki_compiler/__pycache__/main.cpython-312.pyc",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -748,7 +728,7 @@
             "metadata": {}
           },
           {
-            "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_issue",
+            "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_task",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -802,9 +782,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "7a104e644948832ee507d60ade017b9a8972ffc8",
+          "blob_sha": "e6447345c90a2cbdaae2bdab4e5cce6c24b517f9",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "6816677623ef455b73b329c354cc23b0472af6eb",
+          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -899,9 +879,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "565ebddf55716511bc7e4d379a0de6c495594f74",
+          "blob_sha": "3ce953a2e8bbd9f1e3f163f7406cbba87260f3ea",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
+          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1185,9 +1165,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "42c9195c58c14d150ab05cb198d8829b97793649",
+          "blob_sha": "e49e9debd194d7da71ad049c6c9f82bc5e0082ef",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "a7898c1a6b00463c6df2e6e09014d27061a3b5f4",
+          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1215,7 +1195,7 @@
             "metadata": {}
           },
           {
-            "target_id": "code:src/wiki_compiler/context.py:match_active_issues",
+            "target_id": "code:src/wiki_compiler/context.py:match_active_tasks",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -1276,9 +1256,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "263c18ad00b456bf87db01f7b9495d4383819e44",
+          "blob_sha": "9b6d58c670b2089b493a009d3475549b6ccb9583",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "6eb1e8c8a8e68b3edec098b18ae1fc9dee2081fd",
+          "last_modified_commit": "e390006d8eec62216b62c9d43bad5912c838fac9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1497,9 +1477,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "955a8cfaf913c615a39dd91c590f3ca1e908f5a0",
+          "blob_sha": "ddaf1494a0bb81f9710e9b8529b1ed987f154dc7",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
+          "last_modified_commit": "e390006d8eec62216b62c9d43bad5912c838fac9",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1556,9 +1536,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "d029903287f364a7fcbf5f8025ffc33bf0963e9a",
+          "blob_sha": "1fd99567872813bdba916d05b3551a8353542319",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1639,9 +1619,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "512178600514592adaa7b0bbbdbbdc07c8731a47",
+          "blob_sha": "83e7545b4129c950e13dd988230c299b9715bda3",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1704,9 +1684,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "058fbc05f6cd687abc55731005e3fce16c476296",
+          "blob_sha": "2958b39159a48b03b007a353c725c3e75697e2e7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2241,9 +2221,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "2b09f1949a44f15c0e6ee0519da6dabf3f65985b",
+          "blob_sha": "345265a159d3a09c9a4cbbacaf2b637d6b385a1c",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2558,9 +2538,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "7dcf91a9bfbf7a182ab57391083e3a383821e9ed",
+          "blob_sha": "e93947d7abf9210c1d7b421c244033735264c5ef",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "d539130426109687400661c4dc89a6ee2f012739",
+          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2862,9 +2842,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "bc4fcff579c89413364333b44290375e8ea0691c",
+          "blob_sha": "3a533ac3c4c7c136ad25950420551cd02f8c864f",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "6ca530679e15eb4a4e2276ae709498b713b66034",
+          "last_modified_commit": "6d706d4002add8704cf2d40332e9dd87a4ae56c0",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3001,9 +2981,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "b79760d494f9dbb2cdb601d92c1e7e8b1d6886aa",
+          "blob_sha": "189639fdbe530b149587a1392b58e7154691a10e",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3305,9 +3285,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "bec6de3432bde8f49cce6777ab88b3633f421980",
+          "blob_sha": "142d73338fe81bdbf8f79656c941725d283670dc",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3468,41 +3448,15 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "5df6a5c2a2431cc9570f87bbe9431695b2271961",
+          "blob_sha": "dc723f6f5149e552dc93fb37d2f3223726833497",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "b53ea616bbaa8be705d8cfcf9f3ba161bab2cb7e",
+          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
         "source": null
       },
       "id": "file:src/wiki_compiler/workflow_guard.py"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "file:src/wiki_compiler/__pycache__/__init__.cpython-312.pyc",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "6cf080afcdd27553d3e31dc72405e2b7c44e2c30",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
-        },
-        "source": null
-      },
-      "id": "file:src/wiki_compiler/__pycache__/__init__.cpython-312.pyc"
     },
     {
       "type": "concept",
@@ -3520,7 +3474,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ae74ce3ae8c8cd377addd89199dc86450b5ebf94",
+          "blob_sha": "448b8135364095a5cacf354a739752560a6d0540",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3546,7 +3500,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "cffd678335687b05e7a3e592217c067f5b179111",
+          "blob_sha": "2e1adcaeb5bb9a765bd4ea4a00ac1b63833061a1",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3555,32 +3509,6 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "file:src/wiki_compiler/__pycache__/auditor.cpython-312.pyc",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "bf1c5d7eac14e1bda074b41ca02e5a888c2bc494",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
-        },
-        "source": null
-      },
-      "id": "file:src/wiki_compiler/__pycache__/auditor.cpython-312.pyc"
     },
     {
       "type": "concept",
@@ -3598,7 +3526,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3724d6df17dfe947cbf22d0371b04fe28cc60195",
+          "blob_sha": "c1afb41b3727467476faa7a86662d6372e178cad",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3624,7 +3552,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "d345953380a11cf5199569f14e9221c21b61c7c5",
+          "blob_sha": "7c636a327c56596a4b7841bccb0389667db602ba",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3650,7 +3578,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f0301d40d3a835404fa6e29ed3665eaec77fa9a3",
+          "blob_sha": "4cc4e01cb8c5f6426f0bdf78ba18482a9f9ad7f7",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3676,7 +3604,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ae14491ef59a17cede83d372225ccf5cb93a0244",
+          "blob_sha": "565e9d237bfe822d259afa92f83201a1745f67c4",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3685,32 +3613,6 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/__pycache__/context.cpython-313.pyc"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "file:src/wiki_compiler/__pycache__/contracts.cpython-312.pyc",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "aef98622d4b4f27383dfc10baa0aa0b10ee8b0f2",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
-        },
-        "source": null
-      },
-      "id": "file:src/wiki_compiler/__pycache__/contracts.cpython-312.pyc"
     },
     {
       "type": "concept",
@@ -3728,7 +3630,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4308ce573ef05f0a84da825f4333b4456a611542",
+          "blob_sha": "23ff0190d3791c17c4404a4ba0b43b683da9b3f4",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3754,7 +3656,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0d2af9584e668e930b16754e6bf2e5b53d6c1ec9",
+          "blob_sha": "c26a151956b1e50ad76627287b189406fc752a80",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3780,7 +3682,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e262bcf64154f29acabef7bf568af38d8a2298b1",
+          "blob_sha": "afc7c42256462b43c795c4e34bafe62165f548bf",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3806,7 +3708,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b048100e2a7f29b19631de3c049fb1c8d6b3c97d",
+          "blob_sha": "47e36b07998505e513888a70d3010cbcb407958c",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3832,7 +3734,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "6ff450873a7edfe50dcb8dbb2157b23f9d122e19",
+          "blob_sha": "f646c690c32565f5c4691920d467b57d667e3e3b",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3858,7 +3760,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3847c54da3617a6d5f4eee90099146f559eb8309",
+          "blob_sha": "59a217f579faa965cf382d40949eab2d1462838a",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3884,7 +3786,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "88bed36e4fd768cfe9d9dba087fae2421feef7e4",
+          "blob_sha": "29371111f4d95d57624aac7e37861dba607233a6",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3910,7 +3812,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "52899c2b2f0ac708b4bc5e4fec98228dce4fa582",
+          "blob_sha": "4d0f7227739c2887d23b18b35d5d9cd7a914dd79",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3936,7 +3838,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "ed4e37223a6df305aa1d150028ef12422585325c",
+          "blob_sha": "81dd359c6a26aa7facc75deb1a61b066c2ac27cd",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3962,7 +3864,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b07b6872ca856f398ef03914e090715b2065a8d4",
+          "blob_sha": "fd69f2dddc56b1651ea349f40960236ae593eb00",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3971,32 +3873,6 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/__pycache__/ingest.cpython-313.pyc"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "file:src/wiki_compiler/__pycache__/main.cpython-312.pyc",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "e43c709a90796357bb37b6d5062e7dde5a45722e",
-          "created_at_commit": null,
-          "last_modified_commit": null,
-          "last_modified_author": null,
-          "status": "untracked"
-        },
-        "source": null
-      },
-      "id": "file:src/wiki_compiler/__pycache__/main.cpython-312.pyc"
     },
     {
       "type": "concept",
@@ -4014,7 +3890,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "61008fd03c09a5644e4c0b81b681651e78553a91",
+          "blob_sha": "54fe9a2761a9688048f801491c93709db4a9ff92",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4040,7 +3916,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b515cba241d26a7bb394ba35a81bf224c0e117a1",
+          "blob_sha": "6bc3e63fb31153b58080d2dce048bb02bd6e575b",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4066,7 +3942,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0d535e8502a49bab3d1aded00edd24a7d7a285d5",
+          "blob_sha": "8ce9e3b5cc4d9396ba4132797537289f206668ce",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4092,7 +3968,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "faa104f91d4fda1818a6b918c4fd6a98e749ff95",
+          "blob_sha": "09bb71b870d2cdd3a3f66d83001370169b6e44ca",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4118,7 +3994,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "794b57c68bd55dd7e91a29784c8ebbe2200da7de",
+          "blob_sha": "197edb1444cd43ceea856a8dd2a537b9e02bd363",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4144,7 +4020,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "fa831f99ceda48ff97d2fe7db2ca5b5dec0636e5",
+          "blob_sha": "c4848768b9bc37c8c1d924ec9d7f1cfa95186e51",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4170,7 +4046,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "77d85cd2271d18567c36cfd608a9101803144eb5",
+          "blob_sha": "8842851cf428b893220a831f2794f2862836bcbf",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4196,7 +4072,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5ce5b08b1fb0f8c1778c26660a784134a6613175",
+          "blob_sha": "53e197567b782e6fcc5a1b9e8256ab10468b79af",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4222,7 +4098,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3fa4947648d06605870f9d890a93c229daa3702b",
+          "blob_sha": "42b3bdd4fb006c00f2608ce031ab09283ff3a500",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4248,7 +4124,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "85c4f326e0d0dad6b99be2632c37ebde4b043ece",
+          "blob_sha": "bdf3f845638b6fda9aeee3a6f6fff51a47c29807",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4274,7 +4150,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5fedfceeae686dd55571c5c680b3b873d2f177e7",
+          "blob_sha": "17b5122331442637e12ca50d5a90b1b26126d231",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4300,7 +4176,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "65bb9a04701dda19061ba66d852c64d7866d4a4b",
+          "blob_sha": "1eabc74a5f77ca8cfaa1b777fc2c62146c21613d",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4326,7 +4202,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e4e4cf1c7aa18e675ac7fea5f612d25be8ff51be",
+          "blob_sha": "62cf3919a42bbac797d2998311570562c559abbd",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4352,7 +4228,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "acba0ae5955864bb2f77a58dfc5e2b9479713f7c",
+          "blob_sha": "11f1000e88fda22903170d10d3439e32b1b6c0e9",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4378,7 +4254,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "11f27e21f4fade98c5d01c3563d1c9718e632420",
+          "blob_sha": "0591973666f400d872df329d2e25664f47faa2d1",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4404,7 +4280,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "36df445c7eac80964e89cf629987327c99ac0deb",
+          "blob_sha": "e04a0ccfa3616d4e9a8e1e75326bc2b01ab399b5",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4672,40 +4548,10 @@
             "target_id": "doc:wiki/reference/cli/scaffold.md",
             "relation_type": "contains",
             "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/gate_loop.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/human_contributor.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/llm_agent.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/socratic.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/trail_collect.md",
-            "relation_type": "contains",
-            "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "The House Rules define the invariant constraints that govern the entire `wikipu` ecosystem \u2014 from identity and zone separation to code style and wiki authoring. Every rule exists to keep one or more of the system's five load-bearing elements (Autopoiesis, Wiki, Knowledge Graph, Git, CLI) coherent and non-overlapping.",
+          "intent": "The canonical identity rules for the Wikipu ecosystem. This document defines what this system *is* \u2014 the invariant network of constraints that must hold regardless of what content the system contains. Rules are organized by layer. Each rule carries a `rule_id` for machine reference, a description, and the enforcement mechanism that checks it.",
           "raw_docstring": null
         },
         "ast": null,
@@ -4718,9 +4564,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4dbcc3ada22c96208f09bbd3e8688e143e3fff3c",
+          "blob_sha": "a65d08acf07349c5c7220023f721c1a9b128fff7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "24a3ad7b269dfc95357145c982eb6f1bbafbfd21",
+          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4784,9 +4630,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8565e0b2e78b2ccce6b91eff891c25b2ec2b3630",
+          "blob_sha": "489832996454fdf4920ca7ebc883a129e7eedbeb",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4891,36 +4737,6 @@
             "target_id": "doc:wiki/reference/cli/validate_wiki.md",
             "relation_type": "contains",
             "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/gate_loop.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/llm_agent.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/human_contributor.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/socratic.md",
-            "relation_type": "contains",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/reference/protocols/trail_collect.md",
-            "relation_type": "contains",
-            "metadata": {}
           }
         ],
         "semantics": {
@@ -4937,7 +4753,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1c82c97fed5540028509046dc13d295ab3d34cef",
+          "blob_sha": "dcf968db145fa622dd66f5c567dbcd1823704eae",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5074,9 +4890,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "4441334e458efa6b0b56bbda1edb7cd48e466a9d",
+          "blob_sha": "08abb454ae927e7a4b5a8b5f50b642c844a6fe06",
           "created_at_commit": "ef0127ae5cca90d9ad0bb283ca3fbcb66c01bfea",
-          "last_modified_commit": "f2ad29bbc969129b54101a46e114cad96469ee2b",
+          "last_modified_commit": "85868251097c871206b31f6ea2909fbf69723007",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -5146,17 +4962,13 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "3cb19c62eeb37bb375d71939803d43a18ffc1fec",
+          "blob_sha": "9b36b53c3544484655fa7a1263aa411076765fa3",
           "created_at_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
           "last_modified_commit": "0eaf5fccf631311be319d70d3adfc23d97d5034e",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -5699,134 +5511,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/claw_session.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/claw_session.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "\u256d\u2500\u2500\u2500 Claude Code v2.1.96 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "9280466ddcc011ba10ad2efdde4e14303eeb4f51",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/claw_session.md",
-          "source_hash": "0ef760dbcb681b6148b3546a9065d919e2eec7c5432c417a07c7213bb1ef8ce0",
-          "compiled_at": "2026-04-10T17:47:33.726998",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/claw_session.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/claw_session.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/claw_session.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/cleansing_candidates_by_node_type.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/cleansing_protocol.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "This node defines and documents the cleansing candidates by node type.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "20adc95dc7a1357e1f38e697167b0102e7470f84",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/cleansing_protocol.md",
-          "source_hash": "b5b3922be9089eb922885b17d43a45d212f4078f7ed6c85a899554499a6eead5",
-          "compiled_at": "2026-04-14T16:50:28.657812",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/cleansing_candidates_by_node_type.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/cleansing_protocol.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/cleansing_protocol.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/core_idea.md",
           "node_type": "concept"
         },
@@ -6124,6 +5808,26 @@
     },
     {
       "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/cleansing_protocol.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/cleansing_protocol.md"
+    },
+    {
+      "type": "concept",
       "status": "implemented",
       "schema": {
         "identity": {
@@ -6185,50 +5889,6 @@
         "source": null
       },
       "id": "raw:raw/methodology_synthesis.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/facet_2_documentation_lifecycle.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Question:** How does an idea move from thought to plan to code to history?",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "06d6246d8b0077895265fb3d937d64ce16579648",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis.md",
-          "source_hash": "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34",
-          "compiled_at": "2026-04-14T16:50:28.661712",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/facet_2_documentation_lifecycle.md"
     },
     {
       "type": "concept",
@@ -6367,50 +6027,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/facet_6_debt_topology.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Question:** How is deferred work stored, aged, and promoted? What prevents accumulation?",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "c4893580e09839009c0bc307ce9396acf5f5796a",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis.md",
-          "source_hash": "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34",
-          "compiled_at": "2026-04-14T16:50:28.661898",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/facet_6_debt_topology.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/facet_7_code_style_axioms.md",
           "node_type": "concept"
         },
@@ -6493,50 +6109,6 @@
         }
       },
       "id": "doc:wiki/concepts/facet_8_inter_project_divergence.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/facet_9_minimum_seed.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Question:** What is the smallest set of rules that generates the rest?",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "ecfba9debe101211da576bb46d7c829b19ddd465",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis.md",
-          "source_hash": "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34",
-          "compiled_at": "2026-04-14T16:50:28.662031",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/facet_9_minimum_seed.md"
     },
     {
       "type": "concept",
@@ -6931,134 +6503,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/linked_todos.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_extended.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "- `src/path/to/file.py` \u2014 `# TODO(future): description`",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "9aee2de08c2b4a6d5c77a7fbf4f2e875601bc562",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_extended.md",
-          "source_hash": "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30",
-          "compiled_at": "2026-04-14T16:50:28.663514",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/linked_todos.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/methodology_synthesis_extended.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/methodology_synthesis_extended.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/methodology_synthesis_addendum.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_addendum.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Questions:** Project initialization / Navigation philosophy / Decision thresholds / Context router for agents / Real future_docs examples",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "36ef50fdba822314e425db57edff2f3a07c9fe4a",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_addendum.md",
-          "source_hash": "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504",
-          "compiled_at": "2026-04-14T16:50:28.662471",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/methodology_synthesis_addendum.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/methodology_synthesis_addendum.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/methodology_synthesis_addendum.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/methodology_synthesis_cross_project_analysis.md",
           "node_type": "concept"
         },
@@ -7144,47 +6588,23 @@
     },
     {
       "type": "concept",
-      "status": "implemented",
+      "status": "unknown",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/naming_note.md",
+          "node_id": "raw:raw/methodology_synthesis_extended.md",
           "node_type": "concept"
         },
-        "edges": [
-          {
-            "target_id": "raw:raw/board_gate_pattern.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The current `plan_docs/issues/Index.md` should be renamed to `desk/issues/Board.md` when the desk zone is implemented. The `issues_guide.md` should be updated to reflect the Board terminology. The Gate pattern is new and has no existing implementation.",
-          "raw_docstring": null
-        },
+        "edges": [],
+        "semantics": null,
         "ast": null,
         "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
+        "compliance": null,
         "adr": null,
         "test_map": null,
-        "git": {
-          "blob_sha": "1d1e378a46d24620509ba413673a32991179a374",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/board_gate_pattern.md",
-          "source_hash": "5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06",
-          "compiled_at": "2026-04-14T16:50:28.657307",
-          "compiled_from": "wiki-compiler"
-        }
+        "git": null,
+        "source": null
       },
-      "id": "doc:wiki/concepts/naming_note.md"
+      "id": "raw:raw/methodology_synthesis_extended.md"
     },
     {
       "type": "concept",
@@ -7317,50 +6737,6 @@
         }
       },
       "id": "doc:wiki/concepts/phase_2_inject_facets_semantics.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/phase_3_query_for_documentation_quality.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/graph_construction_process.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The structured graph can now be interrogated as a cross-reference engine.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "dbda99ca6b376eb05cfa9a7ec44b1f2a3111bbf3",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/graph_construction_process.md",
-          "source_hash": "5cce04b66b0ac2624ccae799d5a8d22e00e6b9dd15ccc31cb63eb7dcb12cfaa9",
-          "compiled_at": "2026-04-14T16:50:28.660841",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/phase_3_query_for_documentation_quality.md"
     },
     {
       "type": "concept",
@@ -7675,70 +7051,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/problem_statement.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/proposed_zone_reorganization.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The current `plan_docs/` structure conflates issue tracking with active task management, leading to confusion about what constitutes \"blocking work\" vs. \"work in progress.\"",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "45165cf1ccc4a91b73e5edd19c8ecff564213bb6",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/proposed_zone_reorganization.md",
-          "source_hash": "d515fb1307a63d9ce25d8a0f828317f96106499f1b9ba129d60fb96b9787198b",
-          "compiled_at": "2026-04-11T02:42:45.651704",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/problem_statement.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/proposed_zone_reorganization.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/proposed_direction.md",
           "node_type": "concept"
         },
@@ -7821,6 +7133,26 @@
         }
       },
       "id": "doc:wiki/concepts/q1_project_initialization_ritual_what_s_the_canonical_starting_state.md"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "raw:raw/methodology_synthesis_addendum.md",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "raw:raw/methodology_synthesis_addendum.md"
     },
     {
       "type": "concept",
@@ -7909,94 +7241,6 @@
         }
       },
       "id": "doc:wiki/concepts/q2_navigation_philosophy_how_do_you_find_what_you_need.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_extended.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "This node defines and documents the q2 what document templates exist for future docs plan docs docs what types exist.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "6a2b9d1fe2031403e4eb0ccefe4d5351ba49cfe4",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_extended.md",
-          "source_hash": "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30",
-          "compiled_at": "2026-04-14T16:50:28.663386",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_addendum.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**future_docs \u2192 plan_docs (when to promote):**",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "963912c41307e57f8edf0b13e2b3547ceeb8ff32",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_addendum.md",
-          "source_hash": "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504",
-          "compiled_at": "2026-04-14T16:50:28.662658",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md"
     },
     {
       "type": "concept",
@@ -8173,50 +7417,6 @@
         }
       },
       "id": "doc:wiki/concepts/q6_how_is_git_used.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/q7_what_weaknesses_exist_across_implementations.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_extended.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "Discovered from explicit critique documents and diagnostic files \u2014 not inferred.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "44a3d29b290355534ca485178ff72b890dfeb77f",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_extended.md",
-          "source_hash": "0eaf49dde8b77f6999c8e390207549968bc290d82d4774999f7136fecc61fb30",
-          "compiled_at": "2026-04-14T16:50:28.663773",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/q7_what_weaknesses_exist_across_implementations.md"
     },
     {
       "type": "concept",
@@ -8615,50 +7815,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/renaming_from_plan_docs.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/desk_zone.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "`plan_docs/` \u2192 `desk/`",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "f1dcd1d69931ab87d42c0a1ec7c05632b179fb2c",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/desk_zone.md",
-          "source_hash": "8719d650771e57b8cb2c6dda66c04511f3223100d4954abb4fa2c1d02fcb9213",
-          "compiled_at": "2026-04-14T16:50:28.658573",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/renaming_from_plan_docs.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/routing_matrix_vs_graph.md",
           "node_type": "concept"
         },
@@ -8811,50 +7967,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_addendum.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Addition to the 5 axioms:**",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "5a8a535aa1ada1795082742711ee164bb92e7ed5",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_addendum.md",
-          "source_hash": "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504",
-          "compiled_at": "2026-04-14T16:50:28.662811",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/the_auditor_s_role.md",
           "node_type": "concept"
         },
@@ -8981,50 +8093,6 @@
         }
       },
       "id": "doc:wiki/concepts/the_collection_step.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/the_ephemeral_contract.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/desk_zone.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "Everything on the desk is temporary by design. The healthy state is: item resolved \u2192 file deleted \u2192 changelog updated \u2192 only history in git.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "f0e2176f5952f725352f1b95412e78f227142cfc",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/desk_zone.md",
-          "source_hash": "8719d650771e57b8cb2c6dda66c04511f3223100d4954abb4fa2c1d02fcb9213",
-          "compiled_at": "2026-04-14T16:50:28.658482",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/the_ephemeral_contract.md"
     },
     {
       "type": "concept",
@@ -9471,70 +8539,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/system_concept.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "---",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "78354c59668a3bc7a3c6e92dd92e9a868699d758",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/system_concept.md",
-          "source_hash": "1b44fcf0a25e5628440aa7a45a1ca2873540bf3607cc12b6f41476a6505101d8",
-          "compiled_at": "2026-04-14T16:50:28.665214",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/system_concept.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/system_concept.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/what_belongs_on_the_desk.md",
           "node_type": "concept"
         },
@@ -9559,9 +8563,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b15b939e33eb4490896b32b4eb9d7cf3354519ee",
+          "blob_sha": "a597a7b365f3d0974d956699add1b357231e3107",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -9573,50 +8577,6 @@
         }
       },
       "id": "doc:wiki/concepts/what_belongs_on_the_desk.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/what_doesn_t_fit_any_axiom_yet.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**The critique pattern (cotizador mixin-arch/03_critique.md):** The codebase has a practice of writing explicit architectural critiques \u2014 documents that identify the failure modes, hidden coupling, and scalability cliffs of current patterns BEFORE they become problems. This is distinct from future_docs/ (which tracks known deferred work) and ADRs (which record decisions). It's a structural risk register.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "ba8d9b52c1521e5615bd3d58f86be4a42fb3cd2b",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis.md",
-          "source_hash": "509baf32ca0ea70f59fdc2382e05095dde9fba07ad7092c46d49ecdca431bc34",
-          "compiled_at": "2026-04-14T16:50:28.662075",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/what_doesn_t_fit_any_axiom_yet.md"
     },
     {
       "type": "concept",
@@ -9667,50 +8627,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/what_is_exempt.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/cleansing_protocol.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "Three zones are excluded from cleansing scrutiny:",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "b932f702328077f7dccbade59d97cb9274edb92e",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/cleansing_protocol.md",
-          "source_hash": "b5b3922be9089eb922885b17d43a45d212f4078f7ed6c85a899554499a6eead5",
-          "compiled_at": "2026-04-14T16:50:28.657761",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/what_is_exempt.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/what_it_is_not.md",
           "node_type": "concept"
         },
@@ -9755,50 +8671,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/autopoiesis_system.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The Spanish Wikipedia definition is the most precise:",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "3380a68283177a05c663a0032d87f967a291b389",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/autopoiesis_system.md",
-          "source_hash": "708ee8f8d07379bae69e1774c1cba81002bcbb923d90699210e3c3a09ebf5ea0",
-          "compiled_at": "2026-04-14T16:50:28.656613",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/concepts/what_this_enables.md",
           "node_type": "concept"
         },
@@ -9837,50 +8709,6 @@
         }
       },
       "id": "doc:wiki/concepts/what_this_enables.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/what_to_preserve_from_the_matrix_model.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_graph_routing.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The matrix's real contribution is not the coordinate system \u2014 it is the **separation of temporal state**. `runtime` vs. `plan` as a navigation axis is valuable regardless of graph or matrix.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "8ad9da067215b8758cd97314782ef3c727d7b212",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_graph_routing.md",
-          "source_hash": "f3dc9e1e39adb5e4a5de79310c1d485370d2a57b60fefe5d804c156f6e25fe2e",
-          "compiled_at": "2026-04-14T16:50:28.664247",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/what_to_preserve_from_the_matrix_model.md"
     },
     {
       "type": "concept",
@@ -9999,9 +8827,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b2b3501efeca5750d6269c0809c2592ea6d1c2d1",
+          "blob_sha": "a9570cb3dcd1417996740aa6f9d7524f594696aa",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10087,9 +8915,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1e31b8ac659733339024ea4e2ebbacc3a545defb",
+          "blob_sha": "be4cd3c56e1ed8e2ff1b931508f2dee009f43c00",
           "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
+          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10101,50 +8929,6 @@
         }
       },
       "id": "doc:wiki/concepts/why_desk.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/why_two_constructs.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/board_gate_pattern.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The Board and the Gate solve different problems:",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "b248478d08bfab29722671550735ee4e0d0e5830",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/board_gate_pattern.md",
-          "source_hash": "5ddbb160292bc8387a9d70b4d3060c3c843651e5af5ef68e156bab47a0701c06",
-          "compiled_at": "2026-04-14T16:50:28.657267",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/concepts/why_two_constructs.md"
     },
     {
       "type": "concept",
@@ -10189,422 +8973,6 @@
         }
       },
       "id": "doc:wiki/concepts/wikipedia_definition_april_2026.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/1_ci_cd_enforcement.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Idea:** The wiki_compiler runs as a required check in every Pull Request. If the compliance score decreases, the merge is blocked.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "b446a09ded578eebe1694fd4acec6a8a41ba7cd7",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666169",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/1_ci_cd_enforcement.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "raw:raw/unimplemented_from_sourcetalk.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/2_domain_glossary.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Idea:** A central file (e.g., `docs/domain_glossary.yaml`) that unifies synonyms across modules. If module A calls it \"JobPosting\" and module B calls it \"Vacancy\", the graph should know they're the same concept.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "d4fb7a2c217a0d1540c7cc631eb3cacfd888cf6f",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666214",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/2_domain_glossary.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Idea:** Before any TopologyProposal is generated, first query the graph to see if a simpler structure already exists that satisfies the requirement. If a match exists, extend it rather than creating new elements.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "33702b24d15648b787c2452911d94f7282ed4287",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666258",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**Idea:** A concrete system prompt that gives the LLM the \"librarian\" role \u2014 telling it how to navigate the graph, synthesize answers, and audit compliance.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "2115f047323f677b6e41024443e5b5522c328332",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666301",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/c_mo_leer_el_grafo.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "- Todo es un `KnowledgeNode` con una `SystemIdentity` \u00fanica (ej. `file:src/ai/graph.py`).",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "aeadd96eaf7e96e2ce2375b10377765b81437dee",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666386",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/c_mo_leer_el_grafo.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/reglas_de_interacci_n.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "- **Si el usuario quiere crear un feature nuevo:** Busca nodos con `status=\"planned\"` en el `ComplianceFacet` para ver si ya hay trabajo previo, o pide crear la entrada en `future_docs/` primero.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "2794241ee3ce614870c695a1b0ebb7cd2b7cb5b4",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666429",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/reglas_de_interacci_n.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/summary.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "| Item | Proposed | Implemented |",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "7a002bbc2f4cf997491098bdc05c99d08269475b",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666469",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/summary.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/tu_misi_n.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "1. **Navegar:** Cuando el usuario pregunte sobre arquitectura, flujo de datos o estado de un m\u00f3dulo, consulta los `KnowledgeNode` y sigue sus `edges` (aristas).",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "cc3ce2e0e02213e9ea43f42be35d6d19b4a4933f",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666345",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/tu_misi_n.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/unimplemented_from_sourcetalk.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "These concepts were discussed in the original conversation but never made it into the implementation.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "00c1869ac479e5bf71aa1b8d006f71dfd492dd17",
-          "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "9a45a02d1e3de4f909ff0acae6e3da2817eb5b88",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/unimplemented_from_sourcetalk.md",
-          "source_hash": "1a7f8c9ba485c0342c7bddb0d133479345f1edd3e7047103e0544db195914f61",
-          "compiled_at": "2026-04-14T16:50:28.666115",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md"
     },
     {
       "type": "how_to",
@@ -10706,9 +9074,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "76e481cfee9367aaae381cbf73061afe10dc976c",
+          "blob_sha": "41cb82563c68dfebb33280b069df996052a046ca",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10726,7 +9094,7 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable issue file before any code or wiki node is touched. A plan is ephemeral by design \u2014 it lives in `plan_docs/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.",
+          "intent": "Planning in Wikipu means converting a perceived gap or requirement into a discrete, independently completable task file before any code or wiki node is touched. A plan is ephemeral by design \u2014 it lives in `desk/tasks/`, is deleted when resolved, and leaves a permanent trace only through the changelog and any resulting ADRs.",
           "raw_docstring": null
         },
         "ast": null,
@@ -10739,9 +9107,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "5491f51464bc228100444933b45b5b13d46c0616",
+          "blob_sha": "3f38f6e2442024567b188f3793917c42daeadab2",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10772,9 +9140,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "de59ad16dd194c408ed478d7c1c9747c998ea113",
+          "blob_sha": "78c31d2f4f8c8dad279c01da9f1197cd8d1e998c",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10838,9 +9206,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "8cb5e785195af7d01b57a25f5c6b5eab10e6320d",
+          "blob_sha": "a714ed3fcc7f387249731b320d0d142654942014",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -11415,126 +9783,6 @@
       "id": "doc:wiki/reference/cli/validate_wiki.md"
     },
     {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/gate_loop.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/gate_loop.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/llm_agent.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/llm_agent.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/human_contributor.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/human_contributor.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/socratic.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/socratic.md"
-    },
-    {
-      "type": "concept",
-      "status": "unknown",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/reference/protocols/trail_collect.md",
-          "node_type": "concept"
-        },
-        "edges": [],
-        "semantics": null,
-        "ast": null,
-        "io_ports": [],
-        "compliance": null,
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/reference/protocols/trail_collect.md"
-    },
-    {
       "type": "code_construct",
       "status": "implemented",
       "schema": {
@@ -11610,8 +9858,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",",
-          "raw_docstring": "Load graph, filter nodes whose node_id starts with \"doc:wiki/drafts/\",\nrun quality checks, return ranked list (highest quality first).\n\nQuality signals:\n  +1  non-empty abstract (not the fallback \"No abstract provided.\")\n  +1  abstract length > 1 sentence\n  +1  node_type is not the fallback default (\"file\")\n  +1  source file still exists on disk\n\nEach result: {\"node_id\": str, \"score\": int, \"issues\": list[str]}"
+          "intent": "Load graph, filter nodes whose node_id starts with \"doc:desk/drafts/\",",
+          "raw_docstring": "Load graph, filter nodes whose node_id starts with \"doc:desk/drafts/\",\nrun quality checks, return ranked list (highest quality first).\n\nQuality signals:\n  +1  non-empty abstract (not the fallback \"No abstract provided.\")\n  +1  abstract length > 1 sentence\n  +1  node_type is not the fallback default (\"file\")\n  +1  source file still exists on disk\n\nEach result: {\"node_id\": str, \"score\": int, \"issues\": list[str]}"
         },
         "ast": {
           "construct_type": "function",
@@ -11643,8 +9891,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Move draft node file from wiki/drafts/ to dest path in wiki/,",
-          "raw_docstring": "Move draft node file from wiki/drafts/ to dest path in wiki/,\nrewrite node_id in frontmatter to match new path.\nTrigger is external \u2014 caller runs wiki-compiler build after."
+          "intent": "Move draft node file from desk/drafts/ to dest path in wiki/,",
+          "raw_docstring": "Move draft node file from desk/drafts/ to dest path in wiki/,\nrewrite node_id in frontmatter to match new path.\nTrigger is external \u2014 caller runs wiki-compiler build after."
         },
         "ast": {
           "construct_type": "function",
@@ -11715,7 +9963,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> None"
+            "query_main(graph_path: Path, query_type: str, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, tasks: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> None"
           ],
           "dependencies": []
         },
@@ -11949,31 +10197,18 @@
       "id": "code:src/wiki_compiler/artifact_validation.py:validate_all_artifacts"
     },
     {
-      "type": "code_construct",
-      "status": "implemented",
+      "type": "concept",
+      "status": "unknown",
       "schema": {
         "identity": {
           "node_id": "code:src/wiki_compiler/artifact_validation.py:_validate_issue",
-          "node_type": "code_construct"
+          "node_type": "concept"
         },
         "edges": [],
-        "semantics": {
-          "intent": "Validate an issue file has required sections.",
-          "raw_docstring": "Validate an issue file has required sections."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "_validate_issue(path: Path) -> ArtifactValidationReport"
-          ],
-          "dependencies": []
-        },
+        "semantics": null,
+        "ast": null,
         "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
+        "compliance": null,
         "adr": null,
         "test_map": null,
         "git": null,
@@ -12272,7 +10507,7 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "A deferred idea that is not yet ready to become an issue. Backlog items live in `backlog/` and are low-churn \u2014 they are reviewed periodically but not acted on. When the trigger condition is met, a backlog item is promoted to an issue and deleted from `backlog/`.",
+          "intent": "A deferred idea not yet ready to become a task. Backlog items live in `drawers/` and are low-churn \u2014 reviewed periodically but not acted on. When the trigger condition is met, a backlog item is promoted to a task and deleted from `drawers/`.",
           "raw_docstring": null
         },
         "ast": null,
@@ -12285,9 +10520,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f1d2ff076ac04f14c461cf19e9ce16389932cabc",
+          "blob_sha": "aa97dc998d6ca4826c4f4f32c70ab8699d8f5a88",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -12378,45 +10613,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/standards/artifacts/issue.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/standards/house_rules.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "A single, completable unit of work. Issues live in `plan_docs/issues/gaps/` (things that exist but are wrong) or `plan_docs/issues/unimplemented/` (things designed but not yet built). They are ephemeral: once resolved, the file is deleted and the work lives only in git and changelog.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "68a6304516533282f685db833a0176d083cf88f3",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/standards/artifacts/issue.md"
-    },
-    {
-      "type": "doc_standard",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/standards/artifacts/proposal.md",
           "node_type": "doc_standard"
         },
@@ -12444,6 +10640,45 @@
         "source": null
       },
       "id": "doc:wiki/standards/artifacts/proposal.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/artifacts/task.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "A single, completable unit of work. Tasks live in `desk/tasks/`. They are ephemeral: once resolved, the file is deleted and the work lives only in git and changelog.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "ab7208a2ce3ca20c29c3df0d8be5efe83926c63d",
+          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/standards/artifacts/task.md"
     },
     {
       "type": "doc_standard",
@@ -12743,8 +10978,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Checks for future documentation nodes that have no connection to any code node.",
-          "raw_docstring": "Checks for future documentation nodes that have no connection to any code node."
+          "intent": "Checks for deferred nodes (drawers/) that have no connection to any code node.",
+          "raw_docstring": "Checks for deferred nodes (drawers/) that have no connection to any code node."
         },
         "ast": {
           "construct_type": "class",
@@ -13288,9 +11523,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b2da86931aebc2a0e7bb8f946c9c90afb2ac2100",
+          "blob_sha": "9bb1f47e19c28f747e1bf96dcbcd765c77ad92f7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -15618,94 +13853,6 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "doc:wiki/standards/issues_index_seed.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/standards/issues_lifecycle.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "This seed defines the canonical starting shape for `plan_docs/issues/Index.md`. Use it when regenerating the issue index so subagents always receive the same operational structure and completion checklist.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "aaa683b578853f84c5efbe697b9d590611e2edf9",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/standards/issues_index_seed.md"
-    },
-    {
-      "type": "doc_standard",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/issues_lifecycle.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/standards/house_rules.md",
-            "relation_type": "implements",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/standards/artifacts/issue.md",
-            "relation_type": "extends",
-            "metadata": {}
-          },
-          {
-            "target_id": "doc:wiki/standards/issues_index_seed.md",
-            "relation_type": "extends",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "The issue lifecycle standard defines how active work is represented, indexed, split, and retired in Wikipu. It is the canonical source for issue file structure, atomization, contradiction checks, dependency mapping, and resolution rules.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "3ec5eb0c2b0ec165177472e41dbbe20e76e3673f",
-          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": null
-      },
-      "id": "doc:wiki/standards/issues_lifecycle.md"
-    },
-    {
-      "type": "doc_standard",
-      "status": "implemented",
-      "schema": {
-        "identity": {
           "node_id": "doc:wiki/standards/languages/python.md",
           "node_type": "doc_standard"
         },
@@ -15849,9 +13996,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "0e3a3571937708d7d00534292c9a5d8e6c246f46",
+          "blob_sha": "c1d00bf68e358f59cff2ce1a47746c0858171034",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
+          "last_modified_commit": "9aa05041ad9c28ebd3893cd6b83c70b30dba503b",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16343,50 +14490,6 @@
     },
     {
       "type": "doc_standard",
-      "status": "planned",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/standards/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md",
-          "node_type": "doc_standard"
-        },
-        "edges": [
-          {
-            "target_id": "raw:raw/methodology_synthesis_addendum.md",
-            "relation_type": "documents",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "**logging_layer_conflicts.md (postulador_refactor) \u2014 well-formed entry:**",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "planned",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": {
-          "blob_sha": "ef16aa424e4f4c30317768c46d4a9eb5114650e7",
-          "created_at_commit": "a51ae29243e4ad6b9aa86970ea2c96044a356c5c",
-          "last_modified_commit": "6886bfaed251d35f0cdea3ac13fe37f0fd307e76",
-          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
-          "status": "tracked"
-        },
-        "source": {
-          "source_path": "raw/methodology_synthesis_addendum.md",
-          "source_hash": "4084c2da6197485937ca035f86e9b26279ac1b2b99f034e9b01605dc9519f504",
-          "compiled_at": "2026-04-14T16:50:28.662761",
-          "compiled_from": "wiki-compiler"
-        }
-      },
-      "id": "doc:wiki/standards/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md"
-    },
-    {
-      "type": "doc_standard",
       "status": "implemented",
       "schema": {
         "identity": {
@@ -16773,15 +14876,59 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f3bbbc444d2cca871107db7d2a3ac1dc5314cc67",
+          "blob_sha": "8e045cccb446f982db5f7ad2ff211bc00bfccd02",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "fc13f138bb26d80b72f3106575614e5b2f9232ff",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
         "source": null
       },
       "id": "doc:wiki/standards/socratic.md"
+    },
+    {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/tasks_lifecycle.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/standards/house_rules.md",
+            "relation_type": "implements",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/standards/artifacts/task.md",
+            "relation_type": "extends",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "The task lifecycle standard defines how active work is represented, tracked, and retired in Wikipu. It is the canonical source for task file structure, atomization, contradiction checks, dependency mapping, and resolution rules.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "0ef51f0d85d557bcf87b86434c0d8388b60cd79d",
+          "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/standards/tasks_lifecycle.md"
     },
     {
       "type": "doc_standard",
@@ -16930,6 +15077,39 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/trails.py:persist_trail"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:_validate_task",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate a task file has required sections.",
+          "raw_docstring": "Validate a task file has required sections."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_validate_task(path: Path) -> ArtifactValidationReport"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:_validate_task"
     },
     {
       "type": "code_construct",
@@ -17794,18 +15974,18 @@
       "status": "implemented",
       "schema": {
         "identity": {
-          "node_id": "code:src/wiki_compiler/context.py:match_active_issues",
+          "node_id": "code:src/wiki_compiler/context.py:match_active_tasks",
           "node_type": "code_construct"
         },
         "edges": [],
         "semantics": {
-          "intent": "Finds active issues in plan_docs/issues/ relevant to the current context.",
-          "raw_docstring": "Finds active issues in plan_docs/issues/ relevant to the current context."
+          "intent": "Finds active tasks in desk/tasks/ relevant to the current context.",
+          "raw_docstring": "Finds active tasks in desk/tasks/ relevant to the current context."
         },
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "match_active_issues(project_root: Path, subgraph_node_ids: set[str], task_hint: str | None) -> list[str]"
+            "match_active_tasks(project_root: Path, subgraph_node_ids: set[str], task_hint: str | None) -> list[str]"
           ],
           "dependencies": []
         },
@@ -17820,7 +16000,7 @@
         "git": null,
         "source": null
       },
-      "id": "code:src/wiki_compiler/context.py:match_active_issues"
+      "id": "code:src/wiki_compiler/context.py:match_active_tasks"
     },
     {
       "type": "code_construct",
@@ -18732,8 +16912,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Maps a node_id like \"doc:wiki/drafts/sub/slug.md\" to an absolute file path",
-          "raw_docstring": "Maps a node_id like \"doc:wiki/drafts/sub/slug.md\" to an absolute file path\nunder drafts_dir."
+          "intent": "Maps a node_id like \"doc:desk/drafts/sub/slug.md\" to an absolute file path",
+          "raw_docstring": "Maps a node_id like \"doc:desk/drafts/sub/slug.md\" to an absolute file path\nunder drafts_dir."
         },
         "ast": {
           "construct_type": "function",
@@ -20043,7 +18223,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "query_graph(graph_path: Path, query_type: str | None, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, issues: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> dict[str, object]"
+            "query_graph(graph_path: Path, query_type: str | None, node_id: str | None = None, relation_filter: str | None = None, medium: str | None = None, schema_ref: str | None = None, path_template: str | None = None, tasks: bool = False, gaps: bool = False, unimplemented: bool = False, search_query: str | None = None) -> dict[str, object]"
           ],
           "dependencies": []
         },
@@ -21983,12 +20163,6 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
-      "target": "file:src/wiki_compiler/__pycache__/__init__.cpython-312.pyc"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/__init__.cpython-313.pyc"
     },
     {
@@ -21996,12 +20170,6 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/artifact_validation.cpython-313.pyc"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "dir:src/wiki_compiler/__pycache__",
-      "target": "file:src/wiki_compiler/__pycache__/auditor.cpython-312.pyc"
     },
     {
       "relation": "contains",
@@ -22026,12 +20194,6 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/context.cpython-313.pyc"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "dir:src/wiki_compiler/__pycache__",
-      "target": "file:src/wiki_compiler/__pycache__/contracts.cpython-312.pyc"
     },
     {
       "relation": "contains",
@@ -22092,12 +20254,6 @@
       "metadata": {},
       "source": "dir:src/wiki_compiler/__pycache__",
       "target": "file:src/wiki_compiler/__pycache__/ingest.cpython-313.pyc"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "dir:src/wiki_compiler/__pycache__",
-      "target": "file:src/wiki_compiler/__pycache__/main.cpython-312.pyc"
     },
     {
       "relation": "contains",
@@ -22223,7 +20379,7 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/artifact_validation.py",
-      "target": "code:src/wiki_compiler/artifact_validation.py:_validate_issue"
+      "target": "code:src/wiki_compiler/artifact_validation.py:_validate_task"
     },
     {
       "relation": "contains",
@@ -22529,7 +20685,7 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/context.py",
-      "target": "code:src/wiki_compiler/context.py:match_active_issues"
+      "target": "code:src/wiki_compiler/context.py:match_active_tasks"
     },
     {
       "relation": "contains",
@@ -23756,42 +21912,6 @@
       "target": "doc:wiki/reference/cli/scaffold.md"
     },
     {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/gate_loop.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/human_contributor.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/llm_agent.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/socratic.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/standards/house_rules.md",
-      "target": "doc:wiki/reference/protocols/trail_collect.md"
-    },
-    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/standards/languages/Index.md",
@@ -23856,42 +21976,6 @@
       "metadata": {},
       "source": "doc:wiki/reference/Index.md",
       "target": "doc:wiki/reference/cli/validate_wiki.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/autopoiesis_coordinator.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/gate_loop.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/llm_agent.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/human_contributor.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/socratic.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/reference/Index.md",
-      "target": "doc:wiki/reference/protocols/trail_collect.md"
     },
     {
       "relation": "contains",
@@ -24028,18 +22112,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/claw_session.md",
-      "target": "raw:raw/claw_session.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/cleansing_candidates_by_node_type.md",
-      "target": "raw:raw/cleansing_protocol.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/core_idea.md",
       "target": "raw:raw/wiki_construction_principles.md"
     },
@@ -24076,12 +22148,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/facet_2_documentation_lifecycle.md",
-      "target": "raw:raw/methodology_synthesis.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/facet_3_agent_permissions_model.md",
       "target": "raw:raw/methodology_synthesis.md"
     },
@@ -24100,12 +22166,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/facet_6_debt_topology.md",
-      "target": "raw:raw/methodology_synthesis.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/facet_7_code_style_axioms.md",
       "target": "raw:raw/methodology_synthesis.md"
     },
@@ -24113,12 +22173,6 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/concepts/facet_8_inter_project_divergence.md",
-      "target": "raw:raw/methodology_synthesis.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/facet_9_minimum_seed.md",
       "target": "raw:raw/methodology_synthesis.md"
     },
     {
@@ -24172,18 +22226,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/linked_todos.md",
-      "target": "raw:raw/methodology_synthesis_extended.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/methodology_synthesis_addendum.md",
-      "target": "raw:raw/methodology_synthesis_addendum.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/methodology_synthesis_cross_project_analysis.md",
       "target": "raw:raw/methodology_synthesis.md"
     },
@@ -24192,12 +22234,6 @@
       "metadata": {},
       "source": "doc:wiki/concepts/methodology_synthesis_extended_analysis.md",
       "target": "raw:raw/methodology_synthesis_extended.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/naming_note.md",
-      "target": "raw:raw/board_gate_pattern.md"
     },
     {
       "relation": "documents",
@@ -24215,12 +22251,6 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/concepts/phase_2_inject_facets_semantics.md",
-      "target": "raw:raw/graph_construction_process.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/phase_3_query_for_documentation_quality.md",
       "target": "raw:raw/graph_construction_process.md"
     },
     {
@@ -24268,12 +22298,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/problem_statement.md",
-      "target": "raw:raw/proposed_zone_reorganization.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/proposed_direction.md",
       "target": "raw:raw/methodology_synthesis_extended.md"
     },
@@ -24298,18 +22322,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/q2_what_document_templates_exist_for_future_docs_plan_docs_docs_what_types_exist.md",
-      "target": "raw:raw/methodology_synthesis_extended.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/q3_decision_thresholds_when_does_something_graduate_between_tiers.md",
-      "target": "raw:raw/methodology_synthesis_addendum.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/q4_context_router_for_agents_how_are_agents_navigated.md",
       "target": "raw:raw/methodology_synthesis_addendum.md"
     },
@@ -24329,12 +22341,6 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/concepts/q6_how_is_git_used.md",
-      "target": "raw:raw/methodology_synthesis_extended.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/q7_what_weaknesses_exist_across_implementations.md",
       "target": "raw:raw/methodology_synthesis_extended.md"
     },
     {
@@ -24388,12 +22394,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/renaming_from_plan_docs.md",
-      "target": "raw:raw/desk_zone.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/routing_matrix_vs_graph.md",
       "target": "raw:raw/methodology_synthesis_graph_routing.md"
     },
@@ -24412,12 +22412,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/synthesis_what_these_5_questions_add_to_the_distillation.md",
-      "target": "raw:raw/methodology_synthesis_addendum.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/the_auditor_s_role.md",
       "target": "raw:raw/facets_as_questions.md"
     },
@@ -24432,12 +22426,6 @@
       "metadata": {},
       "source": "doc:wiki/concepts/the_collection_step.md",
       "target": "raw:raw/trail_collect.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/the_ephemeral_contract.md",
-      "target": "raw:raw/desk_zone.md"
     },
     {
       "relation": "documents",
@@ -24502,20 +22490,8 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/the_system_is_a_living_knowledge_ecosystem_with_two_layers.md",
-      "target": "raw:raw/system_concept.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/what_belongs_on_the_desk.md",
       "target": "raw:raw/desk_zone.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/what_doesn_t_fit_any_axiom_yet.md",
-      "target": "raw:raw/methodology_synthesis.md"
     },
     {
       "relation": "documents",
@@ -24526,32 +22502,14 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/what_is_exempt.md",
-      "target": "raw:raw/cleansing_protocol.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/what_it_is_not.md",
       "target": "raw:raw/socratic_protocol.md"
     },
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/what_the_system_needs_to_be_truly_autopoietic.md",
-      "target": "raw:raw/autopoiesis_system.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/what_this_enables.md",
       "target": "raw:raw/git_tracked_nodes.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/what_to_preserve_from_the_matrix_model.md",
-      "target": "raw:raw/methodology_synthesis_graph_routing.md"
     },
     {
       "relation": "documents",
@@ -24586,68 +22544,8 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/concepts/why_two_constructs.md",
-      "target": "raw:raw/board_gate_pattern.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/concepts/wikipedia_definition_april_2026.md",
       "target": "raw:raw/autopoiesis_system.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/1_ci_cd_enforcement.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/2_domain_glossary.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/3_minimal_energy_as_active_constraint.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/4_librarian_agent_skill_prompt.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/c_mo_leer_el_grafo.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/reglas_de_interacci_n.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/summary.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/tu_misi_n.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/drafts/unimplemented_ideas_from_sourcetalk_txt.md",
-      "target": "raw:raw/unimplemented_from_sourcetalk.md"
     },
     {
       "relation": "implements",
@@ -24988,7 +22886,7 @@
     {
       "relation": "implements",
       "metadata": {},
-      "source": "doc:wiki/standards/artifacts/issue.md",
+      "source": "doc:wiki/standards/artifacts/task.md",
       "target": "doc:wiki/standards/house_rules.md"
     },
     {
@@ -25492,30 +23390,6 @@
     {
       "relation": "implements",
       "metadata": {},
-      "source": "doc:wiki/standards/issues_index_seed.md",
-      "target": "doc:wiki/standards/issues_lifecycle.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/standards/issues_lifecycle.md",
-      "target": "doc:wiki/standards/house_rules.md"
-    },
-    {
-      "relation": "extends",
-      "metadata": {},
-      "source": "doc:wiki/standards/issues_lifecycle.md",
-      "target": "doc:wiki/standards/artifacts/issue.md"
-    },
-    {
-      "relation": "extends",
-      "metadata": {},
-      "source": "doc:wiki/standards/issues_lifecycle.md",
-      "target": "doc:wiki/standards/issues_index_seed.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
       "source": "doc:wiki/standards/languages/python.md",
       "target": "doc:wiki/standards/house_rules.md"
     },
@@ -25618,12 +23492,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/standards/q5_what_do_real_future_docs_entries_look_like_are_the_rules_followed.md",
-      "target": "raw:raw/methodology_synthesis_addendum.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/standards/scanner_plugins.md",
       "target": "doc:wiki/reference/knowledge_node_facets.md"
     },
@@ -25686,6 +23554,18 @@
       "metadata": {},
       "source": "doc:wiki/standards/socratic.md",
       "target": "doc:wiki/how_to/use_socratic_methodology.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/standards/tasks_lifecycle.md",
+      "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/standards/tasks_lifecycle.md",
+      "target": "doc:wiki/standards/artifacts/task.md"
     },
     {
       "relation": "documents",

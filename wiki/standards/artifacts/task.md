@@ -32,3 +32,22 @@ Tasks have no frontmatter. They are ephemeral operational artifacts (MA-3).
 - "What to fix" describes outcome, not process. It must be verifiable: either the thing exists and passes tests, or it does not.
 - "Depends on: none" must be written explicitly — omitting the field is not the same as having no dependencies.
 - A task is done only when: tests pass, changelog updated, file deleted, removed from Board.
+
+## Usage Examples
+
+```markdown
+# Fix query timeout
+
+**Explanation:** Query timeouts after 30s for large result sets, blocking users.
+
+**Reference:** `src/wiki_compiler/query_executor.py`, `wiki/HowAmI.md`
+
+**What to fix:** Queries larger than 1000 results stream incrementally instead of loading all at once.
+
+**How to do it:**
+1. Add streaming mode to query executor
+2. Add `--stream` flag to CLI
+3. Update tests
+
+**Depends on:** none
+```

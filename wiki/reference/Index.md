@@ -13,12 +13,6 @@ edges:
   - {target_id: "doc:wiki/reference/cli/scaffold.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/status.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/validate_wiki.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/autopoiesis_coordinator.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/gate_loop.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/llm_agent.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/human_contributor.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/socratic.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/trail_collect.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []

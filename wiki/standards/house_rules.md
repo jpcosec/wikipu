@@ -11,20 +11,10 @@ edges:
   - {target_id: "doc:wiki/reference/cli/ingest.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/query.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/scaffold.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/autopoiesis_coordinator.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/gate_loop.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/human_contributor.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/llm_agent.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/socratic.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/reference/protocols/trail_collect.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []
 ---
-
-The House Rules define the invariant constraints that govern the entire `wikipu` ecosystem — from identity and zone separation to code style and wiki authoring. Every rule exists to keep one or more of the system's five load-bearing elements (Autopoiesis, Wiki, Knowledge Graph, Git, CLI) coherent and non-overlapping.
-
-# 🏠 House Rules
 
 The canonical identity rules for the Wikipu ecosystem. This document defines what this system *is* — the invariant network of constraints that must hold regardless of what content the system contains. Rules are organized by layer. Each rule carries a `rule_id` for machine reference, a description, and the enforcement mechanism that checks it.
 
