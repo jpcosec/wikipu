@@ -107,7 +107,7 @@ def query_graph(
             )
         elif tasks:
             conditions.append(
-                {"field": "node_id", "op": "starts_with", "value": "doc:"}
+                {"field": "node_id", "op": "starts_with", "value": "doc:desk/tasks/"}
             )
 
         query = StructuredQuery(
