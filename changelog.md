@@ -5,6 +5,7 @@
 - resolved issue 9 `fix test_delta_compile_workflow`: Fixed `_compute_node_id` in ingest.py to properly handle `desk/drafts/` zone, now generates correct `doc:desk/drafts/...` node_id
 - resolved issue 10 `fix test_run_skeleton_auto_ingest`: Added fallback in `read_git_status` and `read_git_changes` for non-git repos (test environment), preventing subprocess errors
 - resolved issue 14 `zone contracts`: Added `ZoneContract` model and zone-based perception. Now tracks desk/ and drawers/ for modified/untracked files via declarative contracts in `wiki/standards/zones.md`
+- resolved issue 11 `reduce file complexity`: Extracted CLI subcommands from main.py into `commands/` module. main.py reduced from 791 to 615 lines, main() from 1489 to 4 statements
 
 ## 2026-04-11
 
