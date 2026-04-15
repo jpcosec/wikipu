@@ -138,6 +138,11 @@
             "metadata": {}
           },
           {
+            "target_id": "dir:src/wiki_compiler/commands",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "file:src/wiki_compiler/context.py",
             "relation_type": "contains",
             "metadata": {}
@@ -1176,6 +1181,91 @@
       "id": "file:src/wiki_compiler/cleanser.py"
     },
     {
+      "type": "directory",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "dir:src/wiki_compiler/commands",
+          "node_type": "directory"
+        },
+        "edges": [
+          {
+            "target_id": "dir:src/wiki_compiler/commands/__pycache__",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/audit.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/build.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/cleanse.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/compose.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/context.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/curate.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/energy.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/ingest.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/query.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/scaffold.py",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/status.py",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "dir:src/wiki_compiler/commands"
+    },
+    {
       "type": "file",
       "status": "implemented",
       "schema": {
@@ -1449,6 +1539,11 @@
             "target_id": "code:src/wiki_compiler/contracts.py:EnergyReport",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ZoneContract",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -1477,9 +1572,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "d68b6a6179d05b922309257f4bf765f51cd33f2c",
+          "blob_sha": "0da6cc6fa9483ece19c9d95a9c95dae38d79fc78",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
+          "last_modified_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1741,7 +1836,7 @@
         ],
         "semantics": {
           "intent": "Minimal Energy (ID-2) calculation and reporting.",
-          "raw_docstring": "Minimal Energy (ID-2) calculation and reporting."
+          "raw_docstring": "Minimal Energy (ID-2) calculation and reporting.\n\nI/O:\n- Reads knowledge_graph.json (input, json, schema=graph_schema)\n- Reads manifests/*.csv (input, csv, schema=manifest_schema)\n- Writes to terminal/stdout (output, terminal)"
         },
         "ast": {
           "construct_type": "script",
@@ -1763,13 +1858,13 @@
           {
             "medium": "disk",
             "direction": "input",
-            "schema_ref": null,
+            "schema_ref": "json",
             "path_template": null
           },
           {
             "medium": "disk",
             "direction": "input",
-            "schema_ref": null,
+            "schema_ref": "json",
             "path_template": null
           }
         ],
@@ -1781,9 +1876,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "420026f17b59207014c1d5a02a020d87e0fd381e",
+          "blob_sha": "64c2af7abe38d2d8b8da6e0bb2836dc82b92cc0f",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
+          "last_modified_commit": "7c4c546dae1bdddb26ba3ce7853affb155266ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2182,9 +2277,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "229298f10710ebffab744d1c4067d477459f8d91",
+          "blob_sha": "776a47d54f4c6ba545ba7054e60422509e329609",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "c474cd33e918188b911447bc1ff9f0138fecb6b8",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2228,19 +2323,11 @@
             "import sys",
             "from pathlib import Path",
             "from .auditor import run_audit",
-            "from .artifact_validation import validate_wiki_artifact",
             "from .builder import build_wiki",
-            "from .cleanser import detect_cleansing_candidates",
-            "from .context import render_context",
-            "from .curate import promote_draft",
-            "from .curate import score_drafts",
             "from .energy import run_energy_audit, DRIFT_PENALTY_WEIGHT",
             "from .facet_validator import validate_facet_proposal",
             "from .graph_utils import load_graph",
-            "from .ingest import ingest_raw_sources",
             "from .contracts import CleansingReport",
-            "from .query_executor import execute_query",
-            "from .query_language import StructuredQuery",
             "from .perception import build_status_report",
             "from .query_server import query_main",
             "from .registry import build_default_registry",
@@ -2248,7 +2335,8 @@
             "from .validator import validate_topology_proposal",
             "from .workflow_guard import guard_workflow",
             "from .workflow_guard import read_current_branch",
-            "from .workflow_guard import read_git_changes"
+            "from .workflow_guard import read_git_changes",
+            "from .commands import build, query, audit, context, cleanse, ingest, curate, compose, scaffold, status, energy"
           ]
         },
         "io_ports": [],
@@ -2260,9 +2348,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1f83960a8c2cd29a7e1f0567a16588d4e7970e87",
+          "blob_sha": "6c12c6d8f6325179044b76d5a310ae55bd085b5e",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2423,6 +2511,11 @@
         },
         "edges": [
           {
+            "target_id": "code:src/wiki_compiler/perception.py:load_zone_contracts",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/perception.py:attach_git_facets",
             "relation_type": "contains",
             "metadata": {}
@@ -2434,6 +2527,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/perception.py:classify_perturbation",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:classify_perturbation_by_zones",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/perception.py:get_zone_for_path",
             "relation_type": "contains",
             "metadata": {}
           },
@@ -2486,7 +2589,7 @@
             "from __future__ import annotations",
             "import subprocess",
             "from pathlib import Path",
-            "from .contracts import GitFacet",
+            "from .contracts import GitFacet, ZoneContract",
             "from .graph_utils import iter_knowledge_nodes",
             "from .graph_utils import load_graph"
           ]
@@ -2503,9 +2606,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "b78688038eeee2e7f4c7f8358a933debed806e61",
+          "blob_sha": "3975742d93df639c6162bc0e6b8de3c1228a343c",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
+          "last_modified_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2577,9 +2680,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "e93947d7abf9210c1d7b421c244033735264c5ef",
+          "blob_sha": "e0f946126142ffebebc449de4b466d63f0b5f5e8",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "58375e6df485fc8da1e38de437aa1d171d97af11",
+          "last_modified_commit": "c474cd33e918188b911447bc1ff9f0138fecb6b8",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3193,9 +3296,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "b31e0e5cbaf34af299664f8394592c7aad20cf57",
+          "blob_sha": "3115ddcf75ec4f36450ad5e03b8c25936f1d0961",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "860b9180d4f212dbf4aff978bc79f21873e00be9",
+          "last_modified_commit": "7c4c546dae1bdddb26ba3ce7853affb155266ddb",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3669,7 +3772,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "773d66d627abba947c40f8303d886cbd096a93db",
+          "blob_sha": "62703b43dba15455326fcbd5a99bc94e3061c5aa",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3773,7 +3876,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "7845e555d09600aea846721cf98bd9205b0902aa",
+          "blob_sha": "12bd4fbcd25bcbfb92bd3e1138216e7e39906074",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3903,7 +4006,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "fd69f2dddc56b1651ea349f40960236ae593eb00",
+          "blob_sha": "b2f788f10d6a22a55cc85deb3453d1b4b005851d",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3929,7 +4032,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "b74e3e333a2458b898bd3534465a92bc0843bbbc",
+          "blob_sha": "13d992d0b88d5b44b5e2ad9d8d988a6d12e47633",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4007,7 +4110,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "09bb71b870d2cdd3a3f66d83001370169b6e44ca",
+          "blob_sha": "af9b31131b8476d93c110e8ae7ed62c89f5ac1c4",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4033,7 +4136,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "197edb1444cd43ceea856a8dd2a537b9e02bd363",
+          "blob_sha": "2fc601a92049105e4236db49a28a457d238469d4",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4215,7 +4318,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "1eabc74a5f77ca8cfaa1b777fc2c62146c21613d",
+          "blob_sha": "1b620a97cd9e09b3b6324bf6a692694291ebe8a7",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -4328,6 +4431,935 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/__pycache__/workflow_guard.cpython-313.pyc"
+    },
+    {
+      "type": "directory",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "dir:src/wiki_compiler/commands/__pycache__",
+          "node_type": "directory"
+        },
+        "edges": [
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/audit.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/build.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/cleanse.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/compose.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/context.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/curate.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/energy.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/ingest.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/query.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/__pycache__/status.cpython-313.pyc",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "dir:src/wiki_compiler/commands/__pycache__"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/audit.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/audit.py:handle_audit",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Audit command handler.",
+          "raw_docstring": "Audit command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/audit.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "import sys",
+            "from pathlib import Path",
+            "from ..auditor import run_audit",
+            "from ..graph_utils import load_graph"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "1c2e386a68697aa3f7b1420fdccc1ec05fa3c60b",
+          "created_at_commit": "ca0a2d89424d5c856dc9303d818cc1fca384409a",
+          "last_modified_commit": "ca0a2d89424d5c856dc9303d818cc1fca384409a",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/audit.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/build.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/build.py:handle_build",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Build command handler.",
+          "raw_docstring": "Build command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/build.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import sys",
+            "from pathlib import Path",
+            "from ..builder import build_wiki"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "331cb85ad5605090f02309c14acb8eb3bced7294",
+          "created_at_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
+          "last_modified_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/build.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/cleanse.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Cleanse command handler.",
+          "raw_docstring": "Cleanse command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/cleanse.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "from pathlib import Path",
+            "from ..cleanser import detect_cleansing_candidates, apply_cleansing_proposal",
+            "from ..contracts import CleansingReport"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "56b4dd40b6b0bcbeba87ee4b566c47be0c4ca01f",
+          "created_at_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/cleanse.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/compose.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/compose.py:handle_compose",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Compose command handler.",
+          "raw_docstring": "Compose command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/compose.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "from pathlib import Path"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "f67cd7e2908c15e71629bf1e9d8d3c4353c127c6",
+          "created_at_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/compose.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/context.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/context.py:handle_context",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Context command handler.",
+          "raw_docstring": "Context command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/context.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "from pathlib import Path",
+            "from ..context import render_context"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "8e7d8aeb3a0c1098f99d036537978c3a29f726f9",
+          "created_at_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/context.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/curate.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/curate.py:handle_curate",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Curate command handler.",
+          "raw_docstring": "Curate command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/curate.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "from pathlib import Path",
+            "from ..curate import promote_draft, score_drafts"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "b9347fbcf856cb50da133aa77da1a669e1feb2c9",
+          "created_at_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/curate.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/energy.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/energy.py:handle_energy",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Energy command handler.",
+          "raw_docstring": "Energy command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/energy.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "from pathlib import Path",
+            "from ..energy import run_energy_audit, DRIFT_PENALTY_WEIGHT",
+            "from ..graph_utils import load_graph"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "8413389968b7f12aca266cb0a583ce93b4c91136",
+          "created_at_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/energy.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/ingest.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/ingest.py:handle_ingest",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Ingest command handler.",
+          "raw_docstring": "Ingest command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/ingest.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "from pathlib import Path",
+            "from ..ingest import ingest_raw_sources"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "9d0bafb001f34eacc7856b49faa404c16f8d1244",
+          "created_at_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_commit": "9a74d9d83a2df7d7002d1b6484a8c42fdb8d93d8",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/ingest.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/query.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/query.py:handle_query",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Query command handler.",
+          "raw_docstring": "Query command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/query.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "from pathlib import Path",
+            "from ..graph_utils import load_graph",
+            "from ..query_executor import execute_query",
+            "from ..query_language import StructuredQuery",
+            "from ..query_server import query_main"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "ef7d47ecd6b3d24c2922be6965c9112314b720de",
+          "created_at_commit": "ca0a2d89424d5c856dc9303d818cc1fca384409a",
+          "last_modified_commit": "ca0a2d89424d5c856dc9303d818cc1fca384409a",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/query.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/scaffold.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Scaffold command handler.",
+          "raw_docstring": "Scaffold command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/scaffold.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "from pathlib import Path",
+            "from ..scaffolder import generate_scaffolding"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "0fcd95c303850f6ebdafbe2a7dda7cec06627904",
+          "created_at_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/scaffold.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/status.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/status.py:handle_status",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Status command handler.",
+          "raw_docstring": "Status command handler."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/status.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "from pathlib import Path",
+            "from ..perception import build_status_report"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "ba0d0b0c2ba0fd4d48c9e8d106fff4133244a46b",
+          "created_at_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_commit": "1ede51001af73c20ef8ecba142e8b39c1588b2c3",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/status.py"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/audit.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "7311a489d95bdfcf2c7b57abeaf7282c789f3e5e",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/audit.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/build.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "c4f8197bebbd663d7cb95d4d9d8d0eab535de1be",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/build.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/cleanse.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "c041b45169d52418d84fa02bc2af72b2cb91cad1",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/cleanse.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/compose.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "0593d64e58644b80e1d64b6024c694d8691887bc",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/compose.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/context.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "853b9d58e441375eb720e0eee2c4e93d52094b4a",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/context.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/curate.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "d5fb6eebcf322474170c89759b9971f00e7078fc",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/curate.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/energy.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "de0647735fc18f1c0a953b946c3b92db82737f9a",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/energy.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/ingest.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "8deea86befb5b3143fe9b6e93b2bdecf2c35c0c2",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/ingest.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/query.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "038d2ef1b1adf4378f79d95b726483b284e3b069",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/query.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "664548b468f4585c6d17bf123892a556718c06e3",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc"
+    },
+    {
+      "type": "concept",
+      "status": "unknown",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/__pycache__/status.cpython-313.pyc",
+          "node_type": "concept"
+        },
+        "edges": [],
+        "semantics": null,
+        "ast": null,
+        "io_ports": [],
+        "compliance": null,
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "590244e8ac616e565825fa2df7c77d266358898d",
+          "created_at_commit": null,
+          "last_modified_commit": null,
+          "last_modified_author": null,
+          "status": "untracked"
+        },
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/__pycache__/status.cpython-313.pyc"
     },
     {
       "type": "file",
@@ -9377,6 +10409,16 @@
             "target_id": "code:src/wiki_compiler/builder.py:build_wiki",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/build.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/build.py:handle_build",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -9424,6 +10466,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/cleanse.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -9480,31 +10532,6 @@
             "target_id": "code:src/wiki_compiler/curate.py:promote_draft",
             "relation_type": "documents",
             "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:_get_abstract",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:_node_id_to_file",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:_rewrite_node_id",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/curate.py:_sentence_count",
-            "relation_type": "documents",
-            "metadata": {}
           }
         ],
         "semantics": {
@@ -9552,51 +10579,6 @@
           },
           {
             "target_id": "code:src/wiki_compiler/ingest.py:ingest_raw_sources",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:_compute_node_id",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:_extract_abstract",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:_render_index",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:_source_subdir",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:decompose_source",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:draft_node_path",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:render_draft",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:slugify",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/ingest.py:summarize_source",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -9648,6 +10630,16 @@
             "target_id": "code:src/wiki_compiler/query_server.py:query_main",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/query.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/query.py:handle_query",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -9697,6 +10689,16 @@
             "target_id": "code:src/wiki_compiler/scaffolder.py:generate_scaffolding",
             "relation_type": "documents",
             "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/scaffold.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold",
+            "relation_type": "documents",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -9744,6 +10746,16 @@
           },
           {
             "target_id": "code:src/wiki_compiler/perception.py:build_status_report",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "file:src/wiki_compiler/commands/status.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/status.py:handle_status",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -10068,7 +11080,7 @@
         "ast": {
           "construct_type": "function",
           "signatures": [
-            "build_status_report(graph_path: Path | None, project_root: Path, graph: object | None = None) -> dict[str, object]"
+            "build_status_report(graph_path: Path | None, project_root: Path, graph: object | None = None, zone_contracts: list[ZoneContract] | None = None) -> dict[str, object]"
           ],
           "dependencies": []
         },
@@ -15118,6 +16130,45 @@
       "id": "code:src/wiki_compiler/trails.py:persist_trail"
     },
     {
+      "type": "doc_standard",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/standards/zones.md",
+          "node_type": "doc_standard"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/WhereAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Declarative contracts defining how each zone is sensed and measured by the perception system. Each zone has configurable tracking behavior and energy weights.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": {
+          "blob_sha": "f274c8e80de0a5c3c39dcdf441e651f01848ce85",
+          "created_at_commit": "80dda9f3d59d83520d01158d1c63cbf157f22451",
+          "last_modified_commit": "7c4c546dae1bdddb26ba3ce7853affb155266ddb",
+          "last_modified_author": "juanpablo.ruiz.r@gmail.com",
+          "status": "tracked"
+        },
+        "source": null
+      },
+      "id": "doc:wiki/standards/zones.md"
+    },
+    {
       "type": "code_construct",
       "status": "implemented",
       "schema": {
@@ -15941,6 +16992,369 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/cleanser.py:_dedupe"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/audit.py:handle_audit",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the audit command.",
+          "raw_docstring": "Execute the audit command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_audit(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/audit.py:handle_audit"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/build.py:handle_build",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the build command.",
+          "raw_docstring": "Execute the build command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_build(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/build.py:handle_build"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the cleanse command.",
+          "raw_docstring": "Execute the cleanse command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_cleanse(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/compose.py:handle_compose",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the compose command.",
+          "raw_docstring": "Execute the compose command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_compose(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/compose.py:handle_compose"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/context.py:handle_context",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the context command.",
+          "raw_docstring": "Execute the context command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_context(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/context.py:handle_context"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/curate.py:handle_curate",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the curate command.",
+          "raw_docstring": "Execute the curate command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_curate(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/curate.py:handle_curate"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/energy.py:handle_energy",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the energy command.",
+          "raw_docstring": "Execute the energy command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_energy(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/energy.py:handle_energy"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/ingest.py:handle_ingest",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the ingest command.",
+          "raw_docstring": "Execute the ingest command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_ingest(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/ingest.py:handle_ingest"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/query.py:handle_query",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the query command.",
+          "raw_docstring": "Execute the query command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_query(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the scaffold command.",
+          "raw_docstring": "Execute the scaffold command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_scaffold(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/status.py:handle_status",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the status command.",
+          "raw_docstring": "Execute the status command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_status(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/status.py:handle_status"
     },
     {
       "type": "code_construct",
@@ -16847,6 +18261,41 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ZoneContract",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Declarative contract for zone-based sensing in perception and energy.",
+          "raw_docstring": "Declarative contract for zone-based sensing in perception and energy."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ZoneContract"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ZoneContract"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/curate.py:_evaluate_node",
           "node_type": "code_construct"
         },
@@ -17163,7 +18612,7 @@
           {
             "medium": "disk",
             "direction": "input",
-            "schema_ref": null,
+            "schema_ref": "json",
             "path_template": null
           }
         ],
@@ -17203,7 +18652,7 @@
           {
             "medium": "disk",
             "direction": "input",
-            "schema_ref": null,
+            "schema_ref": "json",
             "path_template": null
           }
         ],
@@ -17624,6 +19073,39 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:load_zone_contracts",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load zone contracts from wiki topology or return defaults.",
+          "raw_docstring": "Load zone contracts from wiki topology or return defaults."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "load_zone_contracts(project_root: Path | None = None) -> list[ZoneContract]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:load_zone_contracts"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/perception.py:attach_git_facets",
           "node_type": "code_construct"
         },
@@ -17684,6 +19166,72 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/perception.py:classify_perturbation"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:classify_perturbation_by_zones",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Classify perturbation based on zone contracts.",
+          "raw_docstring": "Classify perturbation based on zone contracts."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "classify_perturbation_by_zones(node_id: str, zone_contracts: list[ZoneContract]) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:classify_perturbation_by_zones"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/perception.py:get_zone_for_path",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Get the zone for a given file path.",
+          "raw_docstring": "Get the zone for a given file path."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "get_zone_for_path(file_path: str, zone_contracts: list[ZoneContract]) -> str | None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/perception.py:get_zone_for_path"
     },
     {
       "type": "code_construct",
@@ -17926,8 +19474,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Return list of uncommitted change paths.",
-          "raw_docstring": "Return list of uncommitted change paths."
+          "intent": "Return list of uncommitted change paths. Returns empty list if not a git repo.",
+          "raw_docstring": "Return list of uncommitted change paths. Returns empty list if not a git repo."
         },
         "ast": {
           "construct_type": "function",
@@ -20213,6 +21761,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "dir:src/wiki_compiler",
+      "target": "dir:src/wiki_compiler/commands"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler",
       "target": "file:src/wiki_compiler/context.py"
     },
     {
@@ -20890,6 +22444,78 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "dir:src/wiki_compiler/commands/__pycache__"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/audit.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/build.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/cleanse.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/compose.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/context.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/curate.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/energy.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/ingest.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/query.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/scaffold.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands",
+      "target": "file:src/wiki_compiler/commands/status.py"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/context.py",
       "target": "code:src/wiki_compiler/context.py:get_context_bundle"
     },
@@ -21144,6 +22770,12 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/contracts.py",
       "target": "code:src/wiki_compiler/contracts.py:EnergyReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ZoneContract"
     },
     {
       "relation": "contains",
@@ -21503,6 +23135,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:load_zone_contracts"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
       "target": "code:src/wiki_compiler/perception.py:attach_git_facets"
     },
     {
@@ -21516,6 +23154,18 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/perception.py",
       "target": "code:src/wiki_compiler/perception.py:classify_perturbation"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:classify_perturbation_by_zones"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/perception.py",
+      "target": "code:src/wiki_compiler/perception.py:get_zone_for_path"
     },
     {
       "relation": "contains",
@@ -22032,6 +23682,138 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/workflow_guard.py",
       "target": "code:src/wiki_compiler/workflow_guard.py:is_relevant_change"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/audit.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/build.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/cleanse.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/compose.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/context.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/curate.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/energy.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/ingest.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/query.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/scaffold.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "dir:src/wiki_compiler/commands/__pycache__",
+      "target": "file:src/wiki_compiler/commands/__pycache__/status.cpython-313.pyc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/audit.py",
+      "target": "code:src/wiki_compiler/commands/audit.py:handle_audit"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/build.py",
+      "target": "code:src/wiki_compiler/commands/build.py:handle_build"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/cleanse.py",
+      "target": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/compose.py",
+      "target": "code:src/wiki_compiler/commands/compose.py:handle_compose"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/context.py",
+      "target": "code:src/wiki_compiler/commands/context.py:handle_context"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/curate.py",
+      "target": "code:src/wiki_compiler/commands/curate.py:handle_curate"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/energy.py",
+      "target": "code:src/wiki_compiler/commands/energy.py:handle_energy"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/ingest.py",
+      "target": "code:src/wiki_compiler/commands/ingest.py:handle_ingest"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/query.py",
+      "target": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/scaffold.py",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/status.py",
+      "target": "code:src/wiki_compiler/commands/status.py:handle_status"
     },
     {
       "relation": "contains",
@@ -22828,6 +24610,18 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/reference/cli/build.md",
+      "target": "file:src/wiki_compiler/commands/build.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/build.md",
+      "target": "code:src/wiki_compiler/commands/build.py:handle_build"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/reference/cli/cleanse.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -22842,6 +24636,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/cleanse.md",
       "target": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/cleanse.md",
+      "target": "file:src/wiki_compiler/commands/cleanse.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/cleanse.md",
+      "target": "code:src/wiki_compiler/commands/cleanse.py:handle_cleanse"
     },
     {
       "relation": "documents",
@@ -22870,36 +24676,6 @@
     {
       "relation": "documents",
       "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:_evaluate_node"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:_get_abstract"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:_node_id_to_file"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:_rewrite_node_id"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/curate.md",
-      "target": "code:src/wiki_compiler/curate.py:_sentence_count"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
       "source": "doc:wiki/reference/cli/ingest.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -22914,60 +24690,6 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/ingest.md",
       "target": "code:src/wiki_compiler/ingest.py:ingest_raw_sources"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:_compute_node_id"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:_extract_abstract"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:_render_index"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:_source_subdir"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:decompose_source"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:draft_node_path"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:render_draft"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:slugify"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/reference/cli/ingest.md",
-      "target": "code:src/wiki_compiler/ingest.py:summarize_source"
     },
     {
       "relation": "documents",
@@ -22990,6 +24712,18 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "file:src/wiki_compiler/commands/query.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/reference/cli/scaffold.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -23008,6 +24742,18 @@
     {
       "relation": "documents",
       "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "file:src/wiki_compiler/commands/scaffold.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
       "source": "doc:wiki/reference/cli/status.md",
       "target": "file:src/wiki_compiler/main.py"
     },
@@ -23022,6 +24768,18 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/status.md",
       "target": "code:src/wiki_compiler/perception.py:build_status_report"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/status.md",
+      "target": "file:src/wiki_compiler/commands/status.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/status.md",
+      "target": "code:src/wiki_compiler/commands/status.py:handle_status"
     },
     {
       "relation": "documents",
@@ -23832,6 +25590,12 @@
       "metadata": {},
       "source": "doc:wiki/standards/trails.md",
       "target": "code:src/wiki_compiler/trails.py:persist_trail"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/standards/zones.md",
+      "target": "doc:wiki/WhereAmI.md"
     }
   ]
 }
