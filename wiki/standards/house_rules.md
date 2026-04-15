@@ -98,7 +98,7 @@ Deterministic logic, AI logic, persistence, and presentation are always separate
 Every interface — between modules, between human and agent, between current and future state — is a typed schema. The schema IS the documentation. Descriptions must be accurate because LLMs read them. This generates: Pydantic everywhere, Field(description=...) required, contracts as the only inter-module API, docstrings as specifications.
 
 **MA-3 — Plans Are Ephemeral. Code and Changelog Are Permanent.**
-A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the plan_docs/issues lifecycle, the 6-month stale rule on future_docs, the prohibition on archive folders.
+A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the desk/issues lifecycle, the 6-month stale rule on drawers/, the prohibition on archive folders.
 
 **MA-4 — Agents Operate Within Explicit, Bounded Permission Frames**
 At every moment, an agent's scope is known: what it can create, what it can modify, what it cannot touch. Mode determines scope. Four modes:
@@ -127,9 +127,9 @@ Agents navigate by graph traversal and facet query, not by guessing file paths o
 
 **NAV-2 — Temporal State Is a Facet, Not an Axis**
 Current truth, planned state, deferred state, and historical state are expressed as `ComplianceFacet.status` values and node_id prefixes — not as a separate coordinate axis. Agents scope queries by temporal state using facet filters.
-- Current truth: `compliance.status = "implemented"`, no `plan_docs/` or `desk/` prefix
-- Planned: node in `plan_docs/issues/` or `plan_docs/proposals/`
-- Deferred: node in `future_docs/`
+- Current truth: `compliance.status = "implemented"`, no `desk/` or `drawers/` prefix
+- Active: issue in `desk/issues/` or proposal in `desk/proposals/`
+- Deferred: item in `drawers/`
 - Historical: ADR node with `adr.status = "superseded"`
 
 **NAV-3 — Read the Graph First, Markdown Second**
@@ -167,7 +167,7 @@ When an issue is resolved:
 5. Delete the issue file AND remove it from `Index.md`.
 6. Commit with a message that names what was fixed.
 
-**Default rule:** non-trivial implementation or documentation work starts from an issue file in `plan_docs/issues/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.
+**Default rule:** non-trivial implementation or documentation work starts from an issue file in `desk/issues/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.
 
 **OP-5 — Atomization**
 Every unit of work — issue, proposal, or task — must be independently completable by a single agent in a single session and independently verifiable without knowledge of sibling units.

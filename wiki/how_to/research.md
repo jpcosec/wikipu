@@ -38,4 +38,4 @@ Researching in Wikipu means ingesting external sources — papers, documentation
 - [ ] Each promoted concept exists as a discrete wiki node — no content was copied verbatim from `raw/` into `wiki/` without being structured and typed.
 - [ ] New wiki nodes carry `edges` tracing back to the raw source.
 - [ ] `wiki-compiler build` completes without errors after the new nodes are added.
-- [ ] Any design gaps discovered during research have a corresponding issue in `plan_docs/`.
+- [ ] Any design gaps discovered during research have a corresponding issue in `desk/issues/`.

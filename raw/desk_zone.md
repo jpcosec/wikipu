@@ -9,7 +9,7 @@ The repository has four information zones, each with a distinct role and mutabil
 | `raw/` | Immutable seed material. The origin. | Read-only |
 | `wiki/` | Current truth. Documentation, standards, graph. | Curated, governed |
 | `desk/` | Active operational state. Everything currently in motion. | Ephemeral — items deleted when resolved |
-| `backlog/` | Deferred ideas not yet in motion. | Low-churn, reviewed periodically |
+| `drawers/` | Deferred ideas not yet in motion. | Low-churn, reviewed periodically |
 
 `desk/` replaces `plan_docs/`. The rename is necessary because `plan_docs/` implies only feature planning. The desk contains all active operational processes: implementation work, proposals, design decisions, self-repair cycles, and the central gate monitor. "What's on the desk?" answers the state of the system in one question.
 
@@ -22,9 +22,9 @@ Everything currently in motion that requires a human or agent decision to advanc
 | Subdirectory | Contents |
 |---|---|
 | `desk/Gates.md` | Central gate monitor — all open HITL blocks across all boards |
-| `desk/issues/Board.md` | Implementation work: gaps and unimplemented features |
+| `desk/issues/Board.md` | Implementation work board (entry point) |
+| `desk/issues/` | Issue files — one per unit of work |
 | `desk/proposals/` | Topology and facet proposals awaiting approval |
-| `desk/tasks/` | In-flight task artifacts |
 
 `Gates.md` lives at the root of `desk/` — it is not a domain board but the monitoring surface across all domains.
 
@@ -74,10 +74,9 @@ History lives in git log and changelog. The desk is clean.
 
 `plan_docs/` → `desk/`
 `plan_docs/issues/Index.md` → `desk/issues/Board.md`
-`plan_docs/issues/gaps/` → `desk/issues/gaps/`
-`plan_docs/issues/unimplemented/` → `desk/issues/unimplemented/`
+`plan_docs/issues/` → `desk/issues/`
 
-`future_docs/` → `backlog/` (optional, for naming consistency with the zone model)
+`future_docs/` → `drawers/`
 
 The content does not change in the rename — only the location and the name.
 

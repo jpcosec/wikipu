@@ -9,7 +9,7 @@ compliance:
   failing_standards: []
 ---
 
-A single, completable unit of work. Issues live in `plan_docs/issues/gaps/` (things that exist but are wrong) or `plan_docs/issues/unimplemented/` (things designed but not yet built). They are ephemeral: once resolved, the file is deleted and the work lives only in git and changelog.
+A single, completable unit of work. Issues live in `desk/issues/`. They are ephemeral: once resolved, the file is deleted and the work lives only in git and changelog.
 
 ## Rule Schema
 
@@ -32,7 +32,3 @@ Issues have no frontmatter. They are ephemeral operational artifacts (MA-3).
 - "What to fix" describes outcome, not process. It must be verifiable: either the thing exists and passes tests, or it does not.
 - "Depends on: none" must be written explicitly — omitting the field is not the same as having no dependencies.
 - An issue is done only when: tests pass, changelog updated, file deleted, removed from Board.
-
-## Usage Examples
-
-_To be added._

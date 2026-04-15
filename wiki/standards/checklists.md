@@ -28,10 +28,9 @@ Each checklist consists of a set of items, where each item includes a descriptio
    `Verification:` `pytest`
 4. **Changelog Updated?** (OP-4.4, CS-9) — `changelog.md` contains a concise entry for the change.
    `Verification:` `grep` last change in `changelog.md`.
-5. **Issue File Deleted?** (OP-4.5, MA-3) — The issue file in `plan_docs/issues/` has been removed.
-   `Verification:` `ls plan_docs/issues/`
-6. **Index Updated?** (OP-4.5) — The issue has been removed from `plan_docs/issues/Index.md`.
-   `Verification:` `grep` issue in `Index.md`.
+5. **Issue File Deleted?** (OP-4.5, MA-3) — The issue file in `desk/issues/` has been removed.
+   `Verification:` `ls desk/issues/`
+6. **Board Updated?** (OP-4.5) — The issue has been removed from `desk/issues/Board.md`.
 7. **Committed?** (OP-4.6) — Changes are committed with a clear, imperative message.
    `Verification:` `git status` (should be clean).
 
@@ -81,7 +80,7 @@ Each checklist consists of a set of items, where each item includes a descriptio
 *Enforces OP-5 and MA-6.*
 
 1. **Issue Status Clear?** (OP-1) — All issues worked on are either resolved (deleted) or updated.
-   `Verification:` `git status` + `ls plan_docs/issues/`.
+   `Verification:` `git status` + `ls desk/issues/`.
 2. **Changelog Reflects Work?** (CS-9) — All significant session changes are recorded.
    `Verification:` `cat changelog.md`.
 3. **Clean Worktree?** (OP-4.6) — All intended changes are committed.
@@ -106,6 +105,6 @@ An agent resolving `fix-auth-bug` would run through the `issue-resolution` check
 2. `ls tests/test_auth_bug_fix.py` -> PASS
 3. `pytest` -> PASS
 4. `grep "fix auth bug" changelog.md` -> PASS
-5. `ls plan_docs/issues/unimplemented/fix-auth-bug.md` -> FILE NOT FOUND (PASS)
-6. `grep "fix-auth-bug" plan_docs/issues/Index.md` -> NOT FOUND (PASS)
+5. `ls desk/issues/fix-auth-bug.md` -> FILE NOT FOUND (PASS)
+6. `grep "fix-auth-bug" desk/issues/Board.md` -> NOT FOUND (PASS)
 7. `git status` -> "nothing to commit, working tree clean" (PASS)
