@@ -31,7 +31,7 @@ from .validator import validate_topology_proposal
 from .workflow_guard import guard_workflow
 from .workflow_guard import read_current_branch
 from .workflow_guard import read_git_changes
-from .commands import build, query, audit
+from .commands import build, query, audit, context, cleanse, ingest
 
 
 def main() -> None:
@@ -115,43 +115,13 @@ def main() -> None:
                 return
             raise ValueError("validate-wiki requires --path <path> or --all")
         if args.command == "context":
-            print(
-                render_context(
-                    graph_path=Path(args.graph),
-                    node_ids=args.nodes,
-                    task_hint=args.task,
-                    depth=args.depth,
-                    output_format=args.format,
-                    include_planned=args.include_planned,
-                )
-            )
+            context.handle_context(args)
             return
         if args.command == "cleanse":
-            from .cleanser import (
-                detect_cleansing_candidates,
-                apply_cleansing_proposal,
-            )
-
-            if args.detect:
-                report = detect_cleansing_candidates(Path(args.graph))
-                print(json.dumps(report.model_dump(), indent=2))
-                return
-            if args.apply:
-                report_data = json.loads(Path(args.apply).read_text(encoding="utf-8"))
-                report = CleansingReport.model_validate(report_data)
-                for proposal in report.proposals:
-                    apply_cleansing_proposal(proposal, project_root=Path("."))
-                return
-            raise ValueError("cleanse requires --detect or --apply <report.json>")
+            cleanse.handle_cleanse(args)
+            return
         if args.command == "ingest":
-            written = ingest_raw_sources(
-                source_dir=Path(args.source),
-                dest_dir=Path(args.dest),
-                project_root=Path(args.project_root),
-                overwrite=args.overwrite,
-                manifest_path=Path(args.manifest) if args.manifest else None,
-            )
-            print(json.dumps([path.as_posix() for path in written], indent=2))
+            ingest.handle_ingest(args)
             return
         if args.command == "curate":
             if args.score:
