@@ -626,3 +626,23 @@ class EnergyReport(BaseModel):
     delta: float = Field(
         default=0.0, description="The change in total energy since the baseline."
     )
+
+
+class ZoneContract(BaseModel):
+    """Declarative contract for zone-based sensing in perception and energy."""
+
+    zone: str = Field(description="Zone name (e.g., 'raw', 'desk', 'drawers').")
+    path: str = Field(description="Relative path to the zone directory.")
+    track_modified: bool = Field(
+        default=True, description="Whether to track modified files in this zone."
+    )
+    track_untracked: bool = Field(
+        default=True, description="Whether to track untracked files in this zone."
+    )
+    energy_weight: float = Field(
+        default=1.0, description="Weight multiplier for energy calculations."
+    )
+    response_action: str = Field(
+        default="scan",
+        description="Response action when perturbations detected (e.g., 'rebuild', 'ingest', 'ignore').",
+    )

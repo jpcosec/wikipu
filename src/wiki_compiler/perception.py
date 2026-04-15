@@ -5,9 +5,88 @@ from __future__ import annotations
 import subprocess
 from pathlib import Path
 
-from .contracts import GitFacet
+from .contracts import GitFacet, ZoneContract
 from .graph_utils import iter_knowledge_nodes
 from .graph_utils import load_graph
+
+DEFAULT_ZONE_CONTRACTS = [
+    ZoneContract(
+        zone="raw",
+        path="raw/",
+        track_modified=False,
+        track_untracked=True,
+        energy_weight=1.0,
+        response_action="ingest",
+    ),
+    ZoneContract(
+        zone="exclusion",
+        path="exclusion/",
+        track_modified=False,
+        track_untracked=False,
+        energy_weight=0.0,
+        response_action="ignore",
+    ),
+    ZoneContract(
+        zone="wiki",
+        path="wiki/",
+        track_modified=True,
+        track_untracked=False,
+        energy_weight=1.0,
+        response_action="rebuild",
+    ),
+    ZoneContract(
+        zone="desk",
+        path="desk/",
+        track_modified=True,
+        track_untracked=True,
+        energy_weight=2.0,
+        response_action="scan",
+    ),
+    ZoneContract(
+        zone="drawers",
+        path="drawers/",
+        track_modified=True,
+        track_untracked=True,
+        energy_weight=0.5,
+        response_action="review",
+    ),
+    ZoneContract(
+        zone="src",
+        path="src/",
+        track_modified=True,
+        track_untracked=False,
+        energy_weight=1.5,
+        response_action="audit",
+    ),
+]
+
+
+def load_zone_contracts(project_root: Path | None = None) -> list[ZoneContract]:
+    """Load zone contracts from wiki topology or return defaults."""
+    if project_root is None:
+        return DEFAULT_ZONE_CONTRACTS
+
+    zones_md = project_root / "wiki/standards/zones.md"
+    if not zones_md.exists():
+        return DEFAULT_ZONE_CONTRACTS
+
+    try:
+        import yaml
+
+        content = zones_md.read_text(encoding="utf-8")
+        yaml_match = (
+            __import__("re")
+            .compile(r"\A---\s*\n(.*?)\n---(\s*\n|$)", __import__("re").DOTALL)
+            .search(content)
+        )
+        if yaml_match:
+            data = yaml.safe_load(yaml_match.group(1))
+            if data and "zones" in data:
+                return [ZoneContract(**zone) for zone in data["zones"]]
+    except Exception:
+        pass
+
+    return DEFAULT_ZONE_CONTRACTS
 
 
 def attach_git_facets(graph: object, project_root: Path) -> None:
@@ -21,16 +100,22 @@ def attach_git_facets(graph: object, project_root: Path) -> None:
 
 
 def build_status_report(
-    graph_path: Path | None, 
-    project_root: Path, 
-    graph: object | None = None
+    graph_path: Path | None,
+    project_root: Path,
+    graph: object | None = None,
+    zone_contracts: list[ZoneContract] | None = None,
 ) -> dict[str, object]:
     """Compare stored GitFacet data against the current worktree and report perturbations."""
     if graph is None:
         if graph_path is None:
             raise ValueError("Either graph or graph_path must be provided.")
         graph = load_graph(graph_path)
-    
+
+    if zone_contracts is None:
+        zone_contracts = load_zone_contracts(project_root)
+
+    contracts_by_path = {c.path: c for c in zone_contracts}
+
     modified_nodes: list[dict[str, str]] = []
     for node in iter_knowledge_nodes(graph):
         if node.git is None:
@@ -49,40 +134,65 @@ def build_status_report(
                     "status": "modified_since_build",
                 }
             )
-    
-    untracked_raw = git_untracked_files(project_root, Path("raw"))
-    
+
+    untracked_by_zone: dict[str, list[str]] = {}
+    for contract in zone_contracts:
+        if contract.track_untracked:
+            zone_path = Path(contract.path)
+            if zone_path.exists() or not is_git_tracked(
+                project_root, project_root / zone_path
+            ):
+                untracked = git_untracked_files(project_root, zone_path)
+                if untracked:
+                    untracked_by_zone[contract.zone] = untracked
+
+    raw_files = untracked_by_zone.get("raw", [])
+
     # Gate perception
     from .gates import load_gates
+
     gates_table = load_gates(project_root / "desk/Gates.md")
     open_gates = [g.model_dump() for g in gates_table.gates if g.status == "open"]
-    
-    # Classification
+
+    # Classification using zone contracts
     perturbations: list[dict[str, str]] = []
     for node in modified_nodes:
-        perturbations.append({
-            "type": "modified_node",
-            "id": node["node_id"],
-            "action": classify_perturbation("modified_node", node["node_id"])
-        })
-    for raw in untracked_raw:
-        perturbations.append({
-            "type": "untracked_raw",
-            "id": raw,
-            "action": classify_perturbation("untracked_raw", raw)
-        })
+        action = classify_perturbation_by_zones(node["node_id"], zone_contracts)
+        perturbations.append(
+            {
+                "type": "modified_node",
+                "id": node["node_id"],
+                "action": action,
+                "zone": get_zone_for_path(node["path"], zone_contracts),
+            }
+        )
+    for zone_name, files in untracked_by_zone.items():
+        for file_path in files:
+            contract = contracts_by_path.get(f"{zone_name}/")
+            action = contract.response_action if contract else "ignore"
+            perturbations.append(
+                {
+                    "type": "untracked_file",
+                    "id": file_path,
+                    "action": action,
+                    "zone": zone_name,
+                }
+            )
     for gate in open_gates:
-        perturbations.append({
-            "type": "open_gate",
-            "id": gate["gate_id"],
-            "action": "await_human_approval"
-        })
+        perturbations.append(
+            {
+                "type": "open_gate",
+                "id": gate["gate_id"],
+                "action": "await_human_approval",
+                "zone": "desk",
+            }
+        )
 
     return {
         "modified_nodes": modified_nodes,
-        "untracked_raw_files": untracked_raw,
+        "untracked_by_zone": untracked_by_zone,
         "open_gates": open_gates,
-        "perturbations": perturbations
+        "perturbations": perturbations,
     }
 
 
@@ -96,6 +206,26 @@ def classify_perturbation(p_type: str, p_id: str) -> str:
     if p_type == "untracked_raw":
         return "ingest_raw_source"
     return "ignore"
+
+
+def classify_perturbation_by_zones(
+    node_id: str, zone_contracts: list[ZoneContract]
+) -> str:
+    """Classify perturbation based on zone contracts."""
+    for contract in zone_contracts:
+        if node_id.startswith(f"doc:{contract.path}") or node_id.startswith(
+            f"file:{contract.path}"
+        ):
+            return contract.response_action
+    return "ignore"
+
+
+def get_zone_for_path(file_path: str, zone_contracts: list[ZoneContract]) -> str | None:
+    """Get the zone for a given file path."""
+    for contract in zone_contracts:
+        if file_path.startswith(contract.path):
+            return contract.zone
+    return None
 
 
 def build_git_facet(project_root: Path, file_path: Path) -> GitFacet:
