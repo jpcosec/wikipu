@@ -6,9 +6,8 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 11 | energy | Reduce file complexity (main.py 791 lines) | p1 | none |
+| 11 | energy | Reduce file complexity (main.py 791 lines, main() 1489 statements) | p1 | none |
 | 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
-| 13 | refactor | Refactor main.py:main (1489 statements) | p2 | 11 |
 
 ## Blocked (status=blocked)
 
