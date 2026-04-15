@@ -6,7 +6,6 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 1 | ingest | Ingest raw unimplemented source | p0 | none |
 | 7 | energy | Replace node count with redundancy heuristic | p0 | none |
 | 6a | energy | Add descriptive abstraction penalties | p1 | 7 |
 | 6c | energy | Add code-doc drift detection | p1 | 7 |
@@ -18,7 +17,9 @@ No blocked items.
 
 ## Ready to Promote (from drawers/)
 
-No items pending promotion.
+| ID | Domain | Item |
+|----|--------|------|
+| 1 | ingest | Ingest raw unimplemented source |
 
 ---
 
