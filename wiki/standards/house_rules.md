@@ -65,7 +65,7 @@ The five information zones are inviolable:
 - `wiki/` — Current Truth. The self-image of the system.
 - `desk/` — Active Operational Surface.
 - `drawers/` — Deferred potential.
-- `src/` — The motor and sensory organs. (Formerly `future_docs/` in deprecated models).
+- `src/` — The motor and sensory organs.
 No zone may reference or write into a zone above it in the chain. For example, `desk/` may reference `wiki/`, but `wiki/` may not reference `desk/`.
 `Enforced by:` build_wiki() checks frontmatter edges for cross-zone violations; CI scan on commit.
 

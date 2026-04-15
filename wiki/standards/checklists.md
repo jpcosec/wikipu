@@ -71,7 +71,7 @@ Each checklist consists of a set of items, where each item includes a descriptio
    `Verification:` `wiki-compiler validate`.
 2. **No Orphans?** (ID-6) — No nodes are left without incoming or outgoing edges (unless root).
    `Verification:` `wiki-compiler audit`.
-3. **Zone Integrity?** (ID-4) — No cross-zone references (e.g., `wiki/` referencing `plan_docs/`).
+3. **Zone Integrity?** (ID-4) — No cross-zone references (e.g., `wiki/` referencing `desk/` or `drawers/`).
    `Verification:` `wiki-compiler build` (edge validation).
 4. **Build Passes?** — `wiki-compiler build` runs without errors and compliance is at or above baseline.
    `Verification:` `wiki-compiler build`.

@@ -40,6 +40,6 @@ Writing a wiki node means creating or updating a Markdown file in `wiki/` that d
 - [ ] The abstract paragraph exists as the first plain-text content after the frontmatter, with no heading above it.
 - [ ] No content is duplicated from another node — shared facts are transcluded.
 - [ ] `compliance.status` matches the actual implementation state of the described subject.
-- [ ] The node does not reference `desk/` or `backlog/` nodes.
+- [ ] The node does not reference `desk/` or `drawers/` nodes.
 - [ ] The node appears in its domain's `Index.md`.
 - [ ] `wiki-compiler build` completes without errors referencing this node.

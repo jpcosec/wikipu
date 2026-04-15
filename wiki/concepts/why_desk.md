@@ -39,6 +39,6 @@ The name carries the right semantic naturally:
 - "Clear the desk" = complete the active work (consistent with the ephemeral contract)
 - "Check the desk" = check current operational state before starting new work
 
-It differentiates clearly from `wiki/` (truth, permanent), `raw/` (seed, immutable), and `backlog/` (deferred, not yet active). The desk is where work happens right now.
+It differentiates clearly from `wiki/` (truth, permanent), `raw/` (seed, immutable), and `drawers/` (deferred, not yet active). The desk is where work happens right now.
 
 Generated from `raw/desk_zone.md`.
