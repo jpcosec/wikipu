@@ -40,10 +40,10 @@ raw/          →  [ingest]  →  wiki/
                                  ↓
                          desk/socratic/Board.md   (open questions, pending human resolution)
                                  ↓
-                         desk/issues/ or proposals/   (resolved → actionable)
+                          desk/tasks/ or proposals/   (resolved → actionable)
 ```
 
-Socratic runs before `desk/issues/` — it is the step that validates a design before it becomes a plan.
+Socratic runs before `desk/tasks/` — it is the step that validates a design before it becomes a plan.
 
 ---
 

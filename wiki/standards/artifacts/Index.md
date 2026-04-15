@@ -15,6 +15,6 @@ Canonical structure definitions for every artifact type in the Wikipu ecosystem.
 | ADR | `adr.md` | `wiki/adrs/` | yes |
 | Proposal | `proposal.md` | `desk/proposals/` | yes |
 | Board | `board.md` | `desk/` | no |
-| Issue | `issue.md` | `desk/issues/` | no |
+| Task | `task.md` | `desk/tasks/` | no |
 | Gate | `gate.md` | `desk/Gates.md` | row format |
 | Backlog Item | `backlog_item.md` | `drawers/` | no |

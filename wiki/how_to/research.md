@@ -29,13 +29,8 @@ Researching in Wikipu means ingesting external sources — papers, documentation
 6. For each concept worth promoting, create or update a wiki node in the appropriate `wiki/` subdirectory following the process in `wiki/how_to/document.md`.
 7. Link the new wiki nodes back to their source using `edges` with `relation_type: reads_from` referencing the `raw/` file node.
 8. Run `wiki-compiler build` to rebuild `knowledge_graph.json` incorporating the new nodes.
-9. If the research reveals a design gap or missing implementation, create a plan issue per `wiki/how_to/plan.md`.
+9. If the research reveals a design gap or missing implementation, create a plan task per `wiki/how_to/plan.md`.
 
 ## Verification
 
-- [ ] The source file exists in `raw/` and has not been modified by agent output.
-- [ ] `wiki-compiler ingest` ran without errors on the source file.
-- [ ] Each promoted concept exists as a discrete wiki node — no content was copied verbatim from `raw/` into `wiki/` without being structured and typed.
-- [ ] New wiki nodes carry `edges` tracing back to the raw source.
-- [ ] `wiki-compiler build` completes without errors after the new nodes are added.
-- [ ] Any design gaps discovered during research have a corresponding issue in `desk/issues/`.
+- [ ] Any design gaps discovered during research have a corresponding task in `desk/tasks/`.

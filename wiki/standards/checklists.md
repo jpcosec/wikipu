@@ -17,7 +17,7 @@ Verification checklists provide a machine-readable set of binary (pass/fail) che
 
 Each checklist consists of a set of items, where each item includes a description, the `rule_id` it enforces from the `[[house_rules]]`, and the verification method (command or query).
 
-### 1. Issue Resolution Checklist (`issue-resolution`)
+### 1. Task Resolution Checklist (`task-resolution`)
 *Enforces the OP-4 Protocol.*
 
 1. **Existing Tests Valid?** (OP-4.1) — All existing tests relevant to the changed area still pass.
@@ -28,9 +28,9 @@ Each checklist consists of a set of items, where each item includes a descriptio
    `Verification:` `pytest`
 4. **Changelog Updated?** (OP-4.4, CS-9) — `changelog.md` contains a concise entry for the change.
    `Verification:` `grep` last change in `changelog.md`.
-5. **Issue File Deleted?** (OP-4.5, MA-3) — The issue file in `desk/issues/` has been removed.
-   `Verification:` `ls desk/issues/`
-6. **Board Updated?** (OP-4.5) — The issue has been removed from `desk/issues/Board.md`.
+5. **Task File Deleted?** (OP-4.5, MA-3) — The task file in `desk/tasks/` has been removed.
+   `Verification:` `ls desk/tasks/`
+6. **Board Updated?** (OP-4.5) — The task has been removed from `desk/tasks/Board.md`.
 7. **Committed?** (OP-4.6) — Changes are committed with a clear, imperative message.
    `Verification:` `git status` (should be clean).
 
@@ -79,8 +79,8 @@ Each checklist consists of a set of items, where each item includes a descriptio
 ### 5. Session Closure Checklist (`session-close`)
 *Enforces OP-5 and MA-6.*
 
-1. **Issue Status Clear?** (OP-1) — All issues worked on are either resolved (deleted) or updated.
-   `Verification:` `git status` + `ls desk/issues/`.
+1. **Task Status Clear?** (OP-1) — All tasks worked on are either resolved (deleted) or updated.
+   `Verification:` `git status` + `ls desk/tasks/`.
 2. **Changelog Reflects Work?** (CS-9) — All significant session changes are recorded.
    `Verification:` `cat changelog.md`.
 3. **Clean Worktree?** (OP-4.6) — All intended changes are committed.
@@ -99,12 +99,12 @@ Each checklist consists of a set of items, where each item includes a descriptio
 
 ## Usage Examples
 
-### Example: Verifying an Issue Resolution
-An agent resolving `fix-auth-bug` would run through the `issue-resolution` checklist:
+### Example: Verifying a Task Resolution
+An agent resolving `fix-auth-bug` would run through the `task-resolution` checklist:
 1. `pytest tests/test_auth.py` -> PASS
 2. `ls tests/test_auth_bug_fix.py` -> PASS
 3. `pytest` -> PASS
 4. `grep "fix auth bug" changelog.md` -> PASS
-5. `ls desk/issues/fix-auth-bug.md` -> FILE NOT FOUND (PASS)
-6. `grep "fix-auth-bug" desk/issues/Board.md` -> NOT FOUND (PASS)
+5. `ls desk/tasks/fix-auth-bug.md` -> FILE NOT FOUND (PASS)
+6. `grep "fix-auth-bug" desk/tasks/Board.md` -> NOT FOUND (PASS)
 7. `git status` -> "nothing to commit, working tree clean" (PASS)

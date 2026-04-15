@@ -72,7 +72,7 @@ No zone may reference or write into a zone above it in the chain. For example, `
 **ID-5 — Human Gate at the Topology Boundary**
 Human approval is required only for operations that affect entities outside the system's own topology — external codebases, external services, published artifacts, or shared infrastructure. Inside the topology, any operation that respects the core rules is permitted without a gate, provided it is reversible. Reversibility is guaranteed by git: every in-topology change can be undone. A proposal with `requires_human_approval: true` is one whose effects cannot be fully reversed by a git revert, or whose effects propagate outside the topology boundary. No implicit batch approvals for gated proposals.
 `Enforced by:` cleanse --apply checks topology boundary before requiring approval; autopoiesis coordinator pauses at desk/Gates.md only for boundary-crossing proposals.
-`Status:` boundary-checking logic in cleanse --apply is not yet implemented — pending `unimplemented/cleansing-protocol.md` (issue 6). Until then, all cleansing proposals require human approval as a conservative fallback.
+`Status:` boundary-checking logic in cleanse --apply is not yet implemented — pending `unimplemented/cleansing-protocol.md` (task 6). Until then, all cleansing proposals require human approval as a conservative fallback.
 
 **ID-6 — Traceable Causality**
 Every element's existence must trace to a perturbation that created it. No orphan nodes, no files without a known origin. New modules require a TopologyProposal. New wiki nodes require a source (raw/, code scan, or explicit authorship). Changelog records every significant change.
@@ -98,7 +98,7 @@ Deterministic logic, AI logic, persistence, and presentation are always separate
 Every interface — between modules, between human and agent, between current and future state — is a typed schema. The schema IS the documentation. Descriptions must be accurate because LLMs read them. This generates: Pydantic everywhere, Field(description=...) required, contracts as the only inter-module API, docstrings as specifications.
 
 **MA-3 — Plans Are Ephemeral. Code and Changelog Are Permanent.**
-A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the desk/issues lifecycle, the 6-month stale rule on drawers/, the prohibition on archive folders.
+A plan that survives its own completion is drift. Done = plan deleted, code changed, changelog updated. History lives in git and changelog only. There is no archive state. This generates: the desk/tasks lifecycle, the 6-month stale rule on drawers/, the prohibition on archive folders.
 
 **MA-4 — Agents Operate Within Explicit, Bounded Permission Frames**
 At every moment, an agent's scope is known: what it can create, what it can modify, what it cannot touch. Mode determines scope. Four modes:
@@ -110,7 +110,7 @@ At every moment, an agent's scope is known: what it can create, what it can modi
 
 **MA-5 — Verification Is Inline, Not Deferred**
 A step that cannot be verified in isolation is a design problem. Tests run at each slice, not at the end. Each slice leaves the codebase in a valid state. No step is done until its test passes.
-`Enforced by:` pre-push hook; issue resolution protocol requires tests before changelog update.
+`Enforced by:` pre-push hook; task resolution protocol requires tests before changelog update.
 
 **MA-6 — The Methodology Improves Itself**
 Every session ends with a trail collect step. Friction discovered during a session — wrong rules, missing constraints, ambiguous definitions — is encoded before the session closes. No logical error or contradiction in the rules should survive the session that discovered it. This is Phase 6 of the development lifecycle.
@@ -128,7 +128,7 @@ Agents navigate by graph traversal and facet query, not by guessing file paths o
 **NAV-2 — Temporal State Is a Facet, Not an Axis**
 Current truth, planned state, deferred state, and historical state are expressed as `ComplianceFacet.status` values and node_id prefixes — not as a separate coordinate axis. Agents scope queries by temporal state using facet filters.
 - Current truth: `compliance.status = "implemented"`, no `desk/` or `drawers/` prefix
-- Active: issue in `desk/issues/` or proposal in `desk/proposals/`
+- Active: task in `desk/tasks/` or proposal in `desk/proposals/`
 - Deferred: item in `drawers/`
 - Historical: ADR node with `adr.status = "superseded"`
 
@@ -159,25 +159,25 @@ Every Board (`Board.md`) contains: current state summary, priority roadmap with 
 A gate entry in `desk/Gates.md` is removed only when: the human has explicitly approved or rejected the proposal AND the resolution has been applied AND the changelog has been updated. Implicit resolution (gate line deleted without a trace) is not valid.
 
 **OP-4 — Issue Resolution Protocol**
-When an issue is resolved:
+When an task is resolved:
 1. Check whether any existing test is no longer valid — delete it if needed.
 2. Add new tests for the new behaviour.
 3. Run the relevant tests — all must pass.
 4. Update `changelog.md`.
-5. Delete the issue file AND remove it from `Index.md`.
+5. Delete the task file AND remove it from `Index.md`.
 6. Commit with a message that names what was fixed.
 
-**Default rule:** non-trivial implementation or documentation work starts from an issue file in `desk/issues/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.
+**Default rule:** non-trivial implementation or documentation work starts from an task file in `desk/tasks/`. The only exception is a consciously declared structural/docs-only change that does not modify runtime code or tests.
 
 **OP-5 — Atomization**
-Every unit of work — issue, proposal, or task — must be independently completable by a single agent in a single session and independently verifiable without knowledge of sibling units.
+Every unit of work — task, proposal, or task — must be independently completable by a single agent in a single session and independently verifiable without knowledge of sibling units.
 
 The test: can this unit be handed to a subagent as a self-contained deliverable? If completing it requires knowing about or modifying the same files as another unit, or if its "done" state can only be verified in combination with another unit, it is not atomic.
 
 Split when: a unit has more than 3–4 steps that could fail independently. Extract the shared concern into a parent or sibling unit with an explicit `depends_on` link. Never split for organizational neatness — only when failure modes are genuinely independent.
 
 This rule applies to wiki nodes via WK-1 (Single Responsibility) and to code modules via CS-9. The same principle governs all levels of the system.
-`Enforced by:` issue atomization check in Stage 2.2 of `wiki/standards/issues_lifecycle.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
+`Enforced by:` task atomization check in Stage 2.2 of `wiki/standards/tasks_lifecycle.md`; contradiction check (Stage 2.3) ensures splits don't create overlap.
 
 **OP-6 — Clean Tree Before Editing**
 Do not start editing while the worktree has unstaged or untracked files. First bring the tree back to a deliberate state by committing, stashing, deleting, or otherwise resolving the pending changes.
@@ -191,25 +191,25 @@ Do not start editing while the worktree has unstaged or untracked files. First b
 **OP-7 — Git Commit Cadence and Branching**
 Git encodes state transitions at two levels of granularity: commits (atomic units) and branches (in-progress work streams). Together they make every stable state of the system recoverable and every change attributable.
 
-**Commit = one atomic issue resolved, or one coherent structural change.**
-- One commit closes exactly one issue (per OP-4 step 6). The commit message names the issue.
-- Structural wiki changes (new node, deleted node, edge modification) that are not tied to an issue get their own commit.
-- Session-end trail collect gets a commit even if no issue was resolved.
+**Commit = one atomic task resolved, or one coherent structural change.**
+- One commit closes exactly one task (per OP-4 step 6). The commit message names the task.
+- Structural wiki changes (new node, deleted node, edge modification) that are not tied to an task get their own commit.
+- Session-end trail collect gets a commit even if no task was resolved.
 - Do not commit on every file save. A commit is a claim that the system is valid and self-consistent at the granularity of one logical unit. A half-written node or an incomplete refactor is not a commit boundary.
-- If runtime code or tests change, the default expectation is: linked issue, changelog update, and branch name `issue/<name>` or `phase/<name>`.
+- If runtime code or tests change, the default expectation is: linked task, changelog update, and branch name `task/<name>` or `phase/<name>`.
 
-**Branch = one issue or one coherent phase of work.**
-- Every issue or closely related group of issues gets its own branch: `issue/<name>` or `phase/<n>`.
+**Branch = one task or one coherent phase of work.**
+- Every task or closely related group of tasks gets its own branch: `task/<name>` or `phase/<n>`.
 - Work happens on branches. `main` is never the active development surface.
 - Branch from `main`. Merge back to `main` only when the work set is complete, tests pass, and changelog is updated.
 
 **Main = stable state milestone.**
-- `main` is a claim that the entire system is coherent: all current-phase issues resolved, all tests pass, no open structural debt in the work set.
+- `main` is a claim that the entire system is coherent: all current-phase tasks resolved, all tests pass, no open structural debt in the work set.
 - Merging to `main` marks a stable checkpoint — the equivalent of a version boundary, even without a tag.
 - Never commit directly to `main` during active development.
 
 Commit message format: imperative verb + what changed + why if non-obvious.
-`Enforced by:` branch protection on main; pre-push hook verifies tests pass before merge; session log records last commit SHA and active branch; `wiki-compiler check-workflow` verifies issue/changelog/branch discipline before commit.
+`Enforced by:` branch protection on main; pre-push hook verifies tests pass before merge; session log records last commit SHA and active branch; `wiki-compiler check-workflow` verifies task/changelog/branch discipline before commit.
 
 **OP-8 — The Autopoietic Cycle**
 Periodically (at minimum after each significant development phase):
@@ -227,8 +227,8 @@ Any operation that modifies the Knowledge Graph (`knowledge_graph.json`) via `wi
 `Enforced by:` `check-workflow` (ensures `knowledge_graph.json` is not drifted); `MA-5` (verification is inline).
 
 **OP-10 — The Socratic Design Method**
-Every proposed plan, node draft, or architectural design must be interrogated using the Socratic method before any implementation begins. The agent or human must generate typed questions (missing constraints, unstated assumptions, contradictions, undefined edge cases, scope creep signals, ownership gaps) and track them in `desk/socratic/Board.md`. A plan cannot move to `desk/issues/` for execution until every open question on the board is explicitly answered and the resolution is structurally encoded into the topology (e.g., via house rule updates, wiki node changes, or plan revisions).
-`Enforced by:` Agent system prompt circuit breakers; manual audit of `desk/socratic/` before issue promotion.
+Every proposed plan, node draft, or architectural design must be interrogated using the Socratic method before any implementation begins. The agent or human must generate typed questions (missing constraints, unstated assumptions, contradictions, undefined edge cases, scope creep signals, ownership gaps) and track them in `desk/socratic/Board.md`. A plan cannot move to `desk/tasks/` for execution until every open question on the board is explicitly answered and the resolution is structurally encoded into the topology (e.g., via house rule updates, wiki node changes, or plan revisions).
+`Enforced by:` Agent system prompt circuit breakers; manual audit of `desk/socratic/` before task promotion.
 
 ---
 
@@ -302,7 +302,7 @@ A draft may be promoted from `wiki/drafts/` into `wiki/` only when it has a clea
 - Promoting a draft that duplicates an existing wiki concept.
 - Applying a cleansing proposal without explicit per-proposal approval.
 - Leaving a gate open in `desk/Gates.md` with no activity for more than one cycle.
-- Closing an issue without updating tests and changelog.
+- Closing an task without updating tests and changelog.
 - A rule in this document causing consistent friction and surviving the session that discovered it.
 
 ## Rule Schema

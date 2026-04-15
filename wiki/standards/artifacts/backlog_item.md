@@ -27,5 +27,5 @@ Backlog items have no frontmatter.
 
 - A backlog item with no Trigger is a dead item — it will never be promoted. Either define the trigger or delete the item.
 - Items older than 6 months with no trigger change are reviewed for deletion in OP-6 (Autopoietic Cycle).
-- Promotion means: create an issue file in `desk/issues/`, delete the backlog file, add the issue to the Board.
+- Promotion means: create an issue file in `desk/tasks/`, delete the backlog file, add the issue to the Board.
 - Backlog items never reference `desk/` — they are ideas, not active work.

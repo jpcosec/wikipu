@@ -38,7 +38,7 @@ Everything currently in motion that requires a human or agent decision to advanc
 | Subdirectory | Contents |
 |---|---|
 | `desk/Gates.md` | Central gate monitor — all open HITL blocks across all boards |
-| `desk/issues/Board.md` | Implementation work: gaps and unimplemented features |
+| `desk/tasks/Board.md` | Implementation work: active tasks |
 | `desk/proposals/` | Topology and facet proposals awaiting approval |
 | `desk/tasks/` | In-flight task artifacts |
 
