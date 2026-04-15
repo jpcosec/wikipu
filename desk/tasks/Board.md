@@ -4,7 +4,13 @@
 
 ## Active (status=open|in_progress)
 
-No active tasks.
+| ID | Domain | Task | Priority | Depends On |
+|----|--------|------|----------|------------|
+| 1 | ingest | Ingest raw unimplemented source | p0 | none |
+| 2 | cleanse | Resolve Cleansing Gate | p0 | none |
+| 6 | energy | Enforce structural abstraction and drift | p1 | none |
+| 7 | energy | Replace node count heuristic | p1 | none |
+| 8 | audit | Multidimensional styling audit | p1 | none |
 
 ## Blocked (status=blocked)
 
