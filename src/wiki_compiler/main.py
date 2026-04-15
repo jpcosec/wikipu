@@ -10,19 +10,11 @@ import sys
 from pathlib import Path
 
 from .auditor import run_audit
-from .artifact_validation import validate_wiki_artifact
 from .builder import build_wiki
-from .cleanser import detect_cleansing_candidates
-from .context import render_context
-from .curate import promote_draft
-from .curate import score_drafts
 from .energy import run_energy_audit, DRIFT_PENALTY_WEIGHT
 from .facet_validator import validate_facet_proposal
 from .graph_utils import load_graph
-from .ingest import ingest_raw_sources
 from .contracts import CleansingReport
-from .query_executor import execute_query
-from .query_language import StructuredQuery
 from .perception import build_status_report
 from .query_server import query_main
 from .registry import build_default_registry
@@ -31,7 +23,19 @@ from .validator import validate_topology_proposal
 from .workflow_guard import guard_workflow
 from .workflow_guard import read_current_branch
 from .workflow_guard import read_git_changes
-from .commands import build, query, audit, context, cleanse, ingest
+from .commands import (
+    build,
+    query,
+    audit,
+    context,
+    cleanse,
+    ingest,
+    curate,
+    compose,
+    scaffold,
+    status,
+    energy,
+)
 
 
 def main() -> None:
@@ -42,8 +46,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         if args.command == "scaffold":
-            generate_scaffolding(Path(args.module), args.intent)
-            print(f"[OK] Scaffolding successfully created in {args.module}")
+            scaffold.handle_scaffold(args)
             return
         if args.command == "build":
             build.handle_build(args)
@@ -124,56 +127,10 @@ def main() -> None:
             ingest.handle_ingest(args)
             return
         if args.command == "curate":
-            if args.score:
-                results = score_drafts(
-                    graph_path=Path(args.graph),
-                    drafts_dir=Path(args.drafts_dir),
-                )
-                print(json.dumps(results, indent=2))
-                return
-            if args.promote:
-                node_id, dest = args.promote
-                promote_draft(
-                    node_id=node_id,
-                    dest=dest,
-                    drafts_dir=Path(args.drafts_dir),
-                    wiki_dir=Path(args.wiki_dir),
-                )
-                print(f"[OK] Promoted {node_id} to wiki/{dest}")
-                return
-            raise ValueError("curate requires --score or --promote <node_id> <dest>")
+            curate.handle_curate(args)
+            return
         if args.command == "compose":
-            output_path = Path(args.output)
-            output_path.parent.mkdir(parents=True, exist_ok=True)
-            node_ids = args.nodes.split()
-            lines = [
-                "---",
-                "identity:",
-                f'  node_id: "doc:{output_path.as_posix()}"',
-                '  node_type: "index"',
-                "edges:",
-            ]
-            for nid in node_ids:
-                lines.append(
-                    f'  - {{target_id: "{nid}", relation_type: "transcludes"}}'
-                )
-            lines.extend(
-                [
-                    "---",
-                    "",
-                    f"# {args.title}",
-                    "",
-                    args.abstract,
-                    "",
-                ]
-            )
-            for nid in node_ids:
-                # Extract slug from node_id (e.g., 'doc:wiki/foo.md' -> 'foo')
-                slug = Path(nid.split(":")[-1]).stem
-                lines.append(f"![[{slug}]]")
-
-            output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-            print(f"[OK] Composite node created at {args.output}")
+            compose.handle_compose(args)
             return
         if args.command == "init":
             init_repository()
@@ -293,52 +250,10 @@ def main() -> None:
                 "drafts requires --detect-stale, --write-drafts, or --promote <id>"
             )
         if args.command == "status":
-            report = build_status_report(
-                graph_path=Path(args.graph),
-                project_root=Path(args.project_root),
-            )
-            print(json.dumps(report, indent=2))
+            status.handle_status(args)
             return
         if args.command == "energy":
-            graph = load_graph(Path(args.graph))
-            report = run_energy_audit(graph, Path(args.project_root))
-            if args.format == "json":
-                print(report.model_dump_json(indent=2))
-            else:
-                ce = report.current_energy
-                print(f"## Systemic Energy Report\n")
-                print(f"**Total Energy Score: {ce.energy_score:.2f}**\n")
-                print(f"### Breakdown")
-                print(
-                    f"- **Structural (Redundancy)**: {ce.structural_energy:.2f} (r={ce.redundant_nodes}, b={ce.boilerplate_ratio:.2f})"
-                )
-                print(
-                    f"- **Abstraction (Complexity)**: {ce.abstraction_energy:.2f} (f={ce.long_files}, c={ce.complex_functions})"
-                )
-                print(
-                    f"- **Drift (Code-Doc)**: {ce.drift_flags * DRIFT_PENALTY_WEIGHT:.2f} (d={ce.drift_flags})"
-                )
-                print(
-                    f"- **Compliance (Debt)**: {ce.violation_energy:.2f} (v={ce.compliance_violations})"
-                )
-                print(
-                    f"- **Operational (Drift/Gates)**: {ce.perturbation_energy:.2f} (p={ce.perturbations}, g={ce.open_gates})"
-                )
-                if ce.agent_violations > 0:
-                    print(
-                        f"- **Agent Rule Violations**: {ce.agent_violation_energy:.2f} (v={ce.agent_violations})"
-                    )
-
-                if ce.energy_score > 500:
-                    print(
-                        f"\n[❌] **CRITICAL ENERGY LEVEL**: System entropy is high. Resolve compliance debt and close open gates immediately."
-                    )
-                elif ce.energy_score > 200:
-                    print(
-                        f"\n[⚠️] **HIGH ENERGY**: Consider a cleansing cycle to simplify the graph."
-                    )
-                else:
-                    print(f"\n[✅] **LOW ENERGY**: System is lean and stable.")
+            energy.handle_energy(args)
             return
     except Exception as exc:
         print(f"[ERROR] {exc}")
