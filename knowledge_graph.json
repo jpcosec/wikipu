@@ -1477,9 +1477,9 @@
           "coverage_percent": null
         },
         "git": {
-          "blob_sha": "ddaf1494a0bb81f9710e9b8529b1ed987f154dc7",
+          "blob_sha": "d68b6a6179d05b922309257f4bf765f51cd33f2c",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "e390006d8eec62216b62c9d43bad5912c838fac9",
+          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -1704,6 +1704,31 @@
         },
         "edges": [
           {
+            "target_id": "code:src/wiki_compiler/energy.py:tokenize",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/energy.py:jaccard_similarity",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/energy.py:detect_redundant_nodes",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/energy.py:detect_long_files_and_functions",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/energy.py:detect_code_doc_drift",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/energy.py:calculate_systemic_energy",
             "relation_type": "contains",
             "metadata": {}
@@ -1727,13 +1752,27 @@
             "from __future__ import annotations",
             "import datetime",
             "from pathlib import Path",
+            "from collections import Counter",
             "from .contracts import SystemicEnergy, EnergyReport",
             "from .perception import build_status_report",
             "from .auditor import run_audit",
             "import networkx"
           ]
         },
-        "io_ports": [],
+        "io_ports": [
+          {
+            "medium": "disk",
+            "direction": "input",
+            "schema_ref": null,
+            "path_template": null
+          },
+          {
+            "medium": "disk",
+            "direction": "input",
+            "schema_ref": null,
+            "path_template": null
+          }
+        ],
         "compliance": {
           "status": "implemented",
           "failing_standards": [],
@@ -1742,9 +1781,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "e39c4830e05a739fa46ae5ed095aa42cefb3985a",
+          "blob_sha": "420026f17b59207014c1d5a02a020d87e0fd381e",
           "created_at_commit": "aee182b24e35bd9bc18127e0d899fff64668b880",
-          "last_modified_commit": "5113378378b715731242200afa1364f71fb7d2b1",
+          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -2195,7 +2234,7 @@
             "from .context import render_context",
             "from .curate import promote_draft",
             "from .curate import score_drafts",
-            "from .energy import run_energy_audit",
+            "from .energy import run_energy_audit, DRIFT_PENALTY_WEIGHT",
             "from .facet_validator import validate_facet_proposal",
             "from .graph_utils import load_graph",
             "from .ingest import ingest_raw_sources",
@@ -2221,9 +2260,9 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "345265a159d3a09c9a4cbbacaf2b637d6b385a1c",
+          "blob_sha": "1f83960a8c2cd29a7e1f0567a16588d4e7970e87",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
-          "last_modified_commit": "0dcd81365996a3e5d6060f8bffa5ac33e4fe5ca7",
+          "last_modified_commit": "8febb1f045410419314fe3ea65d23c5218f3e88a",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -3630,7 +3669,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "23ff0190d3791c17c4404a4ba0b43b683da9b3f4",
+          "blob_sha": "773d66d627abba947c40f8303d886cbd096a93db",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -3734,7 +3773,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "f646c690c32565f5c4691920d467b57d667e3e3b",
+          "blob_sha": "7845e555d09600aea846721cf98bd9205b0902aa",
           "created_at_commit": null,
           "last_modified_commit": null,
           "last_modified_author": null,
@@ -3890,7 +3929,7 @@
         "adr": null,
         "test_map": null,
         "git": {
-          "blob_sha": "54fe9a2761a9688048f801491c93709db4a9ff92",
+          "blob_sha": "b74e3e333a2458b898bd3534465a92bc0843bbbc",
           "created_at_commit": "f71acc868c441b543179e67dd53eff3548c0bb6b",
           "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
@@ -4566,7 +4605,7 @@
         "git": {
           "blob_sha": "a65d08acf07349c5c7220023f721c1a9b128fff7",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
+          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4755,7 +4794,7 @@
         "git": {
           "blob_sha": "dcf968db145fa622dd66f5c567dbcd1823704eae",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "437d70f0344b46af299eac79e5aa295276db5558",
+          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -4970,7 +5009,7 @@
         "git": {
           "blob_sha": "9b36b53c3544484655fa7a1263aa411076765fa3",
           "created_at_commit": "34d2363c42dd1db5e4941d87ef64b55de572e0fe",
-          "last_modified_commit": "0eaf5fccf631311be319d70d3adfc23d97d5034e",
+          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10522,7 +10561,7 @@
         "git": {
           "blob_sha": "aa97dc998d6ca4826c4f4f32c70ab8699d8f5a88",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "5efaf64f62637eca75dbab5c387cd610a780fe3b",
+          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -10672,7 +10711,7 @@
         "git": {
           "blob_sha": "ab7208a2ce3ca20c29c3df0d8be5efe83926c63d",
           "created_at_commit": "437d70f0344b46af299eac79e5aa295276db5558",
-          "last_modified_commit": "ddc5cd2a8cc5748ab697b9b321f140a726267310",
+          "last_modified_commit": "4dfee8104be8740fae91cf462a6721b68df56c27",
           "last_modified_author": "juanpablo.ruiz.r@gmail.com",
           "status": "tracked"
         },
@@ -16973,13 +17012,185 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:tokenize",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convert text to set of normalized tokens for Jaccard comparison.",
+          "raw_docstring": "Convert text to set of normalized tokens for Jaccard comparison."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "tokenize(text: str) -> set[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:tokenize"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:jaccard_similarity",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Calculate Jaccard similarity between two sets.",
+          "raw_docstring": "Calculate Jaccard similarity between two sets."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "jaccard_similarity(set1: set[str], set2: set[str]) -> float"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:jaccard_similarity"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:detect_redundant_nodes",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Detect semantically redundant nodes using Jaccard similarity on intents.",
+          "raw_docstring": "Detect semantically redundant nodes using Jaccard similarity on intents.\nReturns (redundant_count, boilerplate_ratio)."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "detect_redundant_nodes(graph_data: dict) -> tuple[int, float]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:detect_redundant_nodes"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:detect_long_files_and_functions",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Detect files exceeding line threshold and functions exceeding statement threshold.",
+          "raw_docstring": "Detect files exceeding line threshold and functions exceeding statement threshold.\nReturns (long_file_count, complex_function_count)."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "detect_long_files_and_functions(project_root: Path) -> tuple[int, int]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:detect_long_files_and_functions"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:detect_code_doc_drift",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Detect drift between documented intent and actual code behavior.",
+          "raw_docstring": "Detect drift between documented intent and actual code behavior.\nReturns count of drift violations."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "detect_code_doc_drift(project_root: Path) -> int"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [
+          {
+            "medium": "disk",
+            "direction": "input",
+            "schema_ref": null,
+            "path_template": null
+          }
+        ],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:detect_code_doc_drift"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "code:src/wiki_compiler/energy.py:calculate_systemic_energy",
           "node_type": "code_construct"
         },
         "edges": [],
         "semantics": {
-          "intent": "Calculates the systemic energy score based on the heuristic in wiki/concepts/energy.md.",
-          "raw_docstring": "Calculates the systemic energy score based on the heuristic in wiki/concepts/energy.md.\n\nHeuristic:\nEnergy = (Nodes * 1) + (Edges * 0.2) + (Violations * 10) + (Perturbations * 5) + (Gates * 20)"
+          "intent": "Calculates the systemic energy score based on redundancy heuristic.",
+          "raw_docstring": "Calculates the systemic energy score based on redundancy heuristic.\n\nHeuristic:\nEnergy = (Redundancy * 10) + (BoilerplateRatio * 50) + (Violations * 10) + (Perturbations * 5) + (Gates * 20)\n\nReplaces raw node/edge count with semantic quality metrics."
         },
         "ast": {
           "construct_type": "function",
@@ -16988,7 +17199,14 @@
           ],
           "dependencies": []
         },
-        "io_ports": [],
+        "io_ports": [
+          {
+            "medium": "disk",
+            "direction": "input",
+            "schema_ref": null,
+            "path_template": null
+          }
+        ],
         "compliance": {
           "status": "implemented",
           "failing_standards": [],
@@ -20992,6 +21210,36 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/drafts.py",
       "target": "code:src/wiki_compiler/drafts.py:promote_draft_node"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:tokenize"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:jaccard_similarity"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:detect_redundant_nodes"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:detect_long_files_and_functions"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:detect_code_doc_drift"
     },
     {
       "relation": "contains",

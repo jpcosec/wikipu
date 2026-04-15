@@ -6,10 +6,11 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 7 | energy | Replace node count with redundancy heuristic | p0 | none | {closed with commit id 8171198} |
-| 6a | energy | Add descriptive abstraction penalties | p1 | 7 | {closed with commit id e65eab9} |
-| 6c | energy | Add code-doc drift detection | p1 | 7 | {closed with commit id 8febb1f} |
-| 8 | audit | Multidimensional styling audit | p2 | 7 | {moved to drawers}
+| 9 | test | Fix test_delta_compile_workflow | p0 | none |
+| 10 | test | Fix test_run_skeleton_auto_ingest | p0 | none |
+| 11 | energy | Reduce file complexity (main.py 791 lines) | p1 | none |
+| 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
+| 13 | refactor | Refactor main.py:main (1489 statements) | p2 | 11 |
 
 ## Blocked (status=blocked)
 
@@ -20,6 +21,7 @@ No blocked items.
 | ID | Domain | Item |
 |----|--------|------|
 | 1 | ingest | Ingest raw unimplemented source |
+| 8 | audit | Multidimensional styling audit |
 
 ---
 
