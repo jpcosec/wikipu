@@ -38,9 +38,14 @@ class IgnoreRule:
 
     def matches(self, path: str) -> bool:
         """Determines if the given path matches the ignore pattern."""
-        return fnmatch.fnmatch(path, self.pattern) or fnmatch.fnmatch(
-            path, f"{self.pattern}/**"
-        )
+        if fnmatch.fnmatch(path, self.pattern):
+            return True
+        if fnmatch.fnmatch(path, f"{self.pattern}/**"):
+            return True
+        if self.pattern.startswith("**/"):
+            prefix = self.pattern[3:]
+            return path.startswith(prefix) or f"{path}/".startswith(prefix)
+        return False
 
 
 from .protocols import ScannerPlugin

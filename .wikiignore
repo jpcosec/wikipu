@@ -1,0 +1,9 @@
+# Ignore patterns for wiki compiler
+
+# Looted external code - not part of the wiki
+src/looting/
+**/looting/
+src/**/node_modules/
+**/node_modules/
+src/.git/
+**/.git/

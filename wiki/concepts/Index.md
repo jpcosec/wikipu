@@ -13,6 +13,8 @@ edges:
   relation_type: contains
 - target_id: doc:wiki/concepts/energy.md
   relation_type: contains
+- target_id: doc:wiki/concepts/pirate.md
+  relation_type: contains
 compliance:
   status: implemented
   failing_standards: []
@@ -35,6 +37,7 @@ This index lists the concept nodes that explain what Wikipu is and how its docum
 - [[facet]]
 - [[how wikipu works]]
 - [[how_wikipu_works]]
+- [[pirate]]
 - [[topology]]
 - [[wiki construction principles]]
 - [[wiki_construction_principles]]
@@ -48,3 +51,4 @@ This index lists the concept nodes that explain what Wikipu is and how its docum
 | `topology.md` | Defines the system's boundary and internal structure network |
 | `facet.md` | Defines the typed data dimensions attached to graph nodes |
 | `energy.md` | Defines the structural and conceptual cost of system modifications |
+| `pirate.md` | Looted pi coding agent for autopoietic self-experimentation |

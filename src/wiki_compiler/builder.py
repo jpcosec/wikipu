@@ -61,18 +61,14 @@ def build_wiki(
     code_roots: list[Path] | None = None,
     baseline_path: Path | None = None,
     update_baseline: bool = False,
+    attach_git_facets: bool = False,
+    run_facet_injectors: bool = False,
 ) -> BuildResult:
     """
     Orchestrates the full Knowledge Graph build, including scanning and facet injection.
     """
     root = project_root or Path.cwd()
     graph = nx.DiGraph()
-
-    # Phase 1: directory skeleton
-    for code_root in code_roots or [root / "src"]:
-        if code_root.exists():
-            for dir_node in build_directory_skeleton(code_root, root):
-                add_knowledge_node(graph, dir_node)
 
     # Phase 2: file + code nodes with facets
     files_index = index_markdown_files(source_dir)
@@ -92,27 +88,32 @@ def build_wiki(
                     Edge(target_id=transclusion_target, relation_type="transcludes")
                 )
             add_knowledge_node(graph, node)
-    
+
     from .scanner import scan_codebase
+
     for node in scan_codebase(
-        project_root=root, source_roots=code_roots or [root / "src"]
+        project_root=root,
+        source_roots=code_roots or [root / "src"],
+        wikiignore_path=root / ".wikiignore",
     ):
         add_knowledge_node(graph, node)
     infer_reference_documents_edges(graph)
 
     # Phase 2b: facet injector passes
-    ctx = InjectionContext(
-        project_root=root,
-        adr_dir=root / "wiki" / "adrs",
-        tests_dir=root / "tests",
-    )
-    for injector in [ADRInjector(), TestMapInjector()]:
-        for node_id in list(graph.nodes):
-            node = load_knowledge_node(graph, node_id)
-            enriched = injector.inject(node, ctx)
-            add_knowledge_node(graph, enriched)
+    if run_facet_injectors:
+        ctx = InjectionContext(
+            project_root=root,
+            adr_dir=root / "wiki" / "adrs",
+            tests_dir=root / "tests",
+        )
+        for injector in [ADRInjector(), TestMapInjector()]:
+            for node_id in list(graph.nodes):
+                node = load_knowledge_node(graph, node_id)
+                enriched = injector.inject(node, ctx)
+                add_knowledge_node(graph, enriched)
 
-    attach_git_facets(graph, root)
+    if attach_git_facets:
+        attach_git_facets(graph, root)
 
     save_graph(graph, graph_path)
     score = calculate_compliance_score(graph)
@@ -133,15 +134,34 @@ def build_wiki(
 
 def build_directory_skeleton(root: Path, project_root: Path) -> list[KnowledgeNode]:
     """Emit one directory node per directory under root, with contains edges to children."""
+    from .scanner import load_wikiignore_rules, match_ignore_reason
+
     nodes: list[KnowledgeNode] = []
-    for dirpath in [root] + sorted(d for d in root.rglob("*") if d.is_dir()):
+    ignore_rules = load_wikiignore_rules(project_root / ".wikiignore")
+
+    all_paths = list([root] + sorted(d for d in root.rglob("*") if d.is_dir()))
+
+    path_set = {p.resolve() for p in all_paths}
+
+    for dirpath in all_paths:
         rel = dirpath.relative_to(project_root).as_posix()
+        if match_ignore_reason(rel, ignore_rules):
+            continue
+        children = []
+        try:
+            for c in dirpath.iterdir():
+                if c.resolve() in path_set:
+                    children.append(c)
+                elif c.is_file():
+                    children.append(c)
+        except PermissionError:
+            pass
         edges = [
             Edge(
                 target_id=f"{'dir' if c.is_dir() else 'file'}:{c.relative_to(project_root).as_posix()}",
                 relation_type="contains",
             )
-            for c in sorted(dirpath.iterdir())
+            for c in sorted(children)
         ]
         nodes.append(
             KnowledgeNode(

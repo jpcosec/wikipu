@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+# Wiki Compiler CLI wrapper
+import sys
+import os
+from pathlib import Path
+
+# Add the repo's src directory to the Python path
+repo_root = Path(__file__).parent
+sys.path.insert(0, str(repo_root / "src"))
+
+from wiki_compiler.main import main
+
+if __name__ == "__main__":
+    main()

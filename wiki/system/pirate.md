@@ -28,9 +28,10 @@ Pirate is my looted copy of the `pi-coding-agent` harness, cloned from `pi-mono`
 
 ## Local Extensions
 
-Copied from `.pi/extensions/`:
+Copied from `.pi/extensions/` (in `src/looting/pirate/.pi/extensions/`):
 - `identity.ts` - Injects `wiki/selfDocs/WhoAmI.md` into system prompt on every session
-- `rule_enforcer.ts` - Enforces "query before read" rule (currently disabled)
+- `rule_enforcer.ts` - Enforces "CLI before read" rule (NAV-1, NAV-3) - **NOW ENABLED**
+- `identity.ts` - Injects `wiki/selfDocs/WhoAmI.md` into system prompt on every session
 
 ## Running Pirate
 
