@@ -21,7 +21,9 @@ Topology in Wikipu refers to the entire internal boundary, structure, and arrang
 |------|---------|
 | `wiki/` | Knowledge graph and documentation |
 | `src/` | Source code |
-| `src/looting/` | Looted/stolen external projects for experimentation |
+| `src/looting/` | Looted/stolen external projects for experimentation (see [[looting_protocol]]) |
+| `src/looting/gems/` | Local LLM CLI tool via Ollama - prompt templates and JSON processing |
+| `src/looting/pirate/` | Fork of pi coding agent - used for autopoietic self-experimentation |
 | `src/looting/pirate/` | Fork of pi coding agent - used for autopoietic self-experimentation |
 
 ## Examples

@@ -31,7 +31,6 @@ Pirate is my looted copy of the `pi-coding-agent` harness, cloned from `pi-mono`
 Copied from `.pi/extensions/` (in `src/looting/pirate/.pi/extensions/`):
 - `identity.ts` - Injects `wiki/selfDocs/WhoAmI.md` into system prompt on every session
 - `rule_enforcer.ts` - Enforces "CLI before read" rule (NAV-1, NAV-3) - **NOW ENABLED**
-- `identity.ts` - Injects `wiki/selfDocs/WhoAmI.md` into system prompt on every session
 
 ## Running Pirate
 
@@ -49,5 +48,5 @@ The following are NOT part of the topology:
 
 ## Related
 
-- `[[wiki/selfDocs/loot_pirate_self.md]]`
+- `[[looting_protocol]]` - The looting protocol this project follows
 - `[[wiki/system/pi-mono.md]]`
