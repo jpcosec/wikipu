@@ -6,8 +6,14 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 12 | energy | Reduce file complexity (contracts.py 628 lines) | p1 | none |
+| 1 | ingest | Ingest raw unimplemented source | p2 | none |
+| 6a | energy | Add descriptive abstraction penalties | p2 | 7 |
+| 6c | audit | Add code-documentation drift detection | p2 | 7 |
+| 7 | energy | Replace node count with redundancy heuristic | p1 | none |
+| 8 | audit | Multidimensional styling audit (cross-ruling) | p3 | none |
+| 12 | energy | Reduce file complexity (contracts.py 649 lines) | p1 | none |
 | 15 | audit | Auto-generate tasks from audit findings | p2 | none |
+| pirate | system | Loot and reconstruct pi-coding-agent as "pirate" | p2 | none |
 
 ## Blocked (status=blocked)
 
@@ -15,10 +21,7 @@ No blocked items.
 
 ## Ready to Promote (from drawers/)
 
-| ID | Domain | Item |
-|----|--------|------|
-| 1 | ingest | Ingest raw unimplemented source |
-| 8 | audit | Multidimensional styling audit |
+No items - all promoted.
 
 ---
 

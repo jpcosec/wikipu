@@ -1,0 +1,3 @@
+[submodule "src/looting/pi"]
+	path = src/looting/pi
+	url = https://github.com/badlogic/pi-mono.git
