@@ -14,6 +14,7 @@
 | 12 | energy | Reduce file complexity (contracts.py 649 lines) | p1 | none |
 | 15 | audit | Auto-generate tasks from audit findings | p2 | none |
 | pirate | system | Loot and reconstruct pi-coding-agent as "pirate" | p2 | none |
+| 16 | system | Teach Pirate to use wiki-compiler for context efficiency | p1 | none |
 
 ## Blocked (status=blocked)
 
