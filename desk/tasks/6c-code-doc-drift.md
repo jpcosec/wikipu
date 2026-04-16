@@ -1,5 +1,7 @@
 # Add Code-Documentation Drift Detection
 
+**Status:** ✓ CLOSED (implemented in energy.py)
+
 **Explanation:** A deterministic measure must penalize drift between what the code's documentation (or `SemanticFacet.intent`) claims to do and what the AST actually does.
 
 **Reference:**
