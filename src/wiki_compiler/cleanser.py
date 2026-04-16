@@ -195,6 +195,7 @@ def _misplaced_folder_proposals(graph: object) -> list[CleansingProposal]:
         "doc_standard": "wiki/standards/",
         "adr": "wiki/adrs/",
         "how_to": "wiki/how_to/",
+        "selfDoc": "wiki/selfDocs/",
     }
 
     for node in iter_knowledge_nodes(graph):

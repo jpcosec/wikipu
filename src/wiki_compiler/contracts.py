@@ -46,6 +46,7 @@ class SystemIdentity(BaseModel):
         "adr",
         "reference",
         "faq",
+        "selfDoc",
     ] = Field(description="The type of entity this node represents.")
 
 
