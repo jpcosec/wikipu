@@ -1,5 +1,7 @@
 # Add Descriptive Abstraction Penalties
 
+**Status:** ✓ CLOSED (implemented in energy.py)
+
 **Explanation:** Enforce the usage of small, highly descriptive functions and classes. Long files must be heavily penalized to force division into smaller, structurally ordered files.
 
 **Reference:**
