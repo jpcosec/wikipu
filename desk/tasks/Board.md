@@ -9,7 +9,7 @@
 | 1 | ingest | Ingest raw unimplemented source | p2 | none |
 | 6a | energy | Add descriptive abstraction penalties | p2 | 7 |
 | 6c | audit | Add code-documentation drift detection | p2 | 7 |
-| 7 | energy | Replace node count with redundancy heuristic | p1 | none |
+| 7 | energy | Replace node count with redundancy heuristic | ✓ DONE | none |
 | 8 | audit | Multidimensional styling audit (cross-ruling) | p3 | none |
 | 12 | energy | Reduce file complexity (contracts.py 649 lines) | p1 | none |
 | 15 | audit | Auto-generate tasks from audit findings | p2 | none |
