@@ -16,7 +16,7 @@ Pirate is a small model with fast but limited context. wiki-compiler's topology-
 
 ## Tasks
 
-- [ ] Task 1: Index Navigation — Query Index.md via CLI
+- [x] Task 1: Index Navigation — Query Index.md via CLI (PARTIAL: tool works but output too large for context)
 - [ ] Task 2: Finding a Concept — Search and query energy concept
 - [ ] Task 3: Reading Efficiently — Query before read
 - [ ] Task 4: Context Extraction — Use context command
@@ -24,6 +24,12 @@ Pirate is a small model with fast but limited context. wiki-compiler's topology-
 - [ ] Task 6: Iterative Query Practice — Multi-step narrowing
 - [ ] Task 7: Synthesize — Answer question using wiki-compiler
 - [ ] Task 8: Diagnose a Failure — Use wiki-compiler to debug
+
+## Observations
+
+- gemma4:e4b CAN use tools (after fixing Ollama streaming format)
+- Output truncation is an issue — queries return too much data for small context
+- Next: Teach pirate to use `--search` for targeted queries, and `context` for focused subgraphs
 
 ## Curriculum
 
