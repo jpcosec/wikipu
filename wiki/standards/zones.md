@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/standards/zones.md"
   node_type: "doc_standard"
 edges:
-  - target_id: "doc:wiki/concepts/WhereAmI.md"
+  - target_id: "doc:wiki/selfDocs/WhereAmI.md"
     relation_type: "implements"
 compliance:
   status: "implemented"

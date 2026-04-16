@@ -1,13 +1,13 @@
 ---
 identity:
-  node_id: "doc:wiki/concepts/WhoAmI.md"
-  node_type: "concept"
+  node_id: "doc:wiki/selfDocs/WhoAmI.md"
+  node_type: "selfDoc"
 edges:
-  - {target_id: "doc:wiki/concepts/WhatAmI.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/concepts/HowAmI.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/concepts/WhereAmI.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/concepts/WhenAmI.md", relation_type: "contains"}
-  - {target_id: "doc:wiki/concepts/WhyAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/selfDocs/WhatAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/selfDocs/HowAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/selfDocs/WhereAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/selfDocs/WhenAmI.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/selfDocs/WhyAmI.md", relation_type: "contains"}
 compliance:
   status: "implemented"
   failing_standards: []

@@ -40,7 +40,7 @@ Tasks have no frontmatter. They are ephemeral operational artifacts (MA-3).
 
 **Explanation:** Query timeouts after 30s for large result sets, blocking users.
 
-**Reference:** `src/wiki_compiler/query_executor.py`, `wiki/HowAmI.md`
+**Reference:** `src/wiki_compiler/query_executor.py`, `wiki/selfDocs/HowAmI.md`
 
 **What to fix:** Queries larger than 1000 results stream incrementally instead of loading all at once.
 

@@ -6,7 +6,7 @@ export default function (pi: ExtensionAPI) {
   pi.on("before_agent_start", async (event, ctx) => {
     try {
       // Read the true identity from the autopoietic knowledge base
-      const whoAmIPath = join(ctx.cwd, "wiki/WhoAmI.md");
+      const whoAmIPath = join(ctx.cwd, "wiki/selfDocs/WhoAmI.md");
       const identity = readFileSync(whoAmIPath, "utf-8");
 
       // Replace or append to the system prompt

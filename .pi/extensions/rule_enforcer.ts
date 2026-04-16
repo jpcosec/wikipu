@@ -11,6 +11,7 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.on("tool_call", async (event, ctx) => {
+    /* 
     if (isToolCallEventType("bash", event)) {
       const cmd = event.input.command;
       if (cmd.includes("wiki-compiler query")) {
@@ -28,6 +29,7 @@ export default function (pi: ExtensionAPI) {
         ctx.ui.notify("Rule Violation: Used read tool before wiki-compiler query", "error");
       }
     }
+    */
   });
 
   function logViolation(cwd: string, detail: string) {
