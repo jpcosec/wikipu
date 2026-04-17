@@ -6,9 +6,9 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| owl-cli-test | owl | Test OWL CLI Commands | p2 | none |
-| owl-roundtrip | owl | Test Build→Query Round-Trip | p2 | owl-cli-test |
-| owl-decon-recon | owl | Test OWL Deconstruction→Reconstruction | p2 | owl-roundtrip |
+
+
+
 
 ## Blocked (status=blocked)
 

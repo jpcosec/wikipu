@@ -427,6 +427,60 @@
       "id": "doc:wiki/adrs/002_documentation_consolidation.md"
     },
     {
+      "type": "adr",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/adrs/003_owl_integration.md",
+          "node_type": "adr"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/adrs/Index.md",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/knowledge.md",
+            "relation_type": "extends",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/selfDocs/WhatAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/standards/house_rules.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "ADR 003: Integrate OWL 2.0 via Owlready2",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "abstract"
+          ],
+          "exemption_reason": null
+        },
+        "adr": {
+          "decision_id": "003",
+          "status": "proposed",
+          "context_summary": "Knowledge is currently declared manually via YAML frontmatter with no inference engine. Owlready2 provides an OWL 2.0 quadstore with automatic reasoning, replacing manual relationship auditing with HermiT/Pellet inference."
+        },
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/adrs/003_owl_integration.md"
+    },
+    {
       "type": "index",
       "status": "implemented",
       "schema": {
@@ -442,6 +496,16 @@
           },
           {
             "target_id": "doc:wiki/adrs/002_documentation_consolidation.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/adrs/003_owl_integration.md",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/adrs/004_workflow_as_ontology.md",
             "relation_type": "contains",
             "metadata": {}
           }
@@ -463,6 +527,86 @@
         "source": null
       },
       "id": "doc:wiki/adrs/Index.md"
+    },
+    {
+      "id": "doc:wiki/concepts/knowledge.md"
+    },
+    {
+      "type": "selfDoc",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/selfDocs/WhatAmI.md",
+          "node_type": "selfDoc"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/selfDocs/WhoAmI.md",
+            "relation_type": "implements",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "I am my topology. My topology is the set of invariant truths that define my nature, regardless of my current physical structure.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/selfDocs/WhatAmI.md"
+    },
+    {
+      "type": "adr",
+      "status": "planned",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/adrs/004_workflow_as_ontology.md",
+          "node_type": "adr"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/adrs/Index.md",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/adrs/003_owl_integration.md",
+            "relation_type": "extends",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "ADR 004: Workflow as OWL Ontology",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "planned",
+          "failing_standards": [
+            "abstract"
+          ],
+          "exemption_reason": null
+        },
+        "adr": {
+          "decision_id": "004",
+          "status": "proposed",
+          "context_summary": "The portable workflow/ template and wikipu's own standards exist in parallel. This ADR proposes modeling the workflow as an OWL ontology integrated into wikipu's knowledge graph."
+        },
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/adrs/004_workflow_as_ontology.md"
     },
     {
       "type": "concept",
@@ -1819,6 +1963,11 @@
           },
           {
             "target_id": "file:src/wiki_compiler/commands/query.py",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/query.py:_handle_owl_query",
             "relation_type": "documents",
             "metadata": {}
           },
@@ -5555,6 +5704,48 @@
       "id": "file:src/wiki_compiler/contracts/__init__.py"
     },
     {
+      "type": "reference",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/reference/owl_integration.md",
+          "node_type": "reference"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/adrs/003_owl_integration.md",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/topology.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "This document explains how the OWL integration works in wikipu, with practical examples.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [
+            "signature_or_schema",
+            "fields",
+            "usage_examples"
+          ],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/reference/owl_integration.md"
+    },
+    {
       "type": "selfDoc",
       "status": "implemented",
       "schema": {
@@ -5639,39 +5830,6 @@
         "source": null
       },
       "id": "doc:wiki/selfDocs/WhoAmI.md"
-    },
-    {
-      "type": "selfDoc",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/selfDocs/WhatAmI.md",
-          "node_type": "selfDoc"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/selfDocs/WhoAmI.md",
-            "relation_type": "implements",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "I am my topology. My topology is the set of invariant truths that define my nature, regardless of my current physical structure.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/selfDocs/WhatAmI.md"
     },
     {
       "type": "selfDoc",
@@ -11542,6 +11700,84 @@
       "id": "code:src/wiki_compiler/artifact_validation.py:_validate_task"
     },
     {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/auditor_owl.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/auditor_owl.py:OwlConflictCheck",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "OWL conflict detection check for audit.",
+          "raw_docstring": "OWL conflict detection check for audit."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/auditor_owl.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "from typing import Optional",
+            "from .contracts import AuditFinding"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/auditor_owl.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/auditor_owl.py:OwlConflictCheck",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Check for conflicts between Markdown edges and OWL triples.",
+          "raw_docstring": "Check for conflicts between Markdown edges and OWL triples."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class OwlConflictCheck",
+            "__init__(self, world = None)",
+            "run(self, graph) -> list[AuditFinding]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/auditor_owl.py:OwlConflictCheck"
+    },
+    {
       "type": "code_construct",
       "status": "implemented",
       "schema": {
@@ -12970,6 +13206,11 @@
             "target_id": "code:src/wiki_compiler/commands/query.py:handle_query",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/query.py:_handle_owl_query",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
@@ -13037,6 +13278,39 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/query.py:_handle_owl_query",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute a SPARQL query against the OWL quadstore.",
+          "raw_docstring": "Execute a SPARQL query against the OWL quadstore."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_handle_owl_query(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/query.py:_handle_owl_query"
     },
     {
       "type": "file",
@@ -14609,6 +14883,1483 @@
       "id": "code:src/wiki_compiler/contracts/tracking.py:ContextBundle"
     },
     {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/contracts.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:Edge",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:SystemIdentity",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:IOFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ASTFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:SemanticFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ADRFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:TestMapFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ComplianceFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:SourceFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:GitFacet",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:KnowledgeNode",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:AuditFinding",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:FacetProposal",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:TopologyProposal",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CollisionReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:RawSourceEntry",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:RawSourceManifest",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:GateRow",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:GateTable",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CycleRecord",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CycleHistory",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:TrailArtifact",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:TrailCollection",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:SessionLog",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ContextRequest",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ChecklistItem",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:Checklist",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ContextBundle",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingProposal",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:SystemicEnergy",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:EnergyReport",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts.py:ZoneContract",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Canonical Pydantic models and contracts for the Knowledge Graph ecosystem.",
+          "raw_docstring": "Canonical Pydantic models and contracts for the Knowledge Graph ecosystem.\nDefines the schema for nodes, edges, and facets like ADR, compliance, and I/O."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/contracts.py"
+          ],
+          "dependencies": [
+            "from pydantic import BaseModel, Field",
+            "from typing import Literal, Any"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/contracts.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:Edge",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Universal connection between nodes.",
+          "raw_docstring": "Universal connection between nodes."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class Edge"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:Edge"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:SystemIdentity",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The immutable base identity of any node in your universe.",
+          "raw_docstring": "The immutable base identity of any node in your universe."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SystemIdentity"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:SystemIdentity"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:IOFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Input/Output.",
+          "raw_docstring": "Dimension: Input/Output.\n\nQuestion: What data does this node consume or produce?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class IOFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:IOFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ASTFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: The Hows (Code Structure).",
+          "raw_docstring": "Dimension: The Hows (Code Structure).\n\nQuestion: How is this node structured?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ASTFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ASTFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:SemanticFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: What each thing does and its Docstrings.",
+          "raw_docstring": "Dimension: What each thing does and its Docstrings.\n\nQuestion: What does this node do?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SemanticFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:SemanticFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ADRFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Historical Decision Records.",
+          "raw_docstring": "Dimension: Historical Decision Records.\n\nQuestion: What architectural decisions shaped this node?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ADRFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ADRFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:TestMapFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Testing Strategy and Coverage.",
+          "raw_docstring": "Dimension: Testing Strategy and Coverage.\n\nQuestion: How is this node tested?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TestMapFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:TestMapFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ComplianceFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Implementation Status and House Rules Compliance.",
+          "raw_docstring": "Dimension: Implementation Status and House Rules Compliance.\n\nQuestion: How complete and rule-compliant is this node?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ComplianceFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ComplianceFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:SourceFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Provenance and Source Tracking.",
+          "raw_docstring": "Dimension: Provenance and Source Tracking.\n\nQuestion: Where did this node come from, and is it stale?"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SourceFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:SourceFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:GitFacet",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Dimension: Git-tracked state for a file-backed node.",
+          "raw_docstring": "Dimension: Git-tracked state for a file-backed node."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class GitFacet"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:GitFacet"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:KnowledgeNode",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Any element in the system, from the root folder to a specific function.",
+          "raw_docstring": "Any element in the system, from the root folder to a specific function.\nThis is the building block of your LLM Wiki."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class KnowledgeNode"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:KnowledgeNode"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:AuditFinding",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A finding from an audit check.",
+          "raw_docstring": "A finding from an audit check."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class AuditFinding"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:AuditFinding"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:FacetProposal",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A proposal to add a new facet dimension to the registry.",
+          "raw_docstring": "A proposal to add a new facet dimension to the registry.\nMust prove the question cannot be answered by existing facets before being accepted."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FacetProposal"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:FacetProposal"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Response from validate_facet_proposal.",
+          "raw_docstring": "Response from validate_facet_proposal."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FacetOrthogonalityReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:TopologyProposal",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A proposal for a new module design that an Agent must submit for orthogonality validation",
+          "raw_docstring": "A proposal for a new module design that an Agent must submit for orthogonality validation\nbefore writing new code. The wiki_compiler evaluates this against the existing graph."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TopologyProposal"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:TopologyProposal"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CollisionReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Response from the wiki_compiler to a TopologyProposal.",
+          "raw_docstring": "Response from the wiki_compiler to a TopologyProposal."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CollisionReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CollisionReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A single validation failure for an authored artifact file.",
+          "raw_docstring": "A single validation failure for an authored artifact file."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ArtifactValidationFinding"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validation result for one authored artifact file.",
+          "raw_docstring": "Validation result for one authored artifact file."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ArtifactValidationReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:RawSourceEntry",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Entry in the raw source manifest.",
+          "raw_docstring": "Entry in the raw source manifest."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class RawSourceEntry"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:RawSourceEntry"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:RawSourceManifest",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The manifest tracking all raw source files.",
+          "raw_docstring": "The manifest tracking all raw source files."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class RawSourceManifest"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:RawSourceManifest"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:GateRow",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A single row in the desk/Gates.md table.",
+          "raw_docstring": "A single row in the desk/Gates.md table."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class GateRow"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:GateRow"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:GateTable",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The collection of all gates in desk/Gates.md.",
+          "raw_docstring": "The collection of all gates in desk/Gates.md."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class GateTable"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:GateTable"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CycleRecord",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execution record for one coordinator run.",
+          "raw_docstring": "Execution record for one coordinator run."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CycleRecord"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CycleRecord"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CycleHistory",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Collection of historical cycle records.",
+          "raw_docstring": "Collection of historical cycle records."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CycleHistory"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CycleHistory"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:TrailArtifact",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A durable fact or signal extracted during closeout.",
+          "raw_docstring": "A durable fact or signal extracted during closeout."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TrailArtifact"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:TrailArtifact"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:TrailCollection",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The aggregate output of a trail collect closeout step.",
+          "raw_docstring": "The aggregate output of a trail collect closeout step."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TrailCollection"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:TrailCollection"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:SessionLog",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Durable record of a single development session.",
+          "raw_docstring": "Durable record of a single development session."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SessionLog"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:SessionLog"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ContextRequest",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A formal request for graph context.",
+          "raw_docstring": "A formal request for graph context."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ContextRequest"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ContextRequest"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ChecklistItem",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A single item in a verification checklist.",
+          "raw_docstring": "A single item in a verification checklist."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ChecklistItem"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ChecklistItem"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:Checklist",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A collection of items for verifying a specific operation.",
+          "raw_docstring": "A collection of items for verifying a specific operation."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class Checklist"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:Checklist"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ContextBundle",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The stable output schema for the context router.",
+          "raw_docstring": "The stable output schema for the context router."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ContextBundle"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ContextBundle"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CleansingProposal",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A proposed corrective operation for an existing graph node.",
+          "raw_docstring": "A proposed corrective operation for an existing graph node."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CleansingProposal"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CleansingProposal"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:CleansingReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Machine-readable output of cleansing candidate detection.",
+          "raw_docstring": "Machine-readable output of cleansing candidate detection."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CleansingReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:CleansingReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:SystemicEnergy",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "ID-2: Minimal Energy.",
+          "raw_docstring": "ID-2: Minimal Energy.\nThe conceptual and structural cost of the current system state."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SystemicEnergy"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:SystemicEnergy"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:EnergyReport",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "The result of an energy audit.",
+          "raw_docstring": "The result of an energy audit."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class EnergyReport"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:EnergyReport"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts.py:ZoneContract",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Declarative contract for zone-based sensing in perception and energy.",
+          "raw_docstring": "Declarative contract for zone-based sensing in perception and energy."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ZoneContract"
+          ],
+          "dependencies": [
+            "BaseModel"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts.py:ZoneContract"
+    },
+    {
       "type": "code_construct",
       "status": "implemented",
       "schema": {
@@ -15539,6 +17290,810 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/node_templates.py:validate_template_sections"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/__init__.py",
+          "node_type": "file"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "OWL Backend module for wikipu - Owlready2 integration.",
+          "raw_docstring": "OWL Backend module for wikipu - Owlready2 integration."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/__init__.py"
+          ],
+          "dependencies": [
+            "from pathlib import Path",
+            "from wiki_compiler.owl_backend.extractor import markdown_to_rdf, get_world, get_ontology, extract_all",
+            "from wiki_compiler.owl_backend.export import export_to_rdfxml, export_wikipu_ontology",
+            "from wiki_compiler.owl_backend.import_export import owl_to_markdown, export_ontology_to_markdown"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/__init__.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/annotations.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/annotations.py:extract_annotations",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Extract Markdown sections as annotation properties.",
+          "raw_docstring": "Extract Markdown sections as annotation properties."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/annotations.py"
+          ],
+          "dependencies": [
+            "import re",
+            "from typing import Optional"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/annotations.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/annotations.py:extract_annotations",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extract sections and content as annotation properties.",
+          "raw_docstring": "Extract sections and content as annotation properties."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "extract_annotations(node_class, body: str, ontology) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/annotations.py:extract_annotations"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/export.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/export.py:export_to_rdfxml",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/export.py:export_wikipu_ontology",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Export quadstore to RDF/XML.",
+          "raw_docstring": "Export quadstore to RDF/XML."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/export.py"
+          ],
+          "dependencies": [
+            "from pathlib import Path",
+            "from typing import Optional",
+            "from rdflib import Graph",
+            "from wiki_compiler.owl_backend import ONTOLOGY_PATH",
+            "from wiki_compiler.owl_backend.extractor import get_world"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/export.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/export.py:export_to_rdfxml",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Export the graph to RDF/XML format.",
+          "raw_docstring": "Export the graph to RDF/XML format."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "export_to_rdfxml(world: Optional[Graph] = None, output_path: Optional[Path] = None) -> Path"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/export.py:export_to_rdfxml"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/export.py:export_wikipu_ontology",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Build and export the complete wikipu ontology.",
+          "raw_docstring": "Build and export the complete wikipu ontology."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "export_wikipu_ontology(wiki_root: Path, output_path: Optional[Path] = None) -> Path"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/export.py:export_wikipu_ontology"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/extractor.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/extractor.py:markdown_to_rdf",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/extractor.py:extract_all",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/extractor.py:get_world",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/extractor.py:get_ontology",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Extract Markdown wiki nodes to OWL triples.",
+          "raw_docstring": "Extract Markdown wiki nodes to OWL triples."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/extractor.py"
+          ],
+          "dependencies": [
+            "import re",
+            "from pathlib import Path",
+            "from typing import Optional",
+            "import yaml",
+            "from rdflib import Graph, Literal, Namespace, RDF",
+            "from wiki_compiler.owl_backend import ONTOLOGY_IRI, ONTOLOGY_PATH"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/extractor.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/extractor.py:markdown_to_rdf",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extract triples from a Markdown file to an RDF graph.",
+          "raw_docstring": "Extract triples from a Markdown file to an RDF graph."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "markdown_to_rdf(markdown_path: Path) -> Graph"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/extractor.py:markdown_to_rdf"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/extractor.py:extract_all",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extract all wiki nodes to OWL Graph.",
+          "raw_docstring": "Extract all wiki nodes to OWL Graph."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "extract_all(wiki_root: Path, world: Optional[Graph] = None) -> Graph"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/extractor.py:extract_all"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/extractor.py:get_world",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Get the RDF graph (rdflib-based).",
+          "raw_docstring": "Get the RDF graph (rdflib-based)."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "get_world() -> Graph"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/extractor.py:get_world"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/extractor.py:get_ontology",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Get the ontology graph.",
+          "raw_docstring": "Get the ontology graph."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "get_ontology(world: Graph) -> Graph"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/extractor.py:get_ontology"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/frontmatter.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/frontmatter.py:extract_frontmatter_triples",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Extract YAML frontmatter to RDF triples.",
+          "raw_docstring": "Extract YAML frontmatter to RDF triples."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/frontmatter.py"
+          ],
+          "dependencies": [
+            "from typing import Any"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/frontmatter.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/frontmatter.py:extract_frontmatter_triples",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convert frontmatter fields to annotation properties.",
+          "raw_docstring": "Convert frontmatter fields to annotation properties."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "extract_frontmatter_triples(node_class, frontmatter: dict[str, Any], ontology) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/frontmatter.py:extract_frontmatter_triples"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/import_export.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/import_export.py:owl_to_markdown",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/import_export.py:export_ontology_to_markdown",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Export OWL ontology to Markdown files.",
+          "raw_docstring": "Export OWL ontology to Markdown files."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/import_export.py"
+          ],
+          "dependencies": [
+            "from pathlib import Path",
+            "from typing import Optional",
+            "from rdflib import Graph, Literal, Namespace"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/import_export.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/import_export.py:owl_to_markdown",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Export an OWL individual to Markdown format.",
+          "raw_docstring": "Export an OWL individual to Markdown format."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "owl_to_markdown(node_uri, graph: Graph) -> Optional[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/import_export.py:owl_to_markdown"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/import_export.py:export_ontology_to_markdown",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Export entire ontology to Markdown files.",
+          "raw_docstring": "Export entire ontology to Markdown files."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "export_ontology_to_markdown(wiki_root: Path, world: Optional[Graph] = None, force: bool = False) -> list[Path]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/import_export.py:export_ontology_to_markdown"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_backend/wikilinks.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/wikilinks.py:extract_wikilinks",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/owl_backend/wikilinks.py:resolve_wikilink",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Extract wiki-links as :references properties.",
+          "raw_docstring": "Extract wiki-links as :references properties."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_backend/wikilinks.py"
+          ],
+          "dependencies": [
+            "import re",
+            "from pathlib import Path",
+            "from typing import Optional, Set"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_backend/wikilinks.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/wikilinks.py:extract_wikilinks",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extract wiki-links and create :references triples.",
+          "raw_docstring": "Extract wiki-links and create :references triples."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "extract_wikilinks(node_class, body: str, ontology) -> Set[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/wikilinks.py:extract_wikilinks"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_backend/wikilinks.py:resolve_wikilink",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Resolve a wiki-link to an actual file path.",
+          "raw_docstring": "Resolve a wiki-link to an actual file path."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "resolve_wikilink(link: str, wiki_root: Path) -> Optional[Path]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_backend/wikilinks.py:resolve_wikilink"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/owl_reasoner.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/owl_reasoner.py:OwlReasoner",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "OWL reasoner integration for inference.",
+          "raw_docstring": "OWL reasoner integration for inference."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/owl_reasoner.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "from typing import Optional",
+            "from owlready2 import World, sync_reasoner"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/owl_reasoner.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/owl_reasoner.py:OwlReasoner",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Wrapper for OWL reasoning with HermiT/Pellet.",
+          "raw_docstring": "Wrapper for OWL reasoning with HermiT/Pellet."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class OwlReasoner",
+            "__init__(self, world = None)",
+            "sync_reasoner(self) -> dict[str, list[str]]",
+            "consistency_check(self) -> dict[str, list[str]]",
+            "get_inferred_relationships(self) -> list[dict]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/owl_reasoner.py:OwlReasoner"
     },
     {
       "type": "code_construct",
@@ -18036,6 +20591,467 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/shacl/__init__.py",
+          "node_type": "file"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "SHACL module for validating KnowledgeNode shapes.",
+          "raw_docstring": "SHACL module for validating KnowledgeNode shapes."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/shacl/__init__.py"
+          ],
+          "dependencies": [
+            "from wiki_compiler.shacl.validator import validate_node, validate_ontology"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/shacl/__init__.py"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/shacl/shapes.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/shacl/shapes.py:get_knowledge_node_shape",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/shacl/shapes.py:get_edge_shape",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "SHACL shapes for KnowledgeNode validation.",
+          "raw_docstring": "SHACL shapes for KnowledgeNode validation."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/shacl/shapes.py"
+          ],
+          "dependencies": [
+            "from typing import Any"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/shacl/shapes.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/shapes.py:get_knowledge_node_shape",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return SHACL shape for KnowledgeNode.",
+          "raw_docstring": "Return SHACL shape for KnowledgeNode."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "get_knowledge_node_shape() -> dict[str, Any]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/shapes.py:get_knowledge_node_shape"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/shapes.py:get_edge_shape",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Return SHACL shape for edges.",
+          "raw_docstring": "Return SHACL shape for edges."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "get_edge_shape() -> dict[str, Any]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/shapes.py:get_edge_shape"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/shacl/validator.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/shacl/validator.py:validate_node",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/shacl/validator.py:validate_ontology",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/shacl/validator.py:observe_changes",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/shacl/validator.py:shacl_observer",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/shacl/validator.py:enable_realtime_validation",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "SHACL validation wrapper.",
+          "raw_docstring": "SHACL validation wrapper."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/shacl/validator.py"
+          ],
+          "dependencies": [
+            "import json",
+            "from pathlib import Path",
+            "from typing import Optional",
+            "from owlready2 import World",
+            "from wiki_compiler.owl_backend.extractor import get_world",
+            "from wiki_compiler.shacl.shapes import get_knowledge_node_shape, get_edge_shape"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/shacl/validator.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/validator.py:validate_node",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate a node against SHACL shapes. Returns list of violations.",
+          "raw_docstring": "Validate a node against SHACL shapes. Returns list of violations."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "validate_node(node: object, shapes: Optional[list[dict]] = None) -> list[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/validator.py:validate_node"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/validator.py:validate_ontology",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate entire ontology against SHACL shapes. Returns violations by node.",
+          "raw_docstring": "Validate entire ontology against SHACL shapes. Returns violations by node."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "validate_ontology(world: Optional[World] = None) -> dict[str, list[str]]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/validator.py:validate_ontology"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/validator.py:observe_changes",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Register owlready2.observe for real-time validation on triple changes.",
+          "raw_docstring": "Register owlready2.observe for real-time validation on triple changes."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "observe_changes(ontology, callback) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/validator.py:observe_changes"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/validator.py:shacl_observer",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Observer callback for SHACL validation on property changes.",
+          "raw_docstring": "Observer callback for SHACL validation on property changes."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "shacl_observer(individual, prop, old_val, new_val) -> list[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/validator.py:shacl_observer"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/shacl/validator.py:enable_realtime_validation",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Enable real-time SHACL validation via owlready2.observe.",
+          "raw_docstring": "Enable real-time SHACL validation via owlready2.observe."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "enable_realtime_validation(world: Optional[World] = None) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/shacl/validator.py:enable_realtime_validation"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/sync_gate.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/sync_gate.py:SyncGate",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Bidirectional sync between Pydantic models and OWL quadstore.",
+          "raw_docstring": "Bidirectional sync between Pydantic models and OWL quadstore."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/sync_gate.py"
+          ],
+          "dependencies": [
+            "from pathlib import Path",
+            "from typing import Optional",
+            "from owlready2 import World",
+            "from wiki_compiler.owl_backend import get_world, get_ontology, ONTOLOGY_IRI",
+            "from wiki_compiler.shacl import validate_node"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/sync_gate.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/sync_gate.py:SyncGate",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Gate for all Pydantic \u2194 OWL sync operations.",
+          "raw_docstring": "Gate for all Pydantic \u2194 OWL sync operations."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SyncGate",
+            "__init__(self, world: Optional[World] = None)",
+            "export_to_owl(self, node_id: str, triples: dict) -> list[str]",
+            "import_from_owl(self, node_id: str) -> dict",
+            "sync(self) -> dict[str, list[str]]",
+            "_shacl_validate(self, node_id: str) -> list[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/sync_gate.py:SyncGate"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/validator.py",
           "node_type": "file"
         },
@@ -18881,6 +21897,30 @@
       "target": "doc:wiki/standards/house_rules.md"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/adrs/003_owl_integration.md",
+      "target": "doc:wiki/adrs/Index.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/adrs/003_owl_integration.md",
+      "target": "doc:wiki/concepts/knowledge.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/adrs/003_owl_integration.md",
+      "target": "doc:wiki/selfDocs/WhatAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/adrs/003_owl_integration.md",
+      "target": "doc:wiki/standards/house_rules.md"
+    },
+    {
       "relation": "contains",
       "metadata": {},
       "source": "doc:wiki/adrs/Index.md",
@@ -18891,6 +21931,36 @@
       "metadata": {},
       "source": "doc:wiki/adrs/Index.md",
       "target": "doc:wiki/adrs/002_documentation_consolidation.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/adrs/Index.md",
+      "target": "doc:wiki/adrs/003_owl_integration.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/adrs/Index.md",
+      "target": "doc:wiki/adrs/004_workflow_as_ontology.md"
+    },
+    {
+      "relation": "implements",
+      "metadata": {},
+      "source": "doc:wiki/selfDocs/WhatAmI.md",
+      "target": "doc:wiki/selfDocs/WhoAmI.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/adrs/004_workflow_as_ontology.md",
+      "target": "doc:wiki/adrs/Index.md"
+    },
+    {
+      "relation": "extends",
+      "metadata": {},
+      "source": "doc:wiki/adrs/004_workflow_as_ontology.md",
+      "target": "doc:wiki/adrs/003_owl_integration.md"
     },
     {
       "relation": "contains",
@@ -19149,6 +22219,12 @@
       "metadata": {},
       "source": "doc:wiki/reference/cli/query.md",
       "target": "file:src/wiki_compiler/commands/query.py"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/query.md",
+      "target": "code:src/wiki_compiler/commands/query.py:_handle_owl_query"
     },
     {
       "relation": "documents",
@@ -20183,6 +23259,18 @@
       "target": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/owl_integration.md",
+      "target": "doc:wiki/adrs/003_owl_integration.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/owl_integration.md",
+      "target": "doc:wiki/concepts/topology.md"
+    },
+    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/selfDocs/HowAmI.md",
@@ -20217,12 +23305,6 @@
       "metadata": {},
       "source": "doc:wiki/selfDocs/WhoAmI.md",
       "target": "doc:wiki/selfDocs/WhyAmI.md"
-    },
-    {
-      "relation": "implements",
-      "metadata": {},
-      "source": "doc:wiki/selfDocs/WhatAmI.md",
-      "target": "doc:wiki/selfDocs/WhoAmI.md"
     },
     {
       "relation": "implements",
@@ -21433,6 +24515,12 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/auditor_owl.py",
+      "target": "code:src/wiki_compiler/auditor_owl.py:OwlConflictCheck"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/commands/audit.py",
       "target": "code:src/wiki_compiler/commands/audit.py:handle_audit"
     },
@@ -21483,6 +24571,12 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/commands/query.py",
       "target": "code:src/wiki_compiler/commands/query.py:handle_query"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/query.py",
+      "target": "code:src/wiki_compiler/commands/query.py:_handle_owl_query"
     },
     {
       "relation": "contains",
@@ -21721,6 +24815,222 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:Edge"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:SystemIdentity"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:IOFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ASTFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:SemanticFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ADRFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:TestMapFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ComplianceFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:SourceFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:GitFacet"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:KnowledgeNode"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:AuditFinding"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:FacetProposal"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:TopologyProposal"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CollisionReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationFinding"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ArtifactValidationReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:RawSourceEntry"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:RawSourceManifest"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:GateRow"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:GateTable"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CycleRecord"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CycleHistory"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:TrailArtifact"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:TrailCollection"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:SessionLog"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ContextRequest"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ChecklistItem"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:Checklist"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ContextBundle"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingProposal"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:CleansingReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:SystemicEnergy"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:EnergyReport"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts.py",
+      "target": "code:src/wiki_compiler/contracts.py:ZoneContract"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/energy.py",
       "target": "code:src/wiki_compiler/energy.py:tokenize"
     },
@@ -21789,6 +25099,84 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/node_templates.py",
       "target": "code:src/wiki_compiler/node_templates.py:validate_template_sections"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/annotations.py",
+      "target": "code:src/wiki_compiler/owl_backend/annotations.py:extract_annotations"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/export.py",
+      "target": "code:src/wiki_compiler/owl_backend/export.py:export_to_rdfxml"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/export.py",
+      "target": "code:src/wiki_compiler/owl_backend/export.py:export_wikipu_ontology"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/extractor.py",
+      "target": "code:src/wiki_compiler/owl_backend/extractor.py:markdown_to_rdf"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/extractor.py",
+      "target": "code:src/wiki_compiler/owl_backend/extractor.py:extract_all"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/extractor.py",
+      "target": "code:src/wiki_compiler/owl_backend/extractor.py:get_world"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/extractor.py",
+      "target": "code:src/wiki_compiler/owl_backend/extractor.py:get_ontology"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/frontmatter.py",
+      "target": "code:src/wiki_compiler/owl_backend/frontmatter.py:extract_frontmatter_triples"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/import_export.py",
+      "target": "code:src/wiki_compiler/owl_backend/import_export.py:owl_to_markdown"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/import_export.py",
+      "target": "code:src/wiki_compiler/owl_backend/import_export.py:export_ontology_to_markdown"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/wikilinks.py",
+      "target": "code:src/wiki_compiler/owl_backend/wikilinks.py:extract_wikilinks"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_backend/wikilinks.py",
+      "target": "code:src/wiki_compiler/owl_backend/wikilinks.py:resolve_wikilink"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/owl_reasoner.py",
+      "target": "code:src/wiki_compiler/owl_reasoner.py:OwlReasoner"
     },
     {
       "relation": "contains",
@@ -22023,6 +25411,54 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/scanner.py",
       "target": "code:src/wiki_compiler/scanner.py:extract_string"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/shapes.py",
+      "target": "code:src/wiki_compiler/shacl/shapes.py:get_knowledge_node_shape"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/shapes.py",
+      "target": "code:src/wiki_compiler/shacl/shapes.py:get_edge_shape"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/validator.py",
+      "target": "code:src/wiki_compiler/shacl/validator.py:validate_node"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/validator.py",
+      "target": "code:src/wiki_compiler/shacl/validator.py:validate_ontology"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/validator.py",
+      "target": "code:src/wiki_compiler/shacl/validator.py:observe_changes"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/validator.py",
+      "target": "code:src/wiki_compiler/shacl/validator.py:shacl_observer"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/shacl/validator.py",
+      "target": "code:src/wiki_compiler/shacl/validator.py:enable_realtime_validation"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/sync_gate.py",
+      "target": "code:src/wiki_compiler/sync_gate.py:SyncGate"
     },
     {
       "relation": "contains",

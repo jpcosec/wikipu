@@ -8,11 +8,11 @@ adr:
   context_summary: "Knowledge is currently declared manually via YAML frontmatter with no inference engine. Owlready2 provides an OWL 2.0 quadstore with automatic reasoning, replacing manual relationship auditing with HermiT/Pellet inference."
 edges:
   - {target_id: "doc:wiki/adrs/Index.md", relation_type: "documents"}
-  - {target_id: "doc:wiki/concepts/knowledge.md", relation_type: "supersedes"}
+  - {target_id: "doc:wiki/concepts/knowledge.md", relation_type: "extends"}
   - {target_id: "doc:wiki/selfDocs/WhatAmI.md", relation_type: "implements"}
-  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "constrains"}
+  - {target_id: "doc:wiki/standards/house_rules.md", relation_type: "contains"}
 compliance:
-  status: "proposed"
+  status: "planned"
   failing_standards: []
 ---
 

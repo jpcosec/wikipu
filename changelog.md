@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-04-17
+
+- resolved task `owl-cli-test`: Verified OWL CLI integration works correctly — build exports 878 triples, SPARQL queries work, HermiT reasoner runs successfully, audit reports findings. Fixed 3 validation errors in wiki files (supersedes/constrains → extends/contains, proposed → planned for compliance.status)
+- resolved task `owl-roundtrip`: Verified Build→Query round-trip — queried energy node directly and got expected values: node_id, references (topology, facet), node_type (concept)
+- resolved task `owl-decon-recon`: Verified OWL→Markdown export works — 166 files exported, frontmatter preserved, shows current Phase 1 limitation (flat structure, body not preserved)
+
 ## 2026-04-15
 
 - resolved issue 9 `fix test_delta_compile_workflow`: Fixed `_compute_node_id` in ingest.py to properly handle `desk/drafts/` zone, now generates correct `doc:desk/drafts/...` node_id

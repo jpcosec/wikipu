@@ -3,8 +3,8 @@ identity:
   node_id: "doc:wiki/reference/owl_integration.md"
   node_type: "reference"
 edges:
-  - {target_id: "doc:wiki/adrs/003_owl_integration.md", relation_type: "references"}
-  - {target_id: "doc:wiki/concepts/topology.md", relation_type: "references"}
+  - {target_id: "doc:wiki/adrs/003_owl_integration.md", relation_type: "documents"}
+  - {target_id: "doc:wiki/concepts/topology.md", relation_type: "documents"}
 compliance:
   status: "implemented"
   failing_standards: []

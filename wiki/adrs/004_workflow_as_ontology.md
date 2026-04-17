@@ -10,7 +10,7 @@ edges:
   - {target_id: "doc:wiki/adrs/Index.md", relation_type: "documents"}
   - {target_id: "doc:wiki/adrs/003_owl_integration.md", relation_type: "extends"}
 compliance:
-  status: "proposed"
+  status: "planned"
   failing_standards: []
 ---
 
