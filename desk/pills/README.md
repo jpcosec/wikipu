@@ -10,6 +10,10 @@ This directory contains context pills bound to tasks. Pills provide rationale an
 | `decision` | Why this approach over alternatives |
 | `pattern` | Architectural pattern to follow |
 | `model` | Data model or schema to use |
+| `warning` | When to NOT do something |
+| `tip` | Quick operational hints |
+| `reference` | Links to docs |
+| `example` | Concrete code snippets |
 
 ## Lifecycle
 
@@ -31,12 +35,27 @@ Drafted → Bound to task → Audited after step →
 | `owl-global-constraints.md` | guardrail | owl-p1-4 (global) |
 | `owl-phase2-context.md` | decision | owl-p2, owl-p3 |
 | `owl-python-examples.md` | pattern | owl-p1, owl-p2 |
+| `pirate-teaching-guardrails.md` | guardrail | pirate-teach |
+| `pirate-teaching-pattern.md` | pattern | pirate-teach |
+| `audit-auto-task-decision.md` | decision | audit-auto-task |
+| `audit-auto-task-pattern.md` | pattern | audit-auto-task |
+| `audit-auto-task-warnings.md` | warning | audit-auto-task |
+| `workflow-reconcile-decision.md` | decision | reconcile-workflow |
+| `workflow-reconcile-pattern.md` | pattern | reconcile-workflow |
+| `global-tips.md` | tip | global |
+| `global-reference.md` | reference | global |
+| `global-examples.md` | example | global |
+| `global-warnings.md` | warning | global |
 
 ## Coverage Matrix
 
 | Type/Scope | global | domain | component |
 |------------|--------|--------|-----------|
-| decision | | owl-phase2-context | owl-adr-003-context |
-| guardrail | owl-global-constraints | | owl-module-structure |
-| pattern | | | owl-usage-patterns, owl-python-examples |
+| decision | | owl-phase2-context, audit-auto-task, workflow-reconcile | owl-adr-003-context |
+| guardrail | owl-global-constraints, global-warnings | pirate-teaching-guardrails | owl-module-structure |
+| pattern | | pirate-teaching-pattern, audit-auto-task-pattern, workflow-reconcile-pattern | owl-usage-patterns, owl-python-examples |
 | model | owl-model-mapping | | |
+| warning | global-warnings | audit-auto-task-warnings | |
+| tip | global-tips | | |
+| reference | global-reference | | |
+| example | global-examples | | |
