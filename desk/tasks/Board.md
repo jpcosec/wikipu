@@ -6,10 +6,9 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| owl-p1 | owl | Phase 1: Owlready2 Parallel Run | ✅ | none |
-| owl-p2 | owl | Phase 2: Quadstore as Primary Backend | ✅ | owl-p1 |
-| owl-p3 | owl | Phase 3: Reasoning Integration | ✅ | owl-p2 |
-| owl-p4 | owl | Phase 4: Full OWL Migration | ✅ | owl-p3 |
+| owl-cli-test | owl | Test OWL CLI Commands | p2 | none |
+| owl-roundtrip | owl | Test Build→Query Round-Trip | p2 | owl-cli-test |
+| owl-decon-recon | owl | Test OWL Deconstruction→Reconstruction | p2 | owl-roundtrip |
 
 ## Blocked (status=blocked)
 
