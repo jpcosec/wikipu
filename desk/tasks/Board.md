@@ -13,6 +13,7 @@
 | owl-p3 | owl | Phase 3: Reasoning Integration | p2 | owl-p2 |
 | owl-p4 | owl | Phase 4: Full OWL Migration | p2 | owl-p3 |
 | wf-1 | workflow | Reconcile workflow/ with wikipu structure | p1 | none |
+| cleanup-1 | cleanup | Clean up src/looting/pi/ | p3 | none |
 
 ## Blocked (status=blocked)
 
