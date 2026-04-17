@@ -3,7 +3,7 @@ identity:
   node_id: "doc:wiki/reference/knowledge_node_facets.md"
   node_type: "reference"
 edges:
-  - {target_id: "file:src/wiki_compiler/contracts.py", relation_type: "documents"}
+  - {target_id: "file:src/wiki_compiler/contracts/__init__.py", relation_type: "documents"}
   - {target_id: "doc:wiki/concepts/how_wikipu_works.md", relation_type: "documents"}
 compliance:
   status: "implemented"
@@ -67,17 +67,17 @@ This reference defines the node and facet vocabulary used throughout the Wikipu 
 
 ## Usage Examples
 
-- Inspect the concrete schema in `src/wiki_compiler/contracts.py`.
+- Inspect the concrete schema in `src/wiki_compiler/contracts/__init__.py`.
 - Rebuild the graph with `wiki-compiler build` after changing node structure or docs.
 - Query nodes with `wiki-compiler query --type get_node --node-id <node_id>`.
 - Use `wiki-compiler context --nodes "<node_id>"` to render focused graph context.
 
 ```text
 doc:wiki/reference/knowledge_node_facets.md
-file:src/wiki_compiler/contracts.py
+file:src/wiki_compiler/contracts/__init__.py
 code:src/wiki_compiler/scanner.py:scan_python_sources
 ```
 
 ```bash
-wiki-compiler query --type get_node --node-id file:src/wiki_compiler/contracts.py
+wiki-compiler query --type get_node --node-id file:src/wiki_compiler/contracts/__init__.py
 ```

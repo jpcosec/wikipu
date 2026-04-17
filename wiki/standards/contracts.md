@@ -3,35 +3,35 @@ identity:
   node_id: "doc:wiki/standards/contracts.md"
   node_type: "doc_standard"
 edges:
-  - target_id: "file:src/wiki_compiler/contracts.py"
+  - target_id: "file:src/wiki_compiler/contracts/__init__.py"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:Edge"
+  - target_id: "code:src/wiki_compiler/contracts/base.py:Edge"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:SystemIdentity"
+  - target_id: "code:src/wiki_compiler/contracts/base.py:SystemIdentity"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:IOFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:IOFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:ASTFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:ASTFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:SemanticFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:SemanticFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:ADRFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:ADRFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:TestMapFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:TestMapFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:ComplianceFacet"
+  - target_id: "code:src/wiki_compiler/contracts/facets.py:ComplianceFacet"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:KnowledgeNode"
+  - target_id: "code:src/wiki_compiler/contracts/node.py:KnowledgeNode"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:AuditFinding"
+  - target_id: "code:src/wiki_compiler/contracts/proposals.py:AuditFinding"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:FacetProposal"
+  - target_id: "code:src/wiki_compiler/contracts/proposals.py:FacetProposal"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:FacetOrthogonalityReport"
+  - target_id: "code:src/wiki_compiler/contracts/proposals.py:FacetOrthogonalityReport"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:TopologyProposal"
+  - target_id: "code:src/wiki_compiler/contracts/proposals.py:TopologyProposal"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/contracts.py:CollisionReport"
+  - target_id: "code:src/wiki_compiler/contracts/proposals.py:CollisionReport"
     relation_type: documents
 ---
 

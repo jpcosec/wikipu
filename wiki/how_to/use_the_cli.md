@@ -61,7 +61,7 @@ This also produces `.compliance_baseline.json`. Run this command in CI/CD pipeli
 
 ```bash
 wiki-compiler query --type get_node --node-id doc:wiki/how_to/use_the_cli.md
-wiki-compiler query --type get_ancestors --node-id file:src/wiki_compiler/contracts.py
+wiki-compiler query --type get_ancestors --node-id file:src/wiki_compiler/contracts/__init__.py
 wiki-compiler query --type get_descendants --node-id dir:src/wiki_compiler
 ```
 

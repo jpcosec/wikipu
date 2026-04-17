@@ -236,7 +236,7 @@ class StaleEdgesCheck:
         findings = []
         for source, target, data in graph.edges(data=True):
             if "type" not in graph.nodes[target]:
-                if target.startswith(("raw:", "code:", "file:", "dir:")):
+                if target.startswith(("raw:",)):
                     continue
                 findings.append(
                     AuditFinding(
