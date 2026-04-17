@@ -6,14 +6,10 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 15 | audit | Auto-generate tasks from audit findings | p2 | none |
-| 16 | system | Teach Pirate to use wiki-compiler for context efficiency | p1 | none |
 | owl-p1 | owl | Phase 1: Owlready2 Parallel Run | p2 | none |
 | owl-p2 | owl | Phase 2: Quadstore as Primary Backend | p2 | owl-p1 |
 | owl-p3 | owl | Phase 3: Reasoning Integration | p2 | owl-p2 |
 | owl-p4 | owl | Phase 4: Full OWL Migration | p2 | owl-p3 |
-| wf-1 | workflow | Reconcile workflow/ with wikipu structure | p1 | none |
-| cleanup-1 | cleanup | Clean up src/looting/pi/ | p3 | none |
 
 ## Blocked (status=blocked)
 
