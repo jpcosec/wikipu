@@ -1,9 +1,16 @@
 # Ignore patterns for wiki compiler
 
-# Looted external code - not part of the wiki
-src/looting/
-**/looting/
-src/**/node_modules/
+# Looted external code - not part of the wiki (git-tracked subdirs to ignore)
+src/looting/pirate/
+src/looting/pi-mono/
+src/looting/gemma-rag/
+src/looting/gems/
+**/looting/pirate/
+**/looting/pi-mono/
+**/looting/gemma-rag/
+**/looting/gems/
+
+# Standard ignores
 **/node_modules/
-src/.git/
 **/.git/
+src/.git/

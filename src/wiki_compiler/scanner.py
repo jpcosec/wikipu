@@ -43,8 +43,20 @@ class IgnoreRule:
         if fnmatch.fnmatch(path, f"{self.pattern}/**"):
             return True
         if self.pattern.startswith("**/"):
-            prefix = self.pattern[3:]
-            return path.startswith(prefix) or f"{path}/".startswith(prefix)
+            # Extract the directory name without the **/ prefix and trailing /
+            # e.g., "**/node_modules/" -> "node_modules"
+            prefix = self.pattern[3:].rstrip("/")
+            # Normalize path with surrounding slashes for easy contains check
+            normalized = "/" + path + "/"
+            # Check if path contains /{prefix}/ anywhere (e.g., /node_modules/ anywhere)
+            if f"/{prefix}/" in normalized:
+                return True
+            # Also check if path ends with /{prefix} (at root level)
+            if f"/{path}".endswith(f"/{prefix}"):
+                return True
+        if self.pattern.endswith("/"):
+            prefix = self.pattern  # e.g., "src/looting/" from "src/looting/"
+            return path.startswith(prefix) or path == prefix.rstrip("/")
         return False
 
 
@@ -86,7 +98,6 @@ def scan_codebase(
             rel_path = file_path.relative_to(project_root).as_posix()
             reason = match_ignore_reason(rel_path, ignore_rules)
             if reason is not None:
-                nodes.append(build_ignored_file_node(rel_path, reason))
                 continue
 
             plugin = extension_map.get(file_path.suffix)
