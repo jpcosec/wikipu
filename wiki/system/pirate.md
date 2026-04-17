@@ -3,7 +3,6 @@ identity:
   node_id: "doc:wiki/system/pirate.md"
   node_type: "concept"
 edges:
-  - {target_id: "doc:wiki/selfDocs/loot_pirate_self.md", relation_type: "implements"}
   - {target_id: "doc:wiki/system/pi-mono.md", relation_type: "contains"}
 compliance:
   status: "implemented"

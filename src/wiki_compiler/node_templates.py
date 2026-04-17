@@ -2,6 +2,7 @@
 Definitions and validation for wiki node templates.
 Enforces required sections and abstract extraction for different node types.
 """
+
 from __future__ import annotations
 import re
 from dataclasses import dataclass, field
@@ -11,6 +12,7 @@ from pydantic import BaseModel
 @dataclass
 class NodeTemplate:
     """Defines the required structure and sections for a specific node type."""
+
     node_type: str
     question: str
     required_sections: list[str]
@@ -39,31 +41,41 @@ class TemplateRegistry:
 def build_default_template_registry() -> TemplateRegistry:
     """Builds and returns the default registry of standard wiki node templates."""
     registry = TemplateRegistry()
-    registry.register(NodeTemplate(
-        "concept",
-        "What is X?",
-        ["abstract", "definition", "examples", "related_concepts"]
-    ))
-    registry.register(NodeTemplate(
-        "how_to",
-        "How do I do X?",
-        ["abstract", "prerequisites", "steps", "verification"]
-    ))
-    registry.register(NodeTemplate(
-        "doc_standard",
-        "What is the rule for X?",
-        ["abstract", "rule_schema", "fields", "usage_examples"]
-    ))
-    registry.register(NodeTemplate(
-        "reference",
-        "How does X work technically?",
-        ["abstract", "signature_or_schema", "fields", "usage_examples"]
-    ))
-    registry.register(NodeTemplate(
-        "index",
-        "What lives in this area?",
-        ["abstract"]  # Content must be transclusion-only, checked by composer
-    ))
+    registry.register(
+        NodeTemplate(
+            "concept",
+            "What is X?",
+            ["abstract", "definition", "examples", "related_concepts"],
+        )
+    )
+    registry.register(
+        NodeTemplate(
+            "how_to",
+            "How do I do X?",
+            ["abstract", "prerequisites", "steps", "verification"],
+        )
+    )
+    registry.register(
+        NodeTemplate(
+            "doc_standard",
+            "What is the rule for X?",
+            ["abstract", "rule_schema", "fields", "usage_examples"],
+        )
+    )
+    registry.register(
+        NodeTemplate(
+            "reference",
+            "How does X work technically?",
+            ["abstract", "signature_or_schema", "fields", "usage_examples"],
+        )
+    )
+    registry.register(
+        NodeTemplate(
+            "index",
+            "What lives in this area?",
+            ["abstract"],  # Content must be transclusion-only, checked by composer
+        )
+    )
     return registry
 
 
@@ -77,18 +89,20 @@ def extract_abstract(content: str) -> str | None:
     body = re.sub(r"\A---\s*\n.*?\n---(\s*\n|$)", "", content, flags=re.DOTALL).strip()
     if not body:
         return None
-    
+
     # Get the first block before any heading
     lines = body.splitlines()
     if not lines:
         return None
-        
+
+    # Skip the first heading (title) if present, then look for abstract
+    start_idx = 0
     if lines[0].startswith("#"):
-        return None  # No abstract before first heading
-        
+        start_idx = 1  # Skip the title heading
+
     # Find first paragraph (until double newline or heading)
     first_paragraph_lines = []
-    for line in lines:
+    for line in lines[start_idx:]:
         if not line.strip():
             if first_paragraph_lines:
                 break
@@ -96,33 +110,35 @@ def extract_abstract(content: str) -> str | None:
         if line.startswith("#"):
             break
         first_paragraph_lines.append(line.strip())
-        
+
     if not first_paragraph_lines:
         return None
-        
+
     return " ".join(first_paragraph_lines)
 
 
-def validate_template_sections(node_type: str, content: str, registry: TemplateRegistry) -> list[str]:
+def validate_template_sections(
+    node_type: str, content: str, registry: TemplateRegistry
+) -> list[str]:
     """Returns a list of missing required sections for the given node type."""
     template = registry.get(node_type)
     missing = []
-    
+
     # Extract headings
     headings = {
         line.lstrip("#").strip().lower().replace(" ", "_")
         for line in content.splitlines()
         if line.strip().startswith("##")
     }
-    
+
     # Special case: abstract is usually not a heading, it's the first paragraph.
     has_abstract = extract_abstract(content) is not None
-    
+
     for section in template.required_sections:
         if section == "abstract":
             if not has_abstract:
                 missing.append("abstract")
         elif section not in headings:
             missing.append(section)
-            
+
     return missing

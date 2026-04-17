@@ -1,3 +1,14 @@
+---
+identity:
+  node_id: "doc:wiki/selfDocs/looting_protocol.md"
+  node_type: "selfDoc"
+edges:
+  - {target_id: "doc:wiki/selfDocs/WhoAmI.md", relation_type: "implements"}
+compliance:
+  status: "implemented"
+  failing_standards: []
+---
+
 # Looting Protocol
 
 A protocol for integrating external codebases into autopoietic topology.
