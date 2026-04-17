@@ -352,6 +352,11 @@ def build_parser() -> argparse.ArgumentParser:
     audit_parser.add_argument(
         "--format", default="markdown", choices=["markdown", "json"]
     )
+    audit_parser.add_argument(
+        "--sync-check",
+        action="store_true",
+        help="Check for OWL quadstore sync conflicts",
+    )
 
     propose_facet_parser = subparsers.add_parser(
         "propose-facet", help="Validate a new facet proposal for orthogonality"

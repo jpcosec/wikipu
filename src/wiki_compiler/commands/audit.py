@@ -16,6 +16,19 @@ def handle_audit(args: argparse.Namespace) -> None:
     """Execute the audit command."""
     graph = load_graph(Path(args.graph))
     report = run_audit(graph)
+
+    if getattr(args, "sync_check", False):
+        try:
+            from wiki_compiler.owl_backend import get_world
+            from wiki_compiler.auditor_owl import OwlConflictCheck
+
+            world = get_world()
+            owl_check = OwlConflictCheck(world)
+            owl_findings = owl_check.run(graph)
+            report.findings.extend(owl_findings)
+        except ImportError:
+            pass
+
     if args.format == "json":
         print(
             json.dumps(
