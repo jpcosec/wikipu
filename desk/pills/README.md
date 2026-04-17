@@ -28,13 +28,13 @@ Drafted → Bound to task → Audited after step →
 
 | Pill | Type | Bound To |
 |------|------|----------|
-| `owl-adr-003-context.md` | decision | owl-p1-4 |
-| `owl-module-structure-guardrails.md` | guardrail | owl-p1 |
-| `owl-usage-patterns.md` | pattern | owl-p1 |
-| `owl-model-mapping.md` | model | owl-p1, owl-p2 |
-| `owl-global-constraints.md` | guardrail | owl-p1-4 (global) |
-| `owl-phase2-context.md` | decision | owl-p2, owl-p3 |
-| `owl-python-examples.md` | pattern | owl-p1, owl-p2 |
+| `owl-adr-003-context.md` | decision | owl-p1-4 ✅ |
+| `owl-module-structure-guardrails.md` | guardrail | owl-p1 ✅ |
+| `owl-usage-patterns.md` | pattern | owl-p1 ✅ |
+| `owl-model-mapping.md` | model | owl-p1, owl-p2 ✅ |
+| `owl-global-constraints.md` | guardrail | owl-p1-4 (global) ✅ |
+| `owl-phase2-context.md` | decision | owl-p2, owl-p3 ✅ |
+| `owl-python-examples.md` | pattern | owl-p1, owl-p2 ✅ |
 | `pirate-teaching-guardrails.md` | guardrail | pirate-teach |
 | `pirate-teaching-pattern.md` | pattern | pirate-teach |
 | `audit-auto-task-decision.md` | decision | audit-auto-task |
