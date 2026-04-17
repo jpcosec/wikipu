@@ -305,6 +305,11 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Overwrite the compliance baseline",
     )
+    build_parser.add_argument(
+        "--owl",
+        action="store_true",
+        help="Also export the knowledge graph to OWL/RDF format",
+    )
 
     query_parser = subparsers.add_parser("query", help="Query a knowledge graph export")
     query_parser.add_argument(
@@ -335,6 +340,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     query_parser.add_argument(
         "--unimplemented", action="store_true", help="Find all unimplemented task nodes"
+    )
+    query_parser.add_argument(
+        "--owl", help="Execute SPARQL query against the OWL quadstore"
     )
 
     audit_parser = subparsers.add_parser(

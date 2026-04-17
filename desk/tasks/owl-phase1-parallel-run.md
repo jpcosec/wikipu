@@ -1,8 +1,9 @@
 ---
-status: open
+status: completed
 priority: p2
 depends_on: []
 created: 2026-04-17
+completed: 2026-04-17
 assigned_to: self
 ---
 

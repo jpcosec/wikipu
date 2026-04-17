@@ -20,3 +20,6 @@ session-*.md
 .obsidian/workspace
 .obsidian/workspace-mobile.json
 .obsidian/core-plugins.json
+
+# Derived OWL artifacts
+*.owl

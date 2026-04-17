@@ -23,6 +23,10 @@ def handle_query(args: argparse.Namespace) -> None:
         print(json.dumps([n.model_dump() for n in results], indent=2))
         return
 
+    if getattr(args, "owl", None):
+        _handle_owl_query(args)
+        return
+
     query_main(
         graph_path=Path(args.graph),
         query_type=args.type,
@@ -36,3 +40,37 @@ def handle_query(args: argparse.Namespace) -> None:
         unimplemented=args.unimplemented,
         search_query=args.search,
     )
+
+
+def _handle_owl_query(args: argparse.Namespace) -> None:
+    """Execute a SPARQL query against the OWL quadstore."""
+    try:
+        from wiki_compiler.owl_backend.extractor import get_world, get_ontology
+    except ImportError:
+        print("[ERROR] owlready2 not installed. Run: pip install owlready2")
+        return
+
+    sparql = getattr(args, "owl", "")
+    if not sparql:
+        print("[ERROR] --owl requires a SPARQL query string")
+        return
+
+    world = get_world()
+    ontology = get_ontology(world)
+
+    try:
+        results = list(world.sparql(sparql))
+        serialized_results = []
+        for row in results:
+            serialized_row = [
+                str(item) if hasattr(item, "__str__") else item for item in row
+            ]
+            serialized_results.append(serialized_row)
+        print(
+            json.dumps(
+                {"results": serialized_results, "count": len(serialized_results)},
+                indent=2,
+            )
+        )
+    except Exception as exc:
+        print(f"[ERROR] SPARQL query failed: {exc}")
