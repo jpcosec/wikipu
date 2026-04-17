@@ -6,11 +6,8 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 12 | energy | Reduce file complexity (contracts.py 649 lines) | p1 | none |
 | 15 | audit | Auto-generate tasks from audit findings | p2 | none |
 | 16 | system | Teach Pirate to use wiki-compiler for context efficiency | p1 | none |
-| 17 | system | Fix wikiignore glob matching for **/ patterns | p1 | none |
-| 18 | system | Fix Energy CLI performance (slow + 12k violations) | p1 | 17 |
 
 ## Blocked (status=blocked)
 
