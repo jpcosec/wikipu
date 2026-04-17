@@ -89,6 +89,18 @@ pirate --model anthropic/claude-sonnet-4-5 "your prompt"
 
 The `pirate` command is symlinked at `~/.local/bin/pirate` and points to the wrapper at `src/looting/pirate/pirate`.
 
-## Related
+## Definition
 
-- [[topology]] - Pirate is located in the `src/looting/` zone
+Pirate is a looted fork of `pi-coding-agent`, adapted to run as a local binary named `pirate`. It uses a small language model (gemma 4b) with a fast but limited context window. Pirate lives in `src/looting/pirate/` and serves as the system's smaller experimental self for autopoietic self-experimentation.
+
+## Examples
+
+- Running `pirate "your prompt"` for one-shot task execution
+- Using `wiki-compiler query` to navigate topology before reading files
+- Teaching Pirate to use CLI commands efficiently given limited context
+
+## Related Concepts
+
+- [[topology]] — Pirate is located in the `src/looting/` zone
+- [[wiki/system/pirate.md]] — Pirate's system identity
+- [[wiki/concepts/pirate_curriculum.md]] — Teaching curriculum for Pirate

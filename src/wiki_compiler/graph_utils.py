@@ -1,6 +1,7 @@
 """
 Provides utility functions for manipulating and persisting the Knowledge Graph.
 """
+
 from __future__ import annotations
 
 import json

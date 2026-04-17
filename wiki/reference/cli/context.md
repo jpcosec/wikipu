@@ -38,6 +38,22 @@ wiki-compiler context --node-id file:src/wiki_compiler/energy.py --depth 3
 wiki-compiler context --node-id doc:wiki/Index.md --format summary
 ```
 
+## Usage Examples
+
+```bash
+# Get 2-hop neighborhood around a node
+wiki-compiler context --node-id doc:wiki/concepts/energy.md
+
+# Get deeper context for code exploration
+wiki-compiler context --node-id file:src/wiki_compiler/energy.py --depth 3
+
+# Summary format for quick overview
+wiki-compiler context --node-id doc:wiki/Index.md --format summary
+
+# Filter by relation type
+wiki-compiler context --node-id doc:wiki/Index.md --relation-filter contains
+```
+
 ## Related Commands
 
 - [[wiki/reference/cli/query.md]] — Full graph queries

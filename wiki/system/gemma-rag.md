@@ -82,6 +82,17 @@ The following are NOT part of the topology:
 - [ ] Streamlit UI loads
 - [ ] Ollama connection works (dev mode)
 
-## Related
+## Definition
+
+Gemma-RAG is a looted modular Retrieval-Augmented Generation system built with Google DeepMind's Gemma 3, served locally via Ollama. It provides document ingestion, vector embeddings, FAISS storage, and a FastAPI + Streamlit interface. Located at `src/looting/gemma-rag/`, relevant for autopoietic knowledge base querying patterns.
+
+## Examples
+
+- Ingesting PDF/TXT documents and querying them via local LLM
+- Using vector similarity search to find related wiki concepts
+- Integration patterns for local LLM inference
+
+## Related Concepts
 
 - `[[looting_protocol]]` - The looting protocol this project follows
+- `[[wiki/system/gems.md]]` - Local LLM CLI tool

@@ -3,11 +3,8 @@ identity:
   node_id: doc:wiki/concepts/autopoiesis.md
   node_type: concept
 edges:
-- target_id: 'raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation
-    for authentic knowledge management.pdf'
-  relation_type: documents
-- target_id: doc:wiki/concepts/core_philosophy.md
-  relation_type: implements
+  - target_id: doc:wiki/concepts/core_philosophy.md
+    relation_type: implements
 compliance:
   status: implemented
   failing_standards: []

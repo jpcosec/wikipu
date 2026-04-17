@@ -36,6 +36,16 @@ npm install          # Install dependencies
 npm run build        # Build all packages
 ```
 
-## Related
+## Definition
 
-- `[[wiki/system/pirate.md]]`
+pi-mono is the upstream monorepo containing the `@mariozechner/pi-*` npm packages that power both `pi` (global install) and `pirate` (local loot). It provides unified multi-provider LLM API, agent runtime, coding agent CLI, and terminal/web UI components. Source at https://github.com/badlogic/pi-mono.
+
+## Examples
+
+- npm packages powering Pirate: `@mariozechner/pi-coding-agent`, `@mariozechner/pi-ai`
+- Building all packages with `npm run build`
+- Reference implementation for npm monorepo structure
+
+## Related Concepts
+
+- `[[wiki/system/pirate.md]]` - The looted version of pi-coding-agent

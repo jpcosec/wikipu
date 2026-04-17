@@ -20,8 +20,7 @@ The fundamental knowledge unit. Every file in `wiki/` is a wiki node. Its frontm
 identity:
   node_id: str        # required — "doc:<path_from_repo_root>"; must match the file's actual path
   node_type: str      # required — one of: concept | how_to | doc_standard | adr | reference | faq | index
-edges:                # optional — omit if the node has no known relations yet
-  - target_id: str    # "doc:<path>" | "file:<path>" | "code:<path>"
+edges:                # optional — omit if the node has no known relations yet"doc:<path>" | "file:<path>" | "code:<path>"
     relation_type: str  # contains | depends_on | reads_from | writes_to | documents | transcludes | extends | implements
 compliance:
   status: str         # required — planned | scaffolding | implemented | deprecated

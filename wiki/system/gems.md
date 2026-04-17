@@ -79,7 +79,17 @@ Gems can enhance wikipu workflows:
 - **Text improvement**: `./gems-linux.sh -t TextReviser "draft text"`
 - **Offline fallback**: When cloud APIs unavailable
 
-## Related
+## Definition
+
+Gems is a shell CLI tool for interacting with local LLMs via Ollama. It provides rich prompt templates with language detection, JSON schema processing, and flexible output handling. Available templates include CodeReview, Summarize, TextReviser, and others. Located at `src/looting/gems/`.
+
+## Examples
+
+- `./gems-linux.sh -t CodeReview "your code"` for code review
+- `./gems-linux.sh -t TextReviser "draft text"` for grammar improvement
+- Offline fallback when cloud APIs are unavailable
+
+## Related Concepts
 
 - [[looting_protocol]] - The protocol used for this loot
-- [[pirate]] - Looted coding agent for autopoietic self-experimentation
+- [[wiki/system/pirate.md]] - Looted coding agent

@@ -194,6 +194,16 @@ Pirate has mastered wiki-compiler when:
 - Status/energy are checked before major operations
 - Context is used for understanding topology before reading content
 
+## Definition
+
+A graduated task sequence teaching Pirate to use `wiki-compiler` as a precision context extraction tool. Tasks progress from basic navigation (query) to complex synthesis (self-assessment), with each task building on the previous skills. The curriculum enforces the NAV-1 rule: the graph is the routing system, CLI is the scalpel.
+
+## Examples
+
+- Task 1: Run `wiki-compiler query --type get_descendants --node-id "doc:wiki/Index.md"` to verify index navigation
+- Task 5: Run `wiki-compiler status` and `wiki-compiler energy` to assess system state before operations
+- Task 7: Answer "What are the six zones?" using only targeted CLI queries, no file dumps
+
 ## Related Concepts
 
 - [[wiki/system/pirate.md]] — Pirate's identity

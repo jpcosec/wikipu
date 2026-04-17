@@ -19,15 +19,11 @@ Preflight validation and minimal-energy action selection for the coordinator. It
 
 ```python
 def evaluate_action_safety(
-    action_type: str, 
-    target_id: str, 
-    project_root: Path
+    action_type: str,     project_root: Path
 ) -> PreflightFinding | None
 
 def select_minimal_energy_action(
-    perturbation_type: str,
-    target_id: str,
-    candidates: list[str]
+    perturbation_type: str,    candidates: list[str]
 ) -> str
 ```
 

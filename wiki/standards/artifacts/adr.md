@@ -23,9 +23,7 @@ adr:
   decision_id: str  # required — zero-padded integer matching filename prefix, e.g. "003"
   status: str       # required — proposed | accepted | deprecated | superseded
   superseded_by: str  # conditional — "doc:wiki/adrs/<NNN>_<slug>.md"; required when status = superseded
-edges:              # required — at least one edge pointing to the node(s) this decision affects
-  - target_id: str
-    relation_type: documents
+edges:              # required — at least one edge pointing to the node(s) this decision affectsrelation_type: documents
 compliance:
   status: "implemented"   # ADRs are always implemented; they document past decisions
   failing_standards: []

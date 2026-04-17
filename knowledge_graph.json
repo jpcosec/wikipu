@@ -650,11 +650,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -715,11 +711,6 @@
         },
         "edges": [
           {
-            "target_id": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
             "target_id": "doc:wiki/concepts/core_philosophy.md",
             "relation_type": "implements",
             "metadata": {}
@@ -742,9 +733,6 @@
         "source": null
       },
       "id": "doc:wiki/concepts/autopoiesis.md"
-    },
-    {
-      "id": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf"
     },
     {
       "type": "concept",
@@ -1762,10 +1750,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -1798,11 +1783,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -1893,9 +1874,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -11597,11 +11576,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -11634,11 +11609,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -11671,11 +11642,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "definition",
-            "examples",
-            "related_concepts"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -18739,12 +18706,6 @@
       "metadata": {},
       "source": "doc:wiki/concepts/application_to_wikipu.md",
       "target": "raw:raw/autopoiesis_system.md"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/concepts/autopoiesis.md",
-      "target": "raw:raw/Autopoiesis and knowledge in the organization: conceptual foundation for authentic knowledge management.pdf"
     },
     {
       "relation": "implements",

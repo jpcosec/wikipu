@@ -45,7 +45,18 @@ The following are NOT part of the topology:
 - `node_modules/` - npm dependencies
 - `dist/` - build artifacts
 
-## Related
+## Definition
+
+Pirate is the system's looted copy of the `pi-coding-agent` harness, cloned from `pi-mono` and adapted to run as a local binary. It serves as a smaller experimental self for autopoietic self-experimentation. CLI renamed from `pi` to `pirate`, config directory from `~/.pi/` to `~/.pirate/`.
+
+## Examples
+
+- Running `pirate` for interactive sessions
+- Running `pirate "your prompt"` for one-shot execution
+- Custom extensions: `identity.ts` injects selfDocs on startup, `rule_enforcer.ts` enforces NAV-1
+
+## Related Concepts
 
 - `[[looting_protocol]]` - The looting protocol this project follows
-- `[[wiki/system/pi-mono.md]]`
+- `[[wiki/system/pi-mono.md]]` - The upstream source
+- `[[wiki/concepts/pirate.md]]` - Pirate's concept node

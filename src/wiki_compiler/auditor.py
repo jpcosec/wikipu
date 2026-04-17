@@ -233,11 +233,11 @@ class StaleEdgesCheck:
         """
         Executes the stale edges check against the provided graph.
         """
-        # NetworkX adds target nodes automatically when an edge is added.
-        # "Real" nodes in our graph have a 'type' attribute.
         findings = []
         for source, target, data in graph.edges(data=True):
             if "type" not in graph.nodes[target]:
+                if target.startswith(("raw:", "code:", "file:", "dir:")):
+                    continue
                 findings.append(
                     AuditFinding(
                         check_name=self.check_name,
