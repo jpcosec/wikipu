@@ -6,13 +6,11 @@
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 6a | energy | Add descriptive abstraction penalties | p2 | none | (7 done)
-| 6c | audit | Add code-documentation drift detection | ✓ DONE | 7 |
-| 7 | energy | Replace node count with redundancy heuristic | ✓ DONE | none |
 | 12 | energy | Reduce file complexity (contracts.py 649 lines) | p1 | none |
 | 15 | audit | Auto-generate tasks from audit findings | p2 | none |
-| pirate | system | Loot and reconstruct pi-coding-agent as "pirate" | ✓ DONE | none |
 | 16 | system | Teach Pirate to use wiki-compiler for context efficiency | p1 | none |
+| 17 | system | Fix wikiignore glob matching for **/ patterns | p1 | none |
+| 18 | system | Fix Energy CLI performance (slow + 12k violations) | p1 | 17 |
 
 ## Blocked (status=blocked)
 
