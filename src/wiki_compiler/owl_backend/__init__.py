@@ -12,6 +12,10 @@ from wiki_compiler.owl_backend.extractor import (
     extract_all,
 )
 from wiki_compiler.owl_backend.export import export_to_rdfxml, export_wikipu_ontology
+from wiki_compiler.owl_backend.import_export import (
+    owl_to_markdown,
+    export_ontology_to_markdown,
+)
 
 __all__ = [
     "ONTOLOGY_IRI",
@@ -22,4 +26,6 @@ __all__ = [
     "extract_all",
     "export_to_rdfxml",
     "export_wikipu_ontology",
+    "owl_to_markdown",
+    "export_ontology_to_markdown",
 ]
