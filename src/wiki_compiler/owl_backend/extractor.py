@@ -5,59 +5,79 @@ from pathlib import Path
 from typing import Optional
 
 import yaml
-from owlready2 import Ontology, World
+from rdflib import Graph, Literal, Namespace, RDF
 
 from wiki_compiler.owl_backend import ONTOLOGY_IRI, ONTOLOGY_PATH
-from wiki_compiler.owl_backend.frontmatter import extract_frontmatter_triples
-from wiki_compiler.owl_backend.wikilinks import extract_wikilinks
-from wiki_compiler.owl_backend.annotations import extract_annotations
 
 
-def get_world() -> World:
-    """Get or create the Owlready2 world."""
-    world = World()
-    if ONTOLOGY_PATH.exists():
-        world.get_ontology(f"file://{ONTOLOGY_PATH}")
-    return world
+WIKIPU = Namespace(ONTOLOGY_IRI)
 
 
-def get_ontology(world: World) -> Ontology:
-    """Get or create the main wikipu ontology."""
-    return world.get_ontology(ONTOLOGY_IRI)
+def markdown_to_rdf(markdown_path: Path) -> Graph:
+    """Extract triples from a Markdown file to an RDF graph."""
+    g = Graph()
+    g.bind("wikipu", WIKIPU)
 
-
-def markdown_to_owl(markdown_path: Path, world: World) -> None:
-    """Extract triples from a Markdown file into the quadstore."""
     if not markdown_path.exists() or not markdown_path.suffix == ".md":
-        return
+        return g
 
     content = markdown_path.read_text(encoding="utf-8")
     frontmatter_match = re.match(r"^---\n(.*?)\n---", content, re.DOTALL)
 
-    ontology = get_ontology(world)
+    node_uri = WIKIPU[markdown_path.stem.replace("/", "_").replace(" ", "_")]
+    g.add((node_uri, RDF.type, WIKIPU.KnowledgeNode))
 
-    with ontology:
-        node_id = markdown_path.stem
-        node_class = (
-            ontology[node_id] if hasattr(ontology, node_id) else type(node_id, (), {})
-        )
+    if frontmatter_match:
+        frontmatter_text = frontmatter_match.group(1)
+        frontmatter_data = yaml.safe_load(frontmatter_text)
+        if frontmatter_data:
+            identity = frontmatter_data.get("identity", {})
+            if identity:
+                node_id = identity.get("node_id", "")
+                node_type = identity.get("node_type", "")
+                if node_id:
+                    g.add((node_uri, WIKIPU.node_id, Literal(node_id)))
+                if node_type:
+                    g.add((node_uri, WIKIPU.node_type, Literal(node_type)))
 
-        if frontmatter_match:
-            frontmatter_text = frontmatter_match.group(1)
-            frontmatter_data = yaml.safe_load(frontmatter_text)
-            extract_frontmatter_triples(node_class, frontmatter_data, ontology)
+            compliance = frontmatter_data.get("compliance", {})
+            if compliance:
+                status = compliance.get("status", "")
+                if status:
+                    g.add((node_uri, WIKIPU.status, Literal(status)))
 
-        body = content.split("---", 2)[-1] if "---" in content else content
-        extract_wikilinks(node_class, body, ontology)
-        extract_annotations(node_class, body, ontology)
+    body = content.split("---", 2)[-1] if "---" in content else content
+    links = re.findall(r"\[\[([^\]]+)\]\]", body)
+    for link in links[:20]:
+        g.add((node_uri, WIKIPU.references, Literal(link.strip())))
+
+    return g
 
 
-def extract_all(wiki_root: Path, world: Optional[World] = None) -> World:
-    """Extract all wiki nodes to OWL."""
+def extract_all(wiki_root: Path, world: Optional[Graph] = None) -> Graph:
+    """Extract all wiki nodes to OWL Graph."""
     if world is None:
-        world = get_world()
+        world = Graph()
+
+    world.bind("wikipu", WIKIPU)
 
     for md_file in wiki_root.rglob("*.md"):
-        markdown_to_owl(md_file, world)
+        g = markdown_to_rdf(md_file)
+        for triple in g:
+            world.add(triple)
 
+    return world
+
+
+def get_world() -> Graph:
+    """Get the RDF graph (rdflib-based)."""
+    g = Graph()
+    g.bind("wikipu", WIKIPU)
+    if ONTOLOGY_PATH.exists():
+        g.parse(str(ONTOLOGY_PATH), format="xml")
+    return g
+
+
+def get_ontology(world: Graph) -> Graph:
+    """Get the ontology graph."""
     return world

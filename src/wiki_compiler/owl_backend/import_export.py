@@ -3,49 +3,37 @@
 from pathlib import Path
 from typing import Optional
 
-from owlready2 import World
+from rdflib import Graph, Literal, Namespace
 
-from wiki_compiler.owl_backend import get_world, get_ontology, ONTOLOGY_IRI
+ONTOLOGY_IRI = "https://wikipu.ai/ontology/"
+WIKIPU = Namespace(ONTOLOGY_IRI)
 
 
-def owl_to_markdown(individual, wiki_root: Path) -> Optional[str]:
+def owl_to_markdown(node_uri, graph: Graph) -> Optional[str]:
     """Export an OWL individual to Markdown format."""
     lines = ["---"]
     lines.append(f"identity:")
-    lines.append(f'  node_id: "{individual.name}"')
+    lines.append(f'  node_id: "{node_uri}"')
 
-    node_type = getattr(individual, "node_type", None)
-    if node_type:
-        lines.append(f'  node_type: "{node_type}"')
+    for s, p, o in graph.triples((node_uri, WIKIPU.node_type, None)):
+        if isinstance(o, Literal):
+            lines.append(f'  node_type: "{o}"')
+            break
 
-    compliance_status = getattr(individual, "compliance_status", None)
-    if compliance_status:
-        lines.append(f"compliance:")
-        lines.append(f'  status: "{compliance_status}"')
-
-    failing = getattr(individual, "failing_standards", None)
-    if failing:
-        if not lines[-1].startswith("compliance"):
-            lines.append("compliance:")
-        lines.append(f"  failing_standards: {list(failing)}")
+    for s, p, o in graph.triples((node_uri, WIKIPU.status, None)):
+        if isinstance(o, Literal):
+            lines.append(f"compliance:")
+            lines.append(f'  status: "{o}"')
+            break
 
     lines.append("---")
     lines.append("")
 
-    content = getattr(individual, "content", None)
-    if content:
-        lines.append(str(content))
-        lines.append("")
+    references = []
+    for s, p, o in graph.triples((node_uri, WIKIPU.references, None)):
+        if isinstance(o, Literal):
+            references.append(str(o))
 
-    sections = getattr(individual, "sections", None)
-    if sections:
-        for section in sections:
-            level = section.get("level", 1)
-            title = section.get("title", "")
-            lines.append(f"{'#' * level} {title}")
-            lines.append("")
-
-    references = getattr(individual, "references", None)
     if references:
         lines.append("## Related Concepts")
         for ref in references:
@@ -56,21 +44,22 @@ def owl_to_markdown(individual, wiki_root: Path) -> Optional[str]:
 
 
 def export_ontology_to_markdown(
-    wiki_root: Path, world: Optional[World] = None, force: bool = False
+    wiki_root: Path, world: Optional[Graph] = None, force: bool = False
 ) -> list[Path]:
     """Export entire ontology to Markdown files."""
     if world is None:
+        from wiki_compiler.owl_backend.extractor import get_world
+
         world = get_world()
 
-    ontology = get_ontology(world)
     exported = []
 
-    for individual in ontology.individuals():
-        md_content = owl_to_markdown(individual, wiki_root)
+    for s, p, o in world.triples((None, WIKIPU.node_id, None)):
+        md_content = owl_to_markdown(s, world)
         if md_content is None:
             continue
 
-        node_name = individual.name
+        node_name = str(s).split("/")[-1]
         md_path = wiki_root / f"{node_name}.md"
 
         if md_path.exists() and not force:

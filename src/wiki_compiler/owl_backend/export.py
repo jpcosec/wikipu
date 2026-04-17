@@ -3,21 +3,21 @@
 from pathlib import Path
 from typing import Optional
 
-from owlready2 import World
+from rdflib import Graph
 
 from wiki_compiler.owl_backend import ONTOLOGY_PATH
 from wiki_compiler.owl_backend.extractor import get_world
 
 
 def export_to_rdfxml(
-    world: Optional[World] = None, output_path: Optional[Path] = None
+    world: Optional[Graph] = None, output_path: Optional[Path] = None
 ) -> Path:
-    """Export the quadstore to RDF/XML format."""
+    """Export the graph to RDF/XML format."""
     if world is None:
         world = get_world()
 
     output = output_path or ONTOLOGY_PATH
-    world.save(str(output))
+    world.serialize(str(output), format="xml")
     return output
 
 

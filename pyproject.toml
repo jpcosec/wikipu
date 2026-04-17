@@ -13,7 +13,8 @@ dependencies = [
     "pydantic>=2.0.0",
     "PyYAML>=6.0",
     "networkx>=3.0",
-    "owlready2>=0.46"
+    "owlready2>=0.46",
+    "rdflib>=7.0"
 ]
 
 [project.scripts]

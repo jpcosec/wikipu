@@ -45,9 +45,9 @@ def handle_query(args: argparse.Namespace) -> None:
 def _handle_owl_query(args: argparse.Namespace) -> None:
     """Execute a SPARQL query against the OWL quadstore."""
     try:
-        from wiki_compiler.owl_backend.extractor import get_world, get_ontology
+        from wiki_compiler.owl_backend.extractor import get_world
     except ImportError:
-        print("[ERROR] owlready2 not installed. Run: pip install owlready2")
+        print("[ERROR] rdflib not installed. Run: pip install rdflib")
         return
 
     sparql = getattr(args, "owl", "")
@@ -55,11 +55,10 @@ def _handle_owl_query(args: argparse.Namespace) -> None:
         print("[ERROR] --owl requires a SPARQL query string")
         return
 
-    world = get_world()
-    ontology = get_ontology(world)
+    graph = get_world()
 
     try:
-        results = list(world.sparql(sparql))
+        results = graph.query(sparql)
         serialized_results = []
         for row in results:
             serialized_row = [

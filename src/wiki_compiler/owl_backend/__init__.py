@@ -6,7 +6,7 @@ ONTOLOGY_IRI = "https://wikipu.ai/ontology/"
 ONTOLOGY_PATH = Path(__file__).parent.parent.parent.parent / "wikipu.owl"
 
 from wiki_compiler.owl_backend.extractor import (
-    markdown_to_owl,
+    markdown_to_rdf,
     get_world,
     get_ontology,
     extract_all,
@@ -20,7 +20,7 @@ from wiki_compiler.owl_backend.import_export import (
 __all__ = [
     "ONTOLOGY_IRI",
     "ONTOLOGY_PATH",
-    "markdown_to_owl",
+    "markdown_to_rdf",
     "get_world",
     "get_ontology",
     "extract_all",
