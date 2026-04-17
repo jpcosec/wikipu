@@ -531,6 +531,11 @@ def build_parser() -> argparse.ArgumentParser:
     energy_parser.add_argument(
         "--format", default="markdown", choices=["markdown", "json"]
     )
+    energy_parser.add_argument(
+        "--reasoning",
+        action="store_true",
+        help="Run OWL reasoner and include inferred relationships",
+    )
 
     read_parser = subparsers.add_parser(
         "read", help="Read the contents of a file directly"

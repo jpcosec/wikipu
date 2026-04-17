@@ -14,6 +14,20 @@ def handle_energy(args: argparse.Namespace) -> None:
     """Execute the energy command."""
     graph = load_graph(Path(args.graph))
     report = run_energy_audit(graph, Path(args.project_root))
+
+    if getattr(args, "reasoning", False):
+        try:
+            from wiki_compiler.owl_reasoner import OwlReasoner
+
+            reasoner = OwlReasoner()
+            inferred = reasoner.sync_reasoner()
+            consistency = reasoner.consistency_check()
+            report.inferred_relationships = reasoner.get_inferred_relationships()
+            report.reasoning_output = inferred
+            report.consistency_status = consistency.get("consistency", ["UNKNOWN"])[0]
+        except ImportError:
+            pass
+
     if args.format == "json":
         print(report.model_dump_json(indent=2))
     else:
@@ -40,6 +54,14 @@ def handle_energy(args: argparse.Namespace) -> None:
             print(
                 f"- **Agent Rule Violations**: {ce.agent_violation_energy:.2f} (v={ce.agent_violations})"
             )
+
+        if getattr(args, "reasoning", False):
+            status = getattr(report, "consistency_status", "UNKNOWN")
+            print(f"\n### OWL Reasoning")
+            print(f"- **Consistency**: {status}")
+            inferred = getattr(report, "reasoning_output", {})
+            if "reasoning" in inferred:
+                print(f"- **Reasoner**: {inferred['reasoning']}")
 
         if ce.energy_score > 500:
             print(

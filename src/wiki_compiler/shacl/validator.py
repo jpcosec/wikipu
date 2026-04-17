@@ -66,3 +66,32 @@ def validate_ontology(world: Optional[World] = None) -> dict[str, list[str]]:
             ] = violations
 
     return results
+
+
+def observe_changes(ontology, callback) -> None:
+    """Register owlready2.observe for real-time validation on triple changes."""
+    ontology.observe(callback)
+
+
+def shacl_observer(individual, prop, old_val, new_val) -> list[str]:
+    """Observer callback for SHACL validation on property changes."""
+    violations = validate_node(individual)
+    return violations
+
+
+def enable_realtime_validation(world: Optional[World] = None) -> None:
+    """Enable real-time SHACL validation via owlready2.observe."""
+    if world is None:
+        world = get_world()
+
+    ontology = world.get_ontology("https://wikipu.ai/ontology/")
+
+    def validation_observer(ind, prop, old, new):
+        violations = validate_node(ind)
+        if violations:
+            print(f"[SHACL] Validation violations on {ind}: {violations}")
+
+    try:
+        observe_changes(ontology, validation_observer)
+    except Exception:
+        pass

@@ -627,6 +627,16 @@ class EnergyReport(BaseModel):
     delta: float = Field(
         default=0.0, description="The change in total energy since the baseline."
     )
+    consistency_status: str | None = Field(
+        default=None,
+        description="OWL consistency check result (CONSISTENT/INCONSISTENT).",
+    )
+    reasoning_output: dict | None = Field(
+        default=None, description="OWL reasoner output with inferred relationships."
+    )
+    inferred_relationships: list[dict] = Field(
+        default_factory=list, description="Inferred class memberships from reasoner."
+    )
 
 
 class ZoneContract(BaseModel):

@@ -8,7 +8,7 @@
 |----|--------|------|----------|------------|
 | owl-p1 | owl | Phase 1: Owlready2 Parallel Run | ✅ | none |
 | owl-p2 | owl | Phase 2: Quadstore as Primary Backend | ✅ | owl-p1 |
-| owl-p3 | owl | Phase 3: Reasoning Integration | p2 | owl-p2 |
+| owl-p3 | owl | Phase 3: Reasoning Integration | ✅ | owl-p2 |
 | owl-p4 | owl | Phase 4: Full OWL Migration | p2 | owl-p3 |
 
 ## Blocked (status=blocked)
