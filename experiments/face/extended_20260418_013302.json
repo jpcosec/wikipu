@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-04-18T01:33:02.038911",
+  "files": {
+    "code": 76,
+    "wiki": 159,
+    "tests": 37
+  },
+  "experiments": {
+    "module_wiki_compiler": {
+      "so": 0.5422105145326516,
+      "count": 34
+    },
+    "module_commands": {
+      "so": 0.5438661344722903,
+      "count": 12
+    },
+    "module_owl_backend": {
+      "so": 0.5673425908618083,
+      "count": 7
+    },
+    "module_shacl": {
+      "so": 0.5410640631588783,
+      "count": 2
+    },
+    "module_contracts": {
+      "so": 0.5192096056161232,
+      "count": 7
+    },
+    "module_test_apps": {
+      "so": 0.3314324272384828,
+      "count": 2
+    },
+    "module_server": {
+      "so": 0.4464524053011103,
+      "count": 4
+    },
+    "module_docker": {
+      "so": 0.6437136667402577,
+      "count": 4
+    },
+    "module_llm_system": {
+      "so": 0.46188384183793474,
+      "count": 2
+    },
+    "module_core": {
+      "so": 0.4358044440397606,
+      "count": 5
+    },
+    "module_utils": {
+      "so": 0.3975631068267466,
+      "count": 3
+    },
+    "module_chains": {
+      "so": 0.5938604302762238,
+      "count": 2
+    },
+    "wiki_.md": {
+      "so": 0.603954405214142,
+      "count": 168
+    },
+    "imports": {
+      "many_vs_few": {
+        "so": 0.09448724154697868,
+        "corr": -0.9999345454209939
+      }
+    },
+    "classes": {
+      "with_vs_without": {
+        "so": 0.02303554467122053,
+        "corr": 0.5678810902546584
+      }
+    }
+  }
+}

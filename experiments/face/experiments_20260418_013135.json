@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-04-18T01:31:33.967866",
+  "experiments": [
+    {
+      "name": "grupos_principales",
+      "code_stats": {
+        "within_so": 0.5282597623998114,
+        "within_corr": 0.3861778303646476,
+        "count": 76
+      },
+      "wiki_stats": {
+        "within_so": 0.5687648606879536,
+        "within_corr": 0.0025570994063079644,
+        "count": 159
+      },
+      "test_stats": {
+        "within_so": 0.5217346820695735,
+        "within_corr": 0.36893855132803355,
+        "count": 37
+      },
+      "code_vs_wiki": {
+        "label": "code_vs_wiki",
+        "so_mean": 0.5143902490119836,
+        "so_std": 0.09430023937442351,
+        "corr_mean": 0.011456748344398778,
+        "corr_std": 0.049940848161938216,
+        "n_g1": 76,
+        "n_g2": 159
+      },
+      "code_vs_tests": {
+        "label": "code_vs_tests",
+        "so_mean": 0.4807426155982262,
+        "so_std": 0.10622534542476077,
+        "corr_mean": 0.31545778894740234,
+        "corr_std": 0.18184530068392316,
+        "n_g1": 76,
+        "n_g2": 37
+      },
+      "wiki_vs_tests": {
+        "label": "wiki_vs_tests",
+        "so_mean": 0.4997937698951086,
+        "so_std": 0.05704801261887656,
+        "corr_mean": 0.013675854717309104,
+        "corr_std": 0.057291803280658596,
+        "n_g1": 159,
+        "n_g2": 37
+      }
+    },
+    {
+      "name": "tamano_archivos",
+      "small": {
+        "within_so": 0.6033135170617494,
+        "within_corr": 0.36552780561257747,
+        "count": 6
+      },
+      "medium": {
+        "within_so": 0.5989992050780505,
+        "within_corr": 0.43627760898017454,
+        "count": 10
+      },
+      "large": {
+        "within_so": 0.5351247431876538,
+        "within_corr": 0.3923212190934742,
+        "count": 60
+      }
+    },
+    {
+      "name": "encoders",
+      "results": {
+        "char_codes": {
+          "code_count": 76,
+          "wiki_count": 159,
+          "code_vs_wiki_so": 0.5143902490119836,
+          "code_vs_wiki_corr": 0.011456748344398778
+        },
+        "word_lengths": {
+          "code_count": 76,
+          "wiki_count": 159,
+          "code_vs_wiki_so": 0.5464973816619909,
+          "code_vs_wiki_corr": 0.04562142533973002
+        },
+        "sentence_lengths": {
+          "code_count": 76,
+          "wiki_count": 159,
+          "code_vs_wiki_so": 0.4932346898020099,
+          "code_vs_wiki_corr": 0.015007585767498763
+        }
+      }
+    },
+    {
+      "name": "preprocessing",
+      "results": {
+        "none": {
+          "code_vs_wiki_so": 0.25294663450694715,
+          "code_vs_wiki_corr": 0.8404414706831992
+        },
+        "zscore": {
+          "code_vs_wiki_so": 0.5143902490119836,
+          "code_vs_wiki_corr": 0.011456748344398778
+        },
+        "log": {
+          "code_vs_wiki_so": 0.4796807436981343,
+          "code_vs_wiki_corr": 0.9741430458832514
+        },
+        "minmax": {
+          "code_vs_wiki_so": 0.21778405592199285,
+          "code_vs_wiki_corr": 0.8169511679274157
+        }
+      }
+    },
+    {
+      "name": "distancia_promedio",
+      "code_avg_so": 0.07728935238924017,
+      "code_avg_corr": 0.4141958584068288,
+      "wiki_avg_so": 0.6561052791202824,
+      "wiki_avg_corr": 0.07687074900799046
+    }
+  ]
+}

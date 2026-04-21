@@ -61,6 +61,31 @@ class SystemicEnergy(BaseModel):
         default=0.0, description="Energy contributed by agent rule violations."
     )
 
+    fft_code_wiki_so: float = Field(
+        default=0.0,
+        description="Spectral overlap between code and wiki (lower = more distinct).",
+    )
+    fft_code_wiki_corr: float = Field(
+        default=0.0,
+        description="Correlation between code and wiki spectra (lower = more distinct).",
+    )
+    fft_code_within_so: float = Field(
+        default=0.0,
+        description="Average spectral overlap within code files (coherence).",
+    )
+    fft_code_within_corr: float = Field(
+        default=0.0,
+        description="Average correlation within code files (consistency).",
+    )
+    fft_complexity_score: float = Field(
+        default=0.0,
+        description="Complexity score from FFT variance (higher = more chaotic).",
+    )
+    fft_energy: float = Field(
+        default=0.0,
+        description="Energy contribution from FFT-based metrics.",
+    )
+
 
 class EnergyReport(BaseModel):
     """The result of an energy audit."""

@@ -13,9 +13,12 @@ import datetime
 from pathlib import Path
 from collections import Counter
 
+import numpy as np
+
 from .contracts import SystemicEnergy, EnergyReport
 from .perception import build_status_report
 from .auditor import run_audit
+from .face import FaceAnalyzer
 import networkx as nx
 
 
@@ -24,6 +27,7 @@ BOILERPLATE_THRESHOLD = 0.85
 FILE_LINE_THRESHOLD = 300
 FUNCTION_STATEMENT_THRESHOLD = 30
 DRIFT_PENALTY_WEIGHT = 5.0
+FFT_ENERGY_WEIGHT = 10.0
 
 
 def tokenize(text: str) -> set[str]:
@@ -32,6 +36,68 @@ def tokenize(text: str) -> set[str]:
         return set()
     tokens = text.lower().split()
     return set(t for t in tokens if len(t) > 2)
+
+
+def calculate_fft_metrics(project_root: Path) -> dict:
+    """Calculate FFT-based metrics for code vs wiki analysis."""
+    analyzer = FaceAnalyzer(preprocess="zscore")
+
+    code_files = [
+        f for f in (project_root / "src").rglob("*.py") if "__pycache__" not in str(f)
+    ]
+    wiki_files = list((project_root / "wiki").rglob("*.md"))
+
+    code_spectra = {}
+    for f in code_files:
+        try:
+            t = f.read_text(encoding="utf-8")
+            if len(t) > 200:
+                code_spectra[f.name] = analyzer.analyze_text(t)
+        except:
+            continue
+
+    wiki_spectra = {}
+    for f in wiki_files:
+        try:
+            t = f.read_text(encoding="utf-8")
+            if len(t) > 200:
+                wiki_spectra[f.name] = analyzer.analyze_text(t)
+        except:
+            continue
+
+    if not code_spectra or not wiki_spectra:
+        return {"so": 0.0, "corr": 0.0, "complexity": 0.0, "coherence": 0.0}
+
+    code_vals = list(code_spectra.values())
+    wiki_vals = list(wiki_spectra.values())
+
+    cross_sos, cross_corrs = [], []
+    for cs in code_vals[:15]:
+        for ws in wiki_vals[:15]:
+            m = analyzer.compare_spectra(cs, ws)
+            cross_sos.append(m.so)
+            cross_corrs.append(m.corr)
+
+    within_sos, within_corrs = [], []
+    for i in range(min(20, len(code_vals))):
+        for j in range(i + 1, min(20, len(code_vals))):
+            m = analyzer.compare_spectra(code_vals[i], code_vals[j])
+            within_sos.append(m.so)
+            within_corrs.append(m.corr)
+
+    avg_code = analyzer.average_spectrum(code_vals)
+    powers = avg_code[1]
+    complexity = float(np.std(powers[: len(powers) // 4])) if len(powers) > 4 else 0.0
+
+    return {
+        "so": float(np.mean(cross_sos)) if cross_sos else 0.0,
+        "corr": float(np.mean(cross_corrs)) if cross_corrs else 0.0,
+        "coherence": float(np.mean(within_sos)) if within_sos else 0.0,
+        "within_corr": float(np.mean(within_corrs)) if within_corrs else 0.0,
+        "complexity": complexity,
+        "code_count": len(code_spectra),
+        "wiki_count": len(wiki_spectra),
+    }
 
 
 def jaccard_similarity(set1: set[str], set2: set[str]) -> float:
@@ -275,6 +341,9 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     # Detect code-doc drift
     drift_flags = detect_code_doc_drift(project_root)
 
+    # FFT-based metrics
+    fft_metrics = calculate_fft_metrics(project_root)
+
     # Abstraction penalties
     long_file_penalty = long_files * 5.0
     complex_function_penalty = complex_functions * 3.0
@@ -298,6 +367,14 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
     uncommitted_energy = uncommitted * 50.0  # Maximum entropy - uncommitted changes
     agent_violation_energy = agent_violations * 25.0
 
+    # FFT-based energy (más distinto = más energía)
+    fft_so = fft_metrics.get("so", 0.5)
+    fft_corr = fft_metrics.get("corr", 0.0)
+    fft_coherence = fft_metrics.get("coherence", 0.5)
+    fft_complexity = fft_metrics.get("complexity", 0.0)
+
+    fft_energy = (1 - fft_so) * 5.0 + abs(fft_corr) * 2.0 + fft_complexity * 0.1
+
     total_score = (
         structural_energy
         + abstraction_energy
@@ -309,6 +386,7 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         + gate_energy
         + uncommitted_energy
         + agent_violation_energy
+        + fft_energy
     )
 
     return SystemicEnergy(
@@ -329,6 +407,12 @@ def calculate_systemic_energy(graph: nx.DiGraph, project_root: Path) -> Systemic
         violation_energy=violation_energy,
         perturbation_energy=perturbation_energy + gate_energy,
         agent_violation_energy=agent_violation_energy,
+        fft_code_wiki_so=fft_so,
+        fft_code_wiki_corr=fft_corr,
+        fft_code_within_so=fft_coherence,
+        fft_code_within_corr=fft_metrics.get("within_corr", 0.0),
+        fft_complexity_score=fft_complexity,
+        fft_energy=fft_energy,
     )
 
 
