@@ -5,6 +5,7 @@ identity:
 edges:
   - {target_id: "doc:wiki/reference/faq.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/knowledge_node_facets.md", relation_type: "contains"}
+  - {target_id: "doc:wiki/reference/diagrams/Index.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/build.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/cleanse.md", relation_type: "contains"}
   - {target_id: "doc:wiki/reference/cli/curate.md", relation_type: "contains"}
@@ -26,5 +27,6 @@ This index gathers lookup-oriented pages: command references, schema references,
 |---|---|
 | `faq.md` | Quick answers to recurring onboarding questions |
 | `knowledge_node_facets.md` | Node, edge, and facet vocabulary |
+| `diagrams/` | Visual reference pages for the current system and future target architectures |
 | `cli/` | Command-level reference for `wiki-compiler`, including validation surfaces |
 | `protocols/` | Audience-specific operating protocols |
