@@ -234,10 +234,9 @@ class StaleEdgesCheck:
         Executes the stale edges check against the provided graph.
         """
         findings = []
+        graph_node_ids = {n for n in graph.nodes()}
         for source, target, data in graph.edges(data=True):
-            if "type" not in graph.nodes[target]:
-                if target.startswith(("raw:",)):
-                    continue
+            if target not in graph_node_ids:
                 findings.append(
                     AuditFinding(
                         check_name=self.check_name,

@@ -259,6 +259,11 @@ def main() -> None:
         if args.command == "energy":
             energy.handle_energy(args)
             return
+        if args.command == "task":
+            from .commands.task import handle_task
+
+            handle_task(args)
+            return
     except Exception as exc:
         print(f"[ERROR] {exc}")
         sys.exit(1)
@@ -272,11 +277,33 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     scaffold_parser = subparsers.add_parser(
-        "scaffold", help="Generate boilerplate for a new module"
+        "scaffold", help="Generate boilerplate for code modules or wiki nodes"
     )
-    scaffold_parser.add_argument("--module", required=True, help="Path to the module")
     scaffold_parser.add_argument(
-        "--intent", required=True, help="Purpose of the module"
+        "--type",
+        choices=[
+            "module",
+            "concept",
+            "how_to",
+            "doc_standard",
+            "reference",
+            "index",
+            "adr",
+            "selfDoc",
+        ],
+        default="module",
+        help="Type to scaffold: 'module' for code, or wiki node type",
+    )
+    scaffold_parser.add_argument(
+        "--module", help="Path to the module (for --type module)"
+    )
+    scaffold_parser.add_argument(
+        "--intent", help="Purpose of the module (for --type module)"
+    )
+    scaffold_parser.add_argument("--title", help="Title for wiki node")
+    scaffold_parser.add_argument("--output", "-o", help="Output path for wiki node")
+    scaffold_parser.add_argument(
+        "--force", "-f", action="store_true", help="Overwrite existing file"
     )
 
     build_parser = subparsers.add_parser(
@@ -309,6 +336,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--owl",
         action="store_true",
         help="Also export the knowledge graph to OWL/RDF format",
+    )
+    build_parser.add_argument(
+        "--render-board",
+        action="store_true",
+        help="Render Board.md from task files after build",
+    )
+    build_parser.add_argument(
+        "--tasks-dir",
+        default="desk/tasks",
+        help="Tasks directory for board rendering",
     )
 
     query_parser = subparsers.add_parser("query", help="Query a knowledge graph export")
@@ -535,6 +572,40 @@ def build_parser() -> argparse.ArgumentParser:
         "--reasoning",
         action="store_true",
         help="Run OWL reasoner and include inferred relationships",
+    )
+
+    task_parser = subparsers.add_parser(
+        "task", help="Manage tasks with SLDB structured documents"
+    )
+    task_subparsers = task_parser.add_subparsers(dest="subcommand", required=True)
+
+    task_list = task_subparsers.add_parser("list", help="List all tasks")
+    task_list.add_argument("--tasks-dir", default="desk/tasks", help="Tasks directory")
+    task_list.add_argument("--status", help="Filter by status")
+    task_list.add_argument("--priority", help="Filter by priority")
+    task_list.add_argument("--json", action="store_true", help="Output as JSON")
+
+    task_validate = task_subparsers.add_parser(
+        "validate", help="Validate task roundtrips"
+    )
+    task_validate.add_argument(
+        "--tasks-dir", default="desk/tasks", help="Tasks directory"
+    )
+    task_validate.add_argument("--json", action="store_true", help="Output as JSON")
+
+    task_complete = task_subparsers.add_parser(
+        "complete", help="Mark a task as completed"
+    )
+    task_complete.add_argument("task_id", help="Task ID (filename without .md)")
+    task_complete.add_argument(
+        "--tasks-dir", default="desk/tasks", help="Tasks directory"
+    )
+
+    task_render = task_subparsers.add_parser(
+        "render-board", help="Render Board.md from tasks"
+    )
+    task_render.add_argument(
+        "--tasks-dir", default="desk/tasks", help="Tasks directory"
     )
 
     read_parser = subparsers.add_parser(

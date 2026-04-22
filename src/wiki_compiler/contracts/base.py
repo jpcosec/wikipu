@@ -42,4 +42,5 @@ class SystemIdentity(BaseModel):
         "reference",
         "faq",
         "selfDoc",
+        "system",
     ] = Field(description="The type of entity this node represents.")

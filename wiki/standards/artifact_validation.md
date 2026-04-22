@@ -6,12 +6,10 @@ edges:
   - {target_id: "file:src/wiki_compiler/artifact_validation.py", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:validate_wiki_artifact", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:validate_all_artifacts", relation_type: "documents"}
-  - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_issue", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_gates", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_backlog_item", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_board", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_adr", relation_type: "documents"}
-  - {target_id: "code:src/wiki_compiler/artifact_validation.py:_repo_style_path", relation_type: "documents"}
   - {target_id: "code:src/wiki_compiler/artifact_validation.py:_validate_identity_path", relation_type: "documents"}
 compliance:
   status: "implemented"

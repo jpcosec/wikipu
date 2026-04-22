@@ -11,7 +11,7 @@ edges:
     relation_type: documents
   - target_id: "code:src/wiki_compiler/context.py:collect_neighborhood"
     relation_type: documents
-  - target_id: "code:src/wiki_compiler/context.py:render_markdown"
+  - target_id: "code:src/wiki_compiler/context.py:render_markdown_bundle"
     relation_type: documents
 ---
 

@@ -16,6 +16,8 @@ compliance:
 
 # ADR 004: Workflow as OWL Ontology
 
+Models workflow rules and task management as an OWL ontology, unifying wikipu's standards with the portable workflow template.
+
 ## Context
 
 Wikipu has two parallel workflow representations:

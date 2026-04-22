@@ -7,17 +7,13 @@
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 
-
+| migrate-wiki-to-sldb | | Migrate Existing Wiki Docs to SLDB Format | p3 |  |
 
 
 ## Blocked (status=blocked)
 
-No blocked items.
-
-## Ready to Promote (from drawers/)
-
-- 1 (ingest raw) → drawers/ingest-raw.md
-- 8 (cross-ruling) → drawers/cross-ruling-audit.md
+| ID | Domain | Task | Priority | Depends On |
+|----|--------|------|----------|------------|
 
 ---
 

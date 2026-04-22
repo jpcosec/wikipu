@@ -441,7 +441,7 @@
             "metadata": {}
           },
           {
-            "target_id": "doc:wiki/concepts/knowledge.md",
+            "target_id": "doc:wiki/concepts/topology.md",
             "relation_type": "extends",
             "metadata": {}
           },
@@ -457,16 +457,14 @@
           }
         ],
         "semantics": {
-          "intent": "ADR 003: Integrate OWL 2.0 via Owlready2",
+          "intent": "Integrates OWL 2.0 ontology reasoning via Owlready2 to enable automatic inference and classification of knowledge graph relationships.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "abstract"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": {
@@ -529,7 +527,37 @@
       "id": "doc:wiki/adrs/Index.md"
     },
     {
-      "id": "doc:wiki/concepts/knowledge.md"
+      "type": "concept",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/concepts/topology.md",
+          "node_type": "concept"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/concepts/pirate.md",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Topology in Wikipu refers to the entire internal boundary, structure, and arrangement of the repository's Knowledge Graph, codebase, and informational zones.",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/concepts/topology.md"
     },
     {
       "type": "selfDoc",
@@ -585,16 +613,14 @@
           }
         ],
         "semantics": {
-          "intent": "ADR 004: Workflow as OWL Ontology",
+          "intent": "Models workflow rules and task management as an OWL ontology, unifying wikipu's standards with the portable workflow template.",
           "raw_docstring": null
         },
         "ast": null,
         "io_ports": [],
         "compliance": {
           "status": "planned",
-          "failing_standards": [
-            "abstract"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": {
@@ -683,39 +709,6 @@
         "source": null
       },
       "id": "doc:wiki/concepts/wiki_construction_principles.md"
-    },
-    {
-      "type": "concept",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "doc:wiki/concepts/topology.md",
-          "node_type": "concept"
-        },
-        "edges": [
-          {
-            "target_id": "doc:wiki/concepts/pirate.md",
-            "relation_type": "contains",
-            "metadata": {}
-          }
-        ],
-        "semantics": {
-          "intent": "Topology in Wikipu refers to the entire internal boundary, structure, and arrangement of the repository's Knowledge Graph, codebase, and informational zones.",
-          "raw_docstring": null
-        },
-        "ast": null,
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "doc:wiki/concepts/topology.md"
     },
     {
       "type": "concept",
@@ -2010,7 +2003,7 @@
             "metadata": {}
           },
           {
-            "target_id": "code:src/wiki_compiler/main.py:context_main",
+            "target_id": "code:src/wiki_compiler/main.py",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -4468,7 +4461,17 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -4934,7 +4937,7 @@
       "id": "code:src/wiki_compiler/cleanser.py:detect_cleansing_candidates"
     },
     {
-      "id": "code:src/wiki_compiler/main.py:context_main"
+      "id": "code:src/wiki_compiler/main.py"
     },
     {
       "type": "file",
@@ -5731,11 +5734,7 @@
         "io_ports": [],
         "compliance": {
           "status": "implemented",
-          "failing_standards": [
-            "signature_or_schema",
-            "fields",
-            "usage_examples"
-          ],
+          "failing_standards": [],
           "exemption_reason": null
         },
         "adr": null,
@@ -6021,11 +6020,6 @@
             "metadata": {}
           },
           {
-            "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_issue",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
             "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_gates",
             "relation_type": "documents",
             "metadata": {}
@@ -6042,11 +6036,6 @@
           },
           {
             "target_id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr",
-            "relation_type": "documents",
-            "metadata": {}
-          },
-          {
-            "target_id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path",
             "relation_type": "documents",
             "metadata": {}
           },
@@ -6106,9 +6095,6 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:validate_all_artifacts"
-    },
-    {
-      "id": "code:src/wiki_compiler/artifact_validation.py:_validate_issue"
     },
     {
       "type": "code_construct",
@@ -6241,39 +6227,6 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Convert a filesystem path to the repo-style path used by node_id values.",
-          "raw_docstring": "Convert a filesystem path to the repo-style path used by node_id values."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "_repo_style_path(path: Path) -> str"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
     },
     {
       "type": "code_construct",
@@ -7479,7 +7432,7 @@
             "metadata": {}
           },
           {
-            "target_id": "code:src/wiki_compiler/context.py:render_markdown",
+            "target_id": "code:src/wiki_compiler/context.py:render_markdown_bundle",
             "relation_type": "documents",
             "metadata": {}
           }
@@ -7684,7 +7637,37 @@
       "id": "code:src/wiki_compiler/context.py:collect_neighborhood"
     },
     {
-      "id": "code:src/wiki_compiler/context.py:render_markdown"
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/context.py:render_markdown_bundle",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Formats a ContextBundle into a structured Markdown representation.",
+          "raw_docstring": "Formats a ContextBundle into a structured Markdown representation."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "render_markdown_bundle(bundle: ContextBundle) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/context.py:render_markdown_bundle"
     },
     {
       "type": "doc_standard",
@@ -11601,6 +11584,44 @@
       "id": "doc:wiki/system/gems.md"
     },
     {
+      "type": "system",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/system/knowledge_map.md",
+          "node_type": "system"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/Index.md",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/concepts/Index.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "```mermaid mindmap root((Wikipu)) Concepts autopoiesis topology facet energy pirate Standards house_rules ID-1 identity ID-2 energy OP-1..10 operations Reference CLI commands facets schema artifacts How-To plan design document use graph ADRs 001 zone reorganization 002 docs consolidation 003 OWL integration 004 workflow ontology SelfDocs WhoAmI WhatAmI HowAmI WhereAmI WhenAmI WhyAmI ```",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/system/knowledge_map.md"
+    },
+    {
       "type": "concept",
       "status": "implemented",
       "schema": {
@@ -11634,6 +11655,609 @@
       "id": "doc:wiki/system/pi-mono.md"
     },
     {
+      "type": "system",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "doc:wiki/system/topology_map.md",
+          "node_type": "system"
+        },
+        "edges": [
+          {
+            "target_id": "doc:wiki/selfDocs/WhereAmI.md",
+            "relation_type": "documents",
+            "metadata": {}
+          },
+          {
+            "target_id": "doc:wiki/selfDocs/WhatAmI.md",
+            "relation_type": "documents",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "```mermaid flowchart TB subgraph \"raw/ \u2731 Inviolable\" R[\"\ud83d\udce5 Seed<br/>Raw content\"] end",
+          "raw_docstring": null
+        },
+        "ast": null,
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "doc:wiki/system/topology_map.md"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/markov_entropy/__init__.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/markov_entropy/__init__.py:SimpleNGramModel",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/markov_entropy/__init__.py:NGramEntropy",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/markov_entropy/__init__.py:CategoryClassifier",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/markov_entropy/__init__.py:demo",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Markov Chain NLL usando NLTK (API nativa)",
+          "raw_docstring": "Markov Chain NLL usando NLTK (API nativa)\n\nCalcula entrop\u00eda de texto usando n-gram language models de NLTK."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/markov_entropy/__init__.py"
+          ],
+          "dependencies": [
+            "import re",
+            "from typing import List, Optional, Dict",
+            "from pathlib import Path",
+            "import numpy",
+            "from collections import Counter, defaultdict"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/markov_entropy/__init__.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/markov_entropy/__init__.py:SimpleNGramModel",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "N-gram language model simple sin dependencias externas.",
+          "raw_docstring": "N-gram language model simple sin dependencias externas.\n\nImplementaci\u00f3n propia que usa counters - m\u00e1s transparente que NLTK."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SimpleNGramModel",
+            "__init__(self, order: int = 2, smoothing: float = 1e-06)",
+            "train(self, texts: List[str]) -> 'SimpleNGramModel'",
+            "_tokenize(self, text: str) -> List[str]",
+            "prob(self, token: str, context: tuple) -> float",
+            "score(self, token: str, context: tuple) -> float",
+            "nll(self, token: str, context: tuple) -> float",
+            "logscore(self, token: str, context: tuple) -> float",
+            "entropy(self, text: str) -> float",
+            "perplexity(self, text: float) -> float"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/markov_entropy/__init__.py:SimpleNGramModel"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/markov_entropy/__init__.py:NGramEntropy",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Interfaz unified para calcular entrop\u00eda de texto con N-grams.",
+          "raw_docstring": "Interfaz unified para calcular entrop\u00eda de texto con N-grams.\n\nUso:\n    ne = NGramEntropy(order=2)\n    ne.train(texts)  # Entrena sobre corpus\n    nlls = ne.nll_sequence(\"tu texto...\")  # NLLs por token"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class NGramEntropy",
+            "__init__(self, order: int = 2, smoothing: float = 1e-06)",
+            "train(self, texts: List[str]) -> 'NGramEntropy'",
+            "train_from_dir(self, path: str, extensions: tuple = ('.py', '.md', '.txt')) -> 'NGramEntropy'",
+            "nll_sequence(self, text: str) -> np.ndarray",
+            "nll_stats(self, text: str) -> Dict",
+            "batch_nll(self, texts: List[str]) -> List[np.ndarray]",
+            "batch_stats(self, texts: List[str]) -> List[Dict]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/markov_entropy/__init__.py:NGramEntropy"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/markov_entropy/__init__.py:CategoryClassifier",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Clasificador basado en N-gram entropy.",
+          "raw_docstring": "Clasificador basado en N-gram entropy."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class CategoryClassifier",
+            "__init__(self, order: int = 2, smoothing: float = 1e-06)",
+            "train_category(self, name: str, texts: List[str]) -> 'CategoryClassifier'",
+            "classify(self, text: str) -> Dict",
+            "compare(self, text1: str, text2: str) -> Dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/markov_entropy/__init__.py:CategoryClassifier"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/markov_entropy/__init__.py:demo",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Demo b\u00e1sica.",
+          "raw_docstring": "Demo b\u00e1sica."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "demo()"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/markov_entropy/__init__.py:demo"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/structural_abstraction/__init__.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:FunctionSignature",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:ClassStructure",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:StructuralParser",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:signature_to_sequence",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:class_to_sequence",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:code_to_structural_sequence",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:StructuralEntropy",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/structural_abstraction/__init__.py:demo",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Structural Abstraction Analyzer",
+          "raw_docstring": "Structural Abstraction Analyzer\n\nMide estructura de c\u00f3digo a nivel de abstracci\u00f3n (funciones, clases, patrones)\nen vez de tokens individuales."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/structural_abstraction/__init__.py"
+          ],
+          "dependencies": [
+            "import ast",
+            "import re",
+            "from typing import List, Dict, Set, Optional, Tuple",
+            "from dataclasses import dataclass",
+            "import numpy",
+            "from collections import Counter"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/structural_abstraction/__init__.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:FunctionSignature",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Representaci\u00f3n abstracta de una funci\u00f3n.",
+          "raw_docstring": "Representaci\u00f3n abstracta de una funci\u00f3n."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FunctionSignature"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:FunctionSignature"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:ClassStructure",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Representaci\u00f3n abstracta de una clase.",
+          "raw_docstring": "Representaci\u00f3n abstracta de una clase."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ClassStructure"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:ClassStructure"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:StructuralParser",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Extrae estructura a nivel de abstracci\u00f3n desde c\u00f3digo Python.",
+          "raw_docstring": "Extrae estructura a nivel de abstracci\u00f3n desde c\u00f3digo Python.\n\nEn vez de tokens, mide:\n- Firmas de funciones: function(param1, param2, ...)\n- Clases y m\u00e9todos\n- Patrones de control (if/for/while anidados)\n- Llamadas a funciones"
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class StructuralParser",
+            "__init__(self)",
+            "parse(self, code: str) -> Tuple[List[FunctionSignature], List[ClassStructure]]",
+            "_parse_class(self, node: ast.ClassDef)",
+            "_parse_function(self, node: ast.FunctionDef, in_class: bool = False) -> FunctionSignature",
+            "_get_nesting_depth(self, node: ast.AST) -> int"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:StructuralParser"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:signature_to_sequence",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convierte firma a secuencia de s\u00edmbolos para FFT.",
+          "raw_docstring": "Convierte firma a secuencia de s\u00edmbolos para FFT."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "signature_to_sequence(sig: FunctionSignature) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:signature_to_sequence"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:class_to_sequence",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convierte clase a secuencia.",
+          "raw_docstring": "Convierte clase a secuencia."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "class_to_sequence(cls: ClassStructure) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:class_to_sequence"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:code_to_structural_sequence",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convierte c\u00f3digo completo a secuencia de estructuras.",
+          "raw_docstring": "Convierte c\u00f3digo completo a secuencia de estructuras."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "code_to_structural_sequence(code: str) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:code_to_structural_sequence"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:StructuralEntropy",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Mide entrop\u00eda a nivel de estructura (funciones, clases).",
+          "raw_docstring": "Mide entrop\u00eda a nivel de estructura (funciones, clases).\n\nEn vez de tokens individuales, mide patrones como:\n- \"function(arg1, arg2)\"\n- \"class inherits from X\"\n- \"function calls A, calls B\""
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class StructuralEntropy",
+            "__init__(self, n_gram: int = 2)",
+            "train(self, texts: List[str])",
+            "entropy(self, code: str) -> float"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:StructuralEntropy"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/structural_abstraction/__init__.py:demo",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Demo b\u00e1sica.",
+          "raw_docstring": "Demo b\u00e1sica."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "demo()"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/structural_abstraction/__init__.py:demo"
+    },
+    {
       "type": "file",
       "status": "implemented",
       "schema": {
@@ -11665,6 +12289,39 @@
         "source": null
       },
       "id": "file:src/wiki_compiler/__init__.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Convert a filesystem path to the repo-style path used by node_id values.",
+          "raw_docstring": "Convert a filesystem path to the repo-style path used by node_id values."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_repo_style_path(path: Path) -> str"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
     },
     {
       "type": "code_construct",
@@ -13401,11 +14058,21 @@
             "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold",
             "relation_type": "contains",
             "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data",
+            "relation_type": "contains",
+            "metadata": {}
           }
         ],
         "semantics": {
-          "intent": "Scaffold command handler.",
-          "raw_docstring": "Scaffold command handler."
+          "intent": "Scaffold command handler - creates wiki nodes using SLDB templates.",
+          "raw_docstring": "Scaffold command handler - creates wiki nodes using SLDB templates."
         },
         "ast": {
           "construct_type": "script",
@@ -13415,8 +14082,10 @@
           "dependencies": [
             "from __future__ import annotations",
             "import argparse",
-            "from pathlib import Path",
-            "from ..scaffolder import generate_scaffolding"
+            "import json",
+            "import subprocess",
+            "import sys",
+            "from pathlib import Path"
           ]
         },
         "io_ports": [],
@@ -13442,8 +14111,8 @@
         },
         "edges": [],
         "semantics": {
-          "intent": "Execute the scaffold command.",
-          "raw_docstring": "Execute the scaffold command."
+          "intent": "Execute the scaffold command for wiki nodes.",
+          "raw_docstring": "Execute the scaffold command for wiki nodes."
         },
         "ast": {
           "construct_type": "function",
@@ -13464,6 +14133,72 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Create a new wiki node using SLDB template.",
+          "raw_docstring": "Create a new wiki node using SLDB template."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_wiki_scaffold(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Build the data dictionary for a given node type.",
+          "raw_docstring": "Build the data dictionary for a given node type."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "_build_scaffold_data(node_type: str, node_id: str, title: str) -> dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data"
     },
     {
       "type": "file",
@@ -13542,6 +14277,238 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/commands/status.py:handle_status"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/commands/task.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/commands/task.py:handle_task",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/task.py:list_tasks",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/task.py:validate_tasks",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/task.py:complete_task",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/commands/task.py:render_board",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Task command handler using SLDB for structured task documents.",
+          "raw_docstring": "Task command handler using SLDB for structured task documents."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/commands/task.py"
+          ],
+          "dependencies": [
+            "from __future__ import annotations",
+            "import argparse",
+            "import json",
+            "import subprocess",
+            "import sys",
+            "from datetime import date",
+            "from pathlib import Path"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/commands/task.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/task.py:handle_task",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Execute the task command.",
+          "raw_docstring": "Execute the task command."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "handle_task(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/task.py:handle_task"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/task.py:list_tasks",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "List all tasks with optional filtering.",
+          "raw_docstring": "List all tasks with optional filtering."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "list_tasks(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/task.py:list_tasks"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/task.py:validate_tasks",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Validate all task files for roundtrip idempotency.",
+          "raw_docstring": "Validate all task files for roundtrip idempotency."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "validate_tasks(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/task.py:validate_tasks"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/task.py:complete_task",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Mark a task as completed.",
+          "raw_docstring": "Mark a task as completed."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "complete_task(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/task.py:complete_task"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/commands/task.py:render_board",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Render Board.md from all task frontmatter.",
+          "raw_docstring": "Render Board.md from all task frontmatter."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "render_board(args: argparse.Namespace) -> None"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/commands/task.py:render_board"
     },
     {
       "type": "code_construct",
@@ -13674,39 +14641,6 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/context.py:collect_neighborhood_by_direction"
-    },
-    {
-      "type": "code_construct",
-      "status": "implemented",
-      "schema": {
-        "identity": {
-          "node_id": "code:src/wiki_compiler/context.py:render_markdown_bundle",
-          "node_type": "code_construct"
-        },
-        "edges": [],
-        "semantics": {
-          "intent": "Formats a ContextBundle into a structured Markdown representation.",
-          "raw_docstring": "Formats a ContextBundle into a structured Markdown representation."
-        },
-        "ast": {
-          "construct_type": "function",
-          "signatures": [
-            "render_markdown_bundle(bundle: ContextBundle) -> str"
-          ],
-          "dependencies": []
-        },
-        "io_ports": [],
-        "compliance": {
-          "status": "implemented",
-          "failing_standards": [],
-          "exemption_reason": null
-        },
-        "adr": null,
-        "test_map": null,
-        "git": null,
-        "source": null
-      },
-      "id": "code:src/wiki_compiler/context.py:render_markdown_bundle"
     },
     {
       "type": "file",
@@ -14330,6 +15264,84 @@
       "status": "implemented",
       "schema": {
         "identity": {
+          "node_id": "file:src/wiki_compiler/contracts/tasks.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/contracts/tasks.py:TaskDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Task document models using StructuredNLDoc for idempotent roundtrips.",
+          "raw_docstring": "Task document models using StructuredNLDoc for idempotent roundtrips."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/contracts/tasks.py"
+          ],
+          "dependencies": [
+            "from sldb import StructuredNLDoc",
+            "from pydantic import Field",
+            "from typing import Literal"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/contracts/tasks.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/tasks.py:TaskDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "A task document that can roundtrip between Markdown and structured data.",
+          "raw_docstring": "A task document that can roundtrip between Markdown and structured data."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TaskDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/tasks.py:TaskDoc"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
           "node_id": "file:src/wiki_compiler/contracts/tracking.py",
           "node_type": "file"
         },
@@ -14881,6 +15893,324 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/contracts/tracking.py:ContextBundle"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ConceptDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:HowToDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:DocStandardDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ReferenceDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:IndexDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ADRDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:SelfDocDoc",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Wiki node document models using StructuredNLDoc.",
+          "raw_docstring": "Wiki node document models using StructuredNLDoc.\nThese models enforce the required structure for each node type."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/contracts/wiki_nodes.py"
+          ],
+          "dependencies": [
+            "from sldb import StructuredNLDoc",
+            "from pydantic import Field",
+            "from typing import Literal"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/contracts/wiki_nodes.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ConceptDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for concept nodes (What is X?).",
+          "raw_docstring": "Document model for concept nodes (What is X?)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ConceptDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ConceptDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:HowToDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for how-to nodes (How do I do X?).",
+          "raw_docstring": "Document model for how-to nodes (How do I do X?)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class HowToDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:HowToDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:DocStandardDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for doc_standard nodes (What is the rule for X?).",
+          "raw_docstring": "Document model for doc_standard nodes (What is the rule for X?)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class DocStandardDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:DocStandardDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ReferenceDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for reference nodes (How does X work technically?).",
+          "raw_docstring": "Document model for reference nodes (How does X work technically?)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ReferenceDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ReferenceDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:IndexDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for index nodes (What lives in this area?).",
+          "raw_docstring": "Document model for index nodes (What lives in this area?)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class IndexDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:IndexDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ADRDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for ADR nodes (Architecture Decision Records).",
+          "raw_docstring": "Document model for ADR nodes (Architecture Decision Records)."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class ADRDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:ADRDoc"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/contracts/wiki_nodes.py:SelfDocDoc",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Document model for self-documentation nodes.",
+          "raw_docstring": "Document model for self-documentation nodes."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SelfDocDoc"
+          ],
+          "dependencies": [
+            "StructuredNLDoc"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/contracts/wiki_nodes.py:SelfDocDoc"
     },
     {
       "type": "file",
@@ -16539,6 +17869,11 @@
             "metadata": {}
           },
           {
+            "target_id": "code:src/wiki_compiler/energy.py:calculate_fft_metrics",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
             "target_id": "code:src/wiki_compiler/energy.py:jaccard_similarity",
             "relation_type": "contains",
             "metadata": {}
@@ -16583,9 +17918,11 @@
             "import datetime",
             "from pathlib import Path",
             "from collections import Counter",
+            "import numpy",
             "from .contracts import SystemicEnergy, EnergyReport",
             "from .perception import build_status_report",
             "from .auditor import run_audit",
+            "from .face import FaceAnalyzer",
             "import networkx"
           ]
         },
@@ -16647,6 +17984,39 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/energy.py:tokenize"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/energy.py:calculate_fft_metrics",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Calculate FFT-based metrics for code vs wiki analysis.",
+          "raw_docstring": "Calculate FFT-based metrics for code vs wiki analysis."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "calculate_fft_metrics(project_root: Path) -> dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/energy.py:calculate_fft_metrics"
     },
     {
       "type": "code_construct",
@@ -16859,6 +18229,655 @@
         "source": null
       },
       "id": "code:src/wiki_compiler/energy.py:run_energy_audit"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/face/__init__.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:FaceMetrics",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:FFTProcessor",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:SpectrumComparator",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:TextToSequence",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:FaceAnalyzer",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_file",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_files",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:save_spectrum",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/__init__.py:save_spectrum_group",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "FACE (Frequency Analysis of Code Entropy) module for measuring structural entropy.",
+          "raw_docstring": "FACE (Frequency Analysis of Code Entropy) module for measuring structural entropy.\n\nThis module provides tools for analyzing code structure using FFT-based spectral analysis.\nIt converts source code into numerical sequences and compares their structural fingerprints."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/face/__init__.py"
+          ],
+          "dependencies": [
+            "import argparse",
+            "from pathlib import Path",
+            "from typing import Union, List, Optional",
+            "import numpy",
+            "import pandas",
+            "from scipy import interpolate",
+            "from scipy.stats import pearsonr, spearmanr",
+            "from scipy.fft import fft, fftfreq, fftshift",
+            "from dataclasses import dataclass"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/face/__init__.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:FaceMetrics",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Metrics from spectral comparison of code structures.",
+          "raw_docstring": "Metrics from spectral comparison of code structures."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FaceMetrics"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:FaceMetrics"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:FFTProcessor",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Processes numerical sequences using Fast Fourier Transform.",
+          "raw_docstring": "Processes numerical sequences using Fast Fourier Transform."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FFTProcessor",
+            "__init__(self, preprocess: str = 'none')",
+            "_preprocess_data(self, data: np.ndarray) -> np.ndarray",
+            "compute_fft(self, sequence: np.ndarray) -> tuple",
+            "compute_fft_batch(self, sequences: List[np.ndarray]) -> List[tuple]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:FFTProcessor"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:SpectrumComparator",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Compares spectral representations of code structures.",
+          "raw_docstring": "Compares spectral representations of code structures."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class SpectrumComparator",
+            "__init__(self, resolution: int = 1000)",
+            "align_spectra(self, freqs1: np.ndarray, powers1: np.ndarray, freqs2: np.ndarray, powers2: np.ndarray) -> tuple",
+            "spectral_overlap(self, y1: np.ndarray, y2: np.ndarray) -> float",
+            "spectral_angle_mapper(self, y1: np.ndarray, y2: np.ndarray) -> float",
+            "pearson_correlation(self, y1: np.ndarray, y2: np.ndarray) -> float",
+            "spearman_correlation(self, y1: np.ndarray, y2: np.ndarray) -> float",
+            "compare(self, freq1: np.ndarray, power1: np.ndarray, freq2: np.ndarray, power2: np.ndarray) -> FaceMetrics"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:SpectrumComparator"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:TextToSequence",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Converts text to numerical sequences for spectral analysis.",
+          "raw_docstring": "Converts text to numerical sequences for spectral analysis."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class TextToSequence",
+            "char_codes(text: str) -> np.ndarray",
+            "token_length(text: str) -> np.ndarray",
+            "word_lengths(text: str) -> np.ndarray",
+            "sentence_lengths(text: str) -> np.ndarray",
+            "punctuation_density(text: str, window: int = 10) -> np.ndarray",
+            "char_ngrams(text: str, n: int = 2) -> np.ndarray"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:TextToSequence"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:FaceAnalyzer",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Main analyzer for FACE (Frequency Analysis of Code Entropy).",
+          "raw_docstring": "Main analyzer for FACE (Frequency Analysis of Code Entropy).\n\nCombines text encoding, FFT processing, and spectral comparison\nto measure structural similarity between code artifacts."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class FaceAnalyzer",
+            "__init__(self, preprocess: str = 'none', resolution: int = 1000)",
+            "set_encoder(self, encoder)",
+            "encode_text(self, text: str) -> np.ndarray",
+            "analyze_text(self, text: str) -> tuple",
+            "analyze_texts(self, texts: List[str]) -> List[tuple]",
+            "compare_texts(self, text1: str, text2: str) -> FaceMetrics",
+            "compare_spectra(self, spectrum1: tuple, spectrum2: tuple) -> FaceMetrics",
+            "average_spectrum(self, spectra: List[tuple]) -> tuple",
+            "cluster_spectra(self, spectra: List[tuple], method: str = 'avg') -> dict"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:FaceAnalyzer"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_file",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load texts from a file, one line per text.",
+          "raw_docstring": "Load texts from a file, one line per text."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "load_texts_from_file(path: str) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_file"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_files",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Load texts from multiple files.",
+          "raw_docstring": "Load texts from multiple files."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "load_texts_from_files(paths: List[str]) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:load_texts_from_files"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:save_spectrum",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Save spectrum to CSV file.",
+          "raw_docstring": "Save spectrum to CSV file."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "save_spectrum(freq: np.ndarray, power: np.ndarray, output_path: str)"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:save_spectrum"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/__init__.py:save_spectrum_group",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Save multiple spectra to separate CSV files in a directory.",
+          "raw_docstring": "Save multiple spectra to separate CSV files in a directory."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "save_spectrum_group(spectra: List[tuple], output_dir: str)"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/__init__.py:save_spectrum_group"
+    },
+    {
+      "type": "file",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "file:src/wiki_compiler/face/markov_nll.py",
+          "node_type": "file"
+        },
+        "edges": [
+          {
+            "target_id": "code:src/wiki_compiler/face/markov_nll.py:MarkovModel",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/markov_nll.py:tokenize",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/markov_nll.py:train_markov",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/markov_nll.py:compute_nll_sequence",
+            "relation_type": "contains",
+            "metadata": {}
+          },
+          {
+            "target_id": "code:src/wiki_compiler/face/markov_nll.py:MarkovFaceAnalyzer",
+            "relation_type": "contains",
+            "metadata": {}
+          }
+        ],
+        "semantics": {
+          "intent": "Markov Chain NLL - Alternativa simple a LLM para calcular entrop\u00eda.",
+          "raw_docstring": "Markov Chain NLL - Alternativa simple a LLM para calcular entrop\u00eda.\nEntrena un modelo n-gram sobre el corpus y calcula NLL por token."
+        },
+        "ast": {
+          "construct_type": "script",
+          "signatures": [
+            "module src/wiki_compiler/face/markov_nll.py"
+          ],
+          "dependencies": [
+            "import re",
+            "from collections import Counter, defaultdict",
+            "from typing import Dict, List, Tuple",
+            "import numpy",
+            "from dataclasses import dataclass"
+          ]
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "file:src/wiki_compiler/face/markov_nll.py"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/markov_nll.py:MarkovModel",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "N-gram language model basado en Markov chains.",
+          "raw_docstring": "N-gram language model basado en Markov chains."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class MarkovModel",
+            "prob(self, token: str, context: Tuple[str, ...]) -> float",
+            "nll(self, token: str, context: Tuple[str, ...]) -> float"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/markov_nll.py:MarkovModel"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/markov_nll.py:tokenize",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Tokenizaci\u00f3n simple: palabras o caracteres.",
+          "raw_docstring": "Tokenizaci\u00f3n simple: palabras o caracteres."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "tokenize(text: str) -> List[str]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/markov_nll.py:tokenize"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/markov_nll.py:train_markov",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Entrena un modelo Markov sobre los textos.",
+          "raw_docstring": "Entrena un modelo Markov sobre los textos."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "train_markov(texts: List[str], order: int = 2) -> MarkovModel"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/markov_nll.py:train_markov"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/markov_nll.py:compute_nll_sequence",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "Calcula la secuencia de NLLs para un texto.",
+          "raw_docstring": "Calcula la secuencia de NLLs para un texto."
+        },
+        "ast": {
+          "construct_type": "function",
+          "signatures": [
+            "compute_nll_sequence(text: str, model: MarkovModel) -> np.ndarray"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/markov_nll.py:compute_nll_sequence"
+    },
+    {
+      "type": "code_construct",
+      "status": "implemented",
+      "schema": {
+        "identity": {
+          "node_id": "code:src/wiki_compiler/face/markov_nll.py:MarkovFaceAnalyzer",
+          "node_type": "code_construct"
+        },
+        "edges": [],
+        "semantics": {
+          "intent": "FACE analyzer usando Markov chains en lugar de LLM.",
+          "raw_docstring": "FACE analyzer usando Markov chains en lugar de LLM."
+        },
+        "ast": {
+          "construct_type": "class",
+          "signatures": [
+            "class MarkovFaceAnalyzer",
+            "__init__(self, order: int = 2, preprocess: str = 'zscore')",
+            "train(self, texts: List[str])",
+            "compute_nll(self, text: str) -> np.ndarray",
+            "analyze_text(self, text: str) -> Tuple[np.ndarray, np.ndarray]",
+            "analyze_texts(self, texts: List[str]) -> List[Tuple[np.ndarray, np.ndarray]]"
+          ],
+          "dependencies": []
+        },
+        "io_ports": [],
+        "compliance": {
+          "status": "implemented",
+          "failing_standards": [],
+          "exemption_reason": null
+        },
+        "adr": null,
+        "test_map": null,
+        "git": null,
+        "source": null
+      },
+      "id": "code:src/wiki_compiler/face/markov_nll.py:MarkovFaceAnalyzer"
     },
     {
       "type": "code_construct",
@@ -18042,7 +20061,7 @@
           "dependencies": [
             "from __future__ import annotations",
             "from typing import Optional",
-            "from owlready2 import World, sync_reasoner"
+            "from owlready2 import World"
           ]
         },
         "io_ports": [],
@@ -18075,7 +20094,7 @@
           "construct_type": "class",
           "signatures": [
             "class OwlReasoner",
-            "__init__(self, world = None)",
+            "__init__(self, world: Optional[World] = None)",
             "sync_reasoner(self) -> dict[str, list[str]]",
             "consistency_check(self) -> dict[str, list[str]]",
             "get_inferred_relationships(self) -> list[dict]"
@@ -21906,7 +23925,7 @@
       "relation": "extends",
       "metadata": {},
       "source": "doc:wiki/adrs/003_owl_integration.md",
-      "target": "doc:wiki/concepts/knowledge.md"
+      "target": "doc:wiki/concepts/topology.md"
     },
     {
       "relation": "implements",
@@ -21943,6 +23962,12 @@
       "metadata": {},
       "source": "doc:wiki/adrs/Index.md",
       "target": "doc:wiki/adrs/004_workflow_as_ontology.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "doc:wiki/concepts/topology.md",
+      "target": "doc:wiki/concepts/pirate.md"
     },
     {
       "relation": "implements",
@@ -21985,12 +24010,6 @@
       "metadata": {},
       "source": "doc:wiki/concepts/wiki_construction_principles.md",
       "target": "doc:wiki/standards/house_rules.md"
-    },
-    {
-      "relation": "contains",
-      "metadata": {},
-      "source": "doc:wiki/concepts/topology.md",
-      "target": "doc:wiki/concepts/pirate.md"
     },
     {
       "relation": "contains",
@@ -22242,7 +24261,7 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/reference/cli/context.md",
-      "target": "code:src/wiki_compiler/main.py:context_main"
+      "target": "code:src/wiki_compiler/main.py"
     },
     {
       "relation": "documents",
@@ -22710,7 +24729,19 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
       "target": "code:src/wiki_compiler/commands/scaffold.py:handle_scaffold"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/reference/cli/scaffold.md",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold"
     },
     {
       "relation": "documents",
@@ -23358,12 +25389,6 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/standards/artifact_validation.md",
-      "target": "code:src/wiki_compiler/artifact_validation.py:_validate_issue"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/artifact_validation.md",
       "target": "code:src/wiki_compiler/artifact_validation.py:_validate_gates"
     },
     {
@@ -23383,12 +25408,6 @@
       "metadata": {},
       "source": "doc:wiki/standards/artifact_validation.md",
       "target": "code:src/wiki_compiler/artifact_validation.py:_validate_adr"
-    },
-    {
-      "relation": "documents",
-      "metadata": {},
-      "source": "doc:wiki/standards/artifact_validation.md",
-      "target": "code:src/wiki_compiler/artifact_validation.py:_repo_style_path"
     },
     {
       "relation": "documents",
@@ -23652,7 +25671,7 @@
       "relation": "documents",
       "metadata": {},
       "source": "doc:wiki/standards/context.md",
-      "target": "code:src/wiki_compiler/context.py:render_markdown"
+      "target": "code:src/wiki_compiler/context.py:render_markdown_bundle"
     },
     {
       "relation": "contains",
@@ -24507,10 +26526,106 @@
       "target": "doc:wiki/selfDocs/looting_protocol.md"
     },
     {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/system/knowledge_map.md",
+      "target": "doc:wiki/Index.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/system/knowledge_map.md",
+      "target": "doc:wiki/concepts/Index.md"
+    },
+    {
       "relation": "implements",
       "metadata": {},
       "source": "doc:wiki/system/pi-mono.md",
       "target": "doc:wiki/system/pirate.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/system/topology_map.md",
+      "target": "doc:wiki/selfDocs/WhereAmI.md"
+    },
+    {
+      "relation": "documents",
+      "metadata": {},
+      "source": "doc:wiki/system/topology_map.md",
+      "target": "doc:wiki/selfDocs/WhatAmI.md"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/markov_entropy/__init__.py",
+      "target": "code:src/markov_entropy/__init__.py:SimpleNGramModel"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/markov_entropy/__init__.py",
+      "target": "code:src/markov_entropy/__init__.py:NGramEntropy"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/markov_entropy/__init__.py",
+      "target": "code:src/markov_entropy/__init__.py:CategoryClassifier"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/markov_entropy/__init__.py",
+      "target": "code:src/markov_entropy/__init__.py:demo"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:FunctionSignature"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:ClassStructure"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:StructuralParser"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:signature_to_sequence"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:class_to_sequence"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:code_to_structural_sequence"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:StructuralEntropy"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/structural_abstraction/__init__.py",
+      "target": "code:src/structural_abstraction/__init__.py:demo"
     },
     {
       "relation": "contains",
@@ -24593,8 +26708,50 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/commands/scaffold.py",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:handle_wiki_scaffold"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/scaffold.py",
+      "target": "code:src/wiki_compiler/commands/scaffold.py:_build_scaffold_data"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/commands/status.py",
       "target": "code:src/wiki_compiler/commands/status.py:handle_status"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/task.py",
+      "target": "code:src/wiki_compiler/commands/task.py:handle_task"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/task.py",
+      "target": "code:src/wiki_compiler/commands/task.py:list_tasks"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/task.py",
+      "target": "code:src/wiki_compiler/commands/task.py:validate_tasks"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/task.py",
+      "target": "code:src/wiki_compiler/commands/task.py:complete_task"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/commands/task.py",
+      "target": "code:src/wiki_compiler/commands/task.py:render_board"
     },
     {
       "relation": "contains",
@@ -24737,6 +26894,12 @@
     {
       "relation": "contains",
       "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/tasks.py",
+      "target": "code:src/wiki_compiler/contracts/tasks.py:TaskDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
       "source": "file:src/wiki_compiler/contracts/tracking.py",
       "target": "code:src/wiki_compiler/contracts/tracking.py:RawSourceEntry"
     },
@@ -24811,6 +26974,48 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/contracts/tracking.py",
       "target": "code:src/wiki_compiler/contracts/tracking.py:ContextBundle"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:ConceptDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:HowToDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:DocStandardDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:ReferenceDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:IndexDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:ADRDoc"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/contracts/wiki_nodes.py",
+      "target": "code:src/wiki_compiler/contracts/wiki_nodes.py:SelfDocDoc"
     },
     {
       "relation": "contains",
@@ -25038,6 +27243,12 @@
       "relation": "contains",
       "metadata": {},
       "source": "file:src/wiki_compiler/energy.py",
+      "target": "code:src/wiki_compiler/energy.py:calculate_fft_metrics"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/energy.py",
       "target": "code:src/wiki_compiler/energy.py:jaccard_similarity"
     },
     {
@@ -25069,6 +27280,90 @@
       "metadata": {},
       "source": "file:src/wiki_compiler/energy.py",
       "target": "code:src/wiki_compiler/energy.py:run_energy_audit"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:FaceMetrics"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:FFTProcessor"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:SpectrumComparator"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:TextToSequence"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:FaceAnalyzer"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:load_texts_from_file"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:load_texts_from_files"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:save_spectrum"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/__init__.py",
+      "target": "code:src/wiki_compiler/face/__init__.py:save_spectrum_group"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/markov_nll.py",
+      "target": "code:src/wiki_compiler/face/markov_nll.py:MarkovModel"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/markov_nll.py",
+      "target": "code:src/wiki_compiler/face/markov_nll.py:tokenize"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/markov_nll.py",
+      "target": "code:src/wiki_compiler/face/markov_nll.py:train_markov"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/markov_nll.py",
+      "target": "code:src/wiki_compiler/face/markov_nll.py:compute_nll_sequence"
+    },
+    {
+      "relation": "contains",
+      "metadata": {},
+      "source": "file:src/wiki_compiler/face/markov_nll.py",
+      "target": "code:src/wiki_compiler/face/markov_nll.py:MarkovFaceAnalyzer"
     },
     {
       "relation": "contains",

@@ -14,6 +14,51 @@ compliance:
 
 This document explains how the OWL integration works in wikipu, with practical examples.
 
+## Abstract
+
+The OWL integration enables knowledge graph reasoning by exporting wiki content to OWL 2.0 format. It provides automatic inference of transitive relationships, classification of nodes based on properties, and SPARQL querying capabilities.
+
+## Signature or Schema
+
+```python
+# Core functions
+def markdown_to_rdf(markdown: str, base_uri: str) -> Graph:
+    """Parse markdown with YAML frontmatter to RDF triples."""
+
+def export_to_owl(graph: Graph, output_path: Path) -> None:
+    """Export rdflib Graph to OWL/RDF XML format."""
+
+def run_reasoner(graph: Graph, reasoner: str = "HermiT") -> Graph:
+    """Run OWL reasoner and return inferred graph."""
+
+def sparql_query(graph: Graph, query: str) -> List[Binding]:
+    """Execute SPARQL query against the knowledge graph."""
+```
+
+## Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| base_uri | str | Base URI for RDF resources |
+| graph | rdflib.Graph | The knowledge graph |
+| reasoner | str | OWL reasoner name (HermiT, Pellet) |
+| query | str | SPARQL query string |
+
+## Usage Examples
+
+```python
+from wiki_compiler.owl_backend import markdown_to_rdf, export_to_owl
+
+# Parse wiki to RDF
+graph = markdown_to_rdf("# My Doc\n\nContent here.", "http://example.org/")
+
+# Export to OWL
+export_to_owl(graph, Path("output.owl"))
+
+# Query with SPARQL
+results = sparql_query(graph, "SELECT ?s ?p ?o WHERE { ?s ?p ?o }")
+```
+
 ## Overview
 
 The OWL integration uses a dual-library approach:

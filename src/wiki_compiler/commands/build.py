@@ -34,3 +34,8 @@ def handle_build(args: argparse.Namespace) -> None:
             print(f"[OK] OWL ontology saved to {output}")
         except ImportError:
             print("[WARNING] owlready2 not installed, skipping OWL export")
+
+    if getattr(args, "render_board", False):
+        from .task import render_board as render_board_cmd
+
+        render_board_cmd(args)
