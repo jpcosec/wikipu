@@ -1,0 +1,133 @@
+id: component.cli
+title: Wiki Compiler CLI Commands
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    main:
+      label: main (CLI Entry)
+      kind: boundary
+
+    wiki_compiler:
+      label: wiki-compiler
+      kind: boundary
+      contains:
+        - build
+        - query
+        - audit
+        - energy
+        - cleanse
+        - curate
+        - scaffold
+        - ingest
+        - compose
+        - status
+        - read
+        - context
+        - task
+
+    build:
+      label: build
+      kind: core
+
+    query:
+      label: query
+      kind: core
+
+    audit:
+      label: audit
+      kind: core
+
+    energy:
+      label: energy
+      kind: core
+
+    cleanse:
+      label: cleanse
+      kind: core
+
+    curate:
+      label: curate
+      kind: core
+
+    scaffold:
+      label: scaffold
+      kind: core
+
+    ingest:
+      label: ingest
+      kind: core
+
+    compose:
+      label: compose
+      kind: core
+
+    status:
+      label: status
+      kind: core
+
+    read:
+      label: read
+      kind: core
+
+    context:
+      label: context
+      kind: core
+
+    task:
+      label: task
+      kind: core
+
+  edges:
+    - from: wiki_compiler
+      to: build
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: query
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: audit
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: energy
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: cleanse
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: curate
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: scaffold
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: ingest
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: compose
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: status
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: read
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: context
+      relation: dispatches
+
+    - from: wiki_compiler
+      to: task
+      relation: dispatches

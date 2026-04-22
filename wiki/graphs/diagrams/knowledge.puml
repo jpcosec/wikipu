@@ -1,0 +1,23 @@
+@startuml
+boundary [raw/] as raw
+component [wiki/] as wiki
+component [desk/] as desk
+boundary [drawers/] as drawers
+boundary [exclusion/] as exclusion
+component [src/] as src
+component [knowledge_graph.json] as knowledge_graph
+component [wiki-compiler ingest] as ingest
+component [wiki-compiler build] as build
+component [wiki-compiler query] as query
+
+raw --> ingest : reads_from
+ingest --> knowledge_graph : writes_to
+wiki --> build : reads_from
+src --> build : reads_from
+build --> knowledge_graph : writes_to
+knowledge_graph --> wiki : documents
+knowledge_graph --> query : reads_from
+desk --> build : reads_from
+drawers --> build : reads_from
+exclusion --> build : ignores
+@enduml

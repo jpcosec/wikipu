@@ -1,0 +1,25 @@
+@startuml
+boundary [energy (CLI)] as energy
+component [SystemicEnergy] as SystemicEnergy
+component [EnergyReport] as EnergyReport
+boundary [knowledge_graph.json] as graph
+boundary [audit results] as audits
+component [perturbation] as perturbation
+component [redundancy] as redundancy
+component [boilerplate] as boilerplate
+boundary [face (FFT)] as face
+boundary [perception] as perception
+boundary [owl_reasoner] as owl
+
+energy --> SystemicEnergy : calculates
+graph --> energy : reads_from
+audits --> energy : reads_from
+perturbation --> energy : feeds
+redundancy --> energy : feeds
+boilerplate --> energy : feeds
+face --> energy : feeds
+perception --> energy : reads_from
+owl --> energy : feeds
+energy --> EnergyReport : outputs
+EnergyReport --> energy : compares
+@enduml

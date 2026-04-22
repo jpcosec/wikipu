@@ -1,0 +1,87 @@
+id: component.knowledge
+title: Knowledge Flow
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    raw:
+      label: raw/
+      kind: boundary
+
+    wiki:
+      label: wiki/
+      kind: core
+
+    desk:
+      label: desk/
+      kind: core
+
+    drawers:
+      label: drawers/
+      kind: boundary
+
+    exclusion:
+      label: exclusion/
+      kind: boundary
+
+    src:
+      label: src/
+      kind: core
+
+    knowledge_graph:
+      label: knowledge_graph.json
+      kind: core
+
+    ingest:
+      label: wiki-compiler ingest
+      kind: core
+
+    build:
+      label: wiki-compiler build
+      kind: core
+
+    query:
+      label: wiki-compiler query
+      kind: core
+
+  edges:
+    - from: raw
+      to: ingest
+      relation: reads_from
+
+    - from: ingest
+      to: knowledge_graph
+      relation: writes_to
+
+    - from: wiki
+      to: build
+      relation: reads_from
+
+    - from: src
+      to: build
+      relation: reads_from
+
+    - from: build
+      to: knowledge_graph
+      relation: writes_to
+
+    - from: knowledge_graph
+      to: wiki
+      relation: documents
+
+    - from: knowledge_graph
+      to: query
+      relation: reads_from
+
+    - from: desk
+      to: build
+      relation: reads_from
+
+    - from: drawers
+      to: build
+      relation: reads_from
+
+    - from: exclusion
+      to: build
+      relation: ignores

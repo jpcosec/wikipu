@@ -1,0 +1,95 @@
+id: component.energy
+title: Energy Audit System
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    energy:
+      label: energy (CLI)
+      kind: boundary
+
+    SystemicEnergy:
+      label: SystemicEnergy
+      kind: core
+
+    EnergyReport:
+      label: EnergyReport
+      kind: core
+
+    graph:
+      label: knowledge_graph.json
+      kind: boundary
+
+    audits:
+      label: audit results
+      kind: boundary
+
+    perturbation:
+      label: perturbation
+      kind: core
+
+    redundancy:
+      label: redundancy
+      kind: core
+
+    boilerplate:
+      label: boilerplate
+      kind: core
+
+    face:
+      label: face (FFT)
+      kind: boundary
+
+    perception:
+      label: perception
+      kind: boundary
+
+    owl:
+      label: owl_reasoner
+      kind: boundary
+
+  edges:
+    - from: energy
+      to: SystemicEnergy
+      relation: calculates
+
+    - from: graph
+      to: energy
+      relation: reads_from
+
+    - from: audits
+      to: energy
+      relation: reads_from
+
+    - from: perturbation
+      to: energy
+      relation: feeds
+
+    - from: redundancy
+      to: energy
+      relation: feeds
+
+    - from: boilerplate
+      to: energy
+      relation: feeds
+
+    - from: face
+      to: energy
+      relation: feeds
+
+    - from: perception
+      to: energy
+      relation: reads_from
+
+    - from: owl
+      to: energy
+      relation: feeds
+
+    - from: energy
+      to: EnergyReport
+      relation: outputs
+
+    - from: EnergyReport
+      to: energy
+      relation: compares

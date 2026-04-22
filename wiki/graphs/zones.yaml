@@ -1,0 +1,79 @@
+id: component.zones
+title: Six Zones Architecture
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    raw:
+      label: raw/
+      kind: boundary
+
+    exclusion:
+      label: exclusion/
+      kind: boundary
+
+    wiki:
+      label: wiki/
+      kind: core
+
+    desk:
+      label: desk/
+      kind: core
+
+    drawers:
+      label: drawers/
+      kind: boundary
+
+    src:
+      label: src/
+      kind: core
+
+    wiki_compiler:
+      label: wiki_compiler
+      kind: core
+
+    raw_assets:
+      label: raw/ assets
+      kind: boundary
+
+    exclusion_assets:
+      label: exclusion/ assets
+      kind: boundary
+
+  edges:
+    - from: raw
+      to: wiki_compiler
+      relation: feeds
+
+    - from: src
+      to: wiki_compiler
+      relation: contains
+
+    - from: wiki_compiler
+      to: wiki
+      relation: builds
+
+    - from: wiki_compiler
+      to: desk
+      relation: operates
+
+    - from: desk
+      to: wiki
+      relation: promotes
+
+    - from: drawers
+      to: wiki
+      relation: defers
+
+    - from: exclusion
+      to: wiki_compiler
+      relation: excludes
+
+    - from: raw
+      to: exclusion
+      relation: never_writes
+
+    - from: desk
+      to: exclusion
+      relation: never_writes

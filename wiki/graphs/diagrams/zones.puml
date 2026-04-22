@@ -1,0 +1,21 @@
+@startuml
+boundary [raw/] as raw
+boundary [exclusion/] as exclusion
+component [wiki/] as wiki
+component [desk/] as desk
+boundary [drawers/] as drawers
+component [src/] as src
+component [wiki_compiler] as wiki_compiler
+boundary [raw/ assets] as raw_assets
+boundary [exclusion/ assets] as exclusion_assets
+
+raw --> wiki_compiler : feeds
+src --> wiki_compiler : contains
+wiki_compiler --> wiki : builds
+wiki_compiler --> desk : operates
+desk --> wiki : promotes
+drawers --> wiki : defers
+exclusion --> wiki_compiler : excludes
+raw --> exclusion : never_writes
+desk --> exclusion : never_writes
+@enduml

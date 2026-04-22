@@ -1,0 +1,45 @@
+@startuml
+boundary [main (CLI Entry)] as main
+package "wiki-compiler" {
+  [build]
+  [query]
+  [audit]
+  [energy]
+  [cleanse]
+  [curate]
+  [scaffold]
+  [ingest]
+  [compose]
+  [status]
+  [read]
+  [context]
+  [task]
+}
+component [build] as build
+component [query] as query
+component [audit] as audit
+component [energy] as energy
+component [cleanse] as cleanse
+component [curate] as curate
+component [scaffold] as scaffold
+component [ingest] as ingest
+component [compose] as compose
+component [status] as status
+component [read] as read
+component [context] as context
+component [task] as task
+
+wiki_compiler --> build : dispatches
+wiki_compiler --> query : dispatches
+wiki_compiler --> audit : dispatches
+wiki_compiler --> energy : dispatches
+wiki_compiler --> cleanse : dispatches
+wiki_compiler --> curate : dispatches
+wiki_compiler --> scaffold : dispatches
+wiki_compiler --> ingest : dispatches
+wiki_compiler --> compose : dispatches
+wiki_compiler --> status : dispatches
+wiki_compiler --> read : dispatches
+wiki_compiler --> context : dispatches
+wiki_compiler --> task : dispatches
+@enduml

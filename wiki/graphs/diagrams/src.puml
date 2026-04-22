@@ -1,0 +1,81 @@
+@startuml
+package "main (CLI Entry)" {
+  [build]
+  [query]
+  [audit]
+  [energy]
+  [ingest]
+  [cleanse]
+  [curate]
+  [scaffold]
+  [compose]
+  [status]
+  [read]
+  [context]
+}
+package "builder" {
+  [scan_python_file]
+  [parse_markdown_node]
+  [build_directory_skeleton]
+}
+component [scanner] as scanner
+package "auditor" {
+  [run_audit]
+  [check_orphan_nodes]
+  [check_zone_separation]
+}
+package "energy" {
+  [run_energy_audit]
+  [calculate_fft_metrics]
+  [calculate_redundancy]
+}
+package "query" {
+  [query_main]
+  [query_executor]
+}
+boundary [query_language] as query_language
+boundary [query_executor] as query_executor
+boundary [registry] as registry
+package "cleanser" {
+  [detect_cleansing_candidates]
+  [apply_proposal]
+}
+package "coordinator" {
+  [run_cycle]
+  [check_gates]
+}
+package "owl_backend" {
+  [owl_reasoner]
+  [shacl_validator]
+  [rdflib_export]
+}
+boundary [contracts] as contracts
+component [graph_utils] as graph_utils
+package "perception" {
+  [build_status_report]
+  [ZoneContract]
+}
+boundary [face (Semantic Analysis)] as face
+component [protocols] as protocols
+component [ingest] as ingest
+component [curate] as curate
+component [drafts] as drafts
+component [scaffolder] as scaffolder
+component [context] as context
+
+main --> builder : build
+main --> query : query
+main --> auditor : audit
+main --> energy : energy
+main --> cleanser : cleanse
+builder --> scanner : scan files
+builder --> contracts : KnowledgeNode
+builder --> graph_utils : DiGraph
+query --> registry : facets
+query --> query_language : query DSL
+auditor --> owl_backend : OWL reasoner
+energy --> perception : ZoneContract
+energy --> face : analyze
+coordinator --> cleanser : cleansing cycle
+coordinator --> owl_backend : consistency check
+@enduml

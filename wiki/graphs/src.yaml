@@ -1,0 +1,211 @@
+id: component.wiki_compiler
+title: Wiki Compiler Core Components
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    main:
+      label: main (CLI Entry)
+      kind: boundary
+      contains:
+        - build
+        - query
+        - audit
+        - energy
+        - ingest
+        - cleanse
+        - curate
+        - scaffold
+        - compose
+        - status
+        - read
+        - context
+
+    builder:
+      label: builder
+      kind: core
+      contains:
+        - scan_python_file
+        - parse_markdown_node
+        - build_directory_skeleton
+
+    scanner:
+      label: scanner
+      kind: core
+
+    auditor:
+      label: auditor
+      kind: core
+      contains:
+        - run_audit
+        - check_orphan_nodes
+        - check_zone_separation
+
+    energy:
+      label: energy
+      kind: core
+      contains:
+        - run_energy_audit
+        - calculate_fft_metrics
+        - calculate_redundancy
+
+    query:
+      label: query
+      kind: core
+      contains:
+        - query_main
+        - query_executor
+
+    query_language:
+      label: query_language
+      kind: boundary
+
+    query_executor:
+      label: query_executor
+      kind: boundary
+
+    registry:
+      label: registry
+      kind: boundary
+
+    cleanser:
+      label: cleanser
+      kind: core
+      contains:
+        - detect_cleansing_candidates
+        - apply_proposal
+
+    coordinator:
+      label: coordinator
+      kind: core
+      contains:
+        - run_cycle
+        - check_gates
+
+    owl_backend:
+      label: owl_backend
+      kind: boundary
+      contains:
+        - owl_reasoner
+        - shacl_validator
+        - rdflib_export
+
+    contracts:
+      label: contracts
+      kind: boundary
+
+    graph_utils:
+      label: graph_utils
+      kind: core
+
+    perception:
+      label: perception
+      kind: core
+      contains:
+        - build_status_report
+        - ZoneContract
+
+    face:
+      label: face (Semantic Analysis)
+      kind: boundary
+
+    protocols:
+      label: protocols
+      kind: core
+
+    ingest:
+      label: ingest
+      kind: core
+
+    curate:
+      label: curate
+      kind: core
+
+    drafts:
+      label: drafts
+      kind: core
+
+    scaffolder:
+      label: scaffolder
+      kind: core
+
+    context:
+      label: context
+      kind: core
+
+  edges:
+    - from: main
+      to: builder
+      relation: orchestrates
+      label: build
+
+    - from: main
+      to: query
+      relation: orchestrates
+      label: query
+
+    - from: main
+      to: auditor
+      relation: orchestrates
+      label: audit
+
+    - from: main
+      to: energy
+      relation: orchestrates
+      label: energy
+
+    - from: main
+      to: cleanser
+      relation: orchestrates
+      label: cleanse
+
+    - from: builder
+      to: scanner
+      relation: uses
+      label: scan files
+
+    - from: builder
+      to: contracts
+      relation: reads_from
+      label: KnowledgeNode
+
+    - from: builder
+      to: graph_utils
+      relation: reads_from
+      label: DiGraph
+
+    - from: query
+      to: registry
+      relation: reads_from
+      label: facets
+
+    - from: query
+      to: query_language
+      relation: uses
+      label: query DSL
+
+    - from: auditor
+      to: owl_backend
+      relation: uses
+      label: OWL reasoner
+
+    - from: energy
+      to: perception
+      relation: reads_from
+      label: ZoneContract
+
+    - from: energy
+      to: face
+      relation: uses
+      label: analyze
+
+    - from: coordinator
+      to: cleanser
+      relation: orchestrates
+      label: cleansing cycle
+
+    - from: coordinator
+      to: owl_backend
+      relation: orchestrates
+      label: consistency check
