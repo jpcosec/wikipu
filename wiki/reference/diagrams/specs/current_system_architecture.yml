@@ -1,0 +1,283 @@
+id: wikipu.current_system_architecture
+title: Wikipu Current System Architecture
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    WorkspaceZones:
+      label: Workspace Zones
+      kind: boundary
+      contains:
+        - RawZone
+        - WikiZone
+        - DeskZone
+        - DrawersZone
+        - SrcZone
+        - TestsZone
+
+    RawZone:
+      label: raw/
+      kind: boundary
+
+    WikiZone:
+      label: wiki/
+      kind: boundary
+
+    DeskZone:
+      label: desk/
+      kind: boundary
+
+    DrawersZone:
+      label: drawers/
+      kind: boundary
+
+    SrcZone:
+      label: src/
+      kind: boundary
+
+    TestsZone:
+      label: tests/
+      kind: boundary
+
+    WikiCompilerCLI:
+      label: wiki-compiler CLI
+      kind: core
+      contains:
+        - Commands
+
+    Commands:
+      label: commands/
+      kind: core
+      contains:
+        - BuildPipeline
+        - QueryLayer
+        - ContextLayer
+        - EnergyLayer
+        - CleanseLayer
+        - RunLoop
+
+    BuildPipeline:
+      label: Build Pipeline
+      kind: core
+      contains:
+        - Builder
+        - Scanner
+        - Templates
+        - Injectors
+        - Perception
+
+    Builder:
+      label: builder.py
+      kind: core
+
+    Scanner:
+      label: scanner.py
+      kind: core
+
+    Templates:
+      label: node_templates.py
+      kind: core
+
+    Injectors:
+      label: facet_injectors.py
+      kind: core
+
+    Perception:
+      label: perception.py
+      kind: core
+
+    GraphCore:
+      label: Knowledge Graph Core
+      kind: core
+      contains:
+        - Contracts
+        - GraphUtils
+        - QueryExecutor
+        - QueryLanguage
+        - ContextCore
+        - EnergyCore
+        - Cleanser
+        - OwlReasoner
+        - Registry
+
+    Contracts:
+      label: contracts.py
+      kind: core
+
+    GraphUtils:
+      label: graph_utils.py
+      kind: core
+
+    QueryExecutor:
+      label: query_executor.py
+      kind: core
+
+    QueryLanguage:
+      label: query_language.py
+      kind: core
+
+    ContextCore:
+      label: context.py
+      kind: core
+
+    EnergyCore:
+      label: energy.py
+      kind: core
+
+    Cleanser:
+      label: cleanser.py
+      kind: core
+
+    OwlReasoner:
+      label: owl_reasoner.py
+      kind: core
+
+    Registry:
+      label: registry.py + facet_validator.py
+      kind: core
+
+    QueryLayer:
+      label: Query
+      kind: core
+
+    ContextLayer:
+      label: Context
+      kind: core
+
+    EnergyLayer:
+      label: Energy
+      kind: core
+
+    CleanseLayer:
+      label: Cleanse
+      kind: core
+
+    RunLoop:
+      label: Coordinator Run Loop
+      kind: core
+
+    GraphArtifact:
+      label: knowledge_graph.json
+      kind: database
+
+    Outputs:
+      label: Outputs
+      kind: boundary
+      contains:
+        - StatusAudit
+        - ContextBundle
+        - EnergyReport
+
+    StatusAudit:
+      label: status + audit
+      kind: boundary
+
+    ContextBundle:
+      label: context bundles
+      kind: boundary
+
+    EnergyReport:
+      label: energy reports
+      kind: boundary
+
+  edges:
+    - from: WorkspaceZones
+      to: WikiCompilerCLI
+      relation: feeds
+      label: inputs
+
+    - from: WikiCompilerCLI
+      to: Commands
+      relation: delegates
+      label: dispatch
+
+    - from: Commands
+      to: BuildPipeline
+      relation: invokes
+      label: build
+
+    - from: Commands
+      to: QueryLayer
+      relation: invokes
+      label: query
+
+    - from: Commands
+      to: ContextLayer
+      relation: invokes
+      label: context
+
+    - from: Commands
+      to: EnergyLayer
+      relation: invokes
+      label: energy
+
+    - from: Commands
+      to: CleanseLayer
+      relation: invokes
+      label: cleanse
+
+    - from: Commands
+      to: RunLoop
+      relation: invokes
+      label: run
+
+    - from: BuildPipeline
+      to: GraphCore
+      relation: builds
+      label: compile nodes
+
+    - from: BuildPipeline
+      to: GraphArtifact
+      relation: persists
+      label: save graph
+
+    - from: QueryLayer
+      to: GraphCore
+      relation: uses
+      label: traversal
+
+    - from: ContextLayer
+      to: GraphCore
+      relation: uses
+      label: routing
+
+    - from: EnergyLayer
+      to: GraphCore
+      relation: uses
+      label: audit
+
+    - from: CleanseLayer
+      to: GraphCore
+      relation: uses
+      label: optimization
+
+    - from: RunLoop
+      to: GraphArtifact
+      relation: reads
+      label: compiled state
+
+    - from: GraphCore
+      to: GraphArtifact
+      relation: persists
+      label: node-link JSON
+
+    - from: GraphArtifact
+      to: Outputs
+      relation: supports
+      label: query and reports
+
+    - from: QueryLayer
+      to: StatusAudit
+      relation: informs
+      label: graph lookup
+
+    - from: ContextLayer
+      to: ContextBundle
+      relation: produces
+      label: LLM context
+
+    - from: EnergyLayer
+      to: EnergyReport
+      relation: produces
+      label: health report

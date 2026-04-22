@@ -26,92 +26,95 @@ Wikipu is currently built as a single repository where the workspace model, CLI 
 
 ### Diagram
 
+This Mermaid view is now backed by a `spec2viz` source spec at `wiki/reference/diagrams/specs/current_system_architecture.yml` and a rendered artifact at `wiki/reference/diagrams/rendered/current_system_architecture.mmd`.
+
 ```mermaid
-flowchart TD
-    subgraph Zones[Workspace Zones]
-        RAW[raw/\nseed ore]
-        WIKI[wiki/\ncurrent truth]
-        DESK[desk/\nactive work]
-        DRAWERS[drawers/\ndeferred work]
-        SRC[src/\nmotor and sensory organs]
-        TESTS[tests/]
-    end
-
-    CLI[wiki-compiler CLI\nsrc/wiki_compiler/main.py]
-    COMMANDS[command handlers\nsrc/wiki_compiler/commands/]
-
-    subgraph Build[Build and Scan Pipeline]
-        BUILDER[builder.py\nbuild_wiki]
-        SCANNER[scanner.py\nscan_codebase]
-        TEMPLATES[node_templates.py\ntemplate checks]
-        INJECTORS[facet_injectors.py\nADR + test facets]
-        PERCEPTION[perception.py\ngit facets + status]
-    end
-
-    subgraph Graph[Knowledge Graph Core]
-        CONTRACTS[contracts.py\nKnowledgeNode + Edge + facets]
-        GRAPHUTILS[graph_utils.py\nload/save/add nodes]
-        QUERY[query_language.py + query_executor.py]
-        CONTEXT[context.py]
-        ENERGY[energy.py]
-        CLEANSE[cleanser.py]
-        OWL[owl_reasoner.py + owl_backend/ + shacl/]
-        REGISTRY[registry.py + facet_validator.py]
-    end
-
-    GRAPHJSON[knowledge_graph.json]
-
-    subgraph Outputs[Human and Agent Outputs]
-        STATUS[status and audit]
-        CONTEXTBUNDLE[context bundles]
-        ENERGYREPORT[energy reports]
-        RUNLOOP[autopoietic run cycle]
-    end
-
-    RAW --> CLI
-    WIKI --> CLI
-    DESK --> CLI
-    DRAWERS --> CLI
-    SRC --> CLI
-    TESTS --> CLI
-
-    CLI --> COMMANDS
-    COMMANDS --> BUILDER
-    COMMANDS --> QUERY
-    COMMANDS --> CONTEXT
-    COMMANDS --> ENERGY
-    COMMANDS --> CLEANSE
-    COMMANDS --> STATUS
-    COMMANDS --> RUNLOOP
-
-    BUILDER --> TEMPLATES
-    BUILDER --> SCANNER
-    BUILDER --> INJECTORS
-    BUILDER --> PERCEPTION
-    BUILDER --> CONTRACTS
-    BUILDER --> GRAPHUTILS
-
-    SCANNER --> CONTRACTS
-    INJECTORS --> REGISTRY
-    PERCEPTION --> CONTRACTS
-    QUERY --> GRAPHUTILS
-    CONTEXT --> GRAPHUTILS
-    ENERGY --> GRAPHJSON
-    CLEANSE --> GRAPHJSON
-    OWL --> GRAPHJSON
-
-    GRAPHUTILS --> GRAPHJSON
-    GRAPHJSON --> QUERY
-    GRAPHJSON --> CONTEXT
-    GRAPHJSON --> ENERGY
-    GRAPHJSON --> CLEANSE
-    GRAPHJSON --> OWL
-
-    QUERY --> STATUS
-    CONTEXT --> CONTEXTBUNDLE
-    ENERGY --> ENERGYREPORT
-    CLEANSE --> STATUS
-    OWL --> STATUS
+graph TD
+    WorkspaceZones["Workspace Zones"]
+    WorkspaceZones --> RawZone
+    WorkspaceZones --> WikiZone
+    WorkspaceZones --> DeskZone
+    WorkspaceZones --> DrawersZone
+    WorkspaceZones --> SrcZone
+    WorkspaceZones --> TestsZone
+    RawZone["raw/"]
+    WikiZone["wiki/"]
+    DeskZone["desk/"]
+    DrawersZone["drawers/"]
+    SrcZone["src/"]
+    TestsZone["tests/"]
+    WikiCompilerCLI["wiki-compiler CLI"]
+    WikiCompilerCLI --> Commands
+    Commands["commands/"]
+    Commands --> BuildPipeline
+    Commands --> QueryLayer
+    Commands --> ContextLayer
+    Commands --> EnergyLayer
+    Commands --> CleanseLayer
+    Commands --> RunLoop
+    BuildPipeline["Build Pipeline"]
+    BuildPipeline --> Builder
+    BuildPipeline --> Scanner
+    BuildPipeline --> Templates
+    BuildPipeline --> Injectors
+    BuildPipeline --> Perception
+    Builder["builder.py"]
+    Scanner["scanner.py"]
+    Templates["node_templates.py"]
+    Injectors["facet_injectors.py"]
+    Perception["perception.py"]
+    GraphCore["Knowledge Graph Core"]
+    GraphCore --> Contracts
+    GraphCore --> GraphUtils
+    GraphCore --> QueryExecutor
+    GraphCore --> QueryLanguage
+    GraphCore --> ContextCore
+    GraphCore --> EnergyCore
+    GraphCore --> Cleanser
+    GraphCore --> OwlReasoner
+    GraphCore --> Registry
+    Contracts["contracts.py"]
+    GraphUtils["graph_utils.py"]
+    QueryExecutor["query_executor.py"]
+    QueryLanguage["query_language.py"]
+    ContextCore["context.py"]
+    EnergyCore["energy.py"]
+    Cleanser["cleanser.py"]
+    OwlReasoner["owl_reasoner.py"]
+    Registry["registry.py + facet_validator.py"]
+    QueryLayer["Query"]
+    ContextLayer["Context"]
+    EnergyLayer["Energy"]
+    CleanseLayer["Cleanse"]
+    RunLoop["Coordinator Run Loop"]
+    GraphArtifact["knowledge_graph.json"]
+    Outputs["Outputs"]
+    Outputs --> StatusAudit
+    Outputs --> ContextBundle
+    Outputs --> EnergyReport
+    StatusAudit["status + audit"]
+    ContextBundle["context bundles"]
+    EnergyReport["energy reports"]
+    WorkspaceZones -->|inputs| WikiCompilerCLI
+    WikiCompilerCLI -->|dispatch| Commands
+    Commands -->|build| BuildPipeline
+    Commands -->|query| QueryLayer
+    Commands -->|context| ContextLayer
+    Commands -->|energy| EnergyLayer
+    Commands -->|cleanse| CleanseLayer
+    Commands -->|run| RunLoop
+    BuildPipeline -->|compile nodes| GraphCore
+    BuildPipeline -->|save graph| GraphArtifact
+    QueryLayer -->|traversal| GraphCore
+    ContextLayer -->|routing| GraphCore
+    EnergyLayer -->|audit| GraphCore
+    CleanseLayer -->|optimization| GraphCore
+    RunLoop -->|compiled state| GraphArtifact
+    GraphCore -->|node-link JSON| GraphArtifact
+    GraphArtifact -->|query and reports| Outputs
+    QueryLayer -->|graph lookup| StatusAudit
+    ContextLayer -->|LLM context| ContextBundle
+    EnergyLayer -->|health report| EnergyReport
 ```
 
 ## Fields

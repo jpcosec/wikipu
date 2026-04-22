@@ -1,0 +1,86 @@
+graph TD
+    WorkspaceZones["Workspace Zones"]
+    WorkspaceZones --> RawZone
+    WorkspaceZones --> WikiZone
+    WorkspaceZones --> DeskZone
+    WorkspaceZones --> DrawersZone
+    WorkspaceZones --> SrcZone
+    WorkspaceZones --> TestsZone
+    RawZone["raw/"]
+    WikiZone["wiki/"]
+    DeskZone["desk/"]
+    DrawersZone["drawers/"]
+    SrcZone["src/"]
+    TestsZone["tests/"]
+    WikiCompilerCLI["wiki-compiler CLI"]
+    WikiCompilerCLI --> Commands
+    Commands["commands/"]
+    Commands --> BuildPipeline
+    Commands --> QueryLayer
+    Commands --> ContextLayer
+    Commands --> EnergyLayer
+    Commands --> CleanseLayer
+    Commands --> RunLoop
+    BuildPipeline["Build Pipeline"]
+    BuildPipeline --> Builder
+    BuildPipeline --> Scanner
+    BuildPipeline --> Templates
+    BuildPipeline --> Injectors
+    BuildPipeline --> Perception
+    Builder["builder.py"]
+    Scanner["scanner.py"]
+    Templates["node_templates.py"]
+    Injectors["facet_injectors.py"]
+    Perception["perception.py"]
+    GraphCore["Knowledge Graph Core"]
+    GraphCore --> Contracts
+    GraphCore --> GraphUtils
+    GraphCore --> QueryExecutor
+    GraphCore --> QueryLanguage
+    GraphCore --> ContextCore
+    GraphCore --> EnergyCore
+    GraphCore --> Cleanser
+    GraphCore --> OwlReasoner
+    GraphCore --> Registry
+    Contracts["contracts.py"]
+    GraphUtils["graph_utils.py"]
+    QueryExecutor["query_executor.py"]
+    QueryLanguage["query_language.py"]
+    ContextCore["context.py"]
+    EnergyCore["energy.py"]
+    Cleanser["cleanser.py"]
+    OwlReasoner["owl_reasoner.py"]
+    Registry["registry.py + facet_validator.py"]
+    QueryLayer["Query"]
+    ContextLayer["Context"]
+    EnergyLayer["Energy"]
+    CleanseLayer["Cleanse"]
+    RunLoop["Coordinator Run Loop"]
+    GraphArtifact["knowledge_graph.json"]
+    Outputs["Outputs"]
+    Outputs --> StatusAudit
+    Outputs --> ContextBundle
+    Outputs --> EnergyReport
+    StatusAudit["status + audit"]
+    ContextBundle["context bundles"]
+    EnergyReport["energy reports"]
+    WorkspaceZones -->|inputs| WikiCompilerCLI
+    WikiCompilerCLI -->|dispatch| Commands
+    Commands -->|build| BuildPipeline
+    Commands -->|query| QueryLayer
+    Commands -->|context| ContextLayer
+    Commands -->|energy| EnergyLayer
+    Commands -->|cleanse| CleanseLayer
+    Commands -->|run| RunLoop
+    BuildPipeline -->|compile nodes| GraphCore
+    BuildPipeline -->|save graph| GraphArtifact
+    QueryLayer -->|traversal| GraphCore
+    ContextLayer -->|routing| GraphCore
+    EnergyLayer -->|audit| GraphCore
+    CleanseLayer -->|optimization| GraphCore
+    RunLoop -->|compiled state| GraphArtifact
+    GraphCore -->|node-link JSON| GraphArtifact
+    GraphArtifact -->|query and reports| Outputs
+    QueryLayer -->|graph lookup| StatusAudit
+    ContextLayer -->|LLM context| ContextBundle
+    EnergyLayer -->|health report| EnergyReport
