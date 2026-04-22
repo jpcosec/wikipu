@@ -37,76 +37,46 @@ skinparam package<<database>> BorderColor #5A9B5A
 skinparam package<<database>> FontColor #1F4F1F
 
 package "Workspace Zones" as WorkspaceZones <<boundary>> {
-  [RawZone]
-  [WikiZone]
-  [DeskZone]
-  [DrawersZone]
-  [SrcZone]
-  [TestsZone]
+  rectangle "raw/" as RawZone <<boundary>>
+  rectangle "wiki/" as WikiZone <<boundary>>
+  rectangle "desk/" as DeskZone <<boundary>>
+  rectangle "drawers/" as DrawersZone <<boundary>>
+  rectangle "src/" as SrcZone <<boundary>>
+  rectangle "tests/" as TestsZone <<boundary>>
 }
-rectangle "raw/" as RawZone <<boundary>>
-rectangle "wiki/" as WikiZone <<boundary>>
-rectangle "desk/" as DeskZone <<boundary>>
-rectangle "drawers/" as DrawersZone <<boundary>>
-rectangle "src/" as SrcZone <<boundary>>
-rectangle "tests/" as TestsZone <<boundary>>
 package "wiki-compiler CLI" as WikiCompilerCLI <<core>> {
-  [Commands]
+  package "commands/" as Commands <<core>> {
+    package "Build Pipeline" as BuildPipeline <<core>> {
+      component "builder.py" as Builder <<core>>
+      component "scanner.py" as Scanner <<core>>
+      component "node_templates.py" as Templates <<core>>
+      component "facet_injectors.py" as Injectors <<core>>
+      component "perception.py" as Perception <<core>>
+    }
+    component "Query" as QueryLayer <<core>>
+    component "Context" as ContextLayer <<core>>
+    component "Energy" as EnergyLayer <<core>>
+    component "Cleanse" as CleanseLayer <<core>>
+    component "Coordinator Run Loop" as RunLoop <<core>>
+  }
 }
-package "commands/" as Commands <<core>> {
-  [BuildPipeline]
-  [QueryLayer]
-  [ContextLayer]
-  [EnergyLayer]
-  [CleanseLayer]
-  [RunLoop]
-}
-package "Build Pipeline" as BuildPipeline <<core>> {
-  [Builder]
-  [Scanner]
-  [Templates]
-  [Injectors]
-  [Perception]
-}
-component "builder.py" as Builder <<core>>
-component "scanner.py" as Scanner <<core>>
-component "node_templates.py" as Templates <<core>>
-component "facet_injectors.py" as Injectors <<core>>
-component "perception.py" as Perception <<core>>
 package "Knowledge Graph Core" as GraphCore <<core>> {
-  [Contracts]
-  [GraphUtils]
-  [QueryExecutor]
-  [QueryLanguage]
-  [ContextCore]
-  [EnergyCore]
-  [Cleanser]
-  [OwlReasoner]
-  [Registry]
+  component "contracts.py" as Contracts <<core>>
+  component "graph_utils.py" as GraphUtils <<core>>
+  component "query_executor.py" as QueryExecutor <<core>>
+  component "query_language.py" as QueryLanguage <<core>>
+  component "context.py" as ContextCore <<core>>
+  component "energy.py" as EnergyCore <<core>>
+  component "cleanser.py" as Cleanser <<core>>
+  component "owl_reasoner.py" as OwlReasoner <<core>>
+  component "registry.py + facet_validator.py" as Registry <<core>>
 }
-component "contracts.py" as Contracts <<core>>
-component "graph_utils.py" as GraphUtils <<core>>
-component "query_executor.py" as QueryExecutor <<core>>
-component "query_language.py" as QueryLanguage <<core>>
-component "context.py" as ContextCore <<core>>
-component "energy.py" as EnergyCore <<core>>
-component "cleanser.py" as Cleanser <<core>>
-component "owl_reasoner.py" as OwlReasoner <<core>>
-component "registry.py + facet_validator.py" as Registry <<core>>
-component "Query" as QueryLayer <<core>>
-component "Context" as ContextLayer <<core>>
-component "Energy" as EnergyLayer <<core>>
-component "Cleanse" as CleanseLayer <<core>>
-component "Coordinator Run Loop" as RunLoop <<core>>
 database "knowledge_graph.json" as GraphArtifact <<database>>
 package "Outputs" as Outputs <<boundary>> {
-  [StatusAudit]
-  [ContextBundle]
-  [EnergyReport]
+  rectangle "status + audit" as StatusAudit <<boundary>>
+  rectangle "context bundles" as ContextBundle <<boundary>>
+  rectangle "energy reports" as EnergyReport <<boundary>>
 }
-rectangle "status + audit" as StatusAudit <<boundary>>
-rectangle "context bundles" as ContextBundle <<boundary>>
-rectangle "energy reports" as EnergyReport <<boundary>>
 
 WorkspaceZones --> WikiCompilerCLI : inputs
 WikiCompilerCLI --> Commands : dispatch
