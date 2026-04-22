@@ -31,13 +31,39 @@ class WikiNodeDoc(StructuredNLDoc):
 
 Every field must have `Field(description="...")` with a meaningful, non-empty description.
 
+## Store Architecture
+
+The store is a three-level YAML index cascade tracking model contracts and their document instances via a Merkle-style hash chain. Initialize with `sldb store init` in the project root.
+
 ## Commands
 
+### Core
 | Command | Purpose |
 |---|---|
 | `sldb extract` | Parse Markdown into data |
 | `sldb render` | Render Markdown from data |
 | `sldb validate` | Check roundtrip idempotency |
+
+### Store
+| Command | Purpose |
+|---|---|
+| `sldb store init` | Initialize .sldb/ store |
+| `sldb store add` | Link federated store |
+| `sldb store check` | Verify hash integrity |
+| `sldb store update` | Full reindex |
+
+### Model
+| Command | Purpose |
+|---|---|
+| `sldb model add` | Register model contract |
+| `sldb model update` | Re-index after contract change |
+
+### Doc
+| Command | Purpose |
+|---|---|
+| `sldb doc add` | Create + track document |
+| `sldb doc track` | Track existing document |
+| `sldb doc update` | Re-render with new data |
 
 ## Validation
 
@@ -45,4 +71,4 @@ Run `sldb validate` before committing any SLDB document.
 
 ## Cross-Repo
 
-Models are referenced by `<package>.<module>:<ClassName>`. Set `--pythonpath` to the repo root.
+Models are referenced by `<package>.<module>:<ClassName>`. Set `--pythonpath` to the repo root. Federate stores with `sldb store add <path>` to pull models from other repos.
