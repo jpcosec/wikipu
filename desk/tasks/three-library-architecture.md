@@ -285,7 +285,62 @@ def build_knowledge_graph():
 
 1. **Protocol:** How do sldb docs link to KG nodes?
 2. **Federation:** Does sldb store federate with KG, or KG federate with sldb?
-3. **Versioning:** Lock-step releases or independent?
+3. **Versioning:** Use rp-style contracts instead of semver
+
+---
+
+## How rp Solves Versioning
+
+**rp (repopackage)** uses typed contracts instead of version numbers.
+
+Reference: `/home/jp/proyectos/repopackage/docs/ARCHITECTURE.md`
+
+### The Pattern
+
+```yaml
+# sldb compose.yaml
+kind: package
+name: sldb
+exports:
+  - DocumentContract   # What sldb provides
+  - ModelContract      # What sldb provides
+  - StoreContract     # What sldb provides
+consumes: []         # sldb has no dependencies
+
+# knowledgeGraph compose.yaml
+kind: package
+name: knowledgeGraph
+exports:
+  - GraphContract    # What KG provides
+  - QueryContract   # What KG provides
+  - EnergyContract  # What KG provides
+  - ContextContract # What KG provides
+consumes: []       # KG has no dependencies
+
+# wikipu compose.yaml
+kind: project
+name: wikipu
+consumes:
+  - DocumentContract  # Requires sldb
+  - GraphContract     # Requires KG
+```
+
+### How It Works
+
+1. **Solver validates:** Every `consumes` in the graph is satisfied by an `exports` from a descendant node
+2. **No version numbers:** Just contract matching
+3. **Development lines:** Projects can pin to specific branches, not just versions
+4. **Parallel evolution:** Each library evolves independently; solver ensures compatibility
+
+### Benefits for Three Libraries
+
+| Traditional (semver) | rp-style (contracts) |
+|---|---|
+| "sldb v2.1 depends on nothing" | "sldb exports DocumentContract" |
+| "knowledgeGraph v1.0 depends on nothing" | "KG exports GraphContract" |
+| "wikipu v3.0 depends on sldb v2.1" | "wikipu consumes DocumentContract + GraphContract" |
+
+**No "which versions are compatible?"** The contracts define the interface.
 
 ---
 
@@ -298,7 +353,7 @@ def build_knowledge_graph():
 | **This proposal (three)** | Full modularity | More repos to maintain |
 | One library (merged) | One repo | Loss of focus |
 
-We believe **three libraries** is the right balance.
+We believe **three libraries + rp contracts** is the right balance.
 
 ---
 
