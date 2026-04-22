@@ -32,7 +32,51 @@ We have two systems with complementary strengths:
 
 Together they can do things neither can do alone.
 
-## What sldb Can Take From wiki_compiler
+## Clarification: Relationship with kg_db
+
+**IMPORTANT:** This request and `extract-kg_db-from-wikipu.md` are **complementary, not contradictory**.
+
+| Library | Scope |
+|---|---|
+| **sldb + graph/ (minimal)** | Edges between documents, cross-repo links, basic traversal |
+| **kg_db (full)** | OWL reasoning, energy audit, context routing, cleansing |
+
+**sldb gets MINIMAL graph capabilities. kg_db does FULL reasoning.**
+
+### Division of Labor
+
+```
+sldb (minimal graph)
+├── .sldb/documents/    ← documents
+├── .sldb/models/      ← contracts
+└── .sldb/graph/       ← edges + links ONLY
+                         ← NO OWL
+                         ← NO energy
+                         ← NO context
+
+kg_db (full reasoning)
+├── knowledge_graph.json
+├── graph/             ← full operations
+├── reasoning/         ← OWL + SHACL
+├── energy/           ← audit
+├── context/          ← routing
+└── cleansing/        ← proposals
+```
+
+### What sldb DOES NOT Get
+
+This request does NOT add to sldb:
+- OWL reasoner
+- Energy audit
+- Context routing
+- Cleansing proposals
+- Full graph operations
+
+These belong to kg_db.
+
+## What sldb Gets (Minimal Graph)
+
+### 1. Graph Traversal for Cross-Doc Relationships
 
 ### 1. Graph Traversal for Cross-Doc Relationships
 

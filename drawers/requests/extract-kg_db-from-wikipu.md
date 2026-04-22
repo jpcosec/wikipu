@@ -21,6 +21,31 @@ wikipu's `wiki_compiler/` contains two distinct concerns that should be separate
 
 This proposal extracts the graph layer into `kg_db` (Knowledge Graph Database), leaving wikipu as a thin orchestrator.
 
+## Clarification: Relationship with sldb
+
+**IMPORTANT:** This request and `sldb-knowledge-graph-integration.md` are **complementary, not contradictory**.
+
+| Library | Scope |
+|---|---|
+| **sldb** | Document management, templates, validation, federation + **minimal graph** |
+| **kg_db** | Full graph reasoning (OWL, energy, context, cleansing) |
+
+**kg_db does NOT replace sldb.** kg_db consumes sldb for document management. sldb provides minimal graph (edges, links) to kg_db.
+
+```
+kg_db (consumes sldb)
+├── graph/             ← uses sldb documents as nodes
+├── reasoning/         ← OWL (NOT in sldb)
+├── energy/           ← audit (NOT in sldb)
+├── context/          ← routing (NOT in sldb)
+└── cleansing/        ← proposals (NOT in sldb)
+
+sldb (standalone, now with minimal graph)
+├── .sldb/documents/    ← documents
+├── .sldb/models/      ← contracts
+└── .sldb/graph/       ← edges + links ONLY
+```
+
 ## Current State
 
 ```
@@ -81,7 +106,33 @@ kg_db/
 └── compose.yaml
 ```
 
-### What kg_db Exports (compose.yaml)
+### What kg_db Gets (Full Reasoning)
+
+### From wiki_compiler
+
+kg_db extracts the **full reasoning layer** from wikipu:
+
+| Feature | Source | In kg_db |
+|---|---|---|
+| OWL reasoner | `owl_reasoner.py` | `reasoning/owl.py` |
+| SHACL validation | `shacl/` | `reasoning/shacl/` |
+| Energy audit | `energy.py` | `energy/audit.py` |
+| Context routing | `context.py` | `context/routing.py` |
+| Cleansing | `cleanser.py` | `cleansing/` |
+| Graph ops | `graph_utils.py` | `graph/ops.py` |
+| Query executor | `query_executor.py` | `query/executor.py` |
+
+### What kg_db Does NOT Get (belongs to sldb)
+
+- Document format (`StructuredNLDoc`)
+- Templates (`__template__`)
+- Roundtrip validation
+- Hash cascade
+- Federation
+
+These belong to sldb.
+
+## What kg_db Exports (compose.yaml)
 
 ```yaml
 kind: package
