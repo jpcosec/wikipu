@@ -1,0 +1,83 @@
+@startuml
+skinparam component<<boundary>> BackgroundColor #FCECC9
+skinparam component<<boundary>> BorderColor #D4A73C
+skinparam component<<boundary>> FontColor #5E450B
+skinparam rectangle<<boundary>> BackgroundColor #FCECC9
+skinparam rectangle<<boundary>> BorderColor #D4A73C
+skinparam rectangle<<boundary>> FontColor #5E450B
+skinparam database<<boundary>> BackgroundColor #FCECC9
+skinparam database<<boundary>> BorderColor #D4A73C
+skinparam database<<boundary>> FontColor #5E450B
+skinparam package<<boundary>> BackgroundColor #FCECC9
+skinparam package<<boundary>> BorderColor #D4A73C
+skinparam package<<boundary>> FontColor #5E450B
+skinparam component<<core>> BackgroundColor #D8ECFF
+skinparam component<<core>> BorderColor #4C78A8
+skinparam component<<core>> FontColor #16324F
+skinparam rectangle<<core>> BackgroundColor #D8ECFF
+skinparam rectangle<<core>> BorderColor #4C78A8
+skinparam rectangle<<core>> FontColor #16324F
+skinparam database<<core>> BackgroundColor #D8ECFF
+skinparam database<<core>> BorderColor #4C78A8
+skinparam database<<core>> FontColor #16324F
+skinparam package<<core>> BackgroundColor #D8ECFF
+skinparam package<<core>> BorderColor #4C78A8
+skinparam package<<core>> FontColor #16324F
+skinparam component<<database>> BackgroundColor #DCEFD8
+skinparam component<<database>> BorderColor #5A9B5A
+skinparam component<<database>> FontColor #1F4F1F
+skinparam rectangle<<database>> BackgroundColor #DCEFD8
+skinparam rectangle<<database>> BorderColor #5A9B5A
+skinparam rectangle<<database>> FontColor #1F4F1F
+skinparam database<<database>> BackgroundColor #DCEFD8
+skinparam database<<database>> BorderColor #5A9B5A
+skinparam database<<database>> FontColor #1F4F1F
+skinparam package<<database>> BackgroundColor #DCEFD8
+skinparam package<<database>> BorderColor #5A9B5A
+skinparam package<<database>> FontColor #1F4F1F
+
+package "wikipu" as Wikipu <<core>> {
+  [CuratorCLI]
+  [WorkspaceZones]
+  [CurationFlows]
+}
+component "wiki-compiler CLI" as CuratorCLI <<core>>
+rectangle "wiki/ + desk/ + drawers/ + raw/ + src/" as WorkspaceZones <<boundary>>
+component "curation and orchestration" as CurationFlows <<core>>
+package "sldb" as SLDB <<core>> {
+  [DocumentStore]
+  [ModelsTemplates]
+  [ValidationIndex]
+}
+database "documents" as DocumentStore <<database>>
+component "models + templates" as ModelsTemplates <<core>>
+component "validation + document index" as ValidationIndex <<core>>
+package "kgdb" as KGDB <<core>> {
+  [RelationGraph]
+  [SemanticLayer]
+  [ReasoningQuery]
+}
+database "horizontal relations" as RelationGraph <<database>>
+component "semantic overlays" as SemanticLayer <<core>>
+component "reasoning + query + reports" as ReasoningQuery <<core>>
+package "stable interfaces" as Interfaces <<boundary>> {
+  [SLDBExport]
+  [KGDBViews]
+}
+rectangle "sldb exports" as SLDBExport <<boundary>>
+rectangle "kgdb exports" as KGDBViews <<boundary>>
+package "operator outputs" as Outputs <<boundary>> {
+  [WikiProjection]
+  [AuditContext]
+  [FutureActions]
+}
+rectangle "curated wiki view" as WikiProjection <<boundary>>
+rectangle "audit + context + energy" as AuditContext <<boundary>>
+rectangle "gates + tasks + proposals" as FutureActions <<boundary>>
+
+Wikipu --> SLDB : documents and index
+Wikipu --> KGDB : relations and semantics
+SLDB --> Interfaces : indexed facts
+KGDB --> Interfaces : graph and semantic views
+Interfaces --> Outputs : curated presentation
+@enduml

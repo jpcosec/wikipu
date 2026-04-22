@@ -26,7 +26,7 @@ Wikipu is currently built as a single repository where the workspace model, CLI 
 
 ### Diagram
 
-This Mermaid view is now backed by a `spec2viz` source spec at `wiki/reference/diagrams/specs/current_system_architecture.yml` and a rendered artifact at `wiki/reference/diagrams/rendered/current_system_architecture.mmd`.
+This diagram is backed by a `spec2viz` source spec at `wiki/reference/diagrams/specs/current_system_architecture.yml`, a rendered Mermaid artifact at `wiki/reference/diagrams/rendered/current_system_architecture.mmd`, and a rendered PlantUML artifact at `wiki/reference/diagrams/rendered/current_system_architecture.puml`.
 
 ```mermaid
 graph TD

@@ -2,6 +2,23 @@ id: wikipu.current_system_architecture
 title: Wikipu Current System Architecture
 type: component
 version: "0.1"
+style:
+  kinds:
+    core:
+      plantuml:
+        background: "#D8ECFF"
+        border: "#4C78A8"
+        font: "#16324F"
+    boundary:
+      plantuml:
+        background: "#FCECC9"
+        border: "#D4A73C"
+        font: "#5E450B"
+    database:
+      plantuml:
+        background: "#DCEFD8"
+        border: "#5A9B5A"
+        font: "#1F4F1F"
 
 data:
   nodes:

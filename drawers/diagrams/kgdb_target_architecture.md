@@ -20,6 +20,7 @@ This is not current truth. It is a target-state architecture aid for the `kgdb` 
 
 - Spec source: `drawers/diagrams/specs/kgdb_target_architecture.yml`
 - Rendered Mermaid: `drawers/diagrams/rendered/kgdb_target_architecture.mmd`
+- Rendered PlantUML: `drawers/diagrams/rendered/kgdb_target_architecture.puml`
 
 ## Diagram
 
