@@ -1,0 +1,127 @@
+id: wikipu.kgdb_target_architecture
+title: Wikipu Target Architecture With kgdb Isolation
+type: component
+version: "0.1"
+
+data:
+  nodes:
+    Wikipu:
+      label: wikipu
+      kind: core
+      contains:
+        - CuratorCLI
+        - WorkspaceZones
+        - CurationFlows
+
+    CuratorCLI:
+      label: wiki-compiler CLI
+      kind: core
+
+    WorkspaceZones:
+      label: wiki/ + desk/ + drawers/ + raw/ + src/
+      kind: boundary
+
+    CurationFlows:
+      label: curation and orchestration
+      kind: core
+
+    SLDB:
+      label: sldb
+      kind: core
+      contains:
+        - DocumentStore
+        - ModelsTemplates
+        - ValidationIndex
+
+    DocumentStore:
+      label: documents
+      kind: database
+
+    ModelsTemplates:
+      label: models + templates
+      kind: core
+
+    ValidationIndex:
+      label: validation + document index
+      kind: core
+
+    KGDB:
+      label: kgdb
+      kind: core
+      contains:
+        - RelationGraph
+        - SemanticLayer
+        - ReasoningQuery
+
+    RelationGraph:
+      label: horizontal relations
+      kind: database
+
+    SemanticLayer:
+      label: semantic overlays
+      kind: core
+
+    ReasoningQuery:
+      label: reasoning + query + reports
+      kind: core
+
+    Interfaces:
+      label: stable interfaces
+      kind: boundary
+      contains:
+        - SLDBExport
+        - KGDBViews
+
+    SLDBExport:
+      label: sldb exports
+      kind: boundary
+
+    KGDBViews:
+      label: kgdb exports
+      kind: boundary
+
+    Outputs:
+      label: operator outputs
+      kind: boundary
+      contains:
+        - WikiProjection
+        - AuditContext
+        - FutureActions
+
+    WikiProjection:
+      label: curated wiki view
+      kind: boundary
+
+    AuditContext:
+      label: audit + context + energy
+      kind: boundary
+
+    FutureActions:
+      label: gates + tasks + proposals
+      kind: boundary
+
+  edges:
+    - from: Wikipu
+      to: SLDB
+      relation: consumes
+      label: documents and index
+
+    - from: Wikipu
+      to: KGDB
+      relation: consumes
+      label: relations and semantics
+
+    - from: SLDB
+      to: Interfaces
+      relation: provides
+      label: indexed facts
+
+    - from: KGDB
+      to: Interfaces
+      relation: provides
+      label: graph and semantic views
+
+    - from: Interfaces
+      to: Outputs
+      relation: supports
+      label: curated presentation

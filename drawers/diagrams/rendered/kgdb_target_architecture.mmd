@@ -1,0 +1,39 @@
+graph TD
+    Wikipu["wikipu"]
+    Wikipu --> CuratorCLI
+    Wikipu --> WorkspaceZones
+    Wikipu --> CurationFlows
+    CuratorCLI["wiki-compiler CLI"]
+    WorkspaceZones["wiki/ + desk/ + drawers/ + raw/ + src/"]
+    CurationFlows["curation and orchestration"]
+    SLDB["sldb"]
+    SLDB --> DocumentStore
+    SLDB --> ModelsTemplates
+    SLDB --> ValidationIndex
+    DocumentStore["documents"]
+    ModelsTemplates["models + templates"]
+    ValidationIndex["validation + document index"]
+    KGDB["kgdb"]
+    KGDB --> RelationGraph
+    KGDB --> SemanticLayer
+    KGDB --> ReasoningQuery
+    RelationGraph["horizontal relations"]
+    SemanticLayer["semantic overlays"]
+    ReasoningQuery["reasoning + query + reports"]
+    Interfaces["stable interfaces"]
+    Interfaces --> SLDBExport
+    Interfaces --> KGDBViews
+    SLDBExport["sldb exports"]
+    KGDBViews["kgdb exports"]
+    Outputs["operator outputs"]
+    Outputs --> WikiProjection
+    Outputs --> AuditContext
+    Outputs --> FutureActions
+    WikiProjection["curated wiki view"]
+    AuditContext["audit + context + energy"]
+    FutureActions["gates + tasks + proposals"]
+    Wikipu -->|documents and index| SLDB
+    Wikipu -->|relations and semantics| KGDB
+    SLDB -->|indexed facts| Interfaces
+    KGDB -->|graph and semantic views| Interfaces
+    Interfaces -->|curated presentation| Outputs

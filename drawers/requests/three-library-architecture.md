@@ -42,6 +42,8 @@ wikipu
 
 ## Proposal: Three Libraries
 
+Future-state diagram support lives in `drawers/diagrams/kgdb_target_architecture.md`.
+
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                     wikipu                              │
