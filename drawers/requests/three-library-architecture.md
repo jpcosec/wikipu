@@ -54,32 +54,31 @@ wikipu
          │                              │
          ▼                              ▼
 ┌─────────────────┐         ┌──────────────────────────┐
-│      sldb       │         │      knowledgeGraph       │
+│      sldb       │         │          kgdb            │
 │                 │         │                          │
-│ .sldb/          │         │ knowledge_graph.json     │
-│ Documents       │         │ Nodes + Edges            │
-│ Contracts       │         │ Facets                   │
-│ Templates       │         │ OWL Reasoning            │
-│ Roundtrip valid │         │ Energy Audit             │
-│ Hash cascade    │         │ Context Routing          │
-│ Federation      │         │ Cleansing                 │
+│ documents       │         │ relations                │
+│ contracts       │         │ semantics                │
+│ templates       │         │ reasoning                │
+│ validation      │         │ query                    │
+│ document index  │         │ graph-native reports     │
+│ federation      │         │                          │
 └─────────────────┘         └──────────────────────────┘
          │                              │
          ▼                              ▼
-   Document contracts              Graph operations
-   are graph nodes               inform document lifecycle
+   indexed facts                 horizontal relations + meaning
 ```
 
 ## Library Responsibilities
 
-### 1. sldb — Document Management
+### 1. sldb — Document Facts + Index
 
 **What it owns:**
-- `.sldb/` store (documents, models, store_index)
+- documents and models
 - `StructuredNLDoc` base class
 - Roundtrip validation
 - Hash cascade (Merkle-style integrity)
 - Federation (cross-repo stores)
+- document index
 
 **What it provides:**
 - `sldb doc add/track/validate`
@@ -94,31 +93,29 @@ wikipu
 
 **No dependency:** Can be used standalone.
 
-### 2. knowledgeGraph — Graph Reasoning
+### 2. kgdb — Relation Graph + Semantic Layer
 
 **What it owns:**
-- `knowledge_graph.json` (or equivalent)
-- Nodes, edges, facets
+- cross-document relations
+- semantic overlays above facts
+- graph-native query and traversal
 - OWL ontology + reasoner
-- Energy audit
-- Context routing
-- Cleansing
+- graph-side reports derived from relation structure
 
 **What it provides:**
 - Graph traversal (`get_ancestors`, `get_descendants`)
 - Structured queries (`StructuredQuery`)
-- Energy report
-- Context bundle
-- Cleansing proposals
+- semantic interpretation over indexed facts
+- reasoning outputs
 
 **What it does NOT own:**
 - Document format
 - Templates
 - Roundtrip validation
 
-**No dependency:** Can be used standalone with any data source.
+**No dependency:** Can be used standalone with any indexed factual source.
 
-### 3. wikipu — Wiki Topology + Orchestration
+### 3. wikipu — Curator of Both Layers
 
 **What it owns:**
 - `wiki/` (current truth)
@@ -131,12 +128,12 @@ wikipu
 
 **What it provides:**
 - Zone-based organization
-- wiki-compiler commands (build, query, audit, etc.)
+- wiki-compiler commands that curate the document and relation layers together
 - Autopoietic self-maintenance
 
 **What it consumes:**
 - sldb for document management
-- knowledgeGraph for graph reasoning
+- kgdb for relation and semantic reasoning
 
 ## Dependency Graph
 
@@ -145,21 +142,21 @@ wikipu
 ├── sldb              (required)
 │   └── (no deps)
 │
-└── knowledgeGraph   (required)
+└── kgdb             (required)
     └── (no deps)
 
 sldb        ← independent
-knowledgeGraph ← independent
+kgdb ← independent
 ```
 
-Neither sldb nor knowledgeGraph depend on each other or on wikipu.
+Neither sldb nor kgdb should depend on wikipu.
 
 ## Interface: Document ↔ Graph
 
-The key interface is **linking sldb documents to knowledgeGraph nodes**:
+The key interface is **linking indexed `sldb` facts to `kgdb` relation nodes**:
 
 ```python
-# In knowledgeGraph
+# In kgdb
 class KGNode(BaseModel):
     node_id: str
     sldb_ref: str | None  # Optional link to sldb document
@@ -175,7 +172,7 @@ class DocumentEntry(BaseModel):
 **Cross-library edges:**
 
 ```python
-# knowledgeGraph stores this:
+# kgdb stores this:
 class Edge(BaseModel):
     target_id: str
     relation_type: Literal[
@@ -184,7 +181,7 @@ class Edge(BaseModel):
     ]
     source: Literal["kg", "sldb"]
 
-# If source is "sldb", knowledgeGraph
+# If source is "sldb", kgdb
 # looks up the kg_ref in sldb store
 ```
 
@@ -199,7 +196,7 @@ sldb store check
 sldb store sync analyzer/
 ```
 
-### knowledgeGraph (standalone)
+### kgdb (standalone)
 
 ```bash
 kg query "extends:Document AND compliance: implemented"
@@ -216,22 +213,22 @@ wiki-compiler query      # Queries graph
 wiki-compiler energy    # Energy audit
 wiki-compiler audit   # Compliance check
 sldb doc add          # Delegates to sldb
-kg context           # Delegates to knowledgeGraph
+kg context           # Delegates to kgdb
 ```
 
 ## Migration Path
 
-### Phase 1: Extract knowledgeGraph from wiki_compiler
+### Phase 1: isolate kgdb from wiki_compiler
 
 Extract from `src/wiki_compiler/`:
-- `graph_utils.py` → `knowledgeGraph.graph`
-- `owl_reasoner.py` → `knowledgeGraph.owl`
-- `energy.py` → `knowledgeGraph.energy`
-- `context.py` → `knowledgeGraph.context`
-- `cleanser.py` → `knowledgeGraph.cleansing`
-- `contracts.py` (edges + facets) → `knowledgeGraph.contracts`
+- `graph_utils.py` → `kgdb.graph`
+- `owl_reasoner.py` → `kgdb.reasoning`
+- `energy.py` → `kgdb` core + `wikipu` adapter split
+- `context.py` → `kgdb` core + `wikipu` adapter split
+- `cleanser.py` → `kgdb.cleansing`
+- `contracts.py` → `kgdb` graph contracts + `wikipu` schema split
 
-Create: https://github.com/sldb-team/knowledge-graph
+Create: sibling repo/package `kgdb`
 
 ### Phase 2: Refactor sldb
 
@@ -241,12 +238,12 @@ Target: These are the primary sldb use cases
 ### Phase 3: Refactor wikipu
 
 Current: wikipu embeds both
-Target: wikipu consumes sldb + knowledgeGraph
+Target: wikipu curates sldb + kgdb
 
 ```python
 # In wikipu/src/wikipu/build.py
 from sldb import StructuredNLDoc
-from knowledgeGraph import Graph, Query, EnergyAudit
+from kgdb import Graph, Query, EnergyAudit
 
 def build_knowledge_graph():
     graph = Graph()
@@ -271,14 +268,14 @@ def build_knowledge_graph():
 
 ### For sldb Team
 
-1. Would you accept **extracting the graph layer** as a separate `knowledgeGraph` library?
+1. Would you accept `sldb` staying responsible only for documents and their index?
 2. Should sldb add **optional `kg_ref` field** to `DocumentEntry`?
 3. What's your stance on cross-library edges?
 
 ### For wikipu Team (us)
 
-1. Can we **extract knowledgeGraph** to a separate repo?
-2. Should it be `knowledge-graph` (hyphen) or `knowledgegraph` (no hyphen)?
+1. Can we extract `kgdb` as a separate repo?
+2. Should `wikipu` remain only the curator/orchestrator of both layers?
 3. License: same as sldb?
 
 ### For Both
@@ -307,9 +304,9 @@ exports:
   - StoreContract     # What sldb provides
 consumes: []         # sldb has no dependencies
 
-# knowledgeGraph compose.yaml
+# kgdb compose.yaml
 kind: package
-name: knowledgeGraph
+name: kgdb
 exports:
   - GraphContract    # What KG provides
   - QueryContract   # What KG provides
@@ -337,7 +334,7 @@ consumes:
 | Traditional (semver) | rp-style (contracts) |
 |---|---|
 | "sldb v2.1 depends on nothing" | "sldb exports DocumentContract" |
-| "knowledgeGraph v1.0 depends on nothing" | "KG exports GraphContract" |
+| "kgdb v1.0 depends on nothing" | "kgdb exports GraphContract" |
 | "wikipu v3.0 depends on sldb v2.1" | "wikipu consumes DocumentContract + GraphContract" |
 
 **No "which versions are compatible?"** The contracts define the interface.
@@ -359,4 +356,4 @@ We believe **three libraries + rp contracts** is the right balance.
 
 Submitted by: wikipu team
 Date: 2026-04-22
-Affected repos: sldb, wikipu, (new: knowledge-graph)
+Affected repos: sldb, wikipu, (new: kgdb)
