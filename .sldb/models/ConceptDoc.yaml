@@ -1,0 +1,5 @@
+name: ConceptDoc
+model_ref: wiki_compiler.contracts.wiki_nodes:ConceptDoc
+path: src/wiki_compiler/contracts/wiki_nodes.py
+documents_index: .sldb/documents/ConceptDoc.yaml
+hash_b: 749a8ef50a70755dba0884b444bd69a06bcbff7751ec5d11a2ceb98225c742cd

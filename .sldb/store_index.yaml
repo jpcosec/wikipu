@@ -1,0 +1,15 @@
+stores: []
+models:
+- name: ConceptDoc
+  model_ref: wiki_compiler.contracts.wiki_nodes:ConceptDoc
+  path: src/wiki_compiler/contracts/wiki_nodes.py
+  models_index: .sldb/models/ConceptDoc.yaml
+- name: ADRDoc
+  model_ref: wiki_compiler.contracts.wiki_nodes:ADRDoc
+  path: src/wiki_compiler/contracts/wiki_nodes.py
+  models_index: .sldb/models/ADRDoc.yaml
+- name: TaskDoc
+  model_ref: wiki_compiler.contracts.tasks:TaskDoc
+  path: src/wiki_compiler/contracts/tasks.py
+  models_index: .sldb/models/TaskDoc.yaml
+hash_a: adf2e9b72a57f4701b526294e3f70af819e85eda1e212a9393c3ac3842043819

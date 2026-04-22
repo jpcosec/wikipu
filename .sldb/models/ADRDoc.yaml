@@ -1,0 +1,5 @@
+name: ADRDoc
+model_ref: wiki_compiler.contracts.wiki_nodes:ADRDoc
+path: src/wiki_compiler/contracts/wiki_nodes.py
+documents_index: .sldb/documents/ADRDoc.yaml
+hash_b: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945

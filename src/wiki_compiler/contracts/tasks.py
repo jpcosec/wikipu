@@ -10,7 +10,9 @@ from typing import Literal
 class TaskDoc(StructuredNLDoc):
     """A task document that can roundtrip between Markdown and structured data."""
 
-    frontmatter: dict = Field(description="YAML frontmatter containing task metadata")
+    frontmatter: dict | None = Field(
+        default=None, description="YAML frontmatter containing task metadata"
+    )
     title: str = Field(description="Task title shown as H1 heading")
     description: str = Field(description="Task description in markdown")
     tasks: list[str] = Field(

@@ -11,8 +11,9 @@ from typing import Literal
 class ConceptDoc(StructuredNLDoc):
     """Document model for concept nodes (What is X?)."""
 
-    frontmatter: dict = Field(
-        description="YAML frontmatter with identity, edges, and compliance"
+    frontmatter: dict | None = Field(
+        default=None,
+        description="YAML frontmatter with identity, edges, and compliance",
     )
     title: str = Field(description="Title of the concept")
     abstract: str = Field(description="One-paragraph summary of the concept")
@@ -25,9 +26,6 @@ class ConceptDoc(StructuredNLDoc):
     )
 
     __template__ = """---
-⸢rev,dict•frontmatter⸥
----
-
 # ⸢rev•title⸥
 
 ⸢rev,markdown•abstract⸥
