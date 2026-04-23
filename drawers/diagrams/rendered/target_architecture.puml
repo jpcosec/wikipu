@@ -1,0 +1,86 @@
+@startuml
+skinparam component<<boundary>> BackgroundColor #FCECC9
+skinparam component<<boundary>> BorderColor #D4A73C
+skinparam component<<boundary>> FontColor #5E450B
+skinparam rectangle<<boundary>> BackgroundColor #FCECC9
+skinparam rectangle<<boundary>> BorderColor #D4A73C
+skinparam rectangle<<boundary>> FontColor #5E450B
+skinparam database<<boundary>> BackgroundColor #FCECC9
+skinparam database<<boundary>> BorderColor #D4A73C
+skinparam database<<boundary>> FontColor #5E450B
+skinparam package<<boundary>> BackgroundColor #FCECC9
+skinparam package<<boundary>> BorderColor #D4A73C
+skinparam package<<boundary>> FontColor #5E450B
+skinparam component<<core>> BackgroundColor #D8ECFF
+skinparam component<<core>> BorderColor #4C78A8
+skinparam component<<core>> FontColor #16324F
+skinparam rectangle<<core>> BackgroundColor #D8ECFF
+skinparam rectangle<<core>> BorderColor #4C78A8
+skinparam rectangle<<core>> FontColor #16324F
+skinparam database<<core>> BackgroundColor #D8ECFF
+skinparam database<<core>> BorderColor #4C78A8
+skinparam database<<core>> FontColor #16324F
+skinparam package<<core>> BackgroundColor #D8ECFF
+skinparam package<<core>> BorderColor #4C78A8
+skinparam package<<core>> FontColor #16324F
+skinparam component<<database>> BackgroundColor #DCEFD8
+skinparam component<<database>> BorderColor #5A9B5A
+skinparam component<<database>> FontColor #1F4F1F
+skinparam rectangle<<database>> BackgroundColor #DCEFD8
+skinparam rectangle<<database>> BorderColor #5A9B5A
+skinparam rectangle<<database>> FontColor #1F4F1F
+skinparam database<<database>> BackgroundColor #DCEFD8
+skinparam database<<database>> BorderColor #5A9B5A
+skinparam database<<database>> FontColor #1F4F1F
+skinparam package<<database>> BackgroundColor #DCEFD8
+skinparam package<<database>> BorderColor #5A9B5A
+skinparam package<<database>> FontColor #1F4F1F
+
+package "sldb" as SLDB <<core>> {
+  database "document bodies + contracts" as DocumentStore <<database>>
+  component "document index + validation" as DocumentIndex <<core>>
+}
+package "kgdb" as KGDB <<core>> {
+  database "graph/ — node/edge persistence" as GraphStorage <<database>>
+  component "query/ — StructuredQuery + executor" as QueryEngine <<core>>
+  component "contracts/ — Edge, KnowledgeNode" as KGDBContracts <<core>>
+  component "main.py — kgdb CLI" as KGDBMain <<core>>
+}
+package "ontology" as Ontology <<core>> {
+  component "reasoning/ — OWL + HermiT" as OWLLayer <<core>>
+  component "facets/ — registry + injectors + validator" as FacetLayer <<core>>
+  component "energy/ — systemic energy audit" as EnergyLayer <<core>>
+  component "cleansing/ — domain structural rules" as CleansingLayer <<core>>
+  component "contracts/ — facets, energy, wiki_nodes, proposals" as DomainContracts <<core>>
+  component "main.py — ontology CLI" as OntologyMain <<core>>
+}
+package "wikipu" as Wikipu <<core>> {
+  component "wiki-compiler CLI + commands/" as CuratorCLI <<core>>
+  component "adapters/ — kgdb + ontology + sldb" as Adapters <<core>>
+  rectangle "wiki/ + desk/ + drawers/ + raw/ + src/" as WorkspaceZones <<boundary>>
+  component "coordinator, gates, sessions, trails" as CurationFlows <<core>>
+}
+database "knowledge_graph.json" as GraphArtifact <<database>>
+package "operator outputs" as Outputs <<boundary>> {
+  rectangle "curated wiki view" as WikiOut <<boundary>>
+  rectangle "audit + context bundles" as AuditOut <<boundary>>
+  rectangle "energy + cleansing reports" as EnergyOut <<boundary>>
+}
+
+Wikipu --> SLDB : consumes documents and index
+Wikipu --> KGDB : consumes graph storage and query
+Wikipu --> Ontology : consumes domain services
+Ontology --> KGDB : uses storage substrate
+SLDB --> KGDB : stable doc inputs
+SLDB --> Ontology : stable doc inputs
+KGDB --> GraphArtifact : node-link JSON
+GraphArtifact --> Outputs : query and reports
+Adapters --> KGDB : kgdb adapter
+Adapters --> Ontology : ontology adapter
+Adapters --> SLDB : sldb adapter
+CuratorCLI --> Adapters : all operations
+CurationFlows --> Adapters : graph and domain ops
+Ontology --> EnergyOut : energy + cleansing
+KGDB --> AuditOut : query results
+Wikipu --> WikiOut : curated wiki
+@enduml

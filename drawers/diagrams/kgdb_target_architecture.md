@@ -1,12 +1,16 @@
 ---
-status: open
+status: superseded
 priority: p1
+superseded_by: drawers/diagrams/target_architecture.md
 depends_on:
   - drawers/requests/three-library-architecture.md
   - drawers/requests/extract-kgdb-from-wikipu.md
 created: 2026-04-23
+updated: 2026-04-23
 assigned_to: self
 ---
+
+> **Superseded.** This diagram only showed kgdb without the ontology layer. See `drawers/diagrams/target_architecture.md` for the current target architecture (kgdb + ontology + wikipu).
 
 # kgdb Target Architecture Diagram
 

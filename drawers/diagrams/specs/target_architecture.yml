@@ -1,0 +1,228 @@
+id: wikipu.target_architecture
+title: Wikipu Target Architecture — kgdb + ontology + wikipu
+type: component
+version: "0.1"
+style:
+  kinds:
+    core:
+      plantuml:
+        background: "#D8ECFF"
+        border: "#4C78A8"
+        font: "#16324F"
+    boundary:
+      plantuml:
+        background: "#FCECC9"
+        border: "#D4A73C"
+        font: "#5E450B"
+    database:
+      plantuml:
+        background: "#DCEFD8"
+        border: "#5A9B5A"
+        font: "#1F4F1F"
+
+data:
+  nodes:
+    SLDB:
+      label: sldb
+      kind: core
+      contains:
+        - DocumentStore
+        - DocumentIndex
+
+    DocumentStore:
+      label: document bodies + contracts
+      kind: database
+
+    DocumentIndex:
+      label: document index + validation
+      kind: core
+
+    KGDB:
+      label: kgdb
+      kind: core
+      contains:
+        - GraphStorage
+        - QueryEngine
+        - KGDBContracts
+        - KGDBMain
+
+    GraphStorage:
+      label: graph/ — node/edge persistence
+      kind: database
+
+    QueryEngine:
+      label: query/ — StructuredQuery + executor
+      kind: core
+
+    KGDBContracts:
+      label: contracts/ — Edge, KnowledgeNode
+      kind: core
+
+    KGDBMain:
+      label: main.py — kgdb CLI
+      kind: core
+
+    Ontology:
+      label: ontology
+      kind: core
+      contains:
+        - OWLLayer
+        - FacetLayer
+        - EnergyLayer
+        - CleansingLayer
+        - DomainContracts
+        - OntologyMain
+
+    OWLLayer:
+      label: reasoning/ — OWL + HermiT
+      kind: core
+
+    FacetLayer:
+      label: facets/ — registry + injectors + validator
+      kind: core
+
+    EnergyLayer:
+      label: energy/ — systemic energy audit
+      kind: core
+
+    CleansingLayer:
+      label: cleansing/ — domain structural rules
+      kind: core
+
+    DomainContracts:
+      label: contracts/ — facets, energy, wiki_nodes, proposals
+      kind: core
+
+    OntologyMain:
+      label: main.py — ontology CLI
+      kind: core
+
+    Wikipu:
+      label: wikipu
+      kind: core
+      contains:
+        - CuratorCLI
+        - Adapters
+        - WorkspaceZones
+        - CurationFlows
+
+    CuratorCLI:
+      label: wiki-compiler CLI + commands/
+      kind: core
+
+    Adapters:
+      label: adapters/ — kgdb + ontology + sldb
+      kind: core
+
+    WorkspaceZones:
+      label: wiki/ + desk/ + drawers/ + raw/ + src/
+      kind: boundary
+
+    CurationFlows:
+      label: coordinator, gates, sessions, trails
+      kind: core
+
+    GraphArtifact:
+      label: knowledge_graph.json
+      kind: database
+
+    Outputs:
+      label: operator outputs
+      kind: boundary
+      contains:
+        - WikiOut
+        - AuditOut
+        - EnergyOut
+
+    WikiOut:
+      label: curated wiki view
+      kind: boundary
+
+    AuditOut:
+      label: audit + context bundles
+      kind: boundary
+
+    EnergyOut:
+      label: energy + cleansing reports
+      kind: boundary
+
+  edges:
+    - from: Wikipu
+      to: SLDB
+      relation: consumes
+      label: documents and index
+
+    - from: Wikipu
+      to: KGDB
+      relation: consumes
+      label: graph storage and query
+
+    - from: Wikipu
+      to: Ontology
+      relation: consumes
+      label: domain services
+
+    - from: Ontology
+      to: KGDB
+      relation: uses
+      label: storage substrate
+
+    - from: SLDB
+      to: KGDB
+      relation: provides
+      label: stable doc inputs
+
+    - from: SLDB
+      to: Ontology
+      relation: provides
+      label: stable doc inputs
+
+    - from: KGDB
+      to: GraphArtifact
+      relation: persists
+      label: node-link JSON
+
+    - from: GraphArtifact
+      to: Outputs
+      relation: supports
+      label: query and reports
+
+    - from: Adapters
+      to: KGDB
+      relation: wraps
+      label: kgdb adapter
+
+    - from: Adapters
+      to: Ontology
+      relation: wraps
+      label: ontology adapter
+
+    - from: Adapters
+      to: SLDB
+      relation: wraps
+      label: sldb adapter
+
+    - from: CuratorCLI
+      to: Adapters
+      relation: dispatches
+      label: all operations
+
+    - from: CurationFlows
+      to: Adapters
+      relation: delegates
+      label: graph and domain ops
+
+    - from: Ontology
+      to: EnergyOut
+      relation: produces
+      label: energy + cleansing
+
+    - from: KGDB
+      to: AuditOut
+      relation: produces
+      label: query results
+
+    - from: Wikipu
+      to: WikiOut
+      relation: produces
+      label: curated wiki
