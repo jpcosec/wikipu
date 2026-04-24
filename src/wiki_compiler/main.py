@@ -9,15 +9,18 @@ import json
 import sys
 from pathlib import Path
 
+from .adapters import (
+    DRIFT_PENALTY_WEIGHT,
+    build_default_registry,
+    load_graph,
+    run_energy_audit,
+    validate_facet_proposal,
+)
 from .auditor import run_audit
 from .builder import build_wiki
-from .energy import run_energy_audit, DRIFT_PENALTY_WEIGHT
-from .facet_validator import validate_facet_proposal
-from .graph_utils import load_graph
 from .contracts import CleansingReport
 from .perception import build_status_report
 from .query_server import query_main
-from .registry import build_default_registry
 from .scaffolder import generate_scaffolding, init_repository
 from .validator import validate_topology_proposal
 from .workflow_guard import guard_workflow

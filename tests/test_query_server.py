@@ -1,6 +1,7 @@
 """
 Tests for the query_server REPL loop and submit_topology_proposal tool.
 """
+
 from __future__ import annotations
 
 import io
@@ -18,12 +19,13 @@ from wiki_compiler.contracts import (
     SemanticFacet,
     SystemIdentity,
 )
-from wiki_compiler.graph_utils import add_knowledge_node
+from kgdb.graph import add_knowledge_node
 from wiki_compiler.query_server import serve_structured_queries
 from wiki_compiler.validator import submit_topology_proposal
 
 
 # --- Helpers ---
+
 
 def make_node(node_id: str, node_type: str = "file", **kwargs) -> KnowledgeNode:
     return KnowledgeNode(
@@ -34,6 +36,7 @@ def make_node(node_id: str, node_type: str = "file", **kwargs) -> KnowledgeNode:
 
 def write_graph(graph: nx.DiGraph, path: Path) -> None:
     from networkx.readwrite import json_graph
+
     path.write_text(
         json.dumps(json_graph.node_link_data(graph)),
         encoding="utf-8",
@@ -45,23 +48,32 @@ def run_server(graph_path: Path, *query_dicts: dict) -> list[dict]:
     lines = "\n".join(json.dumps(q) for q in query_dicts) + "\n"
     input_stream = io.StringIO(lines)
     output_stream = io.StringIO()
-    serve_structured_queries(graph_path, input_stream=input_stream, output_stream=output_stream)
+    serve_structured_queries(
+        graph_path, input_stream=input_stream, output_stream=output_stream
+    )
     output_stream.seek(0)
     return [json.loads(line) for line in output_stream if line.strip()]
 
 
 # --- Tests: serve_structured_queries ---
 
+
 def test_valid_query_returns_matching_nodes(tmp_path: Path) -> None:
     """A well-formed StructuredQuery filters the graph and returns matching nodes."""
     graph = nx.DiGraph()
     add_knowledge_node(
         graph,
-        make_node("file:a.py", compliance=ComplianceFacet(status="planned", failing_standards=[])),
+        make_node(
+            "file:a.py",
+            compliance=ComplianceFacet(status="planned", failing_standards=[]),
+        ),
     )
     add_knowledge_node(
         graph,
-        make_node("file:b.py", compliance=ComplianceFacet(status="implemented", failing_standards=[])),
+        make_node(
+            "file:b.py",
+            compliance=ComplianceFacet(status="implemented", failing_standards=[]),
+        ),
     )
     graph_path = tmp_path / "graph.json"
     write_graph(graph, graph_path)
@@ -132,14 +144,20 @@ def test_multiple_queries_processed_in_sequence(tmp_path: Path) -> None:
     graph = nx.DiGraph()
     add_knowledge_node(
         graph,
-        make_node("file:a.py", compliance=ComplianceFacet(status="planned", failing_standards=[])),
+        make_node(
+            "file:a.py",
+            compliance=ComplianceFacet(status="planned", failing_standards=[]),
+        ),
     )
     graph_path = tmp_path / "graph.json"
     write_graph(graph, graph_path)
 
     query = {
         "filters": [
-            {"facet": "compliance", "conditions": [{"field": "status", "op": "eq", "value": "planned"}]}
+            {
+                "facet": "compliance",
+                "conditions": [{"field": "status", "op": "eq", "value": "planned"}],
+            }
         ]
     }
     responses = run_server(graph_path, query, query)  # same query twice
@@ -149,6 +167,7 @@ def test_multiple_queries_processed_in_sequence(tmp_path: Path) -> None:
 
 
 # --- Tests: submit_topology_proposal ---
+
 
 def _write_proposal(path: Path, **overrides) -> None:
     base = {

@@ -7,9 +7,7 @@ import argparse
 import json
 from pathlib import Path
 
-from ..graph_utils import load_graph
-from ..query_executor import execute_query
-from ..query_language import StructuredQuery
+from ..adapters import StructuredQuery, execute_query, get_world, load_graph
 from ..query_server import query_main
 
 
@@ -44,12 +42,6 @@ def handle_query(args: argparse.Namespace) -> None:
 
 def _handle_owl_query(args: argparse.Namespace) -> None:
     """Execute a SPARQL query against the OWL quadstore."""
-    try:
-        from wiki_compiler.owl_backend.extractor import get_world
-    except ImportError:
-        print("[ERROR] rdflib not installed. Run: pip install rdflib")
-        return
-
     sparql = getattr(args, "owl", "")
     if not sparql:
         print("[ERROR] --owl requires a SPARQL query string")

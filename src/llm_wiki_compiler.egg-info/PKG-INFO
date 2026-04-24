@@ -5,9 +5,14 @@ Summary: A Knowledge Graph compiler for LLM-driven development
 Author-email: Your Name <your@email.com>
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
+Requires-Dist: kgdb
+Requires-Dist: ontology
+Requires-Dist: sldb
 Requires-Dist: pydantic>=2.0.0
 Requires-Dist: PyYAML>=6.0
 Requires-Dist: networkx>=3.0
+Requires-Dist: owlready2>=0.46
+Requires-Dist: rdflib>=7.0
 
 # 🧠 Wikipu: An LLM-Driven Wiki Ecosystem
 

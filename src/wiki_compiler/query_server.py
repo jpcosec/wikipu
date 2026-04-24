@@ -13,9 +13,7 @@ from typing import IO
 
 import networkx as nx
 
-from .graph_utils import load_graph, load_knowledge_node
-from .query_executor import execute_query
-from .query_language import StructuredQuery
+from .adapters import StructuredQuery, execute_query, load_graph, load_knowledge_node
 
 
 def serve_structured_queries(

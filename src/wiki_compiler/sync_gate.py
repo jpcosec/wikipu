@@ -5,7 +5,7 @@ from typing import Optional
 
 from owlready2 import World
 
-from wiki_compiler.owl_backend import get_world, get_ontology, ONTOLOGY_IRI
+from wiki_compiler.adapters import ONTOLOGY_IRI, get_ontology, get_world
 from wiki_compiler.shacl import validate_node
 
 

@@ -11,8 +11,8 @@ from wiki_compiler.contracts import Edge
 from wiki_compiler.contracts import KnowledgeNode
 from wiki_compiler.contracts import SemanticFacet
 from wiki_compiler.contracts import SystemIdentity
-from wiki_compiler.graph_utils import add_knowledge_node
-from wiki_compiler.graph_utils import save_graph
+from kgdb.graph import add_knowledge_node
+from kgdb.graph import save_graph
 
 
 def make_node(node_id: str, node_type: str = "file", **kwargs) -> KnowledgeNode:

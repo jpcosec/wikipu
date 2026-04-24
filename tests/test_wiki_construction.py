@@ -3,7 +3,7 @@ from pathlib import Path
 import networkx as nx
 import pytest
 from wiki_compiler.contracts import KnowledgeNode, SemanticFacet, SystemIdentity
-from wiki_compiler.graph_utils import add_knowledge_node
+from kgdb.graph import add_knowledge_node
 from wiki_compiler.node_templates import (
     NodeTemplate,
     TemplateRegistry,
@@ -22,6 +22,7 @@ def write(path: Path, content: str) -> Path:
 
 # --- Template registry ---
 
+
 def test_template_registry_stores_and_retrieves_template() -> None:
     registry = TemplateRegistry()
     template = NodeTemplate(
@@ -30,15 +31,26 @@ def test_template_registry_stores_and_retrieves_template() -> None:
         required_sections=["abstract", "definition", "examples"],
     )
     registry.register(template)
-    assert registry.get("concept").required_sections == ["abstract", "definition", "examples"]
+    assert registry.get("concept").required_sections == [
+        "abstract",
+        "definition",
+        "examples",
+    ]
 
 
 def test_default_registry_has_standard_templates() -> None:
     registry = build_default_template_registry()
-    assert set(registry.node_types) >= {"concept", "how_to", "doc_standard", "reference", "index"}
+    assert set(registry.node_types) >= {
+        "concept",
+        "how_to",
+        "doc_standard",
+        "reference",
+        "index",
+    }
 
 
 # --- Abstract extraction ---
+
 
 def test_extract_abstract_returns_first_paragraph_after_frontmatter() -> None:
     content = """
@@ -76,6 +88,7 @@ Jumps straight to a heading with no abstract paragraph.
 
 
 # --- Section validation ---
+
 
 def test_validate_template_sections_passes_when_all_present() -> None:
     registry = build_default_template_registry()
@@ -124,8 +137,11 @@ This node explains what X is.
 
 # --- Integration with parse_markdown_node ---
 
+
 def test_parse_markdown_node_populates_failing_standards(tmp_path: Path) -> None:
-    p = write(tmp_path / "test.md", """
+    p = write(
+        tmp_path / "test.md",
+        """
 ---
 identity:
   node_id: "doc:test.md"
@@ -134,7 +150,8 @@ edges: []
 ---
 
 Missing all required sections.
-""")
+""",
+    )
     node, _ = parse_markdown_node(p)
     assert node is not None
     assert "definition" in node.compliance.failing_standards

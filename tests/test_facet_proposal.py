@@ -4,13 +4,22 @@ from pathlib import Path
 import networkx as nx
 import pytest
 from wiki_compiler.contracts import (
-    ComplianceFacet, FacetOrthogonalityReport, FacetProposal,
-    KnowledgeNode, SemanticFacet, SystemIdentity,
+    ComplianceFacet,
+    FacetOrthogonalityReport,
+    FacetProposal,
+    KnowledgeNode,
+    SemanticFacet,
+    SystemIdentity,
 )
-from wiki_compiler.facet_validator import validate_facet_proposal
-from wiki_compiler.graph_utils import add_knowledge_node
-from wiki_compiler.query_language import FacetFilter, FieldCondition, StructuredQuery
-from wiki_compiler.registry import FacetRegistry, FacetSpec, FieldSpec, build_default_registry
+from ontology.facets import validate_facet_proposal
+from kgdb.graph import add_knowledge_node
+from kgdb.query.language import FacetFilter, FieldCondition, StructuredQuery
+from ontology.facets import (
+    FacetRegistry,
+    FacetSpec,
+    FieldSpec,
+    build_default_registry,
+)
 
 
 def make_graph(*nodes: KnowledgeNode) -> nx.DiGraph:
@@ -28,12 +37,13 @@ def make_node(node_id: str, **kwargs) -> KnowledgeNode:
 
 # --- Question collision ---
 
+
 def test_rejects_question_that_overlaps_existing_facet(tmp_path: Path) -> None:
     registry = build_default_registry()
     graph = nx.DiGraph()
     proposal = FacetProposal(
         proposed_facet_name="doc_summary",
-        question="What does this node do and why?",   # overlaps SemanticFacet
+        question="What does this node do and why?",  # overlaps SemanticFacet
         applies_to=["file"],
         proposed_fields=[{"name": "summary", "type": "str"}],
         attempted_query=None,
@@ -71,6 +81,7 @@ def test_accepts_question_with_no_overlap(tmp_path: Path) -> None:
 
 # --- Field collision ---
 
+
 def test_rejects_proposed_field_that_already_exists(tmp_path: Path) -> None:
     registry = build_default_registry()
     graph = nx.DiGraph()
@@ -78,7 +89,9 @@ def test_rejects_proposed_field_that_already_exists(tmp_path: Path) -> None:
         proposed_facet_name="custom_status",
         question="What is the deployment stage of this node?",
         applies_to=["file"],
-        proposed_fields=[{"name": "status", "type": "str"}],  # status exists in compliance
+        proposed_fields=[
+            {"name": "status", "type": "str"}
+        ],  # status exists in compliance
         attempted_query=None,
     )
     report = validate_facet_proposal(
@@ -94,19 +107,27 @@ def test_rejects_proposed_field_that_already_exists(tmp_path: Path) -> None:
 
 # --- Compound answerability ---
 
+
 def test_rejects_when_attempted_query_returns_results(tmp_path: Path) -> None:
     registry = build_default_registry()
-    graph = make_graph(make_node(
-        "file:src/a.py",
-        compliance=ComplianceFacet(status="planned", failing_standards=[]),
-    ))
+    graph = make_graph(
+        make_node(
+            "file:src/a.py",
+            compliance=ComplianceFacet(status="planned", failing_standards=[]),
+        )
+    )
     # Proposer tries to answer "which nodes are not started yet?"
     # and their own query already works → information already in graph
-    attempted_query_obj = StructuredQuery(filters=[
-        FacetFilter(facet="compliance", conditions=[
-            FieldCondition(field="status", op="eq", value="planned"),
-        ]),
-    ])
+    attempted_query_obj = StructuredQuery(
+        filters=[
+            FacetFilter(
+                facet="compliance",
+                conditions=[
+                    FieldCondition(field="status", op="eq", value="planned"),
+                ],
+            ),
+        ]
+    )
     attempted_query = attempted_query_obj.model_dump()
     proposal = FacetProposal(
         proposed_facet_name="not_started",
@@ -130,11 +151,16 @@ def test_accepts_when_attempted_query_returns_nothing(tmp_path: Path) -> None:
     registry = build_default_registry()
     # Graph has no nodes with model_usage facet — information genuinely absent
     graph = make_graph(make_node("file:src/a.py"))
-    attempted_query_obj = StructuredQuery(filters=[
-        FacetFilter(facet="model_usage", conditions=[
-            FieldCondition(field="model_name", op="is_not_null"),
-        ]),
-    ])
+    attempted_query_obj = StructuredQuery(
+        filters=[
+            FacetFilter(
+                facet="model_usage",
+                conditions=[
+                    FieldCondition(field="model_name", op="is_not_null"),
+                ],
+            ),
+        ]
+    )
     attempted_query = attempted_query_obj.model_dump()
     proposal = FacetProposal(
         proposed_facet_name="model_usage",
@@ -153,6 +179,7 @@ def test_accepts_when_attempted_query_returns_nothing(tmp_path: Path) -> None:
 
 
 # --- Attempt tracking ---
+
 
 def test_attempt_counter_decrements_on_failure(tmp_path: Path) -> None:
     registry = build_default_registry()

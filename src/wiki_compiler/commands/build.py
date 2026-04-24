@@ -7,6 +7,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from ..adapters import export_wikipu_ontology
 from ..builder import build_wiki
 
 
@@ -28,8 +29,6 @@ def handle_build(args: argparse.Namespace) -> None:
 
     if getattr(args, "owl", False):
         try:
-            from wiki_compiler.owl_backend.export import export_wikipu_ontology
-
             output = export_wikipu_ontology(Path(args.project_root) / args.source)
             print(f"[OK] OWL ontology saved to {output}")
         except ImportError:

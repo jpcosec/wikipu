@@ -6,8 +6,7 @@ import subprocess
 from pathlib import Path
 
 from .contracts import GitFacet, ZoneContract
-from .graph_utils import iter_knowledge_nodes
-from .graph_utils import load_graph
+from .adapters import iter_knowledge_nodes, load_graph
 
 DEFAULT_ZONE_CONTRACTS = [
     ZoneContract(

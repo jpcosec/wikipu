@@ -1,2 +1,4 @@
 [console_scripts]
+kgdb = kgdb.main:main
+ontology = ontology.main:main
 wiki-compiler = wiki_compiler.main:main

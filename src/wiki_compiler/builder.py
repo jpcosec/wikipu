@@ -22,21 +22,27 @@ from .contracts import (
     SemanticFacet,
     SystemIdentity,
 )
-from .facet_injectors import ADRInjector, TestMapInjector
-from .graph_utils import add_knowledge_node, load_knowledge_node, save_graph
+from .adapters import (
+    ADRInjector,
+    InjectionContext,
+    TestMapInjector,
+    add_knowledge_node,
+    calculate_compliance_score,
+    infer_reference_documents_edges,
+    load_knowledge_node,
+    save_graph,
+)
 from .node_templates import (
     build_default_template_registry,
     extract_abstract,
     validate_template_sections,
 )
-from .perception import attach_git_facets
-from .registry import InjectionContext
+from .perception import attach_git_facets as attach_git_metadata
 from .scanner import scan_python_sources
 
 
 TRANSCLUSION_REGEX = re.compile(r"!\[\[(.*?)\]\]")
 FRONTMATTER_REGEX = re.compile(r"\A---\s*\n(.*?)\n---(\s*\n|$)", re.DOTALL)
-COMPLIANT_STATUSES = {"implemented", "tested", "exempt"}
 
 
 @dataclass(frozen=True)
@@ -61,7 +67,7 @@ def build_wiki(
     code_roots: list[Path] | None = None,
     baseline_path: Path | None = None,
     update_baseline: bool = False,
-    attach_git_facets: bool = False,
+    attach_git_facets: bool = True,
     run_facet_injectors: bool = False,
 ) -> BuildResult:
     """
@@ -113,7 +119,7 @@ def build_wiki(
                 add_knowledge_node(graph, enriched)
 
     if attach_git_facets:
-        attach_git_facets(graph, root)
+        attach_git_metadata(graph, root)
 
     save_graph(graph, graph_path)
     score = calculate_compliance_score(graph)
@@ -285,89 +291,6 @@ def render_compiled_markdown(
 
     compiled = TRANSCLUSION_REGEX.sub(replacement, markdown).strip()
     return compiled + "\n"
-
-
-def infer_reference_documents_edges(graph: nx.DiGraph) -> None:
-    """Adds inferred `documents` edges from wiki reference pages to code nodes."""
-    file_candidates = build_reference_file_candidates(graph)
-    for node_id in sorted(graph.nodes):
-        if not node_id.startswith("doc:wiki/reference/"):
-            continue
-        stem = Path(node_id.removeprefix("doc:")).stem
-        matched_file = match_reference_file(stem, file_candidates)
-        if matched_file is None:
-            continue
-        target_ids = [matched_file]
-        target_ids.extend(sorted(code_nodes_for_file(graph, matched_file)))
-        add_documents_edges(graph, node_id, target_ids)
-
-
-def build_reference_file_candidates(graph: nx.DiGraph) -> dict[str, list[str]]:
-    """Indexes file nodes by stem for wiki reference auto-linking."""
-    candidates: dict[str, list[str]] = {}
-    for node_id, data in graph.nodes(data=True):
-        if data.get("type") != "file" or not node_id.startswith("file:src/"):
-            continue
-        stem = Path(node_id.removeprefix("file:")).stem
-        candidates.setdefault(stem, []).append(node_id)
-    return candidates
-
-
-def match_reference_file(stem: str, candidates: dict[str, list[str]]) -> str | None:
-    """Returns the single best file match for a reference page stem."""
-    matches = candidates.get(stem, [])
-    if len(matches) == 1:
-        return matches[0]
-    preferred = [
-        node_id for node_id in matches if node_id.startswith("file:src/wiki_compiler/")
-    ]
-    if len(preferred) == 1:
-        return preferred[0]
-    return None
-
-
-def code_nodes_for_file(graph: nx.DiGraph, file_node_id: str) -> list[str]:
-    """Returns code construct node ids contained by a file node."""
-    file_prefix = f"code:{file_node_id.removeprefix('file:')}:"
-    return [
-        node_id
-        for node_id, data in graph.nodes(data=True)
-        if data.get("type") == "code_construct" and node_id.startswith(file_prefix)
-    ]
-
-
-def add_documents_edges(
-    graph: nx.DiGraph, source_id: str, target_ids: list[str]
-) -> None:
-    """Persists inferred documentation edges onto both the graph and source node schema."""
-    node = load_knowledge_node(graph, source_id)
-    existing_targets = {
-        edge.target_id for edge in node.edges if edge.relation_type == "documents"
-    }
-    changed = False
-    for target_id in target_ids:
-        if target_id in existing_targets:
-            continue
-        node.edges.append(Edge(target_id=target_id, relation_type="documents"))
-        existing_targets.add(target_id)
-        changed = True
-    if changed:
-        add_knowledge_node(graph, node)
-
-
-def calculate_compliance_score(graph: nx.DiGraph) -> float:
-    """
-    Computes the percentage of nodes that meet implementation or testing standards.
-    """
-    statuses = [
-        data.get("status")
-        for _, data in graph.nodes(data=True)
-        if data.get("status") not in {None, "unknown"}
-    ]
-    if not statuses:
-        return 100.0
-    compliant = sum(1 for status in statuses if status in COMPLIANT_STATUSES)
-    return round((compliant / len(statuses)) * 100, 2)
 
 
 def update_compliance_baseline(

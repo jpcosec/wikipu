@@ -35,6 +35,11 @@ Drafted → Bound to task → Audited after step →
 | `owl-global-constraints.md` | guardrail | owl-p1-4 (global) ✅ |
 | `owl-phase2-context.md` | decision | owl-p2, owl-p3 ✅ |
 | `owl-python-examples.md` | pattern | owl-p1, owl-p2 ✅ |
+| `split-global-guardrails.md` | guardrail | 101-135 |
+| `split-boundary-model.md` | model | 101-131 |
+| `split-shim-lifecycle-decision.md` | decision | 102-105,107-125,129-131 |
+| `split-adapter-import-law.md` | warning | 120-131 |
+| `split-extraction-cutover.md` | warning | 132-135 |
 | `pirate-teaching-guardrails.md` | guardrail | pirate-teach |
 | `pirate-teaching-pattern.md` | pattern | pirate-teach |
 | `audit-auto-task-decision.md` | decision | audit-auto-task |
@@ -51,11 +56,11 @@ Drafted → Bound to task → Audited after step →
 
 | Type/Scope | global | domain | component |
 |------------|--------|--------|-----------|
-| decision | | owl-phase2-context, audit-auto-task, workflow-reconcile | owl-adr-003-context |
-| guardrail | owl-global-constraints, global-warnings | pirate-teaching-guardrails | owl-module-structure |
+| decision | | owl-phase2-context, audit-auto-task, workflow-reconcile, split-shim-lifecycle-decision | owl-adr-003-context |
+| guardrail | owl-global-constraints, global-warnings, split-global-guardrails | pirate-teaching-guardrails | owl-module-structure |
 | pattern | | pirate-teaching-pattern, audit-auto-task-pattern, workflow-reconcile-pattern | owl-usage-patterns, owl-python-examples |
-| model | owl-model-mapping | | |
-| warning | global-warnings | audit-auto-task-warnings | |
+| model | owl-model-mapping | split-boundary-model | |
+| warning | global-warnings, split-extraction-cutover | audit-auto-task-warnings | split-adapter-import-law |
 | tip | global-tips | | |
 | reference | global-reference | | |
 | example | global-examples | | |

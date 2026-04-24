@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .graph_utils import iter_knowledge_nodes, load_graph
+from .adapters import iter_knowledge_nodes, load_graph
 from .manifest import load_manifest, compute_content_hash
 from .ingest import ingest_raw_sources
 

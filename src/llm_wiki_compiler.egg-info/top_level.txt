@@ -1,3 +1,5 @@
 looting
+markov_entropy
+structural_abstraction
 wiki_compiler
 wikipu

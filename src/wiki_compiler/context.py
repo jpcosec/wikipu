@@ -7,10 +7,14 @@ from __future__ import annotations
 
 import json
 import re
-from collections import deque
 from pathlib import Path
 
-from .graph_utils import load_graph, load_knowledge_node
+from kgdb.graph import load_graph, load_knowledge_node
+from kgdb.query import (
+    collect_neighborhood,
+    collect_neighborhood_by_direction,
+    match_nodes_from_task,
+)
 from .contracts import (
     ContextRequest,
     ContextBundle,
@@ -213,34 +217,6 @@ def match_active_tasks(
     return sorted(list(set(relevant_tasks)))
 
 
-def collect_neighborhood_by_direction(
-    graph, starting_nodes: set[str], depth: int, direction: str
-) -> set[str]:
-    """Collect nodes within a given depth and direction (in/out) from starting nodes."""
-    visited = set()
-    queue = deque((node_id, 0) for node_id in starting_nodes)
-    while queue:
-        node_id, level = queue.popleft()
-        if level >= depth:
-            continue
-
-        neighbors = set()
-        if direction == "incoming":
-            neighbors = set(graph.predecessors(node_id))
-        elif direction == "outgoing":
-            neighbors = set(graph.successors(node_id))
-        else:
-            neighbors = set(graph.predecessors(node_id)) | set(
-                graph.successors(node_id)
-            )
-
-        for neighbor in neighbors:
-            if neighbor not in visited and neighbor not in starting_nodes:
-                visited.add(neighbor)
-                queue.append((neighbor, level + 1))
-    return visited
-
-
 def render_context(
     graph_path: Path,
     node_ids: list[str] | None = None,
@@ -263,43 +239,6 @@ def render_context(
     if output_format == "json":
         return bundle.model_dump_json(indent=2)
     return render_markdown_bundle(bundle)
-
-
-def match_nodes_from_task(graph_path: Path, task_hint: str | None) -> list[str]:
-    """
-    Identifies relevant Knowledge Graph nodes based on a natural language task description.
-    """
-    if not task_hint:
-        raise ValueError("Provide node_ids or a task_hint")
-    graph = load_graph(graph_path)
-    terms = {
-        token
-        for token in re.findall(r"[a-z0-9_]+", task_hint.lower())
-        if len(token) > 2
-    }
-    scored: list[tuple[int, str]] = []
-    for node_id in graph.nodes:
-        node = load_knowledge_node(graph, node_id)
-        haystack = " ".join(
-            [
-                node.identity.node_id,
-                node.semantics.intent if node.semantics else "",
-                " ".join(node.ast.signatures if node.ast else []),
-            ]
-        ).lower()
-        score = sum(1 for term in terms if term in haystack)
-        if score:
-            scored.append((score, node_id))
-    return [node_id for _, node_id in sorted(scored, reverse=True)[:3]]
-
-
-def collect_neighborhood(graph, starting_nodes: list[str], depth: int) -> set[str]:
-    """
-    Legacy helper for backward compatibility.
-    """
-    return collect_neighborhood_by_direction(
-        graph, set(starting_nodes), depth, direction="both"
-    ) | set(starting_nodes)
 
 
 def render_markdown_bundle(bundle: ContextBundle) -> str:

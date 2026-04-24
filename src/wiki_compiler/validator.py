@@ -2,6 +2,7 @@
 Validates topology proposals for new modules against the existing knowledge graph.
 Ensures orthogonality by checking for I/O collisions and glossary term compliance.
 """
+
 from __future__ import annotations
 
 import json
@@ -10,7 +11,7 @@ from pathlib import Path
 import yaml
 
 from .contracts import CollisionReport, IOFacet, KnowledgeNode, TopologyProposal
-from .graph_utils import iter_knowledge_nodes, load_graph
+from .adapters import iter_knowledge_nodes, load_graph
 
 
 DEFAULT_ATTEMPTS = 3
@@ -60,9 +61,11 @@ def validate_topology_proposal(
     proposal = TopologyProposal.model_validate(proposal_data)
     graph = load_graph(graph_path)
     nodes = iter_knowledge_nodes(graph)
-    colliding_nodes = find_io_collisions(
-        nodes, proposal.proposed_inputs + proposal.proposed_outputs
-    )
+    proposed_ports = [
+        port if isinstance(port, IOFacet) else IOFacet.model_validate(port)
+        for port in proposal.proposed_inputs + proposal.proposed_outputs
+    ]
+    colliding_nodes = find_io_collisions(nodes, proposed_ports)
     glossary_terms = load_glossary_terms(glossary_path)
     unknown_terms = [
         term
@@ -71,7 +74,7 @@ def validate_topology_proposal(
     ]
     raw_write_violation = any(
         port.medium == "disk" and (port.path_template or "").startswith("raw/")
-        for port in proposal.proposed_outputs
+        for port in proposed_ports[len(proposal.proposed_inputs) :]
     )
     is_orthogonal = (
         not colliding_nodes and not unknown_terms and not raw_write_violation

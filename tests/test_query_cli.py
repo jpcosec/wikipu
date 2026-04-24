@@ -15,7 +15,7 @@ from wiki_compiler.contracts import (
     KnowledgeNode,
     SystemIdentity,
 )
-from wiki_compiler.graph_utils import add_knowledge_node
+from kgdb.graph import add_knowledge_node
 from wiki_compiler.query_server import query_main
 
 

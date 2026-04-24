@@ -8,9 +8,14 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import networkx as nx
 from .contracts import AuditFinding, KnowledgeNode
-from .graph_utils import iter_knowledge_nodes, load_knowledge_node
-from .query_executor import execute_query
-from .query_language import FacetFilter, FieldCondition, StructuredQuery
+from .adapters import (
+    FacetFilter,
+    FieldCondition,
+    StructuredQuery,
+    execute_query,
+    iter_knowledge_nodes,
+    load_knowledge_node,
+)
 
 
 @dataclass
@@ -234,9 +239,8 @@ class StaleEdgesCheck:
         Executes the stale edges check against the provided graph.
         """
         findings = []
-        graph_node_ids = {n for n in graph.nodes()}
         for source, target, data in graph.edges(data=True):
-            if target not in graph_node_ids:
+            if target not in graph or graph.nodes[target].get("schema") is None:
                 findings.append(
                     AuditFinding(
                         check_name=self.check_name,

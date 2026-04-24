@@ -19,7 +19,7 @@ from wiki_compiler.contracts import (
     SemanticFacet,
     SystemIdentity,
 )
-from wiki_compiler.graph_utils import add_knowledge_node
+from kgdb.graph import add_knowledge_node
 
 
 def make_node(node_id: str, node_type: str = "file", **kwargs) -> KnowledgeNode:

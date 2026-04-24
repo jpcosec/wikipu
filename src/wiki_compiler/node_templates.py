@@ -97,7 +97,7 @@ def extract_abstract(content: str) -> str | None:
 
     # Skip the first heading (title) if present, then look for abstract
     start_idx = 0
-    if lines[0].startswith("#"):
+    if lines[0].startswith("# "):
         start_idx = 1  # Skip the title heading
 
     # Find first paragraph (until double newline or heading)

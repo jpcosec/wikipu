@@ -6,8 +6,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from ..energy import run_energy_audit, DRIFT_PENALTY_WEIGHT
-from ..graph_utils import load_graph
+from ..adapters import OwlReasoner, load_graph, run_energy_audit
+from ..energy import DRIFT_PENALTY_WEIGHT
 
 
 def handle_energy(args: argparse.Namespace) -> None:
@@ -17,8 +17,6 @@ def handle_energy(args: argparse.Namespace) -> None:
 
     if getattr(args, "reasoning", False):
         try:
-            from wiki_compiler.owl_reasoner import OwlReasoner
-
             reasoner = OwlReasoner()
             inferred = reasoner.sync_reasoner()
             consistency = reasoner.consistency_check()

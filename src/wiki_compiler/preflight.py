@@ -52,7 +52,11 @@ def read_git_status(project_root: Path) -> list[str]:
 
 
 def evaluate_action_safety(
-    action_type: str, target_id: str, project_root: Path
+    action_type: str,
+    target_id: str,
+    project_root: Path,
+    *,
+    enforce_clean_tree: bool = False,
 ) -> PreflightFinding | None:
     """
     Evaluates a single planned action against identity rules.
@@ -62,7 +66,11 @@ def evaluate_action_safety(
     # OP-6: Clean Tree Before Editing
     # No edits allowed with uncommitted changes
     uncommitted = read_git_status(project_root)
-    if uncommitted and action_type in {"write", "edit", "update", "delete"}:
+    if (
+        enforce_clean_tree
+        and uncommitted
+        and action_type in {"write", "edit", "update", "delete"}
+    ):
         return PreflightFinding(
             rule_id="OP-6",
             severity="error",

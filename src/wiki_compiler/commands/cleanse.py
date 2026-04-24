@@ -7,7 +7,8 @@ import argparse
 import json
 from pathlib import Path
 
-from ..cleanser import detect_cleansing_candidates, apply_cleansing_proposal
+from ..adapters import detect_cleansing_candidates
+from ..cleanser import apply_cleansing_proposal
 from ..contracts import CleansingReport
 
 

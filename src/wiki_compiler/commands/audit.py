@@ -8,8 +8,8 @@ import json
 import sys
 from pathlib import Path
 
+from ..adapters import OwlConflictCheck, get_world, load_graph
 from ..auditor import run_audit
-from ..graph_utils import load_graph
 
 
 def handle_audit(args: argparse.Namespace) -> None:
@@ -19,9 +19,6 @@ def handle_audit(args: argparse.Namespace) -> None:
 
     if getattr(args, "sync_check", False):
         try:
-            from wiki_compiler.owl_backend import get_world
-            from wiki_compiler.auditor_owl import OwlConflictCheck
-
             world = get_world()
             owl_check = OwlConflictCheck(world)
             owl_findings = owl_check.run(graph)

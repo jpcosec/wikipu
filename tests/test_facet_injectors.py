@@ -3,9 +3,8 @@ from pathlib import Path
 import networkx as nx
 import pytest
 from wiki_compiler.contracts import KnowledgeNode, SystemIdentity
-from wiki_compiler.facet_injectors import ADRInjector, TestMapInjector
-from wiki_compiler.graph_utils import add_knowledge_node, load_knowledge_node
-from wiki_compiler.registry import InjectionContext
+from ontology.facets import ADRInjector, InjectionContext, TestMapInjector
+from kgdb.graph import add_knowledge_node, load_knowledge_node
 
 
 def write(path: Path, content: str) -> Path:
@@ -18,9 +17,12 @@ def make_graph(*node_ids: str) -> nx.DiGraph:
     graph = nx.DiGraph()
     for node_id in node_ids:
         node_type = "doc_standard" if node_id.startswith("doc:") else "file"
-        add_knowledge_node(graph, KnowledgeNode(
-            identity=SystemIdentity(node_id=node_id, node_type=node_type)
-        ))
+        add_knowledge_node(
+            graph,
+            KnowledgeNode(
+                identity=SystemIdentity(node_id=node_id, node_type=node_type)
+            ),
+        )
     return graph
 
 
@@ -31,7 +33,9 @@ def test_adr_injector_has_correct_spec() -> None:
 
 
 def test_adr_injector_populates_adr_from_frontmatter(tmp_path: Path) -> None:
-    write(tmp_path / "wiki/adrs/001_pydantic.md", """
+    write(
+        tmp_path / "wiki/adrs/001_pydantic.md",
+        """
 ---
 identity:
   node_id: "doc:wiki/adrs/001_pydantic.md"
@@ -43,7 +47,8 @@ adr:
 edges: []
 ---
 # ADR 001
-""")
+""",
+    )
     graph = make_graph("doc:wiki/adrs/001_pydantic.md")
     ctx = InjectionContext(project_root=tmp_path, adr_dir=tmp_path / "wiki/adrs")
 
@@ -60,14 +65,17 @@ edges: []
 
 
 def test_adr_injector_skips_node_without_adr_frontmatter(tmp_path: Path) -> None:
-    write(tmp_path / "wiki/adrs/002_plain.md", """
+    write(
+        tmp_path / "wiki/adrs/002_plain.md",
+        """
 ---
 identity:
   node_id: "doc:wiki/adrs/002_plain.md"
   node_type: "doc_standard"
 edges: []
 ---
-""")
+""",
+    )
     graph = make_graph("doc:wiki/adrs/002_plain.md")
     ctx = InjectionContext(project_root=tmp_path, adr_dir=tmp_path / "wiki/adrs")
     injector = ADRInjector()
@@ -83,14 +91,17 @@ def test_test_map_injector_has_correct_spec() -> None:
 
 
 def test_test_map_injector_links_test_imports_to_source_node(tmp_path: Path) -> None:
-    write(tmp_path / "tests/test_scanner.py", """
+    write(
+        tmp_path / "tests/test_scanner.py",
+        """
 from wiki_compiler.scanner import scan_python_sources
 def test_something():
     pass
-""")
+""",
+    )
     # Need to create the actual source file so _module_to_node_id finds it
     write(tmp_path / "src/wiki_compiler/scanner.py", "def scan_python_sources(): pass")
-    
+
     graph = make_graph("file:src/wiki_compiler/scanner.py")
     ctx = InjectionContext(project_root=tmp_path, tests_dir=tmp_path / "tests")
     injector = TestMapInjector()

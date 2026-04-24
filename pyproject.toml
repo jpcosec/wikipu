@@ -10,6 +10,9 @@ authors = [{name = "Your Name", email = "your@email.com"}]
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "kgdb",
+    "ontology",
+    "sldb",
     "pydantic>=2.0.0",
     "PyYAML>=6.0",
     "networkx>=3.0",
@@ -20,6 +23,19 @@ dependencies = [
 [project.scripts]
 # This exposes the 'wiki-compiler' command in the terminal for installation.
 wiki-compiler = "wiki_compiler.main:main"
+kgdb = "kgdb.main:main"
+ontology = "ontology.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv.sources]
+kgdb = { path = "../kgdb", editable = true }
+ontology = { path = "../ontology", editable = true }
+sldb = { path = "../sldb", editable = true }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

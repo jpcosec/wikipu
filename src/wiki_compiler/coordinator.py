@@ -11,7 +11,8 @@ from .perception import build_status_report
 from .builder import build_wiki
 from .ingest import ingest_raw_sources
 from .gates import load_gates, add_gate, update_gate_status, save_gates
-from .cleanser import detect_cleansing_candidates, apply_cleansing_proposal
+from .adapters import detect_cleansing_candidates
+from .cleanser import apply_cleansing_proposal
 from .contracts import CycleRecord
 
 
@@ -149,7 +150,10 @@ def run_coordinator_cycle(
     for p in untracked_raw:
         if p["action"] == "ingest_raw_source":
             finding = evaluate_action_safety(
-                "write", f"desk/drafts/{Path(p['id']).name}", project_root
+                "write",
+                f"desk/drafts/{Path(p['id']).name}",
+                project_root,
+                enforce_clean_tree=True,
             )
             if finding and finding.severity == "error":
                 continue

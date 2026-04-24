@@ -6,7 +6,7 @@ from typing import Optional
 
 from owlready2 import World
 
-from wiki_compiler.owl_backend.extractor import get_world
+from wiki_compiler.adapters import get_world
 from wiki_compiler.shacl.shapes import get_knowledge_node_shape, get_edge_shape
 
 
