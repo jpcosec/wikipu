@@ -41,4 +41,4 @@ If a new adapter need appears that does not fit these six, stop and check whethe
 
 ## Reference
 
-- `drawers/executable-extraction-plan.md`
+- `desk/tasks/Board.md`

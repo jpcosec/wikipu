@@ -14,7 +14,7 @@ This deferred diagram shows the intended future state where `wikipu` curates thr
 
 ## Context
 
-This is not current truth. It is the target-state architecture that the extraction plan in `drawers/executable-extraction-plan.md` is designed to reach. It should stay in `drawers/` until the split is fully implemented.
+This is not current truth. It is the target-state architecture that the extraction work on `desk/tasks/Board.md` was designed to reach. It stays in `drawers/` as a future-oriented diagram while follow-up cleanup remains open.
 
 Compare with `wiki/reference/diagrams/current_system_architecture.md` to see what is changing.
 
@@ -101,5 +101,5 @@ graph TD
 ## Usage Examples
 
 - Use this diagram when discussing the desired end state of the three-package split.
-- Use it alongside `drawers/executable-extraction-plan.md` to track which phases have been completed.
+- Use it alongside `desk/tasks/Board.md` to compare the current split against the intended end state.
 - Compare against `wiki/reference/diagrams/current_system_architecture.md` to explain what is changing.

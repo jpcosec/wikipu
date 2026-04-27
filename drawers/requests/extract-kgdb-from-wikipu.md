@@ -88,7 +88,7 @@ Today `wikipu` owns storage and behavior that should belong to different systems
 - mixed modules get split into their respective cores and curator-facing adapters
 
 Detailed ownership audit lives in `drawers/kgdb-module-ownership-audit.md`.
-Ontology package specification lives in `drawers/ontology-package-spec.md`.
+Execution follow-up now lives in `desk/tasks/Board.md`, with energy re-ownership tracked in `desk/tasks/136-keep-energy-in-wikipu.md`.
 
 ## Storage Boundary
 
@@ -112,7 +112,7 @@ Ontology package specification lives in `drawers/ontology-package-spec.md`.
 - OWL backend, reasoner, and consistency checking
 - domain facet contracts (IOFacet, ASTFacet, SemanticFacet, ADRFacet, TestMapFacet, ComplianceFacet, SourceFacet, GitFacet)
 - facet registry, injection, and validation
-- systemic energy contracts and audit logic
+- domain contracts, excluding the energy lane that is being moved back into `wikipu`
 - domain cleansing rules and proposals
 - wiki document type taxonomy (ConceptDoc, HowToDoc, ADRDoc, etc.)
 - audit findings and topology proposal contracts
@@ -162,8 +162,8 @@ Detailed boundary note lives in `drawers/kgdb-storage-boundary.md`.
 
 - `drawers/kgdb-storage-boundary.md`
 - `drawers/kgdb-module-ownership-audit.md`
-- `drawers/kgdb-migration-plan.md`
-- `drawers/ontology-package-spec.md`
+- `desk/tasks/Board.md`
+- `desk/tasks/136-keep-energy-in-wikipu.md`
 
 ## Questions closed by this revision
 

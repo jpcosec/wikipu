@@ -33,7 +33,7 @@ _EXPORTS = {
     "ConceptDoc": "ontology.contracts.wiki_nodes",
     "DocStandardDoc": "ontology.contracts.wiki_nodes",
     "Edge": "kgdb.contracts",
-    "EnergyReport": "ontology.contracts.energy",
+    "EnergyReport": "wiki_compiler.contracts.energy",
     "FacetOrthogonalityReport": "ontology.contracts.proposals",
     "FacetProposal": "ontology.contracts.proposals",
     "GitFacet": "ontology.contracts.facets",
@@ -46,10 +46,10 @@ _EXPORTS = {
     "SemanticFacet": "ontology.contracts.facets",
     "SourceFacet": "ontology.contracts.facets",
     "SystemIdentity": "kgdb.contracts",
-    "SystemicEnergy": "ontology.contracts.energy",
+    "SystemicEnergy": "wiki_compiler.contracts.energy",
     "TestMapFacet": "ontology.contracts.facets",
     "TopologyProposal": "ontology.contracts.proposals",
-    "ZoneContract": "ontology.contracts.energy",
+    "ZoneContract": "wiki_compiler.contracts.energy",
 }
 
 __all__ = sorted(_EXPORTS) + [

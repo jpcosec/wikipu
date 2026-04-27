@@ -13,7 +13,7 @@ lifecycle: current
 ## Non-negotiable boundaries
 
 - `kgdb` is graph storage, traversal, and generic query only.
-- `ontology` is domain semantics: OWL reasoning, facets, energy, cleansing detection, wiki-specific contracts.
+- `ontology` is domain semantics: OWL reasoning, facets, and cleansing detection; energy stays in `wikipu` until task `136` redesigns that boundary.
 - `wiki_compiler` remains the workspace application and orchestration layer.
 
 ## Move rules
@@ -36,6 +36,6 @@ lifecycle: current
 
 ## Reference
 
-- `drawers/executable-extraction-plan.md`
-- `drawers/ontology-package-spec.md`
+- `desk/tasks/Board.md`
+- `desk/tasks/136-keep-energy-in-wikipu.md`
 - `drawers/kgdb-storage-boundary.md`

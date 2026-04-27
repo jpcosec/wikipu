@@ -111,7 +111,4 @@ These mix concerns from two or more layers:
 
 ## Suggested next implementation artifacts
 
-After this audit, the next step is:
-
-1. `drawers/kgdb-migration-plan.md` — execution sequence for kgdb extraction
-2. `drawers/ontology-package-spec.md` — package boundary and main for the ontology layer
+After this audit, the extraction was atomized into `desk/tasks/` and executed. Remaining follow-up now lives on `desk/tasks/Board.md`, with energy re-ownership tracked by `desk/tasks/136-keep-energy-in-wikipu.md`.
