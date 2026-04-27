@@ -7,7 +7,7 @@ from __future__ import annotations
 from typing import Protocol, runtime_checkable
 import networkx as nx
 from .contracts import AuditFinding, KnowledgeNode
-from ontology.facets.registry import FacetSpec, InjectionContext
+from wiki_compiler.adapters.ontology_facets import FacetSpec, InjectionContext
 
 
 @runtime_checkable

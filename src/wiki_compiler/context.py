@@ -9,8 +9,8 @@ import json
 import re
 from pathlib import Path
 
-from kgdb.graph import load_graph, load_knowledge_node
-from kgdb.query import (
+from wiki_compiler.adapters.kgdb_store import load_graph, load_knowledge_node
+from wiki_compiler.adapters.kgdb_query import (
     collect_neighborhood,
     collect_neighborhood_by_direction,
     match_nodes_from_task,

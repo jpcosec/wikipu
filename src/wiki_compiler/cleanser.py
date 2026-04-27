@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from ontology.cleansing import detect_cleansing_candidates
+from wiki_compiler.adapters.ontology_cleanse import detect_cleansing_candidates
 from .contracts import CleansingProposal
 
 

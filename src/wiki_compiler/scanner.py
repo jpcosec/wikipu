@@ -20,7 +20,7 @@ from .contracts import (
     SemanticFacet,
     SystemIdentity,
 )
-from ontology.facets.scanner import (
+from wiki_compiler.adapters.ontology_facets import (
     infer_io_from_ast,
     scan_python_file,
     scan_python_sources,

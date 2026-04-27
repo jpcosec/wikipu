@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-04-27
+
+- resolved task `137-finish-split-boundary-cleanup`: routed all remaining direct `ontology` and `kgdb` imports in `scanner.py`, `cleanser.py`, `protocols.py`, and `context.py` through the adapter layer; added `FacetSpec`, `infer_io_from_ast`, `collect_neighborhood`, and `collect_neighborhood_by_direction` to the relevant adapters; deleted the `owl_reasoner`, `auditor_owl`, and `owl_backend` compatibility shim files
+
 ## 2026-04-24
 
 - resolved task `136-keep-energy-in-wikipu`: moved the authoritative energy contracts and runtime back under `src/wiki_compiler/`, switched the energy adapter to call the local implementation, added regression coverage for wikipu-owned energy signals, and deleted the implemented extraction plan docs from `drawers/` now that their work has been atomized into `desk/tasks/`

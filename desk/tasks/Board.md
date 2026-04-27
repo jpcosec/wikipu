@@ -7,7 +7,7 @@
 - Branch: `kgdb-ontology-split`
 - Objective: keep `wikipu` on external sibling `kgdb` + `ontology` packages after the in-repo split
 - Baseline: extraction work has been atomized into `desk/tasks/` and the split is now in follow-up cleanup mode
-- Current phase: extraction complete; follow-up work is boundary cleanup plus energy re-ownership
+- Current phase: complete — boundary cleanup done, all split-package imports routed through adapters
 
 ## Priority Roadmap
 
@@ -55,23 +55,20 @@
 
 ## Dependency Summary
 
-- Root tasks: `137`
-- `kgdb` path: extracted to sibling repo
-- `ontology` path: extracted to sibling repo, but boundary cleanup remains
-- Mixed-module split landed, with some direct imports still bypassing adapters
-- Adapter layer exists, but a few compatibility shims and direct split-package imports remain
-- Energy ownership needs redesign before it should live outside `wikipu`
+- Root tasks: none
+- `kgdb` path: extracted to sibling repo, all imports through adapters
+- `ontology` path: extracted to sibling repo, all imports through adapters
+- Energy re-owned in `wiki_compiler`, adapter layer is the sole boundary surface
 
 ## Parallelization Map
 
-- Parallel lane A: complete
-- Sequential tail: `137`
+- All lanes complete
 
 ## Active (status=open|in_progress)
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
-| 137 | architecture/split | Finish split boundary cleanup after extraction | p1 | - |
+| - | - | none | - | - |
 
 ## Blocked (status=blocked)
 
