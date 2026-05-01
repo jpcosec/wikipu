@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-01
+
+- resolved task `027-write-comprehensive-build-plan`: Produced a canonical materialization roadmap in `docs/rfcs/MATERIALIZATION_ROADMAP_v0.1.md` documenting the path from current state to target architecture
+- resolved task `028-create-functional-layer-mapping`: Created the functional layer mapping in `docs/architecture/ECOSYSTEM_6D_FLOW.md` organizing the ecosystem into Execution, Cognitive, Substrate, and Interface rings
+- resolved task `030-add-reflection-flow-diagrams`: Added explicit diagrams and documentation in `docs/architecture/RUNTIME_AND_REFLECTION_FLOWS.md` distinguishing between runtime ring flow and semantic reflection flow
+
 ## 2026-04-27
 
 - resolved task `137-finish-split-boundary-cleanup`: routed all remaining direct `ontology` and `kgdb` imports in `scanner.py`, `cleanser.py`, `protocols.py`, and `context.py` through the adapter layer; added `FacetSpec`, `infer_io_from_ast`, `collect_neighborhood`, and `collect_neighborhood_by_direction` to the relevant adapters; deleted the `owl_reasoner`, `auditor_owl`, and `owl_backend` compatibility shim files
