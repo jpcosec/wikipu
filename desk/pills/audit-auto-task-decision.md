@@ -4,7 +4,7 @@ scope: domain
 language: en
 nature: context
 bound_to: audit-auto-task
-created: 2026-04-17
+created: "2026-04-17"
 lifecycle: current
 ---
 

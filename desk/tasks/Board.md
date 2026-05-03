@@ -1,6 +1,4 @@
-# Tasks Board
-
-> **Single entry point for all active work.** Read this before starting any task.
+# Wikipu Tasks Board
 
 ## Current State Summary
 
@@ -9,7 +7,7 @@
 - Baseline: extraction work has been atomized into `desk/tasks/` and the split is now in follow-up cleanup mode
 - Current phase: complete — boundary cleanup done, all split-package imports routed through adapters
 
-## Priority Roadmap
+## Delivery Phases
 
 ### Phase 1 - Create kgdb in-repo package
 - `desk/tasks/101-scaffold-kgdb-package.md`
@@ -53,32 +51,19 @@
 ### Phase 5 - Extract sibling repos after in-repo split is green
 - complete
 
-## Dependency Summary
-
-- Root tasks: none
-- `kgdb` path: extracted to sibling repo, all imports through adapters
-- `ontology` path: extracted to sibling repo, all imports through adapters
-- Energy re-owned in `wiki_compiler`, adapter layer is the sole boundary surface
-
-## Parallelization Map
-
-- All lanes complete
-
-## Active (status=open|in_progress)
+## Active
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 | - | - | none | - | - |
 
-## Blocked (status=blocked)
+## Blocked
 
 | ID | Domain | Task | Priority | Depends On |
 |----|--------|------|----------|------------|
 | - | - | none | - | - |
 
----
-
-**Working rules for every task:**
+## Working Rules
 
 1. Check whether any existing test is no longer valid and delete it if needed.
 2. Add new tests where necessary.

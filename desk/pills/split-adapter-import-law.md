@@ -4,7 +4,7 @@ scope: component
 language: en
 nature: implementation
 bound_to: 120-131
-created: 2026-04-24
+created: "2026-04-24"
 lifecycle: current
 ---
 

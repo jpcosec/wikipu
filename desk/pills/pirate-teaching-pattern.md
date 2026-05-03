@@ -4,7 +4,7 @@ scope: domain
 language: en
 nature: context
 bound_to: pirate-teach-wikicompiler
-created: 2026-04-17
+created: "2026-04-17"
 lifecycle: current
 ---
 

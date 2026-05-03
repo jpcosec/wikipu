@@ -4,7 +4,7 @@ scope: component
 language: en
 nature: context
 bound_to: owl-phase1-parallel-run, owl-phase2-quadstore-primary, owl-phase3-reasoning, owl-phase4-full-migration
-created: 2026-04-17
+created: "2026-04-17"
 lifecycle: current
 ---
 

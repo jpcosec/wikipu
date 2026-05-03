@@ -2,6 +2,68 @@
 
 ## 2026-05-01
 
+- resolved task `002-define-enforcement-artifact-shape`: Define enforcement artifact shape
+
+- resolved task `001-define-semantic-ir-reflection-contract`: Define semantic IR reflection contract
+
+- resolved task `003-create-ecosystem-ontology-fixture`: Create ecosystem ontology fixture
+
+- resolved task `002-define-projection-contract`: Define projection contract
+
+- resolved task `001-define-canonical-edge-model`: Define canonical edge model
+
+- resolved task `017-remove-adapter-target-architecture`: Remove adapter target architecture
+
+- resolved task `016-materialize-knowledge-for-human-audit`: Materialize `knowledge` for human audit
+
+- resolved task `006-prove-architecture-rule-consumption`: Prove architecture rule consumption
+
+- resolved task `005-compile-enforcement-artifact-from-fixture`: Compile enforcement artifact from fixture
+
+- resolved task `031-audit-reflection-bridge-candidates`: Audit reflection bridge candidates
+
+- resolved task `029-audit-current-code-by-ring`: Audit current code by ring
+
+- resolved task `026-bootstrap-rp-as-ecosystem-entrypoint`: Bootstrap `rp` as ecosystem entrypoint
+
+- resolved task `025-harden-repopackage-manifest-sync`: Harden `repopackage` manifest and sync flow
+
+- resolved task `021-create-architecture-rules-file`: Create architecture rules file
+
+- resolved task `020-define-migration-order`: Define migration order
+
+- resolved task `019-spec-architecture-lint-rules`: Specify architecture lint rules
+
+- resolved task `018-define-grouped-ring-structure`: Define grouped ring structure
+
+- resolved task `015-package-deterministic-capabilities`: Package deterministic capabilities
+
+- resolved task `014-bootstrap-hum-shell`: Bootstrap `hum` shell
+
+- resolved task `013-bootstrap-knowledge-organ`: Bootstrap `knowledge` organ
+
+- resolved task `012-map-current-wikipu-to-hum-knowledge`: Map current `wikipu` to `hum` / `knowledge`
+
+- resolved task `011-spec-config-store`: Specify `config_store`
+
+- resolved task `010-define-rp-export-surface`: Define `rp` export surface
+
+- resolved task `024-implement-rp-stub-commands`: Implement `rp` stub commands
+
+- resolved task `023-harden-repopackage-solver-models`: Harden `repopackage` solver and models
+
+- resolved task `022-harden-repopackage-git-adapter`: Harden `repopackage` git adapter
+
+- resolved task `001-bootstrap-tracked-workspace`: Bootstrap tracked workspace desk continuity
+
+- resolved task `004-render-human-facing-diagram-from-fixture`: Render human-facing diagram from fixture
+
+- resolved task `003-create-canonical-architecture-spec-fixture`: Create canonical architecture spec fixture
+
+- resolved task `005-validate-projection-roundtrip`: 005-validate-projection-roundtrip
+
+- resolved task `999-mock-verification`: Verify Ritual Automation
+
 - resolved task `027-write-comprehensive-build-plan`: Produced a canonical materialization roadmap in `docs/rfcs/MATERIALIZATION_ROADMAP_v0.1.md` documenting the path from current state to target architecture
 - resolved task `028-create-functional-layer-mapping`: Created the functional layer mapping in `docs/architecture/ECOSYSTEM_6D_FLOW.md` organizing the ecosystem into Execution, Cognitive, Substrate, and Interface rings
 - resolved task `030-add-reflection-flow-diagrams`: Added explicit diagrams and documentation in `docs/architecture/RUNTIME_AND_REFLECTION_FLOWS.md` distinguishing between runtime ring flow and semantic reflection flow

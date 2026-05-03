@@ -4,7 +4,7 @@ scope: global
 language: en
 nature: implementation
 bound_to: owl-phase1-parallel-run, owl-phase2-quadstore-primary
-created: 2026-04-17
+created: "2026-04-17"
 lifecycle: current
 ---
 

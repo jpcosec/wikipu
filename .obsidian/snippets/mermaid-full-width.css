@@ -1,0 +1,32 @@
+/* 1. Permitir que la página use todo el ancho (sin forzar el texto) */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-source-view.mod-cm6 .cm-sizer,
+.markdown-rendered.markdown-preview-view,
+.markdown-preview-sizer {
+    max-width: 100% !important;
+}
+
+/* 2. Mermaid: Tamaño natural por defecto (no se estira solo) */
+.mermaid {
+    display: flex;
+    justify-content: center; /* Centrado si es más chico que la pantalla */
+}
+
+.mermaid svg {
+    max-width: 100% !important; /* No se sale de la pantalla */
+    width: auto !important;     /* Tamaño natural, no forzado al 100% */
+    height: auto !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 3. Lupa: Solo al pasar el mouse */
+.mermaid:hover {
+    z-index: 999 !important;
+    position: relative;
+}
+
+.mermaid:hover svg {
+    transform: scale(1.4); /* Zoom claro solo aquí */
+    transform-origin: center top;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}

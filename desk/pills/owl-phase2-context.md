@@ -4,7 +4,7 @@ scope: domain
 language: en
 nature: context
 bound_to: owl-phase2-quadstore-primary, owl-phase3-reasoning
-created: 2026-04-17
+created: "2026-04-17"
 lifecycle: current
 ---
 

@@ -22,7 +22,7 @@ def test_history_command_output(tmp_path: Path):
     # 2. Run CLI
     import os
     env = os.environ.copy()
-    env["PYTHONPATH"] = "src"
+    env["PYTHONPATH"] = "wikipu/src"
     
     result = subprocess.run(
         ["python3", "-m", "wiki_compiler.main", "history", "--project-root", str(tmp_path)],
@@ -39,7 +39,7 @@ def test_history_command_output(tmp_path: Path):
 def test_history_command_empty(tmp_path: Path):
     import os
     env = os.environ.copy()
-    env["PYTHONPATH"] = "src"
+    env["PYTHONPATH"] = "wikipu/src"
     
     result = subprocess.run(
         ["python3", "-m", "wiki_compiler.main", "history", "--project-root", str(tmp_path)],

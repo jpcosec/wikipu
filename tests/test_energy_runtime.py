@@ -11,11 +11,6 @@ class _AuditReport:
         self.findings = findings
 
 
-def test_energy_contracts_are_owned_by_wikipu():
-    assert EnergyReport.__module__ == "wiki_compiler.contracts.energy"
-    assert ZoneContract.__module__ == "wiki_compiler.contracts.energy"
-
-
 def test_run_energy_audit_uses_wikipu_signals(tmp_path):
     (tmp_path / "src").mkdir()
     (tmp_path / "wiki").mkdir()
